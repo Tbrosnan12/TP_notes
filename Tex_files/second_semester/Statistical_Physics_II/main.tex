@@ -1,0 +1,1258 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\addbibresource{Bib.bib}
+\usepackage{mathtools}
+\DeclarePairedDelimiterXPP\BigOSI[2]%
+  {\mathcal{O}}{(}{)}{}%
+  {\SI{#1}{#2}}
+\usepackage{xcolor}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{comment}
+\usepackage{mhchem}
+ \usepackage{tabularx}
+ \usepackage{titling}
+ \usepackage{amsmath,environ}
+ \usepackage[explicit]{titlesec}
+\usepackage{fancyhdr}
+\usepackage{braket}
+
+
+\newcommand{\ubar}[1]{\text{\b{$#1$}}}
+\setlength{\droptitle}{3em} 
+
+\title{Statistical Physics II}
+\author{Thomas Brosnan}
+\date{Notes taken in Professor Manuela Kulaxizi's class, Hilary Term 2024}
+
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=blue!30!black,
+    colback=blue!30, boxrule=1pt,
+    #1}
+\tcbset{highlight math style={boxsep=2mm,,colback=blue!0!green!0!red!0!}}
+
+  \newenvironment{bux}
+    {
+    \empheq[box=\tcbhighmath]{align}
+   }{
+    \endempheq
+    }
+    \newenvironment{bux*}
+    {
+    \empheq[box=\tcbhighmath]{align*}
+   }{
+    \endempheq
+    }
+\newcommand{\hsp}{\hspace{8pt}}
+
+\newcommand*{\sectionFont}{%
+  \LARGE\bfseries
+}
+
+\DeclareRobustCommand{\t}{\tilde}
+
+\numberwithin{equation}{section}
+
+\makeatletter
+\let\Title\@title % Copy the title to a new command
+\makeatother
+
+%change this RGB value to change the section background colour 
+\definecolor{mycolor1}{RGB}{161, 106, 222}
+\colorlet{SectionColour}{mycolor1}
+%subsection background colour 
+\definecolor{mycolor2}{gray}{0.8}
+\colorlet{subSectionColour}{mycolor2}
+%subsubsection background colour 
+\definecolor{mycolor3}{RGB}{255,255,255}
+\colorlet{subsubSectionColour}{mycolor3}
+
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+\Large
+    “Thermodynamics is a funny subject. The first time you go through it, you don't understand it at all. The second time you go through it, you think you understand it, except for one or two small points. The third time you go through it, you know you don't understand it, but by that time you are so used to it, it doesn't bother you anymore.” 
+    
+    -Arnold Sommerfield
+\end{center}
+\vspace*{\fill}
+\newpage 
+\tableofcontents
+% For \section
+ \titleformat{\section}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesection  \hsp #1 {\strut} \end{minipage}}}
+% For \subsection
+ \titleformat{\subsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subSectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesubsection  \hsp #1 {\strut} \end{minipage}}}
+% For \section*
+ \titleformat{name=\section, numberless}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+  % For \subsection*
+ \titleformat{name=\subsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subSectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+ % For \subsubsection
+ \titleformat{\subsubsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm}\thesubsubsection \hsp #1 {\strut} \end{minipage}}}
+  % For \subsubsection*
+ \titleformat{name=\subsubsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm} #1 {\strut} \end{minipage}}}
+\newpage 
+%header 
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[L]{\Title}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{-~\thepage~-}
+\renewcommand{\headrulewidth}{1pt}
+
+
+
+
+
+
+
+%starting document 
+\normalsize
+\newpage
+\section{Quantum statistical Physics}
+\subsection{Ensembles }
+\begin{itemize}
+\item As discussed in Stat-phys I, there are three types of ensembles we are concerned with. 
+\end{itemize}
+\subsubsection{Microcanonical}
+\begin{itemize}
+    \item This is for completely isolated systems. Here we have that $S,V,N_i$ are conserved. The main thermodynamic function is $E=E(S,V,N)$. 
+\end{itemize}
+\subsubsection{Canonical}
+\begin{itemize}
+    \item Now the system is in a heat bath and is allowed to exchange energy with the surroundings. Here we have that $T,V,N_i$ are conserved. The main thermodynamic function is $F=F(T,V,N)$. 
+    \end{itemize}
+\subsubsection{Grand-Canonical}
+\begin{itemize}
+    \item Now the system is in a heat and particle bath and is allowed to exchange energy and particles with the surroundings. Here we have that $T,\mu_i$ are conserved. The main thermodynamic function is $\mathcal{J}=\mathcal{J}(T,V,\mu_i)$.  
+    \end{itemize}
+\begin{itemize}
+    \item In the thermodynamic limit, the physics at equilibrium can be effectively described by all ensembles with the understanding that 
+\begin{itemize}
+    \item In Microcanonical ensemble total energy $\tilde{E}$ and number of particles $\tilde{N}$ are constant. 
+    \item In the Canonical ensemble, the average energy $\braket{E}\cong \t E  \cong E_{\ast}$, the most probable energy. 
+    \item In the Grand Canonical ensemble, the average energy $\braket{E}\cong \t E  \cong E_{\ast}$, as well as  $\braket{N}\cong \t N  \cong N_{\ast}$. 
+
+
+\end{itemize}
+\item In the quantum regime $\hbar \neq 0$, so the phase space is no longer the appropriate approach. Instead we deal with a mostly discrete system. 
+
+\end{itemize}
+
+\subsection{Discrete systems }
+\subsubsection{Microcanonical ensemble}
+\begin{itemize}
+    \item Here the relevant function for relating micro-to-macro state is the number of microstates $\Omega$ . This is related to the entropy of the system via $S = k \ln(\Omega)$. And the probability of any one state is just $Pr= 1/\Omega$.   It is easier to write down the form of $\Omega$ in a discrete system as we can just say: 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.1}
+        \Omega = \sum_{ \{ \underbar{n} \} } \delta_{E_{\underbar{n}},\t E}
+    \end{split}
+\end{bux}
+This is just the Kronecker delta function   I.e we count a one for each possible way the total energy of the system can be made up of the quantum states available. This means we sum over not only all particles in the system but also each possible quantum number they could have. $\{ \underbar{n} \} = \{ n_1,n_2,...,n_N \}$ and each particle can take energies $n_i = 0,1,2,...$. where $i=1,2,...,N$.  
+\end{itemize}
+\subsubsection{Canonical ensemble} 
+\begin{itemize}
+    \item Here the relevant function for relating micro-to-macro state is the Canonical partition function $Z(T,V,N)$, related to the Helmholtz free energy by $F = -kT \ln (Z)$. The probability distribution is given by $P_n(E) = \frac{1}{Z} e^{-\beta E_n}$.  The partition function is given by: 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.2}
+        Z = \sum_{ \{ \underbar{n} \} } e^{-\beta E_{\underbar{n}}}
+    \end{split}
+\end{bux}
+This just comes from Normalizing the probability distribution over all possible states of the total system. 
+
+\end{itemize}
+\subsubsection{Grand -Canonical ensemble}
+\begin{itemize}
+    \item Similar to the microcanonical ensemble. Instead of the partition function we hyave the grand-canonical partition function $\Xi$. This is related to the grand canonical potential via $\mathcal{J}  = -kT \ln(\Xi)$. The probability distribution is $P_n = \frac{1}{\Xi} e^{\beta(\mu N-E)}$, and the grand canonical potential takes the form: 
+\begin{bux}
+    \begin{split}
+        \Xi = \sum_{N=0}^{\infty} e^{\beta \mu N} Z
+    \end{split}
+\end{bux}
+\end{itemize}
+\subsection{Density Matrix}
+\begin{itemize}
+    \item Since we are dealing with quantum mechanical systems, when we talk about something like the partition function, it may be more proper to talk about $\braket{Z} = \bra{\underbar{n}}Z \ket{\underbar{n}}$, the expected value of the partition function. Here $\braket{\underbar{n}|\underbar{m}} = \delta_{\underbar{n},\underbar{m}}$, $\ket{\underbar{n}}$ are just energy eigenstates. Looking at the form of $Z$ we see: 
+\begin{bux}
+    \begin{split}
+        \braket{Z} =   \sum_{ \{ \underbar{n} \} }\bra{\underbar{n}}e^{-\beta E_{\underbar{n}}} \ket{\underbar{n}}  = \sum_{ \{ \underbar{n} \} }\bra{\underbar{n}}e^{-\beta \hat{\mathcal{H}}} \ket{\underbar{n}}
+    \end{split}
+\end{bux}
+Where $ \hat{\mathcal{H}}$ here is the Hamiltonian. This then means that $Z = Tr(e^{-\beta \hat{\mathcal{H}}})$ and the probability $P_n$ becomes: 
+\begin{bux}
+    \begin{split}
+        \rho = \frac{1}{Z}e^{-\beta  \hat{\mathcal{H}}}
+    \end{split}
+\end{bux}
+This matrix $\rho$ is what we call the \textit{Density matrix} or \textit{Thermal density operator}.
+\end{itemize}
+
+\subsection{Average quantities}
+\begin{itemize}
+    \item We know how to calculate average quantities, by using the probability distribution, here we will use this to calculate neat expression for the average energy and average particle number in the grand canonical ensemble.  First up average particle number:
+\begin{bux}
+    \begin{split}
+      &   \braket{N}  = \frac{1}{\Xi}\sum_{N=0}^{\infty}\sum_{i}Ne^{\beta(Nu-E_i)} = \frac{1}{\Xi}\sum_{N=0}^{\infty}\sum_{i}Nz^Ne^{-\beta E_i}  \\
+    \end{split}
+\end{bux}
+Where $z=e^{\beta \mu}$ is known as the fugacity. Then:
+\begin{bux}
+    \begin{split}
+         \braket{N} = \frac{z}{\Xi}\frac{\partial}{\partial z}\sum_{N=0}^{\infty}\sum_{i}z^Ne^{-\beta E_i} 
+    \end{split}
+\end{bux}
+But since whats right of the is just the definition of the grand canonical partition function:
+\begin{bux}
+    \begin{split}
+\label{eqn:1.8}
+         \braket{N} = \frac{z}{\Xi}\frac{\partial \Xi }{\partial z} = z \frac{\ln \Xi}{\partial z}
+    \end{split}
+\end{bux}
+\item Similarly the average energy is given by:
+\begin{bux}
+    \begin{split}
+         \braket{E}   = \frac{1}{\Xi}\sum_{N=0}^{\infty}\sum_{i}E_ie^{\beta(Nu-E_i)} &= -\frac{1}{\Xi}\frac{\partial }{\partial \beta }\sum_{N=0}^{\infty}\sum_{i}e^{\beta(Nu-E_i)} + \frac{1}{\Xi}\sum_{N=0}^{\infty}\sum_{i}N\mu e^{\beta(Nu-E_i)} 
+    \end{split}
+\end{bux}
+But this last term is just $\mu$ times the average particle number so we can write the average energy as:
+\begin{bux}
+    \begin{split}
+\label{eqn:1.10}
+       \braket{E} = \braket{N}\mu - \frac{\partial \ln \Xi}{\partial \beta}
+    \end{split}
+\end{bux}
+\item Alternatively, we could hold the fugacity $z=e^{\beta\mu}$, constant while we take our beta derivative, this way we avoid having extra terms: 
+\begin{bux}
+    \begin{split}
+           \braket{E}   = \frac{1}{\Xi}\sum_{N=0}^{\infty}\sum_{i}E_ie^{\beta(Nu-E_i)} &= -\frac{1}{\Xi}\left(\frac{\partial }{\partial \beta }\sum_{N=0}^{\infty}\sum_{i}z^Ne^{-\beta E_i}\right)_z = -\left(\frac{\partial \ln \Xi}{\partial \beta}\right)_z
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+
+
+\newpage
+\section{Harmonic Oscillator }
+\begin{itemize}
+    \item We now look at an example, as turns out one of the only systems we can solve analytically solve. Consider $N$ $1$D oscillators each with an energy $\epsilon_i = \hbar \omega (n_i+\frac{1}{2})$, $n_i=0,1,2,...$. We can then write the total energy as: 
+\begin{bux}
+    \begin{split}
+        \t E = \sum_{i=1}^N(n_i+\frac{1}{2})\hbar \omega = \frac{N}{2}\hbar\omega + \hbar \omega\sum_{i=1}^N n_i
+    \end{split}
+\end{bux}
+We then set $M \equiv \sum_{i=1}^Nn_i = \left( \frac{\t E}{\hbar \omega} - \frac{N}{2}\right)$, which is fixed as we are considering microcanonical/Canonical ensemble. $M$ is a positive integer.   
+\end{itemize}
+\subsection{Canonical ensemble}
+\begin{itemize}
+\item Now we look at calculating the partition function $Z(T,V,N)$, as per equation \ref{eqn:1.2} : 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.7}
+        Z = \sum_{\underbar{n}}e^{- \beta \sum_{i=1}^N\epsilon(n_i)} = \prod_{i=1}^N\left( \sum_{n_i}e^{-\beta \epsilon(n_i)}\right)
+    \end{split}
+\end{bux}
+Then since we have a system of identical particles we know we can write the partition function as a product of all the individual identical partition functions associated to a single particle, $\zeta(T,V,1)$. So $Z = \zeta^N$. We can write $\zeta$ as: 
+\begin{bux}
+    \begin{split}
+        \zeta = \sum_{n=0}^{\infty}e^{-\beta\hbar\omega(n+\frac{1}{2})} = e^{- \frac{1}{2}\beta \hbar \omega}\sum_{n=0}^{\infty} (e^{-\beta \hbar \omega})^n = e^{- \frac{1}{2}\beta \hbar \omega} \left( \frac{1}{1-e^{-\beta \hbar \omega}}\right)
+    \end{split}
+\end{bux}
+So we can write $Z$ as: 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.9}
+        Z = \frac{e^{- \frac{1}{2}\beta \hbar \omega N}}{(1-e^{-\beta \hbar \omega})^N} = \left[ 2 \sinh (\frac{\beta \hbar \omega}{2})\right]^{-N}
+    \end{split}
+\end{bux}
+If the oscillators are not distinct, i.e. $\omega_i \neq \omega$, then $Z$ becomes:  
+\begin{bux}
+    \begin{split}
+\label{eqn:2.5}
+        Z = \prod_{i=1}^N  \frac{e^{- \frac{1}{2}\beta \hbar \omega }}{1-e^{-\beta \hbar \omega}}=  \prod_{i=1}^N \frac{1}{2 \sinh (\frac{\beta \hbar \omega_i}{2})}
+    \end{split}
+\end{bux}
+\end{itemize}
+ \subsection{Micro-Canonical ensemble}
+ \begin{itemize}
+     \item We now consider how we can go about calculating $\Omega$. As per \ref{eqn:1.1} we know $\Omega$ must take the following form for the Harmonic oscillator: 
+\begin{bux}
+    \begin{split}
+        \Omega(E,V,N) = \sum_{\underbar{n}}\delta_{\sum_{i=1}^Nn_i,M}
+    \end{split}
+\end{bux}
+Where $M=\left( \frac{\t E}{\hbar \omega} - \frac{N}{2}\right)$. This problem is the same as trying to find how many ways we can distribute $M$ objects  (the total sum of all the quantum numbers) into $N$ boxes, the number of particles. Here we can just use the stars and bars method, so this becomes equivalent to the number of ways we can place $(N-1)$ bars in $M+N-1$ positions. This then means that $\Omega$ must take the following form: 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.12}
+        \Omega = \frac{(M+N-1)!}{M!(N-1)!}
+    \end{split}
+\end{bux}
+\item Now we want to see if we can obtain the same result from examining the previously calculated $Z$. As we did in \ref{eqn:1.7} we can write:
+\begin{bux}
+    \begin{split}
+       Z = \sum_{\underbar{n}}e^{- \beta \sum_{i=1}^N\epsilon(n_i)} = e^{-\frac{1}{2}\beta \hbar \omega N}\sum_{\underbar{n}}e^{- \beta \hbar \omega \sum_{i=1}^Nn_i}
+    \end{split}
+\end{bux}
+But since $\sum_{i=1}^Nn_i$ is just $M$ and $\{ \underbar{n} \} = \{ n_1,n_2,...,n_N \}$, we can write this as: 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.14}
+        Z = e^{-\frac{1}{2}\beta \hbar \omega N}\sum_{M}^{\infty}e^{- \beta \hbar \omega M}\sum_{\underbar{n}}\delta_{\sum_{i=1}^Nn_i,M}
+    \end{split}
+\end{bux}
+The second sum here is the constraint on this sum.  We have made this jump as summing over all the quantum numbers of all the particles is the same as summing over all the possible total sums that the quantum numbers could have, with the constraint that  $M$ must be the sum of $N$ quantum numbers.  This constraint can then be recognised as $\Omega$, we can then also relate this expression to the previously derived expression \ref{eqn:1.9}. We can then let $x= e^{-\beta \hbar \omega}$ to write \ref{eqn:1.14} as: 
+\begin{bux}
+    \begin{split}
+       &  \frac{x^N}{(1-x)^N} = x^N \sum_{M=0}^{\infty}x^M\Omega \\ 
+\implies &  \frac{1}{(1-x)^N} =  \sum_{M=0}^{\infty}x^M\Omega
+    \end{split}
+\end{bux} 
+Now this looks familiar it is like a taylor expansion, so $\Omega$ must be the co-officiants of this expansion.  This means we can write: 
+\begin{bux}
+    \begin{split}
+        \Omega(M) = \frac{1}{M!}\frac{d^M}{dx^M}(1-x)^{-N} \bigg\vert_{x=0}
+    \end{split}
+\end{bux}
+To save us some hastle we can ask mathematica to evaluate this, this results in an expression in terms of something called factorial power, which is just another way of of writing the expression we derived above \ref{eqn:1.12} as needed.  
+ \end{itemize}
+
+\subsection{Vibrational mode of a solid}
+\begin{itemize}
+    \item We now look at the non-identical oscillators and see if we can derive expressions for measurable quantities that match with observational results. First we wish to calculate the energy of the system $\t E$ , which for this system is:
+\begin{bux}
+    \begin{split}
+        \t E = V_0 + \sum_{i=1}^{3N}(n_i + \frac{1}{2})\hbar \omega_i
+    \end{split}
+\end{bux}
+We have established that the total energy $\t E$ is the same as the average energy $\braket{E} = -\frac{\partial \ln(Z)}{\partial \beta}$, so using our expression \ref{eqn:2.5} we can write: 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.18}
+     &   Z = e^{-\beta V_0} \prod_{i=1}^{3N} \frac{e^{-\frac{1}{2}\beta \hbar \omega_i}}{1- e^{-\beta \hbar \omega_i}} \\
+\implies  \ln(Z) = - &\beta V_0 - \sum_{i=1}^{3N} \frac{\beta\hbar\omega_i}{2} - \sum_{i=1}^{3N}\ln(1-e^{-\beta \hbar \omega_i}) \\ 
+\implies  \braket{E} =  & V_0 + \sum_{i=1}^{3N} \frac{\hbar\omega_i}{2} - \sum_{i=1}^{3N}\frac{\hbar \omega_i}{(e^{\beta\hbar\omega_i}-1)}
+        \end{split}
+\end{bux}
+These first few terms have no dependence on the temperature $T$ as $\beta = 1/kT$. So if we want to calculate the heat capacity ~$C_V = \frac{\partial E}{\partial T}$ we only have to worry about the last term, this turns out to be: 
+\begin{bux}
+    \begin{split}
+        C_V = k \sum_{i=1}^{3N} \frac{(\beta \hbar \omega_i)^2e^{\beta \hbar \omega_i}}{(e^{\beta\hbar \omega_i}-1)^2}
+    \end{split}
+\end{bux}
+\item Einstein in 1907 was analysing these systems and set the frequencies to the same $\omega_i=\omega_E$, then we set $x = \beta \hbar \omega_E$, so we can write: 
+\begin{bux}
+    \begin{split}
+        C_V = \frac{3Nkx^2e^x}{(e^x-1)^2} = 3Nk\left(\frac{\theta_E}{T} \right)^2\frac{e^{\frac{\theta_E}{T}}}{(e^{\frac{\theta_E}{T}}-1)^2}
+    \end{split}
+\end{bux}   
+Where $\theta_E = \frac{\hbar\omega_E}{k}$. Taylor expanding this equation for $x = \beta\hbar\omega_E <<1 \implies kT>>\hbar\omega_E$, i.e the high temperature limit. We return the classical result $C_V = 3Nk$ as $e^x \approx 1+x$ and $x<<1$ so: 
+\begin{bux}
+    \begin{split}
+        C_V \approx 3NK x^2 \frac{1+x}{x^2} \approx 3Nk
+    \end{split}
+\end{bux}
+In the low temperature limit $kt<< \hbar \omega_E \implies T <<\theta_E$, so we have that $e^{\frac{\theta_E}{T}}>>1$ so:
+\begin{bux}
+    \begin{split}
+        C_V \approx 3Nk\left(\frac{\theta_E}{T} \right)^2e^{-\frac{\theta_E}{T}}
+    \end{split}
+\end{bux}
+However experiments indicated a universal behaviour of $C_V \sim T^3$, so something else is needed to fix this. 
+
+\end{itemize}
+
+
+\subsection{Debye frequency }
+\begin{itemize}
+    \item Enter Debye, If we work backwards, $C_V \sim T^3$ (as $T\rightarrow0 \implies \beta \rightarrow \infty$) implies $\braket{E} \sim T^4 \implies\ln(Z) \sim -\frac{1}{\beta^3} $. If we look back at the middle equation \ref{eqn:1.18} we see that the last term is the one that contributes to the heat capacity. However, if we take the limit $\lim_{\beta \rightarrow \infty}\ln(1-e^{-\beta \hbar \omega_i}) = 0 $. The way to fix this is to notice that if the frequencies $\omega_i$ are very small then they can make it so that even for large $\beta,~~\beta \omega_i$ can remain finite making $ e^{-\beta \hbar \omega_i}$   not go to $0$.  
+
+This is what Debye came up with, using the fact that only the low frequencies contribute to the measurable heat capacity, he set an upper bound on the frequencies called the Debye frequency $\omega_D$. We ignore any $\omega > \omega_D$.  The physics to explain this can be found by examining a lattice. Here,  the Debye frequency is $\omega_D \sim \frac{1}{a}$, where $a$ is the inter atomic distance. Suppose we have a wavelength $\lambda$ associated with a frequency $\omega$ st $\lambda < a$, then this wave cannot propagate through the lattice points. So assuming a constant propagation speed for all waves $\lambda \propto \frac{1}{\omega}$ implies we cant have any larger frequencies then $\omega_D$.  
+\end{itemize}
+
+
+\subsection{Density of frequencies }
+\begin{itemize}
+    \item We would like to know how these frequencies are distributed so that we may attempt to calculate the heat capacity.  For this we need the density of frequencies. This is $g(\omega)$ defined as the following: 
+\begin{bux}
+    \begin{split}
+\label{eqn:2.18}
+        g(\omega)  = \sum_{i=1}^{3N}\delta(\omega - \omega_i)
+    \end{split}
+\end{bux}
+Here $\omega_i$ are the discrete allowed frequencies of the lattice.  We can notice that $g(\omega)$ is a continuous function (we say there are $g(\omega)d\omega$ frequencies between $\omega$ and $\omega+ d\omega$). Despite this we know we cannot have infinite frequencies, so this density must be normalised in some way. For this we can use the fact that we know the number of frequencies we have must be equal to the number of degrees of freedom of the system.  To normalise we would usually integrate $g(\omega)$ from $0$ to $\infty$ and set the result $=3N$. But, we must remember that we don't care a bout $\omega> \omega_D$, so the upper bound can just be $\omega_D$. This looks like the following: 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.24}
+        \int_0^{\omega_D} g(\omega)d\omega = 3N
+    \end{split}
+\end{bux}
+\item We can construct an argument that will help us determine $g(\omega)$ using this normalisation condition. Consider two solids of the same volume $V$, one has an inter atomic distance $a$ and $N$ particles, the other has $a' =\frac{a}{l}$  so to have the same volume the number of particles must be scaled to $N'=l^3N$, as $V \sim N a^3$. Since $\omega_D \sim \frac{1}{a}\implies \omega_D' = l\omega_D'$. We can then see that for the second system we have: 
+\begin{bux}
+    \begin{split}
+        & \int_0^{l\omega_D} g(\omega)d\omega = 3Nl^3 \\  
+\implies & \int_0^{\omega_0} g(\tilde{\omega}l) l d \tilde{\omega} = 3Nl^3,~~~\omega = l \tilde{\omega} \\
+\implies & \int_0^{\omega_0} g(\tilde{\omega}l)  d \tilde{\omega} = 3Nl^2 \\
+\implies & \int_0^{\omega_0} g(\tilde{\omega}l)  d \tilde{\omega} = l^2 \int_0^{\omega_D}g(\omega)d\omega
+    \end{split}
+\end{bux}
+Where in the last step we are comparing to the first system where $3N = \int_0^{\omega_D}g(\omega)d\omega$.  This tells us that $g(\omega)$ is a homogeneous degree 2 function! ($g(l\omega)= l^2g(\omega)$). Then by Euler's theorem since this a single variable function $g(\omega) = A\omega^{2}$. We can find $A$ by subbing this into \ref{eqn:1.24}, resulting in $A= \frac{9N}{\omega_D^3}$.  In summery $g(\omega)$ can be written as:
+\begin{bux}
+    \begin{split}
+        g(\omega) = \begin{cases}
+            \frac{9N}{\omega_D^3}\omega^2,~~\omega<\omega_D \\
+            0,~~~~~~~~~\omega>\omega_D
+        \end{cases}
+    \end{split}
+\end{bux}
+
+\end{itemize}
+\subsection{General density of states}
+\label{genral density}
+\begin{itemize}
+    \item The definition of a density of states, we have had before was the sum of a delta functions of the energy levels, as well as for the density of frequencies in \ref{eqn:2.18}. This cant really be extended to something like momentum, where we know momentum is not quantised. the natural solution to this is to replace this with an integral. This then means we can interpret $W(p)dp$ as the number of microstates with momentum lying between $p$ and $p+dp$. 
+
+But we can remember there are other ways of expressing the number of microstates. We can also write:
+\begin{bux}
+    \begin{split}
+        \Omega=g\int\frac{d^3pd^3q}{h^3} 
+    \end{split}
+\end{bux}
+Where $g$ here is the degeneracy factor.  Integrating over the spacial co-ords $d^3q$ just gives us the volume $V$ and we can separate out the angle terms of the momentum giving us a factor of $4\pi$. If we then restrict this to microstates with momentum less than or equal to $P$ , we get that
+\begin{bux}
+    \begin{split}
+        &\Omega(P) = \frac{4\pi gV}{h^3}\int_0^{\infty}p^2dp = \frac{4\pi gV}{3h^3}P^3
+    \end{split}
+\end{bux}
+To find the density of microstates we simply differentiate with respect to $P$ and evaluate this at any general momentum $p$, so $W(p)dp$ is given by:
+\begin{bux}
+    \begin{split}
+\label{den}
+  &      W(p)dp=\frac{d}{dP}\left(\frac{4\pi gV}{3h^3}P^3\right)\bigg\rvert_{P=p}dp \\
+& \implies W(p)dp = \frac{4\pi gV}{h^3}p^2dp
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{Debye Heat Capacity}
+\begin{itemize}
+    \item Now we can go about calculating the heat capacity using the above density of frequencies $g(\omega)$, to do this we first calculate $\ln(Z)$, using what we had in \ref{eqn:1.18}, we can re-write this in terms of the density of frequencies. 
+\begin{bux}
+    \begin{split}
+        \ln(Z) = - &\beta V_0 - \sum_{i=1}^{3N} \frac{\beta\hbar\omega_i}{2} - \sum_{i=1}^{3N}\ln(1-e^{-\beta \hbar \omega_i})  \\
+         = - &\beta V_0 -  \frac{\beta\hbar}{2}\int_0^{\omega_D}\omega g(\omega)d\omega -\int_0^{\omega_D}g(\omega) \ln(1-e^{-\beta \hbar \omega_i}) d\omega
+    \end{split}
+\end{bux}
+We can write this as our definition of $g(\omega)$ \ref{eqn:1.24}, reduces the last equation to what we started with. We can then compute the average energy and the heat capacity as before: 
+\begin{bux}
+    \begin{split}
+      \braket{E} = &  V_0 +  \frac{\hbar}{2}\int_0^{\omega_D}\omega g(\omega)d\omega + \int_0^{\omega_D} \frac{A\omega^2\hbar e^{\beta\hbar\omega}}{e^{\beta\hbar\omega}-1} \\
+\implies &C_v =  k \int_0^{\omega_d}d\omega(A\omega^2)\frac{(\beta\hbar\omega)^2}{(e^{\beta\hbar\omega}-1)^2}e^{\beta\hbar\omega}\\
+ =&  \frac{9N}{k\omega_D^3}\left(\frac{kT}{\hbar}\right)^3\int_0^{x_D}dx\frac{x^4e^{x}}{(e^{x}-1)^2},~~~x=\beta\hbar\omega\\
+=&  9Nk\left(\frac{T}{\theta_D}\right)^3\int_0^{\frac{\theta_D}{T}}dx\frac{x^4e^{x}}{(e^{x}-1)^2},~~~\theta_D=\frac{\hbar\omega_D}{k}
+    \end{split}
+\end{bux}
+Here $\theta_D$ is the Debye temperature, i.e. the temperature of the highest frequency as $kT \sim E =\hbar \omega$.
+\item The remaining task is to calculate this integral, For this we need to consider some sort of limit as getting an an analytic result with limits is difficult. First we consider the low temperature limit, that is $T<<\theta_D \implies \frac{\theta_D}{T} \rightarrow \infty$. 
+\begin{bux}
+    \begin{split}
+\label{eqn:2.27}
+        & I =\int_0^{\infty}dx\frac{x^4e^{x}}{(e^{x}-1)^2}  = \int_0^{\infty}dx\frac{x^4e^{-x}}{(1-e^{-x})^2} \\
+& =  \int_0^{\infty}dxx^4\frac{d}{dx}\left(\frac{-1}{1-e^{-x}}\right) = -\int_0^{\infty}dxx^4\frac{d}{dx}\left(\sum_{k=0}^{\infty}e^{-kx}\right) \\
+& = \int_0^{\infty}dx\sum_{k=1}^{\infty}ke^{-kx}x^4 = \sum_{k=1}^{\infty}k\int_0^{\infty}x^4e^{-kx}dx \\
+& = \sum_{k=1}^{\infty}k\int_0^{\infty}\frac{u^4}{k^4}e^{-u}\frac{du}{k} ,~~~u=kx \\
+& = \sum_{k=1}^{\infty}\frac{1}{k^4}\int_0^{\infty}u^4e^{-u}du = \zeta(4)\Gamma(5) = \frac{4\pi^4}{15}
+    \end{split} 
+\end{bux}
+This means we can write the heat capacity as: 
+\begin{bux}
+    \begin{split}
+        C_v \simeq \frac{12Nk\pi^4}{5}\left(\frac{T}{\theta_D}\right)^3
+    \end{split}
+\end{bux}
+This is the required behaviour at low temperatures. 
+\item In the high temperature limit $T>>\theta_D$: 
+\begin{bux}
+    \begin{split}
+        C_v  \simeq&  9Nk\left(\frac{T}{\theta_D}\right)^3\int_0^{\frac{\theta_D}{T}}dx\frac{x^4(1+x+\cdot \cdot \cdot ))}{(1+x+\cdot \cdot \cdot -1)^2} \\
+=&  9Nk\left(\frac{T}{\theta_D}\right)^3\int_0^{\frac{\theta_D}{T}}dx\frac{x^4}{x^2} = 3Nk
+    \end{split}
+\end{bux}
+The Dulong–Petit law as needed. 
+\end{itemize}
+\newpage
+\section{Theory of ideal subsystems of identical particles}
+\begin{itemize}
+    \item We consider a system of $N$ particles in thermal and diffusive contact with a reservoir. A single particle can take energies $\epsilon_0 \leq \epsilon_1\leq ...$. At any such energy $\epsilon_i$ there are $n_i$ particles. We call this the occupation number. The total number of particles can then be expressed as $N=\sum_{i=1}^{\infty}n_i$, and the total energy as $E=\sum_{i=0}^{\infty}n_i\epsilon_i$. If we want to study this system with the canonical ensemble, it is a little difficult as the partition function takes the form: 
+\begin{bux}
+    \begin{split}
+          Z = \sum_{ \{ n_i \} } e^{-\beta \sum_in_i\epsilon_i}\delta_{\sum_in_i,N}
+    \end{split}
+\end{bux}
+This is hard to deal with, but we can make it easier if we deal with the Grand canonical ensemble: 
+\begin{bux}
+    \begin{split}
+        & \Xi(T,V,\mu)  = \sum_{N=0}^{\infty}e^{\beta\mu N}Z =   \sum_{N=0}^{\infty}e^{\beta\mu N}\sum_{ \{ n_i \} } e^{-\beta \sum_in_i\epsilon_i}\delta_{\sum_in_i,N} \\
+  &  = \sum_{ \{ n_i \} } e^{\beta\mu\sum_in_i}e^{\beta \sum_in_i\epsilon_i} = \sum_{ \{ n_i \} } e^{\beta\sum_in_i(\mu- \epsilon_i)} \\
+ \implies \Xi =& \sum_{ \{ n_i \} } e^{\beta\sum_in_i(\mu- \epsilon_i)}  =\left( \sum_{  n_0  } e^{\beta n_0(\mu- \epsilon_i)}\right)\left( \sum_{  n_1 } e^{\beta n_1(\mu- \epsilon_i)}\right)\cdot\cdot \cdot \\
+& \implies \Xi(T,V,\mu) = \prod_i\left(\sum_{n_i}e^{\beta n_i(\mu-\epsilon_i)}\right) = \prod_i\xi_i
+    \end{split}
+\end{bux}
+Here $\xi_i$ is the partition function for particles occupying the $i$th level. 
+\end{itemize}
+
+\subsection{Bose-Einstein and Fermi-Dirac statistics}
+\begin{itemize}
+\item If any number of particles can occupy a single state $n_i =0,1,2,...$, the particles follow \textit{Bose-Einstein statistics} (and have integer spin). These particles are called \emph{Bosons}. 
+
+If a single level can be occupied by at most \textit{one} particle, so $n_i=0,1$. Then the particles follow \emph{Fermi-Dirac statistics} (and have half integer spin). These particles are called \emph{Fermions} these conditions the individual partition functions take the form: 
+\begin{bux}
+    \begin{split}
+         \xi_i  = \begin{dcases}
+            \sum_{n_i}e^{\beta n_i(\mu-\epsilon_i)} = \frac{1}{1-e^{\beta(\mu-\epsilon_i)}},~~~\text{Bosons} \\
+    \sum_{n_i}e^{\beta n_i(\mu-\epsilon_i)} = 1 + e^{\beta(\mu - \epsilon_i)},~~~\text{Fermions}
+        \end{dcases}
+    \end{split}
+\end{bux}
+We must note that in the case of Bosons, we are restricted to having $\mu<\epsilon$, otherwise we cannot sum the geometric series. 
+
+\item The full partition functions can then be written as one with a plus denoted for Fermions and a minus for Bosons:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.4}
+        \Xi_{\pm} = \prod_i(1\pm ze^{-\beta\epsilon_i})^{\pm1}
+    \end{split}
+\end{bux}
+Here $z= e^{\beta\mu}$ , and is called the \emph{fugacity}. Naturally we want to find $\braket{n_i}$ the average number of particles in the $i$th level, this then means $\braket{N} = \sum_i\braket{n_i} = -\left(\frac{\partial \ln(\Xi)}{\partial \mu}\right) = z\frac{\partial \ln(\Xi)}{\partial z}$.  So we can write $\braket{n_i} = z\frac{\partial \ln(\zeta_i)}{\partial z}$, so computing this we see: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.5}
+        \braket{n_i} =  z\frac{\partial \ln((1\pm ze^{-\beta\epsilon_i})^{\pm})}{\partial z} &= \frac{\pm ze^{-\beta\epsilon_i}}{(1\pm ze^{-\beta\epsilon_i})} = \frac{1}{ \frac{e^{\beta\epsilon_i}}{z}\pm 1}  \\ 
+   \implies \braket{n_i} =& \frac{1}{ e^{\beta(\epsilon_i-\mu)}\pm 1}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{Non-relativistic Bosonic gas}
+\begin{itemize}
+    \item We consider a bosonic gas enclosed in a volume $V$. The possible energy levels are then:
+\begin{bux}
+        \begin{split}
+\label{eqn:3.6}
+          \epsilon_i = \frac{\hbar^2i^2}{2mL^2},~~i=0,\pm1 ,\pm2,...  
+        \end{split}
+    \end{bux}
+Here $L$ is the characteristic length and has $L^3 \sim V$. We can also note that the energy is always positive and we must have that $\mu \leq \epsilon \implies \mu\leq0$.  If we look at the ground state occupation number we see $\braket{n_0} = \frac{z}{1-z}$, so we must have that $0<z<1$. We can then write down the log of the partition function of the system using \ref{eqn:3.4}: 
+\begin{bux}
+    \begin{split}
+        \ln(\Xi) = - \sum_i\ln(1- ze^{-\beta\epsilon_i})
+    \end{split}
+\end{bux}
+And in the same manner as we did in the section on the Debye model, we can write the sum over specific energy levels $\epsilon_i$ as the integral with the density of states $W(\epsilon)$ defined as $W(\epsilon) = \sum_i\delta(\epsilon-\epsilon_i)$. This means we can write: 
+\begin{bux}
+    \begin{split}
+         \ln(\Xi)  = - \int_0^{\infty}d\epsilon W(\epsilon) \ln(1- ze^{-\beta\epsilon})
+    \end{split}
+\end{bux}
+\item Then from the definition of $W(\epsilon)$ we can separate it out and write it as: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.9}
+        W(\epsilon) =&  \sum_i\delta(\epsilon-\epsilon_i) = \delta(\epsilon) + \sum_{i \neq 0}\delta(\epsilon-\epsilon_i) \\
+= & \delta( \epsilon)+ \sum_{i \neq 0}\delta(\epsilon-\frac{\hbar^2i^2}{2mL^2})
+    \end{split}
+\end{bux}
+For large $L$ (large with respect to $\hbar$), we have that this sum can be approximated by the integral as long as we account for the degeneracy of energy states, i.e.  the number of different ways each energy level can be reached. This degeneracy factor turns out to be $g=2s+1$, which depends on the Bosonic system, $s$ here is the spin of the specific Bosons, this is related to the number of possible different z-angular momenta, $m$, which is $2l+1$. $W(\epsilon)$, can then be written as: 
+\begin{bux}
+    \begin{split}
+        W(\epsilon) \approx \delta(\epsilon) + g \int_0^{\infty} d^3i\delta(\epsilon-\frac{\hbar^2i^2}{2mL^2})
+    \end{split}
+\end{bux}
+Then since momentum $\textbf{p}$ is related to the wave vector $\textbf{k}$ by $\textbf{p} = \hbar \textbf{k}$, and $k_{\alpha} = \frac{2\pi i_{\alpha}}{L} \implies p_{\alpha} = \frac{hi_{\alpha}}{L}$. So changing co-ords to momentum:  
+\begin{bux}
+    \begin{split}
+        W(\epsilon) \approx \delta(\epsilon) + \frac{gV}{h^3} \int_0^{\infty} d^3p\delta(\epsilon-\frac{p^2}{2m})
+    \end{split}
+\end{bux}
+The $V$ here comes from using $L^3\sim V$. We can then use $d^3p = p^2dpd\Omega$ and the no angle dependence to pick up a factor of $(4\pi)$. Then setting  $t= \frac{p^2}{2m}$, so $dt = \frac{pdp}{m} = \frac{1}{m}\left(2mt\right)^{1/2}dp$ , we get the following: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.12}
+          W(\epsilon) \approx&  \delta(\epsilon) + \frac{gV(4\pi)m(2m)^{1/2}}{h^3} \int_0^{\infty} t^{1/2}\delta(\epsilon-t) dt \\ 
+ = & \delta(\epsilon) + \frac{gV(2\pi)(2m)^{3/2}}{h^3} \epsilon^{1/2}
+    \end{split}
+\end{bux}
+\item Now we go back to computing $\ln(\Xi)$: 
+\begin{bux}
+    \begin{split}
+          \ln(\Xi)  =&  - \int_{\{-\varepsilon,\varepsilon<<1\}}^{\infty}d\epsilon \delta(\epsilon) \ln(1- ze^{-\beta\epsilon}) - \int_{0}^{\infty}d\epsilon 
+W(\epsilon) \ln(1- ze^{-\beta\epsilon}) \\
+ =& -\ln(1-z) - \frac{gV(2\pi)(2m)^{3/2}}{h^3}\int_0^{\infty}d\epsilon \epsilon^{1/2}\ln(1- ze^{-\beta\epsilon})
+    \end{split}
+\end{bux}
+Focusing on solving this integral, we can see through taylor expansion that we can write it in the following way: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.14}
+        I =& \int_0^{\infty}d\epsilon \epsilon^{1/2}\ln(1- ze^{-\beta\epsilon}) = \int_0^{\infty}d\epsilon \epsilon^{1/2}\sum_{l=1}^{\infty}\frac{(-1)(ze^{-\beta\epsilon})^l}{l} \\
+ =& \sum_{l=1}^{\infty}\frac{(-1)(z)^l}{l}\int_0^{\infty}d\epsilon \epsilon^{1/2}e^{-l\beta\epsilon} = \sum_{l=1}^{\infty}\frac{(-1)(z)^l}{l^2}\frac{1}{\beta}\frac{1}{(\beta l^{1/2})}\int_0^{\infty}t^{1/2}e^{-t}dt , ~~~t=l\beta\epsilon
+    \end{split}
+\end{bux}
+The integral here can just be recognised as $\Gamma(\frac{3}{2})=\frac{\sqrt{\pi}}{2}$ so we are left with: 
+\begin{bux}
+    \begin{split}
+        I =  -\frac{\sqrt{\pi}\beta^{-3/2}}{2}\sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}
+    \end{split}
+\end{bux}
+\end{itemize}
+\subsubsection{Poly-Logarithms}
+\begin{itemize}
+\item This function is called a poly-logarithm $\rm Li_{5/2}(z) = \sum_{l=1}^{\infty}\frac{z^l}{l^{5/2}}$. More generally: 
+\begin{bux}
+    \begin{split}
+       \rm  Li_{r}(x) = \sum_{l=1}^{\infty}\frac{x^l}{l^{r}}
+    \end{split}
+\end{bux}
+And these functions have the property that: 
+\begin{bux}
+    \begin{split}
+        x\frac{d}{dx}\rm Li_r(x) =\rm  Li_{r-1}(x)
+    \end{split}
+\end{bux}
+They also have a integral representation for $x\in \mathbb{C}$: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.18}
+     \rm    Li_r(x) = \frac{1}{\Gamma(r)}\int_0^{\infty}\frac{t^{r-1}}{\frac{e^t}{x}-1}dt
+    \end{split}
+\end{bux} 
+It can  be shown that we can integrate by parts our integral in \ref{eqn:3.14} and arrive at this integral representation of the poly logarithm. 
+\item It can also be shown that:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.19}
+        \rm Li_{r}(1) = \zeta(r)
+    \end{split}
+\end{bux}
+Which we can notice diverges for $0\leq r\leq1$. 
+
+\item Returning to the problem at hand we can now write down our partition function as follows: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.20}
+         \ln(\Xi) =    -\ln(1-z) + gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2}\rm Li_{5/2}(z)
+    \end{split}
+\end{bux}
+\end{itemize}
+\subsection{Bose-Einstein Condensation}
+\begin{itemize}
+\item We would then like to know the average particle number $\braket{N}$ for this system, to calculate this we can use our expression from \ref{eqn:1.8} so that:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.21}
+        \braket{N} = \frac{z}{1-z} + gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2}\rm Li_{3/2}(z)
+    \end{split}
+\end{bux}
+The first term here must be the number of particles in the ground state $\braket{n_0}$, as this term comes from the $\delta(\epsilon)$ we had in our density of states function, corresponding to the state with $0$ energy. This then means that the latter term is the average number of particles in excited state $\braket{N_{\rm ex}}$.   Writing this out:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.22}
+        & \braket{n_0} = \frac{z}{1-z} \\ 
+        \braket{N_{\rm ex}} &=gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2}\rm Li_{3/2}(z)
+    \end{split}
+\end{bux}
+\item Next we would like to know the average energy of the system. Using  \ref{eqn:1.10} : 
+\begin{bux}
+    \begin{split}
+        \braket{E}= \mu \braket{N}- & \frac{\partial}{\partial \beta}\left(-\ln(1-z)\right) + gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2}\frac{\partial}{\partial \beta}\left(\rm Li_{5/2}(z)\right)  \\
+& -gV\left(\frac{2\pi m}{ h^2}\right)^{3/2}\rm Li_{5/2}(z)(-\frac{3}{2\beta^{5/3}}) \\
+ = \mu \braket{N} -\mu z  &\frac{\partial \ln \Xi}{\partial z}-gV\left(\frac{2\pi m}{ h^2}\right)^{3/2}\rm Li_{5/2}(z)(-\frac{3}{2\beta^{5/3}})
+    \end{split}
+\end{bux}
+Here we have used $\frac{\partial}{\partial \beta} = \mu z \frac{\partial}{\partial z}$, so that the first term and the second and third terms can be recognised as the same, so they cancel out leaving us with just the last term. What we have done here seems extremely counter intuitive, when taking the derivative with respect to $z$ we consider $\beta$ to not be a function of $z$, but when taking the derivative with respect to $\beta$ we do consider $z$ as a function of $\beta$. This is rather silly, but the reason is, $\beta$ is well defined with out $z$ as $\beta = z^{\beta \mu}$, but $z$ is only defined as a function of $\beta$.  
+\begin{bux}
+    \begin{split}
+\label{eqn:3.23}
+        \braket{E} =\frac{3}{2 \beta} gV\left(\frac{2\pi m}{ h^2 \beta}\right)^{3/2}\rm Li_{5/2}(z)
+    \end{split}
+\end{bux}
+\item Now if we briefly consider changing to the canonical ensemble. Here we now have a fixed number of particles $N$. Looking at the above expression for $N_{\rm ex}$ \ref{eqn:3.22}, since poly-logs are monotonic and $0<  z \leq 1$, this means $N_{\rm ex}$ is bounded for finite temperature. 
+\item But what happens if we have more particles in the system then this limiting value? then it is natural that the number of excited states will be at this maximum while, the rest will be pushed \emph{en mass } in to the ground state, who's capacity is essentially unlimited (as $z$ goes to $1$, $\frac{z}{1-z}$ goes to infinity). The point at which this starts to happen is the critical temperature $T_c$, and is when $z\simeq 1$ and $N_{\rm ex} \simeq N$, this then means from \ref{eqn:3.21} we have that:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.25}
+        T_c = \frac{h^2}{2 \pi m k}\left( \frac{N}{ Vg \rm Li_{3/2}(1)}\right)^{2/3}
+    \end{split}
+\end{bux}
+\end{itemize}
+\subsubsection{Low temperature limit}
+\begin{itemize}
+\item When $T<<T_c$ we have that a substantial number of particles sit in the ground state, in this case we see by inverting the expression $\braket{n_0}$ in \ref{eqn:3.22} that:
+\begin{bux}
+    \begin{split}
+        z = \frac{\braket{n_0}}{1+\braket{n_0}}  = \frac{1}{1 + \frac{1}{\braket{n_0}}}\approx 1 - \frac{1}{\braket{n_0}}
+    \end{split}
+\end{bux}
+So since $\braket{n_0}$ is large $z \simeq 1$ is consistent.   We can also re-write our expression for $N_{\rm ex}$ in terms of the critical temperature $T_c$, this takes the form:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.26}
+        N_{\rm ex}  = N\left(\frac{T}{T_c}\right)^{3/2}\frac{\rm Li_{3/2}(z)}{Li_{3/2}(1)} \approx N\left(\frac{T}{T_c}\right)^{3/2}
+    \end{split}
+\end{bux}
+Which as expected is very small for $T<<T_c$. This also implies that $\braket{n_0} \approx N(1-(\frac{T}{T_c})^{3/2})$ 
+\end{itemize}
+
+\subsubsection{High temperature limit}
+\begin{itemize}
+    \item In the classical regime $T>>T_c$, $z<<1$ we have that $\rm Li_{5/2}(z)\approx z$, this can be seen by looking at the taylor expansion. This means that the number of excited particles as per the first part of \ref{eqn:3.26} is:
+\begin{bux}
+    \begin{split}
+        N_{\rm ex}\approx N\left(\frac{T}{T_c}\right)^{3/2}z 
+    \end{split}
+\end{bux}
+But we must also have that $N_{\rm ex} \approx N$, due to most particles being excited, $\implies z \approx \left(\frac{T_c}{T}\right)^{3/2}$ so $z<<1$ as needed. 
+\end{itemize}
+
+\subsubsection{Pressure of Bose-Einstein gas}
+\begin{itemize}
+    \item One way of writing the grand Canonical potential is $\mathcal{J} = -PV = -kT \ln \Xi$, so using our expression for the partition function \ref{eqn:3.20}:
+\begin{bux}
+    \begin{split}
+       PV = \frac{1}{\beta }&  \left( -\ln(1-z) + gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2}\rm Li_{5/2}(z)\right) \\ 
+&  = \frac{2}{3}\braket{E} -kT \ln (1-z)
+    \end{split}
+\end{bux}
+Where we have used our expression for the average energy \ref{eqn:3.23} . What can then be noticed is that for $T>>T_c$, $z<<1$ and $T<<T_c$, the temperature is generally small, so this second term can nearly always be neglected, leaving us with:
+\begin{bux}
+    \begin{split}
+        P = \frac{2\braket{E}}{3V}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsubsection{Energy distribution }
+\begin{itemize}
+    \item We would also like to know the average number of particles with in energies $\{\epsilon ,\epsilon + d\epsilon\}$, to compare to classical mechanics. In order to compare to classical mechanics we can ignore the ground state as it barley contributes. 
+Since $d\braket{N} = \braket{n(\epsilon)}W_c(1,\epsilon)d\epsilon$ and $\int d\braket{N} = N_{\rm ex}$ is given by \ref{eqn:3.21},  This implies that: 
+\begin{bux}
+    \begin{split}
+        p(\epsilon)d\epsilon = \frac{\braket{n(\epsilon)}}{N_{\rm ex}}W_c(1,\epsilon)d\epsilon = \frac{\braket{n(\epsilon)}}{\rm Li_{3/2}(z)}\frac{2}{\sqrt{\pi}}\epsilon^{1/2}\beta^{3/2}d\epsilon
+    \end{split}
+\end{bux}
+Where we have used the fact that $W_c(1,\epsilon)$ is given by \ref{eqn:3.12}, ignoring the ground state
+ as that corresponds to $\epsilon=0$.  This should in the classical limit look like the Maxwell Boltzmann
+  distribution. Which we can see is the case as in the classical limit $\braket{n(\epsilon)} \simeq ze^{-\beta \epsilon}$and $\rm Li_r(z) \simeq z$, so we have: 
+\begin{bux}
+    \begin{split}
+        p(\epsilon)d\epsilon = e^{-\beta \epsilon}\frac{2}{\sqrt{\pi}}\epsilon^{1/2}\beta^{3/2}d\epsilon
+    \end{split}
+\end{bux}
+As needed
+\end{itemize}
+ 
+\subsubsection{Heat Capacity}
+\begin{itemize}
+    \item And of course we couldn't analyze a gas if we didn't look at its heat capacity! 
+    But how do we compute the heat capacity if we usually keep $N$ constant? 
+    Well lets keep $N$ constant and see if we get the expected classical result $C_V =3/2NK$ 
+    in the classical limit. For fixed $N$ we know the heat capacity is just the derivative of 
+    the average energy, wrt $T$. So using the expression in \ref{eqn:3.23} , 
+    and using the $T>>T_c$ approximations so that $\rm Li_{5/2}(z)\simeq z$, we have that: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.32}
+        C_V = \frac{3}{2}gV\left(\frac{2\pi mkT}{ h^2 }\right)^{3/2}\left[\frac{5}{2}kz + kT\left(\frac{\partial z}{\partial T}\right)_{V,N}\right]
+    \end{split}
+\end{bux}
+Since we have fixed $N$, computing $\left(\frac{\partial z}{\partial T}\right)_{V,N}$ is not trivial as it was before.  Instead what we can do now is impose the condition that $\frac{\partial N}{ \partial T}=0$, so applying this to \ref{eqn:3.21}, with $N \simeq N$ and $\rm Li_{3/2}(z)\simeq z$ we get:
+\begin{bux}
+    \begin{split}
+       0 = gV&\left(\frac{2\pi m k}{h^2}\right)^{3/2}\rm\left[\frac{3}{2}T^{1/2}z + T^{3/2}\left(\frac{\partial z}{\partial T}\right)_{V,N}\right] \\
+& \implies \left(\frac{\partial z}{\partial T}\right)_{V,N} \simeq -\frac{3z}{2T}
+    \end{split}
+\end{bux}
+We can then plug this into our above expression for the heat capacity \ref{eqn:3.32}: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.35}
+        C_V = &\frac{3}{2}gV\left(\frac{2\pi mkT}{ h^2 }\right)^{3/2}[kz] \\
+& \implies C_V = \frac{3}{2}Nk 
+    \end{split}
+\end{bux}
+Here we have used the fact that $N$ takes the form \ref{eqn:3.21}.   This has all been in the classical limit, but we would also like to know the behaviour of the heat capacity at $T \sim T_c$ and $T<<T_c$.   In this region we can write the heat capacity as: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.36}
+        C_V = \frac{3}{2}gV\left(\frac{2\pi mkT}{ h^2 }\right)^{3/2}\left[\frac{5}{2}k \rm Li_{5/2}(z) + kT\rm Li_{3/2}(z)\frac{1}{z}\left(\frac{\partial z}{\partial T}\right)_{V,N}\right]
+    \end{split}
+\end{bux}
+So once again we impose $\frac{\partial N}{\partial T}=0 $: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.37}
+        0 = gV&\left(\frac{2\pi m k}{h^2}\right)^{3/2}\rm\left[\frac{3}{2}T^{1/2}\rm Li_{3/2}(z) + T^{3/2}\frac{\rm Li_{1/2}(z)}{z}\left(\frac{\partial z}{\partial T}\right)_{V,N}\right] \\
+& \implies \left(\frac{\partial z}{\partial T}\right)_{V,N} \simeq -\frac{3}{2T}\frac{z\rm Li_{3/2}(z)}{\rm Li_{1/2}(z)}
+    \end{split}
+\end{bux}
+\item We would then like to determine the the behaviour of $\rm Li_{1/2}(z)$ for $z$ close to $1$, ($\rm Li_{1/2}(1)$ diverges as per \ref{eqn:3.19}).  To do this we look at the integral form \ref{eqn:3.18}. Here, when $z\rightarrow1$, the integral diverges for $t<<1$. So we re-write the integral as follows:
+\begin{bux}
+    \begin{split}
+         \rm    Li_{1/2}(z) = \frac{1}{\Gamma(1/2)}\left(\int_0^{\epsilon}\frac{t^{-1/2}}{\frac{e^t}{z}-1}dt+\int_{\epsilon}^{\infty}\frac{t^{-1/2}}{\frac{e^t}{z}-1}dt\right)
+    \end{split}
+\end{bux}
+The second term here is finite so we will just call it a constant $A$. The first term can then be re-written, as $t<<1$ and $\epsilon<<1$:
+\begin{bux}
+    \begin{split}
+           \rm    Li_{1/2}(z) =& \frac{1}{\Gamma(1/2)}\int_0^{\epsilon}\frac{t^{-1/2}}{z^{-1}(t+1)-1}dt+A \\
+&=  \frac{z}{\Gamma(1/2)}\int_0^{\epsilon}\frac{t^{-1/2}}{(1-z)+t}dt+A 
+    \end{split}
+\end{bux}
+So if we let $U = \left(\frac{t}{1-z}\right)^{1/2}$, then:
+\begin{bux}
+    \begin{split}
+          \rm    Li_{1/2}(z) =  \frac{2z}{(1-z)^{1/2}\Gamma(1/2)}\int_0^{\epsilon}\frac{du}{1+u^2}+A
+    \end{split}
+\end{bux}
+This integral can then be recognised as $\arctan(\epsilon)$ (as $\arctan(0)=0$), so we can say in the limit as $z\rightarrow 1$,  $\rm Li_{1/2}(z)$ behaves like:
+\begin{bux}
+    \begin{split}
+        \rm Li_{1/2}(z) \propto z(1-z)^{-1/2} 
+    \end{split}
+\end{bux}
+\item Returning to our expression for $\left(\frac{\partial z}{\partial T}\right)$ in \ref{eqn:3.37}, 
+\begin{bux}
+    \begin{split}
+        \left(\frac{\partial z}{\partial T}\right)_{V,N} \propto -\frac{3}{2T}\frac{z\rm Li_{3/2}(z)}{z(1-z)^{-1/2} }
+    \end{split}
+\end{bux}
+Then since $N$ can be expressed as is it is in \ref{eqn:3.20} (we are close to the critical temperature we can ignore the ground state), we can write this as:
+\begin{bux}
+    \begin{split}
+         \left(\frac{\partial z}{\partial T}\right)_{V,N} \propto \frac{N}{T^{5/2}}\sqrt{1-z(T)}
+    \end{split}
+\end{bux}
+This is a differential equation with the boundary condition that $z(1)=T_c$, and we get the solution:
+\begin{bux}
+    \begin{split}
+        z(T) \simeq 1 - b(\frac{T-T_c}{T_c})^2
+    \end{split}
+\end{bux}
+Where $b$ is a constant that depends on various constants but not on $N$.  This means we can finally write the heat capacity from \ref{eqn:3.36},  for $T\rightarrow T_c^+$:
+\begin{bux}
+    \begin{split}
+        C_V \simeq \frac{15}{4}(\frac{\rm Li_{5/2}(1)}{\rm Li_{3/2}(1)})\frac{T}{T_c}^{3/2} - C \left(\frac{T-T_c}{T_c}\right)
+    \end{split}
+\end{bux}
+Where here $C$ is a constant and we have used the above expression of $T_c$ \ref{eqn:3.25}. Comparing this result to \ref{eqn:3.35} , we can see that $C_V$ is continuous as $T\rightarrow T_c$. 
+
+\item We can then see that $\left(\frac{dC_V}{dT}\right)$ is discontinuous as $T \rightarrow T_c$. Since this derivative will naturally depend on $\left(\frac{dz}{dT}\right)$ and for $T \rightarrow T_c^+$:
+\begin{bux}
+    \begin{split}
+        z  \simeq 1 - b(\frac{T-T_c}{T_c})^2
+    \end{split}
+\end{bux}
+Where as for $T\rightarrow T_c^-$:
+\begin{bux}
+    \begin{split}
+        Z = (1+\frac{1}{\braket{n_0}})^{-1} \simeq \left(1+\frac{1}{ N(1-(\frac{T}{T_c})^{3/2})}\right)^{-1} 
+    \end{split}
+\end{bux}
+So $\left(\frac{dz}{dT}\right) = \mathcal{O}(1)$ for $T>T_c$ and $\left(\frac{dz}{dT}\right) = \mathcal{O}(\frac{1}{N}) $ for $T<T_c$.  This makes $C_V$ discontinuous in the thermodynamic limit when $N$ becomes very large.   
+
+\end{itemize}
+
+\subsubsection{What is, and what is not BEC?}
+\begin{itemize}
+    \item If we consider the energy difference between the first excited state and the ground state $\epsilon_1-\epsilon_0 = \frac{\hbar^2}{2mV^{2/3}}$. Then if we have a system with thermal energy $kT<\epsilon_1-\epsilon_0$, then naturally since they do not have enough energy, all particles will sit in the ground state. This is not BEC! BEC (Bose Einstein condensation) occurs in macroscopic large systems where $ \frac{\hbar^2}{2mV^{2/3}}<<kT<<kT_c$. Here almost all particles populate the ground state even though they they have enough thermal energy to classically not do so. It is a purely quantum mechanical phenomena. 
+\end{itemize}
+
+\subsection{Fermionic gases}
+\begin{itemize}
+    \item We start just as we did with the bosonic gas \ref{eqn:3.6}, with the energies that are obtained from the free-particle wavefunction: 
+\begin{bux}
+        \begin{split}
+          \epsilon_i = \frac{\hbar^2i^2}{2mL^2},~~i=0,\pm1 ,\pm2,...  
+        \end{split}
+    \end{bux}
+And we can also write down the log of the partition function via \ref{eqn:3.4}:
+\begin{bux}
+    \begin{split}
+        \ln(\Xi) =  \sum_i\ln(1+ ze^{-\beta\epsilon_i})
+    \end{split}
+\end{bux}
+This time however we have that the fugacity $z\in (0,\infty)$. Once again we will treat this semi-classically converting the above sum into an integral with the density states:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.50}
+          \ln(\Xi) = \ln(1+z) + \int_0^{\infty} d\epsilon W_c(1,\epsilon)\ln(1+ze^{-\beta\epsilon})
+    \end{split}
+\end{bux}
+Where we have already separated the ground state energy here with the first term. For a non-relativistic gas we have that from \ref{eqn:3.12} that $W_c(1,\epsilon)\propto \epsilon^{1/2}$, so we can write the second term above in \ref{eqn:3.50} as: 
+\begin{bux}
+    \begin{split}
+        \int_0^{\infty} d\epsilon W_c(1,\epsilon)\ln(1+ze^{-\beta\epsilon}) \propto \int_0^{\infty} d\epsilon \epsilon^{1/2}\ln(1+ze^{-\beta\epsilon})
+    \end{split}
+\end{bux}
+We will call this integral $I$, so that if we integrate by parts, the boundary terms make the first term vanish leaving us with:
+\begin{bux}
+    \begin{split}
+        I =- \frac{2\beta}{3}\int_0^{\infty}\frac{\epsilon^{3/2}e^{-\beta\epsilon}}{1+\frac{e^{-\beta\epsilon}}{z}}d\epsilon
+    \end{split}
+\end{bux}
+So with the substitution $x=\beta\epsilon$ this becomes:
+\begin{bux}
+    \begin{split}
+          I = -\frac{2}{3\beta^{3/2}}\int_0^{\infty}\frac{x^{3/2}}{1+\frac{e^{x}}{z}}dx
+    \end{split}
+\end{bux}
+The integral here can then be recognised up to a factor of $\Gamma(5/2)=3\pi/4$ as the poly log of $-z$ so $\rm Li_{5/2}(-z)$ as per \ref{eqn:3.18}. This means \ref{eqn:3.50} becomes:
+\begin{bux}
+    \begin{split}
+          \ln(\Xi) = \ln(1+z)  -gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2}\rm Li_{5/2}(-z)
+    \end{split}
+\end{bux}
+\item From the definition of fermions we know the ground state can hold at most one particle, so in our following calculations we can ignore the ground state, which corresponds to dropping the first term above.  
+
+We can now calculate the average particle number via \ref{eqn:1.8} leading to:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.55}
+        \braket{N} =- gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2}\rm Li_{3/2}(-z)
+    \end{split}
+\end{bux}
+And using \ref{eqn:1.10} the average energy is:
+\begin{bux}
+    \begin{split}
+        \braket{E} = -\frac{2}{3\beta}gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2} \rm Li_{5/2}(-z)
+    \end{split}
+\end{bux}
+This involves the same tricks we used in the Bosonic case \ref{eqn:3.23}. We can then notice that this is simply just $\braket{E} = \frac{2}{3\beta}\ln \Xi$, and recalling grand canonical potential is just $\mathcal{J}=-PV = -\frac{1}{\beta}\ln \Xi$, we can write:
+\begin{bux}
+    \begin{split}
+        \braket{E} = \frac{3}{2}PV
+    \end{split}
+\end{bux}
+\end{itemize}
+\subsubsection{Classical and quantum regimes}
+\begin{itemize}
+\item It is however most usefully to write $\braket{E}$ as:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.58}
+        \braket{E} = \frac{3}{2\beta} \braket{N}\frac{\rm Li_{5/2}(-z)}{\rm Li_{3/2}(-z)}
+    \end{split}
+\end{bux}
+As then we can consider the classical limit, i.e the limit as $z<<1$ (this is because $T$ is large). In this limit $\rm Li_{r}(-z) \approx -z$, so we have:
+\begin{bux}
+    \begin{split}
+        \braket{E} \simeq \frac{3}{2}kT\braket{N}
+    \end{split}
+\end{bux}
+\item Where as in the low temperature limit, i.e. the quantum regime ($z>>1$), it is useful to use the following expansion of poly logs in powers of $\ln z$:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.60}
+     &   \rm Li_{r}(-z) =  \frac{(\ln z)^{r}}{\Gamma(r+1)}\left[1+2r\sum_{j=1}^{\infty}(r-1)\cdot\cdot\cdot(r-(2j-1))\left(1-\frac{1}{2^j}\right)\frac{\zeta(2j)}{(\ln z)^{2j}}\right] \\
+&   \rm Li_{r}(-z) = \frac{(\ln z)^{r}}{\Gamma(r+1)}\left(1+\frac{\pi^2}{6}\frac{r(r+1)}{(\ln z)^2}+\cdot\cdot\cdot\right) 
+    \end{split}
+\end{bux}
+We can then write $\braket{E}$ from \ref{eqn:3.58} as:
+\begin{bux}
+    \begin{split}
+        \braket{E} \simeq \frac{3}{5}kT\braket{N}\ln z
+    \end{split}
+\end{bux}
+Where here we have used only the first term from \ref{eqn:3.60}.  
+
+\end{itemize}
+
+\subsection{Fermi-Energy}
+\begin{itemize}
+    \item Using the expansion \ref{eqn:3.60}, we can write  \ref{eqn:3.55}, for $z>>1,  (T\rightarrow 0)$ as: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.62}
+        \braket{N} \simeq  gV\left(\frac{2\pi m}{\beta h^2}\right)^{3/2}\rm \frac{(\ln z)^{3/2}}{\Gamma(5/2)}
+    \end{split}
+\end{bux}
+And since $z=e^{\beta\mu}\implies \ln z = \beta\mu$, so we can see that the $\beta$'s will cancel, meaning there is a low enough temperature, at which $\mu$ becomes constant, even for fixed $\braket{N}=N$. This value of $\mu$ we will call $\epsilon_F$, for reasons we will see later, and is given by:
+\begin{bux}
+    \begin{split}
+        \epsilon_F = \left(\frac{h^2}{2\pi m}\right) \left(\frac{\Gamma(5/2)N}{gV}\right)^{2/3} =  \left(\frac{h^2}{2\pi m}\right) \left(\frac{3\pi N}{4gV}\right)^{2/3}  = \lim_{T\rightarrow0}\mu
+    \end{split}
+\end{bux}
+Where we have used $\Gamma(5/2)=3\pi/4$.  What is very interesting about this is that we can now see that the average occupancy level as given by \ref{eqn:3.5}, now turns into a step function as $T\rightarrow 0$, depending on weather the energy $\epsilon$ is above or below this $\epsilon_F$: 
+\begin{bux}
+    \begin{split}
+         \implies \braket{n(\epsilon)} =& \frac{1}{ e^{\beta(\epsilon_i-\mu)}+ 1} = \begin{cases}
+            1,~~ \epsilon_F>\epsilon \\
+            0, ~~ \epsilon_F< \epsilon
+         \end{cases}
+    \end{split}
+\end{bux}
+This is because the sign of the exponential changes based on the two conditions. This property makes $\braket{n}$ behave like a step function for $T\rightarrow 0 $ with the transition point at $\epsilon=\epsilon_F$. This is why it is  denoted $\epsilon_F$, and this particular energy is called the \emph{Fermi energy}. Below the Fermi energy, each state is occupied by one molecule, where as above it, there are no occupied states. 
+
+\item If we want to calculate the total average energy in terms of the Fermi energy we just have to calculate:  
+\begin{bux}
+    \begin{split}
+        \braket{E}&  = \int_0^{\infty}d\epsilon W_c(1,\epsilon)\braket{\epsilon} =  \int_0^{\infty}d\epsilon W_c(1,\epsilon)\braket{n}\epsilon \\
+\implies& \lim_{T\rightarrow0}\braket{E} = \int_{0}^{\epsilon_F}d\epsilon W_c(1,\epsilon)\epsilon ,~~~~~(\braket{n}\rightarrow 1)
+    \end{split}
+\end{bux}
+If we then use out expression for $W_c(1,c)$ from \ref{eqn:3.12}, (ignoring the ground state as it vanishes after the integral is evaluated) we get that:
+\begin{bux}
+    \begin{split}
+         \lim_{T\rightarrow0}\braket{E} =  \int_{0}^{\epsilon_F}d\epsilon \frac{gV(2\pi)(2m)^{3/2}}{h^3} \epsilon^{3/2} = \frac{2gV(2\pi)(2m)^{3/2}}{5h^3} \epsilon_F^{5/2}= \frac{4gV}{5\pi}\left(\frac{2\pi m\epsilon_F}{h^2}\right)^{3/2} \epsilon_F
+    \end{split}
+\end{bux}
+Then if use our expression for $N$ above \ref{eqn:3.62} (after cancelling the $kT$'s), we get that:
+\begin{bux}
+    \begin{split}
+        N =    gV\left(\frac{2\pi m\epsilon_F}{ h^2}\right)^{3/2}\rm \frac{4}{3\pi}
+    \end{split}
+\end{bux}
+So we get that the average energy as $T\rightarrow 0$ is given by:
+\begin{bux}
+    \begin{split}
+        E = \frac{3}{5}N\epsilon_F
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+
+\newpage
+\section{Blackbody Radiation}
+\begin{itemize}
+    \item Here we will be considering the scenario of a cavity of volume $V$ containing photons (free bosonic particles) with
+    the idealised case that the surrounding body absorbs and emits light of all frequencies. We will look at
+    the system when at equilibrium, with $T\neq 0$. 
+\end{itemize}
+
+
+\subsection{Ultraviolet Catastrophe}
+\begin{itemize}
+    \item Classically we had that due to the equipartition theorem the average energy of the system is given by
+    $\braket{E} = \frac{1}{2}kT$ (we are talking about a single particle), so the energy density $\varepsilon \equiv \frac{E}{V}$, would be given by
+    $\braket{\varepsilon}  = \frac{kT}{2V}$. 
+
+    \item Where the Catastrophe comes in is if we try find this above result from quantum statistical mechanics
+    . In the usual manner we treat this semi-classically, relating the density of frequencies 
+    to the energy density, via $\varepsilon(\omega)d\omega = W_c(1,\omega)\frac{kT}{2V}d\omega$, we then 
+    would like to write this in terms of momentum as we can find the quantity $W_c(1,p )$, here we can use \ref{den}, so $\varepsilon(\omega)d\omega$ becomes:
+\begin{bux}
+    \begin{split}
+    W_c(1,p )dp =  \frac{4\pi gV}{h^3}p^2dp = \frac{8\pi V}{h^3}\hbar^3k^2dp 
+    \end{split}
+\end{bux}
+Where we have used the fact that photons have two degeneracy's (corresponding to the two transverse ways they oscillate), and we have used the fact that $\textbf{p}=\hbar\textbf{k}$. Finally using $\omega = kc$ (equivalent to $c=f\lambda$) and plugging this all in, we see $\varepsilon(\omega)d\omega$ becomes:
+\begin{bux}
+    \begin{split}
+        \varepsilon(\omega)d\omega = \frac{\omega^2}{\pi^2c^3}\frac{kT}{2}d\omega = \frac{x^2dx}{\pi^2c^3\hbar^3\beta^4},~~~x=\beta\hbar\omega 
+    \end{split}
+\end{bux}
+The problem, or catastrophe even, is that we have an energy density that increases with frequency, so integrating over all frequencies to calculate any sort of average will diverge, not realistic! 
+\end{itemize}
+
+
+\subsection{Planck's Law}
+\begin{itemize}
+    \item The solution to this problem is to instead look at expressing the average energy through occupation number as then we can use our previously developed Bose-Einstein statistics to solve the problem.  This means that in the energy density we had earlier $\frac{1}{2}kT$, should be replaced with $\braket{n}\omega \hbar$, as we assume our system consists of particles with energy $\epsilon=\hbar\omega$, so we combine this with the occupancy level of each frequency $\braket{n}$. We can then use our expression for occupancy level that we have in \ref{eqn:3.5}, for bosons so with a minus. 
+
+\item This comes with one caveat, we are treating our gas as an interaction-less gas, as photons cant interact with each other. But we still need a mechanism for transferring energy so that we can reach an equilibrium. (In the case of a regular ideal gas, the mechanism for transferring energy is just elastic collisions between the particles). If we constrain our system to be in a volume $V$, then the mechanism by which equilibrium can be established, is through the absorption and emission of photons by the matter of the surroundings. This results in the number of photons $N$, not being conserved, making $N$ itself being variable, that must be determined by the conditions of equilibrium. We know from thermodynamics, that at constant temperature, the Helmholtz Free energy $\mathcal{F}$ is at a minimum, and since $N$ is our variable that governs  change in the system, we must have that at equilibrium $\frac{\partial \mathcal{F}}{\partial N}= 0 $. But we know this quantity! this is the chemical potential. This means we have the very important property that for a photon gas:
+\begin{bux}
+    \begin{split}
+        \mu =0
+    \end{split}
+\end{bux}
+Another way of interpreting this is that, there is no work associated with adding/removing particles from our system. This means we can write the energy density $ \varepsilon(\omega)d\omega$ as:
+\begin{bux}
+    \begin{split}
+         \varepsilon(\omega)d\omega =&  \frac{ W_c(1,\omega)}{V}(\braket{n}\omega \hbar)d\omega \\
+= & \frac{\omega^2}{\pi^2c^3}\frac{\hbar \omega}{ e^{\beta\hbar\omega}- 1}d\omega
+    \end{split}
+\end{bux}
+Where we have used the same $W_c(1,\omega)$ as in \ref{den}. This is  \textit{Planck's law}. 
+
+\item  We can then once again make the change of variables $x=\hbar\omega\beta$, which results in:
+\begin{bux}
+    \begin{split}
+        \varepsilon(x)dx = \frac{x^3}{\pi^2c^3\beta^4\hbar^3}\frac{dx}{e^x-1}
+    \end{split}
+\end{bux}
+We can make this dimension less by looking only at the factor containing $x$, so we define:
+\begin{bux}
+    \begin{split}
+        U(x)dx \equiv  \pi^2c^3\beta^4\hbar^3 \varepsilon(x)dx = \frac{x^3}{e^x-1}dx
+    \end{split} 
+\end{bux}
+\item Now we can look at the limits of this expression, for $x<<1$, the regime of small frequencies or classical regime ($T>>0$), we have that $U(x)\simeq x^2$ (the low frequency limit that we had in the ultraviolet catastrophe). But in the large $x$ limit $x>>1$, we have that $U(x)\simeq x^3e^{-x}$. This corresponds to the limit of high frequency or low temperatures and can be recognised as \emph{Wiens Law}. 
+
+\end{itemize}
+
+\subsection{Stephan Boltzmann law}
+\begin{itemize}
+    \item We can get the total energy density by integrating $\varepsilon(x)$ over all $x$:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.7}
+        \braket{\varepsilon} = \int_0^{\infty}\varepsilon(x)dx =  \frac{1}{\pi^2c^3\beta^4\hbar^3}\int_0^{\infty}\frac{x^3}{e^x-1}dx = \frac{(kT)^4}{\pi^2c^3\hbar^3}\frac{\pi^4}{15}
+    \end{split}
+\end{bux}
+Where we have calculated this integral in a similar way to \ref{eqn:2.27}. This is the \emph{Stephan Boltzmann Law }, but it is not in the most recognisable form. If we open a small hole (the small hole is so that we have a point source of radiation that is easier to work with) in our blackbody cavity we would like to know the flux $F$ emitted. If we recall that total energy density $\varepsilon$ is related to energy flux $F$ by $F = \varepsilon c  $, as the energy in the form of photons is propagating at the speed of light.  How ever we then have to deal with the specific angles. If we orient our point so that the small hole in the cavity is facing the $z$ axis, then the the  flux through this hole as a function of $\theta$ is $F(\theta) = c \varepsilon \cos(\theta)$. This is actually known as \emph{Lambert's cosine law}, but we can just intuitively interpret this as if we are off to the side of the hole then we wont observe as high of an intensity as if we were directly over it. 
+
+One last issue with this expression is that it is not "normalised" in a sense, all the energy flux of the cavity is isotropic, so only a small part of it is in the direction of the hole.  So to account for this, we must divide this expression of flux by $4\pi$, the area of the unit sphere. We don't have to divide by the area of the cavity $4\pi V$, as we are working with an energy density and have effectively already divided by this $V$.  Finally we can integrate our expression over all angles (with $\theta\in [0,\frac{\pi}{2}]$ as flux cannot go through and behind the blackbody itself), to get the total flux emitted from the black body:
+\begin{bux}
+    \begin{split}
+        F = \frac{c}{4\pi}\int \braket{\varepsilon}\cos \theta d \Omega = \frac{\pi(kT)^4}{60c^2\hbar^3} \int_0^{2\pi}d\phi\int_0^{\frac{\pi}{2}}\cos \theta \sin \theta d\theta = \frac{\pi^2k^4}{60c^2\hbar^3}T^4 =\sigma T^4
+    \end{split}
+\end{bux}
+This is the \emph{Stephan Boltzmann Law }we know! and $\sigma$ is \emph{Stephan Boltzmann's constant}.
+\end{itemize}
+
+\subsection{Radiation pressure}
+\begin{itemize}
+    \item We would like to then know the pressure from this radiation. To do this we first need the log of the grand canonical partition function, for which we can use \ref{eqn:3.4}. This is a sum over the energy levels, so we can, as we have many times before , treat this semi-classically and turn the sum into an integral with a density of states $W_c(1,\epsilon)d\epsilon =\frac{4\pi gV}{h^3c^3}\epsilon^2d\epsilon$, which comes from $W_c(1,p)$ \ref{den} and the relation $\epsilon = pc$ :
+\begin{bux}
+    \begin{split}
+        \ln \Xi  = - \sum_i\ln(1- ze^{-\beta\epsilon_i}) \simeq -\int_0^{\infty}d\epsilon W_c(1,p)\ln(1- ze^{-\beta\epsilon})= -\frac{4\pi gV}{h^3c^3}\int_0^{\infty}d\epsilon \ln(1- ze^{-\beta\epsilon})\epsilon^2
+    \end{split}
+\end{bux}
+We can then integrate this expression by parts:
+\begin{bux}
+    \begin{split}
+      \ln \Xi =     -\frac{4\pi gV}{h^3c^3}\left[\frac{\epsilon^3}{3}\ln(1- ze^{-\beta\epsilon})\big\rvert_{0}^{\infty} -\frac{1}{3 \beta}\int_0^{\infty}d\epsilon\frac{\epsilon^3}{e^{\beta\epsilon}-1}\right]
+    \end{split}
+\end{bux}
+Imposing the limits makes the first term in the brackets here vanish, leaving us with a familiar integral:
+\begin{bux}
+    \begin{split}
+        \int_0^{\infty}& d\epsilon\frac{\epsilon^3}{e^{\beta\epsilon}-1} = \frac{1}{\beta^4}\int_0^{\infty}dx\frac{x^3}{e^{x}-1} = (kT)^4\frac{\pi^4}{15} \\ 
+& \implies \ln \Xi  = \frac{4\pi^5gV}{45h^3c^3}(kT)^3
+    \end{split} 
+\end{bux}
+Using the fact then that the grand canonical potential $\mathcal{J}=-PV=-kT\ln \Xi$, we can see that:
+\begin{bux}
+    \begin{split}
+        P = \frac{4\pi^5g}{45h^3c^3}(kT)^4 = \frac{1}{3}\frac{\pi^2 g}{2(15)\hbar^3c^3}(kT)^4
+    \end{split}
+\end{bux}
+Then if we use the fact that $g=2$ for photons and compare this expression to the energy density in \ref{eqn:4.7}, we get the nice result that:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.13}
+        P = \frac{1}{3}\braket{\varepsilon} = \frac{1}{3}\left(\frac{4\sigma}{c}\right) T^4 = \frac{1}{3}aT^4
+    \end{split}
+\end{bux}
+Where we have relabelled the factor of $\frac{4\sigma}{c}$ as $a$.  
+\end{itemize}
+
+\subsubsection{Radiation entropy }
+\begin{itemize}
+    \item This can be calculated easily from looking at the potentials. We have that  $-PV = \mathcal{J} = \mathcal{F} - \mu \braket{N} =\mathcal{F}$, and since $\mathcal{F}= \braket{E}-TS\implies PV = TS-\braket{E}$, Then using our above expression \ref{eqn:4.13} for the pressure $P=\frac{1}{3}\braket{\varepsilon} = \frac{\braket{E}}{3V}$, we can write the entropy as:
+\begin{bux}
+    \begin{split}
+        S = \frac{4\braket{E}}{3T}  = \frac{4PV}{T}\propto VT^3
+    \end{split}
+\end{bux}
+\item This means that for a reversible adiabatic process $VT^{3} = \rm const \iff PV^{\frac{4}{3}} = \rm const$, as $P \propto T^4$. This reminds us of the classical $PV^{\gamma}= \rm const$, where $\gamma$ is given by $\gamma = \frac{C_P}{C_V}$. But this is not true in quantum mechanics, since:
+\begin{bux}
+    \begin{split}
+        \gamma = \frac{C_P}{C_V} = \frac{\left(\frac{\partial V}{\partial P}\right)_T}{\left(\frac{\partial V}{\partial P}\right)_S} = \frac{1}{\left(\frac{\partial V}{\partial P}\right)_S} \frac{1}{\left(\frac{\partial P}{\partial V}\right)_T} \rightarrow \infty
+    \end{split}
+\end{bux}
+As $\left(\frac{\partial P}{\partial V}\right)_T = 0$ as $P=\frac{1}{3}aT^4$, is independent of volume. 
+
+\end{itemize}
+
+\newpage
+
+\section{Statistical physics in d-dimensions}
+\begin{itemize}
+    \item It is often quite useful to generalise our calculations to that of $d$ space dimensions (so $d+1$ space-time dimensions). This not only allows us to plug in for $d=1,2,3$, to get results we would be able to produce in real life but it is good to see what range of dimensions do phenomena occur in. This can give us new insights into these phenomena or even confirm that we do indeed live in three dimensions! 
+\end{itemize}
+
+\
+
+\subsection{An even more general density of states}
+\begin{itemize}
+    \item In section \ref{genral density} we saw how we could write down the density of state in terms of momentum $W(p)dp$, this was in $d=3$ so we we would like to now generalise the result to $d-$space dimensions! 
+
+\item For this we follow the same approach this time writing down the number of microstates as:
+\begin{bux}
+    \begin{split}
+        \Omega = g\int \frac{d^dpd^pq}{h^d}
+    \end{split}
+\end{bux}
+$g$ is again the degeneracy. We can then integrate over all the spatial co-ords, which before gave us the volume, for now we will let this be $\int d^dq = L^d$, where $L$ is the characteristic scale of the system. The remaining integral can be split up into the magnitude and angular parts. In $d=3$, this left us with a $d^3p = p^2\sin \theta dpd\theta d\phi$. This in $d$ dimensions can be generalised to $d^dp = p^{d-1}dpd\Omega_d$, where $\Omega_d$ is the d-solid angle or the area of the $d-1$-Sphere $S_{d-1}$, with unit radius. This all means our integral becomes:
+\begin{bux}
+    \begin{split}
+           \Omega = \frac{gL^dS_{d-1}}{h^d}\int_0^{\infty}p^{d-1}dp
+    \end{split}
+\end{bux}
+\item Then we can do the same trick we did in section \ref{genral density} and say the number of microstates with momentum $p$ less then some max value $P$ is:
+\begin{bux}
+    \begin{split}
+            \Omega(P) = \frac{gL^dS_{d-1}}{h^d}\int_0^{P}p^{d-1}dp = \frac{gL^dS_{d-1}}{h^d}\frac{P^d}{d}
+    \end{split}
+\end{bux}
+Then the density of states $W(p)dp$ is just the number of microstates with momentum lying between $p$ and $p+dp$, so:
+\begin{bux}
+    \begin{split}
+\label{eqn:5.4}
+       &  W(p)dp =\frac{d}{dP}\Omega(P)\bigg\vert_{P=p}dp  \\
+& \implies W(p)dp = \frac{gL^dS_{d-1}}{h^d}p^{d-1}dp
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsubsection{General dispersion relation}
+\begin{itemize}
+    \item We are on a roll of being general, so why stop here? Lets now see if we can get an expression for the density of energy states for a general dispersion relation. Dispersion relations usually take the form $\epsilon  = ap^s$. Examples of this include the regular free particle when the energy of each particle is $\frac{p^2}{2m}$, or for relativistic free gas when it becomes $\epsilon  = cp$.  So we can clearly see that if we solve this generally for $\epsilon= ap^s$, then we can apply our results to many types of problems! 
+
+We know that density of states in different variables satisfy $W(\epsilon)d\epsilon = W(p)dp$, so since $\epsilon = ap^s \implies d \epsilon = asp^{s-1}dp$, so we can write \ref{eqn:5.4} as:
+\begin{bux}
+    \begin{split}
+      &   W(\epsilon)d\epsilon = \frac{gL^dS_{d-1}}{h^d}\left(\frac{\epsilon}{a}\right)^{\frac{d-1}{s}}\frac{d\epsilon}{as(\frac{\epsilon}{a})^{\frac{s-1}{s}}} \\
+& =\frac{gL^dS_{d-1}}{h^d}\left(\frac{\epsilon}{a}\right)^{\frac{d-1}{s}-\frac{s-1}{s}}\frac{d\epsilon}{as}  = \frac{gL^dS_{d-1}}{sh^d}a^{-\frac{d}{s}}\epsilon^{\frac{d}{s}-1}d\epsilon
+    \end{split}
+\end{bux}
+\item From my "Statistical physics I" notes we have that the area of a $d-1$-sphere is $S_{d-1} = 2\pi^{d/2}/\Gamma(d/2)$, so we can write this expression as:
+\begin{bux}
+    \begin{split}
+        W(\epsilon)d\epsilon = \frac{2g}{s\Gamma(d/2)}\left(\frac{\sqrt{\pi}L}{ha^{1/s}}\right)^d\epsilon^{\frac{d}{s}-1}d\epsilon
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+
+
+\end{document}
+

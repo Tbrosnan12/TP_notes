@@ -1,0 +1,1129 @@
+\documentclass[11pt]{article}
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\addbibresource{Bib.bib}
+\usepackage{mathtools}
+\DeclarePairedDelimiterXPP\BigOSI[2]%
+  {\mathcal{O}}{(}{)}{}%
+  {\SI{#1}{#2}}
+\usepackage{xcolor}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{comment}
+\usepackage{mhchem}
+ \usepackage{tabularx}
+ \usepackage{titling}
+ \usepackage{amsmath,environ}
+ \usepackage[explicit]{titlesec}
+\usepackage{fancyhdr}
+\setlength{\droptitle}{3em} 
+
+\title{Calculus on Manifolds}
+\author{Thomas Brosnan}
+\date{Notes taken in Professor Florian Naef's class, Hilary Term 2024}
+
+\DeclareRobustCommand{\RR}{\mathbb{R}}
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=blue!30!black,
+    colback=blue!30, boxrule=1pt,
+    #1}
+\tcbset{highlight math style={boxsep=2mm,,colback=blue!0!green!0!red!0!}}
+
+  \newenvironment{bux}
+    {
+    \empheq[box=\tcbhighmath]{align}
+   }{
+    \endempheq
+    }
+    \newenvironment{bux*}
+    {
+    \empheq[box=\tcbhighmath]{align*}
+   }{
+    \endempheq
+    }
+\newcommand{\hsp}{\hspace{8pt}}
+
+\newcommand*{\sectionFont}{%
+  \LARGE\bfseries
+}
+
+    
+\numberwithin{equation}{section}
+
+\makeatletter
+\let\Title\@title % Copy the title to a new command
+\makeatother
+
+%change this RGB value to change the section background colour 
+\definecolor{mycolor1}{RGB}{255, 224, 102}
+\colorlet{SectionColour}{mycolor1}
+%subsection background colour 
+\definecolor{mycolor2}{gray}{0.8}
+\colorlet{subSectionColour}{mycolor2}
+%subsubsection background colour 
+\definecolor{mycolor3}{RGB}{255,255,255}
+\colorlet{subsubSectionColour}{mycolor3}
+
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+\Large
+    " $p \in N$ is  "
+    
+    -Florian
+\end{center}
+\vspace*{\fill}
+\newpage 
+\tableofcontents
+% For \section
+ \titleformat{\section}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesection  \hsp #1 {\strut} \end{minipage}}}
+% For \subsection
+ \titleformat{\subsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subSectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesubsection  \hsp #1 {\strut} \end{minipage}}}
+% For \section*
+ \titleformat{name=\section, numberless}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+  % For \subsection*
+ \titleformat{name=\subsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subSectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+ % For \subsubsection
+ \titleformat{\subsubsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm}\thesubsubsection \hsp #1 {\strut} \end{minipage}}}
+  % For \subsubsection*
+ \titleformat{name=\subsubsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm} #1 {\strut} \end{minipage}}}
+\newpage 
+%header 
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[L]{\Title}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{-~\thepage~-}
+\renewcommand{\headrulewidth}{1pt}
+
+
+
+
+
+
+
+
+
+
+
+%starting document 
+\normalsize
+\newpage
+\section{Topology on $\mathbb{R}^n$}
+\subsection{Metric space }
+\begin{itemize}
+    \item Let $X$ be a set, A  \emph{metric} on a set is a function that measures distances $d:X \times X \rightarrow \mathbb{R}$.  It has the following properties: 
+\begin{bux}
+    \begin{split}
+       &  d(x,y) = d(y,x) \\
+     &  d(x,y) \geq 0 \\ 
+     & d(x,y)=0~~\text{iff}~~x=y \\
+& d(x,z) \leq d(x,y) + d(y,z)
+    \end{split}
+\end{bux}
+$(X,d)$ together make a \emph{metric space}. 
+
+\item Any subset $Y \subset X$ is itself a metric space with $d(x,y)\bigg\rvert_{Y \times Y}$ (restricted to $Y$). 
+\end{itemize}
+\subsection{Open/Closed} 
+\begin{itemize}
+    \item Let $(X,d)$ be a metric space $U \subset X$ is \emph{open} if $\forall ~p \in U$,  $\exists~ \epsilon>0 $ st. $B_{\epsilon}(p) := \{ x \in X | d(x,y)\leq \epsilon\}$ and \emph{closed} if $X-U$ (the compliment set) is open. 
+
+\item If we have $U \subset Y \subset X $, $(X,d)$ a metric space, for us in all applications $X=\mathbb{R}^n$.  $U$ is open/closed in $(Y,d\rvert_{Y \times Y})$ $\iff ~\exists ~ V \subset X$ open/closed st. $U=V ~\cap~ Y $. 
+\end{itemize}
+\subsection{Continuity}
+\begin{itemize}
+    \item If we have $f:X \rightarrow Y$, with $X$ and $Y$ metric spaces, is \emph{continuous} if,  $f^{-1}(U)$ is open with $U \subset Y$ is open. 
+
+If $f:X \rightarrow Y$ is a bijection, continuous and $f^{-1}$ continuous we call $f$ a homomorphism. 
+\end{itemize}
+
+\subsection{Compact}
+\begin{itemize}
+    \item $X$ is \emph{compact} if every open cover has a finite subcover , i.e. $\forall~\{U_{\alpha}\}_{\alpha \in I}$, $U_{\alpha} \subset X $ ($U_{\alpha}$ open) st.  $ X \subset \bigcup_{\alpha \in I} U_{\alpha} $ , then $\exists~\alpha_1,...,\alpha_k~\in~I$ st. $X \subset U_{\alpha_1}\cup ...\cup U_{\alpha_k}$.   
+\end{itemize}
+
+\subsection{Heine Boral theorem}
+\begin{itemize}
+    \item $X \subset \mathbb{R}^n$ is compact if bounded ($\exists~R \in \mathbb{R}$ st $X \subset B_{R}(0)$ ) and closed in $\mathbb{R}^n$. 
+\end{itemize}
+
+
+\subsection{Differentiation}
+\begin{itemize}
+    \item $f:U \rightarrow V, ~~(U \subset \mathbb{R}^n,~V \subset \mathbb{R}^m)$   is differentiable at $p \in U $ with \textit{derivative} $Df(p) \in Mat(m,n)$  if: 
+\begin{bux}
+    \begin{split}
+        \lim_{x \rightarrow p} \frac{f(x)-f(p)-Df(p)(x-p)}{\lVert x-p \lVert} = 0 
+    \end{split}
+\end{bux}
+\item $f$ is (of class) $C^1$ if it is differentiable at all $p \in U$ and $Df:U \rightarrow Mat(m,n) \cong \mathbb{R}^{mn}$ is continuous. 
+
+\item $f$ is $C^r$ if $Df$ is $C^{r-1}$, $f$ is \textit{smooth} or $C^{\infty}$ if it is $C^{t}~\forall~ t>0$.  
+
+\item If we have $f:U\rightarrow \RR^m$ , $(U\in \RR^{n})$. Then $x \mapsto (f_1(x),...,f_m(x))$ is $C^r$, if: 
+\begin{bux}
+    \begin{split}
+        \frac{\partial}{\partial x_{i_1}} \cdot \cdot \cdot  \frac{\partial}{\partial x_{i_k}}f_j : U \rightarrow \RR 
+    \end{split}
+\end{bux}
+Exists, and is continuous for all $k \in \{1,...,r\}, i_1,...,i_k\in \{1,...,n\}$ and $j \in \{1,...,m\}$.  In which case the derivative can then be expressed as: 
+\begin{bux}
+    \begin{split}
+        Df =  \begin{pmatrix}
+       \frac{\partial f_1}{\partial x_1} &\cdot & \cdot & \cdot & \frac{\partial f_1}{\partial x_n } \\
+       \cdot&\cdot&~&~& \cdot  \\
+       \cdot&~&~\cdot&~& \cdot \\
+       \cdot&~&~&\cdot~& \cdot \\
+       \frac{\partial f_m}{\partial x_1} &\cdot & \cdot & \cdot & \frac{\partial f_m}{ \partial x_n}
+    \end{pmatrix}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+\subsection{Chain rule }
+\begin{itemize}
+    \item Consider $U \xrightarrow{g} V \xrightarrow{f} W$, where $f$ and $g$ are differentiable (or $C^r$), then so is $f \circ g$ and: 
+\begin{bux}
+    \begin{split}
+        D(f \circ g)(x) = Df(g(x))\cdot Dg(x)
+    \end{split}
+\end{bux}
+This is the chain rule and the $\cdot$ here refers to matrix multiplication. 
+\end{itemize}
+
+
+\subsection{Diffeomorphism}
+\begin{itemize}
+    \item If we have $f:U \rightarrow V$ ,  a smooth bijection and $U,V$ open (in $\RR^n$ and $\RR^m$ respectively) st. $f^{-1}V \rightarrow U$ exists and is also smooth. Then we call $f$ a diffeomorphism. 
+\end{itemize}
+
+\subsection{Inverse function Theorem}
+\begin{itemize}
+        \item Let $f:V  \rightarrow \RR^n$ be $C^r$ ($1\leq r \leq \infty$ )  and $V \subset \RR^n$. For $p \in V$ , suppose $Df(p)$ is non-singular (i.e an invertible $n \times n$ matrix $\iff det(Df) \neq 0 $). Then $\exists~p \in U \subset V$ , $U$ open, st, 
+        \begin{itemize}
+            \item $f\vert_U: U\rightarrow f(U)$ , is a $C^r$-diffeomorphism. i.e. $f\vert_U: U\rightarrow f(U)$ is a bijection 
+            \item $f(U)$ is open 
+            \item  $f^{-1}\vert_U: U\rightarrow f(U)$ is $C^r$.
+        \end{itemize}
+\end{itemize}
+\newpage
+\section{Manifolds}
+\begin{itemize}
+    \item "Slogan" (informal definition) $M \subset \RR^n$ is a manifold if it is "smooth" without corners/intersections  
+\end{itemize}
+\subsection{Manifolds}
+\begin{itemize}
+    \item Let $d>0$, $M \subset \RR^n$ is a smooth/$C^r$ manifold of dimension $d$ if $\forall~p \in M,~\exists~ p\in V \subset M$ , $U \subset \RR^d$ ($V$ and $U$ open) and $\alpha: U \rightarrow V$, st: 
+\begin{itemize}
+    \item $\alpha$ is smooth/$C^r$ 
+    \item $\alpha$ is a bijection with a continuous inverse ($\iff$ is a homomorphisim) 
+    \item $D\alpha(x)$ has Rank $d$. 
+\end{itemize}
+We will see this means $\alpha$ is a diffeomorphism. 
+
+\end{itemize}
+
+
+\subsubsection{Parameterised manifold}
+\begin{itemize}
+    \item Sometimes a only a single function $\alpha:U \rightarrow M$ is needed in the definition of a manifold. In this case we call $(M,\alpha)$ a parameterized manifold. 
+
+From now on we will only discuss smooth/$C^{\infty}$ manifolds  
+\end{itemize}
+
+\subsection{Alternate definitions}
+\begin{itemize}
+    \item If we have a set $M \subset \RR^n$ , $d>0$, $p\in M$. Then the following are equivalent: 
+\begin{itemize}
+    \item $\exists~p \in V \subset M,~ U \subset \RR^d$, ($V$ and $U$ open), $\alpha: U \rightarrow V$ a smooth homomorphism, st, $D \alpha(x)$ has rank $d,~\forall ~x \in U $.  
+    \item $\exists~ p\in V \subset    \RR^n$ , $ U \subset \RR^n$ ($V$ and $U$ open),  $\beta: U \rightarrow V$ a diffeomorphism and $\beta(U \cap(\RR^d \times \{0\})) = V \cap M$. 
+
+\end{itemize}
+\item This second definition is new and the set $U \cap(\RR^d \times \{0\})$ is just the intersection of $U \subset \RR^n$ and the space $\RR^d$ extended into $\RR^n$ by adding $0$ to the $d$ dimensional tuples $n-d$ times until they become $\RR^n$.  This is effectively saying we want to be able to straighten out manifold neighbourhoods. 
+\end{itemize}
+
+\subsection{Locally smooth}
+\begin{itemize}
+    \item We want to say a $d$- manifold looks locally like $\RR^d$. 
+
+\item Let $M\subset \RR^n$ , $N\subset \RR^m$ be subsets. A function $f:M \rightarrow N $ is smooth if $\exists ~ M \subset V \subset \RR^n$ ($V$ open) and $\tilde{f}: V \rightarrow \RR^m$ smooth st,  $f\vert_M=f$ and $f:M \rightarrow N$ is a diffeomorphism (It is a smooth bijection and has a smooth inverse). Note that we do not require $\tilde{f} $ to have $\tilde{f}^{-1} \circ \tilde{f} = \mathbb{I} $.  
+
+It follows that we can say: $f:M \rightarrow N$ a diffeomorphism, $A \subset M  \implies f\vert_A: A \rightarrow f(A)$ is a diffeomorphism.
+
+\begin{itemize}  
+    \item Remark These two facts are used in the proof of the following theorem. This theorem looks exactly like the definition of a manifold but note the swapping of $V$ and $U$, which changes the statement to that the condition for a manifold is that there is a smooth mapping from the manifold to $\RR^d$. 
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Local smoothness definition of a manifold}
+\begin{itemize}
+    \item Let $d>0$, $M \subset \RR^n$ is a smooth/$C^r$ manifold of dimension $d$ if $\forall~p \in M,~\exists~ p\in V \subset M$ , $U \subset \RR^d$ ($V$ and $U$ open) and $\alpha: V \rightarrow U$, st $\alpha$ is a diffeomorphism.  
+\end{itemize}
+
+\newpage
+
+\section{Partitions of unity}
+\subsection{Main idea }
+\begin{itemize}
+    \item Given $\{U_i\}_{i \in I }$ a partition of unity is a collection of smooth functions $\{ \psi_i\}$, $\psi_i : \RR^n \rightarrow [0,\infty)$ a diffeomorphism st $\{x|\psi_i(x)\neq 0\}\subset U_i$ st $\sum_{i\in I }\psi_i(x)=1$. 
+
+\item We have a local definition of a manifold and we want to extend it so that we have one single function smooth across all of $M$. 
+\end{itemize}
+\subsection{Theorem}
+\begin{itemize}
+    \item Let $\RR \supset V = \bigcup_{\alpha \in A}U_{\alpha}$ ,  where $U_{\alpha} $ are open, then there exists $\phi_1,\phi_2,...~~~V \rightarrow [0,1]$, st: 
+\begin{itemize}
+    \item For each $i \in \mathbb{N}~~ \exists ~ \alpha \in A $ st $S_i := \text{supp}(\phi_i) =  \overline{\{x\in V|\psi_i(x)\neq 0\}} \subset U_{\alpha}$  
+    \item Each $p\in A$ has a neighbourhood intersecting finitely many $S_i$'s. 
+    \item $\sum_{i\in I }\psi_i(x)=1$, $\forall~x\in V$.
+    \item $S_i$'s are compact.
+    \item $\psi_i$ are smooth.
+
+\end{itemize}
+$\{\psi_i\}$ is called a partition of unity subordinate to $\{U_{\alpha}\}$. 
+\end{itemize}
+\subsection{Lemma 1}
+\begin{itemize}
+    \item  $\{U_{\alpha}\}$ as above,  then $\exists~p_1,p_2,...\in \RR^n, \epsilon_1,\epsilon_2,...\in \RR_{>0}$ st: 
+\begin{itemize}
+    \item $\bigcup_{i=1}B_{\epsilon_i}(p_i) = V$
+    \item Each $B_{2\epsilon_i}(p_i)$ is contained in a $U_{\alpha}$. 
+    \item Each point $p \in V$ has a neighbourhood intersecting finitely many $B_{2\epsilon_i}(p_i)$.
+\end{itemize}
+\end{itemize}
+\subsection{Sub-lemma}
+\begin{itemize}
+    \item One can find $k_1\subset k_2\subset ...\subset V$ st:
+\begin{itemize}
+    \item $k_i$ are compact.
+    \item $k_i \subset \mathring k_{i+1}$ 
+    \item $\bigcup_{i=1} k_i = V$
+\end{itemize}
+\end{itemize}
+
+\subsection{Lemma 2}
+\begin{itemize}
+    \item Let $p \in \RR^n , \epsilon>0 $ Then $\exists~ \psi:\RR^n \rightarrow [0,1]$ st:
+\begin{itemize}
+    \item $\psi$ smooth. 
+    \item $\text{supp}(\psi)\subset B_{2\epsilon}(p)$
+    \item $\psi>0, $ on $B_{\epsilon}(p)$
+
+\end{itemize}
+
+\end{itemize}
+
+\subsection{Extension of locally smooth functions }
+\begin{itemize}
+    \item Let $M\subset\RR^n$ a subset , $f:M\rightarrow \RR^n$. Suppose $f$ is locally smooth , i.e $\forall~p\in M \exists~ p\in V \subset M$, st $f\vert_V:V \rightarrow \RR^m$ is smooth, Then $f$ is smooth on $M$. 
+
+This theorem is proved using partitions of unity. 
+\end{itemize}
+
+\newpage
+\section{Boundary of manifolds}
+\subsection{Upper half plane}
+\begin{itemize}
+    \item We define the upper have plane in $\RR^d$ to be: $\mathbb{H}:= \RR^{d-1}\times \RR_{>0}$, that is: 
+\begin{bux}
+    \begin{split}
+        \mathbb{H} = \{ (x_1,x_2,...,x_d)| x_d \geq 0\}
+    \end{split}
+\end{bux}
+\item The boundary of this plane is then defined as: $\partial \mathbb{H} := \RR^{d-1}\times {0} \subset \mathbb{H}$. We then have that $\mathring{\mathbb{H}}:= \mathbb{H} \backslash \partial \mathbb{H}$. 
+\end{itemize}
+
+\subsection{Boundary of a manifold}
+\begin{itemize}
+    \item A subset $M \subset \RR^n$ is a $d$-manifold with a boundary if it is basically diffeomorphic to open subsets of $\mathbb{H}^d$ . that is $\forall~ p \in M \exists~ p \in V \subset M $  , $U \subset \mathbb{H}^d$ ($V$ and $U$ open) and $\alpha:U \rightarrow V$ a diffeomorphism.  
+\end{itemize}
+
+\subsubsection{Proposition}
+\begin{itemize}
+    \item The condition is equivalent to $\alpha$ being a smooth homomorphism and $D\alpha(x)$ being of rank $d~\forall ~x \in U$.  
+\end{itemize}
+
+\subsection{Lemma}
+\begin{itemize}
+    \item If we have $\mathbb{H}^d \supset U \xrightarrow{\alpha} \RR^n$ smooth with extensions $\tilde{\alpha}: \tilde{U}\rightarrow \RR^n$ , (here $U \subset \tilde{U}$). Then $D\tilde{\alpha}(x) ~\forall~x\in U$ does not depend on the extension. 
+\begin{itemize}
+    \item For $x \in \mathring{ \mathbb{H}}^d,~~ D \tilde{\alpha}(x) =D\alpha(x)$ 
+    \item  For $x \in \partial \mathbb{H}^d \cap U,~~D\tilde{\alpha}(x) = \left(\frac{\partial \tilde{\alpha}_i(x)}{\partial x_j} \right)_{i,j}$. Where for $j\neq d$ this derivative is defined in the normal way, but for $j=d$, instead of having a two sided limit in the definition we use a one sided limit,from the side that is in the  half-plane. 
+\begin{bux}
+    \begin{split}
+        \frac{\partial \tilde{\alpha}_i(x)}{\partial x_d} = \lim_{\epsilon \rightarrow 0^{+}}\frac{\tilde{\alpha}_i(x+\epsilon e_{d})- \tilde{\alpha}_i(x)}{\epsilon}
+    \end{split}
+\end{bux}
+\end{itemize}
+\end{itemize}
+
+
+\subsection{Change of co-ordinates transformation}
+\begin{itemize}
+    \item Let $M$ be a manifold with a boundary and $\alpha_i:V_i \rightarrow U_i$, $i=1,2$, two co-ordinate patches. Then $\alpha_{2}^{-1}\circ \alpha_i :  \alpha_1^{-1}(U_1 \cap U_2) \rightarrow\alpha_2^{-1}(U_1 \cap U_2)$ is a diffeomorphism. 
+
+This is essentially saying we should be able to map smoothly between the pre-images of the co-ordinate patches that map to the same part of the manifold. 
+\end{itemize}
+
+\subsection{Interior and Boundary points}
+\begin{itemize}
+    \item Let $M$ be a manifold with a boundary.
+    \item We call $p \in M$ an interior point if $\exists~\alpha:U \rightarrow V$ a co-ordinate patch, st, $p=\alpha(x),~\forall x \in \mathring{\mathbb{H}}^d \cap U$.  Then we can define:
+\begin{bux}
+    \begin{split}
+        \mathring M = \{ x\in M| x~ \text{is an interior point }\}
+    \end{split}
+\end{bux}
+\end{itemize}
+\begin{itemize}
+    \item We call $p \in M$ an boundary point if $\exists~\alpha:U \rightarrow V$ a co-ordinate patch, st, $p=\alpha(x),~\forall x \in \partial\mathbb{H}^d \cap U$.  
+\begin{bux}
+    \begin{split}
+        \partial M = \{ x\in M| x~ \text{is an boundary point }\}
+    \end{split}
+\end{bux}
+\item Warning: These definitions are not the same as in topology. $\mathring M$ is not equal to the topological interior of $M$ in $\RR^n$ and the same for $\partial M$. 
+ \end{itemize}
+\subsection{Boundary of manifold is manifold }
+\begin{itemize}
+    \item let $M$ be a $d$-manifold with a boundary. Then $\partial M$ is a ($d-1$)-manifold with a boundary. 
+\end{itemize}
+\subsection{Lemma}
+\begin{itemize}
+    \item $M = \mathring M \sqcup \partial M$. 
+
+(Disjoint union, a union with the additional information that the sets don't have any elements in common). 
+\end{itemize}
+
+\subsection{Manifolds from functions}
+\begin{itemize}
+    \item Let $f:\RR^n\supset U \rightarrow \RR$ be a smooth function ($U$ open), we define: 
+\begin{bux}
+    \begin{split}
+        M = \{ x\in U | f(x)=0\} = f^{-1}(\{0\}). 
+    \end{split}
+\end{bux}
+And: 
+\begin{bux}
+    \begin{split}
+        N = \{ x\in U | f(x)\geq 0\} = f^{-1}([0,\infty)). 
+    \end{split}
+\end{bux}
+Suppose that $\forall~x\in M,~~Df(x)$ has rank 1, i.e. $Df(x)\neq 0$, then $N$ is a manifold with boundary $\partial N =M$. 
+\end{itemize}
+
+
+\newpage
+\section{Tangent spaces}
+\subsection{Tangent spaces}
+\begin{itemize}
+    \item Let $M \in \RR^n$ be a manifold with a boundary, $p \in M$, $\alpha: U \rightarrow V$ be a chart around $p$, $x_0\in U$ be st $\alpha(x_0)=p$. The \textit{tangent space} of $M$ at $p$ is: 
+\begin{bux}
+    \begin{split}
+        T_pM := \text{Image}(D\alpha(x_0)) \subset \RR^n
+    \end{split}
+\end{bux}
+\end{itemize}
+ 
+\subsubsection{Lemma}
+\begin{itemize}
+    \item This definition does not depend on $\alpha$. 
+\end{itemize}
+\subsection{Maps Between tangent spaces}
+\begin{itemize}
+    \item Let $M,N$ be manifolds with boundaries and $f:M\rightarrow N$ a smooth map. Then $Df(p) = D \tilde{f}(p)$, for some extension $\tilde{f}$ of $f$, defines a linear map $D \tilde{f}(p): T_pM \rightarrow T_{f(p)}N$ for all $p\in M$. 
+\end{itemize}
+
+
+\subsection{Tangent Bundle}
+\begin{itemize}
+    \item Let $m\subset \RR^n$ be a manifold with a boundary. then the \emph{Tangent Bundle} of $M$ is defined as the disjoint union of all the tangent spaces: $TM = \bigsqcup_{p\in M}T_pM$. i.e.: 
+\begin{bux}
+    \begin{split}
+        TM = \{(x,v) \in M \times \RR^n| v \in T_xM\}
+    \end{split}
+\end{bux}
+We then have that:
+\begin{itemize}
+    \item $TM$ is a $2d$-manifold with a boundary. 
+    \item $f:M\rightarrow N$ smooth $\implies \tilde{f}(p): TM \rightarrow TN$ i.e. $(p.v)\rightarrow (f(p),Df(p)v)$ is smooth. 
+    \item if we have $M \xrightarrow{f} N\xrightarrow{g} L$ smooth $\implies D(g \circ f) = Dg \circ Df$  , (chain rule). 
+\end{itemize}
+\end{itemize}
+
+
+\subsection{Regular and Critical values}
+\begin{itemize}
+    \item let $f:M \rightarrow N$ be smooth, we say $p \in N$ is a \emph{regular value} if $Df(x):T_xM \rightarrow T_{p}N$ is \emph{onto} (surjective) $\forall~ x \in f^{-1}(\{p\})$, otherwise we call $p$ a \emph{critical point}. 
+\end{itemize}
+
+\subsubsection{Regular value manifold}
+\begin{itemize}
+    \item If we have $f:M \rightarrow N$ be smooth, $\partial M =\varnothing = \partial N$ and $p\in N$ a regular value. Then $L =  f^{-1}(\{p\})$  is a manifold. Moreover, $T_xL = \text{ker}(Df(x):T_xM \rightarrow T_pN)$.  
+\begin{itemize}
+    \item Remark: We can find cases where this doesn't work. For example for $f(x,y,z) = z-xy \geq 0$,  $0$ is a regular point ($Df= (-y,-x,1)$) but the corresponding $L =  f^{-1}(\{p\})$ is not a manifold with a boundary as $\partial L$ does not have $0$ as a regular point for $\partial L =(z-xy,z):\RR^3 \rightarrow \RR^2$ .  To fix this we just have to restrict the boundary of $L$ to $\partial L = f^{-1}(\{0\}) \cap \partial M$.  
+\end{itemize}
+\end{itemize}
+
+\subsection{Sard's Theorem}
+\begin{itemize}
+    \item Let $f:M \rightarrow N$ be smooth. Then the set of critical values $\text{crit}(f)\subset N$ has "\emph{measure zero}". In particular $\{p\in N|p ~\rm regular~ value ~of~ f\}$ is dense in $N$. 
+\end{itemize}
+
+\newpage
+
+\section{Multi-linear Algebra}
+\begin{itemize}
+    \item let $V$ be a vector space. A function $T:V^k\rightarrow \RR$ is called multi-linear, (or a $k$ tensor), if for $v_1,...,v_{i},...,v_k \in T$ ,  the function $v \rightarrow T(v_1,...,v_{i-1},v,v_{i+1},...,v_k )$ is linear.  This just means it is leaner in each variable. 
+
+\item The space of all such functions is denoted $\mathcal{L}^k(V)$, so:
+\begin{bux}
+    \begin{split}
+    \mathcal{L}^k(V) := \{T:V^k\rightarrow \RR|~ T~ \rm multilinear \}
+    \end{split}
+\end{bux}
+Usually we denote $\mathcal{L}^1(V) = V^{\ast}$ and $\mathcal{L}^0(V) = \{0\}$.  We can then show that $\mathcal{L}^k(V)$ is a vector space with $\left(\lambda f +g\right)(v_1,...,v_k) = \lambda f(v_1,...,v_k) = g(v_1,...,v_k)$, $\lambda \in \RR$.   
+\end{itemize}
+
+\subsection{Basis vectors}
+\begin{itemize}
+    \item Let $e_i$ be a basis of $V$, we define $e^j \in V^{\ast}$, via $e^j v_i =  e^j\sum_ia_ie_i = a_j$. These form what   More generally for $I= (i_1,...,i_k)$, we defined $e^I(v_1,...,v_k) = e^{i_1}(v_1)\cdot ~\cdot\cdot \cdot ~\cdot e^{i_k}(v_k)$.  
+
+\item The set $\{e^I\}, I \in \{1,...,d\}^k$ forms a basis of $\mathcal{L}^k(V)$. In the particular $\rm dim \mathcal{L}^k(V) = (\rm dim V)^k$. 
+\end{itemize}
+
+\subsection{Tensor product }\
+
+ \begin{itemize}
+     \item let $f \in \mathcal{L}^k(V)$ and $g \in \mathcal{L}^l(V)$, we define the following operation $f \otimes g \in \mathcal{L}^{k+l}(V)$, by: 
+\begin{bux}
+    \begin{split}
+        f \otimes g(v_1,...,v_{k+l}) = f(v_1,...,v_{k})\cdot g(v_{k+1},...,v_{k+l})
+    \end{split}
+\end{bux}
+This is the \emph{tensor product} and has the following properties. let $f,g$ and $h$ be tensors, then: 
+\begin{bux}
+    \begin{split}
+         f \otimes &(g \otimes h) = (f \otimes g)\otimes h \\
+         (\lambda f)\otimes& g = \lambda (f\otimes g) = f \otimes (\lambda g) \\ 
+         (f+g)\otimes h = f \otimes& h + g \otimes h , ~~ h \otimes (f+g) = h\otimes f  +  h\otimes g \\ 
+ & e^I = e^{i_1}\otimes \cdot  \cdot \cdot  \otimes e^{i_k}
+    \end{split}
+\end{bux}
+ \end{itemize}
+
+
+\subsection{Dual transformation} 
+\begin{itemize}
+    \item Let $A:V \rightarrow W$ be a linear map. We define the dual transformation, $A^{\ast}: \mathcal{L}^k(W)\rightarrow \mathcal{L}^k(V)$ by : 
+\begin{bux}
+    \begin{split}
+        (A^{\ast}f)(v_1,...,v_k) = f(Av_1,...,Av_k)
+    \end{split}
+\end{bux}
+\item It can then be shown that the dual transformation has the following properties: 
+\begin{bux}
+    \begin{split}
+        & A^{\ast} ~\rm is~ linear \\
+       & A^{\ast}(f\otimes g) = A^{\ast}f \otimes A^{\ast}g \\ 
+      & (A\cdot B)^{\ast} = B^{\ast}\cdot A^{\ast}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+\newpage
+\section{Alternating Tensors }
+\subsection{Symmetric/Alternating tensors}
+\begin{itemize}
+    \item A tensor $f \in \mathcal{L}^k(V)$ is called: 
+\begin{itemize}
+    \item \emph{symmetric} if  $f(v_1,...,v_i,v_{i+1},...,v_k)=f(v_1,...,v_{i+1},v_i,...,v_k)$.
+    \item \emph{alternating} if $f(v_1,...,v_i,v_{i+1},...,v_k)=-f(v_1,...,v_{i+1},v_i,...,v_k)$
+We let $S^kV$ and $\mathcal{A}^kV$ denote the vector space of symmetric/alternating respectively.  
+\end{itemize}
+\end{itemize}
+
+\subsection{Symmetric group}
+\begin{itemize}
+    \item The permutation or symmetric group is defined as: 
+\begin{bux}
+    \begin{split}
+        S_k = \{\sigma:\{1,...,k\}\rightarrow \{1,...,k\}| \sigma ~\rm~a ~bijection\}
+    \end{split}
+\end{bux}
+Since it is a group it also follows that for $\sigma,\tau \in S_k$, then $\sigma \circ \tau, \sigma^{-1} \in S_k$
+\end{itemize}
+
+\subsubsection{Elementary permutation}
+\begin{itemize}
+    \item An elementary permutation is defined as: 
+\begin{bux}
+    \begin{split}
+        e_i(l) = \begin{cases}
+            i+1, ~~~ l=i \\
+            i,~~~l=i+1 \\
+            l, ~~~\rm otherwise
+        \end{cases}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsubsection{Lemma}
+\begin{itemize}
+    \item Every $\sigma$ is a composite of the elementary permutations $e_i$. 
+\end{itemize}
+
+\subsection{Sign function}
+\begin{itemize}
+    \item There exists a function,  $\rm sgn:S_n \rightarrow \{\pm1\}$ st:
+\begin{itemize}
+    \item $\rm sgn(\sigma \circ\tau) = \rm sgn(\sigma)\rm sgn(\tau)$  
+    \item $\rm sgn(e_i)= -1$
+    \item $\rm sgn(\sigma)=(-1)^m$, if $\sigma$ is made of $m$ elementary permutations. 
+    \item $\rm sgn(\sigma^{-1}) = \rm sgn(\sigma)$ 
+    \item $\rm sgn(\sigma) = -1$, if $\sigma$ keeps $p \neq q$ fixed and keeps everything else fixed. 
+
+\end{itemize}
+
+Moreover, the first and second property here uniquely determine $\rm sgn$. 
+\end{itemize}
+
+\subsection{Permutation of tensors}
+\begin{itemize}
+    \item If we have $f \in \mathcal{L}^k(V),~~\sigma \in S_k$, then we can define the following:
+\begin{bux}
+    \begin{split}
+        f^{\sigma}(v_1,...,v_k) := f(v_{\sigma(1)},...,v_{\sigma(k)})
+    \end{split}
+\end{bux}
+
+\end{itemize}
+\subsubsection{Lemma}
+\begin{itemize}
+    \item  $\mathcal{L}^k(V)$ is a linear $S_k$-representation if for $f \in \mathcal{L}^k(V)$, $f^{\sigma \tau} = (f^{\tau})^{\sigma}$, $f^{\sigma}=f$ (i.e. it is symmetric) and $f \mapsto f^{\sigma}$ is a linear map from $\mathcal{L}^k(V) \rightarrow \mathcal{L}^k(V)$.  
+\end{itemize}
+
+\subsection{Sgn definition of tensors }
+\begin{itemize}
+    \item For $f\in \mathcal{L}^k(V)$ , $\sigma \in S_k$ 
+\begin{itemize}
+    \item $f$ is symmetric iff $f^{\sigma}=f$,     $\forall~ \sigma \in S_k$ 
+    \item $f$ is alternating iff $f^{\sigma}=\rm sgn(\sigma)f$,      $\forall~ \sigma \in S_k$
+\end{itemize}
+\end{itemize}
+\subsubsection{Lemma}
+\begin{itemize}
+    \item $f \in \mathcal{L}^k(V)$ is alternating iff $f(v_1,...,v_k)=0$, whenever $v_i=v_j$, for some $i \neq j$. 
+\end{itemize}
+
+\subsubsection{Lemma}
+\begin{itemize}
+    \item Let $f \in \mathcal{A}^k(V)$ and suppose $f(e_{i_1},...,e_{i_k})=0$, $\forall~ (i_1\leq \cdot\cdot \cdot  \leq i_k)$, then $f=0$. 
+\end{itemize}
+
+\subsection{Alternating Tensor }
+\begin{itemize}
+    \item Let $I = (i_1\leq ...\leq i_k)$, we define a unique k-tensor $\psi_I$ as:
+\begin{bux}
+    \begin{split}
+\label{eqn:7.4}
+        \psi_I = \sum_{\sigma}\rm sgn(\sigma)(e^{I})^{\sigma}
+    \end{split}
+\end{bux}
+This acts on a set of basis vectors $e_{j_1},..e_{j_k}$ as follows: 
+\begin{bux}
+    \begin{split}
+         \psi_I(e_{j_1},..e_{j_k}) = \begin{cases}
+            1, ~~\rm if ~(j_1,...,j_k) = (i_1,...,i_k) \\
+            0,~~\rm otherwise
+            \end{cases}
+    \end{split}
+\end{bux}
+This is because $(e^{I})(e_{j_1},..e_{j_k})$ is defined to act by: $(e^{i_1}e_{j_1})(e^{i_2}e_{j_2})\cdot\cdot\cdot(e^{i_1}e_{j_1})$. 
+\end{itemize}
+
+\subsection{Basis of Alternating tensors}
+\begin{itemize}
+    \item $\{\psi_I\}$, with $I$ ascending, form a basis for $\mathcal{A}^k(V)$. In particular $\rm dim \mathcal{A}^k(V) = \begin{pmatrix}
+        n \\ 
+         k
+    \end{pmatrix}$, where $n=\rm dim V$. 
+\begin{itemize}
+    \item This is because we can write any alternating tensor $f \in \mathcal{A}^k(V)$ in terms of these tensors. Consider  $g= \sum_Jd_J\psi_J$, where $d_J = f(e_{j_1},...,e_{j_k})$ (output of a tensor so just a scalar) and $J$ is all ascending indices of order $k$. Then the action of this new function $g$ on the basis vectors  $g(e_{i_1},...,e_{i_k}) =d_I \cdot(1)= f(e_{i_1},...,e_{i_k})$, so we can say that $g=f$ and thus any alternating tensor $f$ can be expanded over $\psi_I$. 
+    \item It can also be noted that if $k=\rm dim V\implies \rm dim \mathcal{A}^k(V) =1$. 
+
+\end{itemize}
+
+\item This allows us to write: 
+\begin{bux}
+    \begin{split}
+         \mathcal{A}^k(V) = \{\lambda \psi^{(1,2,...,n)}|\lambda \in \RR\}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+\subsection{Alternating Dual}
+\begin{itemize}
+    \item Let $B:V \rightarrow W$ be a linear transformation, If $f$ is an alternating tensor, then $B^{\ast}f$ is also an alternating tensor. 
+\end{itemize}
+
+
+\subsection{Alternating dual}
+\begin{itemize}
+    \item Let $B:V \rightarrow W$ be a linear map, then $B^{\ast}$ restricted to $B^{\ast}:\mathcal{A}^k(W) \rightarrow\mathcal{A}^k(V)$ , that is $B^{\ast}f$ is alternating if $f$ is. 
+\end{itemize}
+
+\subsubsection{Dual determinant}
+\begin{itemize}
+    \item For $B:V \rightarrow V$ and $k=\rm dim V =n$, then we have that:
+\begin{bux}
+    \begin{split}
+        B^{\ast}f = \rm det (B)f,~~~f \in \mathcal{A}^k(V)
+    \end{split}
+\end{bux}
+\end{itemize}
+
+ \newpage 
+ \section{The wedge product}
+\begin{itemize}
+    \item The motivation behind this is that we would like to be able to combine alternating tensors in such a way so that the result is also an alternating tensor! 
+
+\end{itemize}
+
+\subsection{The Wedge product}
+\begin{itemize}
+    \item $\exists$ an operation $\mathcal{A}^k(V)\times\mathcal{A}^l(V) \rightarrow \mathcal{A}^{k+l}(V)$ ($(f,g)\mapsto f \wedge g$) satisfying the following: 
+\begin{itemize}
+    \item $(f \wedge g)\wedge h = f \wedge(g \wedge h)$
+    \item $(f,g) \rightarrow f\wedge g$ is bilinear, $(f+\lambda g)\wedge h = f\wedge + \lambda(g\wedge h)$ 
+    \item $f\wedge g = (-1)^klg \wedge f$
+    \item $\psi^I = e^{i_1}\wedge \cdot \cdot \cdot \wedge e^{i_k}$ for a basis $e_i$ of $V$, $I=(i_1\leq ...\leq i_k)$.
+
+
+\end{itemize}
+The wedge product is uniquely defined by these for properties, furthermore let $T:V \rightarrow W$ be a linear map, then:
+\begin{bux}
+    \begin{split}
+        T^{\ast}(f\wedge g) = T^{\ast}f\wedge T^{\ast}g ~~\in \mathcal{A}^{k+l}(V)
+    \end{split}
+\end{bux}
+\end{itemize}
+\subsection{Alternating algebra}
+\begin{itemize}
+    \item The direct sum $\bigoplus_{k=0}^{\infty} \mathcal{A}^k(V)$ form and associative, graded (anti-symmetric ) commutative algebra,   module in $V$ st: $e^{i_1}\wedge \cdot \cdot \cdot \wedge e^{i_k} = \psi^I$. 
+\end{itemize}
+
+ \subsection{Form of the wedge product}
+ \begin{itemize}
+     \item So far we have just said there exists a wedge product but what does it actually look like? To do this we have to define a specific operator: 
+ \end{itemize}
+\subsubsection{Averaging operator}
+\begin{itemize}
+    \item This is $A:\mathcal{L}^k(V) \rightarrow \mathcal{L}^k(V)$ and acts by:
+\begin{bux}
+    \begin{split}
+        Af := \sum_{\sigma \in S_k}\rm sgn(\sigma)f^{\sigma}
+    \end{split}
+\end{bux}
+This operator satisfies that: 
+\begin{itemize}
+    \item $A$ is linear 
+    \item $Af \in \mathcal{A}^k(V)$
+    \item If $f\in\mathcal{A}^k(V) $, then $Af = k!f$ 
+
+\end{itemize}
+
+\item This then allows us to define the wedge product for $l\in \mathcal{A}^k(V)$ and $g \in \mathcal{A}^l(V)$: 
+\begin{bux}
+    \begin{split}
+\label{eqn:8.3}
+        f \wedge g := \frac{1}{k!l!}A(f\otimes g)
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+\newpage 
+\section{Differential forms}
+\begin{itemize}
+    \item Let $M \subset \RR^n$  be a manifold with a boundary. A differential form of order/degree $k$ is a smooth function:
+\begin{bux}
+    \begin{split}
+        \omega: \{(p,v_1,...,v_k)\in M\times\RR^n\times \cdot \cdot \cdot \times \RR^n| v_i \in T_pM\}
+    \end{split}
+\end{bux}
+st, $\forall~p\in M,~~\omega_p=\omega(p)=\omega(p,v_1,...,v_k):T_pM\rightarrow \RR $, is an alternating tensor. Thus we can also say that $\omega:M \rightarrow \bigsqcup_{q\in M}\mathcal{A}^k(T_qM) $, st: $\omega_p \in \mathcal{A}^k(T_pM)$. 
+\end{itemize}
+
+\subsection{Space of differential forms}
+\begin{itemize}
+    \item Let $\Omega^k(M)$ be defined as follows: 
+\begin{bux}
+    \begin{split}
+        \Omega^k(M) = \{\omega| ~\omega ~\text{a smooth differential form of degree $k$}\}
+    \end{split}
+\end{bux}
+We can also define the similar $\Omega_{\delta}^{K}(M)$ as:
+\begin{bux}
+    \begin{split}
+         \Omega^k_{\delta}(M) = \{\omega| ~\omega ~\text{ same as above but not necessarily smooth}\}
+    \end{split}
+\end{bux}
+
+We then have that: $\Omega^{0}(M)=C^{\infty}(M) = \{f:M \rightarrow N|~f~ \rm smooth\}$. 
+\item $\Omega^K(M) $ is a vector space under point-wise addition/ multiplication with scalars. 
+
+\end{itemize}
+
+\subsection{Basis $k$ forms}
+\begin{itemize}
+    \item Recalling that $e^{j}(x_1,x_2,...,x_n) = x_j\in \RR$, for $x \in \RR^n$.  If we look at the form of $\psi_{I}(x)$ in \ref{eqn:7.4}, and the definition of the wedge product in \ref{eqn:8.3} then we can see that we can re-write $\psi_I$ as:
+\begin{bux}
+    \begin{split}
+        \psi^I = e^{i_1}\wedge e^{i_2}\cdot \cdot   \cdot \wedge e^{i_k}
+    \end{split}
+\end{bux}
+And we end up denoting this:
+\begin{bux}
+    \begin{split}
+        \psi^I = dx^{i_1}\wedge dx^{i_2}\cdot \cdot   \cdot \wedge dx^{i_k} = dx^{I}
+    \end{split}
+\end{bux}
+These $\psi_I$ are called elementary $k$ forms (since each $e^{i_1}$ is a $1$-form). It is also worth noticing that:
+\begin{bux}
+    \begin{split}
+      dx^{I}(v_1,v_2,...,v_k) =   \rm det([v_1,v_2\cdot \cdot\cdot v_k])
+    \end{split}
+\end{bux}
+
+\item  We then have that each $k$ tensor $\omega(p)$ can be written uniquely in the form:
+\begin{bux}
+    \begin{split}
+\label{eqn:9.7}
+        \omega(p) = \sum_{[I]}b_I(p)dx^{I}(p)
+    \end{split}
+\end{bux}
+Where $[I]$ denotes any increasing sequence, that means no repeating index's, but it does not have to be of length $k$.   If each $b_I(p)$ is smooth, then so is $\omega$. 
+\end{itemize}
+
+\subsection{Pullback}
+\begin{itemize}
+    \item Let $f:M\rightarrow N$ be smooth, we define $f^{\ast}:\Omega^k(N)\rightarrow \Omega^{k}(M)$ as:
+\begin{bux}
+    \begin{split}
+        \left(f^{\ast}\omega\right)(p,v_1,...,v_k) := \omega(f(p),Df_pv_1,Df_pv_2,...,Df_pv_k)
+    \end{split}
+\end{bux}
+$f^{\ast}$ is a well defined linear map.  We may also write $(f^{\ast}\omega)_p \in A^k(T_pM)$.  With these definitions it can be proven that:
+\begin{itemize}
+    \item $  \rm id_m^{\ast} = \rm id_{\Omega^{\ast}(M)}$
+    \item $(f\circ g)^{\ast} = g^{\ast}\circ f^{\ast}$ 
+For $L\xleftarrow{f}N\xleftarrow{g}M$ smooth. This map is called a \emph{pullback}. 
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Smoothness condition}
+\begin{itemize}
+    \item An element $\omega \in \Omega^k_{\delta}(M)$ is smooth if $\forall~p\in M,~~\exists ~\alpha:U \rightarrow V \subset M$  a co-ord  patch around $p$ st, $\alpha^{\ast}\omega \in \Omega^k_{\delta}(U)$ is smooth.  
+\end{itemize}
+
+\subsubsection{Differential form of wedge}
+\begin{itemize}
+    \item Let $\omega\in\Omega^k(M), ~\eta \in \Omega^l(M) $, we define $\omega \wedge \eta \in \Omega^{k+l}(M)$ by:
+\begin{bux}
+    \begin{split}
+        (\omega \wedge \eta)_p= \omega_p\wedge \eta_p
+    \end{split}
+\end{bux}
+
+\item It can also be shown that if we have $f:M\rightarrow N$ smooth, then $ f^{\ast}(\omega \wedge \eta)= f^{\ast}\omega\wedge f^{\ast}\eta$ 
+\end{itemize}
+
+\subsubsection{Conclusion}
+\begin{itemize}
+    \item $\Omega^{\bullet}(M):= \bigoplus_{k=0}^{\infty}\Omega^k(M)$ is a \emph{graded-commutative} (\emph{anti-commutative}) \emph{associative} algebra structure, with $\Omega^0(M) = C^{\infty}(M)$ (the set of a all smooth 1-d functions on $M$). 
+
+\item It also has that if $f:M\rightarrow N$, then $f^{\ast}:\Omega^{\bullet}(N)\rightarrow\Omega^{\bullet}(M)$, preserves the above structure. 
+
+It is also worth noting that $\Omega^k(M)=0$ for $k>\rm dimV$ as then there are more elements in the sequence $i_1,...,i_k$, then there are dimensions, so $dx^{i_1}\wedge dx^{i_2}\cdot \cdot   \cdot \wedge dx^{i_k}$, must have a repeating index, making it $0$ and thus each $\omega$ is also $0$. 
+\end{itemize}
+
+
+\newpage
+\section{Exterior derivative}
+\begin{itemize}
+    \item Let $M$ be a manifold with a boundary, $\exists~$ a unique linear map $d: \Omega^k(M)\rightarrow\Omega^{k+1}(M)$ defined for all $k\geq 0$ st:
+\begin{itemize}
+    \item If $f \in C^{\infty}(M) = \Omega^0(M)$ then $df_p(v)= Df(p)v$
+    \item If $\omega \in \Omega^k(M), \eta \in \Omega^l(M)$, then $d(\omega \wedge \eta) = d\omega\wedge \eta + (-1)^k\omega\wedge d\eta$. 
+    \item $d(d\omega)=0$, more over if $F:M\rightarrow N$ is smooth then $d(F^{\ast}\omega) = F^{\ast}d\omega$ 
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Exterior Derivative of k-forms}
+\begin{itemize}
+    \item We know how this derivative acts on $0$-forms based on the first property, but how does it act on a $k$-form $\omega$? To find this we can just look at our expression of $k$-forms in terms of the elementary $k$-forms in \ref{eqn:9.7}. With this expression $d\omega$ is defined as:
+\begin{bux}
+    \begin{split}
+        d\omega  & = d\sum_{[I]}b_Idx^{I} = \sum_{[I]}db_I\wedge dx^{I}+\sum_{[I]}b_Id^2x^{I} \\
+&  = \sum_{[I]}db_I\wedge dx^{I}
+    \end{split}
+\end{bux}
+Where we have used the property that $d^2 =0$.  
+
+\item One can also use this expression to show that $d^2\omega =0 $ as since $b_I$ is a $0$ form, $d^2b_I = \sum_{i,j=1}^nD_iD_jb_I$, i.e. all second order partial derivatives, but since $b_I$, must be a smooth function $D_iD_jb_I  = D_jD_ib_I$, so since $d^\omega = \sum_I \sum_{i,j=1}^nD_iD_jb_Idx^I = \sum_I \sum_{i>j}(D_iD_jb_I-D_jD_ib_I)dx^I=0$ , as swapping $dx^{i_i}$ and $dx^{i_j}$, picks up a minus sign.  
+\end{itemize}
+
+
+\subsubsection{Alternate definition}
+\begin{itemize}
+    \item Alternatively if we have $\alpha:U \rightarrow M$, be a patch around $p$.  we can define $d\omega$ as:
+\begin{bux}
+    \begin{split}
+        (d\omega)_p := ((\alpha^{-1})^{\ast}d_U(\alpha^{\ast}\omega))_p
+    \end{split}
+\end{bux}
+This is well defined and independent of the choice of $\alpha$. 
+\end{itemize}
+
+\subsection{Naturality}
+\begin{itemize}
+    \item Let $F:U \rightarrow V$ be smooth, $\omega \in \Omega^k(V)$ . Then:
+\begin{bux}
+    \begin{split}
+        F^{\ast}d\omega = d(F^{\ast}\omega)
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+
+\newpage
+\section{Vector Fields}
+\begin{itemize}
+    \item A vector field is a smooth function $X:M\rightarrow TM$, st. $X(p)\in T_pM$. We then define the set of all vector fields on our manifold $M$:
+\begin{bux}
+    \begin{split}
+        \mathfrak{X}(M) := \{X:M\rightarrow TM|X ~\text{is a vector field}\}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{Isomorphisims to differential forms  }
+\begin{itemize}
+    \item We can define the following isomorphisms for $M \subset \RR$: 
+\begin{bux}
+    \begin{split}
+        & h_1:   \mathfrak{X}(M)  \rightarrow \Omega^1(M)\\
+& \begin{pmatrix}
+    x^1 \\
+    \cdot \\
+    \cdot \\
+    \cdot \\
+    x^d
+\end{pmatrix} \mapsto \sum_{i=1}^dx^idx^i  \\
+& h_{n-1}:   \mathfrak{X}(M)  \rightarrow \Omega^d-1(M)\\
+& \begin{pmatrix}
+    x^1 \\
+    \cdot \\
+    \cdot \\
+    \cdot \\
+    x^d
+\end{pmatrix} \mapsto \sum_{i=1}^dx^idx^1 \wedge \cdot \cdot \cdot dx^{i-1}\wedge dx^{i+1}\wedge \cdot \cdot \cdot \wedge dx^{d} \\
+& h_{n}:   \mathfrak{X}(M)  \rightarrow \Omega^d(M)\\
+& u \mapsto udx^1 \wedge \cdot \cdot \cdot \wedge dx^{d}
+    \end{split}
+\end{bux}
+Note that these isomorphisms may not be natural, i.e. $h_1(F^{\ast}x)= F^{\ast}h_1(x)$, is in general not true. 
+\end{itemize}
+
+
+\newpage 
+\section{Integrating forms}
+\begin{itemize}
+    \item In this section we will define what it means to integrate a $k$-form over a manifold $M$. To do this we link our integrals back to $\RR^n$, where we have well defined integration. 
+\end{itemize}
+
+\subsection{Fubinis Theorem}
+\begin{bux}
+    \begin{split}
+        \int f(x^1,...,x^n)dx^1\cdot\cdot\cdot dx^n = \int_{\RR^{n-l}}\left[\int_{\RR^{l}}f(x^1,...,x^n)dx^1\cdot\cdot\cdot dx^l\right]dx^{l+1}\cdot\cdot\cdot dx^n
+    \end{split}
+\end{bux}
+\subsection{Change of Variables}
+\begin{itemize}
+    \item Let $F:U_1\rightarrow U_2$, ($U_1 \subset \mathbb{H}^d, U_2 \subset \mathbb{H}^n$) a diffeomorphism, then:
+\begin{bux}
+    \begin{split}
+        \int_{\RR^n}f(F(x))|\rm det DF|dx^1\cdot\cdot\cdot dx^n = \int_{\RR^n}f(x)dx^1\cdot\cdot\cdot dx^n
+    \end{split}
+\end{bux}
+
+\end{itemize}
+
+
+\subsubsection{Claim}
+\begin{itemize}
+    \item Change of Variables $\iff$ $\int F^{\ast}\omega = \int \omega$,  if $|\rm det DF| = \rm det DF$.
+\end{itemize}
+
+\subsection{Compact Support}
+\begin{itemize}
+    \item We say $\omega \in \Omega^k(M)$ has \emph{compact support} if $\rm supp ~\omega : = \overline{\{p\in M| \omega_p \neq0\}}$ is compact. We can then denote $\Omega^k_c(M)$ denote all the $k$-forms with compact supports.  
+\end{itemize}
+
+\subsection{Integral of a d-form}
+\begin{itemize}
+    \item Let $M \in \mathbb{H}^d$ ($M$ open), $\omega \in \Omega_c^d(M)$. We define the integral of this $d$-form as follows:
+\begin{bux}
+    \begin{split}
+        \int_M \omega = \int_{\RR^d}u(x^1,...,x^d)dx^1\cdot\cdot\cdot dx^d
+    \end{split}
+\end{bux}
+Here $u$ is defined by $\omega = u dx^1\wedge \cdot\cdot\cdot \wedge dx^d$ and is extended by $0$ outside of $M$. 
+\end{itemize}
+
+
+
+
+ \newpage
+ \section{Orientations}
+ \begin{itemize}
+     \item In order to determine weather the result of integrating a $k$-form, has a $\pm$ in front of it, we have to define an orientation on the manifold we are integrating over. 
+\end{itemize}
+
+\subsection{Orientation preserving/reversing} 
+\begin{itemize}
+    \item Let $F:M \rightarrow N$ ($N,M \subset \mathbb{H}^d$), be a diffeomorphism. We call $F$ \emph{orientation preserving} if $\rm det DF(p)> 0 ,~\forall~p\in M$ and \emph{orientation reversing} if $\rm det DF(p)< 0 ,~\forall~p\in M$. Note that $\rm det DF \neq 0 $, as $F$ is a diffeomorphism. 
+\end{itemize}
+
+\subsection{Proposition}
+\begin{itemize}
+    \item Let $F$ be as above and orientation preserving. Then:
+\begin{bux}
+    \begin{split}
+        \int_MF^{\ast}\omega = \int_N\omega,~~~\forall~\omega\in\Omega_c^d(N)
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{Overlapping Charts}
+\begin{itemize}
+    \item Let $M$ be a manifold with a boundary. Let $\alpha_i:U_i \rightarrow V_i \subset M$ be charts. We say two charts $\alpha_1$ and $\alpha_2$ \emph{overlap positively} if $\alpha_2^{-1} \circ \alpha_1: \alpha_1^{-1}(V_1 \cap V_2)\rightarrow \alpha_2^{-1}(V_1 \cap V_2)$ is orientation preserving. 
+\end{itemize}
+
+
+\subsection{Oriented manifold}
+\begin{itemize}
+    \item An orientation on $M$ is the choice of collection of charts that pairwise overlap positively and cover $M$. 
+
+We denote an oriented manifold by $(M,\{\alpha_i\})$. 
+
+We call a chart $\beta:U \rightarrow V$, positive if it overlaps positively with all $\alpha_i \in \{\alpha_i\}$.  It is easy to see then that. $\{\alpha_i\}\subset \{\beta\} \iff$ they define the same collection of positive charts. 
+\end{itemize}
+
+\subsection{Reversing orientation}
+\begin{itemize}
+    \item Set $\tau:\mathbb{H}^d\rightarrow \mathbb{H}^d$, $(x^1,...,x^d)\mapsto (-x^1,...,x^d)$. Given a patch $\alpha:U \rightarrow M$, then $\alpha \circ \tau$ is also a patch with opposite orientation. Usually we denote this by: $(M,\{\alpha_i\circ \tau\}) = -(M,\{\alpha_i\}) = -M$.  
+
+Its clear to see that if we have $M$ orientated then either $\alpha$, or $\alpha_i\circ \tau$, is positive .
+\end{itemize}
+
+\subsection{Extension of interior orientation}
+\begin{itemize}
+    \item Let $M$ be a manifold with a boundary. Suppose $\mathring{M}= M\backslash \partial M$  is orientable, then so is $M$. More over, if $A={\alpha_i}$, is an orientation on $\mathring{M}$, then $\exists,~~B={\beta_i}$ an orientation on $M$, st: $A \subset B$.   
+\end{itemize}
+
+\subsubsection{Corollary}
+\begin{itemize}
+    \item Let $f:\RR^n \rightarrow \RR$ be smooth and $0$ a regular value. Then $f^{-1}([ 0,\infty])=M$, carries a natural orientation. 
+\end{itemize}
+
+\subsection{Induced orientation}
+\begin{itemize}
+    \item Let $(M,\{\alpha_i\})$, be a oriented manifold with a boundary. Then, $(\partial M, {\alpha_i\bigg\vert_{\partial \mathbb{H}^d\cap U_i}})$, is an oriented manifold with what we call a \emph{restricted orientation}. 
+
+\item The \emph{Induced orientation} on $\partial M$ is $(-1)^d$ times the restricted one. This is so that stokes theorem always holds! 
+\end{itemize}
+
+\subsection{Oriented maps }
+\begin{itemize}
+    \item Let $f:M\rightarrow N$ be a diffeomorphism and $(M,\{\alpha_i\}),(N,\{\beta_i\})$, oriented manifolds. We say $f$ is orientation preserving if $\{f \circ \alpha\}$ are positive charts with respect to $\{\beta_i\}$. 
+\end{itemize}
+
+\subsection{Positive charts wrt d-forms}
+\begin{itemize}
+    \item Given $\omega \in \Omega^d(M)$ on $M$ a $d$-manifold with a boundary. We declare $\alpha:U \rightarrow M$, to be positive iff $\alpha^{\ast}\omega \in \Omega^d(U)$, $U \in \RR^d$, st: $\alpha^{\ast}\omega = udx^1\wedge\cdot\cdot\cdot \wedge dx^d$, with $u(x)>0,~~\forall~x\in U$. 
+
+\item This defines an orientation $\iff$ $\omega_p\neq 0,~~\forall~p\in M$.  
+\end{itemize}
+
+
+\subsection{Volume Forms}
+\begin{itemize}
+    \item $\omega\in \Omega^d(M)$ is called an \emph{volume form} if $\omega_p\neq 0,~~\forall~p\in M $. 
+\end{itemize}
+
+
+\newpage
+\section{Stokes Theorem}
+\subsection{The integral}
+\begin{itemize}
+    \item The integral is linear:
+\begin{bux}
+    \begin{split}
+        \int_M\lambda \omega +\eta = \lambda\int_M\omega + \int_M\eta
+    \end{split}
+\end{bux}
+If $-M$, denotes $M$, with the opposite orientation then:
+\begin{bux}
+    \begin{split}
+        \int_{-M}\omega = -\int_M\omega
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{Stokes Theorem}
+\begin{itemize}
+\item Let $M$ be an oriented manifold with a boundary, then for $\omega \in \Omega^{d-1}_c(M)$: 
+\begin{bux}
+    \begin{split}
+        \int_Md\omega = \int_{\partial M}\omega
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsubsection{Corollary}
+\begin{itemize}
+    \item If $M$ has no boundary ($\partial M =\varnothing$), then $\int_Md\omega = 0 $. 
+\end{itemize}
+
+
+\end{document}

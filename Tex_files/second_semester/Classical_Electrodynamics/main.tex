@@ -1,0 +1,1096 @@
+\documentclass[11pt]{article}
+
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\addbibresource{Bib.bib}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+
+\DeclarePairedDelimiterXPP\BigOSI[2]%
+  {\mathcal{O}}{(}{)}{}%
+  {\SI{#1}{#2}}
+\makeatletter
+
+\DeclareRobustCommand{\dbar}{\text{\addbar@{0.2ex}{0.25em}{1}}d}
+\DeclareRobustCommand{\qbar}{\text{\addbar@{-1.25ex}{0.13em}{1}}q}
+\DeclareRobustCommand{\pbar}{\text{\addbar@{-1.25ex}{-0.01em}{1}}p}
+
+\newcommand{\addbar@}[3]{%
+  \makebox[0pt][l]{%
+    \raisebox{#1}[0pt][0pt]{%
+      \kern#2
+      \scalebox{#3}[0.8]{$\m@th\mathchar"84$}%
+    }%
+  }%
+}
+
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{comment}
+\usepackage{mhchem}
+ \usepackage{tabularx}
+ \usepackage{titling}
+ \usepackage{amsmath,environ}
+ \usepackage[explicit]{titlesec}
+\usepackage{fancyhdr}
+\setlength{\droptitle}{3em} 
+
+\title{Classical Electrodynamics}
+\author{Thomas Brosnan}
+\date{Notes taken in Professor Stefan Sint, Hilary Term 2024}
+
+
+
+\makeatother
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=blue!30!black,
+    colback=blue!30, boxrule=1pt,
+    #1}
+\tcbset{highlight math style={boxsep=2mm,,colback=blue!0!green!0!red!0!}}
+
+  \newenvironment{bux}
+    {
+    \empheq[box=\tcbhighmath]{align}
+   }{
+    \endempheq
+    }
+    \newenvironment{bux*}
+    {
+    \empheq[box=\tcbhighmath]{align*}
+   }{
+    \endempheq
+    }
+\newcommand{\hsp}{\hspace{8pt}}
+
+\newcommand*{\sectionFont}{%
+  \LARGE\bfseries
+}
+
+    
+\numberwithin{equation}{section}
+
+\makeatletter
+\let\Title\@title % Copy the title to a new command
+\makeatother
+
+%change this RGB value to change the section background colour 
+\definecolor{mycolor1}{RGB}{92, 92, 214}
+\colorlet{SectionColour}{mycolor1}
+%subsection background colour 
+\definecolor{mycolor2}{gray}{0.8}
+\colorlet{subSectionColour}{mycolor2}
+%subsubsection background colour 
+\definecolor{mycolor3}{RGB}{255,255,255}
+\colorlet{subsubSectionColour}{mycolor3}
+
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+\Large
+    "  "
+    
+    -
+\end{center}
+\vspace*{\fill}
+\newpage 
+\tableofcontents
+% For \section
+ \titleformat{\section}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesection  \hsp #1 {\strut} \end{minipage}}}
+% For \subsection
+ \titleformat{\subsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subSectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesubsection  \hsp #1 {\strut} \end{minipage}}}
+% For \section*
+ \titleformat{name=\section, numberless}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+  % For \subsection*
+ \titleformat{name=\subsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subSectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+ % For \subsubsection
+ \titleformat{\subsubsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm}\thesubsubsection \hsp #1 {\strut} \end{minipage}}}
+  % For \subsubsection*
+ \titleformat{name=\subsubsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm} #1 {\strut} \end{minipage}}}
+\newpage 
+%header 
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[L]{\Title}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{-~\thepage~-}
+\renewcommand{\headrulewidth}{1pt}
+
+
+
+\normalsize
+\newpage
+\section{Co-variant formalism of electromagnetism}
+\subsection{Maxwell's equations}
+\begin{itemize}
+    \item We start by listing Maxwell's equations in Gaussian units: 
+\begin{bux}
+    \begin{split}
+\label{max}
+       & ~~\nabla \cdot \textbf{B}  = 0 ~~~ (1)  ~~~~~~~~~~~~~~\nabla \times \textbf{E}+\frac{1}{c}\frac{\partial \textbf{B}}{\partial t} =0~~~~~(2) \\
+&  \nabla \cdot \textbf{E}= 4 \pi \rho  ~~~(3) ~~~~~~~~\nabla \times \textbf{B} - \frac{1}{c}\frac{\partial \textbf{E}}{\partial t} = \frac{4\pi}{c}\textbf{J}   ~~~(4)
+    \end{split}
+\end{bux}
+
+\end{itemize}
+\subsection{Continuity equation }
+\begin{itemize}
+    \item Taking the time derivative of the first Maxwell equation \ref{max} divided by $c$and using the $\frac{1}{c}\partial_t \textbf{E}$ created to sub in the fourth Maxwell equation, we get the following: 
+\begin{bux}
+    \begin{split}
+        &\frac{1}{c}\frac{\partial}{\partial t}(\nabla \cdot \textbf{E}) = \frac{4 \pi}{c} \frac{\partial\rho}{\partial t} \\ 
+\implies &  \nabla \cdot \left( \nabla \times \textbf{B} - \frac{4\pi}{c} \textbf{J}\right) = \frac{4 \pi}{c}\frac{ \partial \rho}{\partial t} \\ 
+\implies & \frac{\partial \rho }{\partial t} + \nabla \cdot \textbf{J} = 0 
+    \end{split}
+\end{bux}
+Where we have assumed that $\textbf{E} $ is sufficiently smooth such that we can swap the order of $\nabla$ and $\partial_t$. We also used the fact that $\nabla\cdot(\nabla\times\textbf{B}) =0$.  This is the \emph{continuity equation}. 
+\item To get the total charge we have to integrate these densities over a volume $V$: 
+\begin{bux}
+    \begin{split}
+        \int_V\frac{\partial \rho}{\partial t}d^3\textbf{x} = - \int_V\nabla \cdot \textbf{J}d^3\textbf{x} = \int_{\partial V} \textbf{J} \cdot d \textbf{A}
+    \end{split}
+\end{bux}
+Since the total charge of a volume is given by $Q=\int_V\rho d^3\textbf{x}$, and the flux through a surface $\partial V=0$ is zero if $V = \mathbb{R}^3 $ i.e the volume is all of space. This implies: 
+\begin{bux}
+    \begin{split}
+        \frac{\partial Q}{\partial t} = 0 
+    \end{split}
+\end{bux}
+I.e total charge is conserved.
+\end{itemize}
+\subsubsection{Invariance of charge under Lorentz transformations}
+\begin{itemize}
+    \item The total charge with in a small volume $d^4x$ is an experimental invariant. That is that $\rho'd^3x' = \rho d^3x$. We also know that the four dimensional volume element $d^4x = det(\Lambda)d^4x' = d^4x'$ is Lorentz invariant. This must imply that $\rho$ or as turns out for the sake of units $c\rho$, transforms like the time component of a 4-vector. 
+
+\item It is from this that we are motivated to combine $\rho$ and $\textbf{J} $ into a single 4-vector $j^{\mu}$. This then naturally takes the form: 
+\begin{bux}
+    \begin{split}
+        j^{\mu} = \begin{pmatrix}
+            c\rho \\
+            \textbf{J}
+        \end{pmatrix}
+    \end{split}
+\end{bux}
+Nicely this reduces the continuity equation to $\partial_{\mu}j^{\mu}=0$. Where $\partial_{\mu} = (\frac{1}{c}\partial_t,\nabla)$ and $\partial^{\mu} = (\frac{1}{c}\partial_t,-\nabla)$ .  
+\end{itemize}
+ \subsection{Vector and Scalar potentials }
+ \begin{itemize}
+     \item As discussed before the magnetic field has an underlying vector potential such that $\textbf{B} = \nabla \times \textbf{A}$ , (from the first Maxwell relation \ref{max}) and the electric field has an underlying scalar field such that $\textbf{E} = - \nabla \Phi$. But this last equation was under the assumptions of electrostatics. To find the right solution we can write the second Maxwell equation \ref{max} as:
+\begin{bux}
+    \begin{split}
+        \nabla\times \textbf{E} +\frac{1}{c} \frac{\partial}{\partial t} \nabla \times \textbf{A} \iff \nabla \times \left( \textbf{E} + \frac{\partial \textbf{A}}{\partial t}\right) = 0
+    \end{split}
+\end{bux}
+This last expression means the terms in the brackets can be written as (minus) the gradient of a scalar field $\Phi$, so: 
+\begin{bux}
+    \begin{split}
+\label{eqn:4.7}
+        \textbf{E} = - \nabla \Phi - \frac{1}{c}\frac{\partial \textbf{A}}{\partial t}
+    \end{split}
+\end{bux}
+\item Now the third Maxwell equation \ref{max} becomes: 
+\begin{bux}
+    \begin{split}
+\label{eqn:4.8}
+         \nabla^2 \Phi + \frac{1}{c}\frac{\partial}{\partial t} \nabla \cdot \textbf{A} =  -4\pi \rho 
+   \end{split}
+\end{bux}
+And the fourth Maxwell equation becomes: 
+\begin{bux}
+    \begin{split}
+\label{eqn:4.9}
+    \nabla^2 \textbf{A} - \frac{1}{c^2} \frac{\partial^2 \textbf{A}}{\partial t^2} - \nabla \left( \nabla \cdot \textbf{A} + \frac{1}{c^2}\frac{\partial \Phi}{\partial t}\right) = - \frac{4\pi}{c}\textbf{J}  
+    \end{split}
+\end{bux}
+Where we have written $\mu_0 \epsilon_0$ as $\frac{1}{c^2}$. We have now reduced the Maxwell equations to, two coupled equations. 
+
+\end{itemize}
+\subsubsection{Lorenz gauge}
+\begin{itemize}
+\item To decouple these equations we exploit the fact that these potentials can be Gauge transformed. As discussed before we can transform $\textbf{A}$ by:  
+\begin{bux}
+    \begin{split}
+\label{eqn:4.10}
+        \textbf{A}' = \textbf{A} + \nabla \chi 
+    \end{split}
+\end{bux}
+As this gives rise to the same magnetic field $\textbf{B}$. Now we must also then transform the scalar potential $\Phi$ so that it gives rise to the same electric field $\textbf{E}$. For this to happen according to \ref{eqn:4.7}:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.11}
+        \Phi' = \Phi -\frac{1}{c} \frac{\partial \chi}{\partial t}
+    \end{split}
+\end{bux}
+The invariance of the fields under these transformations is called \emph{gauge invariance}. Equations \ref{eqn:4.10} and \ref{eqn:4.11} allow us to choose $\chi$ such that: 
+\begin{bux}
+    \begin{split}
+\label{eqn:4.12}
+        \nabla \cdot \textbf{A} + \frac{1}{c^2} \frac{\partial  \Phi}{\partial t } = 0 
+    \end{split}
+\end{bux}
+This is the \emph{Lorenz Gauge} and makes it so that \ref{eqn:4.8} can be written as: 
+\begin{bux}
+    \begin{split}
+\label{eqn:4.13}
+         \nabla^2 \Phi - \frac{1}{c^2}\frac{\partial^2 \Phi}{\partial t^2}  =  -4 \pi\rho
+    \end{split}
+\end{bux}
+And  \ref{eqn:4.9} becomes: 
+\begin{bux}
+    \begin{split}
+\label{eqn:4.14}
+          \nabla^2 \textbf{A} - \frac{1}{c^2} \frac{\partial^2 \textbf{A}}{\partial t^2}= - \frac{4\pi}{c}\textbf{J} 
+    \end{split}
+\end{bux}
+It is natural then from these two equations to define a 4-vector $A^{\mu}$ defined as: 
+\begin{bux}
+    \begin{split}
+        A^{\mu} = \begin{pmatrix}
+            \phi \\
+            \textbf{A}
+        \end{pmatrix}
+    \end{split}
+\end{bux}
+\item We can also then define something called the \emph{d'ALembert Operator}, denoted by $\Box$ and given by: 
+\begin{bux}
+    \begin{split}
+        \Box  = \frac{1}{c^2} \frac{\partial^2}{\partial t^2} - \nabla^2 = \partial_{\mu}\partial^{\mu}
+    \end{split}
+\end{bux} This simplifies things greatly as now we can just write the Lorentz gauge as: 
+\begin{bux}
+    \begin{split}
+        \partial_{\mu} A^{\mu} = 0
+    \end{split}
+\end{bux}
+And with this gauge, our two equations \ref{eqn:4.12} and \ref{eqn:4.13} can be written as:
+\begin{bux}
+    \begin{split}
+\label{eqn:1.18}
+        \Box A^{\mu} = \frac{4\pi}{c}j^{\mu}
+    \end{split}
+\end{bux}
+\item The conditions \ref{eqn:4.10} and \ref{eqn:4.11} can now be written as one: 
+\begin{bux}
+    \begin{split}
+        A'^{\mu} = A^{\mu} - \partial^{\mu}\chi
+    \end{split}
+\end{bux}
+If we then wish to solve for $\chi$ in the Lorentz gauge, $\partial_{\mu}A'^{\mu}=0$, means: 
+\begin{bux}
+    \begin{split}
+ &        0 = \partial_{\mu} (A^{\mu} - \partial^{\mu}\chi) \\ 
+ & \implies  \partial_{\mu}A^{\mu}  = \Box\chi
+    \end{split}
+\end{bux}
+
+
+\end{itemize}
+
+\subsection{Electromagnetic tensor}
+\begin{itemize}
+    \item Since from the above defined 4-vector $A^{\mu} $, we can get the components of $\textbf{E} $ via $E_{x} = -\frac{1}{c}\partial_tA_{x} - \partial_x \Phi = -(\partial^{0}A^1 - \partial^1A^0)$. We can also get the components of $\textbf{B} = \nabla \times \textbf{A} $ via $B_x = \partial_y A_z - \partial_zA_y = -(\partial^2A^3-\partial^3A^2)$. This works for all the components such that it makes sense to define a anti-symmetric rank 2 tensor $F^{\mu\nu}$: 
+\begin{bux}
+    \begin{split}
+        F^{\mu\nu} =\partial^{\mu}A^{\nu}-\partial^{\nu}A^{\mu}
+    \end{split}
+\end{bux}
+This way $F^{\mu\nu}$  and $F_{\mu\nu}$ take the matrix forms: 
+\begin{bux}
+    \begin{split}
+       &  F^{\mu\nu} =  \begin{pmatrix}
+       0  & -E_x/c & -E_y/c & -E_z/c \\
+       E_x/c&0& -B_z& B_y   \\
+       E_y/c& B_z& 0 & -B_x \\
+      E_z/c& -B_y& B_x& 0 \\
+    \end{pmatrix} \\ 
+&       \\
+ & F_{\mu\nu} =  \begin{pmatrix}
+       0  & E_x/c & E_y/c & E_z/c \\
+       -E_x/c&0& -B_z& B_y   \\
+       -E_y/c& B_z& 0 & -B_x \\
+      -E_z/c& -B_y& B_x& 0 \\
+    \end{pmatrix}
+    \end{split}
+\end{bux}
+This is because to go from $F^{\mu\nu} = g^{\mu \alpha}g^{\beta \nu }F_{\alpha\beta}$, where $g^{ \mu \nu } $ is the metric. In special relativity this is just the Minkowski metric, for which we use the $(+---)$ convention: 
+\begin{bux}
+    \begin{split}
+         g^{\mu\nu} =  \begin{pmatrix}
+       1  & 0 & 0 & 0 \\
+       0&-1& 0 & 0   \\
+       0&  0 & -1 & 0 \\
+      0 & 0 & 0 & -1 \\
+    \end{pmatrix}
+    \end{split}
+\end{bux}
+
+\item We would like to be able to reproduce Maxwell's equations by manipulating this tensor. This can motivated from examining the components, but we just give the results here. The third and fourth Maxwell equations (inhomogeneous) can be produced from: 
+\begin{bux}
+    \begin{split}
+        \partial_{\alpha} F^{\alpha\beta} = \frac{4 \pi}{c} j^{\beta}
+    \end{split}
+\end{bux}
+For the homogeneous equations we need to construct something called the Dual tensor $\tilde{\mathcal{F}}^{\mu\nu}$ which is the Hodge Duel of the Electromagnetic tensor. Defined as: 
+\begin{bux}
+    \begin{split}
+        \tilde{\mathcal{F}}^{\mu\nu} = \frac{1}{2}\epsilon^{\alpha\beta\gamma\delta}F_{\gamma \delta}
+    \end{split}
+\end{bux}
+This takes the following matrix form: 
+\begin{bux}
+    \begin{split}
+         &   \tilde{\mathcal{F}}^{\mu\nu} =  \begin{pmatrix}
+       0  & -B_x/c & -B_y/c & -B_z/c \\
+       B_x/c&0& E_z& -E_y   \\
+       E_y/c& -E_z& 0 & E_x \\
+      B_z/c& E_y& -E_x& 0 \\
+    \end{pmatrix} 
+    \end{split}
+\end{bux}
+Using this the first and second Maxwell equations \ref{max} can be produced from:
+\begin{bux}
+    \begin{split}
+        \partial_{\mu}\tilde{\mathcal{F}}^{\mu\nu} = 0
+    \end{split}
+\end{bux}
+This identity is easy to see as $ \partial_{\mu}\tilde{\mathcal{F}}^{\mu\nu} = \frac{1}{2}\epsilon^{\alpha\beta\gamma\delta}\partial_{\alpha}\partial_{\gamma}A_{\delta}$, but since partial derivative commute this these terms just vanish. 
+
+\item We can also reproduce the results similar to what  we had earlier with \ref{eqn:1.18}. This comes from the following argument. It can be shown that $F^{\mu\nu}$, satisfies the \emph{Bianchi identity}, that is: 
+\begin{bux}
+    \begin{split}
+        \partial^{\alpha}F^{\beta\gamma} + \partial^{\beta}F^{\gamma\alpha}+\partial^{\gamma}F^{\alpha\beta} = 0 
+    \end{split}
+\end{bux}
+This can be checked most easily by examining the $F^{\mu\nu} =\partial^{\mu}A^{\nu}-\partial^{\nu}A^{\mu}$ form. What we can then do is apply $\partial_{\alpha}$ to this identity: 
+\begin{bux}
+    \begin{split}
+\label{eqn:1.28}
+       &   \partial_{\alpha}\partial^{\alpha}F^{\beta\gamma} + \partial_{\alpha}\partial^{\beta}F^{\gamma\alpha}+\partial_{\alpha}\partial^{\gamma}F^{\alpha\beta} = 0  \\ 
+ \implies & \Box F^{\beta\gamma} - \partial^{\beta}(\frac{4\pi}{c}j^{\gamma}) + \partial^{\gamma}(\frac{4\pi}{c}j^{\beta}) = 0 \\ 
+&  \implies   \Box F^{\beta\gamma} = \frac{4 \pi}{c}(\partial^{\beta}j^{\gamma}-\partial^{\gamma}j^{\beta})
+    \end{split}
+\end{bux}
+Examining the components of this leads to the following equations involving the $\textbf{E} $ and $\textbf{B}$ fields. $\Box F^{i0} = \Box E_i = \frac{4\pi}{c}(\partial^ij^0-\partial^0j^i)$ so: 
+\begin{bux}
+    \begin{split}
+        \Box\textbf{E} = -4\pi(\nabla \rho + \frac{1}{c^2}\frac{\partial \textbf{J}}{\partial t})
+    \end{split}
+\end{bux}
+And $F^{12} = \Box (-B_3) = \frac{4\pi}{c}(\partial^1j^2-\partial^2j^1)$ so: 
+\begin{bux}
+    \begin{split}
+        \Box \textbf{B} = \frac{4\pi}{c}\nabla \times \textbf{J}
+    \end{split}
+\end{bux}
+\item Further more since $F^{\mu\nu} =\partial^{\mu}A^{\nu}-\partial^{\nu}A^{\mu} \implies \frac{4\pi}{c}j^{\nu} = \partial_{\mu}F^{\mu\nu} = \Box A^{\nu} - \partial^{\nu}(\partial_{\mu}A^{\mu})$, which in the Lorentz gauge reduces to: 
+\begin{bux}
+    \begin{split}
+      &   \Box A^{\nu} = \frac{4\pi}{c}j^{\nu} \\
+     \implies &  \Box \textbf{A} = \frac{4\pi}{c}\textbf{J} \\
+   & \Box \Phi = 4 \pi \rho 
+    \end{split}
+\end{bux}
+All of these can be recognised as differential equations in the form of a wave equation. 
+\end{itemize}
+\newpage
+\section{Wave equation}
+\subsection{Cauchy problem }
+\begin{itemize}
+    \item The wave equation is a second order in time derivative, we expect the solution $\psi(\textbf{x},t)$ to be determined for all times given $\psi(\textbf{x,0})$ ,and $\frac{\partial \psi(\textbf{x,t})}{\partial t}\bigg\vert_{t=0}$. 
+We use the ansatz $\psi(\textbf{x},t) =A(t)e^{i\textbf{k}\cdot \textbf{x}} $ to solve the homogeneous wave equation: 
+\begin{bux}
+    \begin{split}
+     \Box\psi =& \left(\frac{1}{c^2}\ddot{A}-(ik)^2A \right)e^{i\textbf{k}\cdot\textbf{x}} = 0 \\
+ & \implies \ddot{A} + c^2k^2A= 0 \\
+ \implies A(t) =& A(0)\cos(c|\textbf{k}|t)+ \frac{\dot{A}(0)}{c|\textbf{k}|}\sin(c|\textbf{k}|t)
+    \end{split}
+\end{bux}
+    \item We let $u_0(\textbf{x}) \equiv    \psi(\textbf{x,0})$ and $v_0(\textbf{x}) =\frac{\partial \psi(\textbf{x,t})}{\partial t}\bigg\vert_{t=0} $. Then these functions can be expressed as their Fourier transformations:
+\begin{bux}
+    \begin{split}
+      &  u_0(\textbf{x}) = \int\frac{d^3k}{(2\pi)^3}e^{i\textbf{k}\cdot\textbf{x}}\tilde{u}_0(\textbf{k}) \\ 
+ & v_0(\textbf{x}) = \int\frac{d^3k}{(2\pi)^3}e^{i\textbf{k}\cdot\textbf{x}}\tilde{v}_0(\textbf{k})
+    \end{split}
+\end{bux}
+We now generalize the above expression of $\psi(\textbf{x},t) =A(t)e^{i\textbf{k}\cdot \textbf{x}}$. By the superposition principle, since the wave equation is linear if we add any solutions together, they are also a solution. So we add up all possible wave vector values $k$, which turns into an integral as they can take non-discrete values. We then also divide by a factor of $(2\pi)^3$, so that this looks like a Fourier transform! 
+\begin{bux}
+    \begin{split}
+        \psi(\textbf{x},t) = \int\frac{d^3k}{(2\pi)^3}\left(\tilde{u}_0(\textbf{k}) \cos (ckt) + \frac{\tilde{v}_0(\textbf{k})}{ck}\sin(ckt)\right)e^{i\textbf{k}\cdot\textbf{x}}
+    \end{split}
+\end{bux}
+The inverse transforms of these functions are: 
+\begin{bux}
+    \begin{split}
+         & \tilde{u}_0(\textbf{k}) = \int d^3xe^{-i\textbf{k}\cdot\textbf{x}} u_0(\textbf{x}) \\ 
+ & \tilde{v}_0(\textbf{k}) = \int d^3xe^{-i\textbf{k}\cdot\textbf{x}} v_0(\textbf{x})
+    \end{split}
+\end{bux}
+We can then sub these in to obtain:
+\begin{bux}
+    \begin{split}
+\label{eqn:2.5}
+         \psi(\textbf{x},t) = &\int\frac{d^3k}{(2\pi)^3}\int d^3y\left(u_0(\textbf{y}) \cos (ckt) + \frac{v_0(\textbf{y})}{ck}\sin(ckt)\right)e^{i\textbf{k}\cdot(\textbf{x}-\textbf{y})}  \\ 
+= \int d^3y &\left[u_0(\textbf{y})\left(\int\frac{d^3k}{(2\pi)^3} \cos (ckt)e^{i\textbf{k}(\cdot\textbf{x}-\textbf{y})} \right) + v_0(\textbf{y})\left(\int\frac{d^3k}{(2\pi)^3}\frac{\sin(ckt)}{ck}e^{i\textbf{k}\cdot(\textbf{x}-\textbf{y})}\right)\right] \\ 
+  & = \int d^3y \left[u_0(\textbf{y}) \frac{\partial D(\textbf{x}-\textbf{y},t)}{\partial t} + v_0(\textbf{y})D(\textbf{x}-\textbf{y},t)\right]
+    \end{split}
+\end{bux} 
+We will find the form of $D$ later. 
+\item It can then be concluded that the solution of the homogeneous wave equation is determined at all times, given $u_0$ and $v_0$. 
+
+
+
+\end{itemize}
+
+\subsection{Application to fields}
+\begin{itemize}
+    \item We can use this expression to figure out if the fields always satisfy Maxwell's equations in the vacuum. Say we have initial conditions $\textbf{E}(\textbf{x},0)$ and  $\textbf{B}(\textbf{x},0)$ as well as $\dot{\textbf{E}}(\textbf{x},0)$ and $\dot{\textbf{B}}(\textbf{x},0)$ that satisfy Maxwell's equations, that is $\nabla \cdot \textbf{E} = 0 = \nabla \cdot \textbf{B}$,  $\nabla \times \textbf{E} + \frac{1}{c}\partial_t\textbf{B}=0=\nabla \times \textbf{B} - \frac{1}{c}\partial_t\textbf{E}$.  Via \ref{eqn:2.5} we can write: 
+\begin{bux}
+    \begin{split}
+\label{eqn:2.7}
+      \textbf{E}(\textbf{x},t) =   \int d^3y \left[\textbf{E}(\textbf{y},0) \frac{\partial D(\textbf{x}-\textbf{y},t)}{\partial t} + \dot{\textbf{E}}(\textbf{y},0)D(\textbf{x}-\textbf{y},t)\right] \\ 
+ \textbf{B}(\textbf{x},t) =   \int d^3y \left[\textbf{B}(\textbf{y},0) \frac{\partial D(\textbf{x}-\textbf{y},t)}{\partial t} + \dot{\textbf{B}}(\textbf{y},0)D(\textbf{x}-\textbf{y},t)\right]
+    \end{split}
+\end{bux}
+\item To figure out weather these new fields still satisfy Maxwell's equations we consider the following: 
+\begin{bux}
+\begin{split}
+\label{eqn:2.8}
+     \frac{\partial}{\partial x}\int_{\infty}^{\infty} f(x-y)g(y)fy = &\int_{\infty}^{\infty} (\partial_xf(x-y))g(y)dy =  -\int_{\infty}^{\infty} (\partial_yf(x-y))g(y)dy \\ 
+   & = f(x-y)g(y)\bigg\vert_{\infty}^{\infty} + \int_{\infty}^{\infty}f(x-y)g'(y)
+\end{split}
+\end{bux}
+For our fields, we assume they vanish at infinity so these boundary terms never matter. Applying the above for each component of  $\nabla \cdot$ \ref{eqn:2.7}, results in the first term vanishing as it becomes via \ref{eqn:2.8} $\nabla \cdot \textbf{E}(\textbf{y},0)$ or $\nabla \cdot \textbf{B}(\textbf{y},0)$ , which we know is zero. In the second term $\dot{\textbf{E}}(\textbf{y},0)$ or $\dot{\textbf{B}}(\textbf{y},0)$ can be re-written as $c \nabla \times \textbf{B}(\textbf{y},0)$ or $c \nabla \times \textbf{E}(\textbf{y},0)$, respectively. This means taking the $\nabla \cdot$ \ref{eqn:2.7}, makes the second term also vanish, meaning Maxwell equations one and three are satisfied. It can also be shown that the other two equations are satisfied. We can conclude that if the Maxwell equations are satisfied at  $t=0$, then they are satisfied for all $t$.  
+\end{itemize}
+
+\subsection{Properties of the fields}           
+\begin{itemize}
+    \item If we have two solutions of Maxwell's equations $\textbf{E}, \textbf{B}$ and $\tilde{\textbf{E}},\tilde{\textbf{B}}$ then $\alpha \tilde{\textbf{E}} + \beta \textbf{E}$ and $\alpha \tilde{\textbf{B}} + \beta \textbf{B}$ are also solutions. This is because Maxwell's equations are linear in the fields. This linearity also means we can use complex fields and take the real or imaginary part of the function, as $\rm Re(z)$
+is a linear function. As long as we only perform linear operations on these fields, we can avoid taking the real part until the end. We cant however use these complex functions to calculated non-linear properties such as the pointing vector as it is quadratic in the fields. 
+
+\item This superposition principle implies we can use plane waves to establish properties of EM waves, since a superposition of plane waves is a the Fourier transform of arbitrary function $(\textbf{x},t)$.  
+
+\item We can write the fields as plane waves: 
+\begin{bux}
+    \begin{split}
+     &    \textbf{E} = \textbf{E}_0e^{i(\textbf{k}\cdot \textbf{x}-\omega t)} \\ 
+   & \textbf{B} = \textbf{B}_0e^{i(\textbf{k}\cdot \textbf{x}-\omega t)}
+    \end{split}
+\end{bux}
+Inserting these into the first and third Maxwell's equations \ref{max} in a vacuum we see: 
+\begin{bux}
+    \begin{split}
+      &  \nabla \cdot \textbf{E} = i\textbf{k}\cdot \textbf{E} = 0 \implies \textbf{E} \perp \textbf{k} \\
+ &  \nabla \cdot \textbf{B} = i\textbf{k}\cdot \textbf{B} = 0 \implies \textbf{B} \perp \textbf{k}
+    \end{split}
+\end{bux}
+Since $\textbf{k}$ points in the direction of propagation of the waves, this means EM waves are transverse.  For the second Maxwell equations \ref{max}, we see: 
+\begin{bux}
+    \begin{split}
+      &   \nabla \times \textbf{E} + \frac{1}{c} \frac{\partial \textbf{B}}{\partial t} = 0  \\
+ \implies & i \textbf{k}\times \textbf{E} -\frac{i\omega}{c}\textbf{B} =  0  \\
+ \implies & \textbf{E}\cdot \left(i \textbf{k}\times \textbf{E} -\frac{i\omega}{c}\textbf{B}\right) =  0  \\
+ & \implies \textbf{E} \perp \textbf{B}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{In-homogeneous Wave equation}
+\begin{itemize}
+    \item This takes the following form:
+\begin{bux}
+    \begin{split}
+\label{eqn:2.11}
+        \Box \psi(\textbf{x},t)  = 4\pi f(\textbf{x},t)
+    \end{split}
+\end{bux}
+We can remember form magneto statics that we can solve equations like this if we have a greens function. For the Laplace equation the greens function was $G(\textbf{x},\textbf{x}')$ such that $\nabla^2 G(\textbf{x},\textbf{x}') = \delta(\textbf{x}-\textbf{x}')$ , this means that $G(\textbf{x},\textbf{x}') = \frac{1}{4\pi |\textbf{x}-\textbf{x}'|}$.  Usually the notation $G(\textbf{x}-\textbf{x}')$ is used to emphasise translational invariance, doesn't matter where $\textbf{x}$ or $\textbf{x}'$ are, all that matters is the distance between them.  Writing $G(\textbf{x}-\textbf{x}')$ also means that the solution $\Phi$ of $\nabla^2\Phi = 4\pi \rho$, is a convolution.  This means that the Fourier transform will be easier to deal with as the Fourier transform of a convolution is the product of the transforms of the two functions. 
+
+\item Our greens function is denoted $D_0(x^{\mu},x'^{\mu})= D_0(x^{\mu}- x'^{\mu})$, we can now use this to write down the solution to \ref{eqn:2.11}: 
+\begin{bux}
+    \begin{split}
+        \psi(x^{\mu}) = \int d^4x'D_0(x^{\mu}- x'^{\mu}) 4 \pi f(x) + \chi 
+    \end{split}
+\end{bux}
+Here $\chi$ is any function satisfying $\Box \chi=0$. We can check that if our Greens function satisfies $\Box D_0(x^{\mu}- x'^{\mu}) = \delta(x^{\mu}- x'^{\mu})$, then taking the D'lambert operator of this equation results in the RHS reducing to $4 \pi f(\textbf{x},t)$.  
+
+\item We can then look at the Fourier transform expression of $D_0(x^{\mu})$: 
+\begin{bux}
+    \begin{split}
+\label{eqn:2.13}
+        D_0(x^{\mu}) = \int\frac{d^4k}{(2\pi)^4}e^{-ik_{\mu}x^{\mu}}\tilde{D}_0(k^{\mu})
+    \end{split}
+\end{bux}
+Here $k_{\mu}$ is the 4-wave vector defined as $k_{\mu} = (\frac{\omega}{c},\textbf{k})$. It can then be shown component wise that the D'lambert operator acts on $e^{-ik_{\mu}x^{\mu}}$ as follows, $\Box e^{-ik_{\mu}x^{\mu}} = -k^2e^{-ik_{\mu}x^{\mu}}$, here $k^2 \equiv k_{\mu}k^{\mu}$. This allows us to set the condition that $\Box D_0(x^{\mu}) = \delta(x^{\mu})$, by applying the D'lambert operator to \ref{eqn:2.13}: 
+\begin{bux}
+    \begin{split}
+      &   \Box D_0(x^{\mu}) = -\int\frac{d^4k}{(2\pi)^4}k^2e^{-ik_{\mu}x^{\mu}}\tilde{D}_0(k^{\mu}) =\delta(x^{\mu}) \\
+& \delta(x^{\mu}) = \int\frac{d^4k}{(2\pi)^4}e^{-ik_{\mu}x^{\mu}} \implies  \tilde{D}_0(k^{\mu}) = -\frac{1}{k^2}
+    \end{split}
+\end{bux}
+
+\item Now we can re-write \ref{eqn:2.13} as: 
+\begin{bux}
+    \begin{split}
+\label{eqn:2.15}
+         D_0(x^{\mu}) = \int\frac{d^3k}{(2\pi)^3}e^{-i\textbf{k}\cdot \textbf{x}}\int_{\infty}^{\infty} \frac{dk_0}{2\pi} e^{-ik_0x_0}\frac{1}{k_0^2-\textbf{k}^2}
+    \end{split}
+\end{bux}
+This integral can be solved by method of residues as we have to deal with the poles at $k_0 = \pm |\textbf{k}|$. First it helps to write: 
+\begin{bux}
+    \begin{split}
+        \frac{1}{k_0^2-\textbf{k}^2} = -\frac{1}{2|\textbf{k}|} \left[ \frac{1}{k_0+|\textbf{k}|}- \frac{1}{k_0-|\textbf{k}|}\right] 
+    \end{split}
+\end{bux}
+To solve this integral we have to shift the poles by a small amount $\epsilon$ above the real line so that we can apply the Residue theorem. We will then take the limit as $\epsilon \rightarrow 0 $ to obtain the true result. Our contour for this integral will be a semi-circle that goes along the real line and then loops background either in the upper half plane $C_1$ or the lower half plane $C_2$. We will show then that the integral on the circular part does not contribute as we send the radius of the semi-circle $R \rightarrow \infty$. To decide which curve to use we have to look at. 
+
+\item To decide which path to use we have to look at the form of the $e^{-ik_0x_0}$ part of the integral, since we are considering the complex plane $k_0$ is complex we can write this term as: 
+\begin{bux}
+    \begin{split}
+        e^{-ik_0x_0} = e^{-i\text{Re}(k_o)x_0}e^{\text{Im}(k_0)x_0}
+    \end{split}
+\end{bux}
+In the complex plane along the curve the imaginary part of $k_0$ gets sent to infinity so in order for this term to not contribute, we have to use the path $C_2$ when $x_0>0$ and $C_1$ when $x_0<0$.  We can then go ahead and apply the Residue theorem. We define the following function $I_{\pm}(x):$
+\begin{bux}
+    \begin{split}
+  I_{\pm}(x_0) = \begin{cases}
+        \lim_{R \rightarrow \infty}   \oint_{C_2} \frac{dk_0}{2 \pi } e^{-ik_0x_0}\frac{1}{k_0 \pm |\textbf{k}| -i\epsilon},~~~x_0>0   \\ 
+         \lim_{R \rightarrow \infty}   \oint_{C_1} \frac{dk_0}{2 \pi } e^{-ik_0x_0}\frac{1}{k_0 \pm |\textbf{k}| -i\epsilon},~~~x_0<0  
+  \end{cases}  
+    \end{split}
+\end{bux}
+For $x_0>0$ the integral is $0$ as we have shifted the pole above the real line and $C_2$ does not go around the upper half plane. Then evaluating the integral and sending $\epsilon \rightarrow 0 $  we see:
+\begin{bux}
+    \begin{split}
+      I_{\pm}(x_0)  = \begin{cases}
+          ie^{\pm ix_0 |\textbf{k}|} ,~~ x_0 <0 \\
+          0 ,~~~~~~~~~~~~~ x_0>0
+      \end{cases}  =  \theta(-x_0) ie^{\pm ix_0 |\textbf{k}|}
+    \end{split}
+\end{bux}
+Where $\theta(-x_0)$ is Heaviside's step function. We could have also shifted the poles downwards below the real line. This way we define a similar function $J_{\pm}(x_0)$ as: 
+\begin{bux}
+    \begin{split}
+        J_{\pm}(x_0) =  \lim_{\epsilon \rightarrow 0}   \int_{\infty}^{\infty} \frac{dk_0}{2 \pi } e^{-ik_0x_0}\frac{1}{k_0 \pm |\textbf{k}| +i\epsilon} =- \theta(x_0) ie^{\pm ix_0 |\textbf{k}|}
+    \end{split}
+\end{bux}
+\item Now we can return to our original integral \ref{eqn:2.15}, Here we can define two greens functions one for $x_0>0$ and one for $x_0<0$. For $x_0<0$ we defined the \emph{advanced} greens function $D_{\rm adv}(x^{\mu})$: 
+\begin{bux}
+    \begin{split}
+        D_{\rm adv}(x^{\mu}) =  \int\frac{d^3k}{(2\pi)^3}e^{-i\textbf{k}\cdot \textbf{x}} \frac{ I_{+}(x_0)- I_{-}(x_0)  }{2 |\textbf{k}|} =- \theta(-x_0)  \int\frac{d^3k}{(2\pi)^3}e^{-i\textbf{k}\cdot \textbf{x}} \frac{\sin (|\textbf{k}|x_0)}{|\textbf{k}|}
+    \end{split}
+\end{bux}
+And the \emph{retarded} greens function $D_{\rm Ret}(x^{\mu})$:
+\item \begin{bux}
+    \begin{split}
+        D_{\rm adv}(x^{\mu}) =  \int\frac{d^3k}{(2\pi)^3}e^{-i\textbf{k}\cdot \textbf{x}} \frac{ J_{+}(x_0)- J_{-}(x_0)  }{2 |\textbf{k}|} =\theta(x_0)  \int\frac{d^3k}{(2\pi)^3}e^{-i\textbf{k}\cdot \textbf{x}} \frac{\sin (|\textbf{k}|x_0)}{|\textbf{k}|}
+    \end{split}
+\end{bux}
+Since $\theta(x_0)- \theta(-x_0) =1$ we can also define $D(x^{\mu})$: 
+\begin{bux}
+    \begin{split}
+           D(x^{\mu}) =    D_{\rm adv}(x^{\mu}) -    D_{\rm ret}(x^{\mu}) = \int\frac{d^3k}{(2\pi)^3}e^{-i\textbf{k}\cdot \textbf{x}} \frac{\sin (|\textbf{k}|x_0)}{|\textbf{k}|}
+    \end{split}
+\end{bux}
+It can then be recognised that $ D(x^{\mu}) = c D(\textbf{x}-\textbf{y},t)$, from \ref{eqn:2.5}. Can be checked that $\Box D(x^{\mu})=0$. As: 
+\begin{bux}
+    \begin{split}
+        \Box D(x^{\mu})= \Box D_{\rm adv}(x^{\mu}) - \Box D_{\rm ret}(x^{\mu})=\delta(x^{\mu})-\delta(x^{\mu})=0
+    \end{split}
+\end{bux}
+As we have constructed these functions to becomes delta functions when the D'lambert operator is applied to them. 
+\item We can now go about calculating the integral in both $ D_{\rm adv}(x^{\mu})$ and $ D_{\rm ret}(x^{\mu})$. To do this we convert to spherical co-ords so chosen so that $d^3k=k^2dkd\phi d\cos\theta$ and $\textbf{k}\cdot \textbf{x} = |\textbf{k}||\textbf{x}|\cos \theta$, i.e. the $\theta$ angle in spherical co-ords is the same as the angle between the $\textbf{x} $ and $\textbf{k}$ vectors. This means: 
+\begin{bux}
+    \begin{split}
+       & \int\frac{d^3k}{(2\pi)^3}e^{-i\textbf{k}\cdot \textbf{x}} \frac{\sin (|\textbf{k}|x_0)}{|\textbf{k}|}   \\
+=\frac{1}{(2\pi)^3}\int_{-1}^1d\cos\theta& \int_0^{\infty} k^2dk (2\pi)\frac{1}{k}e^{-i|\textbf{k}||\textbf{x}|\cos \theta} \frac{1}{2i}\left(e^{i|\textbf{k}||\textbf{x}|}-e^{-i|\textbf{k}||\textbf{x}|}\right) \\
+=\frac{1}{(2\pi)^2} \int_0^{\infty} k^2dk \frac{1}{k}& \frac{1}{2i} \frac{1}{i|\textbf{k}||\textbf{x}|}\left(e^{i|\textbf{k}|x_0}-e^{-i|\textbf{k}|x_0}\right)\left(e^{i|\textbf{k}||\textbf{x}|}-e^{-i|\textbf{k}||\textbf{x}|}\right) \\
+=-\frac{1}{8\pi^2x} \int_0^{\infty} dk & \left(e^{i|\textbf{k}|(x_0+|\textbf{x}|)}-e^{-i|\textbf{k}|(x_0-|\textbf{x}|)}-e^{i|\textbf{k}|(x_0-|\textbf{x}|)}+e^{-i|\textbf{k}|(x_0+|\textbf{x}|)}\right) \\
+ & =-\frac{1}{8\pi^2x} \int_{-\infty}^{\infty} dk  \left(e^{i|\textbf{k}|(x_0+|\textbf{x}|)}-e^{i|\textbf{k}|(x_0-|\textbf{x}|)}\right) \\
+& = -\frac{1}{8\pi^2x} 2\pi\left(\delta(x_0+|\textbf{x}|)-\delta(x_0-|\textbf{x}|)\right)
+    \end{split}
+\end{bux}
+So since for $x_0>0,~~ \delta(x_0+|\textbf{x}|)=0$:
+\begin{bux}
+    \begin{split}
+        & D_{\rm ret}(x^{\mu}) = \frac{1}{4\pi|\textbf{x}|}\delta(x_0-|\textbf{x}|) \\ 
+\implies  D_{\rm ret}(x^{\mu}-&x'^{\mu}) = \frac{1}{4\pi|\textbf{x}-\textbf{x}'|}\delta(x_0-x_0'-|\textbf{x}-\textbf{x}'|)
+    \end{split}
+\end{bux}
+The interpretation of this function is if we have a disturbance at $(x_0',\textbf{x}')$, then it is felt at $(x_0,\textbf{x})$. Where: 
+\begin{bux}
+    \begin{split}
+       &  x_0-x_0'= |\textbf{x}-\textbf{x}'| \\
+ \implies& t-t'= \frac{1}{c} |\textbf{x}-\textbf{x}'| \\
+ & \implies t_{\rm ret} = t'
+    \end{split}
+\end{bux}
+Where $t_{\rm ret} = t-\frac{1}{c} |\textbf{x}-\textbf{x}'|$ called \emph{retarded time}. It is the regular time minus the time it takes for light to propagate from the source to the observer. Using $\delta(cx) = \frac{1}{c}\delta(x)$ we can write: 
+\begin{bux}
+    \begin{split}
+\label{eqn:2.28}
+        D_{\rm ret}(x^{\mu}-&x'^{\mu}) =\frac{1}{c} \frac{\delta(t_{\rm ret}-t')}{4\pi|\textbf{x}-\textbf{x}'|}
+    \end{split}
+\end{bux}
+
+ \item  Similarly for $x_0<0,~~ \delta(x_0-|\textbf{x}|)=0$:
+\begin{bux}
+    \begin{split}
+       & D_{\rm adv}(x^{\mu}) = \frac{1}{4\pi|\textbf{x}|}\delta(x_0-|\textbf{x}|) \\ 
+\implies  D_{\rm adv}(x^{\mu}-&x'^{\mu}) = \frac{1}{4\pi|\textbf{x}-\textbf{x}'|}\delta(x_0-x_0'+|\textbf{x}-\textbf{x}'|) \\
+& D_{\rm adv}(x^{\mu}-x'^{\mu}) = \frac{1}{c}\frac{\delta(t_{\rm adv}-t')}{4\pi|\textbf{x}-\textbf{x}'|}
+    \end{split}
+\end{bux}
+Here $t_{\rm adv}$ is the \textit{advanced time} which has the interpretation that at a signal at a future time is influencing the present. But this violates causality. We often have no use for the advanced greens function for this reason. 
+\end{itemize}
+
+
+\subsection{Lorentz covariance of the wave equation}
+\begin{itemize}
+    \item First we explain what we mean by invariant. Take for instance our covariant wave equation \ref{eqn:1.28} $\Box F^{\beta\gamma} = \frac{4 \pi}{c}(\partial^{\beta}j^{\gamma}-\partial^{\gamma}j^{\beta})$. We know that to boost any tensor to a different co-ord system we have to  "replace" its components with new boosted ones using the boost matrix, $\tilde{x}^{\mu}=\Lambda_{\nu}^{\mu}x^{\nu}$. I.e. $\tilde{\mathcal{F}}^{\mu\nu} =  \Lambda_{\gamma}^{\nu}\Lambda_{\beta}^{\mu} F^{\beta\gamma}$ , $\tilde{j}^{\nu} =  \Lambda_{\mu}^{\nu} j^{\mu}$,$\tilde{\partial}^{\nu} =  \Lambda_{\mu}^{\nu} \partial^{\mu}$ and $\tilde{\Box} =\tilde{\partial}_{\mu}\tilde{\partial^{\mu}} = \partial_{\mu}\partial^{\mu}  = \Box$. This means the transformed equation is:
+  \begin{bux}
+      \begin{split}
+            \tilde{\Box} \tilde{\mathcal{F}}^{\beta\gamma} = \frac{4 \pi}{c}(\tilde{\partial}^{\beta}\tilde{j}^{\gamma}-\tilde{\partial}^{\gamma}\tilde{j}^{\beta})
+      \end{split}
+  \end{bux}
+This is of the same form as the original expression so we call the equation invariant. Now we look at the wave equation involving our two greens functions. Here we can use the following fact: 
+\begin{bux}
+    \begin{split}
+        1 = \int d^4\tilde{x} \delta(\tilde{x}^{\mu}) = \int d^4x\text{det}(\Lambda) \delta(\Lambda_{\nu}^{\mu}x^{\nu}) = \int d^4x\delta(x^{\nu}) 
+    \end{split}
+\end{bux}
+Where the last step has used $\delta(\Lambda_{\nu}^{\mu}x^{\nu}) = \frac{1}{\text{det}(\Lambda)}\delta(x^{\nu})$, so we can say $\delta(\tilde{x}^{\mu})=\delta(x^{\nu})  $ and since $\tilde{\Box}=\Box$: 
+\begin{bux}
+    \begin{split}
+        & \tilde{\Box} D_{\rm adv}(\tilde{x}^{\mu})=\delta(\tilde{x}^{\mu}) \\
+       & \tilde{\Box} D_{\rm ret}(\tilde{x}^{\mu})=\delta(\tilde{x}^{\mu})
+    \end{split}
+\end{bux}
+
+\end{itemize}
+\newpage
+\section{Lorentz transformations of the EM fields}
+\begin{itemize}
+    \item Here we Lorentz transform from the frame $S$ to the moving frame $S'$. The co-ordinates transform in the usual way:
+\begin{bux}
+    \begin{split}
+        x'^{\mu} = \Lambda_{~\nu}^{\mu}x^{\nu}
+    \end{split}
+\end{bux}
+The indices of this boost matrix can be changed using the metric $g_{\mu \nu}$:
+\begin{bux}
+    \begin{split}
+        \Lambda_{~\nu}^{\mu} = g^{\mu \rho}g_{\nu \sigma} \Lambda_{\rho}^{\sigma}
+    \end{split}
+\end{bux}
+If we want to multiply these as matricides together, we must make sure to put them in the order such that the contracting indices are closest. This means that $ \Lambda_{~\nu}^{\mu} = g^{\mu \rho}\Lambda_{\rho}^{\sigma}g_{\nu \sigma}$.  
+\end{itemize}
+\subsection{Transforming the fields}
+\begin{itemize}
+\item In order to derive how the fields transform we can simple the calculations with a few considerations of symmetry. Lets say $\textbf{E}' = F(\textbf{E},\textbf{B})$ and $\textbf{B}' = G(\textbf{E},\textbf{B})$. If we recall the definition of the dual tensor $ \tilde{\mathcal{F}}^{\mu\nu}$, it is just the regular electromagnetic tensor $ F^{\mu\nu}$ with the $\textbf{E}$ and $\textbf{B}$ fields swapped (and also sign of $\textbf{E}$ field changed). But since both these tensors transform in the same way we can say that:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.3}
+        & \textbf{E}' = G(\textbf{B},-\textbf{E}) \implies F(\textbf{E},\textbf{B})=-G(\textbf{B},-\textbf{E})\\
+        & \textbf{B}' = F(\textbf{B},-\textbf{E}) \implies G(\textbf{E},\textbf{B})= -F(\textbf{B},-\textbf{E})
+    \end{split}
+\end{bux}
+So we only need to calculate, one of these functions, so we will choose $F$.  
+\item Consider a boost in the direction $\frac{\boldsymbol{\beta}}{{|\boldsymbol{\beta}|}}$, $(\boldsymbol{\beta} = \frac{\textbf{v}}{c})$. If we define a quantity called the rapidity $\xi$ so that $\boldsymbol{\beta}_k = \tanh{\xi_k}$. Then the Lorentz transformation is given by:
+\begin{bux}
+    \begin{split}
+        \Lambda = \rm exp(\boldsymbol{\xi}\cdot\textbf{K})
+    \end{split}
+\end{bux}
+Where the components of the vector $\textbf{K}_{j}$ , $j=1,2,3$ are generators of the Lorentz boosts, ($4\times 4$ matricides that parameterize a boost in each Cartesian direction). It is also nice to note that if we set $|\boldsymbol{\xi}| \equiv \xi$, then we can write $\cosh \xi = \gamma$ and $\sinh \xi \hat{\xi}_k = \beta_k \gamma$.  These allow us to write out the components of $\Lambda$. $\Lambda^0_0 = \gamma$, $\Lambda^0_k = - \gamma\beta_k = \Lambda^k_0$, $\Lambda^k_l= \frac{\gamma-1}{\beta^2}\beta_k\beta_l$. 
+
+The transformation of the electromagnetic tensor takes the following form:
+\begin{bux}
+    \begin{split}
+        F'^{\mu\nu} = \Lambda_{\rho}^{\mu} F^{\rho\sigma} \Lambda^{\nu}_{\sigma}
+    \end{split}
+\end{bux}
+This calculation can then be carried out in matrix form resulting in: 
+\begin{bux}
+    \begin{split}
+       & \textbf{E}' = \gamma(\textbf{E}+\boldsymbol{\beta}\times \textbf{B}) - \frac{\gamma^2}{\gamma +1}\boldsymbol{\beta}(\boldsymbol{\beta}  \cdot \textbf{E}) \\
+& \textbf{B}' = \gamma(\textbf{B}-\boldsymbol{\beta}\times \textbf{E}) - \frac{\gamma^2}{\gamma +1}\boldsymbol{\beta}(\boldsymbol{\beta}  \cdot \textbf{B})
+    \end{split}
+\end{bux}
+This calculation only has to be done for the three $\textbf{E}$ components and the components of $\textbf{B}$ follow from \ref{eqn:3.3}
+We can easily invert these expressions as we just have to change from $\boldsymbol{\beta} \rightarrow -\boldsymbol{\beta}$, this results in:
+\begin{bux}
+    \begin{split}
+        & \textbf{E} = \gamma(\textbf{E}'-\boldsymbol{\beta}\times \textbf{B}') - \frac{\gamma^2}{\gamma +1}\boldsymbol{\beta}(\boldsymbol{\beta} \cdot \textbf{E}') \\
+& \textbf{B} = \gamma(\textbf{B}'+\boldsymbol{\beta}\times \textbf{E}') - \frac{\gamma^2}{\gamma +1}\boldsymbol{\beta}(\boldsymbol{\beta}  \cdot \textbf{B}')
+    \end{split}
+\end{bux}
+\item One good thing to notice from these equations, is that if we want to boost to a frame such that one of the fields in the new prime frame is 0, lets say we want $\textbf{E}'=0$.  Then we can use the ansatz $\beta \propto \textbf{B}\times \textbf{E}$. This is done, first of all cause it nicely means the second term on the RHS of \ref{eqn:3.6}, and secondly it is the only way that $\boldsymbol{\beta} \times \textbf{E}$ can be proportional to $\textbf{B}$. This is due to the triple product: $\textbf{a}\times(\textbf{b}\times\textbf{c}) = (\textbf{a}\cdot\textbf{c})\textbf{b}-(\textbf{a}\cdot \textbf{b})\textbf{c}$.  
+\end{itemize}
+
+\subsection{Lorentz invariants}
+\begin{itemize}
+    \item We are interested in any quantities (related to the $\textbf{E}$ and $\textbf{B}$ fields) that are unaffected by Lorentz transformations. These are simply any quantities who's index's contract. To find these we look at all combinations of the two tensors we have, $\tilde{\mathcal{F}}^{\mu\nu}$ and $F^{\mu\nu}$.  The possible combinations are $ \tilde{\mathcal{F}}^{\mu\nu}F_{\mu\nu},\tilde{\mathcal{F}}^{\mu\nu}\tilde{\mathcal{F}}_{\mu\nu}$ and $F^{\mu\nu}F_{\mu\nu}$.  Turns out the last two are the same up to some factor so we only need to compute the first two. This calculation results in:
+\begin{bux}
+    \begin{split}
+ &       \tilde{\mathcal{F}}^{\mu\nu}F_{\mu\nu} = -4 \textbf{E}\cdot\textbf{B} \\ 
+& \tilde{\mathcal{F}}^{\mu\nu}\tilde{\mathcal{F}}_{\mu\nu} = -2(\textbf{E}^2-\textbf{B}^2)
+    \end{split}
+\end{bux}
+We don't actually care about the prefactors on these quantities and usually just say $\textbf{E}\cdot\textbf{B} $ and $\textbf{E}^2-\textbf{B}^2$ are Lorentz invariant. 
+
+\item The fact that these quantities are preserved is useful in many ways. If for example $\textbf{E}^2>\textbf{B}^2$, then this must be true in all frames. We can possible find a frame where $\textbf{B}'=0$ , bot not $\textbf{E}'=0$ as $\textbf{E}'^2>\textbf{B}'^2\geq0$. This is visa versa for $\textbf{E}^2<\textbf{B}^2$.  
+
+We can also see that if $\textbf{E}\cdot \textbf{B}=0$ then $\textbf{E}\perp \textbf{B}$ or one of them vanishes.  If $\textbf{E}\cdot \textbf{B}\neq0$, then there does not exist a frame where these vanish. 
+\end{itemize}
+
+\newpage 
+\section{Radiation from general sources }
+\begin{itemize}
+    \item Here we will use the above derived greens functions to solve the wave equation for $A^{\mu}(x^{\nu})$, in the Lorentz gauge ($\partial_{\mu}A^{\mu}=0$).  The wave equation we want to solve is \ref{eqn:1.18}, which is solved by:
+\begin{bux}
+    \begin{split}
+        A^{\mu}(x^{\nu}) = \frac{4\pi}{c}\int d^4x' D_{\rm ret}(x^{\nu}-x'^{\nu})j^{\mu}(x'^{\nu})
+    \end{split}
+\end{bux}
+So using our expression for $D_{\rm ret}$ above in \ref{eqn:2.28} we can write this integral as:
+\begin{bux}
+    \begin{split}
+ \label{eqn:4.3}
+         A^{\mu}(x^{\nu}) =&  \frac{4\pi}{c}\int d^4x' \frac{\delta(x_0-x'_0-|\textbf{x}-\textbf{x}'|)}{4\pi|\textbf{x}-\textbf{x}'|}j^{\mu}(x'^{\nu}) \\
+=& \frac{1}{c}\int d^3x'  \frac{j^{\mu}(x_0-|\textbf{x}-\textbf{x}'|,\textbf{x}')  }{|\textbf{x}-\textbf{x}'|}
+    \end{split}
+\end{bux}
+This means that our scalar and vector potentials are given by:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.5}
+       &  \Phi(t,\textbf{x}) =\int d^3x'  \frac{\rho(t-\frac{1}{c}|\textbf{x}-\textbf{x}'|,\textbf{x}')  }{|\textbf{x}-\textbf{x}'|} \\
+& \textbf{A}(t,\textbf{x}) = \frac{1}{c}\int d^3x'  \frac{\textbf{J}(t-\frac{1}{c}|\textbf{x}-\textbf{x}'|,\textbf{x}')  }{|\textbf{x}-\textbf{x}'|}
+    \end{split}
+\end{bux}
+\item Now we consider the general setup. Consider a source of volume $V$, with a characteristic length $a$, so the source is roughly not much bigger then $a$ in any dimension. Then we will be interested in the far source limit. That is when $R\equiv |\textbf{x}-\textbf{x}'|>>a$.  For this we place the center of the source at the origin and remind ourselves that we use $\textbf{x} = r \hat{\textbf{n}}$  to denote the position of the observer and $\textbf{x}'$ as the position of any part of the source, so that we integrate over all $\textbf{x}'$ to calculate the total impact of the source.  Note that this means $|\textbf{x}'|<a$ and $a<<r \implies \frac{a}{r}<<1$. 
+
+With these conditions we can write $R$ as:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.4}
+        R =& |r\hat{\textbf{n}}-\textbf{x}'| = r|\hat{\textbf{n}}-\frac{\textbf{x}'}{r}| = r\sqrt{(\hat{\textbf{n}}-\frac{\textbf{x}'}{r})^2} \\
+= & r\sqrt{1-2\frac{\hat{\textbf{n}}\cdot \textbf{x}'}{r} +\frac{\textbf{x}'^2}{r^2}} \simeq r\left(1- \frac{\hat{\textbf{n}}\cdot \textbf{x}'}{r} + \mathcal{O}(\frac{a^2}{r^2})\right) \\
+\implies & \frac{1}{R} \simeq \frac{1}{r\left(1- \frac{\hat{\textbf{n}}\cdot \textbf{x}'}{r} + \mathcal{O}(\frac{a^2}{r^2})\right)} \simeq \frac{1}{r}\left(1+ \frac{\hat{\textbf{n}}\cdot \textbf{x}'}{r} + \mathcal{O}(\frac{a^2}{r^2})\right)
+    \end{split}
+\end{bux}
+This means our potentials can be written as:
+\begin{bux}
+    \begin{split}
+\label{eqn:45}
+         &  \Phi(t,\textbf{x}) =\frac{1}{r}\int d^3x'  \rho(t-\frac{r}{c}+\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c},\textbf{x}')  + \mathcal{O}(\frac{a^2}{r^2}) \\
+& \textbf{A}(t,\textbf{x}) = \frac{1}{rc}\int d^3x'  \textbf{J}(t-\frac{r}{c}+\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c},\textbf{x}') + \mathcal{O}(\frac{a^2}{r^2})
+    \end{split}
+\end{bux}
+We would like to taylor expand $\rho$ and $\textbf{J}$ in time derivatives, with $\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c}$ as a small parameter, and ideally we would like to be able to ignore this term entirely, but when can we do this?  To figure this out we can look at the taylor expansion for this small parameter: 
+\begin{bux}
+    \begin{split}
+\label{eqn:4.6}
+        \rho(t-\frac{r}{c}+\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c},\textbf{x}') \simeq \rho(t-\frac{r}{c},\textbf{x}') + \frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c} \dot{\rho}
+    \end{split}
+\end{bux}
+So seeing as $\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c}<\frac{a}{c}$, we can see that we can ignore this second term when $|\rho|>>\frac{a}{c}|\frac{\partial \rho}{\partial t}|$, so when $\frac{a}{c}|\frac{1}{\rho}\frac{\partial \rho}{\partial t}|<<1$.  If we then express $\rho$ through the inverse Fourier transform:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.7}
+        \rho(t,\textbf{x}) = \int e^{i\omega t}\tilde{\rho}(\omega,\textbf{x})d\omega
+    \end{split}
+\end{bux}
+Then we can see that $\dot{\rho}  \sim i\omega\rho$, so if we call the maximum frequency $\omega_{\rm max}$, then we can say that $\frac{a}{c}|\frac{1}{\rho}\frac{\partial \rho}{\partial t}|<<1 \implies \frac{a}{c}|\omega_{\rm max}|<<1$, so since we can write $\omega_{\rm max} = \frac{2 \pi c}{ \lambda_{\rm min}}$, then we can say that our condition for ignoring the $\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c}$ term boils down to $\lambda_{\rm min}>>a$.  The above analysis could just have easily been done with $\textbf{J}$ instead of $\rho$. 
+
+\item Now if we consider the following: 
+\begin{bux}
+    \begin{split}
+   &    \partial_{k}(j_kx_l) = (\partial_kj_k)x_l+j_l \\
+ &  \implies \textbf{J}(t,\textbf{x}) = -(\nabla\cdot\textbf{J})\textbf{x}+\partial_k(\textbf{J}_k\textbf{x})
+    \end{split}
+\end{bux}
+And since by the continuity equation $\nabla\cdot\textbf{J}=-\dot{\rho}$, we can write the above expression of $\textbf{A}$ \ref{eqn:4.5} as:
+\begin{bux}
+    \begin{split}
+        \textbf{A}(t,\textbf{x}) \simeq \frac{1}{rc}\int d^3x' & \dot{\rho}(t-\frac{r}{c},\textbf{x}')\textbf{x}'+\frac{1}{rc}\int d^3x'\partial'_k(\textbf{J}(t,\textbf{x}')_k\textbf{x}) \\ 
+= &  \frac{1}{rc}\int d^3x'  \dot{\rho}(t-\frac{r}{c},\textbf{x}')\textbf{x}'
+    \end{split}
+\end{bux}
+Where we have dropped the total derivative, as it vanishes at the boundaries. The time derivative can then be taken out of this integral and we can recognise the remaining integral as the electric dipole moment, defined as:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.10}
+        \textbf{d}(t)\equiv\int_V d^3x'  \rho(t,\textbf{x}')\textbf{x}'
+    \end{split}
+\end{bux}
+So our vector potential can be expressed as:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.11}
+         \textbf{A}(t,\textbf{x}) \simeq \frac{1}{rc}\dot{\textbf{d}}(t-\frac{r}{c})
+    \end{split}
+\end{bux}
+\item We can now go ahead and obtain some physical quantities! $\textbf{B}=\nabla\times\textbf{A}$ and remembering that $   \hat{\textbf{n}}\equiv\frac{\textbf{x}}{r}$:  
+\begin{bux}
+    \begin{split}
+\label{eqn:4.12}
+        & \nabla\times\left(\frac{1}{rc}\dot{\textbf{d}}(t-\frac{r}{c})\right) = \epsilon_{ijk}\frac{\partial}{\partial x_i}\left(\frac{1}{rc}\dot{\textbf{d}}(t-\frac{r}{c})\right)_j\hat{e}_k \\
+& = \left[\frac{\dot{d}_j}{c}\frac{-x_i}{r^3}+\frac{1}{rc}\frac{\partial r}{\partial x_i}\frac{\partial (t-\frac{r}{c})}{\partial r}\ddot{d}_j-\frac{\dot{d}_i}{c}\frac{-x_j}{r^3}-\frac{1}{rc}\frac{\partial r}{\partial x_j}\frac{\partial (t-\frac{r}{c})}{\partial r}\ddot{d}_i\right]\hat{e}_k \\
+& = \left[-\frac{1}{cr^3}(\dot{d}_jx_i-\dot{d}_ix_j)+\frac{1}{rc}\frac{1}{r}\frac{-1}{c}(x_i\ddot{d}_j-x_j\ddot{d}_i)\right]\hat{e}_k \\ 
+& = -\frac{1}{cr^2}\epsilon_{ijk}\frac{x_i}{r}\dot{d}_j\hat{e}_k-\frac{1}{rc^2}\epsilon_{ijk}\frac{x_i}{r}\ddot{d}_j\hat{e}_k \\
+& = -\frac{1}{cr^2}\hat{\textbf{n}}\times\dot{\textbf{d}}(t-\frac{r}{c})-\frac{1}{rc^2}\hat{\textbf{n}}\times\ddot{\textbf{d}}(t-\frac{r}{c})
+    \end{split}
+\end{bux}
+Where we have used $\frac{\partial r}{\partial x_i}=\frac{x_i}{r}$ and $\frac{\partial 1/r}{\partial x_i} = -\frac{x_i}{r^3}$, which can easily be checked from the definition of $r$ as $r=\sqrt{x^2+y^2+z^2}$.  
+
+$\textbf{B}$ is the sum of two terms, but which one dominates? to figure this out we can do the same "Fourier" trick we used earlier in \ref{eqn:4.7}, to tell us that $|\ddot{\textbf{d}}|\sim \omega|\dot{d}|$, and since $\omega=\frac{2\pi c}{\lambda}$, then as long as $\lambda<<r$,  $\frac{\omega }{rc^2}>>\frac{1}{cr^2}$ far from the source, thus we can ignore the first term. This leaves us with:
+\begin{bux}
+    \begin{split}
+        \textbf{B} = -\frac{1}{cr^2}\hat{\textbf{n}}\times\ddot{\textbf{d}}(t-\frac{r}{c})
+    \end{split}
+\end{bux}
+This is referred to as the \emph{far field zone} or the \emph{radiation zone}. 
+\item We can then calculate $\textbf{E}$ from the fourth Maxwell equation \ref{max}. Which reduces to $\dot{\textbf{E}} =c\nabla \times \textbf{B}$ as far from the source the current density $\textbf{J} $ is $0$. By a similar calculation to \ref{eqn:4.12}, we get that:
+\begin{bux}
+    \begin{split}
+        \nabla\times\textbf{B} = \frac{1}{r^2c^2}\hat{\textbf{n}}\times\left(\hat{\textbf{n}}\times\ddot{\textbf{d}}(t-\frac{r}{c})\right) + \frac{1}{rc^3}\hat{\textbf{n}}\times\left(\hat{\textbf{n}}\times\dddot{\textbf{d}}(t-\frac{r}{c})\right)
+    \end{split}
+\end{bux}
+Once again we can see that in the far field limit the second term here dominates so:
+\begin{bux}
+    \begin{split}
+        & \dot{\textbf{E}} = \frac{1}{rc^2}\hat{\textbf{n}}\times\left(\hat{\textbf{n}}\times\dddot{\textbf{d}}(t-\frac{r}{c})\right)\\
+\implies  \textbf{E} =& \frac{1}{rc^2}\hat{\textbf{n}}\times\left(\hat{\textbf{n}}\times\ddot{\textbf{d}}(t-\frac{r}{c})\right) = -\hat{\textbf{n}}\times\textbf{B}
+    \end{split}
+\end{bux}
+\item A very impotent physical quantity, is the power radiated by a source.   This is is related to the \textit{Poynting vector}, which quantifies the \emph{power flow} of an electromagnetic field. This vector is given by:
+\begin{bux}
+    \begin{split}
+        \textbf{S} = \frac{c}{4\pi}\textbf{E}\times\textbf{B} = \frac{1}{4\pi r^2c^3}|\hat{\textbf{n}}\times\ddot{\textbf{d}}|^2\cdot\hat{\textbf{n}}
+    \end{split}
+\end{bux}
+If we let $\theta$ be the angle between the direction the dipole oscillates and the vector $\hat{\textbf{n}}$, then we can write:
+\begin{bux}
+    \begin{split}
+         \textbf{S}  = \frac{1}{4\pi r^2c^3}|\ddot{\textbf{d}}|^2\sin^2(\theta)\cdot\hat{\textbf{n}}
+    \end{split}
+\end{bux}
+So the power radiated is maximum for $\theta=\frac{\pi}{2},\frac{3\pi}{2}$  and minimised for $\theta =0, \pi, -\pi $.  
+To find the total power radiated we integrate the Poynting vector over the $2$-sphere $S_2$, i.e adding the up the power flow in every direction. 
+\begin{bux}
+    \begin{split}
+\label{eqn:4.18}
+       &  P = \int_{S_2}d^2\textbf{r}\cdot\textbf{S}(r,\phi,\theta) \\
+& = \frac{1}{4\pi c^3}|\ddot{\textbf{d}}|^2\int_0^{2\pi}d\phi\int_0^{\pi}d\theta\sin^3(\theta)
+    \end{split}
+\end{bux}
+Here our $\theta$ from before is the same as our spherical co-ords $\theta$ as we can align the Axis that way. The $\theta$ integral here evaluates to $\frac{4}{3}$ and the $\phi$ integral to $2\pi$ leaving us with:
+\begin{bux}
+    \begin{split}
+      P =  \frac{2}{3c^3}|\ddot{\textbf{d}}|^2
+    \end{split}
+\end{bux}
+This is called the \emph{non-relativistic Lamor formula}. 
+\end{itemize}
+
+
+\subsection{Pole expansions} 
+\begin{itemize}
+    \item We know that we can expand functions in terms of the spherical harmonics as they are orthogonal and complete, the result of this for $ \frac{1}{|\textbf{x}-\textbf{x}'|}$ is:
+\begin{bux}
+    \begin{split}
+           \frac{1}{|\textbf{x}-\textbf{x}'|} = 4 \pi \sum_{l=0}^{\infty}\sum_{m=-l}^{l}\frac{1}{2l+1}\frac{1}{r_>}\left(\frac{r_<}{r_>}\right)^lY_{lm}(\theta,\phi)Y_{lm}^{\ast}(\theta',\phi')
+    \end{split}
+\end{bux}
+Where $r_{<} = \rm min(|\textbf{x}|,|\textbf{x}'|)$ and $r_{>}=\rm max(|\textbf{x}|,|\textbf{x}'|)$.  We can use this to expand our scalar potential, which in Gaussian units is given by:
+\begin{bux}
+    \begin{split}
+        \Phi(\textbf{x}) = \int\frac{\rho(\textbf{x}')}{|\textbf{x}-\textbf{x}'|}d^3x'
+    \end{split}
+\end{bux}
+So we can write this as follows with $r_{<} = r'\equiv |\textbf{x}'|$, $r_{>}= r \equiv |\textbf{x}|$:
+\begin{bux}
+    \begin{split}
+           \Phi(\textbf{x}) &=\int4 \pi \sum_{l=0}^{\infty}\sum_{m=-l}^{l}\frac{1}{2l+1}\frac{1}{r_>}\left(\frac{r_<}{r_>}\right)^lY_{lm}(\theta,\phi)Y_{lm}^{\ast}(\theta',\phi') \rho(\textbf{x}')d^3x' \\
+&=  4 \pi \sum_{l=0}^{\infty}\sum_{m=-l}^{l}\frac{1}{2l+1}\left[\int r'^l\rho(\textbf{x}')Y_{lm}^{\ast}(\theta',\phi')d^3x\right]\frac{1}{r^{l+1}}Y_{lm}(\theta,\phi)
+    \end{split}
+\end{bux}
+This factor in the square brackets we call $q_{lm}$ and are the \emph{electric multi-pole moments} of the charge distribution $\rho$.  Below are a few example of the first few moments:
+\begin{bux}
+    \begin{split}
+      &  q_{00} = \frac{q}{\sqrt{4\pi}} \\
+ &   q_{11} = -\sqrt{\frac{3}{8\pi}}(d_x-id_y)\\
+& q_{10}=\sqrt{\frac{3}{4\pi}}d_z
+    \end{split}
+\end{bux}
+Where here $q$ is the total charge and $\textbf{d}$ is the electric dipole moment as defined above \ref{eqn:4.10}. 
+If we also define the \textit{symmetric, traceless tensor of quadruple moments} $Q_{ij}$ for $i,j=1,2,3$:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.24}
+        Q_{ij} = \int(3x_i'x_j'-r'^2\delta_{ij})\rho(\textbf{x}')d^3x'
+    \end{split}
+\end{bux}
+Then we can express more elements of $q_{lm}$:
+\begin{bux}
+    \begin{split}
+       &  q_{22} = \frac{1}{12}\sqrt{\frac{15}{4\pi}}(Q_{11}-2iQ_{12}-Q_{22}) \\
+& q_{21} = -\frac{1}{3}\sqrt{\frac{15}{4\pi}}(Q_{13}-iQ_{23}) \\
+&q_{20} =  \frac{1}{2}\sqrt{\frac{5}{4\pi}}Q_{33}
+    \end{split}
+\end{bux}
+With all this we can write out the expansion for the scalar potential for the first few terms:
+\begin{bux}
+    \begin{split}
+        \Phi(\textbf{x}) \simeq \frac{q}{r} + \frac{\textbf{d}\cdot\textbf{x}}{r^3}+\frac{1}{2}\sum_{i,j}^{3}Q_{ij}\frac{x_ix_j}{r^5}
+    \end{split}
+\end{bux}
+
+\end{itemize}
+
+
+\subsection{Pole expansion of vector potential}
+\begin{itemize}
+    \item If we take the expression for $\textbf{A}(t,\textbf{x})$ we have in \ref{eqn:4.3}, and expanding the $\frac{1}{|\textbf{x}-\textbf{x}'|}$ and argument of $\textbf{J}$ in powers of $\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c}$. The expansion of $\textbf{J}$, looks exactly like the expansion of $\rho$ in \ref{eqn:4.6}, and the expansion of $\frac{1}{|\textbf{x}-\textbf{x}'|}$ is given by \ref{eqn:4.4}. All of this leaves us with:
+\begin{bux}
+    \begin{split}
+        \textbf{A}(t,\textbf{x}) = \frac{1}{rc}\int d^3x' \left(1+\frac{\hat{\textbf{n}}\cdot\textbf{x'}}{r}\right) \left( \textbf{J}(t-\frac{r}{c},\textbf{x}')+\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c}\frac{\partial}{\partial t}\textbf{J}(t-\frac{r}{c},\textbf{x}')\right)
+    \end{split}
+\end{bux}
+We can see that if we keep terms of order $\mathcal{O}(\frac{a}{\lambda_{\rm min}})$, but not $\mathcal{O}(\frac{a}{r})$, then we lose the second term in the first brackets but keep everything else as $\frac{a}{c}|\frac{1}{\textbf{J}}\frac{\partial \textbf{J}}{\partial t}|\simeq \frac{a}{\lambda_{\rm min}}$ and $\frac{\hat{\textbf{n}}\cdot\textbf{x'}}{r} \leq \frac{a}{r}$. Then writing $\frac{\hat{\textbf{n}}\cdot\textbf{x}'}{c}$ as $\frac{\textbf{x}\cdot\textbf{x}'}{rc}$, we have: 
+\begin{bux}
+    \begin{split}
+\label{4.28}
+        \textbf{A}(t,\textbf{x}) &= \frac{1}{rc}\int d^3x' \left( \textbf{J}(t-\frac{r}{c},\textbf{x}')+\frac{\textbf{x}\cdot\textbf{x}'}{rc}\frac{\partial}{\partial t}\textbf{J}(t-\frac{r}{c},\textbf{x}')\right) \\
+& = \textbf{A}_{ED}(t,\textbf{x})+ \frac{1}{rc^2}\int d^3x'\dot{\textbf{J}}(t-\frac{r}{c},\textbf{x}') \hat{\textbf{n}}\cdot \textbf{x}'
+    \end{split}
+\end{bux}
+Where the first term here can be recognised as the vector potential due to the electric dipole moment, which we expressed in \ref{eqn:4.11}.  
+
+\item We would then like to find a form for this second term.  To do this we first consider the following quantity $T$:
+\begin{bux}
+    \begin{split}
+       T_{ik}\equiv \sum_{l=1}^3\partial_l(j_lx_ix_k) =& \sum_{l=1}^3\left[(\partial_kj_l)x_ix_k+j_l(\delta_{li})x_k+j_lx_i(\delta_{lk})\right] \\
+\implies&T_{ik}=  (\nabla\cdot\textbf{J})x_ix_j+\textbf{J}x_k+\textbf{J}x_i
+    \end{split}
+\end{bux}
+We can once again recognise $\nabla\cdot\textbf{J}$ as $-\dot{\rho}$ , then if we replace $\textbf{x}$ with $\textbf{x}'$ and $\textbf{J}$ with $\dot{\textbf{J}}$, we get that:
+\begin{bux}
+    \begin{split}
+         T'_{ik} \equiv &\sum_{l=1}^3\partial_l(\dot{j}_lx_i'x'_k) = -\ddot{\rho}x_i'x'_k+\dot{\textbf{J}}x'_k+\dot{\textbf{J}}x'_i \\
+    \end{split}
+\end{bux}
+Then we can contract this with $\sum_k\hat{n}_k$:
+\begin{bux}
+    \begin{split}
+        T'_{i} = &\sum_{l=1}^3\partial_l(\dot{j}_lx_i'(\textbf{x}'\cdot\hat{\textbf{n}})) = -\ddot{\rho}x_i'(\textbf{x}'\cdot\hat{\textbf{n}})+\dot{\textbf{J}}(\textbf{x}'\cdot\hat{\textbf{n}})+x'_i(\dot{\textbf{J}}\cdot\hat{\textbf{n}}) \\
+& \implies \dot{\textbf{J}}(\textbf{x}'\cdot\hat{\textbf{n}}) = \textbf{T}' +\ddot{\rho}\textbf{x}'(\textbf{x}'\cdot\hat{\textbf{n}}) - \textbf{x}'(\dot{\textbf{J}}\cdot\hat{\textbf{n}})
+    \end{split}
+\end{bux}
+Where we have then summed over the components to get expression for vectors. Then if we consider the triple product of the vector  $\textbf{C}\equiv\hat{\textbf{n}}\times(\dot{\textbf{J}}\times\textbf{x}') = (\hat{\textbf{n}}\cdot\textbf{x}')\dot{\textbf{J}}-(\hat{\textbf{n}}\cdot\dot{\textbf{J}})\textbf{x}'$, then we have that:
+\begin{bux}
+    \begin{split}
+         2\dot{\textbf{J}}(\textbf{x}'\cdot\hat{\textbf{n}}) = \textbf{T}' +\ddot{\rho}\textbf{x}'(\textbf{x}\cdot\hat{\textbf{n}}) +\textbf{C}
+    \end{split}
+\end{bux}
+Finally we can now integrate this expression, dropping the $\textbf{T}$ term as it is a total derivative:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.33}
+        \int d^3x'\dot{\textbf{J}}(\textbf{x}'\cdot\hat{\textbf{n}}) =  \frac{1}{2}\int d^3x'\ddot{\rho}\textbf{x}'(\textbf{x}\cdot\hat{\textbf{n}}) + \frac{1}{2}\int d^3x'\hat{\textbf{n}}\times(\dot{\textbf{J}}\times\textbf{x}')
+    \end{split}
+\end{bux}
+These two terms are due to the electric quadruple and the magnetic dipole respectively, so the total contributions to the vector potential are:
+\begin{bux}
+    \begin{split}
+  \textbf{A}(t,\textbf{x})= \textbf{A}_{ED}(t,\textbf{x})+\textbf{A}_{EQ}(t,\textbf{x})+\textbf{A}_{MD}(t,\textbf{x})
+    \end{split}
+\end{bux}  
+
+\end{itemize}
+
+\subsection{Magnetic dipole}
+\begin{itemize}
+    \item The magnetic dipole moment $\textbf{m}$ is defined as:
+\begin{bux}
+    \begin{split}
+        \textbf{m}(t) = \frac{1}{2}\int \textbf{x}'\times \textbf{J}(t,\textbf{x}')d^3x'
+    \end{split}
+\end{bux}
+So by the form of the integral in \ref{eqn:4.33},  $\textbf{A}_{MD}(t,\textbf{x})$ is given by:
+\begin{bux}
+    \begin{split}
+        \textbf{A}_{MD}(t,\textbf{x}) = -\frac{1}{rc^2}\hat{\textbf{n}}\times\dot{\textbf{m}}(t-\frac{r}{c})
+    \end{split}
+\end{bux}
+So this means the magnetic field $\textbf{B}_{MD}=\nabla\times\textbf{A}_{MD}$ is given by:
+\begin{bux}
+    \begin{split}
+       \textbf{B}_{MD} =&  \frac{1}{r^2c^2}\hat{\textbf{n}}\times(\hat{\textbf{n}}\times\dot{\textbf{m}})+\frac{1}{rc^3}\hat{\textbf{n}}\times(\hat{\textbf{n}}\times\ddot{\textbf{m}}) \\
+& \simeq\frac{1}{rc^3}\hat{\textbf{n}}\times(\hat{\textbf{n}}\times\ddot{\textbf{m}})
+    \end{split}
+\end{bux}
+Where we have done the same sort of computation as in \ref{eqn:4.12}, and have kept the dominating term.  Once again we can then find $\textbf{E}_{Md}$ from $\dot{\textbf{E}} =c\nabla \times \textbf{B}$. This is similar calculation to what we did before above for the electric dipole, resulting in: 
+\begin{bux}
+    \begin{split}
+      \textbf{E}_{MD} =   \frac{1}{rc^3}\hat{\textbf{n}}\times\ddot{m}(t-\frac{r}{c})
+    \end{split}
+\end{bux}
+\item Once again we can then calculate the Poynting vector through $ \textbf{S} = \frac{c}{4\pi}\textbf{E}\times\textbf{B}$ , this results in:
+\begin{bux}
+    \begin{split}
+        \textbf{S}_{MD} = \frac{c}{4\pi }| \textbf{B}_{MD}|^2\hat{\textbf{n}} = \frac{1}{4\pi r^2 c^5}|\ddot{\textbf{m}}|^2\sin^2\theta\hat{\textbf{n}}
+    \end{split}
+\end{bux}
+Which then leads us to the power radiated through \ref{eqn:4.18}, resulting in:
+\begin{bux}
+    \begin{split}
+\label{eqn:4.40}
+        P_{MD} = \frac{2}{3c^5}|\ddot{\textbf{m}}|^2
+    \end{split}
+\end{bux}
+\item This has a great use when we look at pulsars! As the pulsar, which has a strong magnetic field made of a large magnetic dipole moment, spins around, it looses energy in the form of radiated energy. This loss of energy co-responds to a decrease in the kinetic energy of the star and it's spin slows down. This decrease in the rate of spin can be noticed in observations by looking at the times we receive pulses and can thus also be measured, this means we can calculate how much power it is radiating and thus by \ref{eqn:4.40}, the magnitude of its dipole moment. This can then be related to the magnetic field as we know, from magneto-statics, the magnetic field due to a magnetic dipole. This is extremely cool! The fact that despite being millions of millions miles away from this pulsar, we can still calculate the magnetic field, just from our knowledge of electromagnetism. Putting in typical numbers for this we arrive at a magnetic field with magnitude of $\sim 10^8\rm T$, very large!
+
+\end{itemize}
+
+\subsection{Electric quadrupole}
+\begin{itemize}
+    \item We will once again give the above treatment of calculating the magnetic and electric fields due to the electric quadrupole moment.  The quadrupole tensor (3 by 3 matrix) is given by \ref{eqn:4.24}, it is traceless and symmetric, so it has $5$ independent components. We can then look at the form of $A_{EQ}(t,\textbf{x})$ as given by the first term on the RHS of  \ref{eqn:4.33}. We can re-write this term as:
+\begin{bux}
+    \begin{split}
+    A_{EQ}(t,\textbf{x})_k & =   \frac{1}{2rc^2}\sum_{i}\int d^3x' x'_kx_in_i\ddot{\rho}    \\
+& = \frac{1}{6rc^2}\sum_{i}n_i\int d^3x' \left(3x'_kx_i-r'^2\delta_{ij} +r^2\delta_{ij}\right)\ddot{\rho} \\
+&= \frac{1}{6rc^2}\sum_{i}n_i[\ddot{Q}_{ki}+n_k\int d^3x'r'^2\ddot{\rho}]
+    \end{split}
+\end{bux}
+The only part of the second term that depends on $\textbf{x}$ is $n_k=\frac{x_k}{r}$, then if we go to calculate the magnetic field due to this scalar potential 
+\end{itemize}
+
+
+
+
+
+
+\end{document}

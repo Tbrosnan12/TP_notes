@@ -1,0 +1,1662 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+
+ % Useful packages 
+\usepackage{hyperref}
+\usepackage{biblatex}
+\usepackage{braket}
+\addbibresource{Bib.bib}
+\usepackage{mathtools}
+\DeclarePairedDelimiterXPP\BigOSI[2]%
+  {\mathcal{O}}{(}{)}{}%
+  {\SI{#1}{#2}}
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage{comment}
+\usepackage{mhchem}
+ \usepackage{tabularx} 
+ \usepackage{titling}
+ \usepackage{xcolor}
+ 
+\usepackage[explicit]{titlesec}
+\usepackage{fancyhdr}
+\setlength{\droptitle}{3em} 
+
+\title{Quantum Mechanics I}
+\author{Thomas Brosnan}
+\date{ Notes taken in Professor Sergey Frolov's class, Michaelmas Term 2023 }
+
+
+\numberwithin{equation}{section}
+
+  \makeatletter
+\let\Title\@title % Copy the title to a new command
+\makeatother
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=blue!30!black,
+    colback=blue!30, boxrule=1pt,
+    #1}
+\tcbset{highlight math style={boxsep=2mm,,colback=blue!0!green!0!red!0!}}
+
+  \newenvironment{bux}
+    {
+    \empheq[box=\tcbhighmath]{align}
+   }{
+    \endempheq
+    }
+    \newenvironment{bux*}
+    {
+    \empheq[box=\tcbhighmath]{align*}
+   }{
+    \endempheq
+    }
+\newcommand{\hsp}{\hspace{8pt}}
+
+\newcommand*{\sectionFont}{%
+  \LARGE\bfseries
+}
+
+\definecolor{mycolor3}{RGB}{255,255,255}
+\colorlet{subsubSectionColour}{mycolor3}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+\Large
+    "There is no logical or intuitive explanation of these postulates. They were formulated in an attempt to explain experimental results, and completely contradict our every day intuition. " 
+\end{center}
+\vspace*{\fill}
+\newpage 
+\tableofcontents
+
+% For \section
+ \titleformat{\section}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{red!30}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesection  \hsp #1 {\strut} \end{minipage}}}
+% For \subsection
+ \titleformat{\subsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{gray!20}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesubsection  \hsp #1 {\strut} \end{minipage}}}
+% For \section*
+ \titleformat{name=\section, numberless}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{red!30}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+  % For \subsection*
+ \titleformat{name=\subsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{white}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+ %subsubsection
+ \titleformat{\subsubsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm}\thesubsubsection \hsp #1 {\strut} \end{minipage}}}
+  % For \subsubsection*
+ \titleformat{name=\subsubsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm} #1 {\strut} \end{minipage}}}
+\newpage
+%header and footer 
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[L]{\Title}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{-~\thepage~-}
+\renewcommand{\headrulewidth}{1pt}
+
+%starting document 
+\normalsize
+
+
+
+\section{Mathematics of Quantum Mechanics}
+
+
+\subsection{Matrices} 
+
+\begin{itemize}
+   \item An $n \times m$ matrix  $A$ is a rectangular array of elements, where each element is written as $A_{ij}$, where $i = 1,2,...,n$ and $j=1,2,...,m$.
+   
+   The set of all $n \times m$ real matrices is denoted $Mat(n,m,\mathbb{R})$, where as the set of all $n \times m$ complex matrices is denoted $Mat(n,m,\mathbb{C})$ or simply $Mat(n,m)$. 
+
+  The set of all square  matrices is denoted by $Mat(n,\mathbb{R})$, $Mat(n,\mathbb{C})$ or simply $Mat(n)$
+
+Unless specified matrices are assumed to be complex.
+
+\end{itemize}
+
+
+
+\begin{itemize}
+    \item Any matrix can be written as a linear combination of elementary matrices $E_{ij}$ which have a one at the intersection of the $i$th row and $j$th column and zeros everywhere else. 
+
+
+
+
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   (E_{ia})_{jb} = \delta_{ij}\delta_{ab}  \implies A = \sum_{i=1}^{n}\sum_{j=1}^{m}A_{ij}E_{ij}
+\end{split}
+\end{empheq}
+The matrices $E_{ij}$ form the standard basis of the space of $n \times m$ matrices.
+\end{itemize}
+    
+\begin{itemize}
+    \item Matrices sum component wise so:
+
+\end{itemize}
+ 
+
+
+
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   (A+B)_{ij} = A_{ij} + B_{ij}
+\end{split}
+\end{empheq}
+
+\begin{itemize}
+    \item As well the product of a matrix with a scalar is just:
+\end{itemize}
+    
+
+
+
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   (cA)_{ij}= cA_{ij}
+\end{split}
+\end{empheq}
+
+\begin{itemize}
+    \item These properties are and make $Mat(n,m,\mathbb{C})$ a vector space.
+
+The product of an $n \times p$ matrix and an $p \times m$ matrix is the 
+$n \times m$ matrix $AB$. The components of which are determined by the following:
+\end{itemize}
+
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   (AB)_{ij} = \sum_{a=1}^pA_{ia}B_{aj}
+\end{split}
+\end{empheq}
+
+
+\begin{itemize}
+  \item   Clearly if for an $n \times m$ matrix $A$ and an $p \times k$ if $m \neq p$ then $AB$ does not exist. The 
+matrix product can be easily shown to be associative, i.e. $A(BC) = (AB)C$. 
+
+\item 
+The matrix product and the existence of the identity matrix makes the space of square \newline
+matrices $Mat(n,\mathbb{C})$ a unital associative algebra over $\mathbb{C}$
+
+
+\end{itemize}
+\newpage
+\subsection{Algebras}
+
+
+\begin{itemize}
+   \item Let $\mathcal{A}$ be a vector space over $\mathcal{F}$ where $\mathcal{F}$ is either $\mathbb{C}$ or $\mathbb{R}$, and let $\mathcal{A}$ be equipped
+with a multiplication (or binary) operation, $\mathcal{A} \times \mathcal{A} \mapsto \mathcal{A}$ denoted by $\ast$ so that
+$\forall  S, T \in  \mathcal{A} , S \ast T \in \mathcal{A}$ . 
+
+Then, $\mathcal{A}$ is an algebra over $\mathcal{F}$ if $\forall S, T , U \in  \mathcal{A}$ and $\forall a,b \in F$ (“scalars”), satisfy:
+
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    (S+T)\ast U = S\ast U + T \ast U \\
+     U \ast(S+T) = U \ast S  + U \ast T \\
+    (aS)\ast(bT) = (ab)(S\ast T)
+\end{split}
+\end{empheq}
+
+
+
+These three properties mean that the operation is bi linear
+
+
+\end{itemize}
+
+\begin{itemize}
+    \item Thus, given a basis $\mathcal{E}_i, i = 1,...,dim(\mathcal{A})$  of $\mathcal{A}$ the product $\ast$ is completely determined by the structure constants $f_{ij}^k \in \mathcal{F}$, defined by: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    \mathcal{E}_i \ast \mathcal{E}_j = \sum_{k=1}^{dim\mathcal{A}}f_{ij}^k\mathcal{E}_k
+\end{split}
+\end{empheq}
+\item The dimension of an algebra is its dimension as a vector space.
+
+\end{itemize}
+
+
+
+\begin{itemize}
+    \item An algebra $\mathcal{A}$ is called:
+    \begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    \textbf{Commutative if:}~~~S \ast T = T \ast S~~ \forall~ S,T \in \mathcal{A} \\
+    \textbf{Unital if:}~~~ \exists~\mathcal{I} \in \mathcal{A} ~~st~~ I \ast S = S \ast I = S~~ \forall~S \in \mathcal{A} \\
+    \textbf{Associative if:}~~~ (S\ast T) \ast U = S \ast (T \ast U)
+\end{split}
+\end{empheq}
+\end{itemize}
+
+\subsection{Dirac notation}
+
+\begin{itemize}
+    \item The Dirac vector is written: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    \ket{\alpha} \leftrightarrow
+   \begin{pmatrix}
+       a_1 \\
+       a_2 \\
+       . \\
+       .\\
+       . \\
+       a_n
+    \end{pmatrix} ~ , ~~~\bra{\alpha} \equiv \ket{\alpha}^{\dagger} \leftrightarrow (a_1^{\ast},a_2^{\ast},...,a_n^{\ast})
+\end{split}
+\end{empheq}
+\end{itemize}
+
+\newpage
+
+\begin{itemize}
+    \item The dot product is then written as:
+    
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    \braket{\alpha|\beta} \equiv \bra{\alpha} \cdot \ket{\beta} = (a_1^{\ast},a_2^{\ast},...,a_n^{\ast})\begin{pmatrix}
+       b_1 \\
+       b_2 \\
+       . \\
+       .\\
+       . \\
+       b_n
+    \end{pmatrix} = \sum_{i=1}^ma_i^{\ast}b_i
+\end{split}
+\end{empheq}
+\end{itemize}
+
+\begin{itemize}
+    \item The length of the vector $|\alpha|$ is defined as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    |\alpha| \equiv \sqrt{\braket{\alpha|\alpha}}
+\end{split}
+\end{empheq}
+\end{itemize}
+
+\begin{itemize}
+    \item We denote $c\ket{\alpha} \equiv \ket{c\alpha}$. It then follows that, $\bra{c\alpha} = \ket{c\alpha}^{\dagger} = c^{\ast} \bra{\alpha}$. Generally: 
+
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    \braket{\alpha|c\beta} = c\braket{\alpha|\beta} = \braket{c^{\ast}\alpha|\beta}, ~~~\braket{c\alpha|\beta} = c^{\ast}\braket{\alpha|\beta} = \braket{\alpha|c^{\ast}\beta}
+\end{split}
+\end{empheq}
+
+The dot product is linear wrt the second factor and anti-linear wrt to the first factor. 
+\end{itemize}
+
+\begin{itemize}
+    \item The product of bras and kets with a matrix is defined by the following:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  A \ket{\alpha} \equiv \ket{A \alpha}
+\end{split}
+\end{empheq}
+This also determines how to take the product of a matrix with a bra by the following argument:
+
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    \bra{A \alpha} = (\ket{A \alpha})^{\dagger} = \bra{\alpha}A^{\dagger} 
+\end{split}
+\end{empheq}
+\end{itemize}
+
+\begin{itemize}
+    \item It should be noted that the $^{\dagger}$ here refers to the hermitian conjugate which is defined for a each element of a given matrix $A$ as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    A_{ij}^{\dagger}= A_{ji}^{\ast} 
+\end{split}
+\end{empheq}
+i.e. you take the transpose of the matrix and then the complex conjugate of each element or visa versa. 
+\end{itemize}
+
+
+\begin{itemize}
+    \item The above definitions allow us to find the following use full relations:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \bra{\alpha} A \ket{\beta} = \bra{\alpha} \ket{A \beta} = \bra{A^{\dagger}\alpha}\ket{\beta} \\ 
+(\bra{\alpha} A \ket{\beta})^{\ast} = \bra{\beta} A^{\dagger} \ket{\alpha}
+\end{split}
+\end{empheq}
+Where the last relation comes from the fact that since $(\bra{\alpha} A \ket{\beta})$ is a scalar you can replace the $^\ast$ with $^\dagger$.  
+\end{itemize}
+\begin{itemize}
+    \item If $A$ is a hermitian matrix (i.e. $A^{\dagger} = A$) then the above relation tells us that ($\bra{\alpha}A \ket{\alpha})^{\ast} = \bra{\alpha}A^{\dagger}\ket{\alpha} = \bra{\alpha}A\ket{\alpha}$ and thus is a real number. 
+\end{itemize}
+
+\begin{itemize}
+    \item If $A=U$ is a unitary matrix (i.e. $U^{\dagger}U = UU^{\dagger} = I$), then any dot product $\braket{\alpha|\beta}$ is invariant under transformation the two vectors by $U$:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \braket{U\alpha|U\beta} = \bra{\alpha}U^{\dagger}U\ket{\beta} = \braket{\alpha|\beta}
+\end{split}
+\end{empheq}
+\end{itemize}
+
+\begin{itemize}
+    \item In this notation the standard basis vectors $E_{i}$ and $E_{i}^{\dagger}$ are denoted $\bra{i}$ and $\ket{i}$, where $i=1,2,...,n$.  
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \bra{1} = \begin{pmatrix}
+       1 \\
+       0 \\
+       . \\
+       .\\
+       . \\
+       0
+    \end{pmatrix} , \bra{2} = \begin{pmatrix}
+       0 \\
+       1 \\
+       . \\
+       .\\
+       . \\
+       0
+    \end{pmatrix}, ..., \bra{n} = \begin{pmatrix}
+       0 \\
+       0\\
+       . \\
+       .\\
+       . \\
+       1
+    \end{pmatrix}
+\end{split}
+\end{empheq}
+\end{itemize}
+
+\begin{itemize}
+    \item The bras and kets $\bra{i}$ are mutually orthogonal, meaning:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \braket{i|j} = \delta_{ij}
+\end{split}
+\end{empheq}
+and form the canonical orthonormal basis over which bras $\bra{\alpha}$ and kets $\ket{\alpha}$ can be decomposed. 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \bra{\alpha} = \sum_{i=1}^{n}\alpha_i\ket{i} , ~~~\bra{\alpha} =\sum_{i=1}^{n}\alpha_i^{\ast}\ket{i}
+\end{split}
+\end{empheq}
+Or the components can be expressed as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \alpha_i = \braket{i|\alpha}, ~~~ \alpha_i^{\ast} = \braket{\alpha|i} 
+\end{split}
+\end{empheq}
+Any transformation of this basis by unitary matrix will also form an orthogonal basis as $\braket{Ui|Uj} = \delta_{ij}$. 
+\end{itemize}
+\begin{itemize}
+    \item The matrix product of a ket with a bra ($\ket{\alpha} \bra{\beta}$) will form an $n \times n $ matrix. The following relations show the full use of the Dirac notation in manipulating these matrices:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  (\ket{\mu}\bra{\nu})\ket{\alpha} = \bra{\mu}\bra{\nu}\ket{\alpha} =\bra{\mu}\braket{\nu|\alpha} 
+\end{split}
+\end{empheq}
+If $c$ is a scalar, intuitively:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  c\ket{\mu}\bra{\nu} =\ket{\mu}c\bra{\nu} = \ket{\mu}\bra{\nu}c
+\end{split}
+\end{empheq}
+Thus letting $c=\braket{\alpha|\beta}$, results in:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \braket{\alpha|\beta}\ket{\mu}\bra{\nu} =\ket{\mu}\braket{\alpha|\beta}\bra{\nu} = (\ket{\mu}\bra{\alpha})(\ket{\beta}\bra{\nu})
+\end{split}
+\end{empheq}
+
+
+
+\end{itemize}
+\begin{itemize}
+    \item Consider the matrices $\ket{i}\bra{j}$,
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    (\ket{i}\bra{j})\ket{\alpha} = \bra{i}\braket{j|\alpha} = \alpha_j\ket{i}, ~~~\bra{\alpha}(\ket{i}\bra{j}) = \braket{\alpha|i}\ket{j} = \alpha_i^{\ast}\bra{j}
+\end{split}
+\end{empheq}
+This coincides with the definition of the elementary matrices, and thus we conclude:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    \ket{i}\bra{j} = E_{ij}
+\end{split}
+\end{empheq}
+This allows us the decompose any matrix as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    A = \sum_{i,j=1}^n A_{ij}\ket{i}\bra{j},~~~ A_{ij} = \bra{i}A\ket{j}
+\end{split}
+\end{empheq}
+And thus the action on basis kets is: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    A\ket{i} = \sum_{i,j=1}^nA_{ji}\ket{j}
+\end{split}
+\end{empheq}
+
+\end{itemize}
+
+\subsection{Projection operators}
+\begin{itemize}
+\item The identity matrix can be written as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    I = \sum_{i=1}^n\ket{i}\bra{i} = \sum_{i=1}^nP_i, ~~~P_i \equiv \ket{i}\bra{i}
+\end{split}
+\end{empheq}
+This is known as the completeness relation.
+The matrix $P_i$ is the projection operator for the ket $\ket{i}$ because its action on any ket $\ket{\alpha}$ produces $\alpha_i\ket{i}$, which is the projection of $\ket{\alpha}$ along the direction $\ket{i}$. 
+These operators satisfy:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+    P_iP_j = \delta_{ij}P_j
+\end{split}
+\end{empheq}
+The projection operator along the direction of any normalized vector $\ket{\nu}$ is given by:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   P_{\ket{\nu}} = \ket{\nu}\bra{\nu} = \sum_{i,j=1}^n\nu_i^{\ast}\nu_j\ket{i}\bra{j},~~~ P_{\ket{\nu}}^{\dagger} = P_{\ket{\nu}}, ~~~ P_{\ket{\nu}}P_{\ket{\nu}}=P_{\ket{\nu}}
+\end{split}
+\end{empheq}
+In QM measurements are represented by projection operators applied to a state vector.
+\end{itemize}
+\subsection{Pauli Matrices}
+\begin{itemize}
+    \item The Pauli matrices $\sigma^{\alpha}$ (or  $\tau_{\alpha}$) are:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \sigma^1 \equiv \begin{pmatrix}
+       0 &1 \\
+       1& 0
+    \end{pmatrix},~~~\sigma^2 \equiv \begin{pmatrix}
+       0 &-i \\
+       i& 0
+    \end{pmatrix},~~~\sigma^3 \equiv \begin{pmatrix}
+       1 &0 \\
+       0& -1
+    \end{pmatrix}
+\end{split}
+\end{empheq}
+In bra-ket notation:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \sigma^1 = \ket{1}\bra{2} + \ket{2}\bra{1}, ~~~\sigma^2 = -i\ket{1}\bra{2}+i\ket{2}\bra{1},~~~ \sigma^3 = \ket{1}\bra{1}-\ket{2}\bra{2}
+\end{split}
+\end{empheq}
+They form a basis of trace-less $2 \times 2$ matrices, and are hermitian and unitary. 
+
+The products of the matrices are:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \sigma^1 \sigma^2 = i \sigma^2,~~~ \sigma^2\sigma^1 = -i\sigma^3,~~~\sigma^1\sigma^3=-i\sigma^2 \\
+\sigma^3\sigma^1=i\sigma^2,~~~\sigma^2\sigma^3 = i\sigma^1,~~~\sigma^3\sigma^2=-i\sigma^3
+\end{split}
+\end{empheq}
+Thus they satisfy the relations:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \sigma^{\alpha}\sigma^{\beta}+ \sigma^{\beta}\sigma^{\alpha} = 2\delta^{\alpha \beta} I 
+\end{split}
+\end{empheq}
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \left[ \sigma^{\alpha},\sigma^{\beta} \right] =2i \sum_{\gamma =1}^3\epsilon^{\alpha \beta \gamma}\sigma^{\gamma} \iff \left[\frac{\sigma^{\alpha}}{2i},\frac{\sigma^{\beta}}{2i} \right] = \sum_{\gamma=1}^3\epsilon^{\alpha \beta \gamma}\sigma^{\gamma}
+\end{split}
+\end{empheq}
+
+
+
+\end{itemize}
+\subsection{Unital associative Algebra}
+\begin{itemize}
+    \item A unital associative algebra $\mathcal{A}$ over $\mathbb{C}$ is said to be generated by elements $I,Z_1,Z_2,...,Z_N$ that satisfy the defining relations:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\label{eqn:1.36}
+\begin{split}
+   \mathcal{F}_{\alpha}(Z_1,Z_2,...,Z_N)=\mathcal{O}, ~~~\alpha=1,2,...,M
+\end{split}
+\end{empheq}
+Where here $\mathcal{O}$ is the zero vector of $\mathcal{A}$. 
+
+(i) The vectors of $\mathcal{A}$ are linear combinations of the identity element $I$ and all words made of $Z_i$'s.
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   I,~Z_i,~Z_iZ_j,~Z_iZ_jZ_k,~...,~Z_{i_1}...Z_{i_n},...
+\end{split}
+\end{empheq}
+(ii) The multiplication is defined in a natural way by gluing words together:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   (Z_{i_1}...Z_{i_k})(Z_{j_1}...Z_{j_k}) = Z_{i_1}...Z_{i_k}Z_{j_1}...Z_{j_k}
+\end{split}
+\end{empheq}
+(iii) The relations \ref{eqn:1.36} are taken into account by identifying vectors $\mathcal{T}_1$ and $\mathcal{T}_2$ if:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \mathcal{T}_1 - \mathcal{T}_2 = \sum_{\alpha , \beta} \mathcal{V}_{\alpha}^{\beta} \ast \mathcal{F}_{\beta} \ast \mathcal{W}_{\alpha}^{\beta}
+\end{split}
+\end{empheq}
+for some elements $\mathcal{V}_{\alpha}^{\beta},~\mathcal{W}_{\alpha}^{\beta}$ of $\mathcal{A}$. 
+
+Forgetting about $2 \times 2$ matrices, the Pauli matrices $\sigma^\alpha$  can now be thought of as generators of an algebra, that form the Clifford algebra $\mathbb{C}l_3$, where 3 denotes the number of generators.
+\end{itemize}
+
+\subsection{Representations}
+\begin{itemize}
+    \item A representation of a Unital associative algebra $\mathcal{A}$ is denoted ($\rho,V$) is a vector space $V$ along with  a homomorphisim of algebras $\rho : \mathcal{A} \rightarrow End(V)$, Where $End(V)$ is a endomorphisim, which is
+is a morphism from a mathematical object to itself. Being a homomorphisim $\forall~\mathcal{T} \in \mathcal{A}$: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \rho(\mathcal{S}\ast \mathcal{T}) = \rho(\mathcal{S})\rho(\mathcal{T})
+\end{split}
+\end{empheq}
+It can be shown that $\rho(\mathcal{A})$ is a sub algebra of the algebra of operators acting in $V$ and the dimension of the representation is equal to the dimension of $V$.
+
+If $V = \mathbb{C}^n$ then $End(V)=Mat(n) \implies \rho(\mathcal{A}) \subset Mat(n)$, and the algebra $\mathcal{A}$ is represented by $n \times n$ matrices acting in $\mathbb{C}^n$. Thus the Pauli matrices provide a two dimensional; representation of the generators of the Clifford algebra $\mathbb{C}l_3$.
+
+
+\end{itemize}
+
+\subsection{Lie Algebra}
+\begin{itemize}
+    \item A Lie algebra is a vector space $\mathcal{G}$ over a field $\mathcal{F}$ with a bi linear operation $(\left[\cdot,\cdot \right]): \mathcal{G}\times \mathcal{G} \rightarrow \mathcal{G}$ which is called a commutator or a Lie bracket, such that the following axioms are satisfied:
+    \item It is skew symmetric: $\left[\mathcal{J},\mathcal{J}\right ]=\mathcal{O}$ which implies $\left[\mathcal{J},\mathcal{K}\right] = -\left[\mathcal{K},\mathcal{J} \right] ~\forall \mathcal{J},\mathcal{K} \in \mathcal{G}$ .
+    \item  It satisfies the Jacobi identity: $\left[ \mathcal{J},\left[\mathcal{K},\mathcal{L} \right]\right]+\left[\mathcal{K},\left[\mathcal{L},\mathcal{J}\right] \right] + \left[\mathcal{L},\left[\mathcal{J},\mathcal{K} \right] \right] = \mathcal{O}$.
+
+Clearly a Lie algebra is in general a non-associative algebra with the multiplication $\ast$ given by the Lie bracket $\left[\cdot,\cdot\right]$. Given a basis $\mathcal{E}_i,~i=1,2,...,dim(\mathcal{G})$ of $\mathcal{G}$ its Lie algebra structure is determined by the commutators of the basis vectors: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \left[\mathcal{E}_i,\mathcal{E}_j \right] = \sum_{k=1}^{dim(\mathcal{G})}c_{ij}^k\mathcal{E}_k
+\end{split}
+\end{empheq}
+\item When we say a Lie algebra like $su(n)$ is over $\mathbb{R}$, this means that the scalars we multiply by are real. If instead the Lie algebra was over $\mathbb{C}$, then the scalars could be complex. An algebra over $\mathbb{R}$ can still have complex matrices not just real ones. 
+\end{itemize}
+\subsection{Representation of a Lie algebra} 
+\begin{itemize}
+    \item A representation of a Lie algebra $\mathcal{G}$ denoted by $(\rho,V)$ is a vector space $V$ together with a homomorphisim of Lie algebras $\rho: \mathcal{G} \rightarrow End(V)$. i.e. a linear map preserving the commutator and:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\label{eqn:1.41}
+   \left[\mathcal{E}_i,\mathcal{E}_j \right] = \sum_{k=1}^{dim(\mathcal{G})}c_{ij}^k\mathcal{E}_k
+\end{split}
+\end{empheq}
+In particular the Lie algebra commutation relations are preserved by $\rho$:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   T_i = \rho(\mathcal{E}_i) \implies \left[T_i,T_j \right] = \sum_{k=1}^{dim(\mathcal{G})}c_{ij}^kT_k
+\end{split}
+\end{empheq}
+Clearly if a Lie algebra is a subspace of the space of $n \times n$ matrices then, the Lie bracket is the usual commutator of matrices. 
+
+For example the Lie algebra $sl(n,\mathcal{F})$, where $\mathcal{F}$ is either $\mathbb{R}$ or $\mathbb{C}$ is isomorphic to the lie algebra of $n \times n$ traceless matrices. Then since $\sigma^{\alpha}$ form a basis for $2 \times 2$ traceless matrices, they provide a defining representation of the $sl(2,\mathbb{C})$ algebra.  
+\end{itemize}
+
+\subsection{Isomorphic representations}
+\begin{itemize}
+    \item A given representation of an algebra is not unique.
+
+\item Two representations $(\rho_1,V_1)$ and $(\rho_2,V_2)$ of $\mathcal{A}$ are equivalent or isomorphic if there is an invertible linear operator $\Phi: V_1 \rightarrow V_2$ which commutes wit the action of $\mathcal{A}$.  i.e.:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \Phi \rho_1(\mathcal{J}) = \rho_2(\mathcal{J})\phi \iff \rho_2(\mathcal{J}) = \Phi \rho_1(\mathcal{J})\Phi^{-1}  
+\end{split}
+\end{empheq}
+
+\end{itemize}
+\subsection{Enveloping algebra}
+\begin{itemize}
+    \item One might think that the representation theories of unital associative algebras  and Lie algebras are different. There is however no difference. 
+    \item A universal enveloping algebra of a Lie algebra $\mathcal{G}$ over $\mathbb{F}$ with basis elements $\mathcal{E}_i$ satisfying the commutation relations \ref{eqn:1.41}, is a unital associative algebra $\mathcal{U}(\mathcal{G})$ over $\mathbb{F}$, generated by elements $\mathcal{I},\mathcal{E}_i,~~ i = 1,2,...,Dim(\mathcal{G})$. 
+
+In what follows, when we say representation of $\mathcal{G}$, we also mean $\mathcal{U}(\mathcal{G})$, that is we allow ourselves to consider not only commutators but also products of the operators representing $\mathcal{G}$.  
+
+
+
+\end{itemize}
+\subsection{Spin operators} 
+\begin{itemize}
+    \item The spin operators $\hat{S}^{\alpha}$ can be represented by the hermitian matrices:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   S^{\alpha} = \frac{\hbar}{2} \sigma^{\alpha}
+\end{split}
+\end{empheq}
+\item Since $(\sigma^{\alpha})^2 = I $, we get:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \sum_{\alpha} (S^{\alpha})^2 = \frac{3}{4} \hbar^2 I
+\end{split}
+\end{empheq}
+This makes it a spin-half representation. 
+
+\item The canonical basis vectors $\ket{1}$ and $\ket{2}$ are eigenvectors of $\sigma^3$, with eigenvalues $\frac{\hbar}{2}$ and $\frac{\hbar}{2}$. 
+\item In QM these are interpreted as spin up and spin down state vectors, denoted by:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \ket{\uparrow} \equiv \ket{1}. ~~~ \ket{\downarrow} \equiv \ket{2} ~~ \text{or} \ket{+} \equiv \ket{1}, ~~~ \ket{-} \equiv \ket{2} 
+\end{split}
+\end{empheq}
+\item In this notation: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   S^x  = \frac{\hbar}{2}(\ket{\uparrow}\bra{\downarrow} + \ket{\downarrow}\bra{\uparrow}),~~S^y  = \frac{\hbar}{2}(-i\ket{\uparrow}\bra{\downarrow} + i\ket{\downarrow}\bra{\uparrow}),~~S^z  = \frac{\hbar}{2}(\ket{\uparrow}\bra{\uparrow} - \ket{\downarrow}\bra{\downarrow})
+\end{split}
+\end{empheq}
+\item If a particle is in an eigenstate of $S^z$, then acting on the state with $S^x$ and $S^y$, flip the spin.  
+\begin{bux}
+    \begin{split}
+        S^x \ket{\uparrow} = \frac{\hbar}{2}\ket{\downarrow} ,& ~~~ S^x  \ket{\downarrow} = \frac{\hbar}{2}\ket{\uparrow},~~~S^y  \ket{\downarrow} = -i\frac{\hbar}{2}\ket{\uparrow},~~~S^y  \ket{\uparrow} = i\frac{\hbar}{2}\ket{\downarrow} \\
+& S^z  \ket{\downarrow} = -\frac{\hbar}{2}\ket{\downarrow} , ~~~S^z  \ket{\uparrow} = \frac{\hbar}{2}\ket{\uparrow}
+    \end{split}
+\end{bux}
+
+
+
+
+
+
+\end{itemize}
+
+\subsection{Arbitrary othonormal basis}
+\begin{itemize}
+    \item We may wish to generalize to an arbitrary orthonormal basis $\ket{e_i}$. These bras and kets must follow that:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \braket{e_i|e_j} = \delta_{ij},~~ \ket{e_i} = U\ket{i}, ~~~ U = \sum_i \ket{e_i}\bra{i}, ~~~ U^{\dagger}U = UU^{\dagger} = I
+\end{split}
+\end{empheq}
+\item The completeness relation has the same form as with canonical basis vectors: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \sum_{i=1}^n \ket{e_i}\bra{e_j} = \sum_{i=1}^n U\ket{i}\bra{i}U^{\dagger} = UI U^{\dagger} = I
+\end{split}
+\end{empheq}
+\item Any $\alpha$ ca be expanded as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+   \ket{\alpha} = \sum_{i=1}^n\ket{e_i}\braket{e_i|\alpha}
+\end{split}
+\end{empheq}
+\item And any matrix $A$ expanded as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+ A=  IAI = \sum_{i,j=1}^n\ket{e_i}\bra{e_i}A\ket{e_j}\bra{e_j} = \sum_{i,j=1}^n \bra{e_i}A\ket{e_j}\ket{e_i}\bra{e_j}
+\end{split}
+\end{empheq}
+Thus $ \bra{e_i}A\ket{e_j}$ are the elements of the matrix $A$ with respect to the basis $\ket{e_i}$. 
+
+\item These last two definitions allow us to define an abstract vector space with an inner product and consider linear operators or transformations acting in the space. Components and matrix elements appear after one has chosen a particular basis in the space. 
+
+\end{itemize}
+
+\subsection{Active and Passive transformations}
+\begin{itemize}
+    \item A change of basis is called a passive transformation because it does not change vectors and matrices. Where as an active transformation changes vectors and matrices but keeps the basis untouched. 
+
+\item For a passive transform:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\ket{\alpha} \rightarrow \ket{\tilde{\alpha}} = \sum_{i=1}^n \ket{i}\braket{e_i|\alpha} = U^{\dagger} \ket{\alpha} \\
+A \rightarrow \tilde{A} = \sum_{i,j=1}^n \ket{i}\bra{e_i}A \ket{e_j}\bra{j} = U^{\dagger}AU
+\end{split}
+\end{empheq}
+Also a under these transformations the following stays invariant:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\bra{\alpha}A \ket{\beta} = \bra{\tilde{\alpha}}\tilde{A}\ket{\tilde{\alpha}}
+\end{split}
+\end{empheq}
+\item In QM $\bra{\alpha}A \ket{\beta}$ encode physical properties of a mechanical system. Physical transformations are represented by unitary operators, and if the properties of the system do not change under one, then the matrix elements do not change either. Active and passive transformations provide us with two equivalent ways of describing the same system. 
+
+
+
+\end{itemize}
+
+\subsection{Hilbert spaces}
+\begin{itemize}
+    \item Here we wish to extend the dimension of the ket and bra vector spaces to infinity. This means that:
+    \item Kets and bras become semi-infinite columns and rows, while matrices become unbounded from below and to the right. 
+    \item We refer to these matres as operators acting in the infinite dimensional space. they get denoted with a hat $\hat{T}$.
+    \item   There is no problem using the bra and ket formalism. We can still define the addition of vectors and their multiplication by scalars. 
+    \item The dot product however cannot be defined for any vector.
+    \item We consider vectors of finite length, which we call normalisable. 
+    \item These vectors form a vector space because the addition of normalisable vectors and their multiplication by scalars also produce normalisable vectors. 
+this multiplication by scalars is obvious, and the addition follows from the triangle in equality. 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  |a + b| \leq |a|+|b| < \infty 
+\end{split}
+\end{empheq}
+\item This space is an example of a Hilbert space as the set of vectors is closed and has a dot product. 
+We also have to be careful as to what operators we can use. An operator such as $\hat{N}\ket{i} = i\ket{i}$, transforms a finite length vector into an non normalisable one.  
+So the domain of an operator is the subspace on which the operator is well defined.  
+
+
+
+\end{itemize}
+\subsection{Creation and annihilation operators} 
+\begin{itemize}
+    \item It is common in QM to start numbering basis vectors not from 1 but from 0. 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \ket{\psi} = \sum_{n=0}^{\infty}\psi_n \ket{n} =  \sum_{n=0}^{\infty} |\psi_n|^2 <\infty
+\end{split}
+\end{empheq}
+\item We then consider the two operators $\hat{a}$ and $\hat{a}^{\dagger}$ which satisfy:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  [\hat{a},\hat{a}^{\dagger}] = \hat{I}
+\end{split}
+\end{empheq}
+and act on the basis ket and bra vectors as: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \hat{a} \ket{0} = 0,~~~ \hat{a} \ket{n} = c_{n-1}\ket{n-1},~~~ \hat{a}^{\dagger}\ket{n} = d_n\ket{n+1} \\ 
+\bra{0} \hat{a}^{\dagger}= 0,~~~ \bra{n}\hat{a}^{\dagger} = \bra{n-1}c^{\ast}_{n-1},~~~ \bra{n}\hat{a} = \bra{n+1}d_n^{\ast}
+\end{split}
+\end{empheq}
+$\hat{a}$ and $\hat{a}^{\dagger}$ are called the annihilation and creation operators, respectively. 
+$\ket{0}$ is called the vacuum state or vacuum because it is destroyed by by $\hat{a}$. 
+\item Through various calculations and manipulations one can find a recursion relation for these constants. What is found is that:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  c_n^{\ast} = d_n,~~~ |c_n|^2 = 1 + |c_{n-1}|^2,~~~c_0=1
+\end{split}
+\end{empheq}
+
+This implies then that $|c_n|^2=n+1$, and thus the most general solution is:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  c_n = \sqrt{n+1}e^{i\phi_n}, ~~~ d_n = \sqrt{n+1}e^{-i\phi_n},~~~\phi_n \in \mathbb{R}
+\end{split}
+\end{empheq}
+\item The simplest solution is obtained by setting all $\phi_n=0$. Then:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+a\ket{n} = \sqrt{n}\ket{n-1},~~~a^{\dagger}\ket{n} = \sqrt{n+1}\ket{n+1}
+\end{split}
+\end{empheq}
+Then using a recursion relation to relate each $\ket{n+1} = \frac{1}{\sqrt{n+1}}a^{\dagger}\ket{n}$, we get:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+ \ket{n} = \frac{1}{\sqrt{n!}}(a^{\dagger})^n\ket{0}
+\end{split}
+\end{empheq}
+So the number $n$ labeling of the basis vector is equal to the number of creation operators applied to the vacuum.  
+
+A Hilbert space created this way is often called a Fock space, and in QM it is often said that this is a state with $n$ quanta.  
+
+
+This equation also implies that any operator acting on the Hilbert space is a linear combination of the identity operator and the products of annihilation and creation operators.  This equation can also allow us to derive explicit formulas for these operators in bra-ket notation:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+a = \sum_{n=0}^{\infty} \sqrt{n}\ket{n-1}\bra{n} = \sum_{n=0}^{\infty}\sqrt{n+1}\ket{n}\bra{n+1},~~~a^{\dagger} = \sum_{n=0}^{\infty}\sqrt{n+1}\ket{n+1}\bra{n}
+ \end{split}
+\end{empheq}
+
+
+\end{itemize}
+
+\subsection{Number operator}
+\begin{itemize}
+    \item This is simply $N = a^{\dagger}a$, and it it is called such as its eigenvalue is equal to the number of quanta in an eigenstate. 
+\end{itemize}
+
+\subsection{Heisenberg algebra} 
+\begin{itemize}
+    \item The Heisenberg algebra $\mathcal{H}$ (also called Weyl algebra) is a unital associative algebra over $\mathbb{C}$ generated by elements $\mathcal{I},\mathcal{X}$ and $\mathcal{P}$, that satisfy:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+[\mathcal{X},\mathcal{P}] \equiv \mathcal{X}\ast \mathcal{P} - \mathcal{P} \ast \mathcal{X} = i\hbar \mathcal{I}
+ \end{split}
+\end{empheq}
+\item As an ansatz for $\hat{\mathcal{X}}$ and $\hat{\mathcal{P}}$, which represent the $\mathcal{X}$ and $\mathcal{P}$ operators, we write:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\label{eqn:1.64}
+\hat{\mathcal{X}} = \eta_x\hat{a} + \eta_x^{\ast} \hat{a}^{\dagger},~~~\hat{\mathcal{P}} = \eta_p\hat{a} + \eta_p^{\ast} \hat{a}^{\dagger}
+\end{split}
+\end{empheq}
+Then solving for the constraint set by \ref{eqn:1.64}:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\eta_x \eta_p^{\ast} - \eta_x^{\ast}\eta_p = i\hbar
+\end{split}
+\end{empheq}
+\item The standard choice is $\eta_x^{\ast}  = \eta_x \equiv \eta$, and $\eta_p^{\ast} = -\eta_p = \frac{i\hbar}{2\eta}$. Then $\hat{\mathcal{X}}$ and $\hat{\mathcal{P}}$ can be expressed:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\hat{\mathcal{X}} = \eta(\hat{a}^{\dagger} + \hat{a}),~~~\hat{\mathcal{P}} = \frac{i \hbar}{2\eta} (\hat{a}^{\dagger}-\hat{a})
+\end{split}
+\end{empheq}
+And the inverse transform is:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\hat{a} = \frac{1}{2\eta}\hat{\mathcal{X}} + i \frac{\eta}{\hbar}\hat{\mathcal{P}},~~~ \hat{a}^{\dagger} =  \frac{1}{2\eta}\hat{\mathcal{X}} - i  \frac{\eta}{\hbar} \hat{\mathcal{P}}
+\end{split}
+\end{empheq}
+
+
+\end{itemize}
+
+\subsection{Subrepresentation}
+\begin{itemize}
+    \item A subrepresentation of a representation $\mathcal{V}$ of an algebra $\mathcal{A}$ is a subspace $\mathcal{W} \subset \mathcal{V}$, which is invariant under all the operators $\rho(\mathcal{T}): \mathcal{V} \rightarrow \mathcal{V}, ~~ \mathcal{T}\in \mathcal{A}$, That is:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\rho(\mathcal{T}) \mathcal{W} \subset \mathcal{W}, ~~ \forall \mathcal{T}
+\end{split}
+\end{empheq} 
+Trivially $\mathcal{O}$ and $\mathcal{V}$ are always subrepresentation.
+
+\end{itemize}
+
+\subsection{Irreducible representation}
+\begin{itemize}
+    \item A representation $\mathcal{V} \neq \mathcal{O}$ of $\mathcal{A}$ is irreducible if there are no non-trivial subrepresentations. 
+\end{itemize}
+
+\subsection{Schur's Lemma}
+\begin{itemize}
+    \item Any two irreducible representations of $\mathcal{A}$ of the same dimension are equivalent. 
+\end{itemize}
+
+\subsection{Properties of Hermitian matrices}
+\begin{itemize}
+    \item The eigenvalues of a hermitian matrix are real. as if $\alpha$ is an eigenvector with an eigenvalue $\lambda$, then $\lambda^{\ast} = \bra{\alpha}A^{\dagger} \ket{\alpha} = \lambda$. 
+
+\item The eigenvectors of a hermitian matrix belonging to distinct eigenvalues are orthogonal. This is easily seen for two eigenvectors $\ket{\alpha}$ and $\ket{\beta}$ with distinct eigenvalues $\lambda$ and $\mu$ respectively, as $\bra{\alpha} A\ket{\beta} - \bra{\alpha}A^{\dagger}\ket{\beta} = (\mu-\lambda) \braket{\alpha|\beta} = 0,~~~\implies \braket{\alpha|\beta} = 0$. 
+
+\item The eigenvalues of hermitian matrix span the space and therefore there is an orthonormal basis $\ket{e_i}$ of eigenvectors of $A$. 
+
+\item Any hermitian matrix admits the spectral composition:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+A = \sum_{i=1}^n\lambda_i\ket{e_i}\bra{e_i} = \sum_{i=1}^n\lambda_iP_{\ket{e_i}}
+\end{split}
+\end{empheq} 
+This follows from the existence of an orthonormal basis of eigenvectors.
+
+\item Any matrix which his a function of a hermitian matrix can be decomposed as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+f(A) = \sum_{i=1}^nf(\lambda_i)\ket{e_i}\bra{e_i} 
+\end{split}
+\end{empheq} 
+
+\item  Since any unitary matrix is an exponential of a hermitian matrix, $U= e^{iA}$, it has the decomposition:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+U = \sum_{j=1}^ne^{i\lambda_j}\ket{e_j}\bra{e_j} 
+\end{split}
+\end{empheq} 
+There are however, infinitely many hermitian matrices $A$ with the same $U$, due to the periodicity of the exponential function.
+
+
+
+\end{itemize}
+
+\subsection{Tensor product}
+\begin{itemize}
+    \item Given two matrices $A \in Mat(k,l)$ and $B \in Mat(n,m)$, their tensor product $A \otimes B \in Mat(kn,lm)$ is the following $kn \times lm $ matrix:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+A \otimes B =  \begin{pmatrix}
+       a_{11}B &\cdot & \cdot & \cdot & a_{1l}B  \\
+       \cdot&\cdot&~&~& \cdot  \\
+       \cdot&~&~\cdot&~& \cdot \\
+       \cdot&~&~&\cdot~& \cdot \\
+       a_{k1}B &\cdot & \cdot & \cdot & a_{kl}B
+    \end{pmatrix}
+\end{split}
+\end{empheq} 
+The matrix elements of $A\otimes B$ have 4 indices 
+
+All $kn \times lm$ matrices of the form $A \otimes B  $ span $Mat(kn,lm)$ and we can write $Mat(kn,lm) = Mat(k,l) \otimes Mat(n,m)$.
+
+\item The tensor product of two column vectors is a column (though now longer). And the tensor product of two row vectors is a row.
+
+\item The tensor product of a column vector $\alpha$ and and a row vector $\beta^{\dagger}$ is a matrix equal to the usual matrix product. Also $\alpha \otimes \beta^{\dagger} = \beta^{\dagger} \otimes \alpha$ . 
+In bra ket notation we would write this as: 
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\ket{\alpha} \bra{\beta} = \ket{\alpha} \otimes \bra{\beta} = \bra{\beta} \otimes \ket{\alpha}
+\end{split}
+\end{empheq} 
+
+\item The tensor product is in general not commutative, but $A \otimes B$ and $A \otimes B$ are of the same size. There is always a $kn \times kn$ matrix $P$ and a $lm \times lm$ matrix $Q$ st:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+B \otimes A = P(A \otimes B)Q
+\end{split}
+\end{empheq} 
+If $A$ and $B$ are square matrices then $Q = P^{T} = P^{\dagger} = P^{-1}$ and $A \otimes B$ and $B \otimes A$ are similar. 
+
+\item The tensor product is associative and :
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+(A_1 \otimes A_2 \otimes ... \otimes A_L)^{T} =A_1^T \otimes A_2^T \otimes ... \otimes A_L^T \\
+(A_1 \otimes A_2 \otimes ... \otimes A_L)^{\dagger} = A_1^{\dagger} \otimes A_2^{\dagger} \otimes ... \otimes A_L^{\dagger}
+\end{split}
+\end{empheq} 
+\item If $A_i$ and $B_i$ are matrices such that the matrix product $A_iB_i$  exists for all $i$, then:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+(A_1 \otimes A_2 \otimes . . . \otimes A_L)\cdot(B_1 \otimes B_2 \otimes . . . \otimes B_L) = A_1B_1 \otimes A_2 B_2 \otimes . . . \otimes A_LB_L
+\end{split}
+\end{empheq} 
+\item If $A$ is an $m \times m$ matrix and $B$ is an $n \times n$ matrix then:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+tra(A \otimes B) = tra(A)tra(B).~~~det(A \otimes B) = (det(A))^n((det(B))^m
+\end{split}
+\end{empheq} 
+
+
+
+
+
+\end{itemize}
+
+
+\subsection{Hilbert space of square integrable functions}
+\begin{itemize}
+\item In QM we identify a vector in our infinite dimensional Hilbert space $\mathcal{H}$ with a square integrable function that is with a complex valued function $\alpha(x)$ on an interval $[a,b]$ st:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\int_a^b|\alpha(x)|^2dx ~ < \infty
+\end{split}
+\end{empheq} 
+This can be done by relabeling the basis $\ket{i}$ as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\ket{e_i} \equiv \ket{2k},~~~\ket{e_{1-k}} \equiv \ket{2k-1},~~~k \in \mathbb{N}
+\end{split}
+\end{empheq} 
+These basis vectors are then labeled by an arbitrary integer $n \in \mathbb{Z}$.
+
+Let the components $c_n$ of $\ket{\alpha} = \sum_{n=-\infty}^{\infty} c_n \ket{e_n}$ be the Fourier coefficients of a function $\alpha(x)$ defined on an interval $[a,b]$.  Here we also require that $\sum_{n=-\infty}^{\infty}|c_n|^2 <\infty$.
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\alpha(x) = \frac{1}{\sqrt{L}}\sum_{n=-\infty}^{\infty	} c_n e^{\frac{2 \pi i n x}{L}},~~~L \equiv b-a
+\end{split}
+\end{empheq} 
+\item If $\ket{\beta} = \sum_nd_n\ket{e_n}$, is represented by the function $\beta(x)$, then the inner product is defined as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\braket{\alpha|\beta} = \int_a^b \alpha^{\ast}(x)\beta(x)dx
+\end{split}
+\end{empheq}
+The Hilbert space of square integrable functions defined on an interval $[a,b]$ is denoted by $L^2[a,b]$. 
+\end{itemize}
+\subsection{$\delta$-Normalisation}
+\begin{itemize}
+\item If we introduce the kets:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\ket{x} \equiv \sum_{n=-\infty}^{\infty}e^{-\frac{2\pi i n x}{L}} \ket{e_n}
+\end{split}
+\end{empheq}
+Then we get the following definition of the vector $\ket{\alpha}$:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\ket{\alpha} = \int_a^b\alpha(x)\ket{x}dx
+\end{split}
+\end{empheq}
+We can think about $\ket{\alpha}$ as a basis kets labeled by a continuous label $x$.
+
+These basis kets are not however, normalised as it can be shown:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\braket{x|x'} = \delta_L(x-x')
+\end{split}
+\end{empheq}
+Here $\delta_L$ is the periodic delta function with period L. These functions are what we call $\delta$-function normalised.  
+
+The completeness relation then becomes:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\int_a^b\ket{x}\bra{x}dx = I
+\end{split}
+\end{empheq}
+And one can also write $\alpha(x) = \braket{x|\alpha}$.
+\end{itemize}
+\subsection{Uncountable Hilbert space}
+\begin{itemize}
+
+\item This representation of vectors in the Hilbert space $\mathcal{H}$ together with the $\delta$-normalisation condition, makes no reference to the countable basis and thus can be used as another definition of a separable Hilbert space. 
+
+One can also see that the interval $[a,b]$ does not have to be finite.  We can also reintroduce a countable basis, by using a complete set of orthonormal functions such that any other function in the Hilbert space can be expressed as a linear combination of the functions from the set:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\alpha(x) = \sum_{n=1}^{\infty}c_na_n(x),~~~ \int a_n^{\ast}(x)a_m(x)dx = \delta_{nm}
+\end{split}
+\end{empheq}
+The basis is then given by:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\ket{e_n}  = \int  a_n(x) \ket{x}dx
+\end{split}
+\end{empheq}
+\item In QM if the continuous label $x$ is the coordinate of a particle then $\alpha(x)$ is called the wave function of the particle in the coordinate representation and is usually denoted $\psi(x)$. 
+\end{itemize}
+
+\subsection{Operators on $\delta$-Normalised functions}
+\begin{itemize}
+    \item Operators act on these continuous ket vectors as follows:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\hat{T} \ket{y} = \int T_{xy}\ket{x} 
+\end{split}
+\end{empheq}
+Here $T_{xy} \equiv T(x,y)  = \bra{x}\hat{T}\ket{y}$, and should be thought as more of a distribution then a function. 
+
+We can use this definition to define how a vector can be transformed:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\ket{\tilde{\alpha}} = \hat{T}\ket{\alpha} \implies \tilde{\alpha}(x) = \int T(x,y)\alpha(y)dy
+\end{split}
+\end{empheq}
+
+\end{itemize}
+
+\subsection{Coordinate operator}
+\begin{itemize}
+    \item Consider the Hilbert space $L^2(\mathbb{R})$, and define the coordinate operator as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\hat{X}\ket{\alpha} \equiv \int x \alpha(x)\ket{x}dx
+\end{split}
+\end{empheq}
+So $X(x,y)$ can be expressed as $X(x,y) = x\delta(x-y)$. It can also be shown that $\hat{X}$ is hermitian: $\hat{X}^{dagger} = \hat{X}$
+
+\end{itemize}
+\subsection{Derivative operator}
+\begin{itemize}
+    \item The derivative operator $\hat{D}$ as:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\hat{D}\ket{\alpha} \equiv \int \frac{d \alpha(x)}{dx}\ket{x}dx
+\end{split}
+\end{empheq}
+This means $D(x,y) = \frac{d}{dx}\delta(x-y)$ and also $\hat{D}$ is anti-hermitian $\hat{D}^{\dagger} = -\hat{D}$. This is however is only true if we restrict ourselves to functions that vanish at the ends of the interval $[a,b]$, otherwise it can not be made anti-hermitian, with out making it so that the coordinate operator cannot be defined in the space.
+
+\item It can also be shown that $\hat{D}\hat{X}\ket{\alpha} = \hat{X}\hat{D}\ket{\alpha}+\ket{\alpha}  $, this means that the commutator: $[\hat{X},\hat{D}] = -\hat{I}$. And if we define the similar operator $\hat{P} = -i \hbar \hat{D}$ then:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+[\hat{X},\hat{P}] = i\hbar\hat{I}
+\end{split}
+\end{empheq}
+This can be recognised as a representation of the Heisenberg algebra. 
+\end{itemize}
+
+\subsection{Eigenvalues of the Heisenberg algebra}
+\begin{itemize}
+    \item We denote an eigenvalue of $\hat{X}$ by $x$, and the corresponding eigenvalue by $\ket{\alpha_x}$, so that $\hat{X}\ket{\alpha_x} = x\ket{\alpha_x}$. Plugging this into our definition of a vector $\ket{\alpha}$,up to a constant factor we get:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\alpha_x(y) = \delta(x-y) \implies \ket{\alpha_x} = \int\delta(x-y)\ket{y}dy = \ket{x}
+\end{split}
+\end{empheq}
+Since $x$ can be any real value the spectrum of $\hat{X}$ is continuous. 
+
+\item We denote an eigenvalue of $\hat{P} = -i\hbar \hat{D}$ by $p$ and the corresponding eigenvector $\ket{\alpha_p}$, plugging in we find:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+- i \hbar \frac{d \alpha_p(x)}{dx} = p\alpha_p(x)
+\end{split}
+\end{empheq}
+The general solution to this is:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\alpha_p(x) = Ce^{\frac{ipx}{\hbar}}
+\end{split}
+\end{empheq}
+There are no normalisable solutions, but we can choose $p$ real and $C = \frac{1}{\sqrt{2 \pi \hbar}}$, so that when we integrate we get the delta function:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+ \ket{\alpha_p} = \int \frac{1}{\sqrt{2 \pi \hbar }} e^{\frac\hbar{ipx}{\hbar}}\ket{x} = \ket{p}
+\end{split}
+\end{empheq}
+~It can then be shown that $\braket{p|p'} = \delta(p-p')$, as needed. As well these $\ket{p}$ satisfy the completeness relation:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+ \int \ket{p}\bra{p}dk = \hat{I}
+\end{split}
+\end{empheq}
+\item This all means that any vector can be expanded over the eigenkets of $\hat{P} = -i \hbar \hat{D}$ and $\alpha(x)$ and $\alpha(p)$ are related to each other by Fourier transforms and we can say the Fourier transform is the unitary transformation that relates the $\hat{X}$ and $\hat{p}$ bases. 
+
+\item A Hermitian operator in a an infinite dimensional Hilbert space may have no normalisable eigenvectors, and thus $\delta$-function normalised vectors along with a continuous spectrum. Or there could be a mix of both normalisable ad $\delta$-function normalised vectors. In the latter case the spectrum is the union of the discrete and continuous spectrum and the eigenvalues take values in an interval. 
+
+The spectral decomposition of $\hat{H}$ involves summation of the discrete spectrum and integration over the continuous. 
+
+
+\end{itemize}
+
+\subsection{Conjugate Operators}
+\begin{itemize}
+    \item If we act with $\hat{X}$ on a ket vector $\ket{\alpha}$ that is expanded over the $\hat{K}$ basis, then it can be shown that $\hat{X}$ becomes the derivative operator multiplied by a factor of $i$. 
+
+Operators with such reciprocity are said to be conjugate to each other. 
+\end{itemize}
+
+\subsection{Tensor products of Hilbert spaces}
+\begin{itemize}
+    \item Let $\mathcal{H}_1$ and $\mathcal{H}_2$ be Hilbert spaces with orthonormal bases $\ket{e_i}$ and $\ket{\epsilon_a}$, respectively. The tensor product of $\mathcal{H}_1$ and $\mathcal{H}_2$ is the Hilbert space denoted $\mathcal{H}_1 \otimes \mathcal{H}_2$ with orthonormal basis $\ket{e_i\epsilon_a}$, meaning:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\braket{e_i\epsilon_a|e_j\epsilon_b} = \delta_{ij}\delta_{ab}
+\end{split}
+\end{empheq}
+$\mathcal{H}_1 \otimes \mathcal{H}_2$ and $\mathcal{H}_2 \otimes \mathcal{H}_1$ are isomorphic as we can just switch $e_i$ and $\epsilon_a$.
+\item The tensor product of two vectors $\ket{\alpha} \in \mathcal{H}_1,\ket{\beta} \in \mathcal{H}_2$, is:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\ket{\alpha} \otimes \ket{\beta} = \sum_{i,a}a_ib_a\ket{e_i \epsilon_a}
+\end{split}
+\end{empheq}
+This vector $\ket{\alpha} \otimes \ket{\beta}  \in \mathcal{H_1} \otimes \mathcal{H}_2$ and this product can be considered a bilinear map.
+
+\item The tensor product of two operators from the two respective Hilbert  spaces acts on the basis $\ket{e_i \epsilon_a}$ by:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\hat{S}\otimes\hat{T}\ket{e_i\epsilon_a} = \hat{S}\ket{e_i}\otimes\hat{T}\ket{\epsilon_a}
+\end{split}
+\end{empheq}
+These definitions can be extended to vector spaces without finite or countable bases, providing we drop the orthonormal constraint. 
+
+
+
+\end{itemize}
+\newpage
+\section{Postulates of Quantum Mechanics}
+\subsection{State of a system}
+\begin{itemize}
+    \item The quantum state of the mechanical system at any given time  $t_0$ is represented by a vector $\ket{\psi}$ in a Hilbert space. 
+
+Since the sum of two vectors is a vector, if $\ket{\psi}$ and $\ket{\xi}$ represent possible states of a system so does their arbitrary linear combination, $a \ket{\psi}+ b\ket{\xi}$.
+
+This is called the principle of superposition. 
+\end{itemize}
+
+\subsection{Coordinates}
+\begin{itemize}
+    \item The real coordinates $z^i$ are represented at any given time $t_0$ by Hermitian operators $\hat{Z}^i$ which satisfy the following commutation relations:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\frac{i}{\hbar}[\hat{P}^{\alpha}_{a},\hat{X}^{\beta}_b] &= \delta_{ab}\delta^{\alpha \beta}\hat{I},~~~[\hat{X}^{\alpha}_{a},\hat{X}^{\beta}_b] = 0,~~~[\hat{P}^{\alpha}_{a},\hat{P}^{\beta}_b] = 0, \\
+\frac{i}{\hbar}[\hat{S}^{\alpha}_{a},\hat{S}^{\beta}_b] &= -\delta_{ab}\epsilon^{\alpha \beta \gamma}\hat{S}^{\gamma}_b,~~~\sum_{\alpha}(\hat{S}^{\alpha}_a)^2
+ = s_a(s_a+1)\hbar^2\hat{I},\\
+&[\hat{S}^{\alpha}_{a},\hat{X}^{\beta}_b] =0,~~~[\hat{S}^{\alpha}_{a},\hat{P}^{\beta}_b] =0
+\end{split}
+\end{empheq}
+Here $\alpha,\beta = 1,2,3,~~~a,b =1,2,...,N$ and $s_a$ is the spin of the $ath$ particle. 
+
+\item The Hilbert space $\mathcal{H}$ is the tensor product of the all the Hilbert spaces of the individual particles:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\mathcal{H} = \prod_{a=1}^N \otimes \mathcal{H}_{a}
+\end{split}
+\end{empheq}
+Thus then the operators of the $ath$ particle only act in the Hilbert space of this particle. 
+
+The Hilbert space $\mathcal{H}_a$ of the $ath $ particle is itself a product of Hilbert spaces, one of dimension $2s_a+1$ denoted $\mathcal{H}^{\hat{s}}_a$ and an infinite dimensional Hilbert space denoted $\mathcal{H}^{\hat{x}\hat{p}}_a$:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\mathcal{H}_a =  \mathcal{H}^{\hat{s}}_a \otimes \mathcal{H}^{\hat{x}\hat{p}}_a
+\end{split}
+\end{empheq}
+Then the hermitian spin operators $\hat{S}_a^{\alpha}$ of $a$ act only on $\mathcal{H}^{\hat{s}}_a$, and in fact the pair $(\hat{S}^{\alpha}_a/i\hbar,\mathcal{H}^{\hat{s}}_a$) forms a irreducible representation of the Lie algebra $su(n)$.
+
+$\mathcal{H}^{\hat{x}\hat{p}}_a$ is the tensor product of three infinite dimensional Hilbert spaces:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\mathcal{H}^{\hat{x}\hat{p}}_a = \mathcal{H}^1_a \otimes \mathcal{H}^2_a \otimes \mathcal{H}^3_a
+\end{split}
+\end{empheq}
+\item Each $\hat{X}^{\alpha}_a$ and $\hat{P}^{\alpha}_a$ satisfy the canonical commutation relations of the Heisenberg algebra, also provide a unitary irreducible representation of the Heisenberg algebra in $\mathcal{H}^{\alpha}_a$.
+
+
+
+\end{itemize}
+
+\subsection{Observables}
+\begin{itemize}
+    \item Observables are hermitian operators acting in $\mathcal{H}$.  The operator $\hat{A}(\hat{Z})$ corresponding at any given time $t_0$ to the classical observable $a(z)$ is given by:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\hat{A}(\hat{Z}) = \frac{1}{2}(a(\hat{Z})+ a(\hat{Z})^{\dagger})
+\end{split}
+\end{empheq}
+These operators are made hermitian otherwise measured values would not always be real. 
+
+The eigenvectors of an observable operator are complete i.e. any vector in the Hilbert space of the system can be expressed as a linear combination of them. 
+
+\end{itemize}
+
+\subsection{Measurements}
+\begin{itemize}
+    \item If the system at any given time $t_0$ is in a state $\ket{\psi}$, measurement of the observable $\hat{A}$ at this time will yield one of the eigenvalues $a$ with a probability:
+\begin{bux}
+\label{eqn:2.6}
+    \begin{split}
+        P(a) = \frac{\braket{\psi|\alpha}\braket{\alpha|\psi}}{\braket{\psi|\psi}\braket{\alpha|\alpha}}
+    \end{split}
+\end{bux}
+Where $\ket{\alpha} $ is an eigenstate of $\hat{A}$ with the eigenvalue $a$. The state of the system will change from $\ket{\psi}$ to $\ket{\alpha}$ as a result of this measurement.  Therefor the measurement is represented by the projection operator applied to the state $\ket{\psi}$: 
+\begin{bux}
+    \begin{split}
+        \hat{\Pi}_{\alpha} = \frac{1}{\braket{\alpha|\alpha}} \ket{\alpha}\bra{\alpha}
+    \end{split}
+\end{bux}
+This postulate only applies to observable with discrete and non-degenerate spectrum. 
+\end{itemize}
+
+\subsection{Dynamics}
+\subsubsection{The Heisenberg picture }
+\begin{itemize}
+\item Here the observable $\hat{A}(\hat{Z},t)$, change with time according to the Heisenberg equation:
+\begin{bux}
+    \begin{split}
+\label{eqn:2.8}
+        \frac{d \hat{A}}{dt} = \frac{\partial \hat{A}}{\partial t} + \frac{i}{\hbar}[\hat{H},\hat{A}]
+    \end{split}
+\end{bux}
+Where $\hat{H}(\hat{Z},t) = \frac{H(\hat{Z},t)+ H(\hat{Z},t)^{\dagger}}{2}$ is the quantum Hamiltonian operator corresponding to the classical Hamiltonian of the system.  This way the state $\ket{\psi}$ remains stationary. 
+
+\end{itemize}
+\subsubsection{The Schrodinger Picture }
+\begin{itemize}
+    \item Here the state vector $\ket{\psi}$ changes in time and obeys the Schrodinger equation: 
+\begin{bux}
+    \begin{split}
+\label{eqn:2.9}
+        i \hbar \frac{d}{dt}\ket{\psi(t)} = \hat{H}\ket{\psi(t)},~~~\ket{\psi(t_0)} =\ket{\psi}
+    \end{split}
+\end{bux}
+The operators $\hat{Z}^i$, and therefore any observable which only depends on $\hat{Z}^i$, remain stationary.  
+\end{itemize}
+\newpage 
+\section{More on the postulates}
+\subsection{Operator ordering ambiguity}
+\begin{itemize}
+\item If we have a classical observable $a(x,p) = x^2p^2$. There four ways of writing the quantum mechanical equivalent operator as the operators do not commute. The correct ordering can only be determined by experiment.   
+\end{itemize}
+
+
+\subsection{Discrete and Non degenerate spectrum}
+\begin{itemize}
+    \item Any two vectors differing by a complex factor describe one and the same physical state. Thus we can say a state is described by a ray of vectors. 
+\begin{bux}
+    \begin{split}
+        \ket{\psi} \sim c\ket{\psi},~~~c \in \mathcal{C}
+    \end{split}
+\end{bux}
+Using this we can then normalize all these vectors so that $\braket{\psi|\psi} =1$, from here on out we will assume such vectors $\ket{\psi}$ are normalised as such.  Even with this normalisation we still have the freedom of multiplying the any $\ket{\psi}$ by an arbitrary complex number $e^{i\phi}$ with modulus $1$.  The set of all normalised vectors does not form a vector space so we will need to re normalise a linear combination of normalised vectors.  
+
+\item With this normalisation the probability formula \ref{eqn:2.6} simplifies to:
+\begin{bux}
+    \begin{split}
+        P_i = \braket{\psi|\alpha_i}\braket{\alpha_i|\psi} = |\braket{\alpha_i|\psi}|^2
+    \end{split}
+\end{bux} 
+And the projection operator just becomes:
+\begin{bux}
+    \begin{split}
+        \hat{\Pi}_{i} =  \ket{\alpha_i}\bra{\alpha_i}
+    \end{split}
+\end{bux}
+Another way of thinking about the probability formula $P_i$ is  as the length squared of the projection of of the vector $\ket{\psi}$ along $\ket{\alpha_i}$.:
+\begin{bux}
+    \begin{split}
+        \braket{\hat{\Pi}_{i}\psi|\hat{\Pi}_{i}\psi} = \bra{\psi}\hat{\Pi}_{i}^2\ket{\psi} = \bra{\psi}\hat{\Pi}_{i}\ket{\psi} =  \braket{\psi|\alpha_i}\braket{\alpha_i|\psi} =P_i
+    \end{split}
+\end{bux}
+As a sanity check  we can see that the total probability is:
+\begin{bux}
+    \begin{split}
+        \sum_i P_i = \sum_i\braket{\psi|\alpha_i}\braket{\alpha_i|\psi} = \bra{\psi}\sum_i\ket{\alpha_i}\braket{\alpha_i|\psi} = \braket{\psi|\psi} = 1
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{Indeterminate and determinant states }
+\begin{itemize}
+    \item If $\ket{\psi}$ is in an eigenstate $\ket{\alpha_i}$, every measurement $\hat{A}$  is certain to return the same eigenvalue $a_i$. We say that $\ket{\alpha_i}$ is a determinate state for the observable $\hat{A}$. 
+
+\item When two determinate states $\ket{\alpha_1}$ and $\ket{\alpha_2}$ are superimposed to form another state:
+\begin{bux}
+    \begin{split}
+        \ket{\psi} = \frac{c\ket{\alpha_1}+ d\ket{\alpha_2}}{\sqrt{|c|^2+|d|^2}}
+    \end{split}
+\end{bux}
+This is the indeterminate state.  Measurement of $\hat{A}$ yields either $a_1$ or $a_2$
+\end{itemize}
+
+
+\subsection{Discrete and degenerate spectrum}
+\begin{itemize}
+    \item Some orthonormal vectors $\ket{\alpha_1}$ and $\ket{\alpha_2}$ have the same eigenvalue $a$, these vectors then span the eigenspace $\mathcal{V}_a$ of $\hat{A}$ with eigenvalue $a$.  The probability of:
+\begin{bux}
+    \begin{split}
+        P(a) = P_1+P_2 = |\braket{\alpha_1|\psi}|^2+|\braket{\alpha_2|\psi}|^2
+    \end{split}
+\end{bux}
+And the projection operator on to the eigenspace $\mathcal{V}_a$ is:
+\begin{bux}
+    \begin{split}
+        \hat{\Pi}_{\mathcal{V}_a}  =  \ket{\alpha_1}\bra{\alpha_i}+ \ket{\alpha_i}\bra{\alpha_2}
+    \end{split}
+\end{bux}
+This formula is valid for any degeneracy of the spectrum so we can replace \ref{eqn:2.6} with:
+\begin{bux}
+    \begin{split}
+        P(a) = \bra{\psi}\hat{\Pi}_{\mathcal{V}_a}\ket{\psi}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{Continuous spectrum}
+\begin{itemize}
+    \item The spectrum of $\hat{X}$ and $\hat{P}$ are continuous. This means there eigenvectors are not normalisable, they are not in a Hilbert space and do not represent possible physical states. They are however $\delta$-function normalisable, complete and any vector can be expanded over them.  Evidently equation \ref{eqn:2.6} must be changed as it diverges for these vectors. 
+
+If we consider an arbitrary observable $\hat{W}$ with a continuous non-degenerate spectrum $w$ and $\delta$-function normalised eigenvectors $\ket{w}$. Any arbitrary state $\ket{\psi}$ can be expanded as:
+\begin{bux}
+    \begin{split}
+        \ket{\psi} = \int dw \ket{w}v, ~~~ \braket{w|w'} = \delta(w-w')
+    \end{split}
+\end{bux}
+We then think about the coefficients $\braket{w|\psi}$ as values of a complex valued function of $w$. Here $w$ are points in an auxiliary one dimensional set called the $w$ space.  This function is denoted $\psi(w)$ and is called the wave-function in the $w$ space.  The operator $\hat{W}$ acts on $\psi(w)$ by:
+\begin{bux}
+    \begin{split}
+        \hat{W}\psi(w) = w\psi(w)
+    \end{split}
+\end{bux}
+There is just one Hilbert space to which the state vector $\ket{\psi}$
+belongs to. The wave function is also called the probability amplitude for finding the system at the position $w$ in the $w$ space.  In order to have the total probability equal to $1$ we must interpret $|\braket{w|\psi}|^2 = P(w)$ as a probability density at $w$, thus $P(w)dw$ is the probability of obtaining a result between $w$ and $w+dw$.  The requiring that the total probability is: 
+\begin{bux}
+    \begin{split}
+        \int dw P(w) = \int dw \braket{w|\psi}\braket{\psi|w} = \bra{\psi}\int dw \ket{w}\braket{w|\psi} = \bra{\psi}I\ket{\psi} = 1
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+\subsection{System of particles }
+\begin{itemize}
+    \item Consider a system of $N$ spinless particles. Since all the components of a single particle $\hat{X}_a^{\alpha}$ commute with each other then there is a simultaneous eigenbasis of these operators: 
+\begin{bux}
+    \begin{split}
+        \ket{x_1,y_1,z_1;x_2,y_2,z_2;...;x_N,y_N,z_N}
+    \end{split}
+\end{bux}
+It is called the coordinate basis and can be normalised as:
+\begin{bux}
+    \begin{split}
+        \braket{x_1,y_1,...,z_N|x'_1y'_1,...,z'_N} = \delta(x_1-x_1')\delta(y_1-y_1') ...\delta(z_N-z_n')
+    \end{split}
+\end{bux} The wave function becomes a square integral function of all $3N$ co-ords: 
+\begin{bux}
+    \begin{split}
+        \psi(x_1,y_1,...,z_N) = \braket{x_1,y_1,...,z_N|\psi}
+    \end{split}
+\end{bux}
+\item If the particles have spin then for each particle we would need an additional discrete index, the wave function becomes a collection of wave functions:
+\begin{bux}
+    \begin{split}
+          \psi_{k_1,k_2,...,k_N}(x_1,y_1,...,z_N)
+    \end{split}
+\end{bux}
+Where $k_a$ is the spin index of the $a$th particle and takes $2s_a+1$ values. The spin operators acting on the wave functions change their index's. The wave functions are normalised as follows: 
+\end{itemize}
+\begin{bux}
+    \begin{split}
+        \int dx_1dy_1,...,dz_N \sum_{k_1,k_2,...,k_N}  \psi^{\ast}_{k_1,k_2,...,k_N}(x_1,y_1,...,z_N) \psi_{k_1,k_2,...,k_N}(x_1,y_1,...,z_N) =1
+    \end{split}
+\end{bux}
+
+\subsection{Second measurement}
+\begin{itemize}
+    \item As discussed before measurement of of a system throws it into one of the eigenstates of the dynamical variable measuring it with some probability of going into each eigenstate. These probabilities can be determined by performing many measurements on an ensemble of identically prepared systems all in $\ket{\psi}$. 
+
+\item If the system is degenerate, then the system after measurement is thrown in to the space $\mathcal{V}_a$ formed by all the vectors with eigenvalue $a$. Thus the system is in the state:
+\begin{bux}
+    \begin{split}
+        \ket{\alpha'} = \frac{\hat{\Pi}_{\mathcal{V}_a}\ket{\psi}}{\sqrt{\braket{\hat{\Pi}_{\mathcal{V}_a}\psi|\hat{\Pi}_{\mathcal{V}_a}\psi}}} = \frac{{\hat{\Pi}_{\mathcal{V}_a}\ket{\psi}}}{\sqrt{P_{\mathcal{V}_a}}}
+    \end{split}
+\end{bux}
+\item It should be noted that if an observable has a continuous spectrum then it eigenstates are not normalisable and after a measurement of the observable a physical state cannot collapse into one of them. If a measurement shows a particle is at a certain point $x$, then the wave function collapses to a spike at $x$, whose width depends on the precision of the measurement. As time passes though the spike will spread out ans we could find the particle anywhere in the space with some probability. 
+\end{itemize}
+
+
+\subsection{Expectation value }
+\begin{itemize}
+    \item This is the average over the ensemble denoted $\braket{\hat{A}}$. This is defined the same as in statistics. 
+\begin{bux}
+    \begin{split}
+       \braket{\hat{A}} = \sum_i P(a_i)a_i = & \sum_i \braket{\psi|\alpha_i}\braket{\alpha_i|\psi}a_i = \sum_i\bra{\psi}\hat{A}\ket{\alpha_i}\braket{\alpha_i|\psi} \\
+& = \bra{\psi}\hat{A}\ket{\psi}
+    \end{split}
+\end{bux}
+For the continuous case the sum is replaced by a integral with the integrand becoming $P(x)xdx$. If the system is in an eigenstate of $\hat{A}$ then $ \bra{\psi}\hat{A}\ket{\psi} = a\braket{\psi|\psi} = a$. 
+\end{itemize}
+
+
+\subsection{Standard deviation }
+\begin{itemize}
+    \item This quantity measures the average fluctuation around the mean. In QM it is referred to as the uncertainty in $\hat{A}$.  It is denoted $\Delta A$ and is defined as:
+\begin{bux}
+    \begin{split}
+        \Delta \hat{A} = \sqrt{\braket{(\hat{A}-\braket{A})^2}} 
+    \end{split}
+\end{bux}
+This can then be manipulated into a more use full form: 
+\end{itemize}
+\begin{bux}
+    \begin{split}
+       (\Delta \hat{A})^2 = \braket{(\hat{A}-\braket{A})^2} =& \braket{(\hat{A}^2-2\hat{A}\braket{A}+\braket{\hat{A}}^2)}   = \braket{\hat{A}^2} -\braket{2\hat{A}\braket{\hat{A}}} + \braket{\hat{A}}^2 \\
+&= \braket{\hat{A}^2} - \braket{\hat{A}}^2 \geq 0
+    \end{split}
+\end{bux}
+Where the $\geq 0$ comes from the fact that the original expression was squared. 
+
+\subsection{Compatible observations}
+\begin{itemize}
+    \item If we make a measurement of some state $\ket{\psi}$ with $\hat{A}$ collapsing the system into an eigenstate $\ket{\alpha}$ of $\hat{A}$. Now if we immediately measure an observable $\hat{
+B}$ the system will collapse into an eigenstate $\ket{\beta}$ of $\hat{B}$. $\ket{\beta}$ is not in general an eigenstate of $\hat{A}$, If $\ket{\beta}$ is an eigenstate we denote it $\ket{\alpha \beta}$. The necessary condition for $\ket{\alpha\beta}$ is:
+\begin{bux}
+    \begin{split}
+        (\hat{A}\hat{B}-\hat{B}\hat{A})\ket{\alpha\beta} = 0 
+    \end{split}
+\end{bux}
+\item Observables $\hat{A}$ and $\hat{B}$ are called compatible if they commute, $[\hat{A},\hat{B}] = 0 $, and incompatible if they do not commute.  If two Hermitian operators commute then a complete basis of simultaneous eigenstates can be found. Measurements of compatible observable leave the other untouched, i.e changing the order in which we measure does not change the result of either. 
+\end{itemize}
+
+
+\subsection{The uncertainty relation} 
+\begin{itemize}
+    \item Two incompatible observables may still have some common eigenstates. $\hat{X}$ and $\hat{P}$ have no simultaneous eigenkets.  
+
+\item Let $\hat{A}$ and $\hat{B}$ be observables, for any two states it can be shown from Schwartz inequality $\braket{\alpha|\alpha}\braket{\beta|\beta} \geq |\braket{\alpha|\beta}|^2$, that:
+\begin{bux}
+    \begin{split}
+        \Delta \hat{A}^2 \Delta \hat{B}^2 \geq \left(\frac{1}{2} \braket{[\hat{A},\hat{B}]_+} - \braket{\hat{A}}\braket{\hat{B}} \right)^2- \frac{1}{4}\braket{[\hat{A},\hat{B}]}^2
+    \end{split}
+\end{bux}
+Where $[\hat{A},\hat{B}]_+ = \hat{A}\hat{B}+\hat{B}\hat{A}$ is the anti-commutator. Since we only deal with hermitian operators $\hat{A}$ and $\hat{B}$ are hermitian, as well as their anti-commutator, meaning their expectation values are real. Thus the first term in the above equation is a real number squared and is thus positive. Conversely the commutator of two hermitian operators is anti-hermitian, so the second term is minus the square of a purely imaginary number and is thus also positive.
+
+\item Dropping the first term in the inequality and taking the square root of both sides leaves us with the uncertainty relation: 
+\begin{bux}
+    \begin{split}
+          \Delta \hat{A} \Delta \hat{B} \geq \frac{1}{2}|\braket{[\hat{A},\hat{B}]}|
+    \end{split}
+\end{bux}
+\end{itemize}
+
+\subsection{minimum uncertainty packet}
+\begin{itemize}
+    \item For the position and momentum operators $\hat{X}$ and $\hat{P}$, the uncertainty relation is the famous Heisenberg uncertainty relation:
+\begin{bux}
+    \begin{split}
+        \Delta \hat{X} \Delta \hat{P} \geq \frac{\hbar}{2}
+    \end{split}
+\end{bux}
+\item For this relation it can be shown that equality is when the wavefunction takes the form of a Gaussian wave packet: 
+\begin{bux}
+    \begin{split}
+        \psi(x) = \frac{1}{\sqrt{\sqrt{\pi}\Delta}}  \text{exp}\left(\frac{i}{\hbar} \braket{\hat{P}}(x-\braket{\hat{X}}) - \frac{(x-\braket{\hat{X}})^2}{2\Delta^2} \right)
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+\subsection{The Heisenberg picture }
+\begin{itemize}
+    \item As outlined earlier, this picture replaces observable quantities with operators and the Poisson bracket in Hamilton's equations with the commutator.  The quantum state of the system and any given time $t_0$ can be thought as the quantum analog of initial conditions, which do not change in time. 
+
+In this picture the state $\ket{\psi}$ is time independent, but the operators $\hat{A}$ and the eigenstates of $\hat{A}$ and the corresponding probabilities depend on time. 
+
+\end{itemize}
+
+\subsubsection{Time evolution operator}
+\begin{itemize}
+    \item If we look at observables which have no explicit time dependence, \ref{eqn:2.8} reduces to:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.27}
+        \frac{d \hat{A}(t)}{dt} = \frac{i}{\hbar}[\hat{H},\hat{A}(t)]
+    \end{split}
+\end{bux}
+In order for the state $\ket{\psi}$ to be time independent, we need the evolution of time to be a passive transformation.  As discussed earlier a passive transformation is a unitary transformation, so in order to reach this we introduce the time evolution operator, which is defined to satisfy:
+\begin{bux}
+    \begin{split}
+\label{eqn:3.28}
+        i \hbar \frac{d \hat{U}(t,t_0)}{dt} = \hat{U}(t,t_0)\hat{H}(\hat{Z}(t),t_0), ~~~~\hat{U}(t_0,t_0) = \hat{I}
+    \end{split}
+\end{bux}
+\item The above equation \ref{eqn:3.27} is then solved by: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.29}
+        \hat{A}(t) = \hat{U}^{\dagger}(t,t_0)A_0\hat{U}(t,t_0)
+    \end{split}
+\end{bux}
+Where $\hat{A}_0 \equiv \hat{A}(t_0)$. So time passively transforms observables as needed.  
+
+\item We can also see that if $\hat{A}_0$ has an eigenstate, so $\hat{A}_0\ket{\alpha_0} = a\ket{\alpha_0}$, then by rearranging \ref{eqn:3.29}:
+\begin{bux}
+    \begin{split}
+        \hat{A}(t) \hat{U}^{\dagger}(t,t_0)\ket{\alpha_0} = a \hat{U}^{\dagger}(t,t_0)\ket{\alpha_0} 
+    \end{split}
+\end{bux}
+So $\ket{\alpha(t)} \equiv \hat{U}^{\dagger}(t,t_0)\ket{\alpha_0} $ is an eigenvector of $\hat{A}(t)$ with the same unchanged eigenvalue $a$. 
+
+\item The Hamiltonian can then be manipulated as follows:
+\begin{bux}
+    \begin{split}
+        \hat{H}(\hat{Z}(t),t) = \hat{H}(\hat{U}^{\dagger}\hat{Z}_0\hat{U},t) = \hat{U}^{\dagger}\hat{H}(\hat{Z}_0,t)\hat{U}
+    \end{split}
+\end{bux}
+Where the final step comes from the fact that we can can write $\hat{H}$ out as a power series in powers of $\hat{Z}$. This means that \ref{eqn:3.28} can be re-written as: 
+\begin{bux}
+    \begin{split}
+\label{eqn:3.32}
+        i \hbar \frac{d \hat{U}(t,t_0)}{dt} = \hat{H}(\hat{Z}_0,t)\hat{U}(t,t_0)
+    \end{split}
+\end{bux}
+This form is known as  Schrodinger equation for the evolution operator. This can be used to find the evolution operator as a function of $\hat{H}(t)$, since $\hat{Z}_0$ are just initial conditions.  
+
+\item For example if the Hamiltonian has no time dependence, its clear that the evolution operator is of the form:
+\begin{bux}
+    \begin{split}
+        \hat{U}(t,t_0) = e^{-\frac{i}{\hbar}(t-t_0)\hat{H}}
+    \end{split}
+\end{bux}
+\end{itemize}
+
+
+\subsection{The Schr\"odinger picture} \
+\begin{itemize}
+    \item As discussed previously, in this picture $\ket{\psi}$ depends on time, making time an active transformation. We can change from the Heisenberg picture to the Schr\"odinger in a natural manner by looking at the probability of measuring and eigenvalue $a$ of the eigenvector $\ket{\alpha}$ which in the Heisenberg picture is $\ket{\alpha(t)} = \hat{U}^{\dagger}(t,t_0)\ket{\alpha_0}$. The probability we know is written as:
+\begin{bux}
+    \begin{split}
+        P(a,t) = |\braket{\alpha(t)|\psi}|^2 = |\braket{ \hat{U}^{\dagger}(t,t_0)\alpha_0|\psi}|^2
+    \end{split}
+\end{bux}
+From here we can see that if we choose $\ket{\psi(t)} =  \hat{U}(t,t_0)\ket{\psi}$ with $\ket{\psi(t_0)} = \ket{\psi}$. Then the probability stays the same:
+\begin{bux}
+    \begin{split}
+        P(a,t) = |\braket{ \alpha_0\hat{U}^{\dagger}(t,t_0)|\psi}|^2 =|\braket{ \alpha_0|\hat{U}(t,t_0)\psi}|^2 = |\braket{\alpha_0|\psi(t)}|^2
+    \end{split}
+\end{bux}
+This can be interpreted as the probability to measure one of the eigenvalues of $\hat{A}_0 = \hat{A}(t_0)$ at time $t$ for the system described by the time-dependent state vector $\ket{\psi(t)}$.  Notably probabilities and expectation values of operators are independent of the picture used. 
+
+\item If we are measuring a time-independent quantity $\hat{A}$ that is compatible with $\hat{H}$, then there is a complete basis of simultaneous eigenvectors: 
+\begin{bux}
+    \begin{split}
+        \hat{A} \ket{\alpha_i} = a_i\ket{\alpha_i},~~~ \hat{H}\ket{\alpha_i} = E_i\ket{\alpha_i}
+    \end{split}
+\end{bux}
+Since the operator $\hat{A}$ is time independent as discussed before, $  \hat{U}(t)$ takes the form, $  \hat{U}(t) = e^{-\frac{i}{\hbar}t\hat{H}}$. This means given an initial state $\ket{\psi} = \sum_i\ket{\alpha_i}\braket{\alpha_i|\psi}$: 
+\begin{bux}
+    \begin{split}
+        \ket{\psi(t)} =& e^{-\frac{i}{\hbar}t\hat{H}}\sum_i\ket{\alpha_i}\braket{\alpha_i|\psi} =\sum_i e^{-\frac{i}{\hbar}tE_i}\ket{\alpha_i}\braket{\alpha_i|\psi} \\ 
+& \implies \braket{\alpha_i|\psi(t)} = e^{-\frac{i}{\hbar}tE_i} \braket{\alpha_i|\psi}
+    \end{split}
+\end{bux}
+So the modulus of the coefficients do not change and thus the probability of finding the system in an eigenstate of $ \hat{H}$do not change in time. For this reason an energy eigenstate is often referred to as a \emph{stationary state}. 
+
+\item If we have a state that is the superposition of energy eigenstates, $\ket{\psi(t)} = \sum_ic_ie^{-\frac{i}{\hbar}tE_i}\ket{\alpha_i}$. It is not a stationary state. The expectation value of some observable $\hat{B}$ is: 
+\begin{bux}
+    \begin{split}
+        \braket{\hat{B}} = \bra{\psi(t)}\hat{B}\ket{\psi(t)} = \sum_ic_i^{\ast}e^{\frac{i}{\hbar}tE_i}\bra{\alpha_i}\hat{B} \sum_jc_je^{-\frac{i}{\hbar}tE_j}\ket{\alpha_j} = \sum_{i,j}c_jc_i^{\ast}e^{\frac{i}{\hbar}t(E_i-E_j)}\bra{\alpha_i}\hat{B} \ket{\alpha_j}
+    \end{split}
+\end{bux}
+So the expectation value consists of an oscillating term with the Bohr frequency, $\omega_{ij} = \frac{E_i-E_j}{\hbar}$. 
+\end{itemize}
+
+\subsection{Time independent  Schr\"odinger  equation }
+\begin{itemize}
+    \item It is often convenient to analyse the motion of systems in the coordinate representation. Equation \ref{eqn:2.9} is the Schr\"odinger  equation. In the coordinate representation this becomes: 
+\begin{bux}
+    \begin{split}
+        i \hbar \frac{\partial \psi(\textbf{x},t)}{\partial t} = \hat{H} \psi(\textbf{x},t)
+    \end{split}
+\end{bux}
+If we have a Hamiltonian that is time independent then we know $\psi(\textbf{x},t) = e^{-\frac{i}{\hbar}tE}\psi(\textbf{x})$. This then means that the Schr\"odinger  equation reduces to: 
+\begin{bux}
+    \begin{split}
+         \hat{H} \psi(\textbf{x}) = E \psi(\textbf{x})
+    \end{split}
+\end{bux}
+This is the \emph{Time Independent Schr\"odinger  equation}. 
+\end{itemize}
+
+
+\end{document}
