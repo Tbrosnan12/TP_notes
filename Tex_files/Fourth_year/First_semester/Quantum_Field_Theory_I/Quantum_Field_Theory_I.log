@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  19 AUG 2024 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  20 AUG 2024 00:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1120,7 +1120,7 @@ Package biblatex Warning: Load 'inputenc' before biblatex.
 
 \@quotelevel=\count474
 \@quotereset=\count475
-No file Quantum_Field_Theory_I.aux.
+(./Quantum_Field_Theory_I.aux)
 \openout1 = `Quantum_Field_Theory_I.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
@@ -1141,6 +1141,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1176,11 +1177,13 @@ LaTeX Font Info:    ... okay on input line 79.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 79.
+(./Quantum_Field_Theory_I.out) (./Quantum_Field_Theory_I.out)
 \@outlinefile=\write6
 \openout6 = `Quantum_Field_Theory_I.out'.
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
+
 (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
@@ -1244,8 +1247,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-[2]
-No file Quantum_Field_Theory_I.toc.
+[2] (./Quantum_Field_Theory_I.toc)
 \tf@toc=\write7
 \openout7 = `Quantum_Field_Theory_I.toc'.
 
@@ -1278,43 +1280,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
+Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
 
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `Quantum_Field_Theory_I.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Quantum_Field_Theory_I.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  703EEEBBBFDD0695312A5C4C715880D7;78.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Quantum_Field_Theory_I
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 703EEEBBBFDD0695312A5C4C715880D7;78.
 Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 \openout1 = `Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36750 strings out of 473584
- 740519 string characters out of 5728334
+ 36765 strings out of 473584
+ 740889 string characters out of 5728334
  1930905 words of memory out of 5000000
- 59109 multiletter control sequences out of 15000+600000
- 566704 words of font info for 71 fonts, out of 8000000 for 9000
+ 59115 multiletter control sequences out of 15000+600000
+ 567012 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,11n,121p,1211b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
-sr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Quantum_Field_Theory_I.pdf (5 pages, 51494 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on Quantum_Field_Theory_I.pdf (5 pages, 65164 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  7 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
