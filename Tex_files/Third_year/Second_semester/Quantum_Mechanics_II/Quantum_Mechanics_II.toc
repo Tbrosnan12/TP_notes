@@ -1,0 +1,29 @@
+\contentsline {section}{\numberline {1}Angular Momentum}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}3D Schrodinger equation}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Spherical Harmonics}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Angular Momentum operators}{7}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Ladder operators}{8}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Total angular momentum eigenvalue}{9}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Two particle system}{9}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Half-integer-spin}{11}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Clebsch-Gordan coefficients}{11}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Two particle Wave functions}{14}{section.2}%
+\contentsline {subsubsection}{\numberline {2.0.1}Non-interacting particles }{14}{subsubsection.2.0.1}%
+\contentsline {subsubsection}{\numberline {2.0.2}Two interacting particles }{14}{subsubsection.2.0.2}%
+\contentsline {subsection}{\numberline {2.1}Indistinguishable particles}{15}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Spin and position}{15}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Triple system}{16}{subsubsection.2.1.2}%
+\contentsline {section}{\numberline {3}Time independent Perturbation Theory}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}First order perturbations}{17}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Degenerate perturbations}{18}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Approximation Techniques }{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Variational Principle}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}WKB approximation}{21}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Classical Region}{21}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Quantisation condition}{23}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Quantum region}{23}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Connection point}{24}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Transmission coefficient}{24}{subsubsection.4.2.5}%
+\contentsline {section}{\numberline {5}Time Dependant perturbation theory}{29}{section.5}%
+\contentsline {subsection}{\numberline {5.1}First order correction}{29}{subsection.5.1}%
+\contentsline {section}{\numberline {6}The Path Integral}{31}{section.6}%

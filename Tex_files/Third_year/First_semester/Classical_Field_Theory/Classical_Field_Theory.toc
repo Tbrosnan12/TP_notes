@@ -1,0 +1,44 @@
+\contentsline {section}{\numberline {1}Electrostatics}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Coulombs Law:}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Continuous distribution}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Gauss' Law}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Scalar potential }{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Work to move a charge}{6}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Charged plate}{6}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Poisson's equation}{6}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Greens theorems}{7}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Uniqueness of solution with boundary conditions}{8}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Greens functions}{8}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Energy Density}{9}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Mirror image problem}{10}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Separation of variables}{10}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}Spherical coordinates }{12}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Azimuthal symmetry}{13}{subsection.1.15}%
+\contentsline {subsubsection}{\numberline {1.15.1}Legendre Polynomials}{14}{subsubsection.1.15.1}%
+\contentsline {subsubsection}{\numberline {1.15.2}Solutions for the potential }{14}{subsubsection.1.15.2}%
+\contentsline {subsection}{\numberline {1.16}Point charge with spherical co-ords}{15}{subsection.1.16}%
+\contentsline {subsection}{\numberline {1.17}No Azimuthal symmetry}{15}{subsection.1.17}%
+\contentsline {subsection}{\numberline {1.18}Completeness relation}{17}{subsection.1.18}%
+\contentsline {subsection}{\numberline {1.19}Addition theorem for spherical harmonics}{17}{subsection.1.19}%
+\contentsline {subsection}{\numberline {1.20}Expansion of Greens functions in spherical co-ords}{18}{subsection.1.20}%
+\contentsline {subsection}{\numberline {1.21}Delta functions in spherical co-ords}{18}{subsection.1.21}%
+\contentsline {subsection}{\numberline {1.22}Alternate definition of spherical harmonics}{18}{subsection.1.22}%
+\contentsline {subsection}{\numberline {1.23}Greens function between two spherical shells}{19}{subsection.1.23}%
+\contentsline {subsection}{\numberline {1.24}Cylindrical co-ords }{21}{subsection.1.24}%
+\contentsline {section}{\numberline {2}Magneto-statics}{24}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Conservation of charge}{24}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Gauss' Law for magnetism}{24}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Amperes Law}{25}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Biot Savart Law}{26}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Gauge transformation of the Vector potential }{26}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Coulomb Gauge}{26}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Magneto-dynamics}{28}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Faraday's law}{28}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Time dependant Ampere's Law}{29}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Maxwell's equations }{30}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Maxwell's equations}{30}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Electromagnetic Wave}{30}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Vector and Scalar potentials }{31}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Lorenz gauge}{31}{subsubsection.4.3.1}%
+\contentsline {section}{\numberline {5}Tensors}{33}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Vectors}{33}{subsection.5.1}%

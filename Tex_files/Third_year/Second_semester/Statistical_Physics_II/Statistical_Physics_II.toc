@@ -1,0 +1,42 @@
+\contentsline {section}{\numberline {1}Quantum statistical Physics}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Ensembles }{4}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Microcanonical}{4}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Canonical}{4}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Grand-Canonical}{4}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}Discrete systems }{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Microcanonical ensemble}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Canonical ensemble}{5}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Grand -Canonical ensemble}{5}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}Density Matrix}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Average quantities}{5}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Harmonic Oscillator }{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Canonical ensemble}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Micro-Canonical ensemble}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Vibrational mode of a solid}{9}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Debye frequency }{10}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Density of frequencies }{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}General density of states}{11}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Debye Heat Capacity}{12}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Theory of ideal subsystems of identical particles}{14}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Bose-Einstein and Fermi-Dirac statistics}{14}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Non-relativistic Bosonic gas}{15}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Poly-Logarithms}{17}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Bose-Einstein Condensation}{17}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Low temperature limit}{19}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}High temperature limit}{19}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Pressure of Bose-Einstein gas}{19}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Energy distribution }{20}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Heat Capacity}{20}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}What is, and what is not BEC?}{23}{subsubsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.4}Fermionic gases}{23}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Classical and quantum regimes}{24}{subsubsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.5}Fermi-Energy}{25}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Blackbody Radiation}{27}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Ultraviolet Catastrophe}{27}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Planck's Law}{27}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Stephan Boltzmann law}{28}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Radiation pressure}{29}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Radiation entropy }{30}{subsubsection.4.4.1}%
+\contentsline {section}{\numberline {5}Statistical physics in d-dimensions}{31}{section.5}%
+\contentsline {subsection}{\numberline {5.1}An even more general density of states}{31}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}General dispersion relation}{32}{subsubsection.5.1.1}%

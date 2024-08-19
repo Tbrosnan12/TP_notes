@@ -1,0 +1,58 @@
+\contentsline {section}{\numberline {1}Mathematics of Quantum Mechanics}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Matrices}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Algebras}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Dirac notation}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Projection operators}{9}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Pauli Matrices}{10}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Unital associative Algebra}{10}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Representations}{11}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Lie Algebra}{11}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Representation of a Lie algebra}{12}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Isomorphic representations}{12}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Enveloping algebra}{12}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Spin operators}{12}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Arbitrary othonormal basis}{13}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}Active and Passive transformations}{14}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Hilbert spaces}{14}{subsection.1.15}%
+\contentsline {subsection}{\numberline {1.16}Creation and annihilation operators}{15}{subsection.1.16}%
+\contentsline {subsection}{\numberline {1.17}Number operator}{16}{subsection.1.17}%
+\contentsline {subsection}{\numberline {1.18}Heisenberg algebra}{16}{subsection.1.18}%
+\contentsline {subsection}{\numberline {1.19}Subrepresentation}{17}{subsection.1.19}%
+\contentsline {subsection}{\numberline {1.20}Irreducible representation}{17}{subsection.1.20}%
+\contentsline {subsection}{\numberline {1.21}Schur's Lemma}{17}{subsection.1.21}%
+\contentsline {subsection}{\numberline {1.22}Properties of Hermitian matrices}{17}{subsection.1.22}%
+\contentsline {subsection}{\numberline {1.23}Tensor product}{18}{subsection.1.23}%
+\contentsline {subsection}{\numberline {1.24}Hilbert space of square integrable functions}{19}{subsection.1.24}%
+\contentsline {subsection}{\numberline {1.25}$\delta $-Normalisation}{20}{subsection.1.25}%
+\contentsline {subsection}{\numberline {1.26}Uncountable Hilbert space}{20}{subsection.1.26}%
+\contentsline {subsection}{\numberline {1.27}Operators on $\delta $-Normalised functions}{21}{subsection.1.27}%
+\contentsline {subsection}{\numberline {1.28}Coordinate operator}{21}{subsection.1.28}%
+\contentsline {subsection}{\numberline {1.29}Derivative operator}{21}{subsection.1.29}%
+\contentsline {subsection}{\numberline {1.30}Eigenvalues of the Heisenberg algebra}{22}{subsection.1.30}%
+\contentsline {subsection}{\numberline {1.31}Conjugate Operators}{22}{subsection.1.31}%
+\contentsline {subsection}{\numberline {1.32}Tensor products of Hilbert spaces}{23}{subsection.1.32}%
+\contentsline {section}{\numberline {2}Postulates of Quantum Mechanics}{24}{section.2}%
+\contentsline {subsection}{\numberline {2.1}State of a system}{24}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Coordinates}{24}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Observables}{25}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Measurements}{25}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Dynamics}{25}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}The Heisenberg picture }{25}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}The Schrodinger Picture }{26}{subsubsection.2.5.2}%
+\contentsline {section}{\numberline {3}More on the postulates}{27}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Operator ordering ambiguity}{27}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Discrete and Non degenerate spectrum}{27}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Indeterminate and determinant states }{27}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Discrete and degenerate spectrum}{28}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Continuous spectrum}{28}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}System of particles }{29}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Second measurement}{29}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Expectation value }{30}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Standard deviation }{30}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Compatible observations}{30}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}The uncertainty relation}{31}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}minimum uncertainty packet}{31}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}The Heisenberg picture }{32}{subsection.3.13}%
+\contentsline {subsubsection}{\numberline {3.13.1}Time evolution operator}{32}{subsubsection.3.13.1}%
+\contentsline {subsection}{\numberline {3.14}The Schr\"odinger picture}{33}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Time independent Schr\"odinger equation }{34}{subsection.3.15}%

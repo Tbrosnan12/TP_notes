@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Co-variant formalism of electromagnetism}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Maxwell's equations}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Continuity equation }{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Invariance of charge under Lorentz transformations}{4}{subsubsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.3}Vector and Scalar potentials }{5}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Lorenz gauge}{5}{subsubsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.4}Electromagnetic tensor}{7}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Wave equation}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Cauchy problem }{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Application to fields}{11}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Properties of the fields}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}In-homogeneous Wave equation}{12}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Lorentz covariance of the wave equation}{16}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Lorentz transformations of the EM fields}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Transforming the fields}{17}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Lorentz invariants}{18}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Radiation from general sources }{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Pole expansions}{22}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Pole expansion of vector potential}{23}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Magnetic dipole}{25}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Electric quadrupole}{26}{subsection.4.4}%
