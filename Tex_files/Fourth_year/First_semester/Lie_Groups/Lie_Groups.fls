@@ -3,7 +3,7 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT Lie_Groups.tex
+INPUT /home/thomas/Documents/TP_notes/Tex_files/Fourth_year/First_semester/Lie_Groups/Lie_Groups.tex
 OUTPUT Lie_Groups.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1247,6 +1247,8 @@ INPUT ./Lie_Groups.out
 INPUT ./Lie_Groups.out
 INPUT Lie_Groups.run.xml
 OUTPUT Lie_Groups.run.xml
+INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi10.657pk
+INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy10.657pk
 INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk
 INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.864pk
 INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx10.657pk

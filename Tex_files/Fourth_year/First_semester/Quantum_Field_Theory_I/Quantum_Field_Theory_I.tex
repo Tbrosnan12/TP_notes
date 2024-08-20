@@ -39,18 +39,10 @@
     #1}
 \tcbset{highlight math style={boxsep=2mm,,colback=blue!0!green!0!red!0!}}
 
-  \newenvironment{bux}
-    {
-    \empheq[box=\tcbhighmath]{equation}
-   }{
-    \endempheq
-    }
-    \newenvironment{bux*}
-    {
-    \empheq[box=\tcbhighmath]{equation*}
-   }{
-    \endempheq
-    }
+\newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+
 \newcommand{\hsp}{\hspace{8pt}}
 
 \newcommand*{\sectionFont}{%

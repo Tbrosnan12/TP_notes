@@ -1,0 +1,8 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'Classical_Field_Theory.blg'
+[70] biber:340> INFO - === Wed Aug 21, 2024, 00:32:54
+[82] Biber.pm:418> INFO - Reading 'Classical_Field_Theory.bcf'
+[144] Utils.pm:398> ERROR - Error: Found biblatex control file version 3.11, expected version 3.8.
+This means that your biber (2.17) and biblatex (3.20) versions are incompatible.
+See compat matrix in biblatex or biber PDF documentation.
+[144] Biber.pm:135> INFO - ERRORS: 1

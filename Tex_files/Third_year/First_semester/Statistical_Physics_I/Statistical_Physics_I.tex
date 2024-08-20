@@ -63,18 +63,9 @@
     enhanced, colframe=blue!30!black,
     colback=blue!30, boxrule=1pt,
     #1}
-\newenvironment{bux}
-    {
-    \empheq[box=\tcbhighmath]{align}
-   }{
-    \endempheq
-    }
-    \newenvironment{bux*}
-    {
-    \empheq[box=\tcbhighmath]{align*}
-   }{
-    \endempheq
-    }
+\newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment*{nothing}{}{} 
 \newcommand{\hsp}{\hspace{8pt}}
 

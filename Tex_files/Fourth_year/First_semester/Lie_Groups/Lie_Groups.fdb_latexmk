@@ -1,18 +1,21 @@
 # Fdb version 3
-["biber Lie_Groups"] 1724182480 "Lie_Groups.bcf" "Lie_Groups.bbl" "Lie_Groups" 1724182841
-  "Lie_Groups.bcf" 1724182841 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Lie_Groups"] 1724182480 "Lie_Groups.bcf" "Lie_Groups.bbl" "Lie_Groups" 1724193388
+  "Lie_Groups.bcf" 1724193388 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Lie_Groups.bbl"
   "Lie_Groups.blg"
-["pdflatex"] 1724182840 "Lie_Groups.tex" "Lie_Groups.pdf" "Lie_Groups" 1724182841
+["pdflatex"] 1724193387 "/home/thomas/Documents/TP_notes/Tex_files/Fourth_year/First_semester/Lie_Groups/Lie_Groups.tex" "Lie_Groups.pdf" "Lie_Groups" 1724193388
   "/etc/texmf/web2c/texmf.cnf" 1723933354 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1723936092 12644 05f5166e711b2247efb06aa0f242ce98 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx10.657pk" 1723936094 12764 f59b5d94d56a5629e525900f74e7ce3f ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720pk" 1723936097 17912 308c4b48e7674d5d53832c9fab1bc0c2 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.864pk" 1723936095 22076 2aadd606dbb19ce89c8bdae876a863fd ""
+  "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi10.657pk" 1723936089 16272 fcf55ef0ef47f73e2ea6912e55012b6b ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr10.657pk" 1723936100 11872 8a60c19433e73fb20788e93107256008 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr12.720pk" 1723936098 15944 09c36ba71c5158a652b828aad0b51da4 ""
+  "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy10.657pk" 1723936091 14872 16de6bd24083169e52d955f218eeb623 ""
   "/home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1723934203 1405755 0308faeb1a6e51887941567c18392f11 ""
+  "/home/thomas/Documents/TP_notes/Tex_files/Fourth_year/First_semester/Lie_Groups/Lie_Groups.tex" 1724193387 3802 522874c7fecd96cd9cc3879d7f9de84c ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk" 1136849718 13144 0235be32b099c919a01c28a385c0ff86 ""
   "/usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr17.pk" 1136849718 19420 51a6f40205c20b27aed53c4f0c8b449e ""
@@ -220,12 +223,12 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1635798903 56029 3f7889dab51d620aa43177c391b7b190 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "Lie_Groups.aux" 1724182841 1011 b02fc50c7aa26d8e96ef11f3973ef597 "pdflatex"
+  "Lie_Groups.aux" 1724193388 1011 b02fc50c7aa26d8e96ef11f3973ef597 "pdflatex"
   "Lie_Groups.bbl" 1724182480 466 ee04f40f768daeed26442158e95aba61 "biber Lie_Groups"
-  "Lie_Groups.out" 1724182841 160 7cfbe962c4cdf74e96eea4d6bb601f8e "pdflatex"
-  "Lie_Groups.run.xml" 1724182841 2340 99820fb8e421f2f8093f7021e1b31a17 "pdflatex"
-  "Lie_Groups.tex" 1724182839 3720 1398712f0140def372100a9de2fe91c6 ""
-  "Lie_Groups.toc" 1724182841 134 515071408794fba0ebf5db5ae601ef5f "pdflatex"
+  "Lie_Groups.out" 1724193388 160 7cfbe962c4cdf74e96eea4d6bb601f8e "pdflatex"
+  "Lie_Groups.run.xml" 1724193388 2340 99820fb8e421f2f8093f7021e1b31a17 "pdflatex"
+  "Lie_Groups.tex" 1724193387 3802 522874c7fecd96cd9cc3879d7f9de84c ""
+  "Lie_Groups.toc" 1724193388 134 515071408794fba0ebf5db5ae601ef5f "pdflatex"
   (generated)
   "Lie_Groups.aux"
   "Lie_Groups.bcf"
