@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  21 AUG 2024 00:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  21 AUG 2024 13:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1225,9 +1225,9 @@ Package logreq Info: Writing requests to 'Lie_Groups.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35696 strings out of 480247
- 712241 string characters out of 5896151
- 1420544 words of memory out of 5000000
+ 35695 strings out of 480247
+ 712229 string characters out of 5896151
+ 1421546 words of memory out of 5000000
  53089 multiletter control sequences out of 15000+600000
  479956 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1239,11 +1239,13 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Lie_Groups.pdf (5 pages, 85569 bytes).
+s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb>
+Output written on Lie_Groups.pdf (5 pages, 103061 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
+ 132 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
