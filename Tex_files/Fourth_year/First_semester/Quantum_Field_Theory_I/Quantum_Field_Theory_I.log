@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  20 AUG 2024 23:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1131,10 +1131,8 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 73
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-
-
-pdfTeX warning: pdflatex (file pdftex.map): cannot open font map file
-] [2] (./Quantum_Field_Theory_I.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Quantum_Field_Theor
+y_I.toc)
 \tf@toc=\write7
 \openout7 = `Quantum_Field_Theory_I.toc'.
 
@@ -1169,22 +1167,20 @@ Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 Here is how much of TeX's memory you used:
  36543 strings out of 480247
  733108 string characters out of 5896106
- 1452794 words of memory out of 5000000
+ 1452798 words of memory out of 5000000
  53926 multiletter control sequences out of 15000+600000
  478202 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,11n,104p,1303b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.864pk>
- </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx10.657pk> <
-/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720pk> </h
-ome/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr12.720pk> </home
-/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr10.657pk> </usr/sha
-re/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </usr/share/te
-xlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr17.pk>
-Output written on Quantum_Field_Theory_I.pdf (5 pages, 33759 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on Quantum_Field_Theory_I.pdf (5 pages, 65179 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  7 named destinations out of 1000 (max. 500000)
  165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

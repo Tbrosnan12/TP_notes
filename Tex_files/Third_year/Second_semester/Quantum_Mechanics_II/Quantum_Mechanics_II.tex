@@ -42,7 +42,7 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newcommand{\hsp}{\hspace{8pt}}
 
 \newcommand*{\sectionFont}{%
@@ -1325,11 +1325,9 @@ Where here the integral just evaluated to $\sqrt{\pi}$. We can now consider how 
 \end{bux}
 \begin{itemize}
  \item  Here for simplicity, we have relabeled $x' \rightarrow x_N$ and $x\rightarrow x_0$, so that the exponents can be written in terms of a single sum. These labelings also make sense as they are the start and end points of the path. All that is left to do with this is to recognise that $\frac{x_i-x_{i+1}}{\Delta t}$, is a single step divided by the time taken, thus, when we take the limit as $\Delta t \rightarrow dt$, then this quantity becomes the velocity $v$. With this we can see that first term in the exponential is $\frac{1}{2}mv^2$, i.e. our classical Kinetic energy, and $V$ is just our potential. This quantity of the Kinetic minus the potential energy is familiar to us! It is just the classical Lagrangian $L$! Furthermore, as we take the limit $\Delta t \rightarrow dt$, then $N\rightarrow \infty$ and the sum in the exponent becomes an integral wrt time. But the integral of the Lagrangian with respect to time is another quantity we know from classical mechanics, this is just the classical action $S[x(t)]$! Putting all this together and relabeling our nasty $dx_1 \cdot\cdot\cdot  dx_{N-1}\left(\frac{m}{2\pi\hbar i\Delta t}\right)^{N/2} \rightarrow \mathcal{D}x(t)$, results in the path Integral: 
-\begin{bux}
-    \begin{split}
-         \braket{x',t'|x,t}  = \int\mathcal{D}x(t)e^{\frac{iS[x(t)]}{\hbar}}
-    \end{split}
-\end{bux}
+\begin{flalign}
+\braket{x',t'|x,t}  = \int\mathcal{D}x(t)e^{\frac{iS[x(t)]}{\hbar}}
+\end{flalign}
 \item Finally a beautiful observation from this path Integral is how it can explain why in classical mechanics that the action is minimised along the path the particle takes. This is outlined by the following argument by Dirac!: 
 \small
 \vspace{5mm}

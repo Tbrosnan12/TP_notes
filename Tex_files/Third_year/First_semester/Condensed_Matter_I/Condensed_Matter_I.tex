@@ -36,7 +36,7 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \numberwithin{equation}{section}
 
 \newtcbox{\mymath}[1][]{%
@@ -119,11 +119,9 @@ Crystals may not have macro structures that are visible to us, but a closer look
 \subsection{Spinel group}
 \begin{itemize}
     \item Refers to a class of mineral with the general formulation:
-\begin{empheq}[box=\tcbhighmath]{equation}
-\begin{split}
-   A^{2+}B^{3+}O_4^{2-}
-\end{split}
-\end{empheq}
+\begin{flalign}
+A^{2+}B^{3+}O_4^{2-}
+\end{flalign}
 The oxide anions arrange in a cubic lattice with the $A$ and $B$ cations occupying the Tetrahedral and Octahedral sites. 
 
 In the case of Magnetite ($Fe_3O_4$) the iron is both $A$ and $B$ with a mix of $Fe^{2+}$ and $Fe^{3+}$, which results in electrons flowing between them making the material a conductor. 

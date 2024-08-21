@@ -60,7 +60,7 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newcommand{\hsp}{\hspace{8pt}}
 
 \newcommand*{\sectionFont}{%
@@ -1069,13 +1069,13 @@ Which then leads us to the power radiated through \ref{eqn:4.18}, resulting in:
 \subsection{Electric quadrupole}
 \begin{itemize}
     \item We will once again give the above treatment of calculating the magnetic and electric fields due to the electric quadrupole moment.  The quadrupole tensor (3 by 3 matrix) is given by \ref{eqn:4.24}, it is traceless and symmetric, so it has $5$ independent components. We can then look at the form of $A_{EQ}(t,\textbf{x})$ as given by the first term on the RHS of  \ref{eqn:4.33}. We can re-write this term as:
-\begin{bux}
+\begin{flalign}
     \begin{split}
     A_{EQ}(t,\textbf{x})_k & =   \frac{1}{2rc^2}\sum_{i}\int d^3x' x'_kx_in_i\ddot{\rho}    \\
 & = \frac{1}{6rc^2}\sum_{i}n_i\int d^3x' \left(3x'_kx_i-r'^2\delta_{ij} +r^2\delta_{ij}\right)\ddot{\rho} \\
 &= \frac{1}{6rc^2}\sum_{i}n_i[\ddot{Q}_{ki}+n_k\int d^3x'r'^2\ddot{\rho}]
     \end{split}
-\end{bux}
+\end{flalign}
 The only part of the second term that depends on $\textbf{x}$ is $n_k=\frac{x_k}{r}$, then if we go to calculate the magnetic field due to this scalar potential 
 \end{itemize}
 

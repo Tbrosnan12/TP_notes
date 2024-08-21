@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 00:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1132,10 +1132,8 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 76
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-
-
-pdfTeX warning: pdflatex (file pdftex.map): cannot open font map file
-] [2] (./Statistical_Physics_II.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Statistical_Physics
+_II.toc)
 \tf@toc=\write7
 \openout7 = `Statistical_Physics_II.toc'.
 
@@ -1426,36 +1424,33 @@ Package logreq Info: Writing requests to 'Statistical_Physics_II.run.xml'.
 Here is how much of TeX's memory you used:
  37055 strings out of 480247
  740873 string characters out of 5896106
- 1487186 words of memory out of 5000000
+ 1487192 words of memory out of 5000000
  54232 multiletter control sequences out of 15000+600000
  480923 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,25n,104p,1303b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy6.600pk> 
-</usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr6.pk> </home
-/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/cmextra/cmex8.60
-0pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbo
-ls/msbm10.480pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm
-/cmti10.657pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/c
-mmi6.600pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr
-8.pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmex10.657
-pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbol
-s/msbm10.657pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/
-cmsy8.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cms
-y10.657pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi8
-.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi10.6
-57pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095
-.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.8
-64pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx10.657
-pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720pk
-> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr12.720pk> <
-/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr10.657pk> </us
-r/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </usr/sha
-re/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr17.pk>
-Output written on Statistical_Physics_II.pdf (33 pages, 297473 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfrm1095.pfb>
+Output written on Statistical_Physics_II.pdf (33 pages, 378589 bytes).
 PDF statistics:
- 1234 PDF objects out of 1440 (max. 8388607)
- 653 compressed objects within 7 object streams
+ 726 PDF objects out of 1000 (max. 8388607)
+ 624 compressed objects within 7 object streams
  205 named destinations out of 1000 (max. 500000)
  493 words of extra memory for PDF output out of 10000 (max. 10000000)
 

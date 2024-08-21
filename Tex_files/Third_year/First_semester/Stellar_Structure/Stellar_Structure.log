@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1218,7 +1218,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <image.png, id=370, 833.1125pt x 569.62813pt>
 File: image.png Graphic file (type png)
 <use image.png>
-Package pdftex.def Info: image.png  used on input line 601.
+Package pdftex.def Info: image.png  used on input line 598.
 (pdftex.def)             Requested size: 300.29344pt x 205.31802pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1232,7 +1232,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.604 
+l.601 
        <./Graph2.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1246,7 +1246,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.609 \end{document}
+l.606 \end{document}
                      <./image.png>] (./Stellar_Structure.aux)
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1258,10 +1258,10 @@ Package logreq Info: Writing requests to 'Stellar_Structure.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35913 strings out of 480247
- 715846 string characters out of 5896106
- 1441830 words of memory out of 5000000
- 53205 multiletter control sequences out of 15000+600000
+ 35914 strings out of 480247
+ 715865 string characters out of 5896106
+ 1441841 words of memory out of 5000000
+ 53206 multiletter control sequences out of 15000+600000
  480470 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,19n,104p,1292b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1282,7 +1282,7 @@ dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super
 /sfrm1095.pfb>
-Output written on Stellar_Structure.pdf (16 pages, 1148826 bytes).
+Output written on Stellar_Structure.pdf (16 pages, 1148833 bytes).
 PDF statistics:
  483 PDF objects out of 1000 (max. 8388607)
  399 compressed objects within 4 object streams

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 00:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 23:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1135,10 +1135,8 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 72
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-
-
-pdfTeX warning: pdflatex (file pdftex.map): cannot open font map file
-] [2] (./Quantum_Mechanics_II.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Quantum_Mechanics_I
+I.toc)
 \tf@toc=\write7
 \openout7 = `Quantum_Mechanics_II.toc'.
 
@@ -1206,7 +1204,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10]
-<image.png, id=297, 519.44063pt x 699.61375pt>
+<image.png, id=295, 519.44063pt x 699.61375pt>
 File: image.png Graphic file (type png)
 <use image.png>
 Package pdftex.def Info: image.png  used on input line 450.
@@ -1319,7 +1317,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [21]
-<image4.png, id=392, 652.68843pt x 371.13657pt>
+<image4.png, id=389, 652.68843pt x 371.13657pt>
 File: image4.png Graphic file (type png)
 <use image4.png>
 Package pdftex.def Info: image4.png  used on input line 804.
@@ -1347,7 +1345,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [23]
-<image2.png, id=422, 624.08156pt x 350.81062pt>
+<image2.png, id=419, 624.08156pt x 350.81062pt>
 File: image2.png Graphic file (type png)
 <use image2.png>
 Package pdftex.def Info: image2.png  used on input line 920.
@@ -1438,7 +1436,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [30]
-<image3.png, id=518, 779.91376pt x 131.74219pt>
+<image3.png, id=514, 779.91376pt x 131.74219pt>
 File: image3.png Graphic file (type png)
 <use image3.png>
 Package pdftex.def Info: image3.png  used on input line 1223.
@@ -1516,46 +1514,38 @@ Package logreq Info: Writing requests to 'Quantum_Mechanics_II.run.xml'.
 Here is how much of TeX's memory you used:
  37106 strings out of 480247
  741381 string characters out of 5896106
- 1495886 words of memory out of 5000000
+ 1495892 words of memory out of 5000000
  54268 multiletter control sequences out of 15000+600000
  483239 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,25n,104p,1824b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
- </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi7.pk> </
-usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmex10.pk> </home
-/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols/msbm10.6
-00pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmti7.600p
-k> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols
-/msbm5.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cm
-mi5.600pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmmi
-10.pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/sym
-bols/msbm10.480pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/
-amsfonts/cmextra/cmex8.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljf
-our/public/amsfonts/symbols/msbm7.514pk> </home/thomas/.texlive2021/texmf-var/f
-onts/pk/ljfour/public/cm/cmbx8.600pk> </usr/share/texlive/texmf-dist/fonts/pk/l
-jfour/public/cm/dpi600/cmti10.pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfou
-r/public/cm/dpi600/cmr6.pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfou
-r/public/cm/cmmi6.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/p
-ublic/cm/cmsy6.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/publ
-ic/cm/cmti10.657pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public
-/cm/cmmi8.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm
-/cmsy8.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cm
-ex10.657pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr
-8.pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symb
-ols/msbm10.657pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/c
-m/cmmi10.657pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/
-cmsy10.657pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/
-tcrm1095.600pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/
-cmbx12.864pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cm
-bx10.657pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx
-12.720pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr12.
-720pk> </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr10.657
-pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> <
-/usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr17.pk>
-Output written on Quantum_Mechanics_II.pdf (35 pages, 763969 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on Quantum_Mechanics_II.pdf (35 pages, 870348 bytes).
 PDF statistics:
- 1270 PDF objects out of 1440 (max. 8388607)
- 637 compressed objects within 7 object streams
+ 709 PDF objects out of 1000 (max. 8388607)
+ 586 compressed objects within 6 object streams
  211 named destinations out of 1000 (max. 500000)
  409 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Quantum_Mechanics_I.blg'
-[67] biber:340> INFO - === Wed Aug 21, 2024, 19:28:11
-[79] Utils.pm:398> ERROR - Quantum_Mechanics_I.bcf is malformed, last biblatex run probably failed. Deleted Quantum_Mechanics_I.bbl
-[79] Biber.pm:135> INFO - ERRORS: 1
+[69] biber:340> INFO - === Wed Aug 21, 2024, 20:47:38
+[80] Biber.pm:418> INFO - Reading 'Quantum_Mechanics_I.bcf'
+[145] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[158] bbl.pm:654> INFO - Writing 'Quantum_Mechanics_I.bbl' with encoding 'UTF-8'
+[158] bbl.pm:757> INFO - Output to Quantum_Mechanics_I.bbl
+[158] Biber.pm:130> WARN - The file 'Quantum_Mechanics_I.bcf' does not contain any citations!
+[158] Biber.pm:132> INFO - WARNINGS: 1

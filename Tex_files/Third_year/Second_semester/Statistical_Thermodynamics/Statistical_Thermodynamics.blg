@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'Statistical_Thermodynamics.blg'
+[67] biber:340> INFO - === Wed Aug 21, 2024, 23:21:56
+[79] Biber.pm:418> INFO - Reading 'Statistical_Thermodynamics.bcf'
+[142] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[155] bbl.pm:654> INFO - Writing 'Statistical_Thermodynamics.bbl' with encoding 'UTF-8'
+[155] bbl.pm:757> INFO - Output to Statistical_Thermodynamics.bbl
+[155] Biber.pm:130> WARN - The file 'Statistical_Thermodynamics.bcf' does not contain any citations!
+[155] Biber.pm:132> INFO - WARNINGS: 1

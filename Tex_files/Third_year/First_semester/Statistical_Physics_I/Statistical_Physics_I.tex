@@ -44,7 +44,7 @@
 \usepackage{float}
 \usepackage{parskip}
 \usepackage{comment}
-\usepackage{mhchem}
+%\usepackage{mhchem}
  \usepackage{tabularx}
  \usepackage{titling}
   \usepackage[explicit]{titlesec}
@@ -65,7 +65,7 @@
     #1}
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment*{nothing}{}{} 
 \newcommand{\hsp}{\hspace{8pt}}
 
@@ -1403,11 +1403,10 @@ This is the well known Boltzmann distribution.
     \end{split}
 \end{bux}
 To then write the distribution in terms of momenta, calling the quantity $\tilde{\beta} \equiv \frac{3N}{2E}$: 
-\begin{bux}
-    \begin{split}
-           P(p)dp = \left( \frac{2\tilde{\beta} \pi}{m}\right)e^{\frac{\tilde{\beta}}{2m}p^2}p^2dp
-    \end{split}
-\end{bux}
+
+\begin{flalign}
+    P(p)dp = \left( \frac{2\tilde{\beta} \pi}{m}\right)e^{\frac{\tilde{\beta}}{2m}p^2}p^2dp
+\end{flalign}
 \end{itemize}
 
 

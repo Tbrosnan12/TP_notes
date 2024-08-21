@@ -42,7 +42,7 @@
     #1}
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newcommand{\hsp}{\hspace{8pt}}
 
 \newcommand*{\sectionFont}{%
@@ -676,11 +676,9 @@ Or more simply $M_{vir} \propto \sigma^2R_{e}$, where $R_{e}$ is the half light 
     \end{split}
 \end{bux}
 Also: 
-\begin{bux}
-    \begin{split}
-        R_e \propto \sigma^2/I_e
-    \end{split}
-\end{bux}
+\begin{flalign}
+ R_e \propto \sigma^2/I_e
+\end{flalign}
 This last relation tell us the 3rd of these relations if we know the other 2. Thus in the $3$-D parameter space all galaxies lie on a $2$-D plane. This is called the fundamental plane of galaxies. 
 \end{itemize}
 

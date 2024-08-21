@@ -34,7 +34,7 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newcommand{\hsp}{\hspace{8pt}}
 
 \numberwithin{equation}{section}
@@ -1279,12 +1279,12 @@ Will still satisfy the Lorenz gauge. Notably this means $\chi$ satisfies the wav
     \end{split}
 \end{bux}
 This has the following consequences. If each co-ordinate transforms by $x^i \rightarrow x'^i = \sum_ja^{ij}x^i$, then the new magnitude is: 
-\begin{bux}
+\begin{flalign}
     \begin{split}
         |\textbf{x}'| =& \sum_ix'^ix'^i = \sum_{i,j,k}a^{ij}a^{ik}x^jx^k = \sum_jx^jx^j,~~~\forall ~\textbf{x} \\ 
 &\implies  \sum_ia^{ij}a^{ik} = \delta^{jk} \iff A^TA = \mathbb{I}
     \end{split}
-\end{bux}
+\end{flalign}
 Where by $A$ here we mean the matrix $A$ that has components $a^{ij}$. This condition $A^TA = \mathbb{I}$ also implies $\text{det}(A)^2 = 1 \implies \text{det}(A)=\pm 1$. 
 \end{itemize}
 

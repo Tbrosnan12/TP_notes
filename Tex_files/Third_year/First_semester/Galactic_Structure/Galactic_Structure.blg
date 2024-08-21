@@ -1,5 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Galactic_Structure.blg'
-[67] biber:340> INFO - === Wed Aug 21, 2024, 19:26:36
-[79] Utils.pm:398> ERROR - Galactic_Structure.bcf is malformed, last biblatex run probably failed. Deleted Galactic_Structure.bbl
-[79] Biber.pm:135> INFO - ERRORS: 1
+[68] biber:340> INFO - === Wed Aug 21, 2024, 23:14:39
+[80] Biber.pm:418> INFO - Reading 'Galactic_Structure.bcf'
+[140] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[153] bbl.pm:654> INFO - Writing 'Galactic_Structure.bbl' with encoding 'UTF-8'
+[153] bbl.pm:757> INFO - Output to Galactic_Structure.bbl
+[153] Biber.pm:130> WARN - The file 'Galactic_Structure.bcf' does not contain any citations!
+[153] Biber.pm:132> INFO - WARNINGS: 1

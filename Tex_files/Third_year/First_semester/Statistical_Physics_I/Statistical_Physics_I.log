@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 20:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 20:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1056,94 +1056,60 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 ) (/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write5
-Excluding comment 'comment') (/usr/share/texlive/texmf-dist/tex/latex/mhchem/mh
-chem.sty
-Package: mhchem 2021/12/31 v4.09 for typesetting chemical formulae
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
-) (/usr/share/texlive/texmf-dist/tex/latex/chemgreek/chemgreek.sty
-Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
- in chemistry (CN)
-\l__chemgreek_tmpa_int=\count459
-\g__chemgreek_tmpa_int=\count460
-)
-\l__mhchem_ce_distanceFromLastComma_int=\count461
-\__mhchem_arrow_extPgfLength_skip=\skip79
-\mhchem@minispace@tmp=\skip80
-\mhchem@minibackspace@tmp=\skip81
-\mhchem@bondwidth=\skip82
-\mhchem@bondheight=\skip83
-\mhchem@smallbondwidth@tmpA=\skip84
-\mhchem@smallbondwidth@tmpB=\skip85
-\mhchem@smallbondwidth=\skip86
-\mhchem@bondtmp@minussidebearingleft=\skip87
-\mhchem@bondtmp@minussidebearingright=\skip88
-\l__mhchem_option_version_int=\count462
-\mhchem@option@minusmathsidebearingleft=\dimen295
-\mhchem@option@minusmathsidebearingright=\dimen296
-\mhchem@option@minustextsidebearingleft=\dimen297
-\mhchem@option@minustextsidebearingright=\dimen298
-
-Package mhchem Warning: You did not specify a 'version' option for the mhchem
-(mhchem)                package. Please write \usepackage[version=4]{mhchem}
-(mhchem)                in your preamble (or any lower number for
-(mhchem)                compatibility mode), because you might get slightly
-(mhchem)                different output with the same input in future versions
-.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Excluding comment 'comment') (/usr/share/texlive/texmf-dist/tex/latex/tools/tab
+ularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen299
+\col@sep=\dimen295
 \ar@mcellbox=\box83
-\extrarowheight=\dimen300
+\extrarowheight=\dimen296
 \NC@list=\toks48
-\extratabsurround=\skip89
-\backup@length=\skip90
+\extratabsurround=\skip79
+\backup@length=\skip80
 \ar@cellbox=\box84
 )
-\TX@col@width=\dimen301
-\TX@old@table=\dimen302
-\TX@old@col=\dimen303
-\TX@target=\dimen304
-\TX@delta=\dimen305
-\TX@cols=\count463
+\TX@col@width=\dimen297
+\TX@old@table=\dimen298
+\TX@old@col=\dimen299
+\TX@target=\dimen300
+\TX@delta=\dimen301
+\TX@cols=\count459
 \TX@ftn=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip91
-\thanksmargin=\skip92
-\droptitle=\skip93
+\thanksmarkwidth=\skip81
+\thanksmargin=\skip82
+\droptitle=\skip83
 ) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box85
-\beforetitleunit=\skip94
-\aftertitleunit=\skip95
-\ttl@plus=\dimen306
-\ttl@minus=\dimen307
+\beforetitleunit=\skip84
+\aftertitleunit=\skip85
+\ttl@plus=\dimen302
+\ttl@minus=\dimen303
 \ttl@toksa=\toks50
-\titlewidth=\dimen308
-\titlewidthlast=\dimen309
-\titlewidthfirst=\dimen310
+\titlewidth=\dimen304
+\titlewidthlast=\dimen305
+\titlewidthfirst=\dimen306
 ) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip96
-\f@nch@O@elh=\skip97
-\f@nch@O@erh=\skip98
-\f@nch@O@olh=\skip99
-\f@nch@O@orh=\skip100
-\f@nch@O@elf=\skip101
-\f@nch@O@erf=\skip102
-\f@nch@O@olf=\skip103
-\f@nch@O@orf=\skip104
+\f@nch@headwidth=\skip86
+\f@nch@O@elh=\skip87
+\f@nch@O@erh=\skip88
+\f@nch@O@olh=\skip89
+\f@nch@O@orh=\skip90
+\f@nch@O@elf=\skip91
+\f@nch@O@erf=\skip92
+\f@nch@O@olf=\skip93
+\f@nch@O@orf=\skip94
 )
 
 Package biblatex Warning: Load 'inputenc' before biblatex.
 
-\@quotelevel=\count464
-\@quotereset=\count465
+\@quotelevel=\count460
+\@quotereset=\count461
 LaTeX Font Info:    Trying to load font information for OT1+LibertinusSerif-TLF
  on input line 93.
 
@@ -1239,7 +1205,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count466
+\c@section@level=\count462
 )
 LaTeX Info: Redefining \ref on input line 93.
 LaTeX Info: Redefining \pageref on input line 93.
@@ -1259,24 +1225,24 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `Statistical_Physics_I.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Statistical_Physics_I.bbl' not found.
-No file Statistical_Physics_I.bbl.
+Package biblatex Info: ... file 'Statistical_Physics_I.bbl' found.
+(./Statistical_Physics_I.bbl)
 Package biblatex Info: Reference section=0 on input line 93.
 Package biblatex Info: Reference segment=0 on input line 93.
-\c@mv@tabular=\count467
-\c@mv@boldtabular=\count468
+\c@mv@tabular=\count463
+\c@mv@boldtabular=\count464
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count469
-\scratchdimen=\dimen311
+\scratchcounter=\count465
+\scratchdimen=\dimen307
 \scratchbox=\box86
-\nofMPsegments=\count470
-\nofMParguments=\count471
+\nofMPsegments=\count466
+\nofMParguments=\count467
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count472
-\MPscratchDim=\dimen312
-\MPnumerator=\count473
-\makeMPintoPDFobject=\count474
+\MPscratchCnt=\count468
+\MPscratchDim=\dimen308
+\MPnumerator=\count469
+\makeMPintoPDFobject=\count470
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1286,10 +1252,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count475
-
-Package chemgreek Info: Activating mapping `default' on line 93.
-
+\c@lstlisting=\count471
 LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/m/n' will be
 (Font)              scaled to size 17.28pt on input line 95.
 LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/m/n' will be
@@ -1374,13 +1337,451 @@ LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/m/n' will be
 [2]
 LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 108.
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
+(./Statistical_Physics_I.toc
+LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/b/n' will be
+(Font)              scaled to size 10.95pt on input line 1.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
+(Font)              scaled to size 10.95pt on input line 2.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
+(Font)              scaled to size 10.95pt on input line 2.
+LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
+(Font)              scaled to size 10.95pt on input line 2.
+LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
+(Font)              scaled to size 10.95pt on input line 2.
+LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
+(Font)              scaled to size 10.95pt on input line 2.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
+(Font)              scaled to size 10.95pt on input line 2.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
+(Font)              scaled to size 10.95pt on input line 2.
+[3])
 \tf@toc=\write7
 \openout7 = `Statistical_Physics_I.toc'.
 
-[3]
+[4]
 LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 17.28pt on input line 147.
-LaTeX Font Info:    Font shape `
+LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
+(Font)              scaled to size 17.28pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/m/n' will be
+(Font)              scaled to size 10.0pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
+(Font)              scaled to size 17.28pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/m/it' will be
+(Font)              scaled to size 10.0pt on input line 147.
+LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
+(Font)              scaled to size 17.28pt on input line 147.
+LaTeX Font Info:    Font shape `LS2/libertinust1mathsym/m/n' will be
+(Font)              scaled to size 10.0pt on input line 147.
+LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
+(Font)              scaled to size 17.28pt on input line 147.
+LaTeX Font Info:    Font shape `LS2/libertinust1mathex/m/n' will be
+(Font)              scaled to size 10.0pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
+(Font)              scaled to size 17.28pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1mathbb/m/n' will be
+(Font)              scaled to size 10.0pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
+(Font)              scaled to size 17.28pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/b/n' will be
+(Font)              scaled to size 10.0pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
+(Font)              scaled to size 17.28pt on input line 147.
+LaTeX Font Info:    Font shape `LS1/libertinust1math/b/it' will be
+(Font)              scaled to size 10.0pt on input line 147.
+LaTeX Font Info:    Trying to load font information for TS1+LibertinusSerif-TLF
+ on input line 151.
+
+(/usr/share/texlive/texmf-dist/tex/latex/libertinus-type1/TS1LibertinusSerif-TL
+F.fd
+File: TS1LibertinusSerif-TLF.fd 2020/08/22 (autoinst) Font definitions for TS1/
+LibertinusSerif-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/LibertinusSerif-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 151.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[5]
+LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 214.
+LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 214.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 274.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 274.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[13]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[14]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[15]
+<image.png, id=586, 589.4522pt x 675.27281pt>
+File: image.png Graphic file (type png)
+<use image.png>
+Package pdftex.def Info: image.png  used on input line 684.
+(pdftex.def)             Requested size: 400.38872pt x 458.68486pt.
+LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 685.
+LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 685.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.689 \newpage
+               <./image.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[18]
+<image3.png, id=612, 728.7225pt x 633.86812pt>
+File: image3.png Graphic file (type png)
+<use image3.png>
+Package pdftex.def Info: image3.png  used on input line 754.
+(pdftex.def)             Requested size: 225.21626pt x 195.89742pt.
+<image2.png, id=613, 1927.2pt x 1284.8pt>
+File: image2.png Graphic file (type png)
+<use image2.png>
+Package pdftex.def Info: image2.png  used on input line 758.
+(pdftex.def)             Requested size: 225.21626pt x 150.13083pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.769 \end{bux}
+               pdfTeX warning (ext4): destination with the same identifier (nam
+e{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.769 \end{bux}
+                <./image3.png> <./image2.png (PNG copy)>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[20pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.814 \end{bux}
+               ]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[24]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[25]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[26]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[27]
+LaTeX Font Info:    Font shape `OT1/LibertinusSerif-TLF/m/it' will be
+(Font)              scaled to size 10.95pt on input line 1122.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[28]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[29]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[30]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[31]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[32]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[33]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[34]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[35]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[36] (./Statistical_Physics_I.aux)
+Package rerunfilecheck Info: File `Statistical_Physics_I.out' has not changed.
+(rerunfilecheck)             Checksum: 8DE03E7261F8F6AFF018D2EED04B9592;14696.
+Package logreq Info: Writing requests to 'Statistical_Physics_I.run.xml'.
+\openout1 = `Statistical_Physics_I.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 37957 strings out of 480247
+ 751985 string characters out of 5896106
+ 1463216 words of memory out of 5000000
+ 55053 multiletter control sequences out of 15000+600000
+ 520425 words of font info for 122 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 99i,26n,104p,1300b,850s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertinust1math/libusBMR.enc}
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_oaaihm.enc
+}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertinust1math/libusBB.enc}{/
+usr/share/texlive/texmf-dist/fonts/enc/dvips/libertinust1math/libusSYM.enc}{/us
+r/share/texlive/texmf-dist/fonts/enc/dvips/libertinust1math/libusEX.enc}{/usr/s
+hare/texlive/texmf-dist/fonts/enc/dvips/libertinust1math/libusMR.enc}{/usr/shar
+e/texlive/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_rlktsf.enc}{/usr/sha
+re/texlive/texmf-dist/fonts/enc/dvips/libertinust1math/libusMI.enc}{/usr/share/
+texlive/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_poicuj.enc}{/usr/share
+/texlive/texmf-dist/fonts/enc/dvips/libertinus-type1/lbts_674lrv.enc}</usr/shar
+e/texlive/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/libertinus-type1/Libertinu
+sSerif-Italic.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertinus-
+type1/LibertinusSerif-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/libertinust1math/LibertinusT1Math.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/stix/stix-mathcal.pfb>
+Output written on Statistical_Physics_I.pdf (36 pages, 1095091 bytes).
+PDF statistics:
+ 873 PDF objects out of 1000 (max. 8388607)
+ 782 compressed objects within 8 object streams
+ 241 named destinations out of 1000 (max. 500000)
+ 844 words of extra memory for PDF output out of 10000 (max. 10000000)
+

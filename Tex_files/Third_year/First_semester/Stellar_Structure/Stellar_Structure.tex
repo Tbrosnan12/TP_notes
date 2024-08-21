@@ -43,7 +43,7 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-%\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newcommand{\hsp}{\hspace{8pt}}
 
 \newcommand*{\sectionFont}{%
@@ -580,13 +580,10 @@ This can also be turned into the minimum radius that still results in collapse o
     \item The main sequence is defined as all stars that are fusing Hydrogen in their cores.  Equating the ideal gas law and our central pressure approximations we get that $T \propto \mu M/R$. The Minimum temperature for fusion is $T > 5 \times 10^6 K$ which corresponds to a mass of $\sim 0.08 M_{\odot} $. Below this mass are brown dwarfs which hh-=ave no sustained fusion and are thus not stars. 
 
 \item There is also a measured relationship relation the mass of a star and its radius on the main sequence. This comes from \url{https://www.daviddarling.info/encyclopedia/M/mass-radius_relation.html} and is as follows: 
-\begin{bux}
-    \begin{split}
-        R \propto M^{0.8}
-    \end{split}
-\end{bux}
+\begin{flalign}
+ R \propto M^{0.8}
+\end{flalign}
 \end{itemize}
-
 
 
 

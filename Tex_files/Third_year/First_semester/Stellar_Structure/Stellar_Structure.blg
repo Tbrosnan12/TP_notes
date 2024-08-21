@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Stellar_Structure.blg'
-[67] biber:340> INFO - === Wed Aug 21, 2024, 20:27:20
-[79] Biber.pm:418> INFO - Reading 'Stellar_Structure.bcf'
-[139] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
-[151] bbl.pm:654> INFO - Writing 'Stellar_Structure.bbl' with encoding 'UTF-8'
-[151] bbl.pm:757> INFO - Output to Stellar_Structure.bbl
-[152] Biber.pm:130> WARN - The file 'Stellar_Structure.bcf' does not contain any citations!
-[152] Biber.pm:132> INFO - WARNINGS: 1
+[66] biber:340> INFO - === Wed Aug 21, 2024, 20:44:07
+[78] Biber.pm:418> INFO - Reading 'Stellar_Structure.bcf'
+[140] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[153] bbl.pm:654> INFO - Writing 'Stellar_Structure.bbl' with encoding 'UTF-8'
+[153] bbl.pm:757> INFO - Output to Stellar_Structure.bbl
+[153] Biber.pm:130> WARN - The file 'Stellar_Structure.bcf' does not contain any citations!
+[153] Biber.pm:132> INFO - WARNINGS: 1

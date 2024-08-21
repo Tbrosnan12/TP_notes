@@ -1,13 +1,13 @@
 # Fdb version 3
-["biber Stellar_Structure"] 1724268440 "Stellar_Structure.bcf" "Stellar_Structure.bbl" "Stellar_Structure" 1724268444
-  "Stellar_Structure.bcf" 1724268444 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Stellar_Structure"] 1724269446 "Stellar_Structure.bcf" "Stellar_Structure.bbl" "Stellar_Structure" 1724278403
+  "Stellar_Structure.bcf" 1724278403 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Stellar_Structure.bbl"
   "Stellar_Structure.blg"
-["pdflatex"] 1724268442 "/home/thomas/Documents/TP_notes/Tex_files/Third_year/First_semester/Stellar_Structure/Stellar_Structure.tex" "Stellar_Structure.pdf" "Stellar_Structure" 1724268444
+["pdflatex"] 1724278401 "/home/thomas/Documents/TP_notes/Tex_files/Third_year/First_semester/Stellar_Structure/Stellar_Structure.tex" "Stellar_Structure.pdf" "Stellar_Structure" 1724278403
   "/etc/texmf/web2c/texmf.cnf" 1723933354 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1723934203 1405755 0308faeb1a6e51887941567c18392f11 ""
-  "/home/thomas/Documents/TP_notes/Tex_files/Third_year/First_semester/Stellar_Structure/Stellar_Structure.tex" 1724268438 26501 bada418fdff35359d349e75aa996001e ""
+  "/home/thomas/Documents/TP_notes/Tex_files/Third_year/First_semester/Stellar_Structure/Stellar_Structure.tex" 1724278401 26467 8aef59ffa36d0250e37790c84fdcea19 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -235,12 +235,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1724266557 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "Graph2.png" 1724012210 472379 8ecb2b36027ae41fe6bb89670746f0f8 ""
-  "Stellar_Structure.aux" 1724268444 6588 88a381955098c79659eea0dcd1426d2a "pdflatex"
-  "Stellar_Structure.bbl" 1724268440 466 ee04f40f768daeed26442158e95aba61 "biber Stellar_Structure"
-  "Stellar_Structure.out" 1724268444 6404 0a255bbbcb5b596776921bc8898be7e8 "pdflatex"
-  "Stellar_Structure.run.xml" 1724268444 2389 21bd98ce6724964ae80079257d2b1cac "pdflatex"
-  "Stellar_Structure.tex" 1724268438 26501 bada418fdff35359d349e75aa996001e ""
-  "Stellar_Structure.toc" 1724268444 3489 35aa78dec752b7b47b67b6afcc6dc180 "pdflatex"
+  "Stellar_Structure.aux" 1724278403 6588 88a381955098c79659eea0dcd1426d2a "pdflatex"
+  "Stellar_Structure.bbl" 1724269447 466 ee04f40f768daeed26442158e95aba61 "biber Stellar_Structure"
+  "Stellar_Structure.out" 1724278403 6404 0a255bbbcb5b596776921bc8898be7e8 "pdflatex"
+  "Stellar_Structure.run.xml" 1724278403 2389 21bd98ce6724964ae80079257d2b1cac "pdflatex"
+  "Stellar_Structure.tex" 1724278401 26467 8aef59ffa36d0250e37790c84fdcea19 ""
+  "Stellar_Structure.toc" 1724278403 3489 35aa78dec752b7b47b67b6afcc6dc180 "pdflatex"
   "image.png" 1724012210 164987 4bece91387e2d05bb5f549d60eacb1c5 ""
   (generated)
   "Stellar_Structure.aux"

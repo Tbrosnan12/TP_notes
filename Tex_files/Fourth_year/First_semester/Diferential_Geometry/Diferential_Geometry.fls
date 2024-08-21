@@ -1259,6 +1259,7 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT ./Diferential_Geometry.toc
@@ -1281,10 +1282,8 @@ INPUT ./Diferential_Geometry.out
 INPUT ./Diferential_Geometry.out
 INPUT Diferential_Geometry.run.xml
 OUTPUT Diferential_Geometry.run.xml
-INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.864pk
-INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx10.657pk
-INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720pk
-INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr12.720pk
-INPUT /home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr10.657pk
-INPUT /usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk
-INPUT /usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr17.pk
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
