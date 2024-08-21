@@ -11,16 +11,16 @@
   {\SI{#1}{#2}}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{empheq}
 \usepackage[most]{tcolorbox}
-\usepackage{amsmath}
 \usepackage{mathrsfs}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{parskip}
 \usepackage{comment}
-\usepackage{mhchem}
+%\usepackage{mhchem}
  \usepackage{tabularx}
  \usepackage{titling}
   \usepackage[explicit]{titlesec}
@@ -39,10 +39,11 @@
     enhanced, colframe=blue!30!black,
     colback=blue!30, boxrule=1pt,
     #1}
+\tcbset{highlight math style={boxsep=2mm,,colback=blue!0!green!0!red!0!}}
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+%\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newcommand{\hsp}{\hspace{8pt}}
 
 \newcommand*{\sectionFont}{%
