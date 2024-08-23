@@ -1,13 +1,13 @@
 # Fdb version 3
-["biber Lie_Groups"] 1724182480 "Lie_Groups.bcf" "Lie_Groups.bbl" "Lie_Groups" 1724269338
-  "Lie_Groups.bcf" 1724269338 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Lie_Groups"] 1724414778 "Lie_Groups.bcf" "Lie_Groups.bbl" "Lie_Groups" 1724414781
+  "Lie_Groups.bcf" 1724414781 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Lie_Groups.bbl"
   "Lie_Groups.blg"
-["pdflatex"] 1724269337 "/home/thomas/Documents/TP_notes/Tex_files/Fourth_year/First_semester/Lie_Groups/Lie_Groups.tex" "Lie_Groups.pdf" "Lie_Groups" 1724269338
+["pdflatex"] 1724414780 "/home/thomas/Documents/TP_notes/Tex_files/Fourth_year/First_semester/Lie_Groups/Lie_Groups.tex" "Lie_Groups.pdf" "Lie_Groups" 1724414781
   "/etc/texmf/web2c/texmf.cnf" 1723933354 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1723934203 1405755 0308faeb1a6e51887941567c18392f11 ""
-  "/home/thomas/Documents/TP_notes/Tex_files/Fourth_year/First_semester/Lie_Groups/Lie_Groups.tex" 1724269337 3897 de60cff14f5973b6063c41269448b925 ""
+  "/home/thomas/Documents/TP_notes/Tex_files/Fourth_year/First_semester/Lie_Groups/Lie_Groups.tex" 1724269550 3897 de60cff14f5973b6063c41269448b925 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -225,12 +225,12 @@
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb" 1724266550 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1724266557 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "Lie_Groups.aux" 1724269338 1011 b02fc50c7aa26d8e96ef11f3973ef597 "pdflatex"
-  "Lie_Groups.bbl" 1724182480 466 ee04f40f768daeed26442158e95aba61 "biber Lie_Groups"
-  "Lie_Groups.out" 1724269338 160 7cfbe962c4cdf74e96eea4d6bb601f8e "pdflatex"
-  "Lie_Groups.run.xml" 1724269338 2340 99820fb8e421f2f8093f7021e1b31a17 "pdflatex"
-  "Lie_Groups.tex" 1724269337 3897 de60cff14f5973b6063c41269448b925 ""
-  "Lie_Groups.toc" 1724269338 134 515071408794fba0ebf5db5ae601ef5f "pdflatex"
+  "Lie_Groups.aux" 1724414781 1011 b02fc50c7aa26d8e96ef11f3973ef597 "pdflatex"
+  "Lie_Groups.bbl" 1724414778 466 ee04f40f768daeed26442158e95aba61 "biber Lie_Groups"
+  "Lie_Groups.out" 1724414781 160 7cfbe962c4cdf74e96eea4d6bb601f8e "pdflatex"
+  "Lie_Groups.run.xml" 1724414781 2340 99820fb8e421f2f8093f7021e1b31a17 "pdflatex"
+  "Lie_Groups.tex" 1724269550 3897 de60cff14f5973b6063c41269448b925 ""
+  "Lie_Groups.toc" 1724414781 134 515071408794fba0ebf5db5ae601ef5f "pdflatex"
   (generated)
   "Lie_Groups.aux"
   "Lie_Groups.bcf"

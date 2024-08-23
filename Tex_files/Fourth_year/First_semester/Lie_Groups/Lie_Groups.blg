@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Lie_Groups.blg'
-[68] biber:340> INFO - === Tue Aug 20, 2024, 20:34:40
-[81] Biber.pm:418> INFO - Reading 'Lie_Groups.bcf'
+[67] biber:340> INFO - === Fri Aug 23, 2024, 13:06:18
+[79] Biber.pm:418> INFO - Reading 'Lie_Groups.bcf'
 [140] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
-[155] bbl.pm:654> INFO - Writing 'Lie_Groups.bbl' with encoding 'UTF-8'
-[155] bbl.pm:757> INFO - Output to Lie_Groups.bbl
-[155] Biber.pm:130> WARN - The file 'Lie_Groups.bcf' does not contain any citations!
-[155] Biber.pm:132> INFO - WARNINGS: 1
+[152] bbl.pm:654> INFO - Writing 'Lie_Groups.bbl' with encoding 'UTF-8'
+[152] bbl.pm:757> INFO - Output to Lie_Groups.bbl
+[152] Biber.pm:130> WARN - The file 'Lie_Groups.bcf' does not contain any citations!
+[152] Biber.pm:132> INFO - WARNINGS: 1
