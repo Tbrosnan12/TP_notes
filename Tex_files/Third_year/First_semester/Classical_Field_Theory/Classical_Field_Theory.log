@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  21 AUG 2024 23:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  26 AUG 2024 00:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -942,14 +942,6 @@ Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
 \mhchem@option@minusmathsidebearingright=\dimen296
 \mhchem@option@minustextsidebearingleft=\dimen297
 \mhchem@option@minustextsidebearingright=\dimen298
-
-Package mhchem Warning: You did not specify a 'version' option for the mhchem
-(mhchem)                package. Please write \usepackage[version=4]{mhchem}
-(mhchem)                in your preamble (or any lower number for
-(mhchem)                compatibility mode), because you might get slightly
-(mhchem)                different output with the same input in future versions
-.
-
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
@@ -1439,7 +1431,7 @@ Package logreq Info: Writing requests to 'Classical_Field_Theory.run.xml'.
 Here is how much of TeX's memory you used:
  38862 strings out of 480247
  800869 string characters out of 5896106
- 1544917 words of memory out of 5000000
+ 1544933 words of memory out of 5000000
  56020 multiletter control sequences out of 15000+600000
  481538 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
