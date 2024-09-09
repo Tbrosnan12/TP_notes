@@ -19,7 +19,7 @@
 \usepackage{float}
 \usepackage{parskip}
 \usepackage{comment}
-\usepackage{mhchem}
+%\usepackage{mhchem}
  \usepackage{tabularx}
  \usepackage{titling}
  \usepackage{amsmath,environ}
@@ -77,7 +77,9 @@
 \vspace*{\fill}
 \begin{center}
 \Large
-    ""
+    "We will work in "God-given" units, where $\hbar = 1 = c$" 
+
+    -Peskin \& Schroeder  
 \end{center}
 \vspace*{\fill} 
 \newpage 
@@ -116,7 +118,33 @@
 %starting document 
 \normalsize
 \newpage
-\section{Section}
+\section{QFT trailer}
+\begin{itemize}
+  \item We wish to see if we can perform a calculation in quantum field theory, just by elementary means, i.e. via dimensional analysis ect.
 
+  Consider the head on collision of an electron $e^{-}$ and $e^{+}$ that results in the production of a muon $\mu^{-}$ anti muon $\mu^{+}$ pair, shown below: 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{trailer.png}
+\caption{\label{trailer}\emph{electron positron annihilation}}
+\end{figure}
+
+
+\item The calculation we would like to perform is the differential cross section, that is the derivative of the cross section $\sigma$ with respect to the solid angle $\Omega$, $\frac{d \sigma}{d \Omega}$. This is a useful quantity as it is easily experimentally observed. In a particle collider, electrons and positrons are prepared in batches of length $l_A$ and $l_B$ and densities $\rho_A$ and $\rho_B$ respectively. When the two batches collide if the over lapping area of the head on collision is A, then the cross section is given by:
+\end{itemize}
+
+\begin{align*}
+  \sigma = \frac{\text{Number of events}}{\rho_A\rho_B l_A l_B A}
+\end{align*}
+
+\begin{itemize}
+  \item We now look at the dimensions of our quantities. Conveniently from our use of God given units, i.e. $\hbar =c =1$ we have that momentum, mass and energy have the same units as the energy mass equivalence becomes $E^2 = p^2 + m^2$. We also have from the Heisenberg's uncertainty principle that $\Delta p \Delta x \sim 1$. Thus the dimensions of mass and length are inversely related. 
+
+  We can from this easily see that the dimensions of the quantity $[\rho_A\rho_B l_A l_B A]$ is $[m^2]$, which makes the dimensions of $\left[\frac{d\sigma}{d \Omega}\right] = \left[\frac{1}{m^2}\right]$ as angles are unitless. With this we can say that this quantity is also inversely proportional to the energy squared times some positive quantity that depends on the angle:
+\end{itemize}
+
+\begin{flalign}
+  \frac{d\sigma}{d \Omega} \propto \frac{1}{E^2}|\mathcal{M}(\theta)|^2
+\end{flalign}
 
 \end{document}
