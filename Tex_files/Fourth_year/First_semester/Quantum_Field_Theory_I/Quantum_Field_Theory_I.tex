@@ -19,12 +19,13 @@
 \usepackage{float}
 \usepackage{parskip}
 \usepackage{comment}
-\usepackage{mhchem}
+%\usepackage{mhchem}
  \usepackage{tabularx}
  \usepackage{titling}
  \usepackage{amsmath,environ}
  \usepackage[explicit]{titlesec}
 \usepackage{fancyhdr}
+\usepackage{braket}
 \setlength{\droptitle}{3em} 
 
 \title{Quantum Field Theory I}
@@ -41,7 +42,15 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\vspace{-5mm}\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign*}{\vspace{-5mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+%\renewenvironment{align}{\vspace{-5mm}\begin{align}}{\end{align}}
+%\renewenvironment{align*}{\vspace{-5mm}\begin{align*}}{\end{align*}}
+
+
+
+
+
 
 \newcommand{\hsp}{\hspace{8pt}}
 
@@ -77,7 +86,9 @@
 \vspace*{\fill}
 \begin{center}
 \Large
-    ""
+    "We will work in "God-given" units, where $\hbar = 1 = c$" 
+
+    -Peskin \& Schroeder  
 \end{center}
 \vspace*{\fill} 
 \newpage 
@@ -116,7 +127,63 @@
 %starting document 
 \normalsize
 \newpage
-\section{Section}
+\section{QFT trailer}
+\begin{itemize}
+  \item We wish to see if we can perform a calculation in quantum field theory, just by elementary means, i.e. via dimensional analysis ect.
+
+  Consider the head on collision of an electron $e^{-}$ and $e^{+}$ that results in the production of a muon $\mu^{-}$ anti muon $\mu^{+}$ pair, shown below: 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{trailer.png}
+\caption{\label{trailer}\emph{electron positron annihilation}}
+\end{figure}
 
 
+\item The calculation we would like to perform is the differential cross section, that is the derivative of the cross section $\sigma$ with respect to the solid angle $\Omega$, $\frac{d \sigma}{d \Omega}$. This is a useful quantity as it is easily experimentally observed. In a particle collider, electrons and positrons are prepared in batches of length $l_A$ and $l_B$ and densities $\rho_A$ and $\rho_B$ respectively. When the two batches collide if the over lapping area of the head on collision is A, then the cross section is given by:
+\end{itemize}
+
+\begin{equation*}
+  \sigma = \frac{\text{Number of events}}{\rho_A\rho_B l_A l_B A}
+\end{equation*}
+
+\begin{itemize}
+  \item We now look at the dimensions of our quantities. Conveniently from our use of God given units, i.e. $\hbar =c =1$ we have that momentum, mass and energy have the same units as the energy mass equivalence becomes $E^2 = p^2 + m^2$. We also have from the Heisenberg's uncertainty principle that $\Delta p \Delta x \sim 1$. Thus the dimensions of mass and length are inversely related. 
+
+  We can from this easily see that the dimensions of the quantity $[\rho_A\rho_B l_A l_B A]$ is $[m^2]$, which makes the dimensions of $\left[\frac{d\sigma}{d \Omega}\right] = \left[\frac{1}{m^2}\right]$ as angles are unitless. With this we can say that this quantity is also inversely proportional to the energy squared times some positive quantity that depends on the angle:
+
+
+\begin{flalign*}
+  \frac{d\sigma}{d \Omega} \propto \frac{1}{E^2}|\mathcal{M}(\theta)|^2
+\end{flalign*}
+Here $\mathcal{M}$ is a dimensionless quantity, that is essentially the quantum mechanical amplitude for the process to occur. It does not depend on the energy $E$, as we are considering the limit where $E >> m_e,m_{\mu}$. This means we are unable to construct any dimensionless quantity like $E/m_e$ or $E/m_{\mu}$ as we have set $m_e/E = 0 = m_{\mu}/e$. Note that we could not take this limit and them $\mathcal{M}$ would depend on $E$, but it is simpler to consider the high energy limit. 
+\end{itemize}
+\begin{itemize}
+  \item If we recall from Quantum mechanics, in perturbation theory we had that at first order the transition amplitude is related to the initial and final states along with the interaction Hamiltonian $H_i$, so:
+
+\begin{equation*}
+  \mathcal{M} \sim \bra{\text{final state}} H_I \ket{\text{initial state}}
+\end{equation*}
+But we know physically that the electrons do not interact with the muons, Instead what we know happens is that the electrons annihilate to form photons which in turn form the muons. This then means that $\bra{\mu^+ \mu^-} H_I \ket{e^+e^-} = 0 $ and instead we have that:
+
+\begin{equation*}
+  \mathcal{M} \sim \bra{\mu^+ \mu^-} H_I \ket{\gamma}^{\alpha}\bra{\gamma}H_I\ket{e^+e^-}_{\alpha}
+\end{equation*}
+
+This is a heuristic way of writing this second order contribution, but it makes sense physically as we have the electron positron pair interacting to become a photon ($\ket{\gamma}\bra{\gamma}$) and then the photon in turn becoming muons. Note the addition of vector indices ($\alpha$) as the photon is a vector particle (non-zero spin), so the photon created has 4 intermediate states, 3 for spin as it has spin-1 and one extra that comes from the fact that we are adding angular momenta in the four dimensional Lorentz group and must consider boosts also. (Remember the three spin components are generated by the three angular momentum operators and there is a corresponding generator for boosts). 
+\end{itemize}
+
+\begin{itemize}
+  \item When considering the experimental calculation of $\frac{d\sigma}{d \Omega}$ it also easier to account for all possible initial and final spin states, for which we need to take in to account conservation of angular momentum. This means we cant have two right polarized electron and positrons going to a left and right polarized muon and anti-muon.  
+
+  \item Since the photon must conserve angular momentum going from the to or from either of the two particles, the photon vector must be in the same direction as the axes of the particle pairs. We also know that the strength of the coupling between electrons (or muons) and photons is given by the electric charge $e$. This means:
+
+\begin{equation*}
+  \bra{\gamma} H_I \ket{e^+ e^-}^{\alpha} \propto e(0,1,i,0)
+\end{equation*}
+And:
+\begin{equation*}
+  \bra{\gamma} H_I \ket{\mu^+ \mu^-}^{\alpha} \propto e(0,\cos{\theta},i,-\sin(\theta))
+\end{equation*}
+
+\end{itemize}
 \end{document}
