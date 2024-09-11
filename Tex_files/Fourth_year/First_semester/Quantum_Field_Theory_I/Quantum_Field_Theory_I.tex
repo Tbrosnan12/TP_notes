@@ -152,10 +152,11 @@
   We can from this easily see that the dimensions of the quantity $[\rho_A\rho_B l_A l_B A]$ is $[m^2]$, which makes the dimensions of $\left[\frac{d\sigma}{d \Omega}\right] = \left[\frac{1}{m^2}\right]$ as angles are unitless. With this we can say that this quantity is also inversely proportional to the energy squared times some positive quantity that depends on the angle:
 
 
-\begin{flalign*}
+\begin{flalign}
+\label{diff_cross}
   \frac{d\sigma}{d \Omega} \propto \frac{1}{E^2}|\mathcal{M}(\theta)|^2 
-\end{flalign*}
-Here $\mathcal{M}$ is a dimensionless quantity, that is essentially the quantum mechanical amplitude for the process to occur. It does not depend on the energy $E$, as we are considering the limit where $E >> m_e,m_{\mu}$. This means we are unable to construct any dimensionless quantity like $E/m_e$ or $E/m_{\mu}$ as we have set $m_e/E = 0 = m_{\mu}/e$. Note that we could not take this limit and them $\mathcal{M}$ would depend on $E$, but it is simpler to consider the high energy limit. 
+\end{flalign}
+Here $\mathcal{M}$ is a dimensionless quantity, that is essentially the quantum mechanical amplitude for the process to occur. It does not depend on the energy $E$, as we are considering the limit where $E >> m_e,m_{\mu}$. This means we are unable to construct any dimensionless quantity like $E/m_e$ or $E/m_{\mu}$ as we have set $m_e/E = 0 = m_{\mu}/e$. Note that we could not take this limit and them $\mathcal{M}$ would depend on $E$, but it is simpler to consider the high energy limit. We will later calculate what the constant of proportionality in this equation is, and it turn out to be $1/64\pi^2$.
 \end{itemize}
 \begin{itemize}
   \item If we recall from Quantum mechanics, in perturbation theory we had that at first order the transition amplitude is related to the initial and final states along with the interaction Hamiltonian $H_i$, so:
@@ -175,14 +176,18 @@ This is a heuristic way of writing this second order contribution, but it makes 
 
 \begin{itemize}
 
-  \item Since the photon must conserve angular momentum going to or from either of the two particles, the photon vector must be in the same direction as the axes of the particle pairs. We also know that the strength of the coupling between electrons (or muons) and photons is given by the electric charge $e$. This means:
+  \item Since the photon must conserve angular momentum going to or from either of the two particles, the photon vector must be in the same direction as the axes of the particle pairs. We also know that the strength of the coupling between electrons (or muons) and photons is given by the electric charge $e$. This means for the case where electron has spin up along x axis, the positron has spin down:
 \begin{equation*}
   \bra{\gamma} H_I \ket{e^+ e^-}^{\alpha} \propto e(0,1,i,0)
 \end{equation*}
-And:
+And if we have the same for muon and anti-muon:
 \begin{equation*}
   \bra{\gamma} H_I \ket{\mu^+ \mu^-}^{\alpha} \propto e(0,\cos{\theta},i,-\sin(\theta))
 \end{equation*}
+
+The vectors here have the first component as the time component and the last three are part of the the polarization vector of the photon. See Jackson third edition page 299 for these vectors. 
+
+
 \item When considering the experimental calculation of $\frac{d\sigma}{d \Omega}$ it also easier to account for all possible initial and final spin states, for which we need to take in to account conservation of angular momentum. This means we cant have two right polarized electron and positrons going to a left and right polarized muon and anti-muon. This condition then leaves 4 possible transitions which we can calculate the contributions. These calculations are done by dotting the two vectors we have above as in \ref{second order M}, making sure to take the complex conjugate of the first 4 vector and also remember to properly contract with the $(+---)$ metric. This results in:
 
 \begin{flalign*}
@@ -192,7 +197,28 @@ And:
 & M(LR \rightarrow LR) \sim -e^2(1+\cos{\theta})
 \end{flalign*}
 
+
+There are no states that have 0 total angular momentum before and after as it turn out the intermediate photon (despite being a spin-1 boson) cant have spin 0 along an axis. Though in this case we would be requiring that the photon would have 0 total spin which is also not possible. 
+
+
+\item We can finally take these 4 probabilities and square and sum them to get $|\mathcal{M}|^2$. Resulting in:
+
+\begin{equation*}
+  |\mathcal{M}|^2 \sim 4e^2(1+\cos^2{\theta})
+\end{equation*}
+So using \ref{diff_cross} and its proportionality constant $1/64\pi^2$ we can write:
+
+\begin{equation*}
+  \frac{d \sigma}{d \Omega} = \frac{e^2}{32E^2}(1+\cos^2{\theta})
+\end{equation*}
+Defining the constant $\alpha = e^2/4\pi \sim 137^{-1}$, we can then integrate this to get a expression for the total cross section as:
+
+\begin{flalign*}
+  \sigma = \frac{4\alpha^2\pi}{3E^2}
+\end{flalign*}
+This is the correct first order approximation!
 \end{itemize}
+
 
 
 \end{document}
