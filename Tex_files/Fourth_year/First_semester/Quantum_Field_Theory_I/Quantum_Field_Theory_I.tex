@@ -220,5 +220,32 @@ This is the correct first order approximation!
 \end{itemize}
 
 
+\newpage  
+
+\section{The need for Fields}
+In this section we will see where regular quantum mechanics fails and what we need to do to fix it. 
+
+\subsection{Non-relativistic free particle}
+
+\begin{itemize}
+  \item We can recall from QM that the probability of a particle at point $x$ at time $t$ propagating to $x'$ at time $t'$ is given by:
+  \begin{equation}
+  \label{propagator}
+    \bra{x} e^{-iH(t-t')} \ket{x'}
+  \end{equation}
+  Here $H$ is the Hamiltonian. For a Non-relativistic free particle we have that $H = \hat{\textbf{P}}^2/2m$. We can then go about solving dor this propagator with this Hamiltonian in the usual way. This involves inserting the identity $\int \frac{d^3p}{(2\pi)^3}\ket{p}\bra{p} = \mathbb{I}$ into the above propagator \ref{propagator}before the $\ket{x'}$
+
+  \begin{equation*}
+      \bra{x} e^{-iH(t-t')} \ket{x'}  = \int \frac{d^3p}{(2\pi)^3}\bra{x}e^{-i\frac{\hat{\textbf{P}}^2}{2m}(t-t')}\ket{p}\braket{p|x'}
+  \end{equation*}
+  Then if we recall that $\braket{p|x'} = e^{-i\textbf{p}\cdot\textbf{x}'}$, $\braket{x|p} = e^{i\textbf{p}\cdot\textbf{x}}$ and $e^{-i\frac{\hat{\textbf{P}}^2}{2m}(t-t')}\ket{p} = e^{-i\frac{p^2}{2m}(t-t')}\ket{p}$. We get:
+
+  \begin{flalign*}
+    \bra{x} e^{-iH(t-t')} \ket{x'} & = \int \frac{d^3p}{(2\pi)^3}e^{-i\frac{p^2}{2m}(t-t')}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')} \\
+    & = \left(\frac{m}{2\pi i(t-t')}\right)^{3/2}e^{im\frac{(\textbf{x}-\textbf{x}')^2}{2t}}
+  \end{flalign*}
+\end{itemize}
+
+
 
 \end{document}
