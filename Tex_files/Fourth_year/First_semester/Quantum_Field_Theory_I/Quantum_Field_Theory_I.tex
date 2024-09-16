@@ -242,10 +242,53 @@ In this section we will see where regular quantum mechanics fails and what we ne
 
   \begin{flalign*}
     \bra{x} e^{-iH(t-t')} \ket{x'} & = \int \frac{d^3p}{(2\pi)^3}e^{-i\frac{p^2}{2m}(t-t')}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')} \\
-    & = \left(\frac{m}{2\pi i(t-t')}\right)^{3/2}e^{im\frac{(\textbf{x}-\textbf{x}')^2}{2t}}
+    & = \left(\frac{m}{2\pi i(t-t')}\right)^{3/2}e^{im\frac{(\textbf{x}-\textbf{x}')^2}{2(t-t')}}
   \end{flalign*}
+  \item What this is saying, is that for any two points $x$ and $x'$, no matter how far they are separated, have a non-zero probability of propagation from one to another. But this is direct contrast with what we know from special relativity! Two points separated by enough distance so that there space time interval, $\Delta s^2 = (t-t')^2 -|\textbf{x}-\textbf{x}'|^2$ is negative, i.e. space like. Which would require a propagation speed faster then light. 
 \end{itemize}
 
+\subsection*{Relativistic free particle}
+\begin{itemize}
+  \item But we can chalk this up to a mistake. We were not considering the Hamiltonian of a \textbf{relativistic} free particle. That is, with the Hamiltonian $H  = \sqrt{\textbf{P}^2 + m^2}$. The propagator in a similar manner to before then becomes: 
+  \begin{equation*}
+  \begin{split}
+     \bra{x} e^{-i\sqrt{\textbf{P}^2 + m^2}(t-t')} \ket{x'} & = \int \braket{x|p}  e^{-i\sqrt{\textbf{P}^2 + m^2}(t-t')}  \braket{p|x'}\frac{d^3p}{(2\pi)^3} \\
+     & = \int \frac{d^3p}{(2\pi)^3}  e^{-i\sqrt{p^2 + m^2}(t-t')+ i\textbf{p}\cdot(\textbf{x}-\textbf{x}')} 
+  \end{split}
+  \end{equation*}
+  We can then parametrize the angle part of this integral by letting $\theta$ be the angle between $\textbf{p}$ and $(\textbf{x}-\textbf{x}')$, we can also further parametrize this with $\eta = \cos{\theta}$:
+  \begin{equation*}
+  \begin{split}
+  \bra{x} e^{-i\sqrt{\textbf{P}jj,/^2 + m^2}(t-t')} &\ket{x'}  = \int_{0}^{\infty} \frac{p^2dp}{(2\pi)^2}  \int_{-1}^{1} d \eta e^{-i\sqrt{p^2 + m^2}(t-t')+ ip|\textbf{x}-\textbf{x}'|\eta} \\
+   = \int_{0}^{\infty} \frac{p^2dp}{(2\pi)^2}& e^{-i\sqrt{p^2 + m^2}(t-t')} \frac{1}{ip|\textbf{x}- \textbf{x}'|}\left(e^{ ip|\textbf{x}-\textbf{x}'|}-e^{- ip|\textbf{x}-\textbf{x}'|} \right)
+  \end{split}
+  \end{equation*}
+  We can then turn this into an integral from $-\infty$ to $\infty$ with a factor of 2:
+  \begin{equation}
+  \label{Rel_propagator}
+  \begin{split}
+ = \frac{-i}{2\pi^2|\textbf{x}- \textbf{x}'|}\int_{0}^{\infty}pdp~e^{-i\sqrt{p^2 + m^2}(t-t')+ip|\textbf{x}-\textbf{x}'|}
+  \end{split}
+  \end{equation}
+\end{itemize}
+\subsubsection{Laplace steepest decent}
+\begin{itemize}
+  \item We can then use a useful approximation of integrals of this form by expanding around critical points. That is points $x_0$ where $f'(x_0)= 0$. The approximation is as follows, for a critical point $x_0$ of $f(x)$:
+  \begin{flalign*}
+\int_{-\infty}^{\infty}&h(x)e^{Af(x)}dx =  \int_{-\infty}^{\infty}h(x)e^{A\left[f(x_0) + \frac{1}{2}f''(x_0)(x-x_0)^2+\mathcal{O}((x-x_0)^3)\right]}dx \\ 
+ \approx   h(x_0)e^{Af(x_0)}&\int_{-\infty}^{\infty}e^{-A\frac{1}{2}|f''(x_0)|(x-x_0)^2}dx = \sqrt{\frac{2\pi}{A|f''(x_0)|}}h(x_0)e^{Af(x_0)} 
+  \end{flalign*}
+  \item Where we have assumed $x_0$ is a global maxima so that $f''(x_0) \leq 0$. This approximation works well as the exponential ensures that any small deviation from $x_0$ contributes very little to the integral. It of course depends also on $h(x)$ being "well behaved".
+
+
+  \item Back to the relevant integral \ref{Rel_propagator}, we can see that for us $f(p) = -i\sqrt{p^2 + m^2}(t-t')+ip|\textbf{x}-\textbf{x}'|$ and $h(p) = p$. Samson then uses this as an argument to get the form of the integral, but there is a small flaw in this argument, in that $f(p)$ is \textbf{imaginary} so the exponential doesn't behave quite like is outlined in the Laplace integral approximation. Instead we can think of this as such; we have the an exponential $e^{i g(p)}$ for some real function $g(p)$. This function rotates around the unit circle , so as we integrate over it. This is also influenced by the fact that we wish to look at the region out side the light cone, i.e. where $|\textbf{x}-\textbf{x}'| >> (t-t')$. Then we have that the exponent $g(p)$ is varying quite rapidly as $|\textbf{x}-\textbf{x}'|$ is large for any substantial time frame. This means the integrating, i.e the summing over rapidly oscillating exponential, leads to adding up all the points around the unit circle, which add up to 0. The only place where this does not happen is where $g(p)$ is stationary! We can find this stationary point $p_0$ of $g(p)= -\sqrt{p^2 + m^2}(t-t')+p|\textbf{x}-\textbf{x}'|$ via $g'(p_0)=0$, so: 
+  \begin{equation*}
+  \begin{split}
+      g'(p_0) = \frac{-p_0(t-t')}{\sqrt{p_0^2+m^2}}+|\textbf{x}-\textbf{x}'| =0 \implies p_0^2 = \frac{m|\textbf{x}-\textbf{x}'|}{(t-t')}
+      \end{split}
+    \end{equation*}  
+    \item So 
+\end{itemize}
 
 
 \end{document}
