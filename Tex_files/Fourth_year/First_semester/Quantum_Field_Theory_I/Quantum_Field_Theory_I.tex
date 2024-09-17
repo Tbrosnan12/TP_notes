@@ -259,7 +259,7 @@ In this section we will see where regular quantum mechanics fails and what we ne
   We can then parametrize the angle part of this integral by letting $\theta$ be the angle between $\textbf{p}$ and $(\textbf{x}-\textbf{x}')$, we can also further parametrize this with $\eta = \cos{\theta}$:
   \begin{equation*}
   \begin{split}
-  \bra{x} e^{-i\sqrt{\textbf{P}jj,/^2 + m^2}(t-t')} &\ket{x'}  = \int_{0}^{\infty} \frac{p^2dp}{(2\pi)^2}  \int_{-1}^{1} d \eta e^{-i\sqrt{p^2 + m^2}(t-t')+ ip|\textbf{x}-\textbf{x}'|\eta} \\
+  \bra{x} e^{-i\sqrt{\hat{\textbf{P}}^2 + m^2}(t-t')} &\ket{x'}  = \int_{0}^{\infty} \frac{p^2dp}{(2\pi)^2}  \int_{-1}^{1} d \eta e^{-i\sqrt{p^2 + m^2}(t-t')+ ip|\textbf{x}-\textbf{x}'|\eta} \\
    = \int_{0}^{\infty} \frac{p^2dp}{(2\pi)^2}& e^{-i\sqrt{p^2 + m^2}(t-t')} \frac{1}{ip|\textbf{x}- \textbf{x}'|}\left(e^{ ip|\textbf{x}-\textbf{x}'|}-e^{- ip|\textbf{x}-\textbf{x}'|} \right)
   \end{split}
   \end{equation*}
@@ -281,14 +281,43 @@ In this section we will see where regular quantum mechanics fails and what we ne
   \item Where we have assumed $x_0$ is a global maxima so that $f''(x_0) \leq 0$. This approximation works well as the exponential ensures that any small deviation from $x_0$ contributes very little to the integral. It of course depends also on $h(x)$ being "well behaved".
 
 
-  \item Back to the relevant integral \ref{Rel_propagator}, we can see that for us $f(p) = -i\sqrt{p^2 + m^2}(t-t')+ip|\textbf{x}-\textbf{x}'|$ and $h(p) = p$. Samson then uses this as an argument to get the form of the integral, but there is a small flaw in this argument, in that $f(p)$ is \textbf{imaginary} so the exponential doesn't behave quite like is outlined in the Laplace integral approximation. Instead we can think of this as such; we have the an exponential $e^{i g(p)}$ for some real function $g(p)$. This function rotates around the unit circle , so as we integrate over it. This is also influenced by the fact that we wish to look at the region out side the light cone, i.e. where $|\textbf{x}-\textbf{x}'| >> (t-t')$. Then we have that the exponent $g(p)$ is varying quite rapidly as $|\textbf{x}-\textbf{x}'|$ is large for any substantial time frame. This means the integrating, i.e the summing over rapidly oscillating exponential, leads to adding up all the points around the unit circle, which add up to 0. The only place where this does not happen is where $g(p)$ is stationary! We can find this stationary point $p_0$ of $g(p)= -\sqrt{p^2 + m^2}(t-t')+p|\textbf{x=}-\textbf{x}'|$ via $g'(p_0)=0$, so: 
+  \item Back to the relevant integral \ref{Rel_propagator}, we can see that for us $f(p) = -i\sqrt{p^2 + m^2}(t-t')+ip|\textbf{x}-\textbf{x}'|$ and $h(p) = p$. So we find the stationary point of $f(p)$ via $f'(p_0)=0$: 
   \begin{equation*}
   \begin{split}
-      g'(p_0) = \frac{-p_0(t-t')}{\sqrt{p_0^2+m^2}}+|\textbf{x}-\textbf{x}'| =0 \implies p_0^2 = \frac{m|\textbf{x}-\textbf{x}'|}{(t-t')}
+      g'(p_0) = \frac{-p_0(t-t')}{\sqrt{p_0^2+m^2}}+|\textbf{x}-\textbf{x}'| =0 \implies p_0^2 = \frac{m^2|\textbf{x}-\textbf{x}'|^2}{(t-t')^2-|\textbf{x}-\textbf{x}'|^2}
       \end{split}
     \end{equation*}  
-    \item So 
+    Then we can evaluate $f(p_0)$:
+    \begin{equation*}
+    \begin{split}
+      f(p_0) & = -i\sqrt{\frac{m^2|\textbf{x}-\textbf{x}'|^2}{(t-t')^2-|\textbf{x}-\textbf{x}'|^2}+m^2}(t-t')+i\sqrt{\frac{m^2|\textbf{x}-\textbf{x}'|^2}{(t-t')^2-|\textbf{x}-\textbf{x}'|^2}} \\
+      & = -\frac{m(|\textbf{x}-\textbf{x}'|^2-(t-t')^2)}{\sqrt{|\textbf{x}-\textbf{x}'|^2-(t-t')^2}} = -m\sqrt{|\textbf{x}-\textbf{x}'|^2-(t-t')^2}
+    \end{split}
+    \end{equation*}
+    Where we have used the fact that we are considering probabilities outside the light-cone, i.e. where $|\textbf{x}-\textbf{x}'| > (t-t')$, so that the square root $ \sqrt{(t-t')^2-|\textbf{x}-\textbf{x}'|^2}=i\sqrt{|\textbf{x}-\textbf{x}'|^2-(t-t')^2}$ . 
+
+    \item With this we can now use Laplace's steepest decent integral approximation to write:
+    \begin{flalign*}
+    \bra{x} e^{-i\sqrt{\hat{\textbf{P}}^2 + m^2}(t-t')} \ket{x'} \propto h(p_0)e^{f(p_0)} \propto e^{-\sqrt{|\textbf{x}-\textbf{x}'|^2-(t-t')^2}}
+    \end{flalign*}
+    This again does not solve our problem, we have that there is a non-zero probability of propagating to outside the light-cone. Some more radical approach is needed to solve this problem. 
 \end{itemize}
+
+\subsection{Field theory}
+\begin{itemize}
+  \item The  Idea will be to go from dealing with particle, to waves. For this we need to generalize our idea of action being the integral of a Lagrangian over time to being the integral of a Lagrange density over time and space as a field is spread out, not localized. This means:
+  \begin{equation*}
+    S = \int L(q_i,\dot{q}_i,t)dt \rightarrow \int d^4x\mathcal{L}(\varphi(\textbf{x},t),\partial_{\mu} \varphi(\textbf{x},t))
+  \end{equation*}
+  We then have to vary this action to set $\delta S = 0$:
+  \begin{equation*}
+    \delta S = \int d^4x \left(\frac{\delta \mathcal{L}}{\delta \varphi}\delta \varphi  - \frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi}\delta\partial_{\mu}\varphi\right) = \int d^4x \left(\frac{\delta \mathcal{L}}{\delta \varphi}  - \partial_{\mu}\left(\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi}\right)\right)\delta \varphi 
+  \end{equation*}
+  \begin{flalign*}
+    \implies \frac{\delta \mathcal{L}}{\delta \varphi}  - \partial_{\mu}\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi} = 0 
+  \end{flalign*}
+\end{itemize}
+
 
 
 \end{document}

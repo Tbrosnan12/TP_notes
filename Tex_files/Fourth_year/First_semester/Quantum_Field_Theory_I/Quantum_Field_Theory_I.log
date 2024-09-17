@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  17 SEP 2024 12:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  17 SEP 2024 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1200,7 +1200,7 @@ y_I.toc)
 \openout7 = `Quantum_Field_Theory_I.toc'.
 
  [3]
-<trailer.png, id=83, 694.595pt x 339.2675pt>
+<trailer.png, id=88, 694.595pt x 339.2675pt>
 File: trailer.png Graphic file (type png)
 <use trailer.png>
 Package pdftex.def Info: trailer.png  used on input line 137.
@@ -1264,7 +1264,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9
+[9]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10
 
 ] (./Quantum_Field_Theory_I.aux)
 
@@ -1272,7 +1281,7 @@ LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
 
-(rerunfilecheck)             Checksum: F732CBC6D7832E295EA9959AAE82858A;649.
+(rerunfilecheck)             Checksum: 1D1BE70E618E945C6786B964981E3ACC;769.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                Quantum_Field_Theory_I
@@ -1283,13 +1292,13 @@ Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35798 strings out of 480247
- 714238 string characters out of 5896151
- 1436106 words of memory out of 5000000
- 53173 multiletter control sequences out of 15000+600000
+ 35803 strings out of 480247
+ 714305 string characters out of 5896151
+ 1439108 words of memory out of 5000000
+ 53176 multiletter control sequences out of 15000+600000
  483147 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,19n,104p,1281b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,21n,104p,1211b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.60
 0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
@@ -1309,10 +1318,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Quantum_Field_Theory_I.pdf (9 pages, 244449 bytes).
+Output written on Quantum_Field_Theory_I.pdf (10 pages, 246704 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 145 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 
