@@ -303,7 +303,7 @@ In this section we will see where regular quantum mechanics fails and what we ne
     This again does not solve our problem, we have that there is a non-zero probability of propagating to outside the light-cone. Some more radical approach is needed to solve this problem. 
 \end{itemize}
 
-\subsection{Field theory}
+\subsection{Field theory EoM}
 \begin{itemize}
   \item The  Idea will be to go from dealing with particle, to waves. For this we need to generalize our idea of action being the integral of a Lagrangian over time to being the integral of a Lagrange density over time and space as a field is spread out, not localized. This means:
   \begin{equation*}
@@ -316,8 +316,24 @@ In this section we will see where regular quantum mechanics fails and what we ne
   \begin{flalign*}
     \implies \frac{\delta \mathcal{L}}{\delta \varphi}  - \partial_{\mu}\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi} = 0 
   \end{flalign*}
+  Where we have integrated by parts the second term 
 \end{itemize}
 
+\subsection{Non-degenerate Lagrangian}
+\begin{itemize}
+  \item It is often the case, that when we have constructed our Lagrangian, that we would like to perform a Legendre transform from the variables $q$ and $\dot{q}$, to $q$ and $p$. This is gives us our Hamiltonian and takes the form $H =\sum_i p_i \dot{q}_i  - L(q,\dot{q})$. In doing this we are required to solve for $\dot{q}$ in terms of $q$ and $p$. But this is not always possible, for example given the Lagrangian $L \propto \dot{q} \implies p = \frac{\partial L}{\partial q} = 1$, so we are unable to solve for $\dot{q}(p,q)$. It turn out the condition for us to always be able to solve for $\dot{q}$ is as follows:
 
+  If we denote the matrix $M_{ij} = \frac{\partial^2 L}{\partial\dot{q}^i\partial\dot{q}^j}$, then the condition becomes, we can solve for $\dot{q}_{i} \iff \text{det}(M) \neq 0$. The Lagrangian can then be written as:
+
+  \begin{equation*}
+  L = \sum_{i,j}M_{ij}\partial\dot{q}^i\partial\dot{q}^j, ~~~ \text{and}~~~ \dot{q}^i  = \sum_{j}M^{-1}_{ij}p_j
+  \end{equation*}
+  This is called a Non-degenerate Lagrangian. 
+\end{itemize}
+
+\subsection{Hamiltonian field theory} 
+\begin{itemize}
+  \item We wish to find a Hamiltonian for our field theory. The best way to go about extending our definition of $H =\sum_i p_i \dot{q}_i  - L(q,\dot{q})$, is to think of space as a discretized space, idexed by $i$. We can then calculate $p(\textbf{x}) = \frac{\partial L}{\partial \dot{\phi}} = $
+\end{itemize}
 
 \end{document}
