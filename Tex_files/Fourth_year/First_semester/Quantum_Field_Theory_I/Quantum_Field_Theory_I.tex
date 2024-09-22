@@ -313,9 +313,10 @@ In this section we will see where regular quantum mechanics fails and what we ne
   \begin{equation*}
     \delta S = \int d^4x \left(\frac{\delta \mathcal{L}}{\delta \varphi}\delta \varphi  - \frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi}\delta\partial_{\mu}\varphi\right) = \int d^4x \left(\frac{\delta \mathcal{L}}{\delta \varphi}  - \partial_{\mu}\left(\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi}\right)\right)\delta \varphi 
   \end{equation*}
-  \begin{flalign*}
+  \begin{flalign}
+  \label{EoM}
     \implies \frac{\delta \mathcal{L}}{\delta \varphi}  - \partial_{\mu}\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi} = 0 
-  \end{flalign*}
+  \end{flalign}
   Where we have integrated by parts the second term 
 \end{itemize}
 
@@ -342,6 +343,42 @@ In this section we will see where regular quantum mechanics fails and what we ne
   \begin{flalign*}
   \pi(\textbf{x}) = \frac{\partial \mathcal{L}}{\partial \dot{\phi}(\textbf{x})}
   \end{flalign*}
+  This is called the \emph{momentum density} conjugate to $\phi(\textbf{x})$. We can now write the Hamiltonian as:
+  \begin{equation*}
+    H = \sum_{\textbf{x}}p(\textbf{x})\dot{\phi}(\textbf{x}) - L
+  \end{equation*}
+  Which in the continuum limit becomes:
+  \begin{flalign*}
+     H = \int d^3x[\pi(\textbf{x})\dot{\phi}(\textbf{x}) - \mathcal{L}] \equiv \int d^3x\mathcal{H} 
+   \end{flalign*} 
 \end{itemize}
+
+
+\subsection{Noether's Theorem}
+\begin{itemize}
+  \item We are used to Noether's Theorems relation between symmetries and conservation in the context of particles. We will now discuss this in the context of fields. If we have an infinitesimal transformation of fields taking the form:
+  \begin{equation*}
+     \phi(x) \rightarrow \phi'(x) = \phi(x) + \alpha\Delta\phi(x)
+   \end{equation*} 
+Here $\alpha$ is small. This transformation is a symmetry if it results in the same EoM, i.e. leaves the action unchanged. This means the Lagrangian must be the same up to the addition of a total derivative, which in this context is the 4-gradient:
+\[
+      \mathcal{L}(x) \rightarrow \mathcal{L}(x) + \alpha \partial_{\mu}\mathcal{J}^{\mu}(x)
+\]
+    Where $\mathcal{J}^{\mu}$ is some 4-vector. We can then find the expected form of $\Delta \mathcal{L}(\phi,\partial_{\mu}\phi )$:
+    \begin{align*}
+     \alpha \Delta \mathcal{L} & = \frac{\partial \mathcal{L}}{\partial \phi}(\alpha \Delta \phi) + \left(\frac{\partial \mathcal{L}}{\partial (\partial_{\mu}\phi)}\right)\partial_{\mu}(\alpha\Delta\phi) \\
+    &  = \alpha \partial_{\mu}\left(\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)}\Delta \phi\right)+\alpha\left[\frac{\partial\mathcal{L}}{\partial \phi} - \partial_{\mu}\left(\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)}\right)\right]\Delta \phi 
+    \end{align*}
+    We can then recognize that the second term vanished via our EoM \ref{EoM}, so we can set the remaining term to $\alpha \partial_{\mu}\mathcal{J}^{\mu}(x)$, which is equivalent to:
+\begin{flalign*}
+  \partial_{\mu}j^{\mu}(x) = 0, ~~~~\text{for} ~~j^{\mu}(x) = \frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)}\Delta \phi - \mathcal{J}^{\mu}
+\end{flalign*}
+If the symmetry involves more then one field the first term above should be a sum of those terms, for the different fields. This conservation law also implies that there is a charge constant in time namely:
+\begin{flalign*}
+Q \equiv \int j^{0} d^3x
+\end{flalign*}
+
+\end{itemize}
+
 
 \end{document}

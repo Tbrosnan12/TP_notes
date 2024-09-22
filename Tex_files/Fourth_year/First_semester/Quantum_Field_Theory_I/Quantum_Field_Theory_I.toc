@@ -5,3 +5,4 @@
 \contentsline {subsection}{\numberline {2.2}Field theory EoM}{8}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Non-degenerate Lagrangian}{9}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Hamiltonian field theory}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Noether's Theorem}{10}{subsection.2.5}%
