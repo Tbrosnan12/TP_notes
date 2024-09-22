@@ -333,7 +333,15 @@ In this section we will see where regular quantum mechanics fails and what we ne
 
 \subsection{Hamiltonian field theory} 
 \begin{itemize}
-  \item We wish to find a Hamiltonian for our field theory. The best way to go about extending our definition of $H =\sum_i p_i \dot{q}_i  - L(q,\dot{q})$, is to think of space as a discretized space, idexed by $i$. We can then calculate $p(\textbf{x}) = \frac{\partial L}{\partial \dot{\phi}} = $
+  \item We wish to find a Hamiltonian for our field theory. The best way to go about extending our definition of $H =\sum_i p_i \dot{q}_i  - L(q,\dot{q})$, is to think of space as a discretized space, as we had the co-ordinates $q$ indexed by $i$. We can then calculate:
+
+  \begin{equation*}
+  p(\textbf{x}) = \frac{\partial L}{\partial \dot{\phi}} = \frac{\partial }{\partial \dot{\phi}(\textbf{x})}\sum_{\textbf{y}}\mathcal{L}(\phi(\textbf{y}),\dot{\phi}(\textbf{y}))d^3y = \pi(\textbf{x})d^3x. 
+  \end{equation*}
+  Where:
+  \begin{flalign*}
+  \pi(\textbf{x}) = \frac{\partial \mathcal{L}}{\partial \dot{\phi}(\textbf{x})}
+  \end{flalign*}
 \end{itemize}
 
 \end{document}
