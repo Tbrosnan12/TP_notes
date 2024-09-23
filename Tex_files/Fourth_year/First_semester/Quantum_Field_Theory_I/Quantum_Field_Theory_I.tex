@@ -340,17 +340,19 @@ In this section we will see where regular quantum mechanics fails and what we ne
   p(\textbf{x}) = \frac{\partial L}{\partial \dot{\phi}} = \frac{\partial }{\partial \dot{\phi}(\textbf{x})}\sum_{\textbf{y}}\mathcal{L}(\phi(\textbf{y}),\dot{\phi}(\textbf{y}))d^3y = \pi(\textbf{x})d^3x. 
   \end{equation*}
   Where:
-  \begin{flalign*}
+  \begin{flalign}
+  \label{pi}
   \pi(\textbf{x}) = \frac{\partial \mathcal{L}}{\partial \dot{\phi}(\textbf{x})}
-  \end{flalign*}
+  \end{flalign}
   This is called the \emph{momentum density} conjugate to $\phi(\textbf{x})$. We can now write the Hamiltonian as:
   \begin{equation*}
     H = \sum_{\textbf{x}}p(\textbf{x})\dot{\phi}(\textbf{x}) - L
   \end{equation*}
   Which in the continuum limit becomes:
-  \begin{flalign*}
+  \begin{flalign}
+\label{Hamiltonian}
      H = \int d^3x[\pi(\textbf{x})\dot{\phi}(\textbf{x}) - \mathcal{L}] \equiv \int d^3x\mathcal{H} 
-   \end{flalign*} 
+   \end{flalign} 
 \end{itemize}
 
 
@@ -370,15 +372,77 @@ Here $\alpha$ is small. This transformation is a symmetry if it results in the s
     &  = \alpha \partial_{\mu}\left(\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)}\Delta \phi\right)+\alpha\left[\frac{\partial\mathcal{L}}{\partial \phi} - \partial_{\mu}\left(\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)}\right)\right]\Delta \phi 
     \end{align*}
     We can then recognize that the second term vanished via our EoM \ref{EoM}, so we can set the remaining term to $\alpha \partial_{\mu}\mathcal{J}^{\mu}(x)$, which is equivalent to:
-\begin{flalign*}
+\begin{flalign}
+\label{Noether}
   \partial_{\mu}j^{\mu}(x) = 0, ~~~~\text{for} ~~j^{\mu}(x) = \frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)}\Delta \phi - \mathcal{J}^{\mu}
-\end{flalign*}
-If the symmetry involves more then one field the first term above should be a sum of those terms, for the different fields. This conservation law also implies that there is a charge constant in time namely:
+\end{flalign}
+\item If the symmetry involves more then one field the first term above should be a sum of those terms, for the different fields. This conservation law also implies that there is a charge constant in time namely:
 \begin{flalign*}
 Q \equiv \int j^{0} d^3x
 \end{flalign*}
+\end{itemize}
+\subsection{Stress-Energy Tensor}
+\begin{itemize}
+\item We can also consider transformations of space itself, for example, translations or rotations. This takes the for $x^{\mu} \rightarrow x^{\mu} - a^{\mu}$, which has the following affect on the fields (when infinitesimal): 
 
+\[ 
+  \phi(x) \rightarrow \phi(x+a) = \phi(x) + a^{\mu}\partial_{\mu}\phi(x)
+ \]
+The Lagrangian must also transform in the same way as it is also a scalar:
+\[ 
+  \mathcal{L}(x) \rightarrow \mathcal{L}(x+a) = \mathcal{L}(x) + a^{\mu}\partial_{\mu}(\delta^{\mu}_{\nu}\mathcal{L}(x))
+ \]
+ We can then recognize the $\delta^{\mu}_{\nu}\mathcal{L}(x)$ as $ \sim \mathcal{J}^{\mu}$ from \ref{Noether}, however since the change in the scalar field became a vector $\Delta \phi \rightarrow \partial_{\mu}\phi(x)$, then we must add a second index to our $\mathcal{J}^{\mu} \rightarrow \mathcal{J}^{\mu}_{~\nu}$. This is for the reason for the $\delta_{\nu}^{\mu}$ in the above expression and means our conserved vector $j^{\mu}$ becomes a conserved tensor of the form:
+
+ \begin{flalign*}
+      \partial_{\mu}T^{\mu}_{~\nu}(x) = 0, ~~~~\text{for} ~~T^{\mu}_{~\nu}(x) = \frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)}\partial_{\nu}\phi - \delta^{\mu}_{\nu}\mathcal{L}
+  \end{flalign*} 
+  This is the \emph{Stress-Energy Tensor} also called the \emph{Energy-Momentum Tensor}. We can then notice that the conserved charge associated with the time translations is nothing more then out Hamiltonian:
+  \[
+\int T^{00}d^3x = \int\left(\frac{\partial \mathcal{L}}{\partial\dot{\phi}}\dot{\phi} - \mathcal{L}\right)d^3x = \int \mathcal{H}d^3x = H  
+  \] 
+  Similarly for space translation the conserved charges are the physical momenta, not to be confused with the canonical momentum.
+  \[  
+  \int T^{0i}d^3x = \int \mathcal{P}_id^3x = P_i 
+  \] 
+\end{itemize}
+\newpage
+\section{The Klein-Gordan Field}
+\begin{itemize}
+  \item We ease ourselves into the concepts of quantum fields with the discussion of the Klein-Gordan field. This is one of the simplest types of fields and its use becomes obvious when we see the EoM, which is just the Schr\"odinger equation but made relativistic by replacing $\hat{\textbf{p}}^2/2m \rightarrow \sqrt{\hat{\textbf{p}}^2 + m^2}$. We will see more of this later.
+
+     \item The Lagrange density for the Klein-Gordan field takes the form:
+     \begin{equation}
+       \label{KG field}
+       \mathcal{L} = \frac{1}{2}\partial_{\mu} \phi \partial^{\mu}\phi -\frac{m^2}{2}\phi^2
+     \end{equation}   
+From this we can calculate the momentum density via \ref{pi} to get $\pi = \dot{\phi}$. And thus via \ref{Hamiltonian} the Hamiltonian density is:
+\[
+  \mathcal{H} = \frac{1}{2}\left(\pi^2 -(\nabla\phi)^2+m^2\phi^2\right) 
+\]
+\item The equations of motion can also be calculated easily via \ref{EoM} resulting in the \emph{Klein-Gordan equation}:
+\begin{flalign}
+\label{KG eq}
+  (\partial_{\mu}\partial^{\mu}+m^2)\phi  = 0
+\end{flalign} 
+This $\partial_{\mu}\partial^{\mu}$ is often denoted $\Box$. As an aside, if we "make" the Schr\"odinger equation relativistic, i.e. $\textbf{p}^2 + m^2 = E^2$ and use the definition of the operators $ i\partial_t\psi= E\psi $ and $\hat{\textbf{p}} = -i\nabla$, so:  $-\nabla^2 + m^2 = -\partial^2_t$, recovering us the above Klein-Gordan equation.  
 \end{itemize}
 
+\subsection{Second Quantization}
+\begin{itemize}
+  \item We will now see if we can ``quantize'' this field. What we can do to help figure out how to do this is to take inspiration from the quantization of the single particle Harmonic oscillator in QM. This works nicely as we can see the Lagrangian density for the Klein-Gordan field \ref{KG field} resembles that of the harmonic oscillator. By quantize here we mean to reinterpret the dynamical variables as operators that obey canonical commutation relations, like $[p_i,q_j] = i\delta_{i,j},~[q_i,q_j] = 0 = [p_i,p_j]$. Instead however $\phi$ and $\pi$ will become our operators and we will require that $[\pi(\textbf{x}),\phi(\textbf{y})] = i \delta(\textbf{x}-\textbf{y}),~ [\phi(\textbf{x}),\phi(\textbf{y})] = 0 = [\pi(\textbf{x}),\pi(\textbf{y})]$. This procedure is often called \emph{Second Quantization} to distinguish it from the old one particle version. 
+  
+  \item Our goal is to now find the spectrum of the Hamiltonian. We start by taking our field $\phi(\textbf{x},t)$ and writing it in terms of its Fourier transform to momentum (p)-space
+\[
+  \phi(\textbf{x},t) = \int \frac{d^3p}{(2\pi)^3}\phi(\textbf{p},t)e^{i\textbf{p}\cdot\textbf{x}}
+\]
+Here we also require that $\phi(\textbf{x},t)$ is real so $\phi^{\ast}(\textbf{p},t) = \phi(-\textbf{p},t)$Then using the Klein-Gordan equation \ref{KG eq} we get the condition:
+\[
+  \left[\partial_t^2 + p^2+m^2\right]\phi(\textbf{p},t) = 0 
+\]
+Where we have acted the $-\partial^2_{\textbf{x}}$ from $\Box$ on the exponential to pull out the $p^2$ This equation of motion is the same as that of a harmonic oscillator with frequency $\omega_{\textbf{p}} = \sqrt{p^2+m^2}$. 
+
+\item We now recall from QM that in order to solve the harmonic oscillator we introduced the creation ($\hat{a}^{\dagger}$) and annihilation ($\hat{a}$) operators, so that we could write $\hat{q} = \frac{1}{\sqrt{2 \omega}}(\hat{a}+\hat{a}^{\dagger})$ and $\hat{p} = -i\sqrt{\frac{\omega}{2}}(\hat{a}-\hat{a}^{\dagger})$. This then meant the Hamiltonian took the form $H = \frac{1}{2}(\hat{p}^2+\omega^2\hat{q}^2) = \omega(\hat{a}^{\dagger}\hat{a}+\frac{1}{2})$ and also that the commutators with $H$ were: $[H,\hat{a}^{\dagger}] = \omega \hat{a}^{\dagger}$ and $[H,\hat{a}] = -\omega \hat{a}$.  
+\end{itemize}
 
 \end{document}
