@@ -436,13 +436,27 @@ This $\partial_{\mu}\partial^{\mu}$ is often denoted $\Box$. As an aside, if we 
 \[
   \phi(\textbf{x},t) = \int \frac{d^3p}{(2\pi)^3}\phi(\textbf{p},t)e^{i\textbf{p}\cdot\textbf{x}}
 \]
-Here we also require that $\phi(\textbf{x},t)$ is real so $\phi^{\ast}(\textbf{p},t) = \phi(-\textbf{p},t)$Then using the Klein-Gordan equation \ref{KG eq} we get the condition:
+Here we also require that $\phi(\textbf{x},t)$ is real so $\phi^{\ast}(\textbf{p},t) = \phi(-\textbf{p},t)$ Then using the Klein-Gordan equation \ref{KG eq} we get the condition:
 \[
   \left[\partial_t^2 + p^2+m^2\right]\phi(\textbf{p},t) = 0 
 \]
-Where we have acted the $-\partial^2_{\textbf{x}}$ from $\Box$ on the exponential to pull out the $p^2$ This equation of motion is the same as that of a harmonic oscillator with frequency $\omega_{\textbf{p}} = \sqrt{p^2+m^2}$. 
+Where we have acted the $-\partial^2_{i}$ from $\Box$ on the exponential to pull out the $p^2$ This equation of motion is the same as that of a harmonic oscillator with frequency $\omega_{\textbf{p}} = \sqrt{p^2+m^2}$. 
 
-\item We now recall from QM that in order to solve the harmonic oscillator we introduced the creation ($\hat{a}^{\dagger}$) and annihilation ($\hat{a}$) operators, so that we could write $\hat{q} = \frac{1}{\sqrt{2 \omega}}(\hat{a}+\hat{a}^{\dagger})$ and $\hat{p} = -i\sqrt{\frac{\omega}{2}}(\hat{a}-\hat{a}^{\dagger})$. This then meant the Hamiltonian took the form $H = \frac{1}{2}(\hat{p}^2+\omega^2\hat{q}^2) = \omega(\hat{a}^{\dagger}\hat{a}+\frac{1}{2})$ and also that the commutators with $H$ were: $[H,\hat{a}^{\dagger}] = \omega \hat{a}^{\dagger}$ and $[H,\hat{a}] = -\omega \hat{a}$.  
+\item We now recall from QM that in order to solve the harmonic oscillator we introduced the creation ($\hat{a}^{\dagger}$) and annihilation ($\hat{a}$) operators, so that we could write $\hat{q} = \frac{1}{\sqrt{2 \omega}}(\hat{a}+\hat{a}^{\dagger})$ and $\hat{p} = -i\sqrt{\frac{\omega}{2}}(\hat{a}-\hat{a}^{\dagger})$. This then meant the Hamiltonian took the form $H = \frac{1}{2}(\hat{p}^2+\omega^2\hat{q}^2) = \omega(\hat{a}^{\dagger}\hat{a}+\frac{1}{2})$ and also that the commutators with $H$ were: $[H,\hat{a}^{\dagger}] = \omega \hat{a}^{\dagger}$ and $[H,\hat{a}] = -\omega \hat{a}$. 
+ 
+\item This can be done for our field $\phi$, except we have to consider that $\hat{q} = \frac{1}{\sqrt{2 \omega}}(\hat{a}+\hat{a}^{\dagger})$ is a function of momentum as for us we have $\omega_{\textbf{p}} = \sqrt{p^2+m^2}$. We can then recall that since we expect $\phi$ to be real we require that $\phi^{\dagger}(\textbf{p},t) = \phi(-\textbf{p},t)$, this means we should have $\phi(\textbf{p},t) \propto a_{\textbf{p}}+a^{\dagger}_{-\textbf{p}}$ as then $\phi(\textbf{p},t)^{\dagger} \propto a_{\textbf{p}}^{\dagger}+ a_{-\textbf{p}} \propto \phi(-\textbf{p},t)$. This means our corresponding expression for $\phi$ should take the form:
+\begin{equation}
+  \phi(\textbf{x},t) = \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2\omega_{\textbf{p}}}}\left(a_{\textbf{p}}+a^{\dagger}_{-\textbf{p}}\right)e^{i\textbf{p}\cdot\textbf{x}} 
+\end{equation} 
+We can also think of this expression as each Fourier mode of the field being treated as an independent oscillator with its own $a$ and $a^{\dagger}$ (which will also be a function of the momentum). We can then isolate the second term in this integral and change $\textbf{p}$ to $-\textbf{p}$, since we are integrating over all momentum space, this just results in the signs of the $p$'s in the term changing so we can write:
+
+\begin{flalign}
+  \phi(\textbf{x},t) = \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2\omega_{\textbf{p}}}}\left(a_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+a^{\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right) 
+\end{flalign}
 \end{itemize}
+In a similar manner the momentum density can be written as:
+\begin{flalign}
+  \pi(\textbf{x},t) = -i\int \frac{d^3p}{(2\pi)^3}\sqrt{\frac{\omega_{\textbf{p}}}{2}}\left(a_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}-a^{\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right) 
+\end{flalign}
 
 \end{document}
