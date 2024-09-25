@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  25 SEP 2024 11:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  25 SEP 2024 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1343,7 +1343,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[14
+[14]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[15
 
 ] (./Quantum_Field_Theory_I.aux)
  ***********
@@ -1367,13 +1377,13 @@ Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36140 strings out of 473584
- 724541 string characters out of 5728334
- 1955905 words of memory out of 5000000
- 58444 multiletter control sequences out of 15000+600000
+ 36144 strings out of 473584
+ 724578 string characters out of 5728334
+ 1957905 words of memory out of 5000000
+ 58446 multiletter control sequences out of 15000+600000
  571957 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,21n,121p,1211b,842s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,21n,121p,1211b,843s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></
@@ -1395,10 +1405,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Quantum_Field_Theory_I.pdf (14 pages, 301343 bytes).
+Output written on Quantum_Field_Theory_I.pdf (15 pages, 304458 bytes).
 PDF statistics:
- 324 PDF objects out of 1000 (max. 8388607)
- 238 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 331 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

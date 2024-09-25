@@ -461,6 +461,7 @@ We can also think of this expression as each Fourier mode of the field being tre
   \phi(\textbf{x}) = \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2\omega_{\textbf{p}}}}\left(a_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+a^{\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right) 
 \end{flalign}
 In a similar manner the momentum density can be written as:
+
 \begin{flalign}
 \label{pi_2}
   \pi(\textbf{x}) = -i\int \frac{d^3p}{(2\pi)^3}\sqrt{\frac{\omega_{\textbf{p}}}{2}}\left(a_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}-a^{\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right) 
@@ -476,13 +477,27 @@ In a similar manner the momentum density can be written as:
   \end{split}
   \end{equation}  
   Where we have used the fact that $\omega_{\textbf{p}}=\omega_{\textbf{-p}}$ by definition. We can then also calculate the Hamiltonian via \ref{KG_Ham}:
-
-  \begin{equation}
+  \begin{equation*}
     \begin{split}
       H  = \frac{1}{2}\int &d^3x\int\frac{d^3pd^3p'}{(2\pi)^6}\left[\frac{-\sqrt{\omega_{\textbf{p}}\omega_{\textbf{p}'}}}{2}\left(a_{\textbf{p}}-a^{\dagger}_{\textbf{-p}}\right)\left(a_{\textbf{p}'}-a^{\dagger}_{\textbf{-p}'}\right)\right. \\
-       & \left. + \frac{-\textbf{p}\cdot \textbf{p}'+m^2}{\sqrt{\omega_{\textbf{p}}\omega_{\textbf{p}'}}}\left(a_{\textbf{p}}+a^{\dagger}_{\textbf{-p}}\right)\left(a_{\textbf{p}'}+a^{\dagger}_{\textbf{-p}'}\right)\right]e^{i(\textbf{x}\cdot(\textbf{p}+\textbf{p}')} \\
-       & = 
+       & \left. + \frac{-\textbf{p}\cdot \textbf{p}'+m^2}{2\sqrt{\omega_{\textbf{p}}\omega_{\textbf{p}'}}}\left(a_{\textbf{p}}+a^{\dagger}_{\textbf{-p}}\right)\left(a_{\textbf{p}'}+a^{\dagger}_{\textbf{-p}'}\right)\right]e^{i\textbf{x}\cdot(\textbf{p}+\textbf{p}')} \\
     \end{split}
-  \end{equation}
+  \end{equation*}
+  We can then notice that the $\textbf{x}$ part of this integral creates a delta function $\int d^3xe^{i\textbf{x}\cdot(\textbf{p}+\textbf{p}')} = (2\pi)^{3}\delta(\textbf{p}+\textbf{p}')$, so $\textbf{p}= - \textbf{p}'$. This allows us to write:
+  \begin{equation*}
+    \begin{split}
+    H  & = \frac{1}{4}\int\frac{d^3p}{(2\pi)^3}\omega_{\textbf{p}}\left[-\left(a_{\textbf{p}}-a^{\dagger}_{\textbf{-p}}\right)\left(a_{\textbf{-p}}-a^{\dagger}_{\textbf{p}}\right) + \left(a_{\textbf{p}}+a^{\dagger}_{\textbf{-p}}\right)\left(a_{\textbf{-p}}+a^{\dagger}_{\textbf{p}}\right) \right]  \\ 
+    & = \frac{1}{2}\int\frac{d^3p}{(2\pi)^3}\omega_{\textbf{p}}\left[a_{\textbf{p}}a^{\dagger}_{\textbf{p}}+a^{\dagger}_{\textbf{-p}}a_{-\textbf{p}}\right]
+ \end{split}
+  \end{equation*}
+  We can then for this second term do the same trick of changing $\textbf{p} \rightarrow -\textbf{p}$, which does not affect the integral's value as $\omega_{\textbf{p}} = \omega_{-\textbf{p}}$. Then also using the fact that $a^{\dagger}_{\textbf{p}}a_{\textbf{p}} = a_{\textbf{p}}a^{\dagger}_{\textbf{p}}-[a_{\textbf{p}},a^{\dagger}_{\textbf{p}}]$ we get the final result that:
+
+  \begin{flalign}
+  \label{Ham_SH}
+  H = \int \frac{d^3p}{(2\pi)^3}\omega_{\textbf{p}}\left[a_{\textbf{p}}a^{\dagger}_{\textbf{p}}-\frac{1}{2}[a_{\textbf{p}},a^{\dagger}_{\textbf{p}}]\right]
+  \end{flalign}
+  If we stop to think about the second term in this expression we realize something strange, $[a_{\textbf{p}},a^{\dagger}_{\textbf{p}}] = (2\pi)^3\delta(0)$, which is and infinite constant (constant as in it wont affect any state we act $H$ on). But since this is constant we can never measure it experimentally as we only ever measure the energy shift between two different energies. We can also think of this as the zero point energy for each point in space, except that we made this space continuous resulting in infinite many oscillator ground states, so what did we expect really? This means we can ignore the second term in \ref{Ham_SH}.
+
+   To make sure everything is consistent we also check the commutators, $[H,\hat{a}^{\dagger}] = \omega \hat{a}^{\dagger}$ , $[H,\hat{a}] = -\omega \hat{a}$:
 \end{itemize}
 \end{document}
