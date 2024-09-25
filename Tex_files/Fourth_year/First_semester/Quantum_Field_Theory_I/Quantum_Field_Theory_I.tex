@@ -417,9 +417,10 @@ The Lagrangian must also transform in the same way as it is also a scalar:
        \mathcal{L} = \frac{1}{2}\partial_{\mu} \phi \partial^{\mu}\phi -\frac{m^2}{2}\phi^2
      \end{equation}   
 From this we can calculate the momentum density via \ref{pi} to get $\pi = \dot{\phi}$. And thus via \ref{Hamiltonian} the Hamiltonian density is:
-\[
-  \mathcal{H} = \frac{1}{2}\left(\pi^2 -(\nabla\phi)^2+m^2\phi^2\right) 
-\]
+\begin{equation}
+\label{KG_Ham}
+  \mathcal{H} = \frac{1}{2}\left(\pi^2 +(\nabla\phi)^2+m^2\phi^2\right) 
+\end{equation}
 \item The equations of motion can also be calculated easily via \ref{EoM} resulting in the \emph{Klein-Gordan equation}:
 \begin{flalign}
 \label{KG eq}
@@ -474,6 +475,14 @@ In a similar manner the momentum density can be written as:
    & = i\int \frac{d^3p}{(2\pi)^3}e^{i\textbf{p}\cdot( \textbf{x} -\textbf{x}')} = i\delta(\textbf{x} -\textbf{x}')  
   \end{split}
   \end{equation}  
-  Where we have used the fact that $\omega_{\textbf{p}}=\omega_{\textbf{-p}}$ by definition. 
+  Where we have used the fact that $\omega_{\textbf{p}}=\omega_{\textbf{-p}}$ by definition. We can then also calculate the Hamiltonian via \ref{KG_Ham}:
+
+  \begin{equation}
+    \begin{split}
+      H  = \frac{1}{2}\int &d^3x\int\frac{d^3pd^3p'}{(2\pi)^6}\left[\frac{-\sqrt{\omega_{\textbf{p}}\omega_{\textbf{p}'}}}{2}\left(a_{\textbf{p}}-a^{\dagger}_{\textbf{-p}}\right)\left(a_{\textbf{p}'}-a^{\dagger}_{\textbf{-p}'}\right)\right. \\
+       & \left. + \frac{-\textbf{p}\cdot \textbf{p}'+m^2}{\sqrt{\omega_{\textbf{p}}\omega_{\textbf{p}'}}}\left(a_{\textbf{p}}+a^{\dagger}_{\textbf{-p}}\right)\left(a_{\textbf{p}'}+a^{\dagger}_{\textbf{-p}'}\right)\right]e^{i(\textbf{x}\cdot(\textbf{p}+\textbf{p}')} \\
+       & = 
+    \end{split}
+  \end{equation}
 \end{itemize}
 \end{document}
