@@ -317,7 +317,7 @@ In this section we will see where regular quantum mechanics fails and what we ne
   \label{EoM}
     \implies \frac{\delta \mathcal{L}}{\delta \varphi}  - \partial_{\mu}\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi} = 0 
   \end{flalign}
-  Where we have integrated by parts the second term 
+  Where we have integrated by parts the second term.
 \end{itemize}
 
 \subsection{Non-degenerate Lagrangian}
@@ -498,6 +498,28 @@ In a similar manner the momentum density can be written as:
   \end{flalign}
   If we stop to think about the second term in this expression we realize something strange, $[a_{\textbf{p}},a^{\dagger}_{\textbf{p}}] = (2\pi)^3\delta(0)$, which is and infinite constant (constant as in it wont affect any state we act $H$ on). But since this is constant we can never measure it experimentally as we only ever measure the energy shift between two different energies. We can also think of this as the zero point energy for each point in space, except that we made this space continuous resulting in infinite many oscillator ground states, so what did we expect really? This means we can ignore the second term in \ref{Ham_SH}.
 
-   To make sure everything is consistent we also check the commutators, $[H,\hat{a}^{\dagger}] = \omega \hat{a}^{\dagger}$ , $[H,\hat{a}] = -\omega \hat{a}$:
+   To make sure everything is consistent we also check the commutators, $[H,a_{\textbf{p}}^{\dagger}] = \omega a^{\dagger}_{\textbf{p}}$ , $[H,a_{\textbf{p}}] = -\omega a_{\textbf{p}}$:
+   \begin{equation*}
+      \begin{split}
+        [H,a_{\textbf{p}}] & = \int \frac{d^3p'}{(2\pi)^3}\omega_{\textbf{p}'}\left[a_{\textbf{p}'}a^{\dagger}_{\textbf{p}'}a_{\textbf{p}}-a_{\textbf{p}}a^{\dagger}_{\textbf{p}'}a_{\textbf{p}'}\right] \\
+        & = \int \frac{d^3p'}{(2\pi)^3}\omega_{\textbf{p}'}\left[a_{\textbf{p}'}a_{\textbf{p}}a^{\dagger}_{\textbf{p}'}-a_{\textbf{p}'}[a_{\textbf{p}},a^{\dagger}_{\textbf{p}'}]-a_{\textbf{p}}a_{\textbf{p}'}a^{\dagger}_{\textbf{p}'}\right] \\
+        & = -\omega_{\textbf{p}}a_{\textbf{p}} 
+      \end{split}
+   \end{equation*}
+   Here we have used the fact that $[a_{\textbf{p}},a_{\textbf{p}'}]= 0 = [a^{\dagger}_{\textbf{p}},a^{\dagger}_{\textbf{p}'}]$ to make the first and last term cancel. The commutator $[H,a^{\dagger}_{\textbf{p}}]=\omega_{\textbf{p}}a^{\dagger}_{\textbf{p}}$, can be calculated in the same manner. We then would like to write the states. 
+
+   \item We can then start to think about the creation and annihilation operators as their name suggests. The ground state is $\ket{0}$ st. $a_{\textbf{p}}\ket{0} = 0$ and has $E=0$, where as acting with $a^{\dagger}_{\textbf{p}}$ increases the energy. These operators clearly depend on momentum $\textbf{p}$ so we can think of them as creating (and annihilating) momentum eigenstates. 
+
+\item We would then like to be able to write all possible momentum states as powers of the creation operator $a^{\dagger}_{\textbf{p}}$. The question is then what is the choice of proportionality? We should of course have that the states are normalized, that is $\braket{\textbf{p}|\textbf{p}'} = \delta(\textbf{p}-\textbf{p}')$. This however, leads to a problem, namely that this quantity $\delta(\textbf{p}-\textbf{p}')$ is not Lorentz invariant. To see why, consider a boost along the $x_3$ direction. Using the property that $\delta(f(x)-f(x_0)) = \delta(x-x_0)/|f'(x_0)|$ we have that if we boost from momenta $\textbf{p},\textbf{p}' \rightarrow \tilde{\textbf{p}},\tilde{\textbf{p}}'$,so that $\tilde{p}_3 = \gamma(p_3+\beta E)$ and $\tilde{E} = \gamma(E + \beta p_3)$. Then we have that: 
+\begin{equation*}
+  \begin{split}
+   &  \delta(\textbf{p}-\textbf{p}') = \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}') \frac{d \tilde{p}_3}{d p_3}  = \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}') \frac{d \gamma(p_3+\beta E)}{dp_3} \\
+    &  =   \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}')\gamma \left(1 + \frac{d E}{dp_3}\right)  =  \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}')\frac{\gamma}{E} \left(E + \beta p_3\right) \\
+    & =  \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}')\frac{\tilde{E}}{E} 
+  \end{split}
+\end{equation*}
+So we see that if we choose the normalization $\ket{\textbf{p}} = \sqrt{2E_{\textbf{p}}}a^{\dagger}_{\textbf{p}}\ket{0}$ as then $\braket{\textbf{p}|\textbf{p}'}$ is Lorentz invariant. 
+
+
 \end{itemize}
 \end{document}
