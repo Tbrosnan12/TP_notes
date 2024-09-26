@@ -390,7 +390,7 @@ Q \equiv \int j^{0} d^3x
  \]
 The Lagrangian must also transform in the same way as it is also a scalar:
 \[ 
-  \mathcal{L}(x) \rightarrow \mathcal{L}(x+a) = \mathcal{L}(x) + a^{\mu}\partial_{\mu}(\delta^{\mu}_{\nu}\mathcal{L}(x))
+  \mathcal{L}(x) \rightarrow \mathcal{L}(x+a) = \mathcal{L}(x) + a^{\nu}\partial_{\mu}(\delta^{\mu}_{\nu}\mathcal{L}(x))
  \]
  We can then recognize the $\delta^{\mu}_{\nu}\mathcal{L}(x)$ as $ \sim \mathcal{J}^{\mu}$ from \ref{Noether}, however since the change in the scalar field became a vector $\Delta \phi \rightarrow \partial_{\mu}\phi(x)$, then we must add a second index to our $\mathcal{J}^{\mu} \rightarrow \mathcal{J}^{\mu}_{~\nu}$. This is for the reason for the $\delta_{\nu}^{\mu}$ in the above expression and means our conserved vector $j^{\mu}$ becomes a conserved tensor of the form:
 
@@ -466,7 +466,9 @@ In a similar manner the momentum density can be written as:
 \label{pi_2}
   \pi(\textbf{x}) = -i\int \frac{d^3p}{(2\pi)^3}\sqrt{\frac{\omega_{\textbf{p}}}{2}}\left(a_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}-a^{\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right) 
 \end{flalign}
-
+\end{itemize}
+\subsubsection{Commutators}
+\begin{itemize}
 \item We can then go about checking the commutator $[\phi(\textbf{x}),\pi(\textbf{x}')]= i \delta(\textbf{x}-\textbf{y})$ which should be equivalent to the the new creation and annihilation operators satisfying $[a,a^{\dagger}] = (2 \pi)^{3}\delta(\textbf{p}-\textbf{p}')$. Using the above definitions \ref{phi_1} and \ref{pi_1} for this calculation is easier, resulting in:
 \begin{equation}
 \begin{split}
@@ -508,9 +510,12 @@ In a similar manner the momentum density can be written as:
    \end{equation*}
    Here we have used the fact that $[a_{\textbf{p}},a_{\textbf{p}'}]= 0 = [a^{\dagger}_{\textbf{p}},a^{\dagger}_{\textbf{p}'}]$ to make the first and last term cancel. The commutator $[H,a^{\dagger}_{\textbf{p}}]=\omega_{\textbf{p}}a^{\dagger}_{\textbf{p}}$, can be calculated in the same manner. We then would like to write the states. 
 
-   \item We can then start to think about the creation and annihilation operators as their name suggests. The ground state is $\ket{0}$ st. $a_{\textbf{p}}\ket{0} = 0$ and has $E=0$, where as acting with $a^{\dagger}_{\textbf{p}}$ increases the energy. These operators clearly depend on momentum $\textbf{p}$ so we can think of them as creating (and annihilating) momentum eigenstates. 
+   \item We can now start to think about the creation and annihilation operators as their name suggests. The ground state is $\ket{0}$ st. $a_{\textbf{p}}\ket{0} = 0$ and has $E=0$, where as acting with $a^{\dagger}_{\textbf{p}}$ increases the energy. These operators clearly depend on momentum $\textbf{p}$ so we can think of them as creating (and annihilating) momentum eigenstates. 
+\end{itemize}
 
-\item We would then like to be able to write all possible momentum states as powers of the creation operator $a^{\dagger}_{\textbf{p}}$. The question is then what is the choice of proportionality? We should of course have that the states are normalized, that is $\braket{\textbf{p}|\textbf{p}'} = \delta(\textbf{p}-\textbf{p}')$. This however, leads to a problem, namely that this quantity $\delta(\textbf{p}-\textbf{p}')$ is not Lorentz invariant. To see why, consider a boost along the $x_3$ direction. Using the property that $\delta(f(x)-f(x_0)) = \delta(x-x_0)/|f'(x_0)|$ we have that if we boost from momenta $\textbf{p},\textbf{p}' \rightarrow \tilde{\textbf{p}},\tilde{\textbf{p}}'$,so that $\tilde{p}_3 = \gamma(p_3+\beta E)$ and $\tilde{E} = \gamma(E + \beta p_3)$. Then we have that: 
+\subsection{Particle creation}
+\begin{itemize}
+\item The next step is to see if we can write out all the possible momentum states as powers of the creation operator $a^{\dagger}_{\textbf{p}}$. The question is then what is the choice of proportionality? We should of course have that the states are normalized, that is $\braket{\textbf{p}|\textbf{p}'} = \delta(\textbf{p}-\textbf{p}')$. This however, leads to a problem, namely that this quantity $\delta(\textbf{p}-\textbf{p}')$ is not Lorentz invariant. To see why, consider a boost along the $x_3$ direction. Using the property that $\delta(f(x)-f(x_0)) = \delta(x-x_0)/|f'(x_0)|$ we have that if we boost from momenta $\textbf{p},\textbf{p}' \rightarrow \tilde{\textbf{p}},\tilde{\textbf{p}}'$,so that $\tilde{p}_3 = \gamma(p_3+\beta E)$ and $\tilde{E} = \gamma(E + \beta p_3)$. Then we have that: 
 \begin{equation*}
   \begin{split}
    &  \delta(\textbf{p}-\textbf{p}') = \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}') \frac{d \tilde{p}_3}{d p_3}  = \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}') \frac{d \gamma(p_3+\beta E)}{dp_3} \\
@@ -518,8 +523,19 @@ In a similar manner the momentum density can be written as:
     & =  \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}')\frac{\tilde{E}}{E} 
   \end{split}
 \end{equation*}
-Where we have used $E^2 = |\textbf{p}|^2+m^2$ to do the second last step. We can see from this that if we choose the normalization $\ket{\textbf{p}} = \sqrt{2E_{\textbf{p}}}a^{\dagger}_{\textbf{p}}\ket{0}$ then $\braket{\textbf{p}|\textbf{p}'}$ is Lorentz invariant, as needed. 
+Where we have used $E^2 = |\textbf{p}|^2+m^2$ to do the second last step. We can see from this that if we choose the normalization $\ket{\textbf{p}} = \sqrt{2E_{\textbf{p}}}(a^{\dagger}_{\textbf{p}}\ket{0}$ then $\braket{\textbf{p}|\textbf{p}'}$ is Lorentz invariant, as needed. 
 
+\item With this we can consider the action of $\phi$ on the ground state $\ket{0}$. Via \ref{phi_2} this becomes: 
 
+\[
+  \phi\ket{0} = \int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{-i\textbf{p}\cdot \textbf{x}}\ket{\textbf{p}} 
+\]
+Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}$. This is similar to the Fourier expansion we have of $\ket{\textbf{x}}$ in regular QM, except for the factor of $1/E_{\textbf{p}}$, which is almost constant in the non-relativistic, so we can put forward the interpretation that the operator $\phi(\textbf{x})$ acting on the vacuum $\ket{0}$, creates a particle at position $\ket{\textbf{x}}$. 
 \end{itemize}
+\subsection{Time evolution}
+\begin{itemize}
+  \item  
+\end{itemize}
+
+
 \end{document}
