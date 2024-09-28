@@ -588,17 +588,70 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   \item If we consider a time like separation, that is $ x^{0}-y^{0} > |\textbf{x} - \textbf{y}|$. Then we can always boost to a frame where $x^{0}-y^{0}= t$ and $|\textbf{x} - \textbf{y}| = 0$. This is just boosting to the frame of the world-line. The above expression for  $D(x-y)$, in \ref{D(x-y)} becomes: 
 \vspace{-2mm}
   \begin{align*}
-  D(x-y) & = \frac{4\pi}{(2\pi)^3}\int_{0}^{\infty}dp \frac{p^2}{2\sqrt{p^2+m^2}}e^{-i\sqrt{p^2+m^2}t} \\
-    & =  \frac{1}{4\pi^2}\int_{m}^{\infty}dE \sqrt{E^2-m^2}e^{-iEt}
+  D(x-y) & = \frac{4\pi}{(2\pi)^3}\int_{0}^{\infty}dp \frac{p^2}{2\sqrt{p^2+m^2}}e^{-i\sqrt{p^2+m^2}t}
   \end{align*}
-  If we look at this integral in the limit as $t \rightarrow \infty$, then we can see that the exponential is only finite for small $E$, which is around $E \sim m $. So we can say that $D(x-y) \sim e^{-imt}$, the square root does not vanish fast enough to 0 to cancel this out.
+
+  If we look at this integral in the limit as $t \rightarrow \infty$, then we can see that this is a stationary phase problem, i.e. the exponential oscillates fast around around the unit circle averaging to $0$, and only becoming non-zero where the function $\sqrt{p^2+m^2}$ is stationary. This occurs when $\frac{d}{dp}\sqrt{p^2+m^2} = 0 \implies \frac{p}{\sqrt{p^2+m^2}} = 0 \implies p = 0 $. So we can Taylor expand the terms in this integral around $p=0$. Using the fact that $\sqrt{p^2+m^2} \simeq m+\frac{p^2}{2m}$ and $\frac{p^2}{\sqrt{p^2+m^2}} \simeq \frac{p^2}{m}(1-\frac{p^2}{2m}) \simeq \frac{p^2}{m}$. We can write this integral as: 
+  \begin{align*}
+   D(x-y) &\simeq  \frac{4\pi}{2(2\pi)^3}\int_{0}^{\infty}dp \frac{p^2}{m}e^{-i(m+\frac{p^2}{2m})t} \\
+    & =  \frac{4\pi}{2(2\pi)^3}\left(\int_{0}^{\infty}dp \frac{p^2}{m}e^{-i\frac{p^2}{2m}t}\right)e^{-imt} \sim e^{-imt}
+   \end{align*} 
+   The integral in brackets is just a \href{https://en.wikipedia.org/wiki/Fresnel_integral#Generalization}{Generalized Fresnel integral}, the main behavior as $t \rightarrow \infty$ is given by $e^{-imt}$.  
 \end{itemize}
 \subsubsection{Space-like separation}
 \begin{itemize}
-  \item If we consider a space like separation, that is $ x^{0}-y^{0} ><|\textbf{x} - \textbf{y}|$. Then we can always boost to a frame where $x^{0}-y^{0}= 0$and $|\textbf{x} - \textbf{y}| = r$. Then we can write \ref{D(x-y)} as: 
+  \item If we consider a space like separation, that is $ x^{0}-y^{0} <|\textbf{x} - \textbf{y}|$. Then we can always boost to a frame where $x^{0}-y^{0}= 0$ and $\textbf{x} - \textbf{y} = \textbf{r}$. Then we can write \ref{D(x-y)} as: 
   \begin{align*}
-  D(x-y) & = \frac{4\pi}{(2\pi)^3}\int_{0}^{\infty}dp \frac{p^2}{2\sqrt{p^2+m^2}}e^{-i\sqrt{p^2+m^2}t} \\
+  D(x-y) & = \frac{1}{(2\pi)^3}\int d^3p \frac{1}{2\sqrt{p^2+m^2}}e^{-i \textbf{p}\cdot \textbf{r}} \\
+    & = \frac{2 \pi}{(2\pi)^3}\int_{0}^{\infty} dp \frac{p^2}{2\sqrt{p^2+m^2}}\frac{e^{ipr}-e^{-ipr }}{ipr} \\
+    & = -\frac{i}{2(2\pi)^2r}\int_{-\infty}^{\infty} dp \frac{p}{\sqrt{p^2+m^2}}e^{ipr}
   \end{align*}
+  Where in the first step we choose our angular integration variable $\theta$ to be the angle between $\textbf{p}$ and $\textbf{r}$. The last step is then a result of taking the second term and changing $p \rightarrow -p$. This integral is non-trivial and the manner in which Peskin explains it is not quite correct. For a discussion of this and a solution of the behavior as $r \rightarrow \infty$ see the answer to \href{https://physics.stackexchange.com/questions/758661/what-is-the-missing-part-of-the-argument-needed-to-justify-the-claim-of-2-52-i}{this stack-exchange post}. 
+
+
+  Anyway the behavior as $r \rightarrow \infty$ is $D(x-y) \sim e^{-mr}$, i.e. we still have the problem of non-zero propagation outside the light-cone. 
+\end{itemize}
+
+\subsection{Measurement}
+\begin{itemize}
+  \item Perhaps we have been thinking too classically about the situation. If we think about quantum mechanics, what matters is measurement. We should be asking if I perform a measurement, can it possibly affect another measurement that occurs outside my light-cone and visa versa. This means we should instead be calculating the \emph{commutator} of $\phi(x)$ and $\phi(y)$. i.e. does it matter the order in which we perform on the field at two points that are outside the light cones of each other. It is easy to see that by definition $\bra{0}[\phi(x),\phi(y)]\ket{0} = D(x-y)-D(y-x)$. So we can easily write this down as:
+
+  \begin{flalign}
+  \label{KG_prop}
+    \bra{0}[\phi(x),\phi(y)]\ket{0} = \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_{\textbf{p}}}\left(e^{-ip(x-y)}-e^{ip(x-y)}\right)
+    \end{flalign} 
+  
+  \item There is a nice argument for why this vanishes for points that are space-like separated. If we pick two events $x$ and $y$, that have space like separation, so $(x-y)^2 < 0$. Then there exits a continuous Lorentz transform from $(x-y)$ to $(y-x)$. It is continuous as it at no point has to cross over the light-cone boundaries. (Easiest to picture this with SO(1,2)). Then since $D(x-y)$ and $D(x-y)$ must be Lorentz invariant, we must have that $D(x-y)=D(y-x)$, so the commutator is $0$ for points that are space like separated! Causality is maintained!      
+\end{itemize}
+
+\subsection{Klein-Gordan Propagator}
+\begin{itemize}
+  \item  We can actually find a better expression for the propagator $D(x-y)$ given by \ref{D(x-y)}. Let us first consider manipulating the following integral:
+  \begin{align}
+  \label{test_prop}
+      \int \frac{d^3p}{(2\pi)^3}\int\frac{dp^{0}}{2\pi i}\frac{-1}{p^2-m^2}e^{-ip\cdot(x-y)} =  \int \frac{d^3p}{(2\pi)^3}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})}\int_{-\infty}^{\infty}\frac{dp^{0}}{2\pi i}\frac{-1}{(p^0)^2-\textbf{p}^2-m^2}e^{-ip^0\cdot(x^0-y^0)} 
+   \end{align} 
+   This second integral on the RHS is an integral along the real line and has two poles at $p^{0} = \pm E_{\textbf{p}}$, where $E_{\textbf{p}}^2 = \textbf{p}^2+m^2$. We can make these simple poles by expanding with partial fractions i.e.:
+   \begin{align*}
+   \frac{1}{(p^0)^2-E_{\textbf{p}}^2} = -\frac{1}{2E_{\textbf{p}}}\left[\frac{1}{p^0+E_{\textbf{p}}}-\frac{1}{p^0-E_{\textbf{p}}}\right]
+   \end{align*}
+
+   \item To solve this integral we have to shift the poles by a small amount $\epsilon$ below the real line so that we can apply the Residue theorem. We will then take the limit as $\epsilon \rightarrow 0 $ to obtain the true result. Our contour for this integral will be a semi-circle that goes along the real line and then loops background either in the upper half plane $C_1$ or the lower half plane $C_2$. We will show then that the integral on the circular part does not contribute as we send the radius of the semi-circle $R \rightarrow \infty$.
+
+   To decide which path to use we have to look at the form of the $e^{-ip^0(x^0-y^0)}$ part of the integral, since we are considering the complex plane $k_0$ is complex we can write this term as: 
+   \begin{align*}
+   e^{-ip^0(x^0-y^0)} = e^{-i\text{Re}(p^0)(x^0-y^0)}e^{\text{Im}(p^0)(x^0-y^0)}
+   \end{align*}
+   In the complex plane along the curve the imaginary part of $p^0$ gets sent to infinity so in order for this term to not contribute, we have to use the path $C_2$ when $x^0-y^0>0$ and $C_1$ when $x^0-y^0<0$.  We can then go ahead and apply the Residue theorem. For now we will assume $x^{0}-y^0>0$, so we use the path $C_{2}$. This means the following integral is a closed path around two simple poles and we can apply the Residue theorem: 
+   \begin{align*}
+    I_{\pm} = \lim_{\epsilon \rightarrow 0 } \oint_{C_2}\frac{dp^0}{2\pi i}e^{-ip^{0}(x^{0}-y^{0})}\frac{1}{p^0\pm (E_{\textbf{p}}+i\epsilon)} = \lim_{\epsilon \rightarrow 0 }e^{\pm i(E_{\textbf{p}}+i\epsilon)(x^{0}-y^0)}=e^{\pm iE_{\textbf{p}}(x^{0}-y^0)}
+    \end{align*} 
+    This means we can write our integral \ref{test_prop} as:
+    \begin{align*}
+    \int \frac{d^3p}{(2\pi)^3}\int&\frac{dp^{0}}{2\pi i}\frac{-1}{p^2-m^2}e^{-ip\cdot(x-y)} = \int \frac{d^3p}{(2\pi)^3}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})}\frac{(I_{+}-I_{-})}{2E_{\textbf{p}}}  \\
+    & = \int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}\left(e^{-ip(x-y)}-e^{ip(x-y)}\right)
+    \end{align*}
+    Which is exactly what we had in \ref{KG_prop}! so we can say our proposition integral \ref{test_prop} is the same as $\bra{0}[\phi(x),\phi(y)]\ket{0}$. We should note that in the last step we have relabeled the $p$ integral multiplying the $I_{+}$ integral, from integrating over $\textbf{p}$ to $ -\textbf{p}$. We also have set $p^{0}$ to $E_{\textbf{p}}$. 
 \end{itemize}
 
 

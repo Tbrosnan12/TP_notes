@@ -14,4 +14,6 @@
 \contentsline {subsection}{\numberline {3.3}Time evolution}{15}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}2-point correlation function}{16}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Time-like separation}{16}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Space-like separation}{16}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.2}Space-like separation}{17}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Measurement}{17}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Klein-Gordan Propagator}{17}{subsection.3.6}%
