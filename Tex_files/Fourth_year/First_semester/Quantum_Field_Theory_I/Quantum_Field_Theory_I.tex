@@ -46,6 +46,11 @@
 \renewenvironment{flalign*}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
 %\renewenvironment{align}{\vspace{-5mm}\begin{align}}{\end{align}}
 %\renewenvironment{align*}{\vspace{-5mm}\begin{align*}}{\end{align*}}
+\renewenvironment{alignat}{\empheq{align*}}{\endempheq}
+
+
+
+
 
 
 
@@ -536,7 +541,64 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 \begin{itemize}
   \item We would now like to turn our heads to adding time evolution to our fields. So far we have been working in the Schr\"odinger picture and interpreted the resulting theory in terms of particles. We now switch to the Heisenberg picture where it is simpler to add time dependence. 
 
-  We know the time evolution operator is a unitary operator $U(t)$, st. $\phi(x) = \phi(\textbf{x},t) = U^{\dagger}\phi(\textbf{x})U$. For a time independent Hamiltonian we just have the usual $U = e^{-iHt}$. If we want to calculate $\phi(x)$ we will need to know what $a(\textbf{p},t) = e^{iHt}a_{\textbf{p}}e^{-iHt}$ is. We know that  
+  We know the time evolution operator is a unitary operator $U(t)$, st. $\phi(x) = \phi(\textbf{x},t) = U^{\dagger}\phi(\textbf{x})U$. For a time independent Hamiltonian we just have the usual $U = e^{-iHt}$. If we want to calculate $\phi(x)$ we will need to know what $a(\textbf{p},t) = e^{iHt}a_{\textbf{p}}e^{-iHt}$ is. We know that $[H,a_{\textbf{p}}] = -E_{\textbf{p}}a_{\textbf{p}}$. So we can write:
+  \begin{equation*}
+  \begin{split}
+  & Ha_{\textbf{p}} = [H,a_{\textbf{p}}]+a_{\textbf{p}}H = a_{\textbf{p}}(H-E_{\textbf{p}}) \\ 
+  & \implies H^na_{\textbf{p}} = a_{\textbf{p}}(H-E_{\textbf{p}})^n
+  \end{split} 
+  \end{equation*}
+  Where we can do the last step as $H$ commutes with both itself and $E_{\textbf{p}}$, so acting with further $H$'s from the left only yields more of the same factor. Similarly this means $H^na^{\dagger}_{\textbf{p}} = a^{\dagger}_{\textbf{p}}(H+E_{\textbf{p}})^n$. This then means that: 
+  \[
+  e^{iHt}a_{\textbf{p}}e^{-iHt} = a_{\textbf{p}}e^{-iE_{\textbf{p}}t},~~~e^{iHt}a^{\dagger}_{\textbf{p}}e^{-iHt} = a^{\dagger}_{\textbf{p}}e^{-iE_{\textbf{p}}t}
+  \]
+  This means using \ref{phi_2} we can write $\phi(x)$ as:
+
+  \begin{flalign}
+  \label{phi_3}
+  \phi(x) = \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(a_{\textbf{p}}e^{-ip^{\mu}x_{\mu}}+a^{\dagger}_{\textbf{p}}e^{ip^{\mu}x_{\mu}}\right) 
+  \end{flalign}
+  Where in the 4-vector (which we often just write as $p$ or $x$) $p_{0} = E_{\textbf{p}}$. 
+
+  \item We can also use the Heisenberg equation of motion, which states that for an operator $\mathcal{O}$, $i\frac{\partial \mathcal{O}}{\partial t} = [\mathcal{O},H]$. This allows us to calculate $i\frac{\partial \phi(x)}{\partial t}$ as it must equal $[\phi(x),H]$, with $H$ given by \ref{KG_Ham}:
+  \begin{equation*}
+  \begin{split}
+    i\frac{\partial \phi(x)}{\partial t} & = [\phi(x),\frac{1}{2}\int d^3x'\left(\pi^2(x') +(\nabla\phi(x'))^2+m^2\phi^2(x')\right) ] \\
+      & =  \frac{1}{2}\int d^3x \left(\pi(x')[\phi(x), \pi(x')]+[\phi(x), \pi(x')]\pi(x') \right) \\
+      & = i \pi(x)
+  \end{split}
+  \end{equation*}
+
+\end{itemize}
+\subsection{2-point correlation function}
+\begin{itemize}
+  \item  With all this formalism we now see if we can solve the problem of causality. That is, does $\braket{\textbf{x},\textbf{y}}$ vanish for $\textbf{y}$ outside the light cone. In the above formalism, $\braket{\textbf{x},\textbf{y}}$ takes the form $\bra{0}\phi(x)\phi(y)\ket{0}$. This is our propagator and will be denoted $D(x-y)$. We can use \ref{phi_3} to write this as:
+  \begin{align*}
+   D(x-y) & = \int \frac{d^3pd^3p'}{(2\pi)^6}\frac{1}{2\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\bra{0}\left(a_{\textbf{p}}e^{-ip \cdot x}+a^{\dagger}_{\textbf{p}}e^{ip \cdot x}\right)\left(a_{\textbf{p}'}e^{-ip'\cdot y}+a^{\dagger}_{\textbf{p}'}e^{ip' \cdot y}\right)\ket{0}    \\
+  & = \int \frac{d^3pd^3p'}{(2\pi)^6}\frac{1}{2\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\bra{0}a_{\textbf{p}}a^{\dagger}_{\textbf{p}'}\ket{0}e^{i(p' \cdot y - p \cdot x) } 
+  \end{align*}
+  \begin{flalign}
+  \label{D(x-y)}
+  \implies D(x-y) = \int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{-ip\cdot( x - y) }
+  \end{flalign}
+  Where in the first line we have used the fact that $\bra{0}a_{\textbf{p}} = 0 = a^{\dagger}_{\textbf{p}}\ket{0}$ and in the last line we have used a corollary that $\bra{0}a_{\textbf{p}}a^{\dagger}_{\textbf{p}'}\ket{0}  =\bra{0}[a_{\textbf{p}},a^{\dagger}_{\textbf{p}'}]\ket{0}$
+\end{itemize}
+\subsubsection{Time-like separation}
+\begin{itemize}
+  \item If we consider a time like separation, that is $ x^{0}-y^{0} > |\textbf{x} - \textbf{y}|$. Then we can always boost to a frame where $x^{0}-y^{0}= t$ and $|\textbf{x} - \textbf{y}| = 0$. This is just boosting to the frame of the world-line. The above expression for  $D(x-y)$, in \ref{D(x-y)} becomes: 
+\vspace{-2mm}
+  \begin{align*}
+  D(x-y) & = \frac{4\pi}{(2\pi)^3}\int_{0}^{\infty}dp \frac{p^2}{2\sqrt{p^2+m^2}}e^{-i\sqrt{p^2+m^2}t} \\
+    & =  \frac{1}{4\pi^2}\int_{m}^{\infty}dE \sqrt{E^2-m^2}e^{-iEt}
+  \end{align*}
+  If we look at this integral in the limit as $t \rightarrow \infty$, then we can see that the exponential is only finite for small $E$, which is around $E \sim m $. So we can say that $D(x-y) \sim e^{-imt}$, the square root does not vanish fast enough to 0 to cancel this out.
+\end{itemize}
+\subsubsection{Space-like separation}
+\begin{itemize}
+  \item If we consider a space like separation, that is $ x^{0}-y^{0} ><|\textbf{x} - \textbf{y}|$. Then we can always boost to a frame where $x^{0}-y^{0}= 0$and $|\textbf{x} - \textbf{y}| = r$. Then we can write \ref{D(x-y)} as: 
+  \begin{align*}
+  D(x-y) & = \frac{4\pi}{(2\pi)^3}\int_{0}^{\infty}dp \frac{p^2}{2\sqrt{p^2+m^2}}e^{-i\sqrt{p^2+m^2}t} \\
+  \end{align*}
 \end{itemize}
 
 
