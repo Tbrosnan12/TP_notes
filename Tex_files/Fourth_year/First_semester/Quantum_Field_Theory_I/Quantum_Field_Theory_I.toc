@@ -1,12 +1,13 @@
 \contentsline {section}{\numberline {1}QFT trailer}{4}{section.1}%
 \contentsline {section}{\numberline {2}The need for Fields}{7}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Non-relativistic free particle}{7}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Laplace steepest decent}{8}{subsubsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.2}Field theory EoM}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.1.1}Non-trivial Gaussian integral}{7}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Laplace steepest decent}{8}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Field theory EoM}{9}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Non-degenerate Lagrangian}{9}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Hamiltonian field theory}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Hamiltonian field theory}{10}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Noether's Theorem}{10}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Stress-Energy Tensor}{10}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.6}Stress-Energy Tensor}{11}{subsection.2.6}%
 \contentsline {section}{\numberline {3}The Klein-Gordan Field}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Second Quantization}{12}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Commutators}{13}{subsubsection.3.1.1}%

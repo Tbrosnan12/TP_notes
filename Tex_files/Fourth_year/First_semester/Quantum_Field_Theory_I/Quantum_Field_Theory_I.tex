@@ -251,6 +251,22 @@ In this section we will see where regular quantum mechanics fails and what we ne
   \end{flalign*}
   \item What this is saying, is that for any two points $x$ and $x'$, no matter how far they are separated, have a non-zero probability of propagation from one to another. But this is direct contrast with what we know from special relativity! Two points separated by enough distance so that there space time interval, $\Delta s^2 = (t-t')^2 -|\textbf{x}-\textbf{x}'|^2$ is negative, i.e. space like. Which would require a propagation speed faster then light. 
 \end{itemize}
+\subsubsection{Non-trivial Gaussian integral}
+\begin{itemize}
+  \item In the above calculation we have to evaluate the following integral: 
+  \begin{align*}
+    \int_{\infty}^{\infty}e^{-(p+ia)^2}dp 
+  \end{align*}
+  Now we may think we can just make the substitution $u=p+ia$, but since we are involving complex numbers, we get a non trivial problem with the limits, as they change to $\infty-ia$ and $\infty+ia$. What we can do instead is calculate the integral of a closed contour. Since the integrand above has no poles, we know that any closed contour on the complex plain should evaluate to 0. What we will do is then modify the limits of our integral to be from $-q$ to $q$, we will take the limit at the end to recover what we got. We can then integrate along the following path: We start at $q+ia$ and move to $-q+ia$, then from $-q+ia$ to $-q$, from  $-q$ to $q$ and from $q$ to $q+ia$. This is a closed contour, that we will call $C$. We then have that:
+  \begin{align*}
+        0=\int_{C}e^{-z^2}dz = \int_{q+ia}^{-q+ia}e^{-(x)^2}dx+\int_{a}^{0}e^{-(-q+iy)^2}dy+\int_{-q}^{q}e^{-x^2}dx+\int_{0}^{a}e^{-(q+iy)^2}dy
+     \end{align*}  
+     We can then immediately argue that the second and fourth integrals should vanish when we send $q$ to infinity. Then the first integral we can reverse the limits and pick up a minus sign so: 
+     \begin{align*}
+        \int_{-q+ia}^{q+ia}e^{-(x)^2}dx = \int_{-q}^{q}e^{-x^2}dx = \sqrt{\pi}
+      \end{align*} 
+      And then finally now we can make a $u$-substitution of the LHS, to get back our original integral! So we can see in this case that since the two ends of this contour vanished in the arge $q$ limit we are essentially able to move our contour up and down to get the regular Gaussian integral.  
+\end{itemize}
 
 \subsection*{Relativistic free particle}
 \begin{itemize}
@@ -631,7 +647,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   \label{test_prop}
       \int \frac{d^3p}{(2\pi)^3}\int\frac{dp^{0}}{2\pi i}\frac{-1}{p^2-m^2}e^{-ip\cdot(x-y)} =  \int \frac{d^3p}{(2\pi)^3}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})}\int_{-\infty}^{\infty}\frac{dp^{0}}{2\pi i}\frac{-1}{(p^0)^2-\textbf{p}^2-m^2}e^{-ip^0\cdot(x^0-y^0)} 
    \end{align} 
-   This second integral on the RHS is an integral along the real line and has two poles at $p^{0} = \pm E_{\textbf{p}}$, where $E_{\textbf{p}}^2 = \textbf{p}^2+m^2$. We can make these simple poles by expanding with partial fractions i.e.:
+   This second integral on the RHS is an integral along the real line and has two poles at $p^{0} = \pm E_{\textbf{p}}$, where $E_{\textbf{p}}^2 = \textbf{p}^2+m^2$. We can see they are simple poles by expanding with partial fractions i.e.:
    \begin{align*}
    \frac{1}{(p^0)^2-E_{\textbf{p}}^2} = -\frac{1}{2E_{\textbf{p}}}\left[\frac{1}{p^0+E_{\textbf{p}}}-\frac{1}{p^0-E_{\textbf{p}}}\right]
    \end{align*}
@@ -642,7 +658,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
    \begin{align*}
    e^{-ip^0(x^0-y^0)} = e^{-i\text{Re}(p^0)(x^0-y^0)}e^{\text{Im}(p^0)(x^0-y^0)}
    \end{align*}
-   In the complex plane along the curve the imaginary part of $p^0$ gets sent to infinity so in order for this term to not contribute, we have to use the path $C_2$ when $x^0-y^0>0$ and $C_1$ when $x^0-y^0<0$.  We can then go ahead and apply the Residue theorem. For now we will assume $x^{0}-y^0>0$, so we use the path $C_{2}$. This means the following integral is a closed path around two simple poles and we can apply the Residue theorem: 
+   In the complex plane along the curve the imaginary part of $p^0$ gets sent to infinity so in order for this term to not contribute, we have to use the path $C_2$ when $x^0-y^0>0$ and $C_1$ when $x^0-y^0<0$.  We can then go ahead and apply the Residue theorem. For now we will assume $x^{0}-y^0>0$, so we use the path $C_{2}$. This means the following integral is a closed path around a simple pole, so we can apply the Residue theorem: 
    \begin{align*}
     I_{\pm} = \lim_{\epsilon \rightarrow 0 } \oint_{C_2}\frac{dp^0}{2\pi i}e^{-ip^{0}(x^{0}-y^{0})}\frac{1}{p^0\pm (E_{\textbf{p}}+i\epsilon)} = \lim_{\epsilon \rightarrow 0 }e^{\pm i(E_{\textbf{p}}+i\epsilon)(x^{0}-y^0)}=e^{\pm iE_{\textbf{p}}(x^{0}-y^0)}
     \end{align*} 
