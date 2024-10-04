@@ -529,7 +529,7 @@ In a similar manner the momentum density can be written as:
         & = -\omega_{\textbf{p}}a_{\textbf{p}} 
       \end{split}
    \end{equation*}
-   Here we have used the fact that $[a_{\textbf{p}},a_{\textbf{p}'}]= 0 = [a^{\dagger}_{\textbf{p}},a^{\dagger}_{\textbf{p}'}]$ to make the first and last term cancel. The commutator $[H,a^{\dagger}_{\textbf{p}}]=\omega_{\textbf{p}}a^{\dagger}_{\textbf{p}}$, can be calculated in the same manner. We then would like to write the states. 
+   Here we have used the fact that $[a_{\textbf{p}},a_{\textbf{p}'}]= 0 = [a^{\dagger}_{\textbf{p}},a^{\dagger}_{\textbf{p}'}]$ to make the first and last term cancel. The commutator $[H,a^{\dagger}_{\textbf{p}}]=\omega_{\textbf{p}}a^{\dagger}_{\textbf{p}}$, can be calculated in the same manner.
 
    \item We can now start to think about the creation and annihilation operators as their name suggests. The ground state is $\ket{0}$ st. $a_{\textbf{p}}\ket{0} = 0$ and has $E=0$, where as acting with $a^{\dagger}_{\textbf{p}}$ increases the energy. These operators clearly depend on momentum $\textbf{p}$ so we can think of them as creating (and annihilating) momentum eigenstates. 
 \end{itemize}
@@ -670,5 +670,34 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
     Which is exactly what we had in \ref{KG_prop}! so we can say our proposition integral \ref{test_prop} is the same as $\bra{0}[\phi(x),\phi(y)]\ket{0}$. We should note that in the last step we have relabeled the $p$ integral multiplying the $I_{+}$ integral, from integrating over $\textbf{p}$ to $ -\textbf{p}$. We also have set $p^{0}$ to $E_{\textbf{p}}$. 
 \end{itemize}
 
+\subsubsection{Advanced/Retarded Propagators}
+\begin{itemize}
+  \item The above calculated propagator \ref{test_prop} which we showed was the same as $D(x-y)$ is actually one of many propagators. The one we calculated is actually called the \emph{retarded Greens function} as we assumed $x^{0}-y^{0}>0$ so we only considered measurements propagating from the past to the future. If we instead had $x^{0}-y^{0}<0$ then we would have had to have chosen the contour $C_1$ in the upper half plane, but then since our poles were shifted into the lower half plane now our contour does not enclose the poles, so our integral must be $0$. With this we can conclude that the Retarded Greens function can be written as:
+  \begin{flalign}
+  \label{retard}
+    D_{R}(x-y) = \theta(x^{0}-y^{0})\bra{0}[\phi(x),\phi(y)]\ket{0}
+  \end{flalign}
+  Where $\theta$ is Heaviside's step function. We could have also shifted the poles in the upper half plane and then required that $x^{0}-y^{0}<0$ for the integral to be non-zero, thus we can similarly define the \emph{Advanced Greens function}, as:
+    \begin{flalign}
+    \label{advanced}
+    D_{A}(x-y) = \theta(y^{0}-x^{0})\bra{0}[\phi(x),\phi(y)]\ket{0}
+  \end{flalign} 
+  This function is usually not used though as it corresponds to measurements propagating from future to past. 
+\end{itemize}
 
+\subsubsection{Feynman Propagator}
+\begin{itemize}
+  \item There is one last propagator that we can construct by a combination of the others. What we can do is shift one pole down and the other up. This way both of the paths $C_{1}$ and $C_2$ only enclose a single pole. We usually choose the convention of shifting the $-E_{\textbf{p}}$ pole down and the other up. This means that we have to use the $C_2$ contour when $x^{0}-y^{0}>0$ and the $C_1$ contour when $x^{0}-y^{0}<0$. This means the \emph{Feynman Propagator} is:
+  \begin{flalign}
+  \label{Feynmann}
+    & D_F(x-y) = \begin{cases}
+      & D(x-y), ~~~ x^{0}>y^0\nonumber \\
+      & D(y-x), ~~~ x^{0}<y^0
+    \end{cases} \\
+    &   =  \theta(x^{0}-y^{0})\bra{0}\phi(x),\phi(y)\ket{0} +\theta(y^{0}-x^{0})\bra{0}[\phi(y),\phi(x)\ket{0} \\
+    & = \bra{0}T\phi(x),\phi(y)\ket{0} \nonumber
+  \end{flalign}
+  Where in the last step we have defined the \emph{Time ordering symbol} $T$. 
+
+\end{itemize}
 \end{document}
