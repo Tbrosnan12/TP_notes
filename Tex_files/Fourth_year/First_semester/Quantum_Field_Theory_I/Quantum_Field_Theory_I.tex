@@ -697,7 +697,60 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
     &   =  \theta(x^{0}-y^{0})\bra{0}\phi(x),\phi(y)\ket{0} +\theta(y^{0}-x^{0})\bra{0}[\phi(y),\phi(x)\ket{0} \\
     & = \bra{0}T\phi(x),\phi(y)\ket{0} \nonumber
   \end{flalign}
-  Where in the last step we have defined the \emph{Time ordering symbol} $T$. 
 
+  Where in the last step we have defined the \emph{Time ordering symbol} $T$. 
 \end{itemize}
+
+  \newpage 
+  \section{Representations of the Poincar\'e Group} 
+
+  \begin{itemize}
+    \item  We are quite familiar with the Lorentz group $SO(3,1)$, that generates rotations and boosts. In general we can find Lorentz invariant quantities by finding anything that is a scalar, i.e. all its indices contract such that it can't change under transformations. This is an excellent method for finding invariants, but it does not capture everything. For all Isometries (distance preserving maps) we need to extend the Lorentz group to the \emph{Poincar\'e} group. This is nothing more then the semi-Direct product of Rotations and translations in $\mathbb{R}^{1,3}$. This is usually written as $P = \textbf{R}^{1,3} \rtimes O(1,3)$. 
+\end{itemize}
+
+
+    \subsection{Group actions}
+\begin{itemize}
+  \item We would like to be able to classify how fields, as well as other quantities transform under Lorentz Transformations. To aid with this we can use the fact that each of the transformation matrices $\Lambda^{\mu}_{~\nu}$ is an element of the Lorentz group $SO(1,3)$. Then if we take the perspective of \emph{active} transformations we can think of the action of a Lorentz transformation as not affecting a single particle, but as acting on the manifold of spacetime itself. This is then a group action.
+
+     \item This Group $G$ acting on the manifold must then be a Lie group and must act on the elements of the manifold $M$ such that:
+     \begin{itemize}
+       \item There is, associated with each of the elements $g \in G$ a diffeomorphism from $M$ to itself, $x \mapsto \mathcal{T}_{g}(x),~x\in M$. Such that $\mathcal{T}_{g}\mathcal{T}_{h}=\mathcal{T}_{gh}~~\forall~ g,h \in G$ 
+       \item $\mathcal{T}_{g}$ depends smoothly on the arguments $x$ and $g$. 
+     \end{itemize}
+     This first condition is actually quite constringent as we will see later.
+     \end{itemize}
+     \subsubsection{Left actions}
+     \begin{itemize}
+       \item For elements of a manifold $x \in M$, we can define the following \emph{Left} action of a group $G$ as: 
+       \begin{align*}
+       & x \rightarrow x' = g \cdot x \\ 
+        \implies & x'' = h\cdot g \cdot x = (h \cdot g) \cdot x
+       \end{align*}
+       As can be seen in the last line, this action satisfies $\mathcal{T}_{h}\mathcal{T}_{g}=\mathcal{T}_{hg}$. 
+     \end{itemize}
+          \subsubsection{Right actions}
+     \begin{itemize}
+       \item Similarly we can define the  \emph{Right} action as: 
+       \begin{align*}
+       & x \rightarrow x' =  x \cdot g^{-1}\\ 
+        \implies & x'' = x \cdot g^{-1} \cdot h^{-1} = x \cdot (h \cdot g)^{-1}
+       \end{align*}
+       As can be seen in the last line, this action satisfies $\mathcal{T}_{h}\mathcal{T}_{g}=\mathcal{T}_{hg}$. Note this could not work if we didn't change to the action by inverses.
+     \end{itemize}
+
+     \subsection{Transformation of fields}
+     \begin{itemize}
+       \item Equipped with the above tools, we can now go about considering how the fields transform under active transformations. If we have a field $\phi(x)$ for $x \in M$ our manifold of spacetime. Then under active transformation these co-ordinates $x$ transform via $x \rightarrow x' = \Lambda x$. For now if we denote this matrix $\Lambda$ by $g$ as it is an element of a group, then we can consider the transformation of the field $\phi$ as:
+       \vspace{-2mm}
+       \begin{align*}
+       & \phi(x) \rightarrow \phi'(x) = \phi(g \cdot x) \\ 
+       \implies & \phi''(x) = \phi'(h\cdot x) = \phi(g\cdot (h \cdot x)) 
+       \end{align*}
+       But this does not respect the order we needed from a Lie group, namely here we have $\mathcal{T}_{h}\mathcal{T}_{g}=\mathcal{T}_{gh}$. To fix this we can take inspiration from the definition of the Right action above and say that if we replace $g$ with $g^{-1}$ then we have that $\phi''(x) = \phi'(h^{-1}\cdot x) = \phi(g^{-1}\cdot (h^{-1} \cdot x)) = \phi((h\cdot g)^{-1} \cdot x)$ as needed. Thus we can say that the Fields must transform via:
+
+       \begin{flalign}
+       \phi(x) \rightarrow \phi'(x) = \phi(\Lambda^{-1} \cdot x)
+       \end{flalign}
+     \end{itemize}
 \end{document}
