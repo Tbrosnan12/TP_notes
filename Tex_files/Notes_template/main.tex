@@ -1,36 +1,50 @@
 \documentclass[11pt]{article}
 
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
-\usepackage{hyperref}
-\usepackage{biblatex}
+%Format and referencing 
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry} % for setting margins VERY IMPORTANT!
+\usepackage{hyperref}  % for referencing equations 
+\usepackage{biblatex}  % for referencing articles 
 \addbibresource{Bib.bib}
-\usepackage{mathtools}
+
+
+%math packages 
+\usepackage{mathtools}  % allows pre-scripts and other neiche math features
+\usepackage{amsmath} % equation related commands 
+\usepackage{amssymb} % Fancy R ,C and other set fonts using mathbb{}
+\usepackage{braket}   % for Dirac notation 
+\usepackage{mathrsfs}  % for the mathscr text 
+
+% miscellaneous
+\usepackage{empheq}   % for formatting custon math boxs
+\usepackage{xcolor}   % allows the defining of colours 
+\usepackage[most]{tcolorbox}  % custom math boxs
+\usepackage[utf8]{inputenc}   % redundant since 2018? 
+%(I'm not taking out in case it breaks stuff)
+
+\usepackage{graphicx}   % alows image insertion 
+\usepackage{float}  % for making images o where you want 
+\usepackage{parskip} % for getting red of paragraph indent 
+
+\usepackage{comment} %easier multi line comments 
+ \usepackage{tabularx} % for formatting tables 
+ \usepackage{titling} % for making Title a variable that can be used in header 
+ \usepackage{environ} % for creating and modifying environments 
+ \usepackage[explicit]{titlesec}
+ % for making section titles variables that can be used in header 
+\usepackage{fancyhdr} % for fancy headers 
+
+% Random commands and what not 
+\numberwithin{equation}{section}
+
+\setlength{\droptitle}{3em} 
+
+\title{Quantum Field Theory I}
+\author{Thomas Brosnan}
+\date{Notes taken in Professor Samson Shatashvili class, Michaelmas Term 2024}
+
 \DeclarePairedDelimiterXPP\BigOSI[2]%
   {\mathcal{O}}{(}{)}{}%
   {\SI{#1}{#2}}
-\usepackage{xcolor}
-\usepackage{empheq}
-\usepackage[most]{tcolorbox}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{mathrsfs}
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{parskip}
-\usepackage{comment}
-\usepackage{mhchem}
- \usepackage{tabularx}
- \usepackage{titling}
- \usepackage{amsmath,environ}
- \usepackage[explicit]{titlesec}
-\usepackage{fancyhdr}
-\setlength{\droptitle}{3em} 
-
-\title{Notes Template}
-\author{Thomas Brosnan}
-\date{Notes taken in Professor Oppenheimer's class, Michaelmas Term 1939}
-
 
 \newtcbox{\mymath}[1][]{%
     nobeforeafter, math upper, tcbox raise base,
@@ -41,7 +55,13 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{gather}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign*}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+%\renewenvironment{align}{\vspace{-5mm}\begin{align}}{\end{align}}
+%\renewenvironment{align*}{\vspace{-5mm}\begin{align*}}{\end{align*}}
+\renewenvironment{alignat}{\empheq{align*}}{\endempheq}
+
+
 \newcommand{\hsp}{\hspace{8pt}}
 
 \newcommand*{\sectionFont}{%
@@ -50,14 +70,14 @@
 
 \newenvironment{eq}{\begin{equation}}{\end{equation}}
     
-\numberwithin{equation}{section}
+
 
 \makeatletter
 \let\Title\@title % Copy the title to a new command
 \makeatother
 
 %change this RGB value to change the section background colour 
-\definecolor{mycolor1}{RGB}{255, 128, 128}
+\definecolor{mycolor1}{RGB}{125, 187, 242}
 \colorlet{SectionColour}{mycolor1}
 %subsection background colour 
 \definecolor{mycolor2}{gray}{0.8}
@@ -65,6 +85,7 @@
 %subsubsection background colour 
 \definecolor{mycolor3}{RGB}{255,255,255}
 \colorlet{subsubSectionColour}{mycolor3}
+
 
 
 \begin{document}
@@ -138,7 +159,7 @@ Then the final result is:
 \end{split}
 \end{bux}
 
-\begin{figure}[H]
+\begin{figure}
 \centering
 \includegraphics[width=0.8\textwidth]{Screenshot 2023-06-15 172321.png}
 \caption{\label{fig:2}\emph{Diagram of the experimental setup circuit}}
