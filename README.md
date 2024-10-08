@@ -7,3 +7,5 @@ I will also leave a link to view an overleaf document of the template for these 
 The Tex files for the template are also available in Tex_files/Notes_template
 
 General structure is pdfs of notes are found in the year directories, Third_year ect.. Where as .tex files for the notes can be found in the Tex_files dir. 
+# Intro to Latex Document: 
+https://www.overleaf.com/read/zcyymgsvvtgb#4fbed4
