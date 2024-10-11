@@ -428,11 +428,11 @@ The Lagrangian must also transform in the same way as it is also a scalar:
   \] 
 \end{itemize}
 \newpage
-\section{The Klein-Gordan Field}
+\section{The Klein-Gordon Field}
 \begin{itemize}
-  \item We ease ourselves into the concepts of quantum fields with the discussion of the Klein-Gordan field. This is one of the simplest types of fields and its use becomes obvious when we see the EoM, which is just the Schr\"odinger equation but made relativistic by replacing $\hat{\textbf{p}}^2/2m \rightarrow \sqrt{\hat{\textbf{p}}^2 + m^2}$. We will see more of this later.
+  \item We ease ourselves into the concepts of quantum fields with the discussion of the Klein-Gordon field. This is one of the simplest types of fields and its use becomes obvious when we see the EoM, which is just the Schr\"odinger equation but made relativistic by replacing $\hat{\textbf{p}}^2/2m \rightarrow \sqrt{\hat{\textbf{p}}^2 + m^2}$. We will see more of this later.
 
-     \item The Lagrange density for the Klein-Gordan field takes the form:
+     \item The Lagrange density for the Klein-Gordon field takes the form:
      \begin{equation}
        \label{KG field}
        \mathcal{L} = \frac{1}{2}\partial_{\mu} \phi \partial^{\mu}\phi -\frac{m^2}{2}\phi^2
@@ -442,23 +442,23 @@ From this we can calculate the momentum density via \ref{pi} to get $\pi = \dot{
 \label{KG_Ham}
   \mathcal{H} = \frac{1}{2}\left(\pi^2 +(\nabla\phi)^2+m^2\phi^2\right) 
 \end{equation}
-\item The equations of motion can also be calculated easily via \ref{EoM} resulting in the \emph{Klein-Gordan equation}:
+\item The equations of motion can also be calculated easily via \ref{EoM} resulting in the \emph{Klein-Gordon equation}:
 \begin{flalign}
 \label{KG eq}
   (\partial_{\mu}\partial^{\mu}+m^2)\phi  = 0
 \end{flalign} 
-This $\partial_{\mu}\partial^{\mu}$ is often denoted $\Box$. As an aside, if we "make" the Schr\"odinger equation relativistic, i.e. $\textbf{p}^2 + m^2 = E^2$ and use the definition of the operators $ i\partial_t\psi= E\psi $ and $\hat{\textbf{p}} = -i\nabla$, so:  $-\nabla^2 + m^2 = -\partial^2_t$, recovering us the above Klein-Gordan equation.  
+This $\partial_{\mu}\partial^{\mu}$ is often denoted $\Box$. As an aside, if we "make" the Schr\"odinger equation relativistic, i.e. $\textbf{p}^2 + m^2 = E^2$ and use the definition of the operators $ i\partial_t\psi= E\psi $ and $\hat{\textbf{p}} = -i\nabla$, so:  $-\nabla^2 + m^2 = -\partial^2_t$, recovering us the above Klein-Gordon equation.  
 \end{itemize}
 
 \subsection{Second Quantization}
 \begin{itemize}
-  \item We will now see if we can ``quantize'' this field. What we can do to help figure out how to do this is to take inspiration from the quantization of the single particle Harmonic oscillator in QM. This works nicely as we can see the Lagrangian density for the Klein-Gordan field \ref{KG field} resembles that of the harmonic oscillator. By quantize here we mean to reinterpret the dynamical variables as operators that obey canonical commutation relations, like $[p_i,q_j] = i\delta_{i,j},~[q_i,q_j] = 0 = [p_i,p_j]$. Instead however $\phi$ and $\pi$ will become our operators and we will require that $[\phi(\textbf{x}),\pi(\textbf{y})] = i \delta(\textbf{x}-\textbf{y}),~ [\phi(\textbf{x}),\phi(\textbf{y})] = 0 = [\pi(\textbf{x}),\pi(\textbf{y})]$. This procedure is often called \emph{Second Quantization} to distinguish it from the old one particle version. 
+  \item We will now see if we can ``quantize'' this field. What we can do to help figure out how to do this is to take inspiration from the quantization of the single particle Harmonic oscillator in QM. This works nicely as we can see the Lagrangian density for the Klein-Gordon field \ref{KG field} resembles that of the harmonic oscillator. By quantize here we mean to reinterpret the dynamical variables as operators that obey canonical commutation relations, like $[p_i,q_j] = i\delta_{i,j},~[q_i,q_j] = 0 = [p_i,p_j]$. Instead however $\phi$ and $\pi$ will become our operators and we will require that $[\phi(\textbf{x}),\pi(\textbf{y})] = i \delta(\textbf{x}-\textbf{y}),~ [\phi(\textbf{x}),\phi(\textbf{y})] = 0 = [\pi(\textbf{x}),\pi(\textbf{y})]$. This procedure is often called \emph{Second Quantization} to distinguish it from the old one particle version. 
   
   \item Our goal is to now find the spectrum of the Hamiltonian. We start by taking our field $\phi(\textbf{x})$ and writing it in terms of its Fourier transform to momentum (p)-space
 \[
   \phi(\textbf{x}) = \int \frac{d^3p}{(2\pi)^3}\phi(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}
 \]
-Here we also require that $\phi(\textbf{x},t)$ is real so $\phi^{\ast}(\textbf{p}) = \phi(-\textbf{p})$ Then using the Klein-Gordan equation \ref{KG eq} we get the condition:
+Here we also require that $\phi(\textbf{x},t)$ is real so $\phi^{\ast}(\textbf{p}) = \phi(-\textbf{p})$ Then using the Klein-Gordon equation \ref{KG eq} we get the condition:
 \[
   \left[\partial_t^2 + p^2+m^2\right]\phi(\textbf{p}) = 0 
 \]
@@ -640,7 +640,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   \item There is a nice argument for why this vanishes for points that are space-like separated. If we pick two events $x$ and $y$, that have space like separation, so $(x-y)^2 < 0$. Then there exits a continuous Lorentz transform from $(x-y)$ to $(y-x)$. It is continuous as it at no point has to cross over the light-cone boundaries. (Easiest to picture this with SO(1,2)). Then since $D(x-y)$ and $D(x-y)$ must be Lorentz invariant, we must have that $D(x-y)=D(y-x)$, so the commutator is $0$ for points that are space like separated! Causality is maintained!      
 \end{itemize}
 
-\subsection{Klein-Gordan Propagator}
+\subsection{Klein-Gordon Propagator}
 \begin{itemize}
   \item  We can actually find a better expression for the propagator $D(x-y)$ given by \ref{D(x-y)}. Let us first consider manipulating the following integral:
   \begin{align}
@@ -791,18 +791,49 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
          \Lambda = \lim_{N\rightarrow \infty}\left(\mathbb{I}+\frac{1}{N}\omega_{\mu\nu}M^{\mu\nu}\right)^{N} = e^{\omega_{\mu\nu}M^{\mu\nu}}
        \end{align*}
        Where here $\omega_{\mu\nu}$ is an anti-symmetric tensor containing the shift corresponding to each transformation as we define the generators $M^{\mu\nu}$ to be anti-symmetric. It can then be shown that these generators follow the following commutation relations:
+
        \begin{flalign}
        \label{M_com}
             [M_{\mu\nu},M_{\rho\sigma}] = \eta_{\mu\rho}M_{\nu\sigma}+\eta_{\nu\sigma}M_{\mu\rho}-g_{\mu\sigma}M_{\nu\rho}-g_{\nu\rho}M_{\mu\sigma}
         \end{flalign}
         We can recognize that the boost generators are just the $K_{i} = M_{0i},~~i=1,2,3$ and the rotation generators are $L_{i} = \frac{1}{2}\epsilon_{ijk}M_{jk}~i,j=1,2,3$. Where the rotation generator, $L_{i}$ generates a rotation in the $j-k$ plane. It can then be shown that the above commutators \ref{M_com} lead to the regular commutators we are used to. Namely:
-        \begin{align*}
-           &[L_{i},L_j] = \epsilon_{ijk}L_{k} \\
+        \begin{align}
+        \label{L_com}
+           &[L_{i},L_j] = \epsilon_{ijk}L_{k} \nonumber\\
            &[K_{i},K_j] = -\epsilon_{ijk}L_{k} \\
-           &[L_{i},K_j] = \epsilon_{ijk}K_{k}
-         \end{align*} 
-         \item For our purposes of QFT we can obtain the form of these generators by recognizing that the rotations will be the standard angular momentum $\textbf{L}= \textbf{x}\times\textbf{p} = \textbf{x}\times (i\nabla)  \implies M^{\mu\nu} =i(x^{\mu}\partial^{\nu}-x^{\nu}\partial^{\mu})$. To fit in with these operators being hermitian we must add and $i$ to the RHS of \ref{M_com}.
-     \end{itemize}
+           &[L_{i},K_j] = \epsilon_{ijk}K_{k}\nonumber
+         \end{align} 
+         \item For our purposes of QFT we can obtain the form of these generators by recognizing that the rotations will be the standard angular momentum $\textbf{L}= \textbf{x}\times\textbf{p} = \textbf{x}\times (i\nabla)  \implies J^{\mu\nu} =i(x^{\mu}\partial^{\nu}-x^{\nu}\partial^{\mu})$. To fit in with these operators being hermitian we must add and $i$ to the RHS of \ref{M_com} as here $J^{\mu\nu}$ is the same as the $M^{\mu\nu}$ we had before. This takes the form:
 
+         \begin{flalign}
+           \label{J_com}
+           [J_{\mu\nu},J_{\rho\sigma}] = i\left(\eta_{\mu\rho}J_{\nu\sigma}+\eta_{\nu\sigma}J_{\mu\rho}-g_{\mu\sigma}J_{\nu\rho}-g_{\nu\rho}J_{\mu\sigma}\right)
+         \end{flalign}
+     \end{itemize}
+     \subsubsection{$\mathfrak{sl}(2,\mathbb{C})$ representation}
+     \begin{itemize}
+       \item We can define the following operators:
+       \begin{align*}
+         & N_{i} = \frac{1}{2}(L_{i}+iK_{i}) \\
+         & N^{\dagger}_{i} = \frac{1}{2}(L_{i}-iK_{i})
+       \end{align*}
+       With these definitions, it can be shown using the above commutation relations \ref{L_com}, that:
+       \begin{align*}
+         & [N_{i},N_{j}] = i\epsilon_{ijk}N_{k} \\
+        &  [N^{\dagger}_{i},N^{\dagger}_{j}] = i\epsilon_{ijk}N^{\dagger}_{k} \\
+        & [N_{I},N^{\dagger}_{J}]= 0          
+       \end{align*}
+       We can see that these have the structure of two sets separate angular momentum generators. They also have the same structure as the sigma generators of $\mathfrak{sl}(2,\mathbb{C})$. In the same manner we deal with regular angular momentum we can pick $N_{3}$ and $N^{\dagger}_{3}$ as the z direction which will then have eigenvalues $-n,\ldots,0,\ldots,n$, where $n$ is the ``spin''. Similarly $N^{\dagger}$ has eigenvalues $-m,\ldots,0,\ldots,m$. That means the total number of possible states of this system is $(2m+1)(2n+1)$. Here $m,n=0,\frac{1}{2},1,\ldots$
+
+      \item As it turns out the $m,n=0$ corresponds to the Klein-Gordon theory we developed earlier. The two cases $m=\frac{1}{2},n=0$ and $m=0,n=\frac{1}{2}$ correspond to spin half particles which we will see more off later. 
+     \end{itemize}
+\subsection{Generators of the Poincar\'e group}
+\begin{itemize}
+  \item The Poincar\'e group has the same generators as the $J^{\mu\nu}$ above \ref{J_com}, for the $SO(3,1)$ part, as well as the translation generators $P_{\mu}= -i\frac{\partial}{\partial x^{\mu}}$. It can be shown then that they have the following commutation relations:
+  \begin{align*}
+      [J_{\mu\nu},P_{\sigma}] & = i(\eta_{\nu\sigma}P_{\mu}-\eta_{\mu\sigma}P_{\nu}) \\
+     &[P_{\mu},P_{\nu}] = 0 \\
+   \end{align*} 
+\end{itemize}
 
 \end{document}
