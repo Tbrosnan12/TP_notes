@@ -637,7 +637,11 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
     \bra{0}[\phi(x),\phi(y)]\ket{0} = \int \frac{d^3p}{(2\pi)^3} \frac{1}{2E_{\textbf{p}}}\left(e^{-ip(x-y)}-e^{ip(x-y)}\right)
     \end{flalign} 
   
-  \item There is a nice argument for why this vanishes for points that are space-like separated. If we pick two events $x$ and $y$, that have space like separation, so $(x-y)^2 < 0$. Then there exits a continuous Lorentz transform from $(x-y)$ to $(y-x)$. It is continuous as it at no point has to cross over the light-cone boundaries. (Easiest to picture this with SO(1,2)). Then since $D(x-y)$ and $D(x-y)$ must be Lorentz invariant, we must have that $D(x-y)=D(y-x)$, so the commutator is $0$ for points that are space like separated! Causality is maintained!      
+  \item There is a nice argument for why this vanishes for points that are space-like separated. If we pick two events $x$ and $y$, that have space like separation, so $(x-y)^2 < 0$. Then there exits a continuous Lorentz transform from $(x-y)$ to $(y-x)$. It is continuous as it at no point has to cross over the light-cone boundaries. (Easiest to picture this with SO(1,2)). Then since $D(x-y)$ and $D(x-y)$ must be Lorentz invariant, we must have that $D(x-y)=D(y-x)$, so the commutator is $0$ for points that are space like separated! Causality is maintained!  
+
+      \item David Tong has a nice comment on this: ``There are words you can drape around this calculation. When $(x-y)^2<0$, there is no Lorentz invariant way to order events. If a particle can travel in a spacelike direction from $x \rightarrow y$, it can just as easily travel from $y \rightarrow x$. In any measurement, the amplitudes for these two events cancel.''  
+
+      What he means by this statement that due to spacelike separation there is no agreed upon temporal ordering as these two points are not causally connected. Thus the amplitudes for the propagation from $x \rightarrow y$ is the same magnitude as the propagation $y \rightarrow x$, but they cancel due to the commutator.     
 \end{itemize}
 
 \subsection{Klein-Gordon Propagator}
@@ -706,6 +710,17 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 
   \begin{itemize}
     \item  We are quite familiar with the Lorentz group $SO(3,1)$, that generates rotations and boosts. In general we can find Lorentz invariant quantities by finding anything that is a scalar, i.e. all its indices contract such that it can't change under transformations. This is an excellent method for finding invariants, but it does not capture everything. For all Isometries (distance preserving maps) we need to extend the Lorentz group to the \emph{Poincar\'e} group. This is nothing more then the semi-Direct product of Rotations and translations in $\mathbb{R}^{1,3}$. This is usually written as $P = \textbf{R}^{1,3} \rtimes O(1,3)$. 
+
+    A general transformation of the Poincar\'e group takes the form $x^{\mu} \rightarrow \Lambda^{\mu}_{~\nu}x^{\nu}+a^{\mu}$. So the elements of the group take the form:
+    \begin{align*}
+      \begin{pmatrix}
+      \Lambda^0_0 & \Lambda^0_1 & \Lambda^0_2 & \Lambda^0_3 & a^0 \\
+\Lambda^1_0 & \Lambda^1_1 & \Lambda^1_2 & \Lambda^1_3 & a^1 \\
+\Lambda^2_0 & \Lambda^2_1 & \Lambda^2_2 & \Lambda^2_3 & a^2 \\
+\Lambda^3_0 & \Lambda^3_1 & \Lambda^3_2 & \Lambda^3_3 & a^3 \\
+0 & 0 & 0 & 0 & 1
+\end{pmatrix}
+\end{align*}
 \end{itemize}
 
 
@@ -750,6 +765,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
        But this does not respect the order we needed from a Lie group, namely here we have $\mathcal{T}_{h}\mathcal{T}_{g}=\mathcal{T}_{gh}$. To fix this we can take inspiration from the definition of the Right action above and say that if we replace $g$ with $g^{-1}$ then we have that $\phi''(x) = \phi'(h^{-1}\cdot x) = \phi(g^{-1}\cdot (h^{-1} \cdot x)) = \phi((h\cdot g)^{-1} \cdot x)$ as needed. Thus we can say that the fields must transform via:
 
        \begin{flalign}
+       \label{phi_transform}
        \phi(x) \rightarrow \phi'(x) = \phi(\Lambda^{-1} \cdot x)
        \end{flalign}
      \end{itemize}
@@ -849,8 +865,32 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 
      \begin{flalign*}
      &P_{\mu}P^{\mu} = m^2 \\
-     W^{\mu}& = \frac{1}{2}\epsilon^{\mu\nu\rho\sigma}P_{\nu}J_{\rho\sigma} 
+     & W^{\mu}W_{\mu} = W^2 
      \end{flalign*}
+     Here $W^{\mu}=\frac{1}{2}\epsilon^{\mu\nu\rho\sigma}P_{\nu}J_{\rho\sigma} $ is the \emph{Pauli-Luba\'nsky vector}. 
+\end{itemize}{}
+
+\newpage
+\section{The Dirac Field}
+\begin{itemize}
+  \item We have so far only discussed scalar fields that transform via \ref{phi_transform} and seen that quantization of these fields leads to spin-0 particles that obey the Klein Gordon equation. To find out what describes particles with non-zero spin it is natural to think that we will need some fields that are vector fields of some kind. This means we need to find alternate representation of the Lorentz/Poincar\'e algebra. Remember that the only condition on the generators of these algebras is that they must satisfy the commutation relations \ref{J_com}. We have already found some matrices \ref{M_4x4} that do this. But what if there is another representation.   
+\end{itemize}
+
+\subsection{Gamma matrices}
+\begin{itemize}
+  \item We can find another of these representations due to a trick from Dirac. This turn out to be nothing other then the \emph{Clifford algebra}. Suppose  we have a set of $4\times4$ matrices $\gamma^{\mu}$ satisfying: 
+
+  \begin{flalign}
+  \label{gamma_def}
+    \{\gamma^{\mu},\gamma^{\nu}\} = 2\eta^{\mu\nu}\mathbb{I}_{4}
+  \end{flalign}
+  This is also known as a Dirac algebra. Then using this, it turns out that if we define: 
+
+  \begin{flalign}
+  \label{S_def}
+    S^{\mu\nu} = \frac{i}{4}[\gamma^{\mu},\gamma^{\nu}]
+  \end{flalign}
+  Then $S^{\mu\nu}$ satisfy the commutation relations \ref{J_com}.  
 \end{itemize}
 
 \end{document}

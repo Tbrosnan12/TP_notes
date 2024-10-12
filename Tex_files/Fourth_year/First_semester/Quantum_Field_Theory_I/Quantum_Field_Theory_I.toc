@@ -17,16 +17,18 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Time-like separation}{16}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Space-like separation}{17}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Measurement}{17}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Klein-Gordon Propagator}{17}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.6}Klein-Gordon Propagator}{18}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Advanced/Retarded Propagators}{18}{subsubsection.3.6.1}%
 \contentsline {subsubsection}{\numberline {3.6.2}Feynman Propagator}{19}{subsubsection.3.6.2}%
 \contentsline {section}{\numberline {4}Representations of the Poincar\'e Group}{20}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Group actions}{20}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Left actions}{20}{subsubsection.4.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.2}Right actions}{20}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Transformation of fields}{20}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Transformation of fields}{21}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Lorentz Group}{21}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Generators}{21}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}$\mathfrak {sl}(2,\mathbb {C})$ representation}{22}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.1}Generators}{22}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}$\mathfrak {sl}(2,\mathbb {C})$ representation}{23}{subsubsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.4}Generators of the Poincar\'e group}{23}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Casimir Invariants}{23}{subsubsection.4.4.1}%
+\contentsline {section}{\numberline {5}The Dirac Field}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Gamma matrices}{25}{subsection.5.1}%
