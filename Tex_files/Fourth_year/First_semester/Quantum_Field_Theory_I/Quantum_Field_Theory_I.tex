@@ -97,7 +97,10 @@
 \end{center}
 \vspace*{\fill} 
 \newpage 
+\hrule
 \tableofcontents
+\vspace{5mm}
+\hrule
 % For \section
  \titleformat{\section}[block]{\sectionFont}{}{0pt}{%
  \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesection  \hsp #1 {\strut} \end{minipage}}}
@@ -878,7 +881,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   \item We have so far only discussed scalar fields that transform via \ref{phi_transform} and seen that quantization of these fields leads to spin-0 particles that obey the Klein Gordon equation. To find out what describes particles with non-zero spin it is natural to think that we will need some fields that are vector fields of some kind. This means we need to find alternate representation of the Lorentz/Poincar\'e algebra. Remember that the only condition on the generators of these algebras is that they must satisfy the commutation relations \ref{J_com}. We have already found some matrices \ref{M_4x4} that do this. But what if there is another representation.   
 \end{itemize}
 
-\subsection{Gamma matrices}
+\subsection{Spinor Representation}
 \begin{itemize}
   \item We can find another of these representations due to a trick from Dirac. This turn out to be nothing other then the \emph{Clifford algebra}. Suppose  we have a set of $n\times n$ matrices $\gamma^{\mu}$ satisfying: 
 
@@ -892,7 +895,27 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   \label{S_def}
     S^{\mu\nu} = \frac{i}{4}[\gamma^{\mu},\gamma^{\nu}]
   \end{flalign}
-  Then $S^{\mu\nu}$ satisfy the commutation relations \ref{J_com}.  
+  Then $S^{\mu\nu}$ satisfy the commutation relations \ref{J_com}.  This is easier to show if we break this down into showing $[S^{\mu\nu},\gamma^{\rho}] = i(\gamma^{\mu}\eta^{\nu\rho}-\gamma^{\nu}\eta^{\rho\mu})$ and $[\gamma^{\mu},\gamma^{\nu}] = 2\gamma^{\mu}\gamma^{\nu}-2\eta^{\mu\nu} \implies S^{\mu\nu} = \frac{i}{2}(\gamma^{\mu}\gamma^{\nu}-\eta^{\mu\nu})$. 
+
+  \item These $S^{\mu\nu}$ are know as the \emph{Spinor rotation matrices} or sometimes just the spin matrices. As the name suggests it will turn out that they act on spinors which are two component vectors with complex number entries $\psi = (z_{1},z_2)$. This means that our fields will not be scalars and wont just transform via \ref{phi_transform}. Instead they will transform according to the exponential of our generators $S^{\mu\nu}$. This means the transformation takes the form:
+
+  \begin{flalign}
+    \label{S_transform}
+    \psi^{\alpha}(x) = S[\Lambda]^{\alpha}_{~\beta}\psi^{\beta}(\Lambda^{-1}x)
+  \end{flalign}
+  Notice that the regular co-ords $x$ have just transformed in their usual way as they did in \ref{phi_transform}. This means that:
+  \begin{align*}
+     &\Lambda = \exp(\frac{1}{2}\omega_{\mu\nu}J^{\mu\nu}) \\
+     & S[\Lambda] = \exp(\frac{1}{2}\Omega_{\mu\nu}S^{\mu\nu})
+   \end{align*} 
+\end{itemize}
+\subsubsection{Why the Klein Gordon field has spin-0}
+\begin{itemize}
+  \item In the case of the Klein-Gordon field we had scalar fields must transform via \ref{phi_transform}. This means it has no prefactor as the spinors do in \ref{S_transform}. This essentially means $S^{\mu\nu} = 0$ for scalar spins. We will see later that this $S^{\mu\nu}$ matrix corresponds to spin. So this means that the Klein-Gordon field describes spin-0 particles. 
 \end{itemize}
 
+\subsection{Dirac matrices}
+\begin{itemize}
+  \item The matrices defined by \ref{gamma_def} are all that is needed to define these matrices. There are no representations of this Clifford algebra for $n=2$ or $n=3$, so it turns out that the simplest representation is when the $\gamma^{\mu}$ are $4 \times 4$ matrices.   
+\end{itemize}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  14 OCT 2024 13:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  15 OCT 2024 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1206,10 +1206,10 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 \openout7 = `Quantum_Field_Theory_I.toc'.
 
  [3]
-<trailer.png, id=236, 694.595pt x 339.2675pt>
+<trailer.png, id=246, 694.595pt x 339.2675pt>
 File: trailer.png Graphic file (type png)
 <use trailer.png>
-Package pdftex.def Info: trailer.png  used on input line 142.
+Package pdftex.def Info: trailer.png  used on input line 145.
 (pdftex.def)             Requested size: 300.29344pt x 146.6794pt.
 
 
@@ -1224,7 +1224,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.168 
+l.171 
        <./trailer.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1390,11 +1390,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 836.
+(hyperref)                removing `math shift' on input line 839.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 836.
+(hyperref)                removing `math shift' on input line 839.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1431,21 +1431,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[26
+[26]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[27
 
 ] (./Quantum_Field_Theory_I.aux)
 Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
 
-(rerunfilecheck)             Checksum: 707044A8E8722592791F7689D5E49315;5519.
+(rerunfilecheck)             Checksum: 607BDC092706CE0D8848E38F09B4F19B;5956.
 Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 \openout1 = `Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35978 strings out of 480247
- 716669 string characters out of 5896151
- 1445429 words of memory out of 5000000
- 53272 multiletter control sequences out of 15000+600000
+ 35986 strings out of 480247
+ 716787 string characters out of 5896151
+ 1445496 words of memory out of 5000000
+ 53276 multiletter control sequences out of 15000+600000
  484563 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,21n,104p,1211b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1470,10 +1479,10 @@ onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on Quantum_Field_Theory_I.pdf (26 pages, 375672 bytes).
+Output written on Quantum_Field_Theory_I.pdf (27 pages, 379206 bytes).
 PDF statistics:
- 535 PDF objects out of 1000 (max. 8388607)
- 434 compressed objects within 5 object streams
- 95 named destinations out of 1000 (max. 500000)
- 434 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 454 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 450 words of extra memory for PDF output out of 10000 (max. 10000000)
 
