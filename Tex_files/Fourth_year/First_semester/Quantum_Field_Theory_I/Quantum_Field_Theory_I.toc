@@ -34,3 +34,5 @@
 \contentsline {subsection}{\numberline {5.1}Spinor Representation}{25}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Why the Klein Gordon field has spin-0}{25}{subsubsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.2}Dirac matrices}{26}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Non-Unitary representation}{26}{subsubsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.3}Lorentz Invariants}{26}{subsection.5.3}%

@@ -897,17 +897,18 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   \end{flalign}
   Then $S^{\mu\nu}$ satisfy the commutation relations \ref{J_com}.  This is easier to show if we break this down into showing $[S^{\mu\nu},\gamma^{\rho}] = i(\gamma^{\mu}\eta^{\nu\rho}-\gamma^{\nu}\eta^{\rho\mu})$ and $[\gamma^{\mu},\gamma^{\nu}] = 2\gamma^{\mu}\gamma^{\nu}-2\eta^{\mu\nu} \implies S^{\mu\nu} = \frac{i}{2}(\gamma^{\mu}\gamma^{\nu}-\eta^{\mu\nu})$. 
 
-  \item These $S^{\mu\nu}$ are know as the \emph{Spinor rotation matrices} or sometimes just the spin matrices. As the name suggests it will turn out that they act on spinors which are two component vectors with complex number entries $\psi = (z_{1},z_2)$. This means that our fields will not be scalars and wont just transform via \ref{phi_transform}. Instead they will transform according to the exponential of our generators $S^{\mu\nu}$. This means the transformation takes the form:
+  \item These $S^{\mu\nu}$ are know as the \emph{Spinor rotation matrices} or sometimes just the spin matrices. As the name suggests it will turn out that they act on spinors which are two component vectors with complex number entries $\psi = (z_{1},z_2)$. This means that our fields will not be scalars and wont just transform via \ref{phi_transform}. Instead they will transform according to the exponential of our generators $S^{\mu\nu}$. This means the transformation takes the form (for $\alpha=1,2,3,4$):
 
   \begin{flalign}
     \label{S_transform}
-    \psi^{\alpha}(x) = S[\Lambda]^{\alpha}_{~\beta}\psi^{\beta}(\Lambda^{-1}x)
+    \psi^{\alpha}(x) = (\Lambda_{\frac{1}{2}})^{\alpha}_{~\beta}\psi^{\beta}(\Lambda^{-1}x)
   \end{flalign}
   Notice that the regular co-ords $x$ have just transformed in their usual way as they did in \ref{phi_transform}. This means that:
   \begin{align*}
-     &\Lambda = \exp(\frac{1}{2}\omega_{\mu\nu}J^{\mu\nu}) \\
-     & S[\Lambda] = \exp(\frac{1}{2}\Omega_{\mu\nu}S^{\mu\nu})
+     &\Lambda = \exp(\frac{1}{2}i\omega_{\mu\nu}J^{\mu\nu}) \\
+     & \Lambda_{\frac{1}{2}} = \exp(\frac{1}{2}i\Omega_{\mu\nu}S^{\mu\nu})
    \end{align*} 
+   Where we need the $i$'s in the exponential as the generators are defined as complex and we need the exponential to be real. 
 \end{itemize}
 \subsubsection{Why the Klein Gordon field has spin-0}
 \begin{itemize}
@@ -917,9 +918,52 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 \subsection{Dirac matrices}
 \begin{itemize}
   \item The matrices defined by \ref{gamma_def} are all that is needed to define these matrices. There are no representations of this Clifford algebra for $n=2$ or $n=3$, so it turns out that the simplest representation is when the $\gamma^{\mu}$ are $4 \times 4$ matrices. We can then go about figuring out their form. We can see immediately from \ref{gamma_def} that:
-  \begin{align*}
+  \begin{align}
+  \label{gamma^2}
     (\gamma^{0})^2 = \mathbb{I}_{4}, ~~~(\gamma^{i})^2 = -\mathbb{I}_{4},~~~i=1,2,3
+  \end{align}
+  We can also write down some more relations that all follow from \ref{gamma_def}:
+  \begin{subequations}
+  \begin{align}
+  \label{grel_a}
+     \{\gamma^{\mu},\gamma^{\nu}\} &=[\gamma^{\mu},\gamma^{\nu}] + \gamma^{\nu}\gamma^{\mu} \\
+      \label{grel_b}
+     [\gamma^{\mu},\gamma^{\nu}] &= 2\eta^{\mu\nu}-2\gamma^{\nu}\gamma^{\mu} \\ 
+      \label{grel_c}
+     \gamma^{\mu}\gamma^{\nu} &= 2\eta^{\mu\nu} - \gamma^{\nu}\gamma^{\mu} \\
+      \label{grel_d}
+     \gamma^{\mu}\gamma^{\nu} = & \begin{cases}
+       & (\gamma^{\mu})^2 ~~(\mu = \nu)\\
+       &  -\gamma^{\nu}\gamma^{\mu} ~~(\mu \neq \nu) \\
+     \end{cases}
+  \end{align}
+
+  \end{subequations}
+  We can then see that these matrices are traceless through the following argument. Consider via \ref{gamma_def} that we can write $\mathbb{I} = \gamma^{\mu}\gamma^{\mu}/\eta^{\mu\mu}$ for some fixed value of $\mu$. Then we can insert this into the trace of $\gamma^{\nu}$, where we are free to choose $\nu \neq \mu$ (This means $\gamma^{\nu}\gamma^{\mu}=-\gamma^{\mu}\gamma^{\nu}$ as per \ref{grel_d}): 
+  \begin{align*}
+    \text{tr}(\gamma^{\nu}) =\frac{1}{\eta^{\mu\mu}}\text{tr}(\gamma^{\nu}\gamma^{\mu}\gamma^{\mu})  = -\frac{1}{\eta^{\mu\mu}}\text{tr}(\gamma^{\mu}\gamma^{\nu}\gamma^{\mu}) = -\frac{1}{\eta^{\mu\mu}}\text{tr}(\gamma^{\nu}\gamma^{\mu}\gamma^{\mu}) = -\text{tr}(\gamma^{\nu}) = 0
   \end{align*}
-  
+  Where in the second last step we used the cyclic property of the trace and the lest step was removing the identity inserted earlier. This means all the gamma matrices are traceless. 
+
+  \item These conditions are not enough to completely determine the gamma matrices so there are many different forms. We will use one of the simplest ones, that being:
+
+  \begin{flalign}
+    \gamma^{0} = \begin{pmatrix}
+      0 & \mathbb{I} \\
+      \mathbb{I} & 0 
+    \end{pmatrix}  ~~~ \gamma^{i} = \begin{pmatrix}
+      0 & \sigma^{i} \\
+      -\sigma^{i} & 0 
+    \end{pmatrix} 
+  \end{flalign}
+  This is known as the \emph{chiral representation}.
+\end{itemize}
+\subsubsection{Non-Unitary representation}
+\begin{itemize}
+  \item It should be noted that it is not possible for this Dirac representation to be unitary, as the generators \ref{S_def} cannot be made anti-hermitian. This comes from the fact that if we want $S^{\mu\nu}$ to be anti-hermitian then we need all of $\gamma^{\mu}$ to be either Hermitian or anti-hermitian. We can see from \ref{gamma^2} that $\gamma^{0}$ has real eigenvalues and $\gamma^{i}$ have imaginary eigenvalues. This means $\gamma^{0}$ will be hermitian where as $\gamma^{i}$ must be anti-hermitian. This means $S^{\mu\nu}$ can never be hermitian making this a \emph{Non-Unitary representation}.  
+\end{itemize}
+\subsection{Lorentz Invariants}
+\begin{itemize}
+  \item We would now naturally find out what 
 \end{itemize}
 \end{document}
