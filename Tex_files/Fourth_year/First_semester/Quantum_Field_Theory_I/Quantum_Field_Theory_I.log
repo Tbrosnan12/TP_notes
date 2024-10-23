@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  23 OCT 2024 12:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  23 OCT 2024 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1205,8 +1205,8 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 \tf@toc=\write7
 \openout7 = `Quantum_Field_Theory_I.toc'.
 
- [3]
-<trailer.png, id=270, 694.595pt x 339.2675pt>
+ [3] [4]
+<trailer.png, id=284, 694.595pt x 339.2675pt>
 File: trailer.png Graphic file (type png)
 <use trailer.png>
 Package pdftex.def Info: trailer.png  used on input line 145.
@@ -1220,21 +1220,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.171 
        <./trailer.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[5]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1389,14 +1380,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [22]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 839.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 839.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1405,6 +1388,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [23]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 841.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 841.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1422,27 +1413,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25]pdfTeX warning (ext4): destination with the same identifier (name{equation.
-5.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.940   \end{align}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{equation.5.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.940   \end{align}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{equation.5.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.940   \end{align}
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{equation.5.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.940   \end{align}
-                   
+[25]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1451,7 +1422,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[26]
+[26]pdfTeX warning (ext4): destination with the same identifier (name{equation.
+5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.942   \end{align}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.5.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.942   \end{align}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.5.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.942   \end{align}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.5.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.942   \end{align}
+                   
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1469,21 +1460,39 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[28
+[28]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[29]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[30
 
 ] (./Quantum_Field_Theory_I.aux)
 Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
 
-(rerunfilecheck)             Checksum: B5C6E3F9CA3FE933A4323923E51FE172;6655.
+(rerunfilecheck)             Checksum: 4EEBFB84A763780C6E2BCF02FE6CA905;6861.
 Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 \openout1 = `Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36016 strings out of 480247
- 717146 string characters out of 5896151
- 1445886 words of memory out of 5000000
- 53288 multiletter control sequences out of 15000+600000
+ 36027 strings out of 480247
+ 717302 string characters out of 5896151
+ 1445966 words of memory out of 5000000
+ 53293 multiletter control sequences out of 15000+600000
  484180 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,21n,104p,1211b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1509,10 +1518,10 @@ onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on Quantum_Field_Theory_I.pdf (28 pages, 398649 bytes).
+Output written on Quantum_Field_Theory_I.pdf (30 pages, 405102 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 509 compressed objects within 6 object streams
- 112 named destinations out of 1000 (max. 500000)
- 490 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 534 compressed objects within 6 object streams
+ 118 named destinations out of 1000 (max. 500000)
+ 506 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,41 +1,43 @@
-\contentsline {section}{\numberline {1}QFT trailer}{4}{section.1}%
-\contentsline {section}{\numberline {2}The need for Fields}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Non-relativistic free particle}{7}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Non-trivial Gaussian integral}{7}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Laplace steepest decent}{8}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Field theory EoM}{9}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Non-degenerate Lagrangian}{9}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Hamiltonian field theory}{10}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Noether's Theorem}{10}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Stress-Energy Tensor}{11}{subsection.2.6}%
-\contentsline {section}{\numberline {3}The Klein-Gordon Field}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Second Quantization}{12}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Commutators}{13}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Particle creation}{14}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Time evolution}{15}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}2-point correlation function}{16}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Time-like separation}{16}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Space-like separation}{17}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Measurement}{17}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Klein-Gordon Propagator}{18}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Advanced/Retarded Propagators}{18}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Feynman Propagator}{19}{subsubsection.3.6.2}%
-\contentsline {section}{\numberline {4}Representations of the Poincar\'e Group}{20}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Group actions}{20}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Left actions}{20}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Right actions}{20}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Transformation of fields}{21}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Lorentz Group}{21}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Generators}{22}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}$\mathfrak {sl}(2,\mathbb {C})$ representation}{23}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Generators of the Poincar\'e group}{23}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Casimir Invariants}{23}{subsubsection.4.4.1}%
-\contentsline {section}{\numberline {5}The Dirac Field}{25}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Spinor Representation}{25}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Why the Klein Gordon field has spin-0}{25}{subsubsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.2}Dirac matrices}{26}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Exponential map}{26}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Boosts}{27}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Rotations}{27}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Non-Unitary representation}{27}{subsubsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.4}Lorentz Invariants}{27}{subsection.5.4}%
+\contentsline {section}{\numberline {1}QFT trailer}{5}{section.1}%
+\contentsline {section}{\numberline {2}The need for Fields}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Non-relativistic free particle}{8}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Non-trivial Gaussian integral}{8}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Laplace steepest decent}{9}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Field theory EoM}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Non-degenerate Lagrangian}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Hamiltonian field theory}{11}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Noether's Theorem}{11}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Stress-Energy Tensor}{12}{subsection.2.6}%
+\contentsline {section}{\numberline {3}The Klein-Gordon Field}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Second Quantization}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Commutators}{14}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Particle creation}{15}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Time evolution}{16}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}2-point correlation function}{17}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Time-like separation}{17}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Space-like separation}{18}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Measurement}{18}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Klein-Gordon Propagator}{19}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Advanced/Retarded Propagators}{19}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Feynman Propagator}{20}{subsubsection.3.6.2}%
+\contentsline {section}{\numberline {4}Representations of the Poincar\'e Group}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Group actions}{21}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Left actions}{21}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Right actions}{21}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Transformation of fields}{22}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Lorentz Group}{22}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Generators}{23}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}$\mathfrak {sl}(2,\mathbb {C})$ representation}{24}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Generators of the Poincar\'e group}{24}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Casimir Invariants}{25}{subsubsection.4.4.1}%
+\contentsline {section}{\numberline {5}The Dirac Field}{26}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Spinor Representation}{26}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Why the Klein Gordon field has spin-0}{26}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.2}Dirac matrices}{27}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Exponential map}{27}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Boosts}{28}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Rotations}{28}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Non-Unitary representation}{28}{subsubsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.4}Lorentz Invariants}{28}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Scalars}{29}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Vectors}{29}{subsubsection.5.4.2}%
