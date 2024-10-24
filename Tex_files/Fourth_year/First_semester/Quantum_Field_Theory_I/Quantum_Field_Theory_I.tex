@@ -1115,5 +1115,66 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 
 \end{itemize}
 
+\subsection{Weyl Spinors}
+\begin{itemize}
+  \item From the block diagonal form of the Boost \ref{L_boost} and rotation \ref{L_rot} matrices we can see that the Dirac representation of the Lorentz group is \emph{reducible}, i.e. we can split up our spinors into two components which are acted upon separately by $\Lambda_{\frac{1}{2}}$. These are 2-component spinors called \emph{Weyl spinors} or \emph{chiral spinors}. We denote these:
+\begin{flalign}
+  \label{weyl}
+  \psi = \begin{pmatrix}
+    \psi_L \\
+    \psi_R
+  \end{pmatrix}
+\end{flalign}
+As was mentioned in the section on Representations of the Poincar\'e group these correspond to $m=1/2,n=0$ and $m=0,n=1/2$. We can now use the chiral representation to write down the Dirac equation for the Weyl spinors. For this we can introduce some notation to make this cleaner. Defining $\sigma^{\mu} \equiv (\mathca{I},\boldsymbol{\sigma})$ and $\bar{\sigma}^{\mu} \equiv (\mathca{I},-\boldsymbol{\sigma})$. Then this becomes: 
+\begin{align*}
+    \begin{pmatrix}
+      -m & i\sigma^{\mu}\partial_{\mu} \\
+ \bar{\sigma}^{\mu}\partial_{\mu} & m    
+    \end{pmatrix} \begin{pmatrix}
+      \psi_{L} \\ 
+      \psi_R
+    \end{pmatrix} = 0 
+  \end{align*}  
+  This leads to two coupled equations, but if we have $m=0$, then they become de-coupled. These are known as the \emph{Weyl equations}:
+  \begin{flalign}
+     i\sigma^{\mu}\partial_{\mu}&\psi_{L} = 0 \\
+      i\bar{\sigma}^{\mu}\partial_{\mu}& \psi_{R} =0 
+   \end{flalign} 
+   \item It should also be noted that with this notation we can write in the chiral representation:
+   \begin{align}
+     \label{g_mu}
+      \gamma^{\mu} = \begin{pmatrix}
+        0 & \sigma^{\mu} \\
+        \bar{\sigma}^{\mu} & 0
+      \end{pmatrix}
+   \end{align}
+\end{itemize}
+
+\subsection{Solution to the Dirac equation}
+\begin{itemize}
+  \item Since the Dirac field $\psi$ obeys the Klein Gordon equation we know it must be a superposition of plane wave solutions, i.e. $\propto e^{-i p \cdot x}$. We can then make the following ansatz for the Dirac spinor:
+  \begin{flalign}
+      \psi = u(p)e^{-ip\cdot x}
+    \end{flalign}  
+    Here $u(p)$ is a 4 component spinor that does not depend on spacial components, which fits in with the picture of there being a spinor space at every point in space independent from each other. It not depending on the spacial components also means that when we plug this ansatz into the Dirac equation we just get:
+    \begin{align*}
+      (\gamma^{\mu}p_{\mu}-m)u(p)= 0
+    \end{align*}
+    To solve this we can let $u(p)^{T} = (u_1,u_2)$. Then this equation becomes:
+    \begin{align*}
+        & \sigma^{\mu}p_{\mu}u_2 = mu_1, ~~~\bar{\sigma}^{\mu}p_{\mu}u_1 = mu_2  \\
+        & \implies \sigma^{\mu}p_{\mu}\bar{\sigma}^{\nu}p_{\nu}u_1 = m^2u_1
+    \end{align*}
+  This actually means these equations are not independent as they imply each other (through the relation $(\sigma^{\mu}p_{\mu})(\bar{\sigma}^{\nu}p_{\nu}) = p_0^2-p_{i}p_j\sigma^{i}\sigma^{j} = p_{0}^2-p_ip_j\delta^{ij} = m^2$). This means the components must be linear dependent, i.e. the same up to a factor. This means we can make the ansatz $u_1 = (\sigma^{\mu}p_{\mu})\xi$, then $u_2 = m\xi$. But we can scale both $u_1$ and $u_2$ by any factor we want, so we choose the most symmetric one by multiplying by $1/\sqrt{p^{\mu}\sigma_{\mu}}$ leaving us with the neat solution:
+  \begin{flalign}
+       u(p) = \begin{pmatrix}
+       \sqrt{p \cdot \sigma}\xi \\
+        \sqrt{p \cdot \bar{\sigma}}\xi 
+       \end{pmatrix}
+  \end{flalign} 
+\end{itemize}
+
+
+
 
 \end{document}
