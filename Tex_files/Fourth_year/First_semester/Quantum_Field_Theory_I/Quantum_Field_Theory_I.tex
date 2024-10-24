@@ -1069,11 +1069,51 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 
   To relate these two different transformation matrices we can use the following relation: $[S^{\mu\nu},\gamma^{\rho}] = i(\gamma^{\mu}\eta^{\nu\rho}-\gamma^{\nu}\eta^{\rho\mu})$ (Which is easy to show by expanding and using \ref{grel_b}). The RHS of this relation can then be recognized as the same thing we had for the regular Lorentz generators from \ref{M_4x4} (with the lowering of a single index by acting with $\eta_{\nu\nu'}$ and relabeling so that $(M^{\rho\sigma})^{\mu}_{~\nu} = \eta^{\rho\mu}\delta^{\sigma}_{~\nu}-\eta^{\sigma\mu}\delta^{\rho}_{~\nu}$). We also have an extra factor of $i$ in our new expression but this is just so we now have hermitian operators.  This means we can say:
   \begin{align*}
-     [S^{\mu\nu},\gamma^{\rho}] = i(\eta^{\nu\rho}\delta^{\mu}_{\sigma}-\delta^{\nu}_{\sigma}\eta^{\mu\rho})\gamma^{\sigma} = -(M^{\mu\nu})^{\rho}_{~\sigma}\gamma^{\sigma}
+     [\gamma^{\rho},S^{\mu\nu}]=-[S^{\mu\nu},\gamma^{\rho}] = i(\delta^{\nu}_{\sigma}\eta^{\mu\rho}-\eta^{\nu\rho}\delta^{\mu}_{\sigma})\gamma^{\sigma} = (M^{\mu\nu})^{\rho}_{~\sigma}\gamma^{\sigma}
    \end{align*}
-   If we then multiply this by $\frac{i}{2}$, contract with $\omega_{\mu\nu}$ and add $\gamma^{\rho}$ the LHS becomes (up to quadratic order in $S$):
+   If we then multiply this by $\frac{i}{2}$, contract with $\omega_{\mu\nu}$ and add $\gamma^{\rho}$ then this becomes:
    \begin{align*}
-     asd
+     \gamma^{\rho}& +\frac{i}{2}\gamma^{\rho}\omega_{\mu\nu}S^{\mu\nu}-\frac{i}{2}\omega_{\mu\nu}S^{\mu\nu}\gamma^{\rho} = \delta^{\rho}_{\sigma}\gamma^{\sigma}+\frac{i}{2}\omega_{\mu\nu}M^{\mu\nu} \\
+      \implies & (1-\frac{i}{2}\omega_{\mu\nu}S^{\mu\nu})\gamma^{\rho}(1+\frac{i}{2}\omega_{\mu\nu}S^{\mu\nu}) \simeq (1+\frac{i}{2}\omega_{\mu\nu}M^{\mu\nu})^{\rho}_{~\sigma}\gamma^{\sigma}
    \end{align*}
+   \begin{flalign}
+     \implies \Lambda_{\frac{1}{2}}^{-1}\gamma^{\rho}\Lambda_{\frac{1}{2}} = \Lambda^{\rho}_{~\sigma}\gamma^{\sigma}
+   \end{flalign}
+
+   \item 
+   Now this is a very useful relation as from this we can very easily see what we need to do to construct a Lorentz scalar. We need something that transforms via $\Lambda_{\frac{1}{2}}^{-1}$ and something that transforms via $\Lambda_{\frac{1}{2}}$. But we know these objects! This means the quantity $\bar{\psi}\gamma^{\mu}\psi$ transforms like a Lorentz vector! 
+
+   This same procedure can be used to see that quantities such as $\bar{\psi}\gamma^{\mu}\gamma^{\nu}\psi$ transform as a rank-2 tensor and so on. 
 \end{itemize}
+\subsection{Dirac Action}
+\begin{itemize}
+  \item We would then like to of course construct an action for our new theory of spinors, that will then of course lead to the Holy grail; an equation of motion. To construct an action we usually just combine every conserved quantity we can into one equation and then interpret that as the action. So what scalars do we have? Well we know $\bar{\psi}\psi$ is a scalar. If we are thinking about a single particle then the mass of the particle $m$ is also a scalar. That is kinda it for scalars, but we also know that the contraction of two vectors is a scalar, and we know another vector quantity, that being $\bar{\psi}\gamma^{\mu}\psi$. But then the question is what to contract this with, does a single particle have a vector like quantity? well yes its 4-momentum is a vector, so we can contract $\bar{\psi}\gamma^{\mu}\psi$ with $p_{\mu} = i\partial_{\mu}$. We could continue further adding tensors, but we don't really have any tensor like properties of our particle to contract them with. Taking all these the most natural way to combine them into one Lagrangian is the following:
+  \begin{flalign}
+    S = \int d^4x \bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi 
+  \end{flalign}
+  We have to attach $m$ to some spinors as other wise it does not appear in the equation of motion. The minus in front is just the one that turns out to make the parameter $m$ the same as the mass. 
+  
+  \item We can now vary this action. We can treat $\psi$ and $\bar{\psi}$ as independent fields as we would do for a complex Klein Gordon scalar field theory. Varying with respect to $\bar{\psi}$ gives us the \emph{Dirac equation}, noticing that there is no $\partial_{\mu}\bar{\psi}$ term in the Lagrangian:
+  \begin{flalign}
+      (i\gamma^{\mu}\partial_{\mu}-m)\psi = 0
+    \end{flalign} 
+    Varying with respect to $\psi$ is actually a little different, since there is a $\partial_{\mu}\psi$ in the Lagrangian. This just means we use \ref{EoM} to get $\frac{\delta \mathcal{L}}{\delta \varphi}  - \partial_{\mu}\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi} = \partial_{\mu}(i\bar{\psi}\gamma^{\mu})-m\bar{\psi}=0$. This can then be recognized as just the conjugate of the Dirac equation so it is nothing new.
+
+\item Anthony Zee, raises the following point about this Lagrangian in his book "Quantum field theory in a nutshell": ``If you are disturbed by the asymmetric treatment of $\bar{\psi}$ and $\psi$, you can always integrate by parts in the action, have $\partial_{\mu}$  act on $\bar{\psi}$ in the Lagrangian and then average the two forms of the Lagrangian.'' So despite first looks this action does treat $\psi$ and $\bar{\psi}$ equally. 
+
+\item This is not the derivation that Dirac came up for his equation. His approach is more direct and was more about finding what the form of a first order Lorentz invariant equation would be. For a nice explanation of this see pg 77 of  \href{https://archive.org/details/quantumfieldtheo0000kaku}{Michu Kaku's ``Quantum field theory''}. 
+
+
+\end{itemize}
+\subsubsection{Return to Klein-Gordon}
+\begin{itemize}
+\item It can then be checked that the Dirac equation, when acted from the left by $(-i\gamma^{\mu}\partial_{\mu}-m)$ gives back the Klein-Gordan equation we had above \ref{KG eq}:
+\begin{align*}
+  (-i\gamma^{\mu}\partial_{\mu}-m)(i\gamma^{\mu}\partial_{\mu}-m)\psi  = &(\gamma^{\mu}\gamma^{\nu}\partial_{\mu}\partial_{\nu}+m^2)\psi = (\frac{1}{2}\{\gamma^{\mu},\gamma^{\nu}\}\partial_{\mu}\partial_{\nu}+m^2)\psi = 0\\
+  \implies & (\partial_{\mu}\partial^{\mu}+m^2)\psi = 0 
+\end{align*}
+
+\end{itemize}
+
+
 \end{document}
