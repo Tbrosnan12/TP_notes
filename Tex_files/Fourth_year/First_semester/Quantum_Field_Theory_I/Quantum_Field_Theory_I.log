@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  24 OCT 2024 23:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  25 OCT 2024 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1479,24 +1479,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [30]
-! Undefined control sequence.
-l.1128 .... Defining $\sigma^{\mu} \equiv (\mathca
-                                                  {I},\boldsymbol{\sigma})$ ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.1128 ... and $\bar{\sigma}^{\mu} \equiv (\mathca
-                                                  {I},-\boldsymbol{\sigma})$...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1526,9 +1508,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [33
 
 ] (./Quantum_Field_Theory_I.aux)
-Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
 
-(rerunfilecheck)             Checksum: B55CCF4BE85C1687AF1FB5E8B797B781;7507.
+Package rerunfilecheck Warning: File `Quantum_Field_Theory_I.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Quantum_Field_Theory_I.out':
+(rerunfilecheck)             Before: B55CCF4BE85C1687AF1FB5E8B797B781;7507
+(rerunfilecheck)             After:  D7B69A66E4380A2473E9A30F4918908A;7512.
 Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 \openout1 = `Quantum_Field_Theory_I.run.xml'.
 
@@ -1563,7 +1550,7 @@ onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on Quantum_Field_Theory_I.pdf (33 pages, 419725 bytes).
+Output written on Quantum_Field_Theory_I.pdf (33 pages, 419737 bytes).
 PDF statistics:
  692 PDF objects out of 1000 (max. 8388607)
  581 compressed objects within 6 object streams
