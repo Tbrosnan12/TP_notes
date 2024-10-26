@@ -976,12 +976,13 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   \subsubsection{Boosts}
   \begin{itemize}
      \item We start with Boosts, for which we can calculate from \ref{S_def} that:
-     \begin{align*}
+     \begin{align}
+     \label{S_ij}
        S^{0i} = -\frac{i}{2}\begin{pmatrix}
         -\sigma^{i} & 0 \\
         0 & \sigma^{i} 
        \end{pmatrix}
-     \end{align*}
+     \end{align}
      We can then go about exponentiating this using \ref{L_half} where the boost parameters are determined by $\Omega_{0i} = -\Omega_{i0} \equiv \alpha_{i} $. This means $\boldsymbol{\alpha}$ is the vector that determines the boost direction. Notice that due to the anti symmetry of both $S^{0i}$ and $\Omega_{0i}$ we end up with two of each pair. This all means:
     \begin{align}
     \label{L_boost}
@@ -1173,8 +1174,18 @@ As was mentioned in the section on Representations of the Poincar\'e group these
        \end{pmatrix}
   \end{flalign} 
 \end{itemize}
-
-
+\subsubsection{Helicity operator}
+\begin{itemize}
+  \item The helicity operator is the projection of the angular momentum along the direction of momentum:
+  \begin{align*}
+  h = -\frac{1}{2}\epsilon_{ijk}S^{jk}\hat{p}^{i} = \frac{1}{2}\hat{p}^{i}\begin{pmatrix}
+  \sigma^{i} & 0 \\
+  0 & \sigma^i
+  \end{pmatrix}
+  \end{align*}
+  Here $S^{ij}$ is the generator of rotations we had above in \ref{S_ij}. So we have used $\epsilon^{ijl}\epsilon_{ijk} = 2\delta_{k}^{l}$ to get the matrix in this form. A particle with eigenvalue $h=1/2$ is called \emph{right handed}, where as a particle with  $h=-1/2$ is called \emph{left handed}. The Helicity of a massive particle will depend on its frame of reference as we can always boost to a frame where its momentum is in the opposite direction. This does not however, work for a massless particle so their helicity is always the same.    
+\end{itemize}
+\subsection{Normalization of spinors}
 
 
 \end{document}
