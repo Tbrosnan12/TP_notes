@@ -1090,6 +1090,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 \begin{itemize}
   \item We would then like to of course construct an action for our new theory of spinors, that will then of course lead to the Holy grail; an equation of motion. To construct an action we usually just combine every conserved quantity we can into one equation and then interpret that as the action. So what scalars do we have? Well we know $\bar{\psi}\psi$ is a scalar. If we are thinking about a single particle then the mass of the particle $m$ is also a scalar. That is kinda it for scalars, but we also know that the contraction of two vectors is a scalar, and we know another vector quantity, that being $\bar{\psi}\gamma^{\mu}\psi$. But then the question is what to contract this with, does a single particle have a vector like quantity? well yes its 4-momentum is a vector, so we can contract $\bar{\psi}\gamma^{\mu}\psi$ with $p_{\mu} = i\partial_{\mu}$. We could continue further adding tensors, but we don't really have any tensor like properties of our particle to contract them with. Taking all these the most natural way to combine them into one Lagrangian is the following:
   \begin{flalign}
+  \label{D_act}
     S = \int d^4x \bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi 
   \end{flalign}
   We have to attach $m$ to some spinors as other wise it does not appear in the equation of motion. The minus in front is just the one that turns out to make the parameter $m$ the same as the mass. 
@@ -1174,6 +1175,31 @@ As was mentioned in the section on Representations of the Poincar\'e group these
        \end{pmatrix}
   \end{flalign} 
 \end{itemize}
+
+
+\subsubsection{Negative frequencies}
+\begin{itemize}
+  \item We could have course also had solutions of the form:
+
+  \begin{flalign}
+      \psi = v(p)e^{ip\cdot x}
+    \end{flalign}
+    However, if we compute the energy of these solutions, we find that it is negative. Never the less we will need these solutions later. We can then repeat the same above procedure plugging this ansatz into the Dirac equation to get:
+    \begin{align*}
+      (-\gamma^{\mu}p_{\mu}-m)v(p)= 0
+    \end{align*}
+    This is solved by:
+    \begin{flalign}
+      v(p) = \begin{pmatrix}
+       \sqrt{p \cdot \sigma}\eta \\
+        -\sqrt{p \cdot \bar{\sigma}}\eta 
+       \end{pmatrix}
+    \end{flalign}
+    For some 2-component spinor $\eta$.
+
+\end{itemize}
+
+
 \subsubsection{Helicity operator}
 \begin{itemize}
   \item The helicity operator is the projection of the angular momentum along the direction of momentum:
@@ -1186,6 +1212,71 @@ As was mentioned in the section on Representations of the Poincar\'e group these
   Here $S^{ij}$ is the generator of rotations we had above in \ref{S_ij}. So we have used $\epsilon^{ijl}\epsilon_{ijk} = 2\delta_{k}^{l}$ to get the matrix in this form. A particle with eigenvalue $h=1/2$ is called \emph{right handed}, where as a particle with  $h=-1/2$ is called \emph{left handed}. The Helicity of a massive particle will depend on its frame of reference as we can always boost to a frame where its momentum is in the opposite direction. This does not however, work for a massless particle so their helicity is always the same.    
 \end{itemize}
 \subsection{Normalization of spinors}
+\begin{itemize}
+  \item It is often useful to work with specific spinors $\xi$ for this we can use eigenstates of $\sigma^{3}$, That is $\xi^{1} = \begin{pmatrix}
+    1 \\
+    0
+  \end{pmatrix}$ and $\xi^{2} = \begin{pmatrix}
+    0 \\
+    1
+  \end{pmatrix}$ . These are relevant as if we often care about spin along the $z$ axis. With this notation we place an index $s$ on our 2-component spinors, $\xi \rightarrow \xi^{s}$, $s=1,2$. This means we also place this label on $u(p)$ as both the spinors must be the same. So $u(p)\rightarrow u^{s}(p)$. 
 
+  \item We would then like to define some sort of orthogonality relation with respect to an inner product. Immediately we would think of $u^{\dagger}u$, but remember we would like Lorentz invariant quantities so that they remain the same in all frames, and we have seen before that this is not Lorentz invariant for spinors as $\Lambda_{\frac{1}{2}}$ is not unitary. Thus we use the Dirac adjoint, $\bar{u}^s(p) \equiv u^{\dagger}(p)\gamma^{0}$. This allows us to calculate the inner product:
+  \begin{align}
+      \bar{u}^{r}u^{s} = ((\xi^{r})^{\dagger}\sqrt{p \cdot \bar{\sigma}},(\xi^r)^{\dagger}\sqrt{p \cdot \sigma}) \cdot \begin{pmatrix}
+       \sqrt{p \cdot \sigma}\xi^s \\
+        \sqrt{p \cdot \bar{\sigma}}\xi^s 
+       \end{pmatrix} = 2m(\xi^r)^{\dagger}\xi^s = 2m\delta^{rs}
+    \end{align}  
+    Where we have used the fact that $(\sigma^{\mu}p_{\mu})(\bar{\sigma}^{\nu}p_{\nu}) =m^2$. Notice that $\gamma^{0}$ had the affect of swapping the two components of $u^{\dagger}$. This quantity is clearly Lorentz invariant.
+
+    \item For the negative frequency solutions we can see that the condition will be:
+    \begin{align}
+      \bar{v}^{r}v^{s} = (-(\eta^{r})^{\dagger}\sqrt{p \cdot \bar{\sigma}},(\eta^r)^{\dagger}\sqrt{p \cdot \sigma}) \cdot \begin{pmatrix}
+       \sqrt{p \cdot \sigma}\eta^s \\
+        -\sqrt{p \cdot \bar{\sigma}}\eta^s 
+       \end{pmatrix} = -2m(\eta^r)^{\dagger}\eta^s = -2m\delta^{rs}
+    \end{align}
+    
+    \item  We can also check the inner products of the $u^s(p)$'s and $v^r(p)$'s:
+    \begin{align*}
+      \bar{u}^rv^s = ((\xi^{r})^{\dagger}\sqrt{p \cdot \bar{\sigma}},(\xi^r)^{\dagger}\sqrt{p \cdot \sigma}) \cdot \begin{pmatrix}
+       \sqrt{p \cdot \sigma}\eta^s \\
+        -\sqrt{p \cdot \bar{\sigma}}\eta^s 
+       \end{pmatrix} = (m-m)(\xi^r)^{\dagger}\eta^s = 0
+    \end{align*}
+    So $u^r(p)$ and $v^s(p)$ are orthogonal. This clearly also works for $\bar{v}^ru^s$. 
+
+    \item It also turns out that the following relations are important when we go to quantize this theory. Note that since we have  $\bar{u}^r(p)v^s(p) = 0$, then $u^{r\dagger}(p)v^s(p) \neq 0 $ But it can be checked that $u^{r\dagger}(p^0,\textbf{p})v^s(p^0,-\textbf{p}) = 0$. 
+\end{itemize}
+
+ \subsubsection{Outer product} 
+  \begin{itemize}
+    \item We can define an outer product on these spinors in the following way:
+    \begin{align}
+      \sum_{s=1}^{2}u^s(p)\bar{u}^s(p) = \begin{pmatrix}
+       \sqrt{p \cdot \sigma}\xi^s \\
+        \sqrt{p \cdot \bar{\sigma}}\xi^s 
+       \end{pmatrix} \cdot ((\xi^{r})^{\dagger}\sqrt{p \cdot \bar{\sigma}},(\xi^r)^{\dagger}\sqrt{p \cdot \sigma}) = \begin{pmatrix}
+         m & p\cdot \sigma \\
+         p \cdot \bar{\sigma} & m
+       \end{pmatrix} = \gamma^{\mu}p_{\mu} + m
+    \end{align}
+    Where we have used the relation $\sum_{s=1}^2\xi^s(\xi^s)^{\dagger} = \mathbb{I}$. Similarly for $v^s(p)$ we have:
+    \begin{align}
+      \sum_{s=1}^{2}v^s(p)\bar{v}^s(p) = \gamma^{\mu}p_{\mu} - m
+    \end{align}
+  \end{itemize}
+
+  \subsection{Quantization of the Dirac Field}
+  \begin{itemize}
+      \item We now want to quantize this theory. We start with the Lagrangian $\mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi$, which we get from the Dirac action \ref{D_act}. The most logical way to start is by treating $\psi$ as we did the scalar Klein Gordon field.
+
+       We can see that the momentum density of $\psi$ is $\pi = \frac{\partial \mathcal{L}}{\partial \dot{\psi}} =i \bar{\psi}\gamma^{0} = i\psi^{\dagger} $. This means we can calculate the Hamiltonian via \ref{Hamiltonian}:
+    \begin{align*}
+    H = \int d^3x\left[i\psi^{\dagger}\partial_{0}\psi -\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi \right]  =\int d^3x\left[i\bar{\psi}\gamma^{0}\partial_{0}\psi -\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi \right] = \int d^3x\left[\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi \right]     
+    \end{align*}
+
+  \end{itemize}    
 
 \end{document}
