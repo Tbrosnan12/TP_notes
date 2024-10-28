@@ -3,7 +3,7 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/thomas/Documents/TP_notes/Tex_files/Fourth_year/First_semester/Quantum_Field_Theory_I/Quantum_Field_Theory_I.tex
+INPUT Quantum_Field_Theory_I.tex
 OUTPUT Quantum_Field_Theory_I.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

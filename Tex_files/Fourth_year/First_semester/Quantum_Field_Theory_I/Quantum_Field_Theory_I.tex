@@ -1097,9 +1097,10 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   
   \item We can now vary this action. We can treat $\psi$ and $\bar{\psi}$ as independent fields as we would do for a complex Klein Gordon scalar field theory. Varying with respect to $\bar{\psi}$ gives us the \emph{Dirac equation}, noticing that there is no $\partial_{\mu}\bar{\psi}$ term in the Lagrangian:
   \begin{flalign}
+  \label{Dirac}
       (i\gamma^{\mu}\partial_{\mu}-m)\psi = 0
     \end{flalign} 
-    Varying with respect to $\psi$ is actually a little different, since there is a $\partial_{\mu}\psi$ in the Lagrangian. This just means we use \ref{EoM} to get $\frac{\delta \mathcal{L}}{\delta \varphi}  - \partial_{\mu}\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \varphi} = \partial_{\mu}(i\bar{\psi}\gamma^{\mu})-m\bar{\psi}=0$. This can then be recognized as just the conjugate of the Dirac equation so it is nothing new.
+    Varying with respect to $\psi$ is actually a little different, since there is a $\partial_{\mu}\psi$ in the Lagrangian. This just means we use \ref{EoM} to get $\partial_{\mu}\frac{\delta \mathcal{L}}{\delta \partial_{\mu} \psi}-\frac{\delta \mathcal{L}}{\delta \psi}  = \partial_{\mu}(i\bar{\psi}\gamma^{\mu})+m\bar{\psi}=0$. This can then be recognized as just the Dirac equation, if we act by $\gamma^{0}$ and take the hermitian conjugate. 
 
 \item Anthony Zee, raises the following point about this Lagrangian in his book "Quantum field theory in a nutshell": ``If you are disturbed by the asymmetric treatment of $\bar{\psi}$ and $\psi$, you can always integrate by parts in the action, have $\partial_{\mu}$  act on $\bar{\psi}$ in the Lagrangian and then average the two forms of the Lagrangian.'' So despite first looks this action does treat $\psi$ and $\bar{\psi}$ equally. 
 
@@ -1114,6 +1115,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   (-i\gamma^{\mu}\partial_{\mu}-m)(i\gamma^{\mu}\partial_{\mu}-m)\psi  = &(\gamma^{\mu}\gamma^{\nu}\partial_{\mu}\partial_{\nu}+m^2)\psi = (\frac{1}{2}\{\gamma^{\mu},\gamma^{\nu}\}\partial_{\mu}\partial_{\nu}+m^2)\psi = 0\\
   \implies & (\partial_{\mu}\partial^{\mu}+m^2)\psi = 0 
 \end{align*}
+Where here we have used the fact that $\gamma^{\mu}\gamma^{\nu}\partial_{\mu}\partial_{\nu} = (\{\gamma^{\mu},\gamma^{\nu}\}-\gamma^{\nu}\gamma^{\mu})\partial_{\mu}\partial_{\nu}\implies 2\gamma^{\mu}\gamma^{\nu}\partial_{\mu}\partial_{\nu} = \{\gamma^{\mu},\gamma^{\nu}\}\partial_{\mu}\partial_{\nu}$ As we can relabel $\mu \leftrightarrow \nu$ in the second term. 
 
 \end{itemize}
 
@@ -1159,9 +1161,10 @@ As was mentioned in the section on Representations of the Poincar\'e group these
       \psi = u(p)e^{-ip\cdot x}
     \end{flalign}  
     Here $u(p)$ is a 4 component spinor that does not depend on spacial components, which fits in with the picture of there being a spinor space at every point in space independent from each other. It not depending on the spacial components also means that when we plug this ansatz into the Dirac equation we just get:
-    \begin{align*}
+    \begin{align}
+    \label{u(p)}
       (\gamma^{\mu}p_{\mu}-m)u(p)= 0
-    \end{align*}
+    \end{align}
     To solve this we can let $u(p)^{T} = (u_1,u_2)$. Then this equation becomes:
     \begin{align*}
         & \sigma^{\mu}p_{\mu}u_2 = mu_1, ~~~\bar{\sigma}^{\mu}p_{\mu}u_1 = mu_2  \\
@@ -1184,10 +1187,11 @@ As was mentioned in the section on Representations of the Poincar\'e group these
   \begin{flalign}
       \psi = v(p)e^{ip\cdot x}
     \end{flalign}
-    However, if we compute the energy of these solutions, we find that it is negative. Never the less we will need these solutions later. We can then repeat the same above procedure plugging this ansatz into the Dirac equation to get:
-    \begin{align*}
+    However, if we compute the energy of these solutions, we find that it is negative (Think of Schr\"odinger equation $i\partial_{t}\ket{\psi} = E\ket{\psi}$). Never the less we will need these solutions later. We can then repeat the same above procedure plugging this ansatz into the Dirac equation to get:
+    \begin{align}
+    \label{v(p)}
       (-\gamma^{\mu}p_{\mu}-m)v(p)= 0
-    \end{align*}
+    \end{align}
     This is solved by:
     \begin{flalign}
       v(p) = \begin{pmatrix}
@@ -1213,7 +1217,7 @@ As was mentioned in the section on Representations of the Poincar\'e group these
 \end{itemize}
 \subsection{Normalization of spinors}
 \begin{itemize}
-  \item It is often useful to work with specific spinors $\xi$ for this we can use eigenstates of $\sigma^{3}$, That is $\xi^{1} = \begin{pmatrix}
+  \item It is often useful to work with a basis of specific spinors $\xi$ for example we can use eigenstates of $\sigma^{3}$, That is $\xi^{1} = \begin{pmatrix}
     1 \\
     0
   \end{pmatrix}$ and $\xi^{2} = \begin{pmatrix}
@@ -1247,13 +1251,20 @@ As was mentioned in the section on Representations of the Poincar\'e group these
     \end{align*}
     So $u^r(p)$ and $v^s(p)$ are orthogonal. This clearly also works for $\bar{v}^ru^s$. 
 
-    \item It also turns out that the following relations are important when we go to quantize this theory. Note that since we have  $\bar{u}^r(p)v^s(p) = 0$, then $u^{r\dagger}(p)v^s(p) \neq 0 $ But it can be checked that $u^{r\dagger}(p^0,\textbf{p})v^s(p^0,-\textbf{p}) = 0$. 
+    \item It also turns out that relations to do with the regular adjoint scalar product of these spinors are important when we go to quantize this theory. These can be shown to be:
+    \begin{flalign}
+    \label{norm_a}
+    u^{r \dagger}(p)u^{s}(p) &= v^{r \dagger}(p)v^{s}(p) = 2p_0\delta^{rs} \\
+    \label{norm_b}
+     u^{r \dagger}(p_0,\textbf{p})v^{s}(p_0,-\textbf{p}) & = v^{r \dagger}(p_0,\textbf{p})u^{s}(p_0,-\textbf{p})= 0  
+    \end{flalign}
 \end{itemize}
 
  \subsubsection{Outer product} 
   \begin{itemize}
     \item We can define an outer product on these spinors in the following way:
     \begin{align}
+    \label{outer_u}
       \sum_{s=1}^{2}u^s(p)\bar{u}^s(p) = \begin{pmatrix}
        \sqrt{p \cdot \sigma}\xi^s \\
         \sqrt{p \cdot \bar{\sigma}}\xi^s 
@@ -1264,6 +1275,7 @@ As was mentioned in the section on Representations of the Poincar\'e group these
     \end{align}
     Where we have used the relation $\sum_{s=1}^2\xi^s(\xi^s)^{\dagger} = \mathbb{I}$. Similarly for $v^s(p)$ we have:
     \begin{align}
+    \label{outer_v}
       \sum_{s=1}^{2}v^s(p)\bar{v}^s(p) = \gamma^{\mu}p_{\mu} - m
     \end{align}
   \end{itemize}
@@ -1273,10 +1285,71 @@ As was mentioned in the section on Representations of the Poincar\'e group these
       \item We now want to quantize this theory. We start with the Lagrangian $\mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi$, which we get from the Dirac action \ref{D_act}. The most logical way to start is by treating $\psi$ as we did the scalar Klein Gordon field.
 
        We can see that the momentum density of $\psi$ is $\pi = \frac{\partial \mathcal{L}}{\partial \dot{\psi}} =i \bar{\psi}\gamma^{0} = i\psi^{\dagger} $. This means we can calculate the Hamiltonian via \ref{Hamiltonian}:
-    \begin{align*}
-    H = \int d^3x\left[i\psi^{\dagger}\partial_{0}\psi -\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi \right]  =\int d^3x\left[i\bar{\psi}\gamma^{0}\partial_{0}\psi -\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi \right] = \int d^3x\left[\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi \right]     
-    \end{align*}
-
+    \begin{align}
+    \label{D_ham}
+    H = \int &d^3x\left[i\psi^{\dagger}\partial_{0}\psi -\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi \right]  = \int d^3x\left[i\bar{\psi}\gamma^{0}\partial_{0}\psi -\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi \right] \nonumber \\
+     = &\int d^3x\left[\bar{\psi}(-i\gamma^{0}\boldsymbol{\gamma}\cdot \nabla +m\gamma^{0})\psi \right]   =  \int d^3x\left[\bar{\psi}(-i\boldsymbol{\alpha}\cdot \nabla +m\beta)\psi \right]   
+    \end{align}
+    Where we have defined $\boldsymbol{\alpha} =\gamma^{0}\boldsymbol{\gamma}$ and $\beta = \gamma^{0}$. We often denote $h_D \equiv -i\boldsymbol{\alpha}\cdot \nabla +m\beta$
   \end{itemize}    
+
+  \subsubsection{Commutation relations}
+  \begin{itemize}
+    \item We then proceed as usual, positing the canonical commutation relations: 
+    \begin{align*}
+    [\psi_{a}(\textbf{x}),\psi^{\dagger}_{b}(\textbf{x}')] = \delta_{ab}\delta(\textbf{x}-\textbf{x}')
+    \end{align*}
+    Here $a$ and $b$ denote the spinor components, that is $a,b=1,2,3,4$. Note that in the rest of the computations we (and most sources Peskin, Tong ect) drop these indices (and essentially assume $a=b$), though it should be noted that they are still there! we are doing out these component wise for the spinors. This is important as it allows us to exchange the order of spinors as they are just components. It also should be noted that we shouldn't confuse the index's $a,b$ and $s,r$ they are not the same. The latter indicates the basis index not the spinor index. 
+
+     \item  Our task then is to find a representation of our commutation relations in terms of creation and annihilation operators that diagonalize $H$. From the Dirac equation \ref{Dirac} we have that $(i\gamma^0\partial_{0}-\gamma^0h_{D})\psi =0 $ So we are looking for solutions to the Dirac equation with eigenvalues $E_{\textbf{p}}$. These are just the solutions we discussed before so we can write: 
+    \begin{align}
+    \label{psi}
+      \psi(\textbf{x}) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)  \\
+      \label{psi_d}
+      \psi^{\dagger}(\textbf{x}) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}+c^{s }_{\textbf{p}}v^{s\dagger}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right) 
+    \end{align}
+
+    Notice that for now we are working in the Schr\"odinger picture where $\psi$ does not depend on time. 
+    We can now attempt to calculate the commutator for each spinor index: 
+    \end{itemize}
+    \begin{align*}
+     [\psi(\textbf{x}),\psi^{\dagger}(\textbf{x}')] = \sum_{s,r=1,2}\int \frac{d^3pd^3p'}{(2\pi)^6}\frac{1}{2\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}&\left[\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)\left(b^{r \dagger}_{\textbf{p}'}u^{r\dagger}(\textbf{p}')e^{-i\textbf{p}'\cdot\textbf{x}'}+c^{r }_{\textbf{p}'}v^{r\dagger}(\textbf{p}')e^{i\textbf{p'}\cdot\textbf{x}'}\right)\right. \\
+      - &\left.\left(b^{r \dagger}_{\textbf{p}'}u^{r\dagger}(\textbf{p}')e^{-i\textbf{p}'\cdot\textbf{x}'}+c^{r}_{\textbf{p}'}v^{r\dagger}(\textbf{p}')e^{i\textbf{p}'\cdot\textbf{x}'}\right)\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)\right] \\
+      = \sum_{s,r=1,2}\int \frac{d^3pd^3p'}{(2\pi)^6}\frac{1}{2\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}&\left[[b^{s}_{\textbf{p}},b^{r \dagger}_{\textbf{p}'}]u^s(\textbf{p})u^{r\dagger}(\textbf{p}')e^{i(\textbf{p}\cdot\textbf{x}-\textbf{p}'\cdot\textbf{x}')}+[b^{s}_{\textbf{p}},c^{r}_{\textbf{p}'}]u^s(\textbf{p})v^{r \dagger}(\textbf{p}')e^{i(\textbf{p}\cdot\textbf{x}+\textbf{p}'\cdot\textbf{x}')}\right. \\ 
+      +& \left. [c^{s \dagger}_{\textbf{p}},b^{r \dagger}_{\textbf{p}'}]v^s(\textbf{p})u^{r\dagger}(\textbf{p}')e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{p}'\cdot\textbf{x}')}+[c^{s \dagger}_{\textbf{p}},c^{r }_{\textbf{p}'}]v^s(\textbf{p})v^{r\dagger}(\textbf{p}')e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{p}'\cdot\textbf{x}')}\right]
+    \end{align*}
+    \begin{itemize}
+      \item Notice that we have only been able to pull the spinors out of the commutators as we are doing this component wise for them, so each $u^s(p)$ is just a complex number meaning the order does not matter. We are now in the position to make the claim that this commutator being equal to $\delta(\textbf{x}-\textbf{x}')$ is equivalent to the operators $b^s_{\textbf{p}}$ and $c^r_{\textbf{p}}$ satisfying: 
+      \begin{align*}
+      [b^{s}_{\textbf{p}},b^{r \dagger}_{\textbf{p}'}] &= (2\pi)^3\delta^{sr}\delta(\textbf{p}-\textbf{p}') \\
+      [c^{s}_{\textbf{p}},c^{r \dagger}_{\textbf{p}'}] &= -(2\pi)^3\delta^{sr}\delta(\textbf{p}-\textbf{p}')
+      \end{align*}
+      With all other commutators vanishing (notice this makes the cross terms above vanish). We will see why we needed this minus sign on the second commutator later. Plugging these in we see: 
+      \begin{align*}
+      [\psi(\textbf{x}),\psi^{\dagger}(\textbf{x}')] =&  \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}\left[u^s(\textbf{p})\bar{u}^{s}\gamma^{0}(\textbf{p})e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}+v^s(\textbf{p})\bar{v}^{s}\gamma^{0}(\textbf{p})e^{-i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}\right] \\
+       =&  \int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}} \left[(\gamma^{\mu}p_{\mu}+m)\gamma^{0}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}+(\gamma^{\mu}p_{\mu}-m)\gamma^{0}e^{-i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}\right]
+      \end{align*}
+      Where in the last step we have used the outer product relations \ref{outer_u} and \ref{outer_v}. The we can do the classic trick of changing $\textbf{p}\leftrightarrow -\textbf{p}$ the second term in this integral to factor out the exponential. This leaves us with: 
+      \begin{align*}
+      [\psi(\textbf{x}),\psi^{\dagger}(\textbf{x}')] =& \int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}[\gamma^{0}p_0+\gamma^{i}p_{i}+\gamma^{0}p_{0}+m-\gamma^{i}p_{i}-m]\gamma^{0} e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')} \\ 
+      = & \int \frac{d^3p}{(2\pi)^3}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')} = \delta(\textbf{x}-\textbf{x}')
+      \end{align*}
+      Where we have used $p_0 = E_{\textbf{p}}$. Thus the commutations relations above were equivalent to this result. 
+
+      \item The next thing to do is to calculate the Hamiltonian by plugging \ref{psi} and \ref{psi_d} into \ref{D_ham}:
+          \end{itemize}
+      \begin{align*}
+      &H = \sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[\left(b^{r \dagger}_{\textbf{p}'}u^{r\dagger}(\textbf{p}')e^{-i\textbf{p}'\cdot\textbf{x}}+c^{r}_{\textbf{p}'}v^{r\dagger}(\textbf{p}')e^{i\textbf{p}'\cdot\textbf{x}}\right) (-i\boldsymbol{\gamma}\cdot \nabla +m)\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)\right] \\
+      & =\sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}'}u^{s\dagger}(\textbf{p})(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}+b^{s\dagger}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}u^{s\dagger}(\textbf{p})(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}\right. \\
+      &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.+c^{s}_{\textbf{p}}b^{r}_{\textbf{p}'}v^{s\dagger}(\textbf{p})(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}+c^{s}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}v^{s\dagger}(\textbf{p})(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}\right]
+      \end{align*}
+     \begin{itemize}
+       \item  Now we can recognize a couple of things. First off, via \ref{u(p)} and \ref{v(p)} we can say that $(\gamma^{\mu}p_{\mu}'-m)u(p)= 0 = (\gamma^{0}p_{0}+\boldsymbol{\gamma}\cdot \textbf{p}' -m)u^{r}(\textbf{p}') \implies  (-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}') = \gamma^{0}p_0u^{r}(\textbf{p}')$. Similarly $(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}') = \gamma^{0}p_0v^{r}(\textbf{p}')$. 
+
+       \item As a total aside we should note here that the mostly minus metric gives us the strange result that $a^{\mu}b_{\mu} = a^0b_0-a^{i}b_{i} =a^0b_0+\sum_ia^{i}b^{i} =a^0b_0+\textbf{a}\cdot\textbf{b}$.
+     \end{itemize}
+
+
+  
 
 \end{document}
