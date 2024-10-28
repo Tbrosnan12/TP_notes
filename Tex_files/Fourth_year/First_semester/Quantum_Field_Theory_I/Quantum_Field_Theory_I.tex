@@ -568,9 +568,10 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
   \end{split} 
   \end{equation*}
   Where we can do the last step as $H$ commutes with both itself and $E_{\textbf{p}}$, so acting with further $H$'s from the left only yields more of the same factor. Similarly this means $H^na^{\dagger}_{\textbf{p}} = a^{\dagger}_{\textbf{p}}(H+E_{\textbf{p}})^n$. This then means that: 
-  \[
+\begin{align}
+\label{a_H}
   e^{iHt}a_{\textbf{p}}e^{-iHt} = a_{\textbf{p}}e^{-iE_{\textbf{p}}t},~~~e^{iHt}a^{\dagger}_{\textbf{p}}e^{-iHt} = a^{\dagger}_{\textbf{p}}e^{-iE_{\textbf{p}}t}
-  \]
+\end{align}
   This means using \ref{phi_2} we can write $\phi(x)$ as:
 
   \begin{flalign}
@@ -598,6 +599,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
    D(x-y) & = \int \frac{d^3pd^3p'}{(2\pi)^6}\frac{1}{2\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\bra{0}\left(a_{\textbf{p}}e^{-ip \cdot x}+a^{\dagger}_{\textbf{p}}e^{ip \cdot x}\right)\left(a_{\textbf{p}'}e^{-ip'\cdot y}+a^{\dagger}_{\textbf{p}'}e^{ip' \cdot y}\right)\ket{0}    \\
   & = \int \frac{d^3pd^3p'}{(2\pi)^6}\frac{1}{2\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\bra{0}a_{\textbf{p}}a^{\dagger}_{\textbf{p}'}\ket{0}e^{i(p' \cdot y - p \cdot x) } 
   \end{align*}
+
   \begin{flalign}
   \label{D(x-y)}
   \implies D(x-y) = \int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{-ip\cdot( x - y) }
@@ -1326,7 +1328,7 @@ As was mentioned in the section on Representations of the Poincar\'e group these
       \end{align*}
       With all other commutators vanishing (notice this makes the cross terms above vanish). We will see why we needed this minus sign on the second commutator later. Plugging these in we see: 
       \begin{align*}
-      [\psi(\textbf{x}),\psi^{\dagger}(\textbf{x}')] =&  \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}\left[u^s(\textbf{p})\bar{u}^{s}\gamma^{0}(\textbf{p})e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}+v^s(\textbf{p})\bar{v}^{s}\gamma^{0}(\textbf{p})e^{-i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}\right] \\
+      [\psi(\textbf{x}),\psi^{\dagger}(\textbf{x}')] =&  \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}\left[u^s(\textbf{p})\bar{u}^{s}(\textbf{p})\gamma^{0}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}+v^s(\textbf{p})\bar{v}^{s}(\textbf{p})\gamma^{0}e^{-i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}\right] \\
        =&  \int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}} \left[(\gamma^{\mu}p_{\mu}+m)\gamma^{0}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}+(\gamma^{\mu}p_{\mu}-m)\gamma^{0}e^{-i\textbf{p}\cdot(\textbf{x}-\textbf{x}')}\right]
       \end{align*}
       Where in the last step we have used the outer product relations \ref{outer_u} and \ref{outer_v}. The we can do the classic trick of changing $\textbf{p}\leftrightarrow -\textbf{p}$ the second term in this integral to factor out the exponential. This leaves us with: 
@@ -1339,17 +1341,76 @@ As was mentioned in the section on Representations of the Poincar\'e group these
       \item The next thing to do is to calculate the Hamiltonian by plugging \ref{psi} and \ref{psi_d} into \ref{D_ham}:
           \end{itemize}
       \begin{align*}
-      &H = \sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[\left(b^{r \dagger}_{\textbf{p}'}u^{r\dagger}(\textbf{p}')e^{-i\textbf{p}'\cdot\textbf{x}}+c^{r}_{\textbf{p}'}v^{r\dagger}(\textbf{p}')e^{i\textbf{p}'\cdot\textbf{x}}\right) (-i\boldsymbol{\gamma}\cdot \nabla +m)\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)\right] \\
-      & =\sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}'}u^{s\dagger}(\textbf{p})(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}+b^{s\dagger}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}u^{s\dagger}(\textbf{p})(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}\right. \\
-      &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.+c^{s}_{\textbf{p}}b^{r}_{\textbf{p}'}v^{s\dagger}(\textbf{p})(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}+c^{s}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}v^{s\dagger}(\textbf{p})(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}\right]
+      &H = \sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[\left(b^{r \dagger}_{\textbf{p}'}u^{r\dagger}(\textbf{p}')e^{-i\textbf{p}'\cdot\textbf{x}}+c^{r}_{\textbf{p}'}v^{r\dagger}(\textbf{p}')e^{i\textbf{p}'\cdot\textbf{x}}\right) \gamma^{0}(-i\boldsymbol{\gamma}\cdot \nabla +m)\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)\right] \\
+      & =\sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}'}u^{s\dagger}(\textbf{p})\gamma^{0}(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}+b^{s\dagger}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}u^{s\dagger}(\textbf{p})\gamma^{0}(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}\right. \\
+      &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.+c^{s}_{\textbf{p}}b^{r}_{\textbf{p}'}v^{s\dagger}(\textbf{p})\gamma^{0}(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}+c^{s}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}v^{s\dagger}(\textbf{p})\gamma^{0}(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}\right]
       \end{align*}
      \begin{itemize}
-       \item  Now we can recognize a couple of things. First off, via \ref{u(p)} and \ref{v(p)} we can say that $(\gamma^{\mu}p_{\mu}'-m)u(p)= 0 = (\gamma^{0}p_{0}+\boldsymbol{\gamma}\cdot \textbf{p}' -m)u^{r}(\textbf{p}') \implies  (-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}') = \gamma^{0}p_0u^{r}(\textbf{p}')$. Similarly $(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}') = \gamma^{0}p_0v^{r}(\textbf{p}')$. 
+       \item  Now we can recognize a couple of things. First off, via \ref{u(p)} and \ref{v(p)} we can say that $(\gamma^{\mu}p_{\mu}'-m)u(p)= 0 = (\gamma^{0}p_{0}+\boldsymbol{\gamma}\cdot \textbf{p}' -m)u^{r}(\textbf{p}') \implies  (-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}') = \gamma^{0}p_0u^{r}(\textbf{p}')$. Similarly $(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}') = -\gamma^{0}p_0v^{r}(\textbf{p}')$. 
 
        \item As a total aside we should note here that the mostly minus metric gives us the strange result that $a^{\mu}b_{\mu} = a^0b_0-a^{i}b_{i} =a^0b_0+\sum_ia^{i}b^{i} =a^0b_0+\textbf{a}\cdot\textbf{b}$.
+
+       The next thing to notice is that we can bring in the $x$ integral in and turn the exponentials into delta functions. 
+       \begin{align*}
+         H &= \sum_{s,r=1,2}\int \frac{d^3p}{(2\pi)^3 2E_{\textbf{p}}}\left[b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}}u^{s\dagger}(\textbf{p})p_0u^{r}(\textbf{p})-b^{s\dagger}_{\textbf{p}}c^{r\dagger}_{-\textbf{p}}u^{s\dagger}(\textbf{p})p_0v^{r}(-\textbf{p})\right. \\
+      &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.+c^{s}_{\textbf{p}}b^{r}_{-\textbf{p}}v^{s\dagger}(\textbf{p})p_0u^{r}(-\textbf{p})-c^{s}_{\textbf{p}}c^{r\dagger}_{\textbf{p}}v^{s\dagger}(\textbf{p})p_0v^{r}(\textbf{p})\right]
+       \end{align*}
+       We can now go ahead and use the normalization conditions \ref{norm_a} and \ref{norm_b}: 
+       \begin{align*}
+          H &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3 2E_{\textbf{p}}}\left[b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}p_0(2p_0)-(c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}+(2\pi)^3\delta(0))p_0(2p_0)+\right]
+        \end{align*}
+        \begin{flalign}
+           \implies H  &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\left[E_{\textbf{p}}b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}-E_{\textbf{p}}c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}\right]
+         \end{flalign} 
+         Where we have recognized $p_0 = E_{\textbf{p}}$. There is something very strange happening here by creating more and more particles with the $c^{s\dagger}_{\textbf{p}}$ operators we can lower the energy indefinitely. We also cannot re-label $c^{s}_{\textbf{p}}\rightarrow c^{s\dagger}_{\textbf{p}}$ as that ruins our commutation relations. We need to do something different.  
      \end{itemize}
 
+\subsubsection{The need for Anti-Commutation relations}
+\begin{itemize}
+  \item I don't like how many sources just introduce the anti-commutations that we will use below. The best I have found is from Anthony Zee's ``Quantum Field Theory in a nutshell'': 
 
-  
+  ``Long and careful study of atomic spectroscopy revealed that the wave function of two electrons had to be anti-symmetric upon exchange of their quantum numbers. It follows that we cannot put two electrons into the same energy level so that they will have the same quantum numbers. In 1928 Jordan and Wigner showed how this requirement of an anti-symmetric wave function can be formalized by having the creation and annihilation operators for electrons satisfy anti-commutation rather than commutation relations''
 
+\item Peskin's  approach is also good, I will outline it here. If we go back to the drawing board and be more careful with our assumptions. First lets add the time dependence to \ref{psi} and \ref{psi_d}, we can treat this in the same manner as we did the Klein Gordon field and use the relations \ref{a_H} (which also apply to $b^{s}_{\textbf{p}}$ and $c^{s}_{\textbf{p}}$), to write: 
+\begin{align*}
+      \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-ip\cdot x}\right)  \\
+      \psi^{\dagger}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(\textbf{p})e^{-ip\cdot x}+c^{s }_{\textbf{p}}v^{s\dagger}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right)
+ \end{align*} 
+
+Let us forget the commutators we postulated above for $b^{s}_{\textbf{p}}$ and $c^{s}_{\textbf{p}}$ and see if we can re-build these from stronger arguments. Let us not even start with the commutator of these annihilation operators let us look at $\bra{0}b^{s}_{\textbf{p}}b^{r \dagger}_{\textbf{p}'}\ket{0}$. We can now use arguments about spacial and translational invariance to get a form of this. Since the ground state is invariant under translations we must have that $\ket{0}=e^{i\textbf{P}\cdot \textbf{x}}\ket{0}$ and $\bra{0} = \bra{0}\textbf{P}\cdot \textbf{x}$ We can then use the same arguments as we used to get \ref{a_H} to show that $e^{-i\textbf{P}\cdot \textbf{x}}a_{\textbf{p}}e^{i\textbf{P}\cdot \textbf{x}} = a_{\textbf{p}}e^{-i\textbf{p}\cdot \textbf{x}},~~~e^{-i\textbf{P}\cdot \textbf{x}}a^{\dagger}_{\textbf{p}}e^{i\textbf{P}\cdot \textbf{x}} = a^{\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot \textbf{x}}$, which allows us to write:
+\begin{align*}
+  \bra{0}b^{s}_{\textbf{p}}b^{r \dagger}_{\textbf{p}'}\ket{0} = \bra{0}b^{s}_{\textbf{p}}b^{r \dagger}_{\textbf{p}'}e^{i\textbf{P}\cdot \textbf{x}}\ket{0} = e^{i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}\bra{0}e^{i\textbf{P}\cdot \textbf{x}}b^{s}_{\textbf{p}}b^{r \dagger}_{\textbf{p}'}\ket{0}=e^{i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}\bra{0}b^{s}_{\textbf{p}}b^{r \dagger}_{\textbf{p}'}\ket{0}
+\end{align*}
+So this is only non-vanishing if $\textbf{p}=\textbf{p}'$. Similarly we can show using the angular momentum generators that this is only non-vanishing for $r=s$. This means we can write:
+\begin{align*}
+  \bra{0}b^{s}_{\textbf{p}}b^{r \dagger}_{\textbf{p}'}\ket{0} = (2\pi)^3\delta^{rs}\delta(\textbf{p}-\textbf{p}')A(\textbf{p})
+\end{align*}
+For some function $A(\textbf{p})$. This quantity must be non-negative as we can write it as $\bra{0b^{s ^\dagger}_{\textbf{p}}}\ket{b^{r \dagger}_{\textbf{p}'}0}$, which is the inner product of the same term and thus must be $>0$. We can then calculate:
+\begin{align*}
+  \bra{0}\psi(x)\psi^{\dagger}(x')\ket{0} & = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}\sum_{s=1,2}u^{s}(p)\bar{u}^{s}(p)A(\textbf{p})e^{-ip \cdot (x-x')} \gamma^{0} \\ 
+  &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}+m)A(\textbf{p})e^{-ip\cdot (x-x')} \gamma^{0}
+\end{align*}
+Where we are assuming $b^{s}_{\textbf{p}}\ket{0} = 0$ and $c^{s}_{\textbf{p}}\ket{0}= 0$ so there are no terms containing negative frequencies. We can then see that this expression is only properly invariant under boosts iff $A = A(p^2) = A(m^2) = $ constant. So:
+\begin{align*}
+  \bra{0}\psi(x)\psi^{\dagger}(x')\ket{0}= A(i\gamma^{\mu}\partial_{\mu}+m)\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{-ip\cdot (x-x')} \gamma^{0}
+\end{align*}
+
+
+
+\item Similarly we can do this for the other commutators :
+\begin{align*}
+   \bra{0}c^{s}_{\textbf{p}}c^{r \dagger}_{\textbf{p}'}\ket{0} = (2\pi)^3\delta^{rs}\delta(\textbf{p}-\textbf{p}')B(\textbf{p})
+\end{align*}
+And:
+\begin{align*}
+   \bra{0}\psi^{\dagger}(\textbf{x})\psi(\textbf{x})\ket{0} &= \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)B(\textbf{p})e^{ip \cdot (x-x')} \gamma^{0} \\
+   &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)B(\textbf{p})e^{ip\cdot (x-x')} \gamma^{0} \\ 
+   & =  -B(i\gamma^{\mu}\partial_{\mu}+m)\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{ip\cdot (x-x')} \gamma^{0}
+\end{align*}
+ \item We can see that the integral is the same as in \ref{D(x-y)}. This implies when we go to calculate $\bra{0}[\psi(x),\psi(x')]\ket{0}$ it will never be $0$ outside the light-cone as $A$ and $B$ are greater then $0$ and then can never cancel (recall that outside the light-cone $D(x-x') = D(x'-x)$). But this gives us a new insight. If we set $A=B =1$ then we see that outside the light-cone:  
+ \begin{align*}
+   \bra{0}\psi(x)\psi^{\dagger}(x')\ket{0} = -\bra{0}\psi^{\dagger}(x)\psi(x')\ket{0}
+ \end{align*}
+ That is the fields \emph{anti-commute} for space like intervals. 
+\end{itemize}
 \end{document}

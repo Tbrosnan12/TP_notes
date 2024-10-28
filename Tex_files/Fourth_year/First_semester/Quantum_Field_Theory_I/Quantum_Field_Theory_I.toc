@@ -18,7 +18,7 @@
 \contentsline {subsubsection}{\numberline {3.4.2}Space-like separation}{18}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}Measurement}{18}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Klein-Gordon Propagator}{19}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Advanced/Retarded Propagators}{19}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.1}Advanced/Retarded Propagators}{20}{subsubsection.3.6.1}%
 \contentsline {subsubsection}{\numberline {3.6.2}Feynman Propagator}{20}{subsubsection.3.6.2}%
 \contentsline {section}{\numberline {4}Representations of the Poincar\'e Group}{21}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Group actions}{21}{subsection.4.1}%
@@ -51,3 +51,4 @@
 \contentsline {subsubsection}{\numberline {5.8.1}Outer product}{34}{subsubsection.5.8.1}%
 \contentsline {subsection}{\numberline {5.9}Quantization of the Dirac Field}{34}{subsection.5.9}%
 \contentsline {subsubsection}{\numberline {5.9.1}Commutation relations}{34}{subsubsection.5.9.1}%
+\contentsline {subsubsection}{\numberline {5.9.2}The need for Anti-Commutation relations}{36}{subsubsection.5.9.2}%
