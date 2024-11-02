@@ -1,1 +1,3 @@
-\contentsline {section}{\numberline {1}Section}{4}{section.1}%
+\contentsline {section}{\numberline {1}Definition of a Manifold}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Regions}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Differentiable Manifold}{4}{subsection.1.2}%

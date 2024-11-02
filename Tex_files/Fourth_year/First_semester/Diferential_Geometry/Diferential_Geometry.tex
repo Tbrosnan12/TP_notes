@@ -52,6 +52,8 @@
     
 \numberwithin{equation}{section}
 
+\DeclareRobustCommand{\RR}{\mathbb{R}}
+
 \makeatletter
 \let\Title\@title % Copy the title to a new command
 \makeatother
@@ -75,7 +77,8 @@
 \topskip0pt
 \vspace*{\fill}
 \begin{center}
-\Large ``''
+\Large ``hokay''
+          -Sergey Frolov
 \end{center}
 \vspace*{\fill}
 \newpage 
@@ -114,9 +117,23 @@
 %starting document 
 \normalsize
 \newpage
-\section{Section}
+\section{Definition of a Manifold}
 
-\begin{flalign}
-\frac{1}{2} = 3, ~~~ \text{if you dont think about it too much}
-\end{flalign}
+\subsection{Regions}
+\begin{itemize}
+  \item A \emph{region}  (``open set'') is a set of $D$ points in $\RR^{n}$ such that together with each point $p_0$, D also contains all points sufficiently closer to $p_0$, i.e.: 
+  \begin{align*}
+  & \forall ~p_0  = (x_0^1,\ldots,x_0^n)\in D ~\exists ~\epsilon> 0, \\ 
+   st: &p=(x^1,\ldots,x^n) \in D, ~\text{iff}~ |x^i-x^i_0| < \epsilon . 
+  \end{align*}
+  \item A \emph{region with out a boundary} is obtained fro ma region $D$ by adjoining all boundary points to D. The \emph{boundary} of a region is the set of all boundary points.  
+\end{itemize}
+
+\subsection{Differentiable Manifold}
+\begin{itemize}
+  \item A differentiable $n$-dimensional manifold is a set $M$ together with the following structure on it. The set $M$ is the union of a finite or countably infinite collection of subsets $U_{q}$ with the following properties: 
+  \begin{itemize}
+     \item  Each subset $U_{q}$ has defined on it co-ords $x^{\alpha}_{q}, \alpha = 1,\ldots,n$ called local co-ords by virtue of which $U_{q}$ is identifiable with a  region of Euclidean 
+   \end{itemize} 
+\end{itemize}
 \end{document}
