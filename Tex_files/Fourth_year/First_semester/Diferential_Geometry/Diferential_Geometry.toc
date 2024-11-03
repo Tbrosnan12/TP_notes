@@ -13,3 +13,7 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Compact}{6}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Connected}{6}{subsubsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.3}Orientation}{6}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Mappings and Tensors on Manifolds}{6}{section.3}%
+\contentsline {subsubsection}{\numberline {3.0.1}Manifold mappings}{6}{subsubsection.3.0.1}%
+\contentsline {subsection}{\numberline {3.1}equivilent manifolds}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Tangent vector}{6}{subsection.3.2}%

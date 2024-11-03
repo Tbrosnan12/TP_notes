@@ -222,4 +222,34 @@
 
   \item We say that the co-ordinate systems $x$ and $y$ define the \emph{same orientation} if $J>0$ and the \emph{opposite orientation} if $J<0$. 
 \end{itemize}
+
+\section{Mappings and Tensors on Manifolds}
+\subsubsection{Manifold mappings}
+\begin{itemize}
+  \item A mapping $f: M \rightarrow N$ is said to be smooth of smoothness class $k$ if for all $p,q$ for which $f$ determines functions $y^{b}_{q}(x^{1}_{p},\ldots,x^{m}_{p}) = f(x^{1}_{p},..,x^m_p)^{b}_{p}$, these functions are, where defined, smooth of smoothness calss $k$ (i.e. all theire partial derivatives up to those of $k$-th order exist and are continuous).
+
+  the smoothness class of $f$ cannot exceed the maximum class of the manifolds.  
+\end{itemize}
+
+\subsection{equivilent manifolds}
+\begin{itemize}
+  \item The manifolds $M$ and $N$ are said to be \emph{smoothly equivilent} or \emph{diffeomorphic} if there is a one to one and onto map $f$ such that both $f:M \rightarrow N$ and $f^{-1}:N \rightarrow M$ are smooth of some class $k\geq 1$. 
+
+  Since $f^{-1}$ exits then the jacobian $J_{pq} \neq 0 $ wherever it is defined. 
+\end{itemize}
+
+\subsection{Tangent vector}
+\begin{itemize}
+  \item A \emph{tangent} vector to an $m$-dim manifold $M$ at an arbritrary point $x$ is represented in terms of local co-ords $x^{\alpha}_-p$ by an $m$ tuple $\xi^{\alpha}$ of components which are linked to the components in terms of any oher system $x^{\beta}_{q}$ of local co-ords by:
+  \begin{align}
+  \label{tangent}
+    \xi^{\alpha}_{p} = \left(\frac{\partial x^{\alpha}_{p}}{\partial x^{\beta}_{q}}\right)_{x} \xi^{\beta}_{q},~~~\forall~ \alpha
+  \end{align}
+
+  \item The set of all tangent vectors to an $m$-dim manifold $M$ at a point $x$ forms an $m$-dm vector space $T_{x} = T_{x}M$, the \emph{tangent space} to $M$ at the point $x$. 
+
+   \item Thus, the velocity at $x$ of any smooth curve $M$ through $x$ is a tangent vector to $M$ at $x$. 
+
+    \item From this definition \ref{tangent} one sees that for any choice of local co-ords $x^{\alpha}$ in a neighbourhood of x
+\end{itemize}
 \end{document}
