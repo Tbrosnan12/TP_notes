@@ -25,6 +25,7 @@
  \usepackage{amsmath,environ}
  \usepackage[explicit]{titlesec}
 \usepackage{fancyhdr}
+\usepackage{braket}
 \setlength{\droptitle}{3em} 
 
 \title{Differential Geometry}
@@ -113,8 +114,6 @@
 \fancyhead[R]{\nouppercase{\leftmark}}
 \fancyfoot[C]{-~\thepage~-}
 \renewcommand{\headrulewidth}{1pt}
-
-
 
 
 
@@ -222,9 +221,9 @@
 
   \item We say that the co-ordinate systems $x$ and $y$ define the \emph{same orientation} if $J>0$ and the \emph{opposite orientation} if $J<0$. 
 \end{itemize}
-
-\section{Mappings and Tensors on Manifolds}
-\subsubsection{Manifold mappings}
+\newpage
+\section{Mappings on Manifolds}
+\subsection{Manifold mappings}
 \begin{itemize}
   \item A mapping $f: M \rightarrow N$ is said to be smooth of smoothness class $k$ if for all $p,q$ for which $f$ determines functions $y^{b}_{q}(x^{1}_{p},\ldots,x^{m}_{p}) = f(x^{1}_{p},..,x^m_p)^{b}_{p}$, these functions are, where defined, smooth of smoothness calss $k$ (i.e. all theire partial derivatives up to those of $k$-th order exist and are continuous).
 
@@ -249,7 +248,50 @@
   \item The set of all tangent vectors to an $m$-dim manifold $M$ at a point $x$ forms an $m$-dm vector space $T_{x} = T_{x}M$, the \emph{tangent space} to $M$ at the point $x$. 
 
    \item Thus, the velocity at $x$ of any smooth curve $M$ through $x$ is a tangent vector to $M$ at $x$. 
+\end{itemize}
 
-    \item From this definition \ref{tangent} one sees that for any choice of local co-ords $x^{\alpha}$ in a neighbourhood of x
+\subsection{Push forward}
+\begin{itemize}
+  \item A smooth map $f$ from $M$ to $N$ gives rise for each $x$ to a \emph{push forward} or an \emph{induced linear} map to tangent spaces:
+  \begin{align*}
+      f_{\ast}: T_{x}M \rightarrow T_{f(x)}N
+    \end{align*}  
+    defined as sending the velocity at $x$ of any smooth curve $x =x(\tau)$ on $M$ to the velocity vector at $f(x)$ of the curve $f(x(\tau))$ on $N$. If the map $f$ is given by: $y^b = f^b(x^{1},\ldots,x^m)$ for $x \in M$ and $y \in N$, then the push forward map $f_{\ast}$ is:
+    \begin{align*}
+      \xi^{\alpha} \rightarrow \eta^{b} = \frac{\partial f^{b}}{\partial x^{\alpha}}\xi^{\alpha}. 
+    \end{align*}
+
+    \item For a real valued function $f: M -> \RR$, the push-forward map $f_{\ast}$ corresponding to each $x\in M$ is a real valued linear function on the tangent space to $M$ at $x$: 
+    \begin{align*}
+      \xi^{a} \rightarrow \eta = \frac{\partial f}{\partial x^{\alpha}}\xi^{\alpha}
+    \end{align*}
+    and it is represented by the gradiant of $f$ at $x$, and is a co-vector or one form. Thus $f_{\ast}$ can be identified with the differential $df$, in particular:
+    \begin{align*}
+      dx^{\alpha}_{p}: \xi^{\alpha}\rightarrow\eta =\xi^{\alpha}_{p}
+    \end{align*}
+\end{itemize}
+
+\subsection{Riemann metric}
+\begin{itemize}
+  \item A \emph{Riemann metric} on a manifold $M$ is a point-depedant, positive- definitr quadratic form on the tangent vectors at each point, depending smoothly on the local co-ords of the points. 
+
+  Thus at each point $x = (x^{1}_{p},\ldots,x^{m}_p)$ of each cahrt $U_{p}$, the metric is given by a symetric matric $g_{\alpha\beta}(x^{1}_{p},...,x^{m}_p)$, and determines a symmetric scalar product of pairs of tangent vectors at the point $x$. 
+  \begin{align*}
+     \braket{\xi, \eta}  = g_{\alpha\beta}^{(p)}\xi^{\alpha}_{p}\eta^{\beta}_{p} = \braket{\eta,\xi}, ~~~ |\xi|^2 = \braket{\xi,\xi}
+   \end{align*} 
+   This scalar product is to be co-ordiante independant:
+   \begin{align*}
+     g_{\alpha\beta}^{(p)}\xi^{\alpha}_{p}\eta^{\beta}_{p} = g_{\alpha\beta}^{(q)}\xi^{\alpha}_{q}\eta^{\beta}_{q}
+   \end{align*}
+   And therefor the coefficants $g_{\alpha\beta}^{(p)}$ of the quadratic form transform as:
+   \begin{align}
+   \label{g}
+     g_{\gamma\delta}^{(q)}  = \frac{\partial x^{\alpha}_{p}}{\partial x^{\gamma}_{q}}\frac{\partial x^{\beta}_p}{\partial x^{\delta}_{q}}g_{\alpha\beta}^{(p)} 
+   \end{align}
+   For a \emph{psudo-Reimann} metric $M$ one just requires the quadratic fom to be \emph{nondegenerate}. Note that \ref{g} can be re-written as:
+   \begin{align*}
+     ds^2 = g_{\alpha\beta}^{(p)}dx^{\alpha}_{p}dx^{\beta}_{p} =g_{\alpha\beta}^{(q)}dx^{\alpha}_{q}dx^{\beta}_{q}  
+   \end{align*}
+   Where $ds$ is called a line element, and it is chart-independant. $ds$ is used to measure the distance between two infitesimally close points. 
 \end{itemize}
 \end{document}
