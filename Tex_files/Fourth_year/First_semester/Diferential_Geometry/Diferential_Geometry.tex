@@ -27,7 +27,7 @@
 \usepackage{fancyhdr}
 \setlength{\droptitle}{3em} 
 
-\title{Diferential Geometry}
+\title{Differential Geometry}
 \author{Thomas Brosnan}
 \date{Notes taken in Professor Sergey Frolov's class, Michaelmas Term 2024}
 
@@ -41,7 +41,11 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{flalign}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign*}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+%\renewenvironment{align}{\vspace{-5mm}\begin{align}}{\end{align}}
+%\renewenvironment{align*}{\vspace{-5mm}\begin{align*}}{\end{align*}}
+\renewenvironment{alignat}{\empheq{align*}}{\endempheq}
 \newcommand{\hsp}{\hspace{8pt}}
 
 \newcommand*{\sectionFont}{%
@@ -133,7 +137,89 @@
 \begin{itemize}
   \item A differentiable $n$-dimensional manifold is a set $M$ together with the following structure on it. The set $M$ is the union of a finite or countably infinite collection of subsets $U_{q}$ with the following properties: 
   \begin{itemize}
-     \item  Each subset $U_{q}$ has defined on it co-ords $x^{\alpha}_{q}, \alpha = 1,\ldots,n$ called local co-ords by virtue of which $U_{q}$ is identifiable with a  region of Euclidean 
-   \end{itemize} 
+     \item  Each subset $U_{q}$ has defined on it co-ords $x_{q}^{\alpha}, \alpha = 1,\ldots,n$ called local co-ords by virtue of which $U_{q}$ is identifiable with a region of Euclidean $n$-space $\RR^n$ with Euclidean co-ords $x^{\alpha}_q$. The $U_{q}$ with their co-ord systems are called \emph{charts} or \emph{local coordinate neighborhoods}. 
+
+\item Each non-empty intersection $U_{q}\cap U_{p}$ of a pair of charts thus has defined on it two co-ord systems, the restriction of $x^{\alpha}_{p}$ and $x^{\alpha}_{q}$. It is required that under each of these coordinatizations the intersection $U_{q}\cap U_{p}$ is identifiable with a region of $\RR^n$ and that each of these co-ordinate systems be expressible in terms of the other in a one to one differentiable manner. Thus, if a the \emph{transition} functions from $x^{\alpha}_{p}$ to $x^{\alpha}_{q}$ and back are given by:
+ \begin{align*}
+ & x^{\alpha}_{p} = x^{\alpha}_{p}( x^{1}_{q},\ldots, x^{n}_{q}),~~\alpha = 1,\ldots,n \\
+ & x^{\alpha}_{q} = x^{\alpha}_{q}( x^{1}_{p},\ldots, x^{n}_{p}),~~\alpha = 1,\ldots,n
+ \end{align*}
+ Then the \emph{Jacobian} $J_{pq} = det(\partial x^{\alpha}_{p}/\partial x^{\alpha}_{q})$ is non-zero on $U_{p} \cap U_{q}$. 
+  \end{itemize} 
+\end{itemize}
+
+\subsection{Abuse of notation}
+\begin{itemize}
+  \item Regular partial derivative do not have the same ``canceling'' that total derivative have ($dx * dy/dx = dy$) But we can restore this property through Einstein summation convention. That is that:
+  \begin{flalign*}
+  \sum_{\gamma=1}^{n}\frac{\partial x^{\alpha}_{p}}{\partial x^{\gamma}_{q}}\frac{\partial x^{\gamma}_{q}}{\partial x^{\beta}_{q}} = \frac{\partial x^{\alpha}_{p}}{\partial x^{\gamma}_{q}}\frac{\partial x^{\gamma}_{q}}{\partial x^{\beta}_{q}}  = \delta^{\alpha}_{\beta}
+  \end{flalign*}
+
+\end{itemize}
+
+\newpage 
+\section{Elements of Topology}
+\subsection{Topological space}
+\begin{itemize}
+  \item A topological space is a set $X$ of points of which certain subsets called \emph{open sets} of the topological space, are distinguished, these open sets have to satisfy: 
+  \begin{itemize}
+    \item The intersection of any two (and hence of any finite collection) open sets should again be an open set.
+    \item The union of any collection of open sets must again be open. 
+    \item The empty set and the whole set $X$ must be open.
+  \end{itemize}
+
+  \item The compliment of any open  set is called a \emph{closed} set of the topological space. 
+
+  In Euclidean space $\RR^n$ the ``Euclidean topology'' is the usual one where the open sets are the open regions. 
+\end{itemize}
+  \subsubsection{Induced topology} 
+  \begin{itemize}
+    \item Given any subset $A \in \RR^n$, the \emph{induced topology} on $A$ is that where the open sets are the intersections $A \cap U$, where $U$ ranges over all open sets of $\RR^{n}$. 
+  \end{itemize}
+\subsubsection{Continuity}
+\begin{itemize}
+  \item A map $f: X \rightarrow Y$ of one topological space to another is called \emph{continuous} if the complete inverse image $f^{-1}(U)$ of every open set $U \subset Y$ is open in X. 
+\end{itemize}
+
+\subsubsection{Homeomorphic}
+\begin{itemize}
+  \item Two topological space are \emph{topologically equivalent} or \emph{homeomorphic} if there is a one to one and onto map (bijective) between them, such that it and its inverse are continuous. 
+\end{itemize}
+\subsubsection{Topology on a manifold}
+\begin{itemize}
+  \item The topology on a manifold $M$ is given by the following specifications of the open sets. In every local co-ordinate neighborhood $U_q$ the open regions are to be open in the topology on M; the totality of open sets of M is then obtained by admitting as open, also arbitrary unions countable collections of such regions, i.e. by closing under countable unions. 
+\end{itemize}
+\subsection{Metric space}
+\begin{itemize}
+  \item A \emph{metric space} is a set which comes equipped with a ``distance function'' i.e. a real-valued function $\rho(x,y)$, defined on pairs $x, y$ of its elements and having the following properties:
+  \begin{itemize}
+    \item Symmetry: $\rho(x,y) = \rho(y,x)$.
+    \item Positivity: $\rho(x,x) =0, ~~~ \rho(x,y) > 0 ~~\text{if}~~ x \neq y$. 
+    \item The triangle inequality: $\rho(x,y) \leq \rho(x,z)+\rho(z,y)$.
+  \end{itemize}
+\end{itemize}
+\subsubsection{Hausdorff}
+\begin{itemize}
+  \item A topological space is called \emph{Hausdorff} if any two points are contained in disjoint open sets. Any metric space is Hausdorff because the open balls of radius $\rho(x,y)/3$ with centers at $c,y$ do not intersect.   
+
+  All topological spaces we consider will be Hausdorff. 
+\end{itemize}
+
+\subsubsection{Compact}
+\begin{itemize}
+  \item A topological space $X$ is said to be compact if every countable collection of open sets covering $X$ contains a finite sub-collection already covering $X$.
+
+  If $X$ is a metric space the compactness is equivalent to the condition that from every sequence of points of $X$ a convergent sub-sequence can be selected.  
+\end{itemize}
+\subsubsection{Connected}
+\begin{itemize}
+  \item A topological space is connected if any two points can be joined by a continuous path. 
+\end{itemize}
+
+\subsection{Orientation}
+\begin{itemize}
+  \item A manifold $M$ is said to be \emph{orientated} of one can choose its atlas (collection of all the charts) so that for every pair $U_{p},U_{q}$ of intersecting co-ordinate neighborhoods the Jacobian of the transition functions is positive.  
+
+  \item We say that the co-ordinate systems $x$ and $y$ define the \emph{same orientation} if $J>0$ and the \emph{opposite orientation} if $J<0$. 
 \end{itemize}
 \end{document}
