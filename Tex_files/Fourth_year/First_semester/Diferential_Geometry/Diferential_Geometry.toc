@@ -29,3 +29,10 @@
 \contentsline {subsection}{\numberline {4.3}Co-Vectors}{10}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Skew-Symmetric Tesnsor}{10}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Volume element}{10}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Genralised push forward}{11}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Pull back}{11}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Embeddings and Immersions of manifolds}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Immersion}{12}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}embedding}{12}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.2}Manifold with boundary}{12}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Closed manifold}{12}{subsubsection.5.2.1}%

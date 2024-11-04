@@ -398,9 +398,72 @@
     \Omega = \sqrt{|g|}dx^{1}\wedge \cdot \cdot \cdot \wedge dx^{n}
   \end{align*}
   If $g_{ij}$ is Riemann then the \emph{volume} $V$ of $M$ is:
-  \begin{align*}
+  \begin{flalign*}
     V = \int_M \Omega  = \int_{M}\sqrt{|g|}dx^{1}\wedge \cdot \cdot \cdot \wedge dx^{n}
+  \end{flalign*}
+\end{itemize}
+
+\subsection{Genralised push forward}
+\begin{itemize}
+  \item We can genralize the push froward map we had on vectors earlier to the space of tensors $(k,0)$:
+  \begin{flalign*}
+    f_{\ast}: \xi^{i_1,\ldots,i_k} \rightarrow \eta^{a_1,\ldots,a_k} = \frac{\partial f^{a_1}}{\partial x^{i_1}} \cdot \cdot \cdot \frac{\partial f^{a_k}}{\partial x^{i_k}} \xi^{i_1,\ldots,i_k}
+  \end{flalign*}
+
+\end{itemize}
+\subsection{Pull back}
+\begin{itemize}
+  \item Let $T_x^{(0,k)}M$ denote the space of tensors of type $(0,k)$ at $x \in M$. Let $f$ be a smooth map from $M$ to $N$. It gives rise to a map:
+  \begin{align*}
+    f^{\ast}: T_{f(x)}^{(0,k)}N \rightarrow T_x^{(0,k)}M
   \end{align*}
+
+  which in terms of $x^i \in U \subset M$, and $y^a \in V \subset N$ is written as:
+  \begin{flalign*}
+     f^{\ast}: \eta_{a_1,\ldots,a_k} \rightarrow \xi_{i_1,\ldots,i_k} = \frac{\partial f^{a_1}}{\partial x^{i_1}} \cdot \cdot \cdot \frac{\partial f^{a_k}}{\partial x^{i_k}}\eta_{a_1,\ldots,a_k} 
+   \end{flalign*} 
+   The map $f^{\ast}$ is called the \emph{pullback}. 
+
+   \item We can then note the following relationship between pullbacks and push forwards. Let us denote the action of a vector on another vector as follows:
+   \begin{align*}
+     \zeta(\theta) \equiv \zeta_{i_1,..,i_k}\theta^{i_1,\ldots,i_k}
+   \end{align*}
+   Then we can write that:
+   \begin{align*}
+     (f^{\ast}\eta)(\xi) & = \frac{\partial f^{a_1}}{\partial x^{i_1}} \cdot \cdot \cdot \frac{\partial f^{a_k}}{\partial x^{i_k}}\eta_{a_1,\ldots,a_k}\xi^{i_1,\ldots,i_k} = \eta(f_{\ast}\xi)
+   \end{align*}
+\end{itemize}
+
+\newpage
+
+\section{Embeddings and Immersions of manifolds}
+\subsection{Immersion}
+\begin{itemize}
+  \item A manifold $M$ of dim $m$ is said to be immersed in a manifold $N$ of sim $n \geq m$ if $\exists$ a smooth map $f:M \rightarrow N$  such that the push forward map $f_{\ast}$ is at each point a one to one map of the tangent space. 
+
+  The map $f$ is called the \emph{immersion} of $M$ to $N$.
+
+  Since $f_{\ast}$ is at each a point one to one map of the tangent space, in terms of local co-ords the Jacobian matrix of $f$ at each point has rank equal to $m = $ dim $M$. 
+\end{itemize}
+
+\subsubsection{embedding}
+\begin{itemize}
+  \item An immersion of $M$ to $N$ is called an $embedding$ if it one to one. Then $M$ is called a \emph{submanifold} of $N$. 
+
+  \item To see the difference btween these two definitions note that a Klein bottel is immersed in $\RR^3$ but not embedded as its tangent spaces are distinct (intersecting points can have different tangent spaces) but the map of points is not one- to one as there are cross overs. 
+\end{itemize}
+
+\subsection{Manifold with boundary}
+\begin{itemize}
+  \item A closed region $A$ of a manifold $M$ defined by an inequality:
+  \begin{align*}
+    f(x) \leq  , ~~~(\text{or} f(x) \geq 0)
+  \end{align*}
+  where $f$ is a real-valued function on $M$. This region is a \emph{Manifold with boundary}. It is assumed that the boundary $\partial A$ given by $f(x)=0$ is a non-singular submanifold of $M$ i.e. $\nabla f \neq 0 $ on $\partial A$. 
+\end{itemize}
+\subsubsection{Closed manifold}
+\begin{itemize}
+  \item A compact manifold without a boundary is called \emph{closed}. 
 \end{itemize}
 
 \end{document}
