@@ -52,3 +52,4 @@
 \contentsline {subsection}{\numberline {5.9}Quantization of the Dirac Field}{34}{subsection.5.9}%
 \contentsline {subsubsection}{\numberline {5.9.1}Commutation relations}{34}{subsubsection.5.9.1}%
 \contentsline {subsubsection}{\numberline {5.9.2}The need for Anti-Commutation relations}{36}{subsubsection.5.9.2}%
+\contentsline {subsection}{\numberline {5.10}Anti-commutation relations}{38}{subsection.5.10}%

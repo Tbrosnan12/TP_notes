@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  4 NOV 2024 13:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  4 NOV 2024 16:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1297,14 +1297,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [13
 
 ] (./Diferential_Geometry.aux)
-
-Package rerunfilecheck Warning: File `Diferential_Geometry.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Diferential_Geometry.out':
-(rerunfilecheck)             Before: F1B7F73F810B10FBD4CA969FC9035FA8;5414
-(rerunfilecheck)             After:  DAB7708F92DD027E75905E1618B53BF9;5414.
+Package rerunfilecheck Info: File `Diferential_Geometry.out' has not changed.
+(rerunfilecheck)             Checksum: DAB7708F92DD027E75905E1618B53BF9;5414.
 Package logreq Info: Writing requests to 'Diferential_Geometry.run.xml'.
 \openout1 = `Diferential_Geometry.run.xml'.
 
@@ -1334,7 +1328,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Diferential_Geometry.pdf (13 pages, 239108 bytes).
+Output written on Diferential_Geometry.pdf (13 pages, 239101 bytes).
 PDF statistics:
  401 PDF objects out of 1000 (max. 8388607)
  323 compressed objects within 4 object streams

@@ -648,7 +648,9 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 
       \item David Tong has a nice comment on this: ``There are words you can drape around this calculation. When $(x-y)^2<0$, there is no Lorentz invariant way to order events. If a particle can travel in a spacelike direction from $x \rightarrow y$, it can just as easily travel from $y \rightarrow x$. In any measurement, the amplitudes for these two events cancel.''  
 
-      What he means by this statement that due to spacelike separation there is no agreed upon temporal ordering as these two points are not causally connected. Thus the amplitudes for the propagation from $x \rightarrow y$ is the same magnitude as the propagation $y \rightarrow x$, but they cancel due to the commutator.     
+      What he means by this statement that due to spacelike separation there is no agreed upon temporal ordering as these two points are not causally connected. Thus the amplitudes for the propagation from $x \rightarrow y$ is the same magnitude as the propagation $y \rightarrow x$, but they cancel due to the commutator.  
+
+      \item  Another interpretation is that the propagator creates annihilates a particle at $x$ and creates another particle at $y$. This of course must then obey the laws of special relativity, that being that this propagation cannot  happen over space-like intervals.  
 \end{itemize}
 
 \subsection{Klein-Gordon Propagator}
@@ -1372,10 +1374,11 @@ As was mentioned in the section on Representations of the Poincar\'e group these
   ``Long and careful study of atomic spectroscopy revealed that the wave function of two electrons had to be anti-symmetric upon exchange of their quantum numbers. It follows that we cannot put two electrons into the same energy level so that they will have the same quantum numbers. In 1928 Jordan and Wigner showed how this requirement of an anti-symmetric wave function can be formalized by having the creation and annihilation operators for electrons satisfy anti-commutation rather than commutation relations''
 
 \item Peskin's  approach is also good, I will outline it here. If we go back to the drawing board and be more careful with our assumptions. First lets add the time dependence to \ref{psi} and \ref{psi_d}, we can treat this in the same manner as we did the Klein Gordon field and use the relations \ref{a_H} (which also apply to $b^{s}_{\textbf{p}}$ and $c^{s}_{\textbf{p}}$), to write: 
-\begin{align*}
+\begin{align}
+\label{psi_dag}
       \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-ip\cdot x}\right)  \\
       \psi^{\dagger}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(\textbf{p})e^{-ip\cdot x}+c^{s }_{\textbf{p}}v^{s\dagger}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right)
- \end{align*} 
+ \end{align} 
 
 Let us forget the commutators we postulated above for $b^{s}_{\textbf{p}}$ and $c^{s}_{\textbf{p}}$ and see if we can re-build these from stronger arguments. Let us not even start with the commutator of these annihilation operators let us look at $\bra{0}b^{s}_{\textbf{p}}b^{r \dagger}_{\textbf{p}'}\ket{0}$. We can now use arguments about spacial and translational invariance to get a form of this. Since the ground state is invariant under translations we must have that $\ket{0}=e^{i\textbf{P}\cdot \textbf{x}}\ket{0}$ and $\bra{0} = \bra{0}\textbf{P}\cdot \textbf{x}$ We can then use the same arguments as we used to get \ref{a_H} to show that $e^{-i\textbf{P}\cdot \textbf{x}}a_{\textbf{p}}e^{i\textbf{P}\cdot \textbf{x}} = a_{\textbf{p}}e^{-i\textbf{p}\cdot \textbf{x}},~~~e^{-i\textbf{P}\cdot \textbf{x}}a^{\dagger}_{\textbf{p}}e^{i\textbf{P}\cdot \textbf{x}} = a^{\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot \textbf{x}}$, which allows us to write:
 \begin{align*}
@@ -1387,12 +1390,12 @@ So this is only non-vanishing if $\textbf{p}=\textbf{p}'$. Similarly we can show
 \end{align*}
 For some function $A(\textbf{p})$. This quantity must be non-negative as we can write it as $\bra{0b^{s ^\dagger}_{\textbf{p}}}\ket{b^{r \dagger}_{\textbf{p}'}0}$, which is the inner product of the same term and thus must be $>0$. We can then calculate:
 \begin{align*}
-  \bra{0}\psi(x)\psi^{\dagger}(x')\ket{0} & = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}\sum_{s=1,2}u^{s}(p)\bar{u}^{s}(p)A(\textbf{p})e^{-ip \cdot (x-x')} \gamma^{0} \\ 
-  &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}+m)A(\textbf{p})e^{-ip\cdot (x-x')} \gamma^{0}
+  \bra{0}\psi_a(x)\psi_b^{\dagger}(x')\ket{0} & = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}\sum_{s=1,2}u_a^{s}(p)\bar{u}_c^{s}(p)A(\textbf{p})e^{-ip \cdot (x-x')} (\gamma^{0})_{cb} \\ 
+  &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}+m)_{ac}A(\textbf{p})e^{-ip\cdot (x-x')} (\gamma^{0})_{cb}
 \end{align*}
 Where we are assuming $b^{s}_{\textbf{p}}\ket{0} = 0$ and $c^{s}_{\textbf{p}}\ket{0}= 0$ so there are no terms containing negative frequencies. We can then see that this expression is only properly invariant under boosts iff $A = A(p^2) = A(m^2) = $ constant. So:
 \begin{align*}
-  \bra{0}\psi(x)\psi^{\dagger}(x')\ket{0}= A(i\gamma^{\mu}\partial_{\mu}+m)\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{-ip\cdot (x-x')} \gamma^{0}
+  \bra{0}\psi_a(x)\psi_b^{\dagger}(x')\ket{0}= A(i\gamma^{\mu}\partial_{\mu}+m)_{ac}\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{-ip\cdot (x-x')} (\gamma^{0})_{cb}
 \end{align*}
 
 
@@ -1403,19 +1406,41 @@ Where we are assuming $b^{s}_{\textbf{p}}\ket{0} = 0$ and $c^{s}_{\textbf{p}}\ke
 \end{align*}
 And:
 \begin{align*}
-   \bra{0}\psi^{\dagger}(\textbf{x})\psi(\textbf{x})\ket{0} &= \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)B(\textbf{p})e^{ip \cdot (x-x')} \gamma^{0} \\
-   &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)B(\textbf{p})e^{ip\cdot (x-x')} \gamma^{0} \\ 
-   & =  -B(i\gamma^{\mu}\partial_{\mu}+m)\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{ip\cdot (x-x')} \gamma^{0}
+   \bra{0}\psi_a^{\dagger}(\textbf{x})\psi_b(\textbf{x})\ket{0} &= \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)_{ac}B(\textbf{p})e^{ip \cdot (x-x')} (\gamma^{0})_{cb} \\
+   &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)_{ac}B(\textbf{p})e^{ip\cdot (x-x')} (\gamma^{0})_{cb} \\ 
+   & =  -B(i\gamma^{\mu}\partial_{\mu}+m)_{ac}\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{ip\cdot (x-x')} (\gamma^{0})_{cb}
 \end{align*}
- \item We can see that these integrals are the same as in \ref{D(x-y)}. This implies when we go to calculate $\bra{0}[\psi(x),\psi(x')]\ket{0}$ it will never be $0$ outside the light-cone as $A$ and $B$ are greater then $0$ and then can never cancel (recall that outside the light-cone $D(x-x') = D(x'-x)$). But this gives us a new insight. If we set $A=B =1$ then we see that outside the light-cone:  
+ \item We can see that these integrals are the same as in \ref{D(x-y)}. This implies when we go to calculate $\bra{0}[\psi(x),\psi(x')]\ket{0}$ it will never be $0$ outside the light-cone as $A$ and $B$ are greater then $0$ and then can never cancel (recall that outside the light-cone $D(x-x') = D(x'-x)$). But this gives us a new insight. If we set $A=B =1$ then we see that outside the light-cone: 
+  
  \begin{flalign*}
-   \bra{0}\psi(x)\psi^{\dagger}(x')\ket{0} = -\bra{0}\psi^{\dagger}(x)\psi(x')\ket{0}
+   \bra{0}\psi_a(x)\bar{\psi}_b(x')\ket{0} = -\bra{0}\bar{\psi}_b(x)\psi_a(x')\ket{0}
  \end{flalign*}
- That is the fields \emph{anti-commute} for space like intervals. 
+ That is the fields \emph{anti-commute} for space like intervals. Here we have noticed that everything is cleaner if we do this with $\bar{\psi}$ instead of $\psi^{\dagger}$. Mainly we loose the extra $\gamma^{0}$ in the above equations cleaning up the indices.
 
+ I have added back in the spinor indices in the above calculations to remind us how they come into affect. 
+\end{itemize}
 
+\subsection{Anti-commutation relations}
+\begin{itemize}
+  \item We have concluded from the above section that there is no way to have commutation relations that make sense for the Dirac field, but there is some hope, as we can see that if we define \emph{anti-commutation} relations then maybe everything will work out. Let us proceed to do just so.  We note that we can keep the same form of $\psi$ and $\psi^{\dagger}$ that we were using above in \ref{psi_dag}. But now instead of talking about $\psi^{\dagger}$ we will talk about $\bar{\psi}$, we do this as it is cleaner, $\bar{\psi}$ is the dual spinor of $\psi$ meaning they combine to a scalar. We are able to do this as all our above calculations have been component wise, meaning we can always switch from $\bar{\psi}$ to $\psi^{\dagger}$ by acting with $(\gamma^{0})^{bc}$, i.e. the components of the $\gamma^0$ matrix. 
+
+  Writing out $\psi$ and $\bar{\psi}$ we have:
  \begin{align*}
- 
- \end{align*}
+      \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-ip\cdot x}\right)  \\
+      \bar{\psi}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}\bar{u}^{s}(\textbf{p})e^{-ip\cdot x}+c^{s }_{\textbf{p}}\bar{v}^{s}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right)
+ \end{align*} 
+ With the anti-commutation relations:
+ \begin{flalign*}
+   &\{\psi_{a}(\textbf{x}),\psi^{\dagger}_{b}(\textbf{y})\} = \delta(\textbf{x}-\textbf{y})\delta_{ab} \\
+\{\psi_{a}&(\textbf{x}),\psi_{b}(\textbf{y})\} = \{\psi_{a}^{\dagger}(\textbf{x}),\psi^{\dagger}_{b}(\textbf{y})\} =
+ 0  \end{flalign*}
+ Which are equivalent to:
+\begin{align*}
+  \{b^{r}_{\textbf{p}},b^{s \dagger}_{\textbf{p}'}\} = \{c^{r}_{\textbf{p}},c^{s \dagger}_{\textbf{q}}\} = (2\pi)^3\delta(\textbf{p}-\textbf{q})
+\end{align*}
+The Hamiltonian then nicely becomes: 
+ \begin{flalign}
+           \implies H  &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\left[E_{\textbf{p}}b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}+E_{\textbf{p}}c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}\right]
+         \end{flalign} 
 \end{itemize}
 \end{document}
