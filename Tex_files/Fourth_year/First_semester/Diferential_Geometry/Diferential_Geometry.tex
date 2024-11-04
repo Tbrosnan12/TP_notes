@@ -271,9 +271,24 @@
     \end{align*}
 \end{itemize}
 
+\subsection{Directional derivative}
+\begin{itemize}
+  \item We can associate with each vector $\xi = (\xi^{i})$ a linear differential operator as follows: Since the gradiant $\frac{\partial f}{\partial x^i}$ of a function $f$ is a co-vector, the quantity:
+  \begin{align*}
+    \partial_{\xi}f = \xi^{i}\frac{\partial f}{\partial x^{i}}
+  \end{align*}
+  is a scalar called the directional derivative of $f$ in the direction of $\xi$. 
+
+  \item Thus an arbritrary vector $\xi$ corresponds to the operator:
+  \begin{align*}
+    \partial_{\xi} = \xi^{i}\frac{\partial }{\partial x^i}
+  \end{align*}
+  So we can identify $\frac{\partial}{\partial x^i}\equiv e_{i}$ as the \emph{Canonical basis of the tangent space}. 
+\end{itemize} 
+
 \subsection{Riemann metric}
 \begin{itemize}
-  \item A \emph{Riemann metric} on a manifold $M$ is a point-depedant, positive- definitr quadratic form on the tangent vectors at each point, depending smoothly on the local co-ords of the points. 
+  \item A \emph{Riemann metric} on a manifold $M$ is a point-depedant, positive-definite quadratic form on the tangent vectors at each point, depending smoothly on the local co-ords of the points. 
 
   Thus at each point $x = (x^{1}_{p},\ldots,x^{m}_p)$ of each cahrt $U_{p}$, the metric is given by a symetric matric $g_{\alpha\beta}(x^{1}_{p},...,x^{m}_p)$, and determines a symmetric scalar product of pairs of tangent vectors at the point $x$. 
   \begin{align*}
@@ -294,4 +309,98 @@
    \end{align*}
    Where $ds$ is called a line element, and it is chart-independant. $ds$ is used to measure the distance between two infitesimally close points. 
 \end{itemize}
+
+\newpage 
+\section{Tensors}
+\subsection{Tensor def}
+\begin{itemize}
+  \item A \emph{tensor of type} $(k,l)$ and rank $k+l$ on an $m$-dim manifold $M$ is given each local co-ord system $(x^i_p)$ by a family of functions:
+  \begin{align*}
+    ^{(p)}T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}(x) ~~\text{of the point}~x.
+  \end{align*}
+  In other local co-ord $(x^i_q)$ the components $^{(p)}T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}(x)$  of the same tensor are:
+  \begin{align*}
+    ^{(p)}T^{s_1,\ldots,s_k}_{t_1,\ldots,t_l}(x) = \frac{\partial x^{s_1}_q}{\partial x^{i_1}_p}\cdot \cdot \cdot\frac{\partial x^{s_k}_q}{\partial x^{i_k}_p}\frac{\partial x^{j_1}_p}{\partial x^{t_1}_q}  \cdot \cdot \cdot \frac{\partial x^{j_l}_p}{\partial x^{t_l}_q} \cdot ~^{(p)}T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}(x)
+  \end{align*}
+\end{itemize}
+\subsection{Operations on Tensors}
+\subsubsection{Permutation of indices}
+\begin{itemize}
+  \item Let $\sigma$ be some permutation of $1,2,\ldots,l$. $\sigma$ acrs on the ordered tuple $(j_1,\ldots,j_l)$ as $\sigma(j_1,\ldots,j_l) = (j_{\sigma_1},\ldots,j_{\sigma_l})$. We say that a tensor $\tilde{T}^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}(x)$ =is obtained from a tensor $T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}(x)$ by means of a permutation $\sigma$ of the lower indices if at each point of $M$:
+  \begin{align*}
+    \tilde{T}^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}(x) = T^{i_1,\ldots,i_k}_{\sigma(j_1,\ldots,j_l)}(x)
+  \end{align*}
+  Permutation of upper indicies is defined similarly. 
+\end{itemize}
+\subsubsection{Contraction of indicies}
+\begin{itemize}
+  \item By the contraction of a tensor $T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}(x)$ of type $(k,l)$ with respect to the indcies $i_a,j_a$ we mean the tensor (summation over $n$):
+  \begin{align*}
+    T^{i_1,\ldots,i_{k-1}}_{j_1,\ldots,j_{l-1}}(x)=T^{i_1,\ldots i_{a-1},n,i_{a+1},\ldots,i_k}_{j_1,\ldots ,j_{a-1},n,j_{a+1},\ldots,j_l}(x)
+  \end{align*}
+  Of type $(k-1,l-1)$
+\end{itemize}
+\subsubsection{Product of Tensors}
+\begin{itemize}
+  \item Given two tensors $T = \left(T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}\right)$ of type $(k,l)$ and $P = \left(P^{i_1,\ldots,i_p}_{j_1,\ldots,j_q}\right)$ of type $(p,q)$, we define tehir product to be the tensor product $S = T \otimes P$ of type $(k+p,l+q)$ with components:
+  \begin{align*}
+    S^{i_{1,\ldots,i_{k+p}}}_{j_1,\ldots,j_{l+q}} = T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}P^{i_{k+1},\ldots,i_p}_{j_{l+1},\ldots,j_q}
+  \end{align*}
+  This multiplication is \emph{not commutative} but it is associative. 
+
+\item The result of applying the above three operations to tensors are again tensors. 
+\end{itemize}
+
+\subsection{Co-Vectors}
+\begin{itemize}
+  \item Recall that the differnetial of a function $f$ of $x^{1},\ldots,x^n$ coresponding to the incriments $dx^i$ in the $x^i$ is:
+  \begin{align*}
+    df = \frac{\partial f}{\partial x^i}dx^i
+  \end{align*}
+  Since $dx^i$ is a vector $df$ has the same value in any co-ord system. 
+  In general, given any co-vector $(T_i)$, the differnetial form $T_idx^i$ is invariant under change of chart. We can thus identify $dx^i \equiv e^{i}$ as the \emph{canonical basis of co-vectors or cotangent space}. 
+\end{itemize}
+
+\subsection{Skew-Symmetric Tesnsor}
+\begin{itemize}
+  \item A \emph{skew-symmetric tensor} of type $(0,k)$ is a tensor $T_{i_1,\ldots,i_k}$ satisfying:
+  \begin{align*}
+     T_{\sigma(i_1,\ldots,i_k)} = \mathfrak{s}(\sigma)T_{i_1,\ldots,i_k}
+   \end{align*} 
+   where for all permutations $\mathfrak{s}(\sigma)$ is the sign function. i.e. $\mathfrak{s}(\sigma) = +1(-1)$ for even(odd) permutation. If two indicies of $T_{i_1,\ldots,i_k}$ are the same then the corresponding component of $T_{i_1,\ldots,i_k}$ is $0$. This means if $k>n$ the tensor is automatically $0$. 
+
+     \item The standard basis at a given point is:  
+     \begin{align*}
+       dx^{i_1}\wedge\cdot \cdot \cdot \wedge dx^{i_k},~~~i_{1}<i_2<\cdot\cdot\cdot<i_k
+     \end{align*}
+     Where:
+     \begin{align*}
+       dx^{i_1}\wedge\cdot \cdot \cdot \wedge dx^{i_k} = \sum_{\sigma\in S_{k}}\mathfrak{s}(\sigma)e^{i_{\sigma_1}}\otimes\cdot \cdot \cdot \otimes e^{i_{\sigma_k}}
+     \end{align*}
+     Here $S_k$ is the symmetric group. i.e. the group of all permutations of $k$ elements. 
+
+     \item The differential form of the skew-symmetric tensor $\left(T_{i_1,\ldots,i_k}\right)$ is:
+     \begin{flalign*}
+    T_{i_1,\ldots,i_k}e^{i_1}\otimes \cdot \cdot \cdot \otimes e^{i_k} &= \sum_{i_{1}<i_2<\cdot\cdot\cdot<i_k}    T_{i_1,\ldots,i_k} dx^{i_1}\wedge\cdot \cdot \cdot \wedge dx^{i_k}   \\
+    & = \frac{1}{k!}T_{i_1,\ldots,i_k}dx^{i_1}\wedge\cdot \cdot \cdot \wedge dx^{i_k}
+     \end{flalign*}
+     Where the last step can be made as both $dx^{i_1}\wedge\cdot \cdot \cdot \wedge dx^{i_k}$ and $T_{i_1,\ldots,i_k}$ are anti-symmetric. 
+\end{itemize}
+
+\subsection{Volume element}
+\begin{itemize}
+  \item A metric $g_{ij}$ on a manifold is a tensor of type $(0,2)$ and on an oriented manifold of $dim(M)=n$ such a metric gives rise to a \emph{volume element}: 
+  \begin{align*}
+    T_{i_1,\ldots,i_n} = \sqrt{|g|}\epsilon{i_1,\ldots,i_n},~~~g=det(g_{ij})
+  \end{align*}
+  It is covenient to write te volume element in the notation of differential forms:
+  \begin{align*}
+    \Omega = \sqrt{|g|}dx^{1}\wedge \cdot \cdot \cdot \wedge dx^{n}
+  \end{align*}
+  If $g_{ij}$ is Riemann then the \emph{volume} $V$ of $M$ is:
+  \begin{align*}
+    V = \int_M \Omega  = \int_{M}\sqrt{|g|}dx^{1}\wedge \cdot \cdot \cdot \wedge dx^{n}
+  \end{align*}
+\end{itemize}
+
 \end{document}
