@@ -401,9 +401,10 @@ Here $\alpha$ is small. This transformation is a symmetry if it results in the s
   \partial_{\mu}j^{\mu}(x) = 0, ~~~~\text{for} ~~j^{\mu}(x) = \frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)}\Delta \phi - \mathcal{J}^{\mu}
 \end{flalign}
 \item If the symmetry involves more then one field the first term above should be a sum of those terms, for the different fields. This conservation law also implies that there is a charge constant in time namely:
-\begin{flalign*}
+\begin{flalign}
+\label{charge}
 Q \equiv \int j^{0} d^3x
-\end{flalign*}
+\end{flalign}
 \end{itemize}
 \subsection{Stress-Energy Tensor}
 \begin{itemize}
@@ -1362,6 +1363,7 @@ As was mentioned in the section on Representations of the Poincar\'e group these
           H &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3 2E_{\textbf{p}}}\left[b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}p_0(2p_0)-(c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}+(2\pi)^3\delta(0))p_0(2p_0)+\right]
         \end{align*}
         \begin{flalign}
+        \label{Ham_D}
            \implies H  &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\left[E_{\textbf{p}}b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}-E_{\textbf{p}}c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}\right]
          \end{flalign} 
          Where we have recognized $p_0 = E_{\textbf{p}}$. There is something very strange happening here by creating more and more particles with the $c^{s\dagger}_{\textbf{p}}$ operators we can lower the energy indefinitely. We also cannot re-label $c^{s}_{\textbf{p}}\rightarrow c^{s\dagger}_{\textbf{p}}$ as that ruins our commutation relations. We need to do something different.  
@@ -1420,15 +1422,16 @@ And:
  I have added back in the spinor indices in the above calculations to remind us how they come into affect. 
 \end{itemize}
 
-\subsection{Anti-commutation relations}
+\subsubsection{Anti-commutation relations}
 \begin{itemize}
   \item We have concluded from the above section that there is no way to have commutation relations that make sense for the Dirac field, but there is some hope, as we can see that if we define \emph{anti-commutation} relations then maybe everything will work out. Let us proceed to do just so.  We note that we can keep the same form of $\psi$ and $\psi^{\dagger}$ that we were using above in \ref{psi_dag}. But now instead of talking about $\psi^{\dagger}$ we will talk about $\bar{\psi}$, we do this as it is cleaner, $\bar{\psi}$ is the dual spinor of $\psi$ meaning they combine to a scalar. We are able to do this as all our above calculations have been component wise, meaning we can always switch from $\bar{\psi}$ to $\psi^{\dagger}$ by acting with $(\gamma^{0})^{bc}$, i.e. the components of the $\gamma^0$ matrix. 
 
   Writing out $\psi$ and $\bar{\psi}$ we have:
- \begin{align*}
+ \begin{align}
+ \label{psi_bar}
       \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-ip\cdot x}\right)  \\
       \bar{\psi}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}\bar{u}^{s}(\textbf{p})e^{-ip\cdot x}+c^{s }_{\textbf{p}}\bar{v}^{s}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right)
- \end{align*} 
+ \end{align} 
  With the anti-commutation relations:
  \begin{flalign*}
    &\{\psi_{a}(\textbf{x}),\psi^{\dagger}_{b}(\textbf{y})\} = \delta(\textbf{x}-\textbf{y})\delta_{ab} \\
@@ -1438,9 +1441,44 @@ And:
 \begin{align*}
   \{b^{r}_{\textbf{p}},b^{s \dagger}_{\textbf{p}'}\} = \{c^{r}_{\textbf{p}},c^{s \dagger}_{\textbf{q}}\} = (2\pi)^3\delta(\textbf{p}-\textbf{q})
 \end{align*}
-The Hamiltonian then nicely becomes: 
+  Note that all though we are now more concerned with $\bar{\psi}$, $\psi^{\dagger}$ is still the conjugate momentum and should still be in the commutation relations.
+
+\item Proceeding with these commutation relations however will not fix the negative energy problem as we still end up with a minus sign from \ref{v(p)} (See calculation above). We can however fix this, if we relabel $c^{r}_{\textbf{p}} -> c^{r\dagger}_{\textbf{p}}$ and $c^{r\dagger}_{\textbf{p}} -> c^{r}_{\textbf{p}}$. We are free to do this now as the anti-commutation relations are symmetric for these operators.  This means $c^{r\dagger}_{\textbf{p}}c^{r}_{\textbf{p}} = - c^{r}_{\textbf{p}}c^{r\dagger}_{\textbf{p}}  +\text{constant}$.This means the Hamiltonian \ref{Ham_D} nicely becomes: 
  \begin{flalign}
            \implies H  &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\left[E_{\textbf{p}}b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}+E_{\textbf{p}}c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}\right]
-         \end{flalign} 
+  \end{flalign}  
 \end{itemize}
+
+\subsection{Pauli exclusion principle}
+\begin{itemize}
+  \item This above relabeling $c^{r}_{\textbf{p}} \rightarrow c^{r\dagger}_{\textbf{p}}$ is essentially just us calling the operator that creates positive energy as the creation operator. We are able to do this for a very special reason. Since $\{c^{r\dagger}_{\textbf{p}},c^{s\dagger}_{\textbf{p}}\}= \{c^{r}_{\textbf{p}},c^{s}_{\textbf{p}}\} = 0$ we must have that $(c^{r\dagger}_{\textbf{p}})^2\ket{0}=(c^{r}_{\textbf{p}})^2\ket{0} = 0$, i.e. there simply are only two energy levels that these operators can create/destroy as they cannot be filled twice. This means that we are free to call the either of them the ground state as we did to solve the problem. 
+
+\item More generally the anti-commutation relations imply that any multi particle state is anti-symmetric under the exchange of particles. That is that:{}
+\begin{align*}
+  c^{s\dagger}_{\textbf{p}}c^{r\dagger}_{\textbf{q}}\ket{0} = - c^{s\dagger}_{\textbf{q}}c^{r\dagger}_{\textbf{p}}\ket{0}. 
+\end{align*}
+We can see from this that these terms will vanish if $\textbf{p} = \textbf{q}$ and $s=r$, and are other wise anti-symmetric. This is \emph{Pauli's exclusion principle} and implies that the corresponding particles obey \emph{Fermi-Dirac statistics}.    
+
+\item We can then think about creation of particles in the following way: We will call particles created by $b^{s\dagger}_{\textbf{p}}\ket{0} = \ket{\textbf{p},s}$ electrons and particles created by $c^{s\dagger}_{\textbf{p}}\ket{0} = \ket{\tilde{\textbf{p}},\tilde{s}}$ positrons. We can also create particles of both types, $b^{s\dagger}_{\textbf{p}}c^{r\dagger}_{\textbf{q}}\ket{0} = \ket{\textbf{p},s,\tilde{\textbf{p}},\tilde{r}}$. 
+
+\item We would like these particle states to be normalized in a way that is Lorentz invariant as we did for the Klein Gordan field. This means we tack on a usual factor of $\sqrt{2E_{\textbf{p}}}$ so our states are:
+\begin{flalign*}
+  & \sqrt{2E_{\textbf{p}}}b^{s\dagger}_{\textbf{p}}\ket{0} = \ket{\textbf{p},s} ~~(\text{electron})\\
+  & \sqrt{2E_{\textbf{p}}}c^{s\dagger}_{\textbf{p}}\ket{0} = \ket{\tilde{\textbf{p}},\tilde{s}}~~(\text{positron})
+\end{flalign*}
+\end{itemize}
+
+\subsection{Electric charge}
+\begin{itemize}
+  \item Let us now investigate if there is a Noether current and a corresponding conserved charge. Recall the Dirac Lagrangian from \ref{D_act} is $\mathcal{L}_D = i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi-m\bar{\psi}\psi$. We can can clearly see that since this is quadratic in the spinors there is a symmetry in that we can define $\psi \rightarrow e^{i\alpha}\psi$ and $\psi^{\dagger}\rightarrow e^{-i\alpha}\psi^{\dagger}$. Infinitesimally these are: $\psi \rightarrow \psi +i\alpha\psi$ and $\psi^{\dagger} \rightarrow \psi^{\dagger} -i\alpha\psi^{\dagger}$. We can then use \ref{Noether} to write down that the conserved current (up to a sign is):
+  \begin{flalign}
+    j^{\mu} =  \frac{\partial\mathcal{L}}{\partial(\partial_{\mu}\psi)}\Delta\psi = \bar{\psi}\gamma^{\mu}\psi,~~~\partial_{\mu}j^{\mu} = 0
+  \end{flalign}
+Note that for our transformation $\mathcal{J}^{\mu} =0$. We can then use this current to calculate the conserved charge via \ref{charge}:
+\begin{align*}
+  Q = \int d^3xj^{0} = \int d^3x \bar{\psi}\gamma^{0}\psi = \int \psi^{\dagger}\psi d^3x
+\end{align*}
+We can then use the expression \ref{psi_dag}
+\end{itemize}
+
 \end{document}
