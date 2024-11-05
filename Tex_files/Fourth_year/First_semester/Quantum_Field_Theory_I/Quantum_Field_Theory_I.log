@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  4 NOV 2024 23:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  5 NOV 2024 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1564,6 +1564,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [38]
+Overfull \hbox (37.30786pt too wide) detected at line 1485
+[]
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1621,7 +1625,7 @@ onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on Quantum_Field_Theory_I.pdf (40 pages, 459923 bytes).
+Output written on Quantum_Field_Theory_I.pdf (40 pages, 460720 bytes).
 PDF statistics:
  830 PDF objects out of 1000 (max. 8388607)
  710 compressed objects within 8 object streams

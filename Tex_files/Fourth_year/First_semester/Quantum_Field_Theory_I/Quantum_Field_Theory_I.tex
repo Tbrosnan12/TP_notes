@@ -1309,9 +1309,9 @@ As was mentioned in the section on Representations of the Poincar\'e group these
      \item  Our task then is to find a representation of our commutation relations in terms of creation and annihilation operators that diagonalize $H$. From the Dirac equation \ref{Dirac} we have that $(i\gamma^0\partial_{0}-\gamma^0h_{D})\psi =0 $ So we are looking for solutions to the Dirac equation with eigenvalues $E_{\textbf{p}}$. These are just the solutions we discussed before so we can write: 
     \begin{align}
     \label{psi}
-      \psi(\textbf{x}) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)  \\
+      \psi(\textbf{x}) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(p)e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(p)e^{-i\textbf{p}\cdot\textbf{x}}\right)  \\
       \label{psi_d}
-      \psi^{\dagger}(\textbf{x}) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}+c^{s }_{\textbf{p}}v^{s\dagger}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right) 
+      \psi^{\dagger}(\textbf{x}) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(p)e^{-i\textbf{p}\cdot\textbf{x}}+c^{s }_{\textbf{p}}v^{s\dagger}(p)e^{i\textbf{p}\cdot\textbf{x}}\right) 
     \end{align}
 
     Notice that for now we are working in the Schr\"odinger picture where $\psi$ does not depend on time. 
@@ -1429,8 +1429,8 @@ And:
   Writing out $\psi$ and $\bar{\psi}$ we have:
  \begin{align}
  \label{psi_bar}
-      \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-ip\cdot x}\right)  \\
-      \bar{\psi}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}\bar{u}^{s}(\textbf{p})e^{-ip\cdot x}+c^{s }_{\textbf{p}}\bar{v}^{s}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right)
+      \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(p)e^{ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(p)e^{-ip\cdot x}\right)  \\
+      \bar{\psi}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}\bar{u}^{s}(p)e^{-ip\cdot x}+c^{s }_{\textbf{p}}\bar{v}^{s}(p)e^{i\textbf{p}\cdot\textbf{x}}\right)
  \end{align} 
  With the anti-commutation relations:
  \begin{flalign*}
@@ -1478,7 +1478,11 @@ Note that for our transformation $\mathcal{J}^{\mu} =0$. We can then use this cu
 \begin{align*}
   Q = \int d^3xj^{0} = \int d^3x \bar{\psi}\gamma^{0}\psi = \int \psi^{\dagger}\psi d^3x
 \end{align*}
-We can then use the expression \ref{psi_dag}
+We can then use the expressions \ref{psi_dag} to calculate this integral: 
+\begin{align*}
+  Q & = \sum_{r,s}\int\frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(p)e^{-ip\cdot\textbf{x}}+c^{s }_{\textbf{p}}v^{s\dagger}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right)\left(b^{r}_{\textbf{p}}u^r(\textbf{p}')e^{ip'\cdot x}+c^{r \dagger}_{\textbf{p}'}v^r(\textbf{p}')e^{-ip'\cdot x}\right) \\
+  & = \sum_{r,s}\int\frac{d^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left(b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}}u^{s\dagger}(\textbf{p})u^r(\textbf{p})+c^{s }_{\textbf{p}}b^{r}_{\textbf{p}}v^{s\dagger}(\textbf{p})u^r(\textbf{p}')+b^{s \dagger}_{\textbf{p}}c^{r \dagger}_{\textbf{p}'}u^{s\dagger}(\textbf{p})v^r(\textbf{p}') +c^{s }_{\textbf{p}}c^{r \dagger}_{\textbf{p}'}v^{s\dagger}(\textbf{p})v^r(\textbf{p}')\right)
+\end{align*}
 \end{itemize}
 
 \end{document}
