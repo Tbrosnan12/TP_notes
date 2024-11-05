@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  5 NOV 2024 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  5 NOV 2024 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1206,7 +1206,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 \openout7 = `Quantum_Field_Theory_I.toc'.
 
  [4]
-<trailer.png, id=354, 694.595pt x 339.2675pt>
+<trailer.png, id=359, 694.595pt x 339.2675pt>
 File: trailer.png Graphic file (type png)
 <use trailer.png>
 Package pdftex.def Info: trailer.png  used on input line 145.
@@ -1564,7 +1564,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [38]
-Overfull \hbox (37.30786pt too wide) detected at line 1485
+Overfull \hbox (20.68834pt too wide) detected at line 1489
 []
  []
 
@@ -1585,21 +1585,30 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[40
+[40]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[41
 
 ] (./Quantum_Field_Theory_I.aux)
 Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
 
-(rerunfilecheck)             Checksum: 7221D11E6339118C34D8DB5CFA6BB477;9363.
+(rerunfilecheck)             Checksum: 96D2CD0D0BA9AEC9624333FB8E00841A;9515.
 Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 \openout1 = `Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36132 strings out of 480247
- 718672 string characters out of 5896151
- 1451935 words of memory out of 5000000
- 53342 multiletter control sequences out of 15000+600000
+ 36141 strings out of 480247
+ 718778 string characters out of 5896151
+ 1452152 words of memory out of 5000000
+ 53347 multiletter control sequences out of 15000+600000
  484180 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,21n,104p,1211b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1625,10 +1634,10 @@ onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on Quantum_Field_Theory_I.pdf (40 pages, 460720 bytes).
+Output written on Quantum_Field_Theory_I.pdf (41 pages, 464133 bytes).
 PDF statistics:
- 830 PDF objects out of 1000 (max. 8388607)
- 710 compressed objects within 8 object streams
- 174 named destinations out of 1000 (max. 500000)
- 618 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 847 PDF objects out of 1000 (max. 8388607)
+ 726 compressed objects within 8 object streams
+ 178 named destinations out of 1000 (max. 500000)
+ 626 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1369,7 +1369,7 @@ As was mentioned in the section on Representations of the Poincar\'e group these
          Where we have recognized $p_0 = E_{\textbf{p}}$. There is something very strange happening here by creating more and more particles with the $c^{s\dagger}_{\textbf{p}}$ operators we can lower the energy indefinitely. We also cannot re-label $c^{s}_{\textbf{p}}\rightarrow c^{s\dagger}_{\textbf{p}}$ as that ruins our commutation relations. We need to do something different.  
      \end{itemize}
 
-\subsubsection{The need for Anti-Commutation relations}
+\subsubsection{The need for Anti-Commutation relations}{\label{need_anti}}
 \begin{itemize}
   \item I don't like how many sources just introduce the anti-commutations that we will use below. The best I have found is from Anthony Zee's ``Quantum Field Theory in a nutshell'': 
 
@@ -1396,9 +1396,10 @@ For some function $A(\textbf{p})$. This quantity must be non-negative as we can 
   &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}+m)_{ac}A(\textbf{p})e^{-ip\cdot (x-x')} (\gamma^{0})_{cb}
 \end{align*}
 Where we are assuming $b^{s}_{\textbf{p}}\ket{0} = 0$ and $c^{s}_{\textbf{p}}\ket{0}= 0$ so there are no terms containing negative frequencies. We can then see that this expression is only properly invariant under boosts iff $A = A(p^2) = A(m^2) = $ constant. So:
-\begin{align*}
+\begin{align}
+\label{com_1}
   \bra{0}\psi_a(x)\psi_b^{\dagger}(x')\ket{0}= A(i\gamma^{\mu}\partial_{\mu}+m)_{ac}\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{-ip\cdot (x-x')} (\gamma^{0})_{cb}
-\end{align*}
+\end{align}
 
 
 
@@ -1407,11 +1408,12 @@ Where we are assuming $b^{s}_{\textbf{p}}\ket{0} = 0$ and $c^{s}_{\textbf{p}}\ke
    \bra{0}c^{s}_{\textbf{p}}c^{r \dagger}_{\textbf{p}'}\ket{0} = (2\pi)^3\delta^{rs}\delta(\textbf{p}-\textbf{p}')B(\textbf{p})
 \end{align*}
 And:
-\begin{align*}
-   \bra{0}\psi_a^{\dagger}(\textbf{x})\psi_b(\textbf{x})\ket{0} &= \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)_{ac}B(\textbf{p})e^{ip \cdot (x-x')} (\gamma^{0})_{cb} \\
-   &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)_{ac}B(\textbf{p})e^{ip\cdot (x-x')} (\gamma^{0})_{cb} \\ 
+\begin{align}
+\label{com_2}
+   \bra{0}\psi_a^{\dagger}(\textbf{x})\psi_b(\textbf{x})\ket{0} &= \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)_{ac}B(\textbf{p})e^{ip \cdot (x-x')} (\gamma^{0})_{cb} \nonumber \\
+   &  = \int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}(\gamma^{\mu}p_{\mu}-m)_{ac}B(\textbf{p})e^{ip\cdot (x-x')} (\gamma^{0})_{cb} \nonumber\\ 
    & =  -B(i\gamma^{\mu}\partial_{\mu}+m)_{ac}\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{ip\cdot (x-x')} (\gamma^{0})_{cb}
-\end{align*}
+\end{align}
  \item We can see that these integrals are the same as in \ref{D(x-y)}. This implies when we go to calculate $\bra{0}[\psi(x),\psi(x')]\ket{0}$ it will never be $0$ outside the light-cone as $A$ and $B$ are greater then $0$ and then can never cancel (recall that outside the light-cone $D(x-x') = D(x'-x)$). But this gives us a new insight. If we set $A=B =1$ then we see that outside the light-cone: 
   
  \begin{flalign*}
@@ -1445,7 +1447,7 @@ And:
 
 \item Proceeding with these commutation relations however will not fix the negative energy problem as we still end up with a minus sign from \ref{v(p)} (See calculation above). We can however fix this, if we relabel $c^{r}_{\textbf{p}} -> c^{r\dagger}_{\textbf{p}}$ and $c^{r\dagger}_{\textbf{p}} -> c^{r}_{\textbf{p}}$. We are free to do this now as the anti-commutation relations are symmetric for these operators.  This means $c^{r\dagger}_{\textbf{p}}c^{r}_{\textbf{p}} = - c^{r}_{\textbf{p}}c^{r\dagger}_{\textbf{p}}  +\text{constant}$.This means the Hamiltonian \ref{Ham_D} nicely becomes: 
  \begin{flalign}
-           \implies H  &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\left[E_{\textbf{p}}b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}+E_{\textbf{p}}c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}\right]
+           H  &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\left[E_{\textbf{p}}b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}+E_{\textbf{p}}c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}\right]
   \end{flalign}  
 \end{itemize}
 
@@ -1468,7 +1470,7 @@ We can see from this that these terms will vanish if $\textbf{p} = \textbf{q}$ a
 \end{flalign*}
 \end{itemize}
 
-\subsection{Electric charge}
+\subsection{Charged particles}
 \begin{itemize}
   \item Let us now investigate if there is a Noether current and a corresponding conserved charge. Recall the Dirac Lagrangian from \ref{D_act} is $\mathcal{L}_D = i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi-m\bar{\psi}\psi$. We can can clearly see that since this is quadratic in the spinors there is a symmetry in that we can define $\psi \rightarrow e^{i\alpha}\psi$ and $\psi^{\dagger}\rightarrow e^{-i\alpha}\psi^{\dagger}$. Infinitesimally these are: $\psi \rightarrow \psi +i\alpha\psi$ and $\psi^{\dagger} \rightarrow \psi^{\dagger} -i\alpha\psi^{\dagger}$. We can then use \ref{Noether} to write down that the conserved current (up to a sign is):
   \begin{flalign}
@@ -1480,9 +1482,31 @@ Note that for our transformation $\mathcal{J}^{\mu} =0$. We can then use this cu
 \end{align*}
 We can then use the expressions \ref{psi_dag} to calculate this integral: 
 \begin{align*}
-  Q & = \sum_{r,s}\int\frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(p)e^{-ip\cdot\textbf{x}}+c^{s }_{\textbf{p}}v^{s\dagger}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right)\left(b^{r}_{\textbf{p}}u^r(\textbf{p}')e^{ip'\cdot x}+c^{r \dagger}_{\textbf{p}'}v^r(\textbf{p}')e^{-ip'\cdot x}\right) \\
-  & = \sum_{r,s}\int\frac{d^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left(b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}}u^{s\dagger}(\textbf{p})u^r(\textbf{p})+c^{s }_{\textbf{p}}b^{r}_{\textbf{p}}v^{s\dagger}(\textbf{p})u^r(\textbf{p}')+b^{s \dagger}_{\textbf{p}}c^{r \dagger}_{\textbf{p}'}u^{s\dagger}(\textbf{p})v^r(\textbf{p}') +c^{s }_{\textbf{p}}c^{r \dagger}_{\textbf{p}'}v^{s\dagger}(\textbf{p})v^r(\textbf{p}')\right)
+  Q & = \sum_{r,s}\int\frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(p)e^{-ip\cdot x}+c^{s }_{\textbf{p}}v^{s\dagger}(p)e^{i\textbf{p}\cdot x}\right)\left(b^{r}_{\textbf{p}}u^r(p')e^{ip'\cdot x}+c^{r \dagger}_{\textbf{p}'}v^r(p')e^{-ip'\cdot x}\right) \\
+  & = \sum_{r,s}\int\frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left(b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}'}u^{s\dagger}(p)u^r(p')e^{ix_0(p_0-p_0')}e^{\textbf{x}\cdot(\textbf{p}'-\textbf{p})}+c^{s }_{\textbf{p}}b^{r}_{\textbf{p}'}v^{s\dagger}(p)u^r(p')e^{ix_0(p_0+p_0')}e^{\textbf{x}\cdot(\textbf{p}'+\textbf{p})} \right. \\
+  & ~~~~~~~~~~~~~~~~~~~~~~~~~\left. +b^{s \dagger}_{\textbf{p}}c^{r \dagger}_{\textbf{p}'}u^{s\dagger}(p)v^r(p')e^{-ix_0(p_0+p_0')}e^{-\textbf{x}\cdot(\textbf{p}'+\textbf{p})} +c^{s }_{\textbf{p}}c^{r \dagger}_{\textbf{p}'}v^{s\dagger}(p)v^r(p')e^{-ix_0(p_0-p_0')}e^{-\textbf{x}\cdot(\textbf{p}'-\textbf{p})}\right) \\
+  & = \sum_{r,s}\int\frac{d^3p}{(2\pi)^32E_{\textbf{p}}}\left(b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}}u^{s\dagger}(\textbf{p})u^r(\textbf{p})+c^{s }_{\textbf{p}}b^{r}_{\textbf{p}}v^{s\dagger}(\textbf{p})u^r(-\textbf{p})+b^{s \dagger}_{\textbf{p}}c^{r \dagger}_{-\textbf{p}}u^{s\dagger}(\textbf{p})v^r(\textbf{p}') +c^{s }_{\textbf{p}}c^{r \dagger}_{\textbf{p}}v^{s\dagger}(\textbf{p})v^r(\textbf{p}')\right)
 \end{align*}
+Where we have brought in the $x$ integral to create the delta functions. We have also switched to talking about $u$ and $v$ as function of only $\textbf{p}$ as a short hand so that we can use relations \ref{norm_a} and \ref{norm_b}to write this cleanly, (remembering that $p_0 = E_{\textbf{p}}$), as: 
+\begin{flalign*}
+  Q = \int \frac{d^3p}{(2\pi)^3}\sum_{s}\left(b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}} + c^{s }_{\textbf{p}}c^{s \dagger}_{\textbf{p}}\right) = \int \frac{d^3p}{(2\pi)^3}\sum_{s}\left(b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}} - c^{s \dagger}_{\textbf{p}}c^{s }_{\textbf{p}}\right) + \text{constant}
+\end{flalign*}
+We do the usual procedure of ignoring the infinite constant that arises due to our treatment of infinity large and dense space. Thus we have that although our particles have the same positive energy, $b^{s \dagger}_{\textbf{p}}$ creates particles of charge $+1$ and $c^{s \dagger}_{\textbf{p}}$ creates charges of $-1$. 
 \end{itemize}
+
+\subsection{Dirac Propagator}
+\begin{itemize}
+  \item We saw in section \ref{need_anti} how we could write down $ \bra{0}\psi(x)\psi^{\dagger}(x')\ket{0}$ and $ \bra{0}\psi^{\dagger}(x)\psi(x')\ket{0}$ in \ref{com_1} and \ref{com_2}. We can now easily use these two write down $ \bra{0}\psi(x)\bar{\psi}(x')\ket{0}$ as:
+  \begin{align*}
+    \bra{0}\psi(x)\bar{\psi}(x')\ket{0} = (i\gamma^{\mu}\partial_{\mu}+m)\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{-ip\cdot (x-x')}
+  \end{align*}
+  And $\bra{0}\bar{\psi}(x)\psi(x')\ket{0}$ as:
+  \begin{align*}
+   \bra{0}\bar{\psi}(x)\psi(x')\ket{0} =  -(i\gamma^{\mu}\partial_{\mu}+m)\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{ip\cdot (x-x')}
+  \end{align*}
+  Where all we had to change was act by $\gamma_{0}$ to change from $\psi^{\dagger}\rightarrow\bar{\psi}$. 
+
+\end{itemize}
+
 
 \end{document}

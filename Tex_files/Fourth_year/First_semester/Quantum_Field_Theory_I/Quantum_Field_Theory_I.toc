@@ -54,4 +54,5 @@
 \contentsline {subsubsection}{\numberline {5.9.2}The need for Anti-Commutation relations}{36}{subsubsection.5.9.2}%
 \contentsline {subsubsection}{\numberline {5.9.3}Anti-commutation relations}{38}{subsubsection.5.9.3}%
 \contentsline {subsection}{\numberline {5.10}Pauli exclusion principle}{38}{subsection.5.10}%
-\contentsline {subsection}{\numberline {5.11}Electric charge}{39}{subsection.5.11}%
+\contentsline {subsection}{\numberline {5.11}Charged particles}{39}{subsection.5.11}%
+\contentsline {subsection}{\numberline {5.12}Dirac Propagator}{40}{subsection.5.12}%
