@@ -344,7 +344,7 @@ In this section we will see where regular quantum mechanics fails and what we ne
   Where we have integrated by parts the second term.
 \end{itemize}
 
-\subsection{Non-degenerate Lagrangian}
+\subsection{Non-degenerate Lagrangian}{\label{Non-degenerate Lagrangian}}
 \begin{itemize}
   \item It is often the case, that when we have constructed our Lagrangian, that we would like to perform a Legendre transform from the variables $q$ and $\dot{q}$, to $q$ and $p$. This is gives us our Hamiltonian and takes the form $H =\sum_i p_i \dot{q}_i  - L(q,\dot{q})$. In doing this we are required to solve for $\dot{q}$ in terms of $q$ and $p$. But this is not always possible, for example given the Lagrangian $L \propto \dot{q} \implies p = \frac{\partial L}{\partial q} = 1$, so we are unable to solve for $\dot{q}(p,q)$. It turn out the condition for us to always be able to solve for $\dot{q}$ is as follows:
 
@@ -1535,5 +1535,27 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
  
 \end{itemize}
 
+\newpage 
+\section{Constrained Hamiltonian Systems}
+\begin{itemize}
+  \item This section is following Dirac's small book ``Lectures on Quantum mechanics'' 
+\end{itemize}
 
+\subsection{Degenerate Hamiltonian }
+\begin{itemize}
+  \item In section \ref{Non-degenerate Lagrangian} we discussed how if we have a degenerate Lagrangian then we are unable to solve for the $\dot{q}$ in terms of $p$ and thus unable to write down the Lagrangian. We now want to allow for this no being the case. In this case it means that their exists relations between  $q$ and $p$: $\phi(p,q) = 0 $ so that they are no longer independent.
+
+  \item To be more general we will talk about their being $M$ relations $\phi_{m}(q,p) = 0,~~m=1,\ldots,M$. We call these the \emph{primary constraints}. With this the Legendre transform to $H = p_iq^i-L$ is no longer uniquely defined as we can always add to it $\lambda^{m}\phi_{m}$ and still have the new Hamiltonian be only a function of $q_{i}$ and $p_{i}$. 
+  \begin{align*}
+    H'(p,q) = H + \lambda^{m}\phi_m = p_iq^i-L + \lambda^{m}\phi_m  
+  \end{align*}
+  Here upper and lower index's are only to indicate that we are summing over the variables, we operate in a euclidean metric so that all upper index's equal lower. Note that the co-officiants $\lambda_{m}$ can also be any sort of functions of the $q's$ and $p's$.  
+\end{itemize}
+\subsection{Poisson brackets}
+\begin{itemize}
+  \item Recall from classical mechanics that we had the notion of the \emph{Poisson bracket} defined for two functions $f(p,q)$ and $g(p,q)$ as:
+  \begin{align*}
+    \{f,g\} = \sum_i\left(\frac{\partial f}{\partial q_i}\frac{\partial g}{\partial p_{i}}-\frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q_{i}}\right)
+  \end{align*}
+\end{itemize}
 \end{document}
