@@ -681,7 +681,11 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
     \int \frac{d^3p}{(2\pi)^3}\int&\frac{dp^{0}}{2\pi i}\frac{-1}{p^2-m^2}e^{-ip\cdot(x-y)} = \int \frac{d^3p}{(2\pi)^3}e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})}\frac{(I_{+}-I_{-})}{2E_{\textbf{p}}}  \\
     & = \int \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}\left(e^{-ip(x-y)}-e^{ip(x-y)}\right)
     \end{align*}
-    Which is exactly what we had in \ref{KG_prop}! so we can say our proposition integral \ref{test_prop} is the same as $\bra{0}[\phi(x),\phi(y)]\ket{0}$. We should note that in the last step we have relabeled the $p$ integral multiplying the $I_{+}$ integral, from integrating over $\textbf{p}$ to $ -\textbf{p}$. We also have set $p^{0}$ to $E_{\textbf{p}}$. 
+    Which is exactly what we had in \ref{KG_prop}! so we can say our proposition integral \ref{test_prop} is the same as $\bra{0}[\phi(x),\phi(y)]\ket{0}$. We should note that in the last step we have relabeled the $p$ integral multiplying the $I_{+}$ integral, from integrating over $\textbf{p}$ to $ -\textbf{p}$. We also have set $p^{0}$ to $E_{\textbf{p}}$. This allows us to write:
+    \begin{flalign}
+    \label{prop}
+      \bra{0}[\phi(x),\phi(y)]\ket{0} = \int \frac{d^4p}{(2\pi)^4}\frac{i}{p^2-m^2}e^{-ip\cdot(x-y)}
+    \end{flalign}
 \end{itemize}
 
 \subsubsection{Advanced/Retarded Propagators}
@@ -712,7 +716,11 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
     & = \bra{0}T\phi(x),\phi(y)\ket{0} \nonumber
   \end{flalign}
 
-  Where in the last step we have defined the \emph{Time ordering symbol} $T$. 
+  Where in the last step we have defined the \emph{Time ordering symbol} $T$. We can write this in a nice way similar to \ref{prop} as:
+  \begin{flalign}
+   \label{Feynmann_2}
+    D_F(x-y) = \int \frac{d^4p}{(2\pi)^4}\frac{i}{p^2-m^2+i\epsilon}e^{-ip\cdot(x-y)}
+  \end{flalign}
 \end{itemize}
 
   \newpage 
@@ -1435,6 +1443,7 @@ And:
       \bar{\psi}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}\bar{u}^{s}(p)e^{-ip\cdot x}+c^{s }_{\textbf{p}}\bar{v}^{s}(p)e^{i\textbf{p}\cdot\textbf{x}}\right)
  \end{align} 
  With the anti-commutation relations:
+
  \begin{flalign*}
    &\{\psi_{a}(\textbf{x}),\psi^{\dagger}_{b}(\textbf{y})\} = \delta(\textbf{x}-\textbf{y})\delta_{ab} \\
 \{\psi_{a}&(\textbf{x}),\psi_{b}(\textbf{y})\} = \{\psi_{a}^{\dagger}(\textbf{x}),\psi^{\dagger}_{b}(\textbf{y})\} =
@@ -1443,6 +1452,8 @@ And:
 \begin{align*}
   \{b^{r}_{\textbf{p}},b^{s \dagger}_{\textbf{p}'}\} = \{c^{r}_{\textbf{p}},c^{s \dagger}_{\textbf{q}}\} = (2\pi)^3\delta(\textbf{p}-\textbf{q})
 \end{align*}
+  With all other commutators being $0$.
+
   Note that all though we are now more concerned with $\bar{\psi}$, $\psi^{\dagger}$ is still the conjugate momentum and should still be in the commutation relations.
 
 \item Proceeding with these commutation relations however will not fix the negative energy problem as we still end up with a minus sign from \ref{v(p)} (See calculation above). We can however fix this, if we relabel $c^{r}_{\textbf{p}} -> c^{r\dagger}_{\textbf{p}}$ and $c^{r\dagger}_{\textbf{p}} -> c^{r}_{\textbf{p}}$. We are free to do this now as the anti-commutation relations are symmetric for these operators.  This means $c^{r\dagger}_{\textbf{p}}c^{r}_{\textbf{p}} = - c^{r}_{\textbf{p}}c^{r\dagger}_{\textbf{p}}  +\text{constant}$.This means the Hamiltonian \ref{Ham_D} nicely becomes: 
@@ -1504,8 +1515,24 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
   \begin{align*}
    \bra{0}\bar{\psi}(x)\psi(x')\ket{0} =  -(i\gamma^{\mu}\partial_{\mu}+m)\int  \frac{d^3p}{(2\pi)^3}\frac{1}{2E_{\textbf{p}}}e^{ip\cdot (x-x')}
   \end{align*}
-  Where all we had to change was act by $\gamma_{0}$ to change from $\psi^{\dagger}\rightarrow\bar{\psi}$. We can then use  
-
+  Where all we had to change was act by $\gamma_{0}$ to change from $\psi^{\dagger}\rightarrow\bar{\psi}$. We can then recognize that these integrals are just the same as the Klein-Gordan propagator we had above \ref{D(x-y)}. So we can write:
+  \begin{flalign*}
+    \bra{0}\psi(x)\bar{\psi}(x')\ket{0} =& (i\gamma^{\mu}\partial_{\mu}+m)D(x-x') \\
+    \bra{0}\bar{\psi}(x)\psi(x')\ket{0} =& -(i\gamma^{\mu}\partial_{\mu}+m)D(x'-x)
+  \end{flalign*}
+  \item As we mentioned in the Klein-Gordon field the most important propagator for us will be the Feynman propagator. However since whenever we swap the order of our spinor fields we pick up a minus sign. This means our fields are what are known as \emph{Grassmann variables}. What this means for our Feynman propagator is that we need to define it slightly differently to account for this minus sign. This means we place a minus sign before the second term in \ref{Feynmann} leaving us with
+  \begin{align*}
+      S_{F}(x-y) = \theta(x_{0}-y_0)\bra{0}\psi(x)\bar{\psi}(y)\ket{0}-\theta(y_0-x_0)\bra{0}\bar{\psi}(x)\psi(x)\ket{0} 
+    \end{align*} 
+    This definition allows us to write this more cleanly as:
+    \begin{flalign}
+      S_{F}(x-y) = (i\gamma^{\mu}\partial_{\mu}+m)D_F(x-y) \equiv \bra{0}T\bar{\psi}(x)\psi(x)\ket{0} 
+    \end{flalign}
+    Where $D_F(x-y)$ is defined in \ref{Feynmann}. $T$ is now the time ordering operator for spinor fields. This is great news as we don't have to do out the long calculations we did before for getting the explicit form of the propagators we can just use what we had before in the Klein-Gordon case. So using \ref{Feynmann_2} we can write:
+    \begin{flalign*}
+        S_{F}(x-y) = \int \frac{d^4p}{(2\pi)^4}\frac{i(\gamma^{\mu}p_{\mu}+m)}{p^2-m^2+i\epsilon}e^{-ip\cdot(x-y)}
+      \end{flalign*}  
+ 
 \end{itemize}
 
 
