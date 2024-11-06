@@ -1554,8 +1554,54 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
 \subsection{Poisson brackets}
 \begin{itemize}
   \item Recall from classical mechanics that we had the notion of the \emph{Poisson bracket} defined for two functions $f(p,q)$ and $g(p,q)$ as:
-  \begin{align*}
+  \begin{flalign}
+  \label{poisson}
     \{f,g\} = \sum_i\left(\frac{\partial f}{\partial q_i}\frac{\partial g}{\partial p_{i}}-\frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q_{i}}\right)
+  \end{flalign}
+  If we work with function like this $f(p,q)$ and $g(p,q)$ which don't explicitly depend on time then we can recognize that:
+  \begin{align}
+  \label{dfdt}
+    \frac{df}{dt} = \sum_i \left(\frac{\partial f}{\partial q_i}\frac{dq_i}{dt}+\frac{\partial f}{\partial p_i}\frac{dp_i}{dt} \right)
+  \end{align}
+  We can then recall that for the regular Hamiltonian (not the one with constraints) we have that:
+  \begin{align*}
+    \frac{dq_i}{dt} = \frac{\partial H}{\partial p_i}, ~~~\frac{dp_i}{dt} = -\frac{\partial H}{\partial q_i}
   \end{align*}
+  Which means we can recognize that \ref{dfdt} can be used to write the elegant result:
+  \begin{flalign*}
+    \frac{df}{dt} = \{f,H\}
+  \end{flalign*}
+  If we then return to our constrained Hamiltonian we will have that 
+  \begin{align*}
+     & \frac{dq_i}{dt} = \frac{\partial H}{\partial p_i} + \lambda^{m}\frac{\partial \phi_m}{\partial p_i}\\
+     & \frac{dp_i}{dt} = -\frac{\partial H}{\partial q_i} - \lambda^{m}\frac{\partial \phi_m}{\partial q_i}
+   \end{align*} 
+   Where we have essentially assumed that $\lambda^{m}$ are not functions of $p_i$ and $q_i$, though Dirac does not impose this and still somehow ends up at roughly these equations. What this essentially means is that the time derivative of a function $g(p,q)$ now becomes:
+
+   \begin{flalign}
+   \label{dgdt}
+     \frac{d g}{dt} = \{g,H\} +\lambda^{m}\{g,\phi_m\}
+   \end{flalign}
+   This can be show to be the same as $\{g,H+\lambda^{m}\phi_m\}$, even for $\lambda^m$ as functions of $p$ and $q$ as: $\{g,\lambda^{m}\phi_m\} = \{g,\lambda^m\}\phi_m + \lambda^m\{g,\phi_m\}$ and since $\phi_m =0$ we can ignore this first term. With this we can say that $\dot{g} = \{g,H_T\}$ where $H_T = H+\lambda^{m}\phi_m$ is called the \emph{total Hamiltonian}. 
 \end{itemize}
+   \subsubsection{Weak and strong equations}
+   \begin{itemize}
+     \item We can notice that the above procedure fails if we set $\phi_m=0$ at any step before the last one. This is due to the fact that even though $\phi_m=0$, the Poisson brackets involving $\phi_m$ may not be. Thus we can impose the rule that we can only set $\phi^m=0$ when outside the Poisson bracket. To remind ourselves of this we write:
+     \begin{align*}
+        \phi_m \approx 0 
+      \end{align*} 
+      And call these \emph{weak equations}. Any other regular equality is called a \emph{strong equation}. 
+   \end{itemize}
+   \subsubsection{Secondary constraints}
+   \begin{itemize}
+     \item Since \ref{dgdt} holds for all $g(p,q)$ we can apply it for one of the constraints $\phi_n$. We should have that the time derivative of our constraints are $\dot{\phi}=0$ as it does not make much sense to talk about constraints that change. This means we have:
+     \begin{align*}
+       \{\phi_n,H\} +\lambda^{m}\{\phi_n,\phi_m\} =0 
+     \end{align*}
+     If we call $N_{ab} = \{\phi^{a},\phi^b\}$, then there are three cases:
+     \begin{itemize}
+        \item $N$-invertible, which means  
+      \end{itemize} 
+   \end{itemize}
+
 \end{document}

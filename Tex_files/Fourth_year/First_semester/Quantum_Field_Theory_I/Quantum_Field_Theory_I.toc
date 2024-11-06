@@ -59,3 +59,5 @@
 \contentsline {section}{\numberline {6}Constrained Hamiltonian Systems}{41}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Degenerate Hamiltonian }{41}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Poisson brackets}{41}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Weak and strong equations}{42}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Secondary constraints}{42}{subsubsection.6.2.2}%
