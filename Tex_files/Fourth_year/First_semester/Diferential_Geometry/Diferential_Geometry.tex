@@ -225,21 +225,21 @@
 \section{Mappings on Manifolds}
 \subsection{Manifold mappings}
 \begin{itemize}
-  \item A mapping $f: M \rightarrow N$ is said to be smooth of smoothness class $k$ if for all $p,q$ for which $f$ determines functions $y^{b}_{q}(x^{1}_{p},\ldots,x^{m}_{p}) = f(x^{1}_{p},..,x^m_p)^{b}_{p}$, these functions are, where defined, smooth of smoothness calss $k$ (i.e. all theire partial derivatives up to those of $k$-th order exist and are continuous).
+  \item A mapping $f: M \rightarrow N$ is said to be smooth of smoothness class $k$ if for all $p,q$ for which $f$ determines functions $y^{b}_{q}(x^{1}_{p},\ldots,x^{m}_{p}) = f(x^{1}_{p},..,x^m_p)^{b}_{p}$, these functions are, where defined, smooth of smoothness class $k$ (i.e. all their partial derivatives up to those of $k$-th order exist and are continuous).
 
   the smoothness class of $f$ cannot exceed the maximum class of the manifolds.  
 \end{itemize}
 
-\subsection{equivilent manifolds}
+\subsection{Equivalent manifolds}
 \begin{itemize}
   \item The manifolds $M$ and $N$ are said to be \emph{smoothly equivilent} or \emph{diffeomorphic} if there is a one to one and onto map $f$ such that both $f:M \rightarrow N$ and $f^{-1}:N \rightarrow M$ are smooth of some class $k\geq 1$. 
 
-  Since $f^{-1}$ exits then the jacobian $J_{pq} \neq 0 $ wherever it is defined. 
+  Since $f^{-1}$ exits then the Jacobian $J_{pq} \neq 0 $ wherever it is defined. 
 \end{itemize}
 
 \subsection{Tangent vector}
 \begin{itemize}
-  \item A \emph{tangent} vector to an $m$-dim manifold $M$ at an arbritrary point $x$ is represented in terms of local co-ords $x^{\alpha}_-p$ by an $m$ tuple $\xi^{\alpha}$ of components which are linked to the components in terms of any oher system $x^{\beta}_{q}$ of local co-ords by:
+  \item A \emph{tangent} vector to an $m$-dim manifold $M$ at an arbitrary point $x$ is represented in terms of local co-ords $x^{\alpha}_-p$ by an $m$ tuple $\xi^{\alpha}$ of components which are linked to the components in terms of any other system $x^{\beta}_{q}$ of local co-ords by:
   \begin{align}
   \label{tangent}
     \xi^{\alpha}_{p} = \left(\frac{\partial x^{\alpha}_{p}}{\partial x^{\beta}_{q}}\right)_{x} \xi^{\beta}_{q},~~~\forall~ \alpha
@@ -273,13 +273,13 @@
 
 \subsection{Directional derivative}
 \begin{itemize}
-  \item We can associate with each vector $\xi = (\xi^{i})$ a linear differential operator as follows: Since the gradiant $\frac{\partial f}{\partial x^i}$ of a function $f$ is a co-vector, the quantity:
+  \item We can associate with each vector $\xi = (\xi^{i})$ a linear differential operator as follows: Since the gradient $\frac{\partial f}{\partial x^i}$ of a function $f$ is a co-vector, the quantity:
   \begin{align*}
     \partial_{\xi}f = \xi^{i}\frac{\partial f}{\partial x^{i}}
   \end{align*}
   is a scalar called the directional derivative of $f$ in the direction of $\xi$. 
 
-  \item Thus an arbritrary vector $\xi$ corresponds to the operator:
+  \item Thus an arbitrary vector $\xi$ corresponds to the operator:
   \begin{align*}
     \partial_{\xi} = \xi^{i}\frac{\partial }{\partial x^i}
   \end{align*}
@@ -288,26 +288,26 @@
 
 \subsection{Riemann metric}
 \begin{itemize}
-  \item A \emph{Riemann metric} on a manifold $M$ is a point-depedant, positive-definite quadratic form on the tangent vectors at each point, depending smoothly on the local co-ords of the points. 
+  \item A \emph{Riemann metric} on a manifold $M$ is a point-dependent, positive-definite quadratic form on the tangent vectors at each point, depending smoothly on the local co-ords of the points. 
 
-  Thus at each point $x = (x^{1}_{p},\ldots,x^{m}_p)$ of each cahrt $U_{p}$, the metric is given by a symetric matric $g_{\alpha\beta}(x^{1}_{p},...,x^{m}_p)$, and determines a symmetric scalar product of pairs of tangent vectors at the point $x$. 
+  Thus at each point $x = (x^{1}_{p},\ldots,x^{m}_p)$ of each chart $U_{p}$, the metric is given by a symmetric metric $g_{\alpha\beta}(x^{1}_{p},...,x^{m}_p)$, and determines a symmetric scalar product of pairs of tangent vectors at the point $x$. 
   \begin{align*}
      \braket{\xi, \eta}  = g_{\alpha\beta}^{(p)}\xi^{\alpha}_{p}\eta^{\beta}_{p} = \braket{\eta,\xi}, ~~~ |\xi|^2 = \braket{\xi,\xi}
    \end{align*} 
-   This scalar product is to be co-ordiante independant:
+   This scalar product is to be co-ordinate independent:
    \begin{align*}
      g_{\alpha\beta}^{(p)}\xi^{\alpha}_{p}\eta^{\beta}_{p} = g_{\alpha\beta}^{(q)}\xi^{\alpha}_{q}\eta^{\beta}_{q}
    \end{align*}
-   And therefor the coefficants $g_{\alpha\beta}^{(p)}$ of the quadratic form transform as:
+   And therefor the coefficients $g_{\alpha\beta}^{(p)}$ of the quadratic form transform as:
    \begin{align}
    \label{g}
      g_{\gamma\delta}^{(q)}  = \frac{\partial x^{\alpha}_{p}}{\partial x^{\gamma}_{q}}\frac{\partial x^{\beta}_p}{\partial x^{\delta}_{q}}g_{\alpha\beta}^{(p)} 
    \end{align}
-   For a \emph{psudo-Reimann} metric $M$ one just requires the quadratic fom to be \emph{nondegenerate}. Note that \ref{g} can be re-written as:
+   For a \emph{pseudo-Riemann} metric $M$ one just requires the quadratic form to be \emph{nondegenerate}. Note that \ref{g} can be re-written as:
    \begin{align*}
      ds^2 = g_{\alpha\beta}^{(p)}dx^{\alpha}_{p}dx^{\beta}_{p} =g_{\alpha\beta}^{(q)}dx^{\alpha}_{q}dx^{\beta}_{q}  
    \end{align*}
-   Where $ds$ is called a line element, and it is chart-independant. $ds$ is used to measure the distance between two infitesimally close points. 
+   Where $ds$ is called a line element, and it is chart-independent. $ds$ is used to measure the distance between two infinitesimally close points. 
 \end{itemize}
 
 \newpage 
@@ -342,7 +342,7 @@
 \end{itemize}
 \subsubsection{Product of Tensors}
 \begin{itemize}
-  \item Given two tensors $T = \left(T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}\right)$ of type $(k,l)$ and $P = \left(P^{i_1,\ldots,i_p}_{j_1,\ldots,j_q}\right)$ of type $(p,q)$, we define tehir product to be the tensor product $S = T \otimes P$ of type $(k+p,l+q)$ with components:
+  \item Given two tensors $T = \left(T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}\right)$ of type $(k,l)$ and $P = \left(P^{i_1,\ldots,i_p}_{j_1,\ldots,j_q}\right)$ of type $(p,q)$, we define their product to be the tensor product $S = T \otimes P$ of type $(k+p,l+q)$ with components:
   \begin{align*}
     S^{i_{1,\ldots,i_{k+p}}}_{j_1,\ldots,j_{l+q}} = T^{i_1,\ldots,i_k}_{j_1,\ldots,j_l}P^{i_{k+1},\ldots,i_p}_{j_{l+1},\ldots,j_q}
   \end{align*}
@@ -353,21 +353,21 @@
 
 \subsection{Co-Vectors}
 \begin{itemize}
-  \item Recall that the differnetial of a function $f$ of $x^{1},\ldots,x^n$ coresponding to the incriments $dx^i$ in the $x^i$ is:
+  \item Recall that the differential of a function $f$ of $x^{1},\ldots,x^n$ corresponding to the increments $dx^i$ in the $x^i$ is:
   \begin{align*}
     df = \frac{\partial f}{\partial x^i}dx^i
   \end{align*}
   Since $dx^i$ is a vector $df$ has the same value in any co-ord system. 
-  In general, given any co-vector $(T_i)$, the differnetial form $T_idx^i$ is invariant under change of chart. We can thus identify $dx^i \equiv e^{i}$ as the \emph{canonical basis of co-vectors or cotangent space}. 
+  In general, given any co-vector $(T_i)$, the differential form $T_idx^i$ is invariant under change of chart. We can thus identify $dx^i \equiv e^{i}$ as the \emph{canonical basis of co-vectors or cotangent space}. 
 \end{itemize}
 
-\subsection{Skew-Symmetric Tesnsor}
+\subsection{Skew-Symmetric Tensor}
 \begin{itemize}
   \item A \emph{skew-symmetric tensor} of type $(0,k)$ is a tensor $T_{i_1,\ldots,i_k}$ satisfying:
   \begin{align*}
      T_{\sigma(i_1,\ldots,i_k)} = \mathfrak{s}(\sigma)T_{i_1,\ldots,i_k}
    \end{align*} 
-   where for all permutations $\mathfrak{s}(\sigma)$ is the sign function. i.e. $\mathfrak{s}(\sigma) = +1(-1)$ for even(odd) permutation. If two indicies of $T_{i_1,\ldots,i_k}$ are the same then the corresponding component of $T_{i_1,\ldots,i_k}$ is $0$. This means if $k>n$ the tensor is automatically $0$. 
+   where for all permutations $\mathfrak{s}(\sigma)$ is the sign function. i.e. $\mathfrak{s}(\sigma) = +1(-1)$ for even(odd) permutation. If two indices of $T_{i_1,\ldots,i_k}$ are the same then the corresponding component of $T_{i_1,\ldots,i_k}$ is $0$. This means if $k>n$ the tensor is automatically $0$. 
 
      \item The standard basis at a given point is:  
      \begin{align*}
@@ -380,6 +380,7 @@
      Here $S_k$ is the symmetric group. i.e. the group of all permutations of $k$ elements. 
 
      \item The differential form of the skew-symmetric tensor $\left(T_{i_1,\ldots,i_k}\right)$ is:
+
      \begin{flalign*}
     T_{i_1,\ldots,i_k}e^{i_1}\otimes \cdot \cdot \cdot \otimes e^{i_k} &= \sum_{i_{1}<i_2<\cdot\cdot\cdot<i_k}    T_{i_1,\ldots,i_k} dx^{i_1}\wedge\cdot \cdot \cdot \wedge dx^{i_k}   \\
     & = \frac{1}{k!}T_{i_1,\ldots,i_k}dx^{i_1}\wedge\cdot \cdot \cdot \wedge dx^{i_k}
@@ -393,7 +394,7 @@
   \begin{align*}
     T_{i_1,\ldots,i_n} = \sqrt{|g|}\epsilon{i_1,\ldots,i_n},~~~g=det(g_{ij})
   \end{align*}
-  It is covenient to write te volume element in the notation of differential forms:
+  It is convenient to write the volume element in the notation of differential forms:
   \begin{align*}
     \Omega = \sqrt{|g|}dx^{1}\wedge \cdot \cdot \cdot \wedge dx^{n}
   \end{align*}
@@ -403,9 +404,9 @@
   \end{flalign*}
 \end{itemize}
 
-\subsection{Genralised push forward}
+\subsection{Generalized push forward}
 \begin{itemize}
-  \item We can genralize the push froward map we had on vectors earlier to the space of tensors $(k,0)$:
+  \item We can generalize the push froward map we had on vectors earlier to the space of tensors $(k,0)$:
   \begin{flalign*}
     f_{\ast}: \xi^{i_1,\ldots,i_k} \rightarrow \eta^{a_1,\ldots,a_k} = \frac{\partial f^{a_1}}{\partial x^{i_1}} \cdot \cdot \cdot \frac{\partial f^{a_k}}{\partial x^{i_k}} \xi^{i_1,\ldots,i_k}
   \end{flalign*}
@@ -436,10 +437,10 @@
 
 \newpage
 
-\section{Embeddings and Immersions of manifolds}
+\section{Manifolds and surfaces}
 \subsection{Immersion}
 \begin{itemize}
-  \item A manifold $M$ of dim $m$ is said to be immersed in a manifold $N$ of sim $n \geq m$ if $\exists$ a smooth map $f:M \rightarrow N$  such that the push forward map $f_{\ast}$ is at each point a one to one map of the tangent space. 
+  \item A manifold $M$ of dim $m$ is said to be immersed in a manifold $N$ of dim $n \geq m$ if $\exists$ a smooth map $f:M \rightarrow N$  such that the push forward map $f_{\ast}$ is at each point a one to one map of the tangent space. 
 
   The map $f$ is called the \emph{immersion} of $M$ to $N$.
 
@@ -448,22 +449,109 @@
 
 \subsubsection{Embedding}
 \begin{itemize}
-  \item An immersion of $M$ to $N$ is called an $embedding$ if it one to one. Then $M$ is called a \emph{submanifold} of $N$. 
+  \item An immersion of $M$ to $N$ is called an $embedding$ if it one to one. Then $M$ is called a \emph{sub-manifold} of $N$. 
 
-  \item To see the difference btween these two definitions note that a Klein bottel is immersed in $\RR^3$ but not embedded as its tangent spaces are distinct (intersecting points can have different tangent spaces) but the map of points is not one- to one as there are cross overs. 
+  \item To see the difference between these two definitions note that a Klein bottle is immersed in $\RR^3$ but not embedded as its tangent spaces are distinct (intersecting points can have different tangent spaces) but the map of points is not one- to one as there are cross overs. 
 \end{itemize}
 
 \subsection{Manifold with boundary}
 \begin{itemize}
   \item A closed region $A$ of a manifold $M$ defined by an inequality:
   \begin{align*}
-    f(x) \leq  , ~~~(\text{or} f(x) \geq 0)
+    f(x) \leq  0, ~~~(\text{or} f(x) \geq 0)
   \end{align*}
-  where $f$ is a real-valued function on $M$. This region is a \emph{Manifold with boundary}. It is assumed that the boundary $\partial A$ given by $f(x)=0$ is a non-singular submanifold of $M$ i.e. $\nabla f \neq 0 $ on $\partial A$. 
+  where $f$ is a real-valued function on $M$. This region is a \emph{Manifold with boundary}. It is assumed that the boundary $\partial A$ given by $f(x)=0$ is a non-singular sub-manifold of $M$ i.e. $\nabla f \neq 0 $ on $\partial A$. 
 \end{itemize}
 \subsubsection{Closed manifold}
 \begin{itemize}
   \item A compact manifold without a boundary is called \emph{closed}. 
 \end{itemize}
 
+\subsection{Surfaces as Manifolds}
+\begin{itemize}
+  \item A \emph{Non-singular surface} $M$ of dimension $k$ in $n$-dim Euclidean space is given by a set of $n-k$ equations:
+  \begin{align*}
+  f_i(x^1,..,x^n) = 0,~~~i=1,\ldots,n-k
+  \end{align*}
+  where $\forall x$ the matrix $\left(\frac{\partial f_i}{\partial x^{\alpha}}\right)$ has rank $n-k$. 
+\end{itemize}
+
+\subsection{Orientation of surfaces }
+\subsubsection{Orientation class}
+\begin{itemize}
+  \item Consider a frame $\tau_1 = (e_1^{(1)},\ldots,e_n^{(1)})$ called an ordered basis and another frame $\tau_1 = (e_1^{(2)},\ldots,e_n^{(2)})$ then we say that they lie in the \emph{same orientation class} if $det A>0$ and the \emph{opposite orientation class} if $det A<0$. Where $A$ is defined as:
+  \begin{align*}
+  A: e^{(1)}_k: \rightarrow e^{(2)}_k
+  \end{align*}
+\end{itemize}
+\subsubsection{Orientability} 
+\begin{itemize}
+   \item A manifold is said to be \emph{orientable} if it is possible to choose at every point of it a single orientation class depending continuously on the points.
+
+    A particular choice of such an orientation class for each point is called an orientation of the manifold, and a manifold equipped with a particular orientation is said to be \emph{oriented}.
+
+    If no orientation exists the manifold is said to be \emph{non-orientable}
+ \end{itemize} 
+
+ \subsection{Two-sided hyper-surface}
+ \begin{itemize}
+   \item A connected $(n-1)$-dim sub-manifold of $\RR^n$ is called two sided if a single valued continuous field of unit normals can be defined on it.  
+
+   such a sub-manifold is called a \emph{two-sided hyper-surface}. 
+ \end{itemize}
+
+\newpage
+
+ \section{Lie Groups}
+ \subsection{Group}
+ \begin{itemize}
+   \item A \emph{group} is a non-empty set $G$ on which there is defined a binary operation $(a,b) \rightarrow ab$ satisfying the following properties:
+   \begin{itemize}
+     \item Closure: If $a$ and $b$ belong to $G$, then $ab \in G$.
+     \item Associativity: $\forall a,b,c \in G,~~~a(bc) = (ab)c$.
+     \item Identity: $\exists$ an element $1\in G$ st: $a1=1a =a,~~\forall a \in G$
+     \item Inverse: If $a\in G$ then $\exists~a^{-1}\in G $ st: $aa^{-1} = a^{-1}a = 1$. 
+   \end{itemize}
+    \end{itemize}
+
+    \subsection{Lie Group}
+    \begin{itemize}
+      \item A manifold $G$ is called a \emph{Lie Group} if it has given on it a group operation with the properties that the maps $\varphi:G \rightarrow G$, defined by $\varphi(g) = g^{-1}$ and $\psi:G \times G \rightarrow G$ defined by $\psi(g,h) = gh$, are smooth maps. 
+    \end{itemize}
+
+    \subsection{Example of Lie groups}
+    \subsubsection{General Linear group}
+    \begin{itemize}
+      \item This is $GL(n,\RR)$ consisting of all $n \times n$ real matrices with non zero determinant in a region $\RR^{n^2}$. dim $GL(n,\RR) = n^2$.
+    \end{itemize}
+
+
+    \subsubsection{Special Linear group}
+    \begin{itemize}
+      \item This is $SL(n,\RR)$ consisting of all $n \times n$ real matrices with determinant equal to $1$. It is a hyper-surface in $\RR^{n^2}$.  
+\begin{align*}
+det A =1,~~~A \in Mat(n,\RR)
+\end{align*}
+      dim $ SL(n,\RR) = n^2-1$.
+    \end{itemize}
+
+
+       \subsubsection{Orthogonal group}
+    \begin{itemize}
+      \item This is $O(n,\RR)$ consisting of all $n \times n$ real matrices Satisfying:  
+      \begin{align*}
+A^T \cdot A = \mathbb{I},~~~A \in Mat(n,\RR)
+\end{align*}
+dim $O(n,\RR) = \frac{1}{2}n(n-1)$.
+    \end{itemize}
+
+\subsubsection{Orthogonal group}
+    \begin{itemize}
+      \item This is $O(n,\RR)$ consisting of all $n \times n$ real matrices Satisfying:  
+      \begin{align*}
+A^T \cdot A = \mathbb{I},~~~A \in Mat(n,\RR)
+\end{align*}
+dim $O(n,\RR) = \frac{1}{2}n(n-1)$.
+    \end{itemize}
 \end{document}
+ 

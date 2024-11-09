@@ -1,38 +1,51 @@
-\contentsline {section}{\numberline {1}Definition of a Manifold}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Regions}{4}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Differentiable Manifold}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Abuse of notation}{4}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Elements of Topology}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Topological space}{5}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Induced topology}{5}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Continuity}{5}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Homeomorphic}{5}{subsubsection.2.1.3}%
-\contentsline {subsubsection}{\numberline {2.1.4}Topology on a manifold}{5}{subsubsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.2}Metric space}{5}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Hausdorff}{6}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Compact}{6}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Connected}{6}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}Orientation}{6}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Mappings on Manifolds}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Manifold mappings}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}equivilent manifolds}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Tangent vector}{7}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Push forward}{7}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Directional derivative}{8}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Riemann metric}{8}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Tensors}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Tensor def}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Operations on Tensors}{9}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Permutation of indices}{9}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Contraction of indicies}{9}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Product of Tensors}{9}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Co-Vectors}{10}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Skew-Symmetric Tesnsor}{10}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Volume element}{10}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Genralised push forward}{11}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Pull back}{11}{subsection.4.7}%
-\contentsline {section}{\numberline {5}Embeddings and Immersions of manifolds}{12}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Immersion}{12}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Embedding}{12}{subsubsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.2}Manifold with boundary}{12}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Closed manifold}{12}{subsubsection.5.2.1}%
+\contentsline {section}{\numberline {1}Definition of a Manifold}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Regions}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Differentiable Manifold}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Abuse of notation}{5}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Elements of Topology}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Topological space}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Induced topology}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Continuity}{6}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Homeomorphic}{6}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Topology on a manifold}{6}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Metric space}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Hausdorff}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Compact}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Connected}{7}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Orientation}{7}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Mappings on Manifolds}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Manifold mappings}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Equivalent manifolds}{8}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Tangent vector}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Push forward}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Directional derivative}{9}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Riemann metric}{9}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Tensors}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Tensor def}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Operations on Tensors}{10}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Permutation of indices}{10}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Contraction of indicies}{10}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Product of Tensors}{10}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Co-Vectors}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Skew-Symmetric Tensor}{11}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Volume element}{11}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Generalized push forward}{12}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Pull back}{12}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Manifolds and surfaces}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Immersion}{13}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Embedding}{13}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.2}Manifold with boundary}{13}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Closed manifold}{13}{subsubsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.3}Surfaces as Manifolds}{13}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Orientation of surfaces }{13}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Orientation class}{13}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Orientability}{14}{subsubsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.5}Two-sided hyper-surface}{14}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Lie Groups}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Group}{15}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Lie Group}{15}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Example of Lie groups}{15}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}General Linear group}{15}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Special Linear group}{15}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}Orthogonal group}{15}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}Orthogonal group}{15}{subsubsection.6.3.4}%
