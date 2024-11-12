@@ -1,0 +1,246 @@
+\documentclass[11pt]{article}
+
+%Format and referencing 
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry} % for setting margins VERY IMPORTANT!
+\usepackage{hyperref}  % for referencing equations 
+\usepackage{biblatex}  % for referencing articles 
+\addbibresource{Bib.bib}
+
+
+%math packages 
+\usepackage{mathtools}  % allows pre-scripts and other neiche math features
+\usepackage{amsmath} % equation related commands 
+\usepackage{amssymb} % Fancy R ,C and other set fonts using mathbb{}
+\usepackage{braket}   % for Dirac notation 
+\usepackage{mathrsfs}  % for the mathscr text 
+
+% miscellaneous
+\usepackage{empheq}   % for formatting custon math boxs
+\usepackage{xcolor}   % allows the defining of colours 
+\usepackage[most]{tcolorbox}  % custom math boxs
+\usepackage[utf8]{inputenc}   % redundant since 2018? 
+%(I'm not taking out in case it breaks stuff)
+
+\usepackage{graphicx}   % alows image insertion 
+\usepackage{float}  % for making images o where you want 
+\usepackage{parskip} % for getting red of paragraph indent 
+
+\usepackage{comment} %easier multi line comments 
+ \usepackage{tabularx} % for formatting tables 
+ \usepackage{titling} % for making Title a variable that can be used in header 
+ \usepackage{environ} % for creating and modifying environments 
+ \usepackage[explicit]{titlesec}
+ % for making section titles variables that can be used in header 
+\usepackage{fancyhdr} % for fancy headers 
+
+% Random commands and what not 
+\numberwithin{equation}{section}
+
+\setlength{\droptitle}{3em} 
+
+\title{Problem Solving}
+\author{Thomas Brosnan}
+\date{Sheet of equations useful for the Problem solving paper}
+
+\DeclarePairedDelimiterXPP\BigOSI[2]%
+  {\mathcal{O}}{(}{)}{}%
+  {\SI{#1}{#2}}
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=blue!30!black,
+    colback=blue!30, boxrule=1pt,
+    #1}
+\tcbset{highlight math style={boxsep=2mm,,colback=blue!0!green!0!red!0!}}
+
+\newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+\renewenvironment{flalign}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign*}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+%\renewenvironment{align}{\vspace{-5mm}\begin{align}}{\end{align}}
+%\renewenvironment{align*}{\vspace{-5mm}\begin{align*}}{\end{align*}}
+\renewenvironment{alignat}{\empheq{align*}}{\endempheq}
+
+
+\newcommand{\hsp}{\hspace{8pt}}
+
+\newcommand*{\sectionFont}{%
+  \LARGE\bfseries
+}
+
+\newenvironment{eq}{\begin{equation}}{\end{equation}}
+    
+
+
+\makeatletter
+\let\Title\@title % Copy the title to a new command
+\makeatother
+
+%change this RGB value to change the section background colour 
+\definecolor{mycolor1}{RGB}{125, 187, 242}
+\colorlet{SectionColour}{mycolor1}
+%subsection background colour 
+\definecolor{mycolor2}{gray}{0.8}
+\colorlet{subSectionColour}{mycolor2}
+%subsubsection background colour 
+\definecolor{mycolor3}{RGB}{255,255,255}
+\colorlet{subsubSectionColour}{mycolor3}
+
+
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\topskip0pt
+\vspace*{\fill}
+\begin{center}
+\Large
+    "Mo money mo Problems"
+    
+    - Samson
+\end{center}
+\vspace*{\fill}
+\newpage 
+\tableofcontents
+% For \section
+ \titleformat{\section}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesection  \hsp #1 {\strut} \end{minipage}}}
+% For \subsection
+ \titleformat{\subsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subSectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}\thesubsection  \hsp #1 {\strut} \end{minipage}}}
+% For \section*
+ \titleformat{name=\section, numberless}[block]{\sectionFont}{}{0pt}{%
+ \fcolorbox{black}{SectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+  % For \subsection*
+ \titleformat{name=\subsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subSectionColour}{\noindent\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax} #1 {\strut} \end{minipage}}}
+ % For \subsubsection
+ \titleformat{\subsubsection}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm}\thesubsubsection \hsp #1 {\strut} \end{minipage}}}
+  % For \subsubsection*
+ \titleformat{name=\subsubsection, numberless}[block]{\bfseries}{}{0pt}{%
+ \fcolorbox{black}{subsubSectionColour}{\noindent\begin{minipage}{15cm} #1 {\strut} \end{minipage}}}
+\newpage 
+%header and footer
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[L]{\Title}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{-~\thepage~-}
+\renewcommand{\headrulewidth}{1pt}
+
+
+
+
+
+%starting document 
+\normalsize
+\newpage
+\section{Mechanics}
+\subsection{Constant acceleration}
+\begin{itemize}
+    \item For constant acceleration $a$ the equations of motion can be written in three useful forms. The variables here are initial velocity $u$ final velocity $v$, time $t$ and displacement $s$:
+    \begin{flalign*}
+        & v = u + at \\
+        & v^2 =u^2 +2as \\
+        & s = ut + \frac{1}{2}at^2
+    \end{flalign*}
+\end{itemize}
+\subsection{Force}
+\begin{itemize}
+    \item The force due to a potential $U$ is:
+    \begin{flalign*}
+        \textbf{F} = - \nabla U 
+    \end{flalign*}
+\end{itemize}
+
+\subsection{Friction}
+\begin{itemize}
+    \item Friction is given by the following expression, where $\mu$ is the \emph{co-efficient of friction} and $N$ is the normal force acted on the object by the surface it is sliding across. 
+    \begin{flalign*}
+         F_{\text{Frict}} = \mu N
+     \end{flalign*} 
+\end{itemize}
+
+\subsection{Work}
+\begin{itemize}
+    \item For constant Force work is just defined $W =\textbf{F}\cdot\textbf{s}$. (Force times displacement). If the force is not constant:
+    \begin{flalign*}
+        W = \int_{a}^{b}\textbf{F} \cdot d\textbf{s}
+    \end{flalign*} 
+\end{itemize}
+\subsubsection{Power}
+\begin{itemize}
+        \item \emph{Power} is defined as:
+    \begin{flalign*}
+        P = \frac{dW}{dr} = \textbf{F}\cdot \textbf{v}
+    \end{flalign*}
+    Where $\textbf{v}$ is velocity.
+\end{itemize}
+
+\subsection{Circular motion \& Rotation}
+\begin{itemize}
+    \item In circular motion the force acting as the \emph{centripetal} force (force pulling to wards the center, gravity, tension in rope, ect) is balanced by a \emph{centrifugal} force equal in magnitude but opposite direction, given by:
+    \begin{flalign*}
+        F_{\text{fugal}} = \frac{mv^2}{r} = mr\omega^2, ~~~(\text{as}~v=\omega r)
+    \end{flalign*}
+    Where here $v$ is the tangential velocity, $r$ is the radius, $m$ is the mass of the object in motion and $\omega$ is the angular velocity. 
+\end{itemize}
+\subsubsection{Rotational Kinetic energy}
+\begin{itemize}
+    \item Usually kinetic energy is just $\frac{1}{2}mv^2$, but for rigid bodies rotation it is:
+    \begin{flalign*}
+        K = \frac{1}{2}I\omega^2
+    \end{flalign*}
+    Where $I$ is the moment of inertia. A list of these can be found in the formula and tables booklet for different geometries. 
+\end{itemize}
+\subsubsection{Parallel axis Theorem}
+\begin{itemize}
+    \item This is the rule that tells us how to add the self rotation moment of inertia $I_{\text{self}}$ to the orbital rotation of a mass $M$ at radius $R$:
+    \begin{align*}
+        I_{\text{total}} = I_{\text{self}} + MR^2
+    \end{align*}
+\end{itemize}
+\subsubsection{Torque}
+\begin{itemize}
+    \item This is defined as:
+    \begin{flalign*}
+        \boldsymbol{\tau} = \textbf{r} \times \textbf{F}
+    \end{flalign*}
+    We also have that:
+    \begin{flalign*}
+        |\boldsymbol{\tau}| = \alpha I
+    \end{flalign*}
+    Where $\alpha = \frac{d \omega}{dt}$.  We can then find that the work done by a source the torque is:
+    \begin{flalign*}
+         W = \int_{\theta_{0}}^{\theta_1}\boldsymbol{\tau}d\theta, ~~~\implies P = \tau \omega
+     \end{flalign*} 
+     Where $P$ is the power. 
+\end{itemize}
+\subsubsection{Angular momentum}
+\begin{itemize}
+    \item The standard definition is just:
+    \begin{flalign*}
+        & \textbf{L} = \textbf{r}\times \textbf{p}, ~~~\text{for a particle} \\
+        &I \boldsymbol{\omega}, ~~~\text{Ridged body motion} 
+    \end{flalign*}
+    We can also write the torque as $\boldsymbol{\tau} = \frac{d \textbf{L}}{dt}$. 
+\end{itemize}
+\subsection{Center of Mass}
+\begin{itemize}
+    \item This is given by:
+    \begin{flalign*}
+        \textbf{R}_{CM} = \frac{\sum_{i}m_i\textbf{r}_i}{\sum_im_i} 
+    \end{flalign*}
+\end{itemize}
+\subsection{Stress/strain}
+\begin{itemize}
+    \item Shear modulus $G$ is:
+    \begin{flalign*}
+        G = \frac{\text{shear stress}}{\text{shear strain}}
+    \end{flalign*}
+    Where shear stress $ = F/A$ (Force per Area) and shear strain  = $\frac{\Delta s}{l}$. Length displaced $\Delta s$ over the length of the object $l$. 
+\end{itemize}
+\end{document}
