@@ -11,3 +11,5 @@
 \contentsline {subsubsection}{\numberline {1.5.4}Angular momentum}{5}{subsubsection.1.5.4}%
 \contentsline {subsection}{\numberline {1.6}Center of Mass}{6}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}Stress/strain}{6}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.7.1}Pressure}{6}{subsubsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.8}Gravitation}{6}{subsection.1.8}%
