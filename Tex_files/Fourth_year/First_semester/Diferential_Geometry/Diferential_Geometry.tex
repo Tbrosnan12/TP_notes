@@ -26,6 +26,7 @@
  \usepackage[explicit]{titlesec}
 \usepackage{fancyhdr}
 \usepackage{braket}
+\usepackage{bm}
 \setlength{\droptitle}{3em} 
 
 \title{Differential Geometry}
@@ -545,13 +546,68 @@ A^T \cdot A = \mathbb{I},~~~A \in Mat(n,\RR)
 dim $O(n,\RR) = \frac{1}{2}n(n-1)$.
     \end{itemize}
 
-\subsubsection{Orthogonal group}
+\subsubsection{Special Orthogonal group}
     \begin{itemize}
-      \item This is $O(n,\RR)$ consisting of all $n \times n$ real matrices Satisfying:  
+      \item This is $SO(n,\RR)$ consisting of all $n \times n$ real matrices Satisfying:  
       \begin{align*}
-A^T \cdot A = \mathbb{I},~~~A \in Mat(n,\RR)
+A^T \cdot A = \mathbb{I},~~~det(A)=1,~~~A \in Mat(n,\RR)
 \end{align*}
-dim $O(n,\RR) = \frac{1}{2}n(n-1)$.
+dim $SO(n,\RR) = \frac{1}{2}n(n-1)$.
     \end{itemize}
+
+  \subsubsection{Pseudo Orthogonal group}
+    \begin{itemize}
+      \item This is $O(p,q,n)$ consisting of all $n \times n$ real matrices Satisfying:  
+      \begin{align*}
+A^T \cdot \eta \cdot A = \eta,~~~\text{det}(A)=1,~~~\eta = \text{diag}\{\underbrace{1,\ldots,1}_{p},\underbrace{-1,\ldots,-1}_{q}\}
+\end{align*}
+dim $O(p,q,n) = \frac{1}{2}n(n-1)$.
+    \end{itemize}
+
+\subsubsection{Unitary group}
+    \begin{itemize}
+      \item This is $U(n)$ consisting of all $n \times n$ complex matrices Satisfying:  
+      \begin{align*}
+A^{\dagger} \cdot A = \mathbb{I},~~~A \in Mat(n,\mathbb{C})
+\end{align*}
+dim $U(n) =n^2$.
+\end{itemize}
+
+\subsubsection{Special Unitary group}
+    \begin{itemize}
+      \item This is $SU(n)$ consisting of all $n \times n$ complex matrices Satisfying:  
+      \begin{align*}
+A^{\dagger} \cdot A = \mathbb{I},~~~\text{det}(A)=1,~~~A \in Mat(n,\mathbb{C})
+\end{align*}
+dim $U(n) =n^2-1$.
+\end{itemize}
+
+\newpage
+\section{Projective spaces}
+\subsection{Real protective space}
+\begin{itemize}
+  \item The \emph{real Projective space} $\RR P^{n}$ is the set if all straight lines in $\RR^{n+1}$ passing through the origin. Equivalently it is the set of equivalence classes of non-zero vectors in $\RR^{n+1}$ where two non-zero vectors are equivalent if they are scalar multiples of one another. 
+
+   \item We may think of $\RR P^n$ as obtained from $S^{n}$ by gluing, that is identifying diametrically opposite points. This means we have the isomorphism $\RR P^n \simeq S^{n}/Z_2$.   
+\end{itemize}
+
+
+\subsection{Quaternions} 
+\begin{itemize}
+  \item The set $\mathbb{H}$ of \emph{Quaternions} consists of all linear combinations:
+  \begin{align*}
+    q \in \mathbb{H}, ~~~q = a \boldsymbol{1} + b\boldsymbol{i} + c\boldsymbol{j} + d\boldsymbol{k},~~~a,b,c,d\in \RR
+  \end{align*}
+  Where $\boldsymbol{1},\boldsymbol{i},\boldsymbol{j},\boldsymbol{k}$ are linearly independent. Where these bases satisfy the following multiplications:
+\begin{align*}
+    \bm{i} \cdot \bm{j} &= \bm{k} = -\bm{j} \cdot \bm{i}, & \bm{j} \cdot \bm{k} &= \bm{i} = -\bm{k} \cdot \bm{j}, & \bm{k} \cdot \bm{i} &= \bm{j} = -\bm{i} \cdot \bm{k}, \\
+    \bm{i} \cdot \bm{i} &\equiv \bm{i}^2 = -1, & \bm{j} \cdot \bm{j} &\equiv \bm{j}^2 = -1, & \bm{k} \cdot \bm{k} &\equiv \bm{k}^2 = -1, \\
+    \bm{i} \cdot \bm{1} &= \bm{i} = \bm{1} \cdot \bm{i}, & \bm{j} \cdot \bm{1} &= \bm{j} = \bm{1} \cdot \bm{j}, & \bm{k} \cdot \bm{1} &= \bm{k} = \bm{1} \cdot \bm{k}, & \bm{1} \cdot \bm{1} &= \bm{1}.
+\end{align*}
+This makes $\mathbb{H}$ an associative algebra over the field of real numbers. 
+
+\end{itemize}
+
+\subsection{Complex Projective spaces }
 \end{document}
  
