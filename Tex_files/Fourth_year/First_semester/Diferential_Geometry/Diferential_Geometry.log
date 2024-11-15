@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  15 NOV 2024 15:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  15 NOV 2024 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1342,7 +1342,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[18
+[18]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[19]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[20]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[21
 
 ] (./Diferential_Geometry.aux)
 
@@ -1351,17 +1378,17 @@ Package rerunfilecheck Warning: File `Diferential_Geometry.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Diferential_Geometry.out':
-(rerunfilecheck)             Before: 486C25C82293B58274629C6897457BD0;8407
-(rerunfilecheck)             After:  B889869C15BBB4994075A818CF8A3381;8415.
+(rerunfilecheck)             Before: CBE488FC39A28A9E6CC8FA8E58EF52CB;9642
+(rerunfilecheck)             After:  B558F8360F38CF5A0F7588EC299E3AEF;9842.
 Package logreq Info: Writing requests to 'Diferential_Geometry.run.xml'.
 \openout1 = `Diferential_Geometry.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36008 strings out of 480247
- 717196 string characters out of 5896151
- 1436527 words of memory out of 5000000
- 53311 multiletter control sequences out of 15000+600000
+ 36031 strings out of 480247
+ 717520 string characters out of 5896151
+ 1436539 words of memory out of 5000000
+ 53322 multiletter control sequences out of 15000+600000
  486634 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,15n,104p,1209b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1383,10 +1410,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Diferential_Geometry.pdf (18 pages, 269277 bytes).
+Output written on Diferential_Geometry.pdf (21 pages, 283939 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
- 447 compressed objects within 5 object streams
- 79 named destinations out of 1000 (max. 500000)
- 621 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 589 PDF objects out of 1000 (max. 8388607)
+ 500 compressed objects within 5 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 685 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -608,6 +608,111 @@ This makes $\mathbb{H}$ an associative algebra over the field of real numbers.
 
 \end{itemize}
 
-\subsection{Complex Projective spaces }
+\subsection{Complex Projective spaces}
+\begin{itemize}
+  \item The \emph{complex projective space} $\mathbb{CP^n}$ is the set of equivalence classes of non-zero vectors in $\mathbb{C^{n+1}}$ where two nonzero vectors are equivalent if they are scalar multiples of one another. 
+
+  \item In a similar manner to the real projective space we can identify the isomorphism: $\mathbb{C} \simeq S^{2n+1}/U(1)$. 
+\end{itemize}
+
+\newpage 
+\section{Lie Algebras}
+\subsection{Neighborhood of identity element}
+\begin{itemize}
+  \item Let $G$ be a Lie group. let the point $g_0\equiv 1 \in G$ be the identity element of $G$, and let $T = T_{(1)}$ be the tangent space at the identity element. We can now express the group operations on $G$ in a chart $U_0$ containing $g_0$ in terms of local co-ords. We choose co-ords in $U_0$ so that the identity element is the origin. $g_0 \equiv 1 = (0,\ldots,0)$. then if we let:
+  \begin{align*}
+    g_1=(x^1,\ldots,x^n),~~~g_2=(y^1,\ldots,y^n),~~~g_3=(z^1,\ldots z^n)
+  \end{align*}
+  Which allows us to define the product of two elements:
+  \begin{align*}
+    g_1g_2 = (\psi^{1}(x,y),\ldots,\psi^{n}(x,y)) = (\psi^i(x,y)) \in U_0
+  \end{align*}
+  An inverse as:
+  \begin{align*}
+    g_1^{-1} = (\varphi^1(x),..,\varphi^n(x)) = (\varphi^i(x)) \in U_0
+  \end{align*}
+  These functions $\varphi(x),\psi(x)$ satisfy:
+  \begin{align*}
+    & \psi^i(x,0) = \psi^i(0,x) = x^i \\
+    & \psi^i(x,\varphi(x)) \\ 
+    & \psi^i(x,\psi(y,z)) = \psi^i(\psi(x,y),z)
+  \end{align*}
+  \end{itemize}
+  \subsubsection{Taylor expansion}
+  \begin{itemize}
+    \item Let $\psi^i(x,y)$ be sufficiently smooth and for $x,y,z \sim \epsilon $:
+    \begin{align*}
+      \psi^i(x,y) =&  x^i + y^i + b^{i}_{jk}x^jy^k + \mathcal{O}(\epsilon^3) \\
+      & b^i_{jk} = \frac{\partial^2\psi^i}{\partial x^j\partial y^k}\bigg\vert_{x=y=0}
+    \end{align*}
+  \end{itemize}
+
+
+  \subsection{Commutator}
+  \begin{itemize}
+    \item Let $\xi,\eta ~\in T$, and their components in terms of $x^i$ are $\xi^i$ and $\eta^i$. Then we can define the \emph{commutator} $[\xi,\eta] \in T$ is defined by:
+    \begin{flalign*}
+      [\xi,\eta]^{i} = c^{i}_{jk}\xi^{j}\eta^k,~~~c^{i}_{jk}\equiv b^{i}_{jk}-b^{i}_{kj}
+    \end{flalign*}
+    \item It has three basic quantities:
+       \begin{itemize}
+     \item It is \emph{bi-linear} operation on the $n$-dim vector space $T$. 
+     \item Skew-symmetry: $[\xi,\eta] = -[\eta,\xi]$.
+     \item Jacoby identity: $[[\xi,\eta],\zeta]+[[\zeta,\xi],\eta]+[[\eta,\zeta],\xi]$
+   \end{itemize}
+  \end{itemize}
+
+  \subsection{Lie Algebra}
+  \begin{itemize}
+    \item A \emph{Lie algebra} is a vector space $\mathcal{G}$ over a field $F$ with a bi-linear operation $[\cdot ,\cdot ]: \mathcal{G} \times \mathcal{G} \rightarrow \mathcal{G}$ which is called a commutator or a lie bracket, such that the three axioms above are satisfied. 
+
+  \item This means we can identify the tangent space of a Lie Group at the identity is with respect to the commutator operation of a Lie algebra called the \emph{Lie algebra of the Lie group G}.  
+
+   \item If we choose $\xi = e_j, \eta= e_k$, then combined with the fact that $(e_m) = \delta_{m}^{n}$, then we have:
+   \begin{flalign*}
+      [e_j,e_k]^i = c^i_{jk}e_i
+    \end{flalign*} 
+  \end{itemize}
+
+  \subsubsection{Structure Constants}
+  \begin{itemize}
+    \item The constants $c^{i}_{jk}$ which determine the commutation operation on a Lie algebra, and which are skew-symmetric in $j,k$ are called the \emph{structure constants} of the Lie algebra.  
+  \end{itemize} 
+
+\newpage 
+\section{One parameter subgroups} 
+\begin{itemize}
+  \item A \emph{One parameter subgroup} of a lie group $G$ is defined to be a parametric curve $F(t)$ on the manifold $G$ such that:
+  \begin{align*}
+    F(0) = 1,~~F(t_1+t_2) = F(t_{1})F(t_2),~~~F(-t)= F^{-1}(t)
+  \end{align*}
+  The velocity vector at $F(t)$ is:
+  \begin{align*}
+    \frac{dF}{dt} = \frac{dF(t+\epsilon)}{dt}\bigg\vert_{\epsilon=0} = \frac{d}{d\epsilon}(F(t)F(\epsilon))\bigg\vert_{\epsilon=0} = F(t)\frac{dF(\epsilon)}{d\epsilon}\bigg\vert_{\epsilon=0}
+  \end{align*}
+  Hence:
+  \begin{align*}
+    \dot{F}(t) = F(t)\dot{F}(0) ~~~\text{or}~~~F^{-1}(t)\dot{F}(t) = \dot{F}(0)
+  \end{align*}
+  i.e. the induced action of left multiplication by $F^{-1}(t)$ sends $\dot{F}(t)$ to $\dot{F}(0) = const \in T $. 
+
+  \item conversely, $\forall ~ A \in T$ the equation $F^{-1}(t)\dot{F}(t) = A$ is satisfied by a unique one-parameter subgroup $F(t)$ of $G$. If $G$ is a matrix group then $F(t) - exp (At)$.  
+\end{itemize}
+
+\subsection{Co-ords of the first kind}
+\begin{itemize}
+  \item One parameter subgroups can be used to define so called \emph{canonical} in a neighborhood of the identity of a Lie group $G$. 
+
+  \item Let $A_1,\ldots,A_n$ form a basis for the Lie algebra $T$. Then $\forall~ A = \sum_iA_ix^i ~ \in ~ T ~\exists $ a one parameter group $F(t) = exp(At)$. To the point $F(1)= exp(A)$ we assign as co-ords co-officiants $x^1,\ldots,x^n$, which gives us a system of co-ords in a sufficiently small neighborhood of $g_0 =1 \in G$. These are called the \emph{canonical co-ords of the first kind}. 
+\end{itemize}
+
+\subsection{Co-ords of the second kind}
+\begin{itemize}
+  \item Another system of co-ords is obtained by introducing $F_i(t)= exp (At)$ and representing a point $g$ sufficiently close to $g_0$ as:
+  \begin{align*}
+    g = F_1(t_1)F_2(t_2)\cdot \cdot \cdot F_n(t_n)
+  \end{align*}
+  for small $t_1,...,t_n$. Assigning co-ords $x^1=t_1,...,x^n=t_n$ to the point $g$, we get the \emph{canonical co-ords of the second kind}.  
+\end{itemize}
 \end{document}
  
