@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  12 NOV 2024 23:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  21 NOV 2024 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1219,6 +1219,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [5]
 
+! LaTeX Error: \begin{document} ended by \end{itemize}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.246 \end{itemize}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.246 \end{itemize}
+                   
+Things are pretty mixed up, but I think the worst is over.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1235,20 +1255,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7
+[7]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[8]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[9
 
 ] (./Problem_Solving.aux)
 Package rerunfilecheck Info: File `Problem_Solving.out' has not changed.
-(rerunfilecheck)             Checksum: 1460DD5AAA49880F235CA853C502408B;1903.
+(rerunfilecheck)             Checksum: 6E508FD98F60C79A875F5E4B3A724EFA;3856.
 Package logreq Info: Writing requests to 'Problem_Solving.run.xml'.
 \openout1 = `Problem_Solving.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35807 strings out of 480247
- 714256 string characters out of 5896151
- 1435812 words of memory out of 5000000
- 53174 multiletter control sequences out of 15000+600000
+ 35849 strings out of 480247
+ 715024 string characters out of 5896151
+ 1436822 words of memory out of 5000000
+ 53201 multiletter control sequences out of 15000+600000
  482764 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,15n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1267,10 +1305,10 @@ m/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Problem_Solving.pdf (7 pages, 189260 bytes).
+Output written on Problem_Solving.pdf (9 pages, 211469 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 381 words of extra memory for PDF output out of 10000 (max. 10000000)
 

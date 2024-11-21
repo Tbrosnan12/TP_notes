@@ -243,12 +243,6 @@
     \end{flalign*}
     Where shear stress $ = F/A$ (Force per Area) and shear strain  = $\frac{\Delta s}{l}$. Length displaced $\Delta s$ over the length of the object $l$. The same sort of equation holds for the other moduli. Youngs modulus is $G$ with the word ``shear'' replaced with ``Tensile''. Same goes with Bulk and Elastic. 
 \end{itemize}
-\subsubsection{Pressure}
-\begin{itemize}
-    \item Pressure is in its most general form perpendicular Force $F_{\perp}$ divided by area $A$:
-    \begin{flalign*}
-        P  = \frac{F_{\perp}}{A}
-    \end{flalign*}
 \end{itemize}
 
 \subsection{Gravitation}
@@ -258,6 +252,114 @@
         U = -\frac{GMm}{r} ~ ~~\implies \textbf{F}_{\text{grav}} = -\frac{GMm}{r^2}\hat{r}
     \end{flalign*}
 
+\end{itemize}
+\subsubsection{Acceleration due to gravity} 
+\begin{itemize}
+    \item This is just the gravitational force $F_{\text{grav}}$ per unit mass:
+    \begin{flalign*}
+         g = \frac{GM}{r^2}
+     \end{flalign*} 
+\end{itemize}
+\subsection{Orbits}
+\begin{itemize}
+    \item To find the escape velocity we just find the velocity that makes the total energy $0$ when $r=R$, this results in:
+    \begin{flalign*}
+         v_{\text{esc}} = \sqrt{\frac{2GM}{R}}
+     \end{flalign*} 
+     The Schwartzchild radius is when this velocity $v$ is the speed of light $c$. 
+\end{itemize}
+\subsubsection{Kepler's Period}
+\begin{itemize}
+    \item This is the orbital period for a body in elliptical motion with semi-major axis $a$:
+    \begin{flalign*}
+        T^2 =\frac{4\pi^2a^3}{GM} 
+    \end{flalign*}
+\end{itemize}
+\subsection{Periodic motion}
+\begin{itemize}
+    \item \emph{Simple Harmonic motion} is defined as motion where the force is:
+    \begin{flalign*}
+        F = - kx
+    \end{flalign*}
+
+\item This motion will then have a angular frequency $\omega$, which is related to the period of the motion $T$, by: $T = 2\pi/\omega$.
+    \item Frequency is defined as one over the period $f = 1/T = \omega/2\pi$. 
+\end{itemize}
+\subsubsection{Pendulum}
+\begin{itemize}
+ \item For a pendulum of length $L$ we have that $\omega = \sqrt{\frac{g}{L}}$. If this pendulum is a rigid body with moment of inertia $I$, then this takes the form: $\omega = \sqrt{\frac{mgL}{I}}$. 
+\end{itemize}
+
+\subsubsection{Damped Harmonic Motion}
+\begin{itemize}
+    \item The General solution to damped harmonic motion takes the form:
+    \begin{flalign*}
+        x(t) = Ae^{-\gamma t}cos(\omega't)
+    \end{flalign*}
+    Where $\omega' = \sqrt{\frac{k}{m}-\frac{k^2}{4m^2}}$.  
+\end{itemize}
+
+\subsection{Density and Pressure}
+\begin{itemize}
+    \item Density is defined as:
+    \begin{flalign*}
+        \rho = \frac{m}{V}
+    \end{flalign*}
+    \item Pressure is in its most general form perpendicular Force $F_{\perp}$ divided by area $A$:
+    \begin{flalign*}
+        P  = \frac{F_{\perp}}{A}
+    \end{flalign*}
+\end{itemize}
+
+\subsubsection{Pressure in a fluid}
+\begin{itemize}
+    \item At a height $h$ below the surface is:
+    \begin{flalign*}
+        P = P_0 + \rho gh
+    \end{flalign*}
+\end{itemize}
+\subsubsection{Fluid Flow}
+\begin{itemize}
+    \item For a fluid flowing through a pipe of changing cross sectional area the conserved quantity is the area $A$ times the velocity of the fluid $v$. ($A_1v_1 = A_2v_2$). 
+\end{itemize}
+\subsubsection{Bernoulli's equation}
+\begin{itemize}
+    \item The relations ship between pressure and velocity in a fluid is given by:
+    \begin{flalign*}
+        P + \frac{1}{2}\rho v^2 = \text{constant}
+    \end{flalign*}
+\end{itemize}
+\subsubsection{Wave equation}
+\begin{itemize}
+    \item This takes the form:
+    \begin{flalign*}
+        \frac{\partial^2y}{\partial x^2} = \frac{1}{v^2}\frac{\partial^2 y}{\partial t^2}
+    \end{flalign*}
+    Where $y- y(x,t)$ and $v = \lambda * f$ (wavelength by frequency) is the speed of the wave. The general form to the solutions of this equation are:
+    \begin{flalign*}
+        y(x,t) = A\cos(kx-\omega t)
+    \end{flalign*}
+\end{itemize}
+
+\subsubsection{Wave Power}
+\begin{itemize}
+    \item Given the tension $T$ in a string with mass per length $\mu = m/L$ the wave power is:
+    \begin{flalign*}
+        P = \frac{1}{2}\sqrt{\mu T}\omega^2A^2
+    \end{flalign*}
+\end{itemize}
+\subsubsection{Beat frequency}
+\begin{itemize}
+    \item When there is two sources of oscillatory motion the beat frequency is the difference between the two underlying  frequencies $f_{\text{beat}} = |f_1-f_2|$. 
+\end{itemize}
+
+\subsubsection{Doppler affect}
+\begin{itemize}
+    \item The observed frequency of a source emitting a frequency $f_0$ when the receiver is moving at velocity $v_r$ and the source at velocity $v_s$ is:
+    \begin{flalign*}
+         f = \left(\frac{c\pm v_r}{c \mp v_s}\right)
+     \end{flalign*}
+     Where we have $+$ in the numerator if receiver is moving towards source and a $-$ for away. And we have a $+$ in the denominator if the source is moving towards the medium and a $-$ if away. 
 \end{itemize}
 
 \end{document}
