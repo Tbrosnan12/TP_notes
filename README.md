@@ -32,6 +32,7 @@ General structure is pdfs of notes are found in the year directories, Third_year
 # Fourth Year 
 ## First Semester &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Second semester
 [Quantum Field theory](https://github.com/Tbrosnan12/TP_notes/blob/main/Fourth_year/First_semester/Quantum_Field_Theory_I.pdf)<br>
-[Differential Geometry](https://github.com/Tbrosnan12/TP_notes/blob/main/Fourth_year/First_semester/Diferential_Geometry.pdf)
+[Differential Geometry](https://github.com/Tbrosnan12/TP_notes/blob/main/Fourth_year/First_semester/Diferential_Geometry.pdf)<br>
+[Problem Solving](https://github.com/Tbrosnan12/TP_notes/blob/main/Fourth_year/First_semester/Problem_Solving.pdf)
 
 
