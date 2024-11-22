@@ -59,6 +59,7 @@
 \numberwithin{equation}{section}
 
 \DeclareRobustCommand{\RR}{\mathbb{R}}
+\DeclareRobustCommand{\CC}{\mathbb{C}}
 
 \makeatletter
 \let\Title\@title % Copy the title to a new command
@@ -713,6 +714,64 @@ This makes $\mathbb{H}$ an associative algebra over the field of real numbers.
     g = F_1(t_1)F_2(t_2)\cdot \cdot \cdot F_n(t_n)
   \end{align*}
   for small $t_1,...,t_n$. Assigning co-ords $x^1=t_1,...,x^n=t_n$ to the point $g$, we get the \emph{canonical co-ords of the second kind}.  
+\end{itemize}
+
+
+\newpage
+\section{Linear Representations}
+\subsection{Representations}
+\begin{itemize}
+  \item A \emph{Linear representation} of a group $G$ of $dimG = n$ is a homomorphism:
+  \begin{align*}
+    \rho:G \rightarrow GL(r,\RR), ~~~\text{or}~~~\rho: G\rightarrow GL(r,\CC)
+  \end{align*}
+
+\item Given a representation $\rho$ of $G$ the map: 
+\begin{align*}
+  \chi_{\rho}: G \rightarrow \RR, ~~~\text{or}~~~G \rightarrow \CC
+\end{align*}
+defined by:
+\begin{align*}
+\chi_{\rho}(g) = \text{tr}(\rho(g))
+\end{align*}
+is called the \emph{character} of the representation $\rho$. 
+
+\item A representation $\rho$ of $G$ is said to be \emph{irreducible} if the vector space $\RR^r$ contains no proper subspace invariant under the matrix group $\rho(G)$. 
+\end{itemize}
+
+\subsubsection{Matrix Invariance}
+\begin{itemize}
+  \item A subspace $W$ of the representation space $\RR^r$ is called \emph{invariant under the matrix group} $\rho(G)$ (or simply $G$ invariant) if:
+  \begin{align*}
+    \rho(G)W \subset W,~~~\forall~g \in G
+  \end{align*}
+  Then we can restrict $\rho$ to $W$ and get a \emph{subrepresentation}.
+\end{itemize}
+
+\subsection{Schur's Lemma}
+\begin{itemize}
+  \item Let $\rho_{i}: G \rightarrow GL(r_i,\RR),~~i=1,2$ be two irreducible representations (irreps) of a group $G$. If $A:R^{r_1} \rightarrow \RR^{r_2}$ is a linear transformation changing $\rho_1$ to $\rho_2$, i.e. stratifying:
+  \begin{align*}
+    A \rho_1(g) = \rho_2A,~~~\forall~g\in G
+  \end{align*}
+  Then either $A$ is the zero transformation or else a bijection, in which case $r_1=r-2$. 
+\end{itemize}
+
+\subsection{Push Forward Representation}
+\begin{itemize}
+  \item If $G$ is a Lie group and a representation $\rho: G \rightarrow GL(r,\RR)$ is a smooth map, then the push-froward map $\rho_{\ast}$ is a linear map from the Lie algebra $\mathfrak{g} = T_{(1)}$ to the space of all $r\times r$ matrices:
+  \begin{align*}
+    \rho_{\ast}: \mathfrak{g}\rightarrow Mat(r,\RR) 
+  \end{align*}
+  It can then be shown that this means $\rho_{\ast}$ is a \emph{representation} of the Lie algebra $\mathfrak{g}$, i.e. that it is a Lie algebra homomorphism. Meaning it is linear and preserves the commutators $\rho_{\ast}[\xi,\eta] = [\rho_{\ast}\xi,\rho_{\ast}\eta]$.    
+\end{itemize}
+
+
+\subsection{Faithful}
+\begin{itemize}
+  \item A representation $\rho: G \rightarrow GL(r,\RR)$ is called \emph{faithful} if it is one to one i.e. if its Kernel is trivial. So $\rho(g) \neq \mathbb{I}$ unless $g=g_0$. 
+
+   \item If a Lie group has a faithful representation then it can be realized as a matrix Lie group.   
 \end{itemize}
 \end{document}
  
