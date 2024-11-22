@@ -773,5 +773,42 @@ is called the \emph{character} of the representation $\rho$.
 
    \item If a Lie group has a faithful representation then it can be realized as a matrix Lie group.   
 \end{itemize}
+
+\subsection{Inner automorphism}
+\begin{itemize}
+  \item For each $h \in G$ the transformation $G \rightarrow G$ defined by $g \rightarrow   hgh^{-1}$ is called the \emph{inner anthropomorphism}. of $G$ determined by $h$. 
+
+  \item Any inner anthropomorphism does not move the identity element. i.e. $g_0 = hg_0h^{-1}$ and therefor the push forward (induced linear) map of the tangent space $T$ to $G$ at $g_0$  is a linear transformation of $T$ denoted by:
+  \begin{align*}
+     Ad_h: T \rightarrow T
+   \end{align*} 
+   it satisfies the following:
+   \begin{itemize}
+     \item $Ad_{g_0}= id$, where $id$ is the identity transformation of $T$. 
+     \item $Ad_{h_1}Ad_{h_2} = Ad_{h_1h_2}$ for all $h_1,h_2 \in G$. because $h_1h_2gh_2^{-1}h_1^{-1} = (h_1h_2)g(h_1h_2)^{-1}$. 
+     \item Choosing $h_1 = h, h_2 = h^{-1}$, we get that $Ad_{h^{-1}} = Ad_{h}^{-1}$
+   \end{itemize}
+
+   \item This means that the map $h \rightarrow Ad_{h}$ is a \emph{linear representation} of the group $G$. i.e. a homomorphism to a group of linear transformations, $Ad: G \rightarrow GL(n,\RR), h\rightarrow Ad_{h} = Ad(h)$. This representation of $G$ is called \emph{Adjoint}. 
+\end{itemize}
+
+\subsection{One Parameter Adjoint}
+\begin{itemize}
+  \item Let $F(t) = e^{At}$ be a one parameter subgroup of a Lie  group $G$. Then $Ad_{F(t)}$ is a one parameter subgroup of $GL(n,\RR)$. 
+
+  The vector $\frac{d}{dt}Ad_{F(t)}\Big\vert_{t=0}$ lies in the Lie algebra $\mathfrak{g} \sim Mat(n,\RR)$ of the Group $GL(n,\RR)$ and can be regarded as a linear operator. 
+
+   \item This operator is denoted $ad_{A}$ and is given by:
+   \begin{flalign*}
+      ad_A:\RR \rightarrow \RR, ~~~ B \rightarrow [A,B],~~~B \in T \simeq \RR^n
+    \end{flalign*} 
+\end{itemize}
+
+
+\newpage 
+\section{Simple Lie Algebras and Forms}
+
+
+
 \end{document}
  

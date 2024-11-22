@@ -71,3 +71,6 @@
 \contentsline {subsection}{\numberline {10.2}Schur's Lemma}{21}{subsection.10.2}%
 \contentsline {subsection}{\numberline {10.3}Push Forward Representation}{21}{subsection.10.3}%
 \contentsline {subsection}{\numberline {10.4}Faithful}{21}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Inner automorphism}{22}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}One Parameter Adjoint}{22}{subsection.10.6}%
+\contentsline {section}{\numberline {11}Simple Lie Algebras and Forms}{23}{section.11}%
