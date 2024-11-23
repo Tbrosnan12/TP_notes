@@ -74,3 +74,10 @@
 \contentsline {subsection}{\numberline {10.5}Inner automorphism}{22}{subsection.10.5}%
 \contentsline {subsection}{\numberline {10.6}One Parameter Adjoint}{22}{subsection.10.6}%
 \contentsline {section}{\numberline {11}Simple Lie Algebras and Forms}{23}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Simple \& Semi-Simple}{23}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Killing Form}{23}{subsection.11.2}%
+\contentsline {section}{\numberline {12}Group Actions}{24}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Left and Right actions}{24}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Transitive}{24}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {12.2.1}Homogeneous}{24}{subsubsection.12.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2}Isotropy group}{24}{subsubsection.12.2.2}%

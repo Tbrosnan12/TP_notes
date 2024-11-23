@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  22 NOV 2024 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  22 NOV 2024 23:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1275,16 +1275,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] (./Problem_Solving.aux)
 Package rerunfilecheck Info: File `Problem_Solving.out' has not changed.
-(rerunfilecheck)             Checksum: B3CA2CA24092F7FD812F3BEE2AF68BBF;4684.
+(rerunfilecheck)             Checksum: 9CB495302516892E56DF123767BDC9E4;4818.
 Package logreq Info: Writing requests to 'Problem_Solving.run.xml'.
 \openout1 = `Problem_Solving.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35873 strings out of 480247
- 715409 string characters out of 5896151
- 1436833 words of memory out of 5000000
- 53216 multiletter control sequences out of 15000+600000
+ 35878 strings out of 480247
+ 715487 string characters out of 5896151
+ 1436836 words of memory out of 5000000
+ 53220 multiletter control sequences out of 15000+600000
  482764 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,15n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1303,10 +1303,10 @@ m/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Problem_Solving.pdf (11 pages, 219572 bytes).
+Output written on Problem_Solving.pdf (11 pages, 222008 bytes).
 PDF statistics:
- 362 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
- 47 named destinations out of 1000 (max. 500000)
- 437 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 367 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 445 words of extra memory for PDF output out of 10000 (max. 10000000)
 

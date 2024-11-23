@@ -808,7 +808,73 @@ is called the \emph{character} of the representation $\rho$.
 \newpage 
 \section{Simple Lie Algebras and Forms}
 
+\subsection{Simple \& Semi-Simple}
+\begin{itemize}
+  \item A Lie algebra $\mathfrak{g} = \{\RR^n,c^{i}_{jk}\}$ is said to be \emph{simple} if it is \emph{non-commutative} and has \emph{no proper ideals}, i.e. subspaces $\mathcal{I} \neq \mathfrak{g},0$ for which $[\mathcal{I},\mathfrak{g}] \subset \mathcal{I}$.  
 
 
+  \item It is instead called \emph{semi-simple} if we can write $\mathfrak{g} = \mathcal{I}_1 \otimes \mathcal{I}_2 \otimes \cdot \cdot \cdot \otimes \mathcal{I}_k$ Where the $\mathcal{I}_j$ are ideals which are simple as Lie algebras. These ideals are pairwise commuting $[\mathcal{I}_i,\mathcal{I}_j] = 0,~~i\neq j$. 
+
+  A Lie group is defined to be simple or semi-simple according to its Lie algebra. 
+
+  \item A theorem that can be proven is that if the Lie algebra $\mathfrak{g}$ of a Lie group $G$ is simple, then the linear representation $Ad:G\rightarrow GL(n,\RR)$ is \emph{irreducible}, i.e. $\mathfrak{g}$ has no proper invariant subspaces under the group of inner automorphisms $Ad_{G}$.  
+\end{itemize}
+
+\subsection{Killing Form}
+\begin{itemize}
+  \item The \emph{Killing form} on an arbitrary Lie algebra $\mathfrak{g}$ is defined (up to a sign) by:
+  \begin{align*}
+     \braket{A,B} = -\text{tr}(ad_{A}ad_{B})
+   \end{align*} 
+   \item If the Killing form of a Lie algebra is positive definite then the Lie algebra is semi-simple. 
+
+   \item We also have that a Lie algebra is semi-simple if and only if its Killing form is non-degenerate. 
+\end{itemize}
+
+\newpage 
+\section{Group Actions}
+\subsection{Left and Right actions} % (fold)
+\label{sub:left_and_right_actions}
+\begin{itemize}
+  \item We say that a Lie group $G$ is represented as a \emph{group of transformations} of a manifold $M$, or has a \emph{left action} on $M$ if:
+  \begin{itemize}
+    \item There is associated with each of its elements $g$ a diffeomorphism from $M$ to itself. $x \mapsto \mathcal{T}_{g}(x),~~~x \in M$. Such that $\mathcal{T}_{g}\mathcal{T}_{h} = \mathcal{T}_{gh},~\forall~g,h \in G$. 
+    \item $\mathcal{T}_{g}(x)$ depends smoothly on the arguments $g,x$ i.e. the map $(g,x) \mapsto \mathcal{T}_{g}(x)$ is a smooth map from $G \times M \rightarrow M$. 
+  \end{itemize}
+
+  \item The Lie group is said to have \emph{Right action} on $M$ if the above definition is valid with $\mathcal{T}_{g}\mathcal{T}_{h} = \mathcal{T}_{hg}$.  
+\end{itemize}
+
+% subsubsection left_and_right_actions (end)
+
+
+\subsection{Transitive} % (fold)
+\label{sub:transitive}
+\begin{itemize}
+  \item The action of a group $G$ on $M$ is said to be \emph{transitive} if for every two points $x,y \in M$ there exists an element of $G$ such that $\mathcal{T}_{g}(x) =y$. 
+
+  To show that an action of a group on a manifold is transitive it is sufficient to choose any point of $M$ as a reference point $x_0$, and to prove that for any point $y\in M$ there exists an element $g \in G$ such that $y = \mathcal{T}_{g}(x_0)$. 
+\end{itemize}
+% subsection transitive (end)
+
+\subsubsection{Homogeneous} % (fold)
+\label{ssub:homogeneous}
+\begin{itemize}
+  \item A manifold on which a Lie group acts transitively is called a \emph{homogeneous space} of the Lie group. 
+
+  \item In particular, $G$ is a homogeneous space for itself, e.g. as $h \rightarrow \mathcal{T}_{g}(h)=gh,~h \in G$. $G$ is called the \emph{principle} homogeneous space. 
+\end{itemize}
+\subsubsection{Isotropy group} % (fold)
+\label{ssub:isotropy_group}
+\begin{itemize}
+  \item Let $x$ be any point of a homogeneous space $M$ of a Lie group $G$. The \emph{isotropy} group (or \emph{stationary} group) $H_{x}$ of the point $x$ is the stabilizer of $x$ under the action of $G$:
+\begin{align*}
+   H_x = \{ h | \mathcal{T}_{h}(x) = x\}
+ \end{align*} 
+ \item All isotropy groups $H_x$ of points $x$ of a homogeneous space are isomorphic. 
+\end{itemize}
+% subsubsection isotropy_group (end)
+
+% subsection homogeneous (end)
 \end{document}
  

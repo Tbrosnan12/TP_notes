@@ -77,7 +77,7 @@
 \makeatother
 
 %change this RGB value to change the section background colour 
-\definecolor{mycolor1}{RGB}{125, 187, 242}
+\definecolor{mycolor1}{RGB}{168, 182, 225}
 \colorlet{SectionColour}{mycolor1}
 %subsection background colour 
 \definecolor{mycolor2}{gray}{0.8}
@@ -199,9 +199,9 @@
 \subsubsection{Parallel axis Theorem}
 \begin{itemize}
     \item This is the rule that tells us how to add the self rotation moment of inertia $I_{\text{self}}$ to the orbital rotation of a mass $M$ at radius $R$:
-    \begin{align*}
+    \begin{flalign*}
         I_{\text{total}} = I_{\text{self}} + MR^2
-    \end{align*}
+    \end{flalign*}
 \end{itemize}
 \subsubsection{Torque}
 \begin{itemize}
@@ -419,6 +419,21 @@
     E = \frac{d}{2}NkT
 \end{flalign*}
 Where $d$ is the degrees of freedom of the gas molecules, for ideal Gas this is just $d=3$. 
+
+\item This can also be expressed as:
+\begin{flalign*}
+    E = \frac{1}{2}m N\bar{v}^2
+\end{flalign*}
+Where $\bar{v}$ is the average velocity given by $\bar{v} = \sqrt{\frac{dkT}{m}}$
+\end{itemize}
+
+\subsection{Mean free Path}
+\begin{itemize}
+    \item This is just defined as the velocity of the particles times the mean free time $t_{\text{mean}}$. Which can be expressed as:
+    \begin{flalign*}
+        \lambda = \frac{1}{\sigma n}
+    \end{flalign*}
+    Where $\sigma$ is the cross section and $n$ the number of particles per unit volume. This is assuming stationary 
 \end{itemize}
 
 
