@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  23 NOV 2024 11:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  24 NOV 2024 18:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1211,16 +1211,7 @@ y.toc [3])
 \openout7 = `Diferential_Geometry.toc'.
 
 
-[4]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[5]
+[4] [5]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1266,11 +1257,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [10]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 371
-.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1280,6 +1266,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [11]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 371
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1405,20 +1396,50 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25
+[25]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[26]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[27]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[28
 
 ] (./Diferential_Geometry.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Diferential_Geometry.out' has not changed.
-(rerunfilecheck)             Checksum: 9BC2B5CCD8CFA0F7053C21F83953CE9A;12210.
+(rerunfilecheck)             Checksum: FAC3EDC22112D285335B170F0BB4B91A;13207.
 Package logreq Info: Writing requests to 'Diferential_Geometry.run.xml'.
 \openout1 = `Diferential_Geometry.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36075 strings out of 480247
- 718179 string characters out of 5896151
- 1436769 words of memory out of 5000000
- 53346 multiletter control sequences out of 15000+600000
+ 36096 strings out of 480247
+ 718570 string characters out of 5896151
+ 1437109 words of memory out of 5000000
+ 53358 multiletter control sequences out of 15000+600000
  486634 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,15n,104p,1209b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1440,10 +1461,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Diferential_Geometry.pdf (25 pages, 305076 bytes).
+Output written on Diferential_Geometry.pdf (28 pages, 310463 bytes).
 PDF statistics:
- 696 PDF objects out of 1000 (max. 8388607)
- 601 compressed objects within 7 object streams
- 111 named destinations out of 1000 (max. 500000)
- 821 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 739 PDF objects out of 1000 (max. 8388607)
+ 641 compressed objects within 7 object streams
+ 120 named destinations out of 1000 (max. 500000)
+ 869 words of extra memory for PDF output out of 10000 (max. 10000000)
 

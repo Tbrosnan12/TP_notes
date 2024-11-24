@@ -848,8 +848,8 @@ is called the \emph{character} of the representation $\rho$.
 % subsubsection left_and_right_actions (end)
 
 
-\subsection{Transitive} % (fold)
-\label{sub:transitive}
+\subsection{Transitivity} % (fold)
+\label{sub:transitivity}
 \begin{itemize}
   \item The action of a group $G$ on $M$ is said to be \emph{transitive} if for every two points $x,y \in M$ there exists an element of $G$ such that $\mathcal{T}_{g}(x) =y$. 
 
@@ -857,8 +857,8 @@ is called the \emph{character} of the representation $\rho$.
 \end{itemize}
 % subsection transitive (end)
 
-\subsubsection{Homogeneous} % (fold)
-\label{ssub:homogeneous}
+\subsubsection{Homogeneity} % (fold)
+\label{ssub:Homogeneity}
 \begin{itemize}
   \item A manifold on which a Lie group acts transitively is called a \emph{homogeneous space} of the Lie group. 
 
@@ -872,9 +872,63 @@ is called the \emph{character} of the representation $\rho$.
    H_x = \{ h | \mathcal{T}_{h}(x) = x\}
  \end{align*} 
  \item All isotropy groups $H_x$ of points $x$ of a homogeneous space are isomorphic. 
+
+ \item There is a one to one correspondence between the points of a homogeneous space $M$ of a group $G$, and the left cosets $gH$ of $H$ in $G$, where $H$ is the isotropy group and $G$ acts on the left. Thus we can write $M \simeq G/H$, i.e. $M$ is a diffeomorphic to the quotient space $G/H$.    
 \end{itemize}
 % subsubsection isotropy_group (end)
-
 % subsection homogeneous (end)
+
+\subsection{Examples of Homogeneous spaces} % (fold)
+\label{sub:examples_of_homogeneous_spaces}
+\subsubsection{Stiefel manifolds} % (fold)
+\label{ssub:stiefel_manifolds}
+\begin{itemize}
+  \item For each $n,k$ the Stiefel manifold $V_{n,k}$ has as its points \emph{all orthonormal} $k$-frames $x=(e_1,\ldots,e_k)$ of $k$ vectors $e_{a}$ in $\RR^n$. 
+
+  \item The dimension of $V_{n,k}$ is $nk-\frac{1}{2}k(k+1)$ and $V_{n,k} \simeq O(n)/O(n-k) \simeq SO(n)/SO(n-k)$.
+\end{itemize}
+% subsubsection stiefel_manifolds (end)
+\subsubsection{Real Grassmanian manifolds} % (fold)
+\label{ssub:real_grassmanian_manifolds}
+\begin{itemize}
+  \item The points of $G_{n,k}$ are the $k$ dimensional planes passing through the origin of $\RR^{n}$. 
+
+  \item It can be shown that $G_{n,k} \simeq O(n)/(O(k)\times O(n-k)) \simeq G_{n,n-k}$. The dimension of $G_{n,k}$ is $(n-k)k$ 
+\end{itemize}
+% subsubsection real_grassmanian_manifolds (end)
+
+% subsection examples_of_homogeneous_spaces (end)
+
+
+\newpage 
+\section{Vector Bundles} % (fold)
+\label{sec:vector_bundles}
+\subsection{Tangent Bundle} % (fold)
+\label{sub:tangent_bundle}
+\begin{itemize}
+  \item The \emph{tangent bundle} $T(M)$ of an $n$ dimensional manifold $M$ is a $2n$ dimensional manifold defined as follows:
+  \begin{itemize}
+    \item The points of $T(M)$ are the pairs $(x,\xi), x \in M,~\xi \in T_{x}M$. 
+    \item Given a chart $U_{q}$ of $M$ with the local co-ords $(x^i_{q})$, the corresponding chart $U^T_q$ of $T(M)$ is the set of all pairs $(x,\xi)$ where:
+    \begin{align*}
+       x = (x^{1}_1,\ldots,x^n_{q}) \in U_{q},~~~\xi \in \xi^{i}_q\frac{\partial}{\partial x^i_q} \in T_xM
+     \end{align*} 
+     with local co-ords $(y^1_q,\ldots,y^{2n}_q) = (x^1_q,\ldots,x^n_q,\xi^1_q,\ldots,\xi^n_q) = (x^i_q,\xi^i_q)$.
+  \end{itemize}
+  \item This tangent bundle is a smooth oriented manifold. 
+\end{itemize}
+% subsection tangent_bundle (end)
+
+\subsubsection{Cotangent Bundle} % (fold)
+\label{ssub:cotangent_bundle}
+\begin{itemize}
+  \item The \emph{cotangent bundle} $T^{\ast}(M)$ of an $n$ dimensional manifold $M$ is a $2n$ dim manifold defined as follows:
+  \begin{itemize}
+    \item The points $T^{\ast}(M)$ are the pairs $(x,p)$
+  \end{itemize}
+\end{itemize}
+% subsubsection cotangent_bundle (end)
+% section vector_bundles (end)
+
 \end{document}
  
