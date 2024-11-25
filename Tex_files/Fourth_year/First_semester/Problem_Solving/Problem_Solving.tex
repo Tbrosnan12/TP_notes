@@ -433,7 +433,12 @@ Where $\bar{v}$ is the average velocity given by $\bar{v} = \sqrt{\frac{dkT}{m}}
     \begin{flalign*}
         \lambda = \frac{1}{\sigma n}
     \end{flalign*}
-    Where $\sigma$ is the cross section and $n$ the number of particles per unit volume. This is assuming stationary 
+    Where $\sigma$ is the cross section and $n$ the number of particles per unit volume. This is assuming stationary particles, or that the incoming particle has a much higher velocity then the targets. If this is not the case, i.e. thee incoming particle is at thermal equilibrium with the targets then the mean free path changes as the number of collisions becomes $\sqrt{2}$ times that of the stationary case. $l = 1/(\sqrt{2}n\sigma)$. 
+    
+    \item The intensity of particles in to a medium falls off exponentially, depending on the mean free path, $I = I_0e^{x/l}$. The probability can then be calculated from this:
+    \begin{flalign*}
+     dP(x) = \frac{I(x)-I(x+dx)}{dx} = \frac{1}{l}e^{-x/l}dx
+     \end{flalign*} 
 \end{itemize}
 
 

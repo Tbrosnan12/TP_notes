@@ -776,9 +776,9 @@ is called the \emph{character} of the representation $\rho$.
 
 \subsection{Inner automorphism}
 \begin{itemize}
-  \item For each $h \in G$ the transformation $G \rightarrow G$ defined by $g \rightarrow   hgh^{-1}$ is called the \emph{inner anthropomorphism}. of $G$ determined by $h$. 
+  \item For each $h \in G$ the transformation $G \rightarrow G$ defined by $g \rightarrow   hgh^{-1}$ is called the \emph{inner automorphism}. of $G$ determined by $h$. 
 
-  \item Any inner anthropomorphism does not move the identity element. i.e. $g_0 = hg_0h^{-1}$ and therefor the push forward (induced linear) map of the tangent space $T$ to $G$ at $g_0$  is a linear transformation of $T$ denoted by:
+  \item Any inner automorphism does not move the identity element. i.e. $g_0 = hg_0h^{-1}$ and therefor the push forward (induced linear) map of the tangent space $T$ to $G$ at $g_0$  is a linear transformation of $T$ denoted by:
   \begin{align*}
      Ad_h: T \rightarrow T
    \end{align*} 
@@ -817,7 +817,7 @@ is called the \emph{character} of the representation $\rho$.
 
   A Lie group is defined to be simple or semi-simple according to its Lie algebra. 
 
-  \item A theorem that can be proven is that if the Lie algebra $\mathfrak{g}$ of a Lie group $G$ is simple, then the linear representation $Ad:G\rightarrow GL(n,\RR)$ is \emph{irreducible}, i.e. $\mathfrak{g}$ has no proper invariant subspaces under the group of inner automorphisms $Ad_{G}$.  
+  \item A theorem that can be proven is that if the Lie algebra $\mathfrak{g}$ of a Lie group $G$ is simple, then the linear representation $Ad:G\rightarrow GL(n,\RR)$ is \emph{irreducible}, i.e. $\mathfrak{g}$ has no proper invariant sub-spaces under the group of inner automorphisms $Ad_{G}$.  
 \end{itemize}
 
 \subsection{Killing Form}
@@ -911,7 +911,7 @@ is called the \emph{character} of the representation $\rho$.
     \item The points of $T(M)$ are the pairs $(x,\xi), x \in M,~\xi \in T_{x}M$. 
     \item Given a chart $U_{q}$ of $M$ with the local co-ords $(x^i_{q})$, the corresponding chart $U^T_q$ of $T(M)$ is the set of all pairs $(x,\xi)$ where:
     \begin{align*}
-       x = (x^{1}_1,\ldots,x^n_{q}) \in U_{q},~~~\xi \in \xi^{i}_q\frac{\partial}{\partial x^i_q} \in T_xM
+       x = (x^{1}_1,\ldots,x^n_{q}) \in U_{q},~~~\xi = \xi^{i}_q\frac{\partial}{\partial x^i_q} \in T_xM
      \end{align*} 
      with local co-ords $(y^1_q,\ldots,y^{2n}_q) = (x^1_q,\ldots,x^n_q,\xi^1_q,\ldots,\xi^n_q) = (x^i_q,\xi^i_q)$.
   \end{itemize}
@@ -919,15 +919,36 @@ is called the \emph{character} of the representation $\rho$.
 \end{itemize}
 % subsection tangent_bundle (end)
 
-\subsubsection{Cotangent Bundle} % (fold)
-\label{ssub:cotangent_bundle}
+\subsection{Cotangent Bundle} % (fold)
+\label{sub:cotangent_bundle}
 \begin{itemize}
   \item The \emph{cotangent bundle} $T^{\ast}(M)$ of an $n$ dimensional manifold $M$ is a $2n$ dim manifold defined as follows:
   \begin{itemize}
-    \item The points $T^{\ast}(M)$ are the pairs $(x,p)$
+    \item The points $T^{\ast}(M)$ are the pairs $(x,p), x \in M$ and $p$ a co-vector at the point $x$, so $p\in T^{\ast}_xM$. 
+    \item Given a chart $U_{q} $ of $M$ with the local co-ords $(x^i_q)$, the corresponding chart $U^{T^{\ast}}_x$ of $T^{\ast}M$ is the set of all pairs $(x,p)$, where:
+    \begin{align*}
+    x = (x^{1}_1,\ldots,x^n_{q}) \in U_{q},~~~p = p_{qi}dx^i_q \in T^{\ast}_xM
+    \end{align*}
+    with local co-ords $(y^1_q,\ldots,y^{2n}_q) = (x^1_q,\ldots,x^n_q,p_{q1},\ldots,p_{qn}) = (x^i_q,p_{qi})$.
   \end{itemize}
+  \item This cotangent bundle is a smooth oriented manifold. 
 \end{itemize}
 % subsubsection cotangent_bundle (end)
+
+\subsection{Symplectic Manifold} % (fold)
+\label{sub:symplectic_manifold}
+\begin{itemize}
+    \item The existence of a metric on $M$ gives rise to a map:
+  \begin{align*}
+   T(M) \rightarrow T^{\ast}(M): (x^i,\xi^i)\mapsto (x^i,g_{ij}\xi^i)
+   \end{align*} 
+   \item Since $\omega = p_idx^i$, a differential one-form on $M$, is invariant under a change of co-ords of $T^{\ast}(M)$, it is a differential form on $T^{\ast}(M)$. 
+
+   Its differential $\Omega = d\omega = dp_i \wedge dx^i$ is a \emph{non-degenerate closed},($d\Omega =0$), 2-form on $T^{\ast}(M)$. 
+
+   \item Thus $T^{\ast}(M)$ is a $symplectic$ manifold, i.e. it is equipped with a closed non-degenerate 2-form. 
+ \end{itemize}
+% subsection symplectic_manifold (end)
 % section vector_bundles (end)
 
 \end{document}

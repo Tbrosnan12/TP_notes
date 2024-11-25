@@ -86,4 +86,5 @@
 \contentsline {subsubsection}{\numberline {12.3.2}Real Grassmanian manifolds}{26}{subsubsection.12.3.2}%
 \contentsline {section}{\numberline {13}Vector Bundles}{27}{section.13}%
 \contentsline {subsection}{\numberline {13.1}Tangent Bundle}{27}{subsection.13.1}%
-\contentsline {subsubsection}{\numberline {13.1.1}Cotangent Bundle}{27}{subsubsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.2}Cotangent Bundle}{27}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Symplectic Manifold}{27}{subsection.13.3}%
