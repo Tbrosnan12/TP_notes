@@ -32,5 +32,10 @@
 \contentsline {subsubsection}{\numberline {2.1.2}Latent Heat}{9}{subsubsection.2.1.2}%
 \contentsline {subsubsection}{\numberline {2.1.3}Heat Flux}{9}{subsubsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.2}Ideal Gas}{9}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Energy of a Gas}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.1}Energy of a Gas}{10}{subsubsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.3}Mean free Path}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}First Law}{10}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Processes}{11}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Adiabatic Process}{11}{subsubsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.6}Efficacy of a heat engine}{11}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Carnot cycle}{11}{subsubsection.2.6.1}%

@@ -378,6 +378,10 @@
     \begin{flalign*}
         \Delta Q  = mc \Delta T
     \end{flalign*}
+    \item The two heat capacities are related by:
+    \begin{flalign*}
+         C_p = C_v +R, ~~~\gamma = \frac{C_p}{C_v} 
+     \end{flalign*} 
       \end{itemize}
 
 
@@ -418,7 +422,7 @@
 \begin{flalign*}
     E = \frac{d}{2}NkT
 \end{flalign*}
-Where $d$ is the degrees of freedom of the gas molecules, for ideal Gas this is just $d=3$. 
+Where $d$ is the degrees of freedom of the gas molecules, for ideal Gas this is just $d=3$. Note that this means the heat capacity is $C_v = \frac{d}{2}Nk$
 
 \item This can also be expressed as:
 \begin{flalign*}
@@ -441,5 +445,54 @@ Where $\bar{v}$ is the average velocity given by $\bar{v} = \sqrt{\frac{dkT}{m}}
      \end{flalign*} 
 \end{itemize}
 
+
+\subsection{First Law} % (fold)
+\label{sub:first_law}
+\begin{itemize}
+    \item The first law of thermodynamics is:
+    \begin{flalign*}
+        dU = dW +dQ
+    \end{flalign*}
+    Where $U$ is internal energy, $W$ the work (which is not always exact) and $Q$ the heat. Often we will have the expression that the infinitesimal work done is $dW = PdV$ with the sign convention that work done on the system is positive.  
+\end{itemize}
+% subsection first_law (end)
+
+\subsection{Processes} % (fold)
+\label{sub:processes}
+\begin{itemize}
+    \item The following processes mean the following things:
+    \begin{itemize}
+        \item Adiabatic: $\Delta Q=0$, no heat transfer.
+        \item Isochoric/mechanically isolated: $\Delta W = 0 $ (constant volume).
+        \item Isobaric: (constant pressure)
+        \item Isothermal: $\Delta T = 0$. (constant temperature).   
+    \end{itemize}
+\end{itemize}
+\subsubsection{Adiabatic Process} % (fold)
+\label{ssub:adiabatic_process}
+\begin{itemize}
+    \item In this case we have the following expression where $\gamma$ is the ratio of heat capacities:
+    \begin{flalign*}
+         TV^{\gamma-1} = \emph{const},~~~PV^{\gamma-1} = \emph{const}
+     \end{flalign*} 
+     \item $dW = dU \implies W = C_vNkT$. 
+
+\end{itemize}
+% subsubsection adiabatic_process (end)
+% subsection processes (end)
+
+\subsection{Efficacy of a heat engine} % (fold)
+\label{sub:efficacy}
+\begin{itemize}
+    \item This is defined as the ratio of output work to input heat:
+    \begin{flalign*}
+        \varepsilon = \frac{W}{Q_2} = \frac{Q_2-Q_1}{Q_1} = 1-\frac{Q_1}{Q_2}
+    \end{flalign*}
+\end{itemize}
+\subsubsection{Carnot cycle} % (fold)
+\label{ssub:carnot_cycle}
+
+% subsubsection carnot_cycle (end)
+% subsection efficacy (end)
 
 \end{document}
