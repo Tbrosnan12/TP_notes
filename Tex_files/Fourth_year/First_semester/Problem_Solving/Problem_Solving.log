@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  26 NOV 2024 00:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  28 NOV 2024 00:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1280,23 +1280,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12
+[12]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[13
 
 ] (./Problem_Solving.aux)
-Package rerunfilecheck Info: File `Problem_Solving.out' has not changed.
-(rerunfilecheck)             Checksum: AA62F69101CD205431DD31F6E32939D1;5509.
+
+Package rerunfilecheck Warning: File `Problem_Solving.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Problem_Solving.out':
+(rerunfilecheck)             Before: C5CF955042AE7E898688E086A9C41759;6206
+(rerunfilecheck)             After:  2B72F92B43A86403B7DA09A63B7D3AFB;6314.
 Package logreq Info: Writing requests to 'Problem_Solving.run.xml'.
 \openout1 = `Problem_Solving.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35903 strings out of 480247
- 715869 string characters out of 5896151
- 1437080 words of memory out of 5000000
- 53237 multiletter control sequences out of 15000+600000
+ 35935 strings out of 480247
+ 716382 string characters out of 5896151
+ 1443228 words of memory out of 5000000
+ 53256 multiletter control sequences out of 15000+600000
  483465 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,15n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,18n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.60
 0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
@@ -1312,10 +1327,10 @@ m/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Problem_Solving.pdf (12 pages, 229263 bytes).
+Output written on Problem_Solving.pdf (13 pages, 237980 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 325 compressed objects within 4 object streams
- 54 named destinations out of 1000 (max. 500000)
- 485 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 438 PDF objects out of 1000 (max. 8388607)
+ 364 compressed objects within 4 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 525 words of extra memory for PDF output out of 10000 (max. 10000000)
 
