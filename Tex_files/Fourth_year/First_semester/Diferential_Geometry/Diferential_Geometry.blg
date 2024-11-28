@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Diferential_Geometry.blg'
-[71] biber:340> INFO - === Tue Aug 20, 2024, 23:39:33
-[83] Biber.pm:418> INFO - Reading 'Diferential_Geometry.bcf'
-[146] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
-[159] bbl.pm:654> INFO - Writing 'Diferential_Geometry.bbl' with encoding 'UTF-8'
-[159] bbl.pm:757> INFO - Output to Diferential_Geometry.bbl
-[159] Biber.pm:130> WARN - The file 'Diferential_Geometry.bcf' does not contain any citations!
-[159] Biber.pm:132> INFO - WARNINGS: 1
+[68] biber:340> INFO - === Tue Nov 26, 2024, 23:28:00
+[80] Biber.pm:418> INFO - Reading 'Diferential_Geometry.bcf'
+[140] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[153] bbl.pm:654> INFO - Writing 'Diferential_Geometry.bbl' with encoding 'UTF-8'
+[153] bbl.pm:757> INFO - Output to Diferential_Geometry.bbl
+[153] Biber.pm:130> WARN - The file 'Diferential_Geometry.bcf' does not contain any citations!
+[153] Biber.pm:132> INFO - WARNINGS: 1

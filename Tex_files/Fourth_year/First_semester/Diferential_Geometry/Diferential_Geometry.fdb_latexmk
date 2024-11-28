@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Diferential_Geometry"] 1724193572 "Diferential_Geometry.bcf" "Diferential_Geometry.bbl" "Diferential_Geometry" 1732489639
-  "Diferential_Geometry.bcf" 1732489639 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Diferential_Geometry"] 1732663679 "Diferential_Geometry.bcf" "Diferential_Geometry.bbl" "Diferential_Geometry" 1732663896
+  "Diferential_Geometry.bcf" 1732663895 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Diferential_Geometry.bbl"
   "Diferential_Geometry.blg"
-["pdflatex"] 1732489638 "Diferential_Geometry.tex" "Diferential_Geometry.pdf" "Diferential_Geometry" 1732489639
+["pdflatex"] 1732663894 "Diferential_Geometry.tex" "Diferential_Geometry.pdf" "Diferential_Geometry" 1732663896
   "/etc/texmf/web2c/texmf.cnf" 1723933354 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1723934203 1405755 0308faeb1a6e51887941567c18392f11 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -247,12 +247,12 @@
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb" 1724266550 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1724266557 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "Diferential_Geometry.aux" 1732489639 13294 fd7e70717cd2cfea0d67f8494df9297c "pdflatex"
-  "Diferential_Geometry.bbl" 1724193573 466 ee04f40f768daeed26442158e95aba61 "biber Diferential_Geometry"
-  "Diferential_Geometry.out" 1732489639 13355 c8abbfec796e0e4dd00ea6f30bcf92e9 "pdflatex"
-  "Diferential_Geometry.run.xml" 1732489639 2410 aa7933734d9b7ac0cc7bad21b62a97f7 "pdflatex"
-  "Diferential_Geometry.tex" 1732489637 48727 5ce00d26263e8da27371ed11b455c920 ""
-  "Diferential_Geometry.toc" 1732489639 7737 132eddd5bef1eb7d13b25e5452fed28b "pdflatex"
+  "Diferential_Geometry.aux" 1732663895 15471 ad0d8bc04378231f4f36cfe0a517e4d3 "pdflatex"
+  "Diferential_Geometry.bbl" 1732663680 466 ee04f40f768daeed26442158e95aba61 "biber Diferential_Geometry"
+  "Diferential_Geometry.out" 1732663895 15045 8f1eec6587095861f3c0e4425760de58 "pdflatex"
+  "Diferential_Geometry.run.xml" 1732663895 2410 aa7933734d9b7ac0cc7bad21b62a97f7 "pdflatex"
+  "Diferential_Geometry.tex" 1732663894 55863 1a6c6c462dcb3851818285f255c4702c ""
+  "Diferential_Geometry.toc" 1732663895 8625 956fb6a633779dec3e8780885d8a1659 "pdflatex"
   (generated)
   "Diferential_Geometry.aux"
   "Diferential_Geometry.bcf"
