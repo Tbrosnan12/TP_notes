@@ -357,7 +357,7 @@
 \begin{itemize}
     \item The observed frequency of a source emitting a frequency $f_0$ when the receiver is moving at velocity $v_r$ and the source at velocity $v_s$ is:
     \begin{flalign*}
-         f = \left(\frac{c\pm v_r}{c \mp v_s}\right)
+         f' = \left(\frac{c\pm v_r}{c \mp v_s}\right)f
      \end{flalign*}
      Where we have $+$ in the numerator if receiver is moving towards source and a $-$ for away. And we have a $+$ in the denominator if the source is moving towards the medium and a $-$ if away. 
 \end{itemize}
@@ -380,8 +380,12 @@
     \end{flalign*}
     \item The two heat capacities are related by:
     \begin{flalign*}
-         C_p = C_v +R, ~~~\gamma = \frac{C_p}{C_v} 
+         C_p = C_v +nR, ~~~\gamma = \frac{C_p}{C_v} 
      \end{flalign*} 
+     \item At constant volume we have from the first law since $dV = 0$:
+     \begin{flalign*}
+         C_v = \frac{dQ}{dT} = \left(\frac{\partial U}{\partial T}\right)_V = T\left(\frac{\partial S}{\partial T}\right)
+     \end{flalign*}
       \end{itemize}
 
 
@@ -491,8 +495,89 @@ Where $\bar{v}$ is the average velocity given by $\bar{v} = \sqrt{\frac{dkT}{m}}
 \end{itemize}
 \subsubsection{Carnot cycle} % (fold)
 \label{ssub:carnot_cycle}
-
+\begin{itemize}
+    \item In the case of a Carnot cycle we can find a relationship between the heat and the temperatures such that:
+    \begin{flalign*}
+        \eta = 1 - \frac{T_1}{T_2}
+    \end{flalign*}
+    In the case of a refrigerator the cycle is performed in the opposite direction so we have a \emph{coefficient of performance } defined as:
+    \begin{flalign*}
+          c =   \frac{Q_1}{Q_2-Q_1}
+      \end{flalign*}  
+\end{itemize}
 % subsubsection carnot_cycle (end)
 % subsection efficacy (end)
 
+\subsection{Entropy} % (fold)
+\label{sub:entropy}
+\begin{itemize}
+    \item From the definition, for a reversible process, Entropy is defined as:
+    \begin{flalign*}
+        dS = \frac{dQ}{T}
+    \end{flalign*}
+    We have from the Clausius Inequality that $dS \geq 0$. If we have an isobaric process then the heat is just $dQ = C_pdT$ 
+\end{itemize}
+% subsection entropy (end)
+
+\subsection{Thermal conductivity} % (fold)
+\label{sub:thermal_conductivity}
+\begin{itemize}
+    \item This is a reformulation of Fourier's law:
+    \begin{flalign*}
+        \frac{dQ}{dt} = AK\frac{\Delta T}{\Delta x}
+    \end{flalign*}
+    $k$ is the \emph{thermal conductivity}. 
+\end{itemize}
+% subsection thermal_conductivity (end)
+
+\subsection{Thermodynamic potentials} % (fold)
+\label{sub:thermodynamic_potentials}
+
+% subsection thermodynamic_potentials (end)
+\subsubsection{Helmholtz Free} 
+\begin{itemize}
+    \item This is $\mathcal{F}(T,V,N_i)$ and is given by:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+ \mathcal{F} = E-TS
+\end{split}
+\end{empheq}
+We use $\mathcal{F}$ in the case of an isothermal process along with there being chemical and mechanical isolation. $\mathcal{F}$ also has:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+ - P = \left(\frac{\partial F}{\partial V}\right),~~~ - S = \left(\frac{\partial F}{\partial T}\right),~~~ \mu_i = \left(\frac{\partial F}{\partial N_i}\right)
+\end{split}
+\end{empheq}
+
+\end{itemize}
+\subsubsection{Gibbs free}
+\begin{itemize}
+    \item This is $\mathcal{G}(T,P,N_i)$ and is given by:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  \mathcal{G} = F+PV
+\end{split}
+\end{empheq}
+We use $\mathcal{G}$ in the case of an isothermal and Isobaric system along with chemical and mechanical isolation.  $\mathcal{G}$ also has:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  V = \left(\frac{\partial G}{\partial P}\right),~~~ - S = \left(\frac{\partial G}{\partial T}\right),~~~ N_i = \left(\frac{\partial G}{\partial \mu_i}\right)
+\end{split}
+\end{empheq}
+\end{itemize}
+\subsubsection{Enthalpy}
+\begin{itemize}
+    \item This is $\mathcal{H}(S,P,N_i)$ and is given by:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+\mathcal{H} = E + PV
+\end{split}
+\end{empheq}
+We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and chemical isolation.  $\mathcal{H}$ also has:
+\begin{empheq}[box=\tcbhighmath]{equation}
+\begin{split}
+  P = \left(\frac{\partial H}{\partial V}\right),~~~  S = \left(\frac{\partial H}{\partial T}\right),~~~ \mu_i = \left(\frac{\partial H}{\partial N_i}\right)
+\end{split}
+\end{empheq}
+\end{itemize}
 \end{document}
