@@ -1,47 +1,57 @@
-\contentsline {section}{\numberline {1}Mechanics}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Constant acceleration}{4}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Force}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Friction}{4}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Work}{4}{subsection.1.4}%
-\contentsline {subsubsection}{\numberline {1.4.1}Power}{4}{subsubsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.5}Circular motion \& Rotation}{4}{subsection.1.5}%
-\contentsline {subsubsection}{\numberline {1.5.1}Rotational Kinetic energy}{5}{subsubsection.1.5.1}%
-\contentsline {subsubsection}{\numberline {1.5.2}Parallel axis Theorem}{5}{subsubsection.1.5.2}%
-\contentsline {subsubsection}{\numberline {1.5.3}Torque}{5}{subsubsection.1.5.3}%
-\contentsline {subsubsection}{\numberline {1.5.4}Angular momentum}{5}{subsubsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.6}Center of Mass}{6}{subsection.1.6}%
-\contentsline {subsection}{\numberline {1.7}Stress/strain}{6}{subsection.1.7}%
-\contentsline {subsection}{\numberline {1.8}Gravitation}{6}{subsection.1.8}%
-\contentsline {subsubsection}{\numberline {1.8.1}Acceleration due to gravity}{6}{subsubsection.1.8.1}%
-\contentsline {subsection}{\numberline {1.9}Orbits}{6}{subsection.1.9}%
-\contentsline {subsubsection}{\numberline {1.9.1}Kepler's Period}{6}{subsubsection.1.9.1}%
-\contentsline {subsection}{\numberline {1.10}Periodic motion}{7}{subsection.1.10}%
-\contentsline {subsubsection}{\numberline {1.10.1}Pendulum}{7}{subsubsection.1.10.1}%
-\contentsline {subsubsection}{\numberline {1.10.2}Damped Harmonic Motion}{7}{subsubsection.1.10.2}%
-\contentsline {subsection}{\numberline {1.11}Density and Pressure}{7}{subsection.1.11}%
-\contentsline {subsubsection}{\numberline {1.11.1}Pressure in a fluid}{7}{subsubsection.1.11.1}%
-\contentsline {subsubsection}{\numberline {1.11.2}Fluid Flow}{7}{subsubsection.1.11.2}%
-\contentsline {subsubsection}{\numberline {1.11.3}Bernoulli's equation}{8}{subsubsection.1.11.3}%
-\contentsline {subsubsection}{\numberline {1.11.4}Wave equation}{8}{subsubsection.1.11.4}%
-\contentsline {subsubsection}{\numberline {1.11.5}Wave Power}{8}{subsubsection.1.11.5}%
-\contentsline {subsubsection}{\numberline {1.11.6}Beat frequency}{8}{subsubsection.1.11.6}%
-\contentsline {subsubsection}{\numberline {1.11.7}Doppler affect}{8}{subsubsection.1.11.7}%
-\contentsline {section}{\numberline {2}Thermodynamics}{9}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Heat}{9}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Heat Capacity}{9}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Latent Heat}{9}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Heat Flux}{9}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}Ideal Gas}{10}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Energy of a Gas}{10}{subsubsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.3}Mean free Path}{10}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}First Law}{10}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Processes}{11}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Adiabatic Process}{11}{subsubsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.6}Efficacy of a heat engine}{11}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Carnot cycle}{11}{subsubsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.7}Entropy}{11}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Thermal conductivity}{12}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Thermodynamic potentials}{12}{subsection.2.9}%
-\contentsline {subsubsection}{\numberline {2.9.1}Helmholtz Free}{12}{subsubsection.2.9.1}%
-\contentsline {subsubsection}{\numberline {2.9.2}Gibbs free}{12}{subsubsection.2.9.2}%
-\contentsline {subsubsection}{\numberline {2.9.3}Enthalpy}{12}{subsubsection.2.9.3}%
+\contentsline {section}{\numberline {1}Mechanics}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Constant acceleration}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Force}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Friction}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Work}{5}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Power}{5}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}Circular motion \& Rotation}{5}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Rotational Kinetic energy}{6}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Parallel axis Theorem}{6}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}Torque}{6}{subsubsection.1.5.3}%
+\contentsline {subsubsection}{\numberline {1.5.4}Angular momentum}{6}{subsubsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.6}Center of Mass}{7}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Stress/strain}{7}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Gravitation}{7}{subsection.1.8}%
+\contentsline {subsubsection}{\numberline {1.8.1}Acceleration due to gravity}{7}{subsubsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.9}Orbits}{7}{subsection.1.9}%
+\contentsline {subsubsection}{\numberline {1.9.1}Kepler's Period}{7}{subsubsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.10}Periodic motion}{8}{subsection.1.10}%
+\contentsline {subsubsection}{\numberline {1.10.1}Pendulum}{8}{subsubsection.1.10.1}%
+\contentsline {subsubsection}{\numberline {1.10.2}Damped Harmonic Motion}{8}{subsubsection.1.10.2}%
+\contentsline {subsection}{\numberline {1.11}Density and Pressure}{8}{subsection.1.11}%
+\contentsline {subsubsection}{\numberline {1.11.1}Pressure in a fluid}{8}{subsubsection.1.11.1}%
+\contentsline {subsubsection}{\numberline {1.11.2}Fluid Flow}{8}{subsubsection.1.11.2}%
+\contentsline {subsubsection}{\numberline {1.11.3}Bernoulli's equation}{9}{subsubsection.1.11.3}%
+\contentsline {subsubsection}{\numberline {1.11.4}Wave equation}{9}{subsubsection.1.11.4}%
+\contentsline {subsubsection}{\numberline {1.11.5}Wave Power}{9}{subsubsection.1.11.5}%
+\contentsline {subsubsection}{\numberline {1.11.6}Beat frequency}{9}{subsubsection.1.11.6}%
+\contentsline {subsubsection}{\numberline {1.11.7}Doppler affect}{9}{subsubsection.1.11.7}%
+\contentsline {section}{\numberline {2}Thermodynamics}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Heat}{10}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Heat Capacity}{10}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Latent Heat}{10}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Heat Flux}{10}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Ideal Gas}{11}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Energy of a Gas}{11}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Mean free Path}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}First Law}{11}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Processes}{12}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Adiabatic Process}{12}{subsubsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.6}Efficacy of a heat engine}{12}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Carnot cycle}{12}{subsubsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.7}Entropy}{12}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Thermal conductivity}{13}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Thermodynamic potentials}{13}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Helmholtz Free}{13}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}Gibbs free}{13}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}Enthalpy}{13}{subsubsection.2.9.3}%
+\contentsline {section}{\numberline {3}Electromagnetism}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Coulombs Law}{15}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Electric Field}{15}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Electric Potential}{15}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Electric Energy Density}{15}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Dipoles}{15}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Gauss' Law}{15}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Capacitors}{16}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Energy in a Capacitor}{16}{subsubsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.7}}{16}{subsection.3.7}%

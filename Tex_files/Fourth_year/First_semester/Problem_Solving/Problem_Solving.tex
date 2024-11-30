@@ -32,7 +32,7 @@
  \usepackage[explicit]{titlesec}
  % for making section titles variables that can be used in header 
 \usepackage{fancyhdr} % for fancy headers 
-
+\usepackage{bm}
 % Random commands and what not 
 \numberwithin{equation}{section}
 
@@ -55,8 +55,8 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{flalign}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align}}{\endempheq}
-\renewenvironment{flalign*}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+\renewenvironment{flalign}{\vspace{-2mm}\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign*}{\vspace{-2mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
 %\renewenvironment{align}{\vspace{-5mm}\begin{align}}{\end{align}}
 %\renewenvironment{align*}{\vspace{-5mm}\begin{align*}}{\end{align*}}
 \renewenvironment{alignat}{\empheq{align*}}{\endempheq}
@@ -523,9 +523,7 @@ Where $\bar{v}$ is the average velocity given by $\bar{v} = \sqrt{\frac{dkT}{m}}
 \label{sub:thermal_conductivity}
 \begin{itemize}
     \item This is a reformulation of Fourier's law:
-    \begin{flalign*}
-        \frac{dQ}{dt} = AK\frac{\Delta T}{\Delta x}
-    \end{flalign*}
+
     $k$ is the \emph{thermal conductivity}. 
 \end{itemize}
 % subsection thermal_conductivity (end)
@@ -580,4 +578,103 @@ We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and c
 \end{split}
 \end{empheq}
 \end{itemize}
+
+\newpage
+\section{Electromagnetism} % (fold)
+\label{sec:electromagnetism}
+\subsection{Coulombs Law} % (fold)
+\label{sub:coulombs_law}
+\begin{itemize}
+    \item The force of between two charged particles $q_1$ and $q_2$
+    \begin{flalign*}
+    F = \frac{1}{4\pi\epsilon_{0}}\frac{q_1q_2}{r^2}
+    \end{flalign*}
+\end{itemize}
+% subsection coulombs_law (end)
+\subsection{Electric Field} % (fold)
+\label{sub:electric_field}
+\begin{itemize}
+    \item The electric field is related to the force of coulombs law via:
+    \begin{flalign*}
+\boldsymbol{E} = \frac{\boldsymbol{F}}{q} = \frac{1}{4\pi\epsilon_{0}}\frac{q}{r^2}\hat{r}
+    \end{flalign*}
+\end{itemize}
+% subsection electric_field (end)
+\subsection{Electric Potential} % (fold)
+\label{sub:electric_potential}
+\begin{itemize}
+    \item This is defined as, $\phi $ such that $\boldsymbol{E}= - \nabla \phi $. This means the potential difference between two points along some curve is:
+    \begin{flalign*}
+     \phi = \int_{\gamma}\textbf{E}\cdot d\textbf{l}
+     \end{flalign*} 
+\end{itemize}
+% subsection electric_potential (end)
+
+\subsubsection{Electric Energy Density} % (fold)
+\label{ssub:electric_energy_density}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+    u = \frac{1}{2}\epsilon_0E^2
+    \end{flalign*}
+\end{itemize}
+% subsubsection electric_energy_density (end)
+\subsection{Dipoles} % (fold)
+\label{sub:dipoles}
+\begin{itemize}
+    \item Dipoles have a quantity called the dipole moment $\boldsymbol{\mu}$, this has magnitude $qd$, where $q$ is the  charge and $d$ the separation. he potential energy due to a dipole in an electric field is: 
+    \begin{flalign*}
+    U = - \boldsymbol{E}\cdot\boldsymbol{\mu} 
+    \end{flalign*}
+    The torque on a dipole is $\boldsymbol{\tau} = \boldsymbol{\mu}\times \boldsymbol{E}$
+\end{itemize}
+% subsection dipoles (end)
+
+\subsection{Gauss' Law} % (fold)
+\label{sub:gauss_law}
+\begin{itemize}
+    \item This says the total electric flux (integral of electric field perpendicular to a surface) is the same as the charge enclosed by that surface:
+    \begin{flalign*}
+    \frac{Q_{\text{encl}}}{\epsilon_0} = \int_{S}\textbf{E}\cdot d\textbf{A}
+    \end{flalign*}
+\end{itemize}
+% subsection gauss_law (end)
+
+
+\subsection{Capacitors} % (fold)
+\label{sub:capacitors}
+\begin{itemize}
+    \item Capacitance is defined as:
+    \begin{flalign*}
+    C =\frac{Q}{V}
+    \end{flalign*}
+    Where $V$ is the potential or voltage. For two plate capacitor of area $A$ and separation $d$, this is $C = \epsilon_0\frac{A}{d}$. 
+
+    \item Capacitors add in series via:
+    \begin{flalign*}
+    \frac{1}{C} = \frac{1}{C_1}+ \frac{1}{C_2}
+    \end{flalign*}
+    And in parallel via:
+    \begin{flalign*}
+    C = C_1 + C_2
+    \end{flalign*}
+\end{itemize}
+% subsection capacitors (end)
+
+\subsubsection{Energy in a Capacitor} % (fold)
+\label{ssub:energy_in_a_capacitor}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+    U = \frac{Q^2}{2C} = \frac{1}{2}CV^2 = \frac{1}{2}QV
+    \end{flalign*}
+\end{itemize}
+% subsubsection energy_in_a_capacitor (end)
+
+\subsection{} % (fold)
+\label{sub:}
+
+% subsection  (end)
+
+% section electromagnetism (end)
 \end{document}

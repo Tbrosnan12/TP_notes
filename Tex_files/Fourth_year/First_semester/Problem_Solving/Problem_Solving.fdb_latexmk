@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Problem_Solving"] 1732489755 "Problem_Solving.bcf" "Problem_Solving.bbl" "Problem_Solving" 1732490300
-  "Problem_Solving.bcf" 1732490300 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Problem_Solving"] 1732924012 "Problem_Solving.bcf" "Problem_Solving.bbl" "Problem_Solving" 1732925740
+  "Problem_Solving.bcf" 1732925740 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Problem_Solving.bbl"
   "Problem_Solving.blg"
-["pdflatex"] 1732490298 "Problem_Solving.tex" "Problem_Solving.pdf" "Problem_Solving" 1732490300
+["pdflatex"] 1732925738 "Problem_Solving.tex" "Problem_Solving.pdf" "Problem_Solving" 1732925740
   "/etc/texmf/web2c/texmf.cnf" 1723933354 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1723934203 1405755 0308faeb1a6e51887941567c18392f11 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -39,6 +39,8 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti8.tfm" 1136768653 1504 1747189e0441d1c18f3ea56fafc1c480 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1229303445 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1229303445 684 3a51bd4fd9600428d5264cf25f04bb9a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
@@ -228,6 +230,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty" 1625518490 48833 3b7b4cfab1a3d15596bfd3772a77ab65 ""
   "/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty" 1252107870 7358 95ac619994bd30d405a74f3eca431c84 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty" 1636758526 12694 6c23725d50ab9d1e2d3ce482c58ffcf3 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty" 1622581934 13197 df0fe9a9695763546b59e02a008447b3 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty" 1622581934 10214 00ce62e730d0cfe22b35e8f1c84949c7 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty" 1622581934 4118 0f286eca74ee36b7743ff20320e5479f ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty" 1622581934 7147 5ac8a9ef36411064b1a501137af0fa54 ""
@@ -240,12 +243,12 @@
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb" 1724266550 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1724266557 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "Problem_Solving.aux" 1732490300 5338 8ca8dbf23c8609e2c7c0f12825a884f7 "pdflatex"
-  "Problem_Solving.bbl" 1732489756 466 ee04f40f768daeed26442158e95aba61 "biber Problem_Solving"
-  "Problem_Solving.out" 1732490300 4818 9cb495302516892e56df123767bdc9e4 "pdflatex"
-  "Problem_Solving.run.xml" 1732490300 2375 c63af7ce210c49dcb45dc5c468093d34 "pdflatex"
-  "Problem_Solving.tex" 1732490298 16522 1f25fc2fa0c75e032fcc94d5daad96e9 ""
-  "Problem_Solving.toc" 1732490300 3066 1bd0ea8dbecaf25559503220f75c0969 "pdflatex"
+  "Problem_Solving.aux" 1732925740 9320 7a76eb5c0ac9ac46ad358a98eb0ec252 "pdflatex"
+  "Problem_Solving.bbl" 1732924013 466 ee04f40f768daeed26442158e95aba61 "biber Problem_Solving"
+  "Problem_Solving.out" 1732925740 7574 146ae47413c1e41d59af650042abf2e6 "pdflatex"
+  "Problem_Solving.run.xml" 1732925740 2375 c63af7ce210c49dcb45dc5c468093d34 "pdflatex"
+  "Problem_Solving.tex" 1732925736 24863 077287ca64feee8383be19a098b39438 ""
+  "Problem_Solving.toc" 1732925740 4826 d3c7e887e4c5bff28f3bd4376df01858 "pdflatex"
   (generated)
   "Problem_Solving.aux"
   "Problem_Solving.bcf"
