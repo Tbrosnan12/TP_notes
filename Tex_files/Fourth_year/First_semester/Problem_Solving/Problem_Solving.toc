@@ -54,4 +54,8 @@
 \contentsline {subsection}{\numberline {3.5}Gauss' Law}{15}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Capacitors}{16}{subsection.3.6}%
 \contentsline {subsubsection}{\numberline {3.6.1}Energy in a Capacitor}{16}{subsubsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.7}}{16}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.7}Di-electric}{16}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Current}{16}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Current density}{16}{subsubsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.9}Resistivity}{16}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Resistance}{17}{subsection.3.10}%

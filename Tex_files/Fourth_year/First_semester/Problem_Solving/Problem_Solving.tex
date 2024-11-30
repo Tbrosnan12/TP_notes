@@ -357,7 +357,7 @@
 \begin{itemize}
     \item The observed frequency of a source emitting a frequency $f_0$ when the receiver is moving at velocity $v_r$ and the source at velocity $v_s$ is:
     \begin{flalign*}
-         f' = \left(\frac{c\pm v_r}{c \mp v_s}\right)f
+         f' = \left(\frac{c\pm v_r}{c \mp v_s}\right)f_0
      \end{flalign*}
      Where we have $+$ in the numerator if receiver is moving towards source and a $-$ for away. And we have a $+$ in the denominator if the source is moving towards the medium and a $-$ if away. 
 \end{itemize}
@@ -671,10 +671,60 @@ We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and c
 \end{itemize}
 % subsubsection energy_in_a_capacitor (end)
 
-\subsection{} % (fold)
-\label{sub:}
-
+\subsection{Di-electric} % (fold)
+\label{sub:Di-electric}
+\begin{itemize}
+    \item In a dielectric material $\epsilon_0$ changes to $\epsilon=K\epsilon_0$ where $K$ is the dielectric constant. 
+\end{itemize}
 % subsection  (end)
+
+\subsection{Current} % (fold)
+\label{sub:current}
+\begin{itemize}
+    \item This is defined as:
+    \begin{flalign*}
+        I = \frac{dQ}{dt} = n|q|vA
+    \end{flalign*}
+\end{itemize}
+% subsection current (end)
+\subsubsection{Current density} % (fold)
+\label{ssub:current_density}
+\begin{itemize}
+    \item This is defined as:
+    \begin{flalign*}
+        \textbf{J} = n|q|\textbf{v}
+    \end{flalign*}
+\end{itemize}
+% subsubsection current_density (end)
+
+\subsection{Resistivity} % (fold)
+\label{sub:resistivity}
+\begin{itemize}
+    \item This is the ratio of electric field to the current density:
+    \begin{flalign*}
+        \rho = \frac{E}{J}
+    \end{flalign*}
+    \item The resistivity depends on the temperature via:
+    \begin{flalign*}
+        \rho(T) = \rho_0(1+\alpha(T-T_0))
+    \end{flalign*}
+    Where $\alpha$ is the \emph{temperature coefficient of resistivity}.
+\end{itemize}
+% subsection resistivity (end)
+
+\subsection{Resistance} % (fold)
+\label{sub:resistance}
+\begin{itemize}
+    \item Ohms law is that the potential is related linearly to the current via the resistance:
+    \begin{flalign*}
+        V = IR
+    \end{flalign*}
+    If we have a resistor of length of length $L$ and cross section $A$:
+    \begin{flalign*}
+         R = \frac{\rho L}{A}
+     \end{flalign*} 
+\end{itemize}
+% subsection resistance (end)
 
 % section electromagnetism (end)
 \end{document}
