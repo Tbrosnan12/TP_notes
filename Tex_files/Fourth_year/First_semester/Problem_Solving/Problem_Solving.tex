@@ -64,6 +64,8 @@
 
 \newcommand{\hsp}{\hspace{8pt}}
 
+\newcommand{\I}[1]{\emph{#1}}
+
 \newcommand*{\sectionFont}{%
   \LARGE\bfseries
 }
@@ -523,7 +525,9 @@ Where $\bar{v}$ is the average velocity given by $\bar{v} = \sqrt{\frac{dkT}{m}}
 \label{sub:thermal_conductivity}
 \begin{itemize}
     \item This is a reformulation of Fourier's law:
-
+\begin{flalign*}
+    \frac{dQ}{dt} = kA\frac{\Delta T}{\Delta x}
+\end{flalign*}
     $k$ is the \emph{thermal conductivity}. 
 \end{itemize}
 % subsection thermal_conductivity (end)
@@ -860,6 +864,99 @@ We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and c
     \end{flalign*}
 \end{itemize}
 % subsection poyting_vector (end)
-
 % section electromagnetism (end)
+
+\newpage 
+\section{Special Relativity} % (fold)
+\label{sec:special_relativity}
+\begin{itemize}
+    \item The postulates of special relativity are:
+    \begin{itemize}
+        \item The law of physics are invariant under transformations between inertial frames.
+        \item The speed of light in a vacuum is measured to be the same by all the observers
+    \end{itemize}
+\end{itemize}
+\subsection{Lorentz Transformation} % (fold)
+\label{sub:lorentz_transformation}
+\begin{itemize}
+    \item $t$ and $x$ transform as follows:
+    \begin{flalign*}
+        &t' = \gamma(t-\frac{vx}{c^2}) \\
+        &x' = \gamma(x-vt)
+    \end{flalign*}
+    Where $v$ is the velocity of the $S'$ frame relative to the rest frame. $\gamma$ is the \I{Lorentz factor}.:
+    \begin{flalign*}
+        \gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}
+    \end{flalign*}
+    Note that $\gamma>1$ 
+\end{itemize}
+% subsection lorentz_transformation (end)
+\subsubsection{Length Contraction} % (fold)
+\label{ssub:length_contraction}
+\begin{itemize}
+    \item This depends on the Lorentz factor, just need to remember that $\gamma>1$ and that the faster you go the shorter things look:
+    \begin{flalign*}
+         L = \frac{L_0}{\gamma}
+     \end{flalign*} 
+\end{itemize}
+% subsubsection length_contraction (end)
+
+\subsubsection{Time Dilation} % (fold)
+\label{ssub:time_dilation}
+\begin{itemize}
+    \item Same as length contraction, but here remember that clocks tick slower for faster moving observers:
+    \begin{flalign*}
+   \Delta t' = \gamma \Delta t
+    \end{flalign*} 
+\end{itemize}
+% subsubsection time_dilation (end)
+
+\subsubsection{Proper time} % (fold)
+\label{ssub:proper_time}
+\begin{itemize}
+    \item $\tau$ is proper time, i.e. the time as observed by an observer in his own rest frame.
+    \begin{flalign*}
+                \tau =  \frac{t}{\gamma}
+    \end{flalign*}
+\end{itemize}
+% subsubsection proper_time (end)
+
+\subsection{Velocity transformation} % (fold)
+\label{sub:velocity_transformation}
+\begin{itemize}
+    \item If a particle has a velocity $u$ in one frame, then in the frame moving with velocity $v$ with respect to the rest frame, its velocity $u'$ will be:
+    \begin{flalign*}
+        u' =   \frac{u-v}{\sqrt{1-\frac{uv}{c^2}}}
+    \end{flalign*}
+\end{itemize}
+% subsection velocity_transformation (end)
+
+\subsection{Relativistic Doppler Effect} % (fold)
+\label{sub:relativistic_doppler_effect}
+\begin{itemize}
+    \item Here the observed frequency due to Lorentz contraction effects is:
+    \begin{flalign*}
+         f = \sqrt{\frac{c \pm u}{c \mp u}}f_0
+     \end{flalign*} 
+     Where the $+$ is for an object moving towards the observer and the $-$ is for an object moving away. 
+\end{itemize}
+% subsection relativistic_doppler_effect (end)
+
+\subsection{Relativistic Energy} % (fold)
+\label{sub:relativistic_energy}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+        E^2 = p^2c^2+(mc^2)^2
+    \end{flalign*}
+\end{itemize}
+% subsection relativistic_energy (end)
+
+\subsection{Relativistic momentum} % (fold)
+\label{sub:relativistic_momentum}
+\begin{itemize}
+    \item Note that in special relativity momentum changes from $p=mv$ to $p=\gamma mv$. 
+\end{itemize}
+% subsection relativistic_momentum (end)
+% section special_relativity (end)
 \end{document}
