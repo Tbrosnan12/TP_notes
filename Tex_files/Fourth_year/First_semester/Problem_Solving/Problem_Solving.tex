@@ -97,9 +97,9 @@
 \vspace*{\fill}
 \begin{center}
 \Large
-    "Mo money mo Problems"
+    "Mo money mo problems, gotta move carefully"
     
-    - Samson
+    - Jay-Z
 \end{center}
 \vspace*{\fill}
 \newpage 
@@ -426,7 +426,7 @@
 \begin{flalign*}
     E = \frac{d}{2}NkT
 \end{flalign*}
-Where $d$ is the degrees of freedom of the gas molecules, for ideal Gas this is just $d=3$. Note that this means the heat capacity is $C_v = \frac{d}{2}Nk$
+Where $d$ is the degrees of freedom of the gas molecules, for ideal Gas this is just $d=3$. Note that this means the heat capacity is $C_v = \frac{d}{2}Nk = \frac{d}{2}nR$ (Dulong Petit Law). 
 
 \item This can also be expressed as:
 \begin{flalign*}
@@ -661,12 +661,27 @@ We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and c
 \end{itemize}
 % subsection capacitors (end)
 
+\subsubsection{Charging a capacitor} % (fold)
+\label{ssub:charging_a_capacitor}
+\begin{itemize}
+    \item The charge collected on a capacitor due to an induced emf $\mathcal{E}$ is:
+    \begin{flalign*}
+    q = C\mathcal{E}(1-e^{-t/\tau})
+    \end{flalign*}
+    Where $\tau=RC$ (for an $RC$ circuit) is the charging time. $C\mathcal{E}$ is the final charge. 
+\end{itemize}
+% subsubsection charging_a_capacitor (end)
+
 \subsubsection{Energy in a Capacitor} % (fold)
 \label{ssub:energy_in_a_capacitor}
 \begin{itemize}
     \item This is:
     \begin{flalign*}
     U = \frac{Q^2}{2C} = \frac{1}{2}CV^2 = \frac{1}{2}QV
+    \end{flalign*}
+    \item When discharging the charge on the capacitor is:
+    \begin{flalign*}
+    q=Q_0e^{-t/\tau}
     \end{flalign*}
 \end{itemize}
 % subsubsection energy_in_a_capacitor (end)
@@ -723,8 +738,128 @@ We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and c
     \begin{flalign*}
          R = \frac{\rho L}{A}
      \end{flalign*} 
+     \item Resistors in series:
+     \begin{flalign*}
+     R = R_1+R_2
+     \end{flalign*}
 \end{itemize}
 % subsection resistance (end)
+
+\subsection{Power loss} % (fold)
+\label{sub:power_loss}
+\begin{itemize}
+    \item The power lost due to heat (Joules law) is:
+    \begin{flalign*}
+    P = IV = I^2R = \frac{V^2}{R}
+    \end{flalign*}
+    \item Resistors in parallel:
+    \begin{flalign*}
+    \frac{1}{R} = \frac{1}{R_1}+\frac{1}{R_2}
+    \end{flalign*}
+\end{itemize}
+% subsection power_loss (end)
+
+\subsection{Kirchhoff's laws} % (fold)
+\label{sub:kirchhoff's_laws}
+\begin{itemize}
+    \item These are, for a junction:
+    \begin{flalign*}
+    \sum I = 0
+    \end{flalign*}
+    \item For a loop:
+    \begin{flalign*}
+    \sum V = 0
+    \end{flalign*}
+\end{itemize}
+% subsection kir (end)
+
+\subsection{Gauss's Law for Magnetism} % (fold)
+\label{sub:gauss_s_law_for_magnetism}
+\begin{itemize}
+    \item This is also known as Ampere's Law:
+    \begin{flalign*}
+    \oint \textbf{B}\cdot d\textbf{A} = \mu_{0}I
+    \end{flalign*}
+    Where $I$ is the current.
+\end{itemize}
+% subsection gauss_s_law_for_magnetism (end)
+
+\subsection{Force on Charged particle} % (fold)
+\label{sub:force_on_charged_particle}
+\begin{itemize}
+    \item Due to the presence of a magnetic and Electric field is:
+    \begin{flalign*}
+    \textbf{F} = q(\textbf{E}+\textbf{v}\times \textbf{B})
+    \end{flalign*}
+\end{itemize}
+% subsection force_on_charged_particle (end)
+
+\subsection{Magnetic Field due to a Wire } % (fold)
+\label{sub:magnetic_field_due_to_a_wire_}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+    d\textbf{B} = \frac{\mu_0}{4\pi}\frac{Id\textbf{l}\times\textbf{r}}{r^3}
+    \end{flalign*}
+    The Biot Savar Law for a straight wire is:
+    \begin{flalign*}
+    B = \frac{\mu_0I}{2\pi r}
+    \end{flalign*}
+\end{itemize}
+% subsection magnetic_field_due_to_a_wire_ (end)
+
+\subsection{Faraday's law} % (fold)
+\label{sub:faraday_s_law}
+\begin{itemize}
+    \item This is that the emf in a wire is related to the magnetic flux $\phi_B = \int\textbf{B}\cdot d\textbf{A}$ via:
+    \begin{flalign*}
+    \mathcal{E} = -\frac{d\phi_B}{dt}
+    \end{flalign*}
+\item Lenz's law tells us that this sign should be a minus. 
+\end{itemize}
+% subsection faraday_s_law (end)
+
+\subsubsection{Magnetic Energy Density} % (fold)
+\label{ssub:magnetic_energy_density}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+    u = \frac{1}{2\mu}B^2
+    \end{flalign*}
+    Where $\mu$ is the magnetic permeability (usually $\mu_0$?). 
+\end{itemize}
+% subsubsection magnetic_energy_density (end)
+
+\subsection{RCL Circuit} % (fold)
+\label{sub:rcl_circuit}
+\begin{itemize}
+    \item Here the voltage is $V= IZ$, where $Z$ is the impedance given by:
+    \begin{flalign*}
+    Z = \sqrt{R^2+(X_L-X_C)^2}
+    \end{flalign*}
+    \item Where $X_L = \omega L$ is the \emph{inductive reactance} depending on the inductance $L$. And $X_C=\frac{1}{\omega C}$ is the \emph{Capacitive Reactance} depending on the capacitance $C$. The $\omega$ is the frequency of the AC source.   
+\end{itemize}
+% subsection rcl_circuit (end)
+
+\subsection{Energy stored in a Inductor} % (fold)
+\label{sub:magnetic_field_}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+    U = \frac{1}{2}LI^2
+    \end{flalign*}
+\end{itemize}
+% subsection magnetic_field_ (end)
+
+\subsection{Poyting Vector} % (fold)
+\label{sub:poyting_vector}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+    \textbf{S} = \frac{1}{\mu_0}\textbf{E}\times \textbf{B}
+    \end{flalign*}
+\end{itemize}
+% subsection poyting_vector (end)
 
 % section electromagnetism (end)
 \end{document}

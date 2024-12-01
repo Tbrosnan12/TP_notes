@@ -53,9 +53,20 @@
 \contentsline {subsection}{\numberline {3.4}Dipoles}{15}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Gauss' Law}{15}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Capacitors}{16}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Energy in a Capacitor}{16}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.1}Charging a capacitor}{16}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Energy in a Capacitor}{16}{subsubsection.3.6.2}%
 \contentsline {subsection}{\numberline {3.7}Di-electric}{16}{subsection.3.7}%
 \contentsline {subsection}{\numberline {3.8}Current}{16}{subsection.3.8}%
-\contentsline {subsubsection}{\numberline {3.8.1}Current density}{16}{subsubsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.9}Resistivity}{16}{subsection.3.9}%
+\contentsline {subsubsection}{\numberline {3.8.1}Current density}{17}{subsubsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.9}Resistivity}{17}{subsection.3.9}%
 \contentsline {subsection}{\numberline {3.10}Resistance}{17}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Power loss}{17}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Kirchhoff's laws}{18}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Gauss's Law for Magnetism}{18}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Force on Charged particle}{18}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Magnetic Field due to a Wire }{18}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Faraday's law}{18}{subsection.3.16}%
+\contentsline {subsubsection}{\numberline {3.16.1}Magnetic Energy Density}{19}{subsubsection.3.16.1}%
+\contentsline {subsection}{\numberline {3.17}RCL Circuit}{19}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}Energy stored in a Inductor}{19}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}Poyting Vector}{19}{subsection.3.19}%
