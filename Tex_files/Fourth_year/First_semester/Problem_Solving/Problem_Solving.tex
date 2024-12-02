@@ -1028,4 +1028,183 @@ We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and c
 \end{itemize}
 % subsection rayleigh_criterion (end)
 % section waves_and_optics (end)
+
+\newpage
+\section{Quantum Mechanics} % (fold)
+\label{sec:quantum_mechanics}
+
+\subsection{Time-Independent Schr\"odinger Equation} % (fold)
+\label{sub:time_independant}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+        -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi = E\psi
+    \end{flalign*}
+\end{itemize}
+
+\subsection{Time-Dependent Schr\"odinger Equation} % (fold)
+\label{sub:time_dependant}
+\begin{itemize}
+    \item This is:
+    \begin{flalign*}
+        i\hbar \frac{\partial}{\partial t}\psi = (-\frac{\hbar^2}{2m}\frac{d^2}{dx^2} + V(x,t))\psi
+    \end{flalign*}
+\end{itemize}
+% subsection time_dependant_schr\ (end)
+
+\subsection{Infinite potential well} % (fold)
+\label{sub:infinite_potential_well}
+\begin{itemize}
+    \item For the infinite potential well, i.e. when the potenial is $0$ for some interval $0$ to $L$ and $\infty$ elsewhere. The general solution is:
+    \begin{flalign*}
+        \psi = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right)
+    \end{flalign*}
+    \item And the energy levels are:
+    \begin{flalign*}
+        E = \frac{n^2\pi^2\hbar^2}{2mL^2}
+    \end{flalign*}
+\end{itemize}
+% subsection infinite_potential_well (end)
+
+\subsection{DeBroglie Wavelength} % (fold)
+\label{sub:debroglie_wavelength}
+\begin{itemize}
+    \item This is the wavelength associated with massive particles:
+    \begin{flalign*}
+        \lambda = \frac{h}{p} = \frac{h}{mv}
+    \end{flalign*}
+\end{itemize}
+% subsection debroglie_wavelength (end)
+
+\subsection{Uncertainty relation} % (fold)
+\label{sub:uncertainty_relation}
+\begin{itemize}
+    \item There are two versions of this:
+    \begin{flalign*}
+        &\Delta x \Delta p = \frac{\hbar}{2} \\
+        & \Delta E \Delta t = \frac{\hbar}{2}
+    \end{flalign*}
+\end{itemize}
+% subsection uncertainty_relation (end)
+
+\subsection{Harmonic oscillator} % (fold)
+\label{sub:harmonic_oscillator}
+\begin{itemize}
+    \item This is when the potential takes the form $V(x) = \frac{1}{2}kx^2$, then the energy levels are given by:
+    \begin{flalign*}
+        E_n = (n+\frac{1}{2})\hbar \omega
+    \end{flalign*}
+    Where $\omega = \sqrt{\frac{k}{m}}$
+\end{itemize}
+% subsection harmonic_oscillator (end)
+
+\subsection{Zeemann effect} % (fold)
+\label{sub:zeemann_effect}
+\begin{itemize}
+    \item Here the potential energy is $V = -\boldsymbol{\mu} \cdot \textbf{B}$, where $\boldsymbol{\mu}$ is given by:
+    \begin{flalign*}
+        \boldsymbol{\mu} =  \frac{\mu_B}{\hbar}\left(g_l\hat{L}+g_s\hat{S}\right)
+    \end{flalign*}
+    Where $g_l$ and $g_s$ are the gyro-magnetic ratios, (usually just 2). 
+\end{itemize}
+% subsection zeemann_effect (end)
+
+\subsection{Hydrogen Atom} % (fold)
+\label{sub:hydrogen_atom}
+\begin{itemize}
+    \item Here the potential is given by:
+    \begin{flalign*}
+        V(r) = - \frac{e^2}{4\pi\epsilon_0r}
+    \end{flalign*}
+    \item The energy levels are:
+    \begin{flalign*}
+        E_n = -\frac{E_1}{n^2}
+    \end{flalign*}
+    Where $E_1= 13.6$eV.
+\end{itemize}
+\subsection{Rydberg formula} % (fold)
+\label{sub:ryberg_formula}
+\begin{itemize}
+    \item This is the formula for the wavelength of light emitted from the transition from the $n$th energy level to the $n'$th energy level:
+    \begin{flalign*}
+        \frac{1}{\lambda} = R_{\infty}(\frac{1}{n'^2}-\frac{1}{n^2})
+    \end{flalign*}
+\end{itemize}
+% subsection ryberg_formula (end)
+% subsection hydrogen_atom (end)
+
+
+\newpage
+\section{Condensed Matter} % (fold)
+\label{sec:condensed_matter}
+
+\subsection{Bragg's Law} % (fold)
+\label{sub:bragg_s_law}
+\begin{itemize}
+    \item This is similar to 2 slit interference, but for the angle at which light is incident on a lattice with separation $d$ and wavelength $\lambda$:
+    \begin{flalign*}
+        n\lambda = 2d\sin \theta
+    \end{flalign*}
+    \item For a cubic lattice with miller indices $(hkl)$ the spacing:
+    \begin{flalign*}
+         d_{hkl}= \frac{h^2+k^2+l^2}{a^2}
+     \end{flalign*} 
+     Where $a$ is the atomic spacing. In general the $d$ is related to the wave-vector $\textbf{k} = h\textbf{b}_1+k\textbf{b}_2+l\textbf{b}_3$, which is related to $d$ via $|\textbf{d}| = \frac{2\pi}{\textbf{k}}$ 
+\end{itemize}
+
+% subsection bragg_s_law (end)
+% section condensed_matter (end)
+
+\newpage
+\section{Nuclear} % (fold)
+\label{sec:nuclear}
+\subsection{Radius of Nucleus} % (fold)
+\label{sub:radius_of_nucleus}
+\begin{itemize}
+    \item This is related to the atomic number $A$ via:
+    \begin{flalign*}
+        R = R_0A^{1/3}
+    \end{flalign*}
+    Where $R_0$ is $1.2 \times 10^{-18}$ 
+\end{itemize}
+% subsection radius_of_nucleus (end)
+
+\subsection{Radioactive Decay} % (fold)
+\label{sub:nuclear_decay}
+\begin{itemize}
+    \item The number of nuclei as a function of time $N(t)$ is:
+    \begin{flalign*}
+        N(t) = N_0e^{-\lambda t}
+    \end{flalign*}
+    Where $\lambda$ is the \emph{decay constant}, which is related to the \emph{half life} via:
+    \begin{flalign*}
+        T_{\frac{1}{2}} = \frac{\ln 2}{\lambda}
+    \end{flalign*}
+    $1/\lambda$ is often called the mean time $T_{mean}$. 
+\end{itemize}
+% subsection nuclear_decay (end)
+\subsection{Activity} % (fold)
+\label{sub:activity}
+\begin{itemize}
+    \item This is defined as:
+    \begin{flalign*}
+        A(t) = \lambda N(t)
+    \end{flalign*}
+\end{itemize}
+% subsection activity (end)
+
+\subsection{Bateman Equation} % (fold)
+\label{sub:bateman_equation}
+\begin{itemize}
+    \item This describes the time evolution of two isotopes $A$ and $B$ is a radioactive decay chain. If The parent nucleus $A$ decays via:
+    \begin{flalign*}
+        \frac{dN_A}{dt} = -\lambda_A N_A
+    \end{flalign*}
+    Then its daughter isotope $B$ will decay via:
+    \begin{flalign*}
+         \frac{dN_B}{dt} = \lambda_AN_A-\lambda_BN_B
+     \end{flalign*} 
+\end{itemize}
+% subsection bateman_equation (end)
+% section nuclear (end)
 \end{document}
