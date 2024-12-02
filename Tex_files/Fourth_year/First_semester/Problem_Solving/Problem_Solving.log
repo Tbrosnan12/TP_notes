@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  2 DEC 2024 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  2 DEC 2024 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1365,15 +1365,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [22]
-! Undefined control sequence.
-l.988 \sub
-          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1449,16 +1440,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] (./Problem_Solving.aux)
 Package rerunfilecheck Info: File `Problem_Solving.out' has not changed.
-(rerunfilecheck)             Checksum: D31537EF0BC9E5A5E8C526FE413ABE87;15206.
+(rerunfilecheck)             Checksum: 7FA23C0050ED9DE14ABF0630ACCBE104;15368.
 Package logreq Info: Writing requests to 'Problem_Solving.run.xml'.
 \openout1 = `Problem_Solving.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36303 strings out of 480247
- 722168 string characters out of 5896151
- 1444740 words of memory out of 5000000
- 53543 multiletter control sequences out of 15000+600000
+ 36307 strings out of 480247
+ 722241 string characters out of 5896151
+ 1444791 words of memory out of 5000000
+ 53546 multiletter control sequences out of 15000+600000
  485919 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,18n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1478,10 +1469,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Problem_Solving.pdf (30 pages, 307620 bytes).
+Output written on Problem_Solving.pdf (30 pages, 308325 bytes).
 PDF statistics:
- 842 PDF objects out of 1000 (max. 8388607)
- 745 compressed objects within 8 object streams
- 145 named destinations out of 1000 (max. 500000)
- 1021 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 847 PDF objects out of 1000 (max. 8388607)
+ 750 compressed objects within 8 object streams
+ 146 named destinations out of 1000 (max. 500000)
+ 1029 words of extra memory for PDF output out of 10000 (max. 10000000)
 
