@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Problem_Solving"] 1732924012 "Problem_Solving.bcf" "Problem_Solving.bbl" "Problem_Solving" 1733098069
-  "Problem_Solving.bcf" 1733098069 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Problem_Solving"] 1732924012 "Problem_Solving.bcf" "Problem_Solving.bbl" "Problem_Solving" 1733180558
+  "Problem_Solving.bcf" 1733180558 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Problem_Solving.bbl"
   "Problem_Solving.blg"
-["pdflatex"] 1733098067 "Problem_Solving.tex" "Problem_Solving.pdf" "Problem_Solving" 1733098069
+["pdflatex"] 1733180555 "Problem_Solving.tex" "Problem_Solving.pdf" "Problem_Solving" 1733180558
   "/etc/texmf/web2c/texmf.cnf" 1723933354 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1723934203 1405755 0308faeb1a6e51887941567c18392f11 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -58,6 +58,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -243,12 +244,12 @@
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb" 1724266550 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1724266557 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "Problem_Solving.aux" 1733098069 15845 5c9910bc6a1a83ec87d426e0b5090461 "pdflatex"
+  "Problem_Solving.aux" 1733180558 20130 b0eaa93934d2e77fec579413ecd83e52 "pdflatex"
   "Problem_Solving.bbl" 1732924013 466 ee04f40f768daeed26442158e95aba61 "biber Problem_Solving"
-  "Problem_Solving.out" 1733098069 12240 c5c0012610f77897c34e6c83ee86e09c "pdflatex"
-  "Problem_Solving.run.xml" 1733098069 2375 c63af7ce210c49dcb45dc5c468093d34 "pdflatex"
-  "Problem_Solving.tex" 1733098065 36245 7e8b753dd6c3bed38e73b3e925fe1968 ""
-  "Problem_Solving.toc" 1733098069 7503 ddfd22bea64acbadcaae1aabc1f25cc0 "pdflatex"
+  "Problem_Solving.out" 1733180558 15368 7fa23c0050ed9de14abf0630accbe104 "pdflatex"
+  "Problem_Solving.run.xml" 1733180558 2375 c63af7ce210c49dcb45dc5c468093d34 "pdflatex"
+  "Problem_Solving.tex" 1733180555 43406 453377e323fbf08339e8e3d684be2f1f ""
+  "Problem_Solving.toc" 1733180558 9257 7d8dbc2c78bd2464317616093db162fa "pdflatex"
   (generated)
   "Problem_Solving.aux"
   "Problem_Solving.bcf"
