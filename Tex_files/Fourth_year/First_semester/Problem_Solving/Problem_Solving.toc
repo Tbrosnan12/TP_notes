@@ -22,88 +22,95 @@
 \contentsline {subsubsection}{\numberline {1.11.1}Pressure in a fluid}{9}{subsubsection.1.11.1}%
 \contentsline {subsubsection}{\numberline {1.11.2}Fluid Flow}{9}{subsubsection.1.11.2}%
 \contentsline {subsubsection}{\numberline {1.11.3}Bernoulli's equation}{10}{subsubsection.1.11.3}%
-\contentsline {subsection}{\numberline {1.12}Archimedes Principle}{10}{subsection.1.12}%
-\contentsline {subsubsection}{\numberline {1.12.1}Wave equation}{10}{subsubsection.1.12.1}%
-\contentsline {subsubsection}{\numberline {1.12.2}Wave Power}{10}{subsubsection.1.12.2}%
-\contentsline {subsubsection}{\numberline {1.12.3}Beat frequency}{10}{subsubsection.1.12.3}%
-\contentsline {subsubsection}{\numberline {1.12.4}Doppler affect}{10}{subsubsection.1.12.4}%
-\contentsline {section}{\numberline {2}Thermodynamics}{11}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Heat}{11}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Heat Capacity}{11}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Latent Heat}{11}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Heat Flux}{11}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}Ideal Gas}{12}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Energy of a Gas}{12}{subsubsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.3}Mean free Path}{12}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}First Law}{12}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Processes}{13}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Adiabatic Process}{13}{subsubsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.6}Efficacy of a heat engine}{13}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Carnot cycle}{13}{subsubsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.7}Entropy}{13}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Thermal conductivity}{14}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Thermodynamic potentials}{14}{subsection.2.9}%
-\contentsline {subsubsection}{\numberline {2.9.1}Helmholtz Free}{14}{subsubsection.2.9.1}%
-\contentsline {subsubsection}{\numberline {2.9.2}Gibbs free}{14}{subsubsection.2.9.2}%
-\contentsline {subsubsection}{\numberline {2.9.3}Enthalpy}{15}{subsubsection.2.9.3}%
-\contentsline {section}{\numberline {3}Electromagnetism}{16}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Coulombs Law}{16}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Electric Field}{16}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Electric Potential}{16}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Electric Energy Density}{16}{subsubsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.4}Dipoles}{16}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Gauss' Law}{16}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Capacitors}{17}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Charging a capacitor}{17}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Energy in a Capacitor}{17}{subsubsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.7}Di-electric}{17}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Current}{17}{subsection.3.8}%
-\contentsline {subsubsection}{\numberline {3.8.1}Current density}{18}{subsubsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.9}Resistivity}{18}{subsection.3.9}%
-\contentsline {subsection}{\numberline {3.10}Resistance}{18}{subsection.3.10}%
-\contentsline {subsection}{\numberline {3.11}Power loss}{18}{subsection.3.11}%
-\contentsline {subsection}{\numberline {3.12}Kirchhoff's laws}{19}{subsection.3.12}%
-\contentsline {subsection}{\numberline {3.13}Gauss's Law for Magnetism}{19}{subsection.3.13}%
-\contentsline {subsection}{\numberline {3.14}Force on Charged particle}{19}{subsection.3.14}%
-\contentsline {subsection}{\numberline {3.15}Magnetic Field due to a Wire }{19}{subsection.3.15}%
-\contentsline {subsection}{\numberline {3.16}Faraday's law}{19}{subsection.3.16}%
-\contentsline {subsubsection}{\numberline {3.16.1}Magnetic Energy Density}{20}{subsubsection.3.16.1}%
-\contentsline {subsection}{\numberline {3.17}RCL Circuit}{20}{subsection.3.17}%
-\contentsline {subsection}{\numberline {3.18}Energy stored in a Inductor}{20}{subsection.3.18}%
-\contentsline {subsection}{\numberline {3.19}Poyting Vector}{20}{subsection.3.19}%
-\contentsline {section}{\numberline {4}Special Relativity}{21}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Lorentz Transformation}{21}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Length Contraction}{21}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Time Dilation}{21}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Proper time}{21}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}Velocity transformation}{22}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Relativistic Doppler Effect}{22}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Relativistic Energy}{22}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Relativistic momentum}{22}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Waves and Optics}{23}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Photon Relations}{23}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Radiation Pressure}{23}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Refractive index}{23}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Snell's law}{23}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Critical Angle}{23}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Polarization}{24}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Interference}{24}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Rayleigh Criterion}{24}{subsection.5.8}%
-\contentsline {section}{\numberline {6}Quantum Mechanics}{25}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Time-Independent Schr\"odinger Equation}{25}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Time-Dependent Schr\"odinger Equation}{25}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Infinite potential well}{25}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}DeBroglie Wavelength}{25}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Uncertainty relation}{25}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Harmonic oscillator}{26}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Zeemann effect}{26}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Hydrogen Atom}{26}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}Rydberg formula}{26}{subsection.6.9}%
-\contentsline {section}{\numberline {7}Condensed Matter}{27}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Bragg's Law}{27}{subsection.7.1}%
-\contentsline {section}{\numberline {8}Nuclear}{28}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Radius of Nucleus}{28}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Radioactive Decay}{28}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Activity}{28}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Bateman Equation}{28}{subsection.8.4}%
-\contentsline {section}{\numberline {9}Taylor Expansions}{29}{section.9}%
+\contentsline {subsection}{\numberline {1.12}Drag Force}{10}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Archimedes Principle}{10}{subsection.1.13}%
+\contentsline {subsubsection}{\numberline {1.13.1}Wave equation}{10}{subsubsection.1.13.1}%
+\contentsline {subsubsection}{\numberline {1.13.2}Wave Power}{10}{subsubsection.1.13.2}%
+\contentsline {subsubsection}{\numberline {1.13.3}Beat frequency}{10}{subsubsection.1.13.3}%
+\contentsline {subsubsection}{\numberline {1.13.4}Doppler affect}{11}{subsubsection.1.13.4}%
+\contentsline {section}{\numberline {2}Thermodynamics}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Heat}{12}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Heat Capacity}{12}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Latent Heat}{12}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Heat Flux}{12}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Ideal Gas}{13}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Energy of a Gas}{13}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Mean free Path}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}First Law}{13}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Processes}{14}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Adiabatic Process}{14}{subsubsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.6}Efficacy of a heat engine}{14}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Carnot cycle}{14}{subsubsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.7}Entropy}{14}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Thermal conductivity}{15}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Measurable Quantities}{15}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}Bulk Modulus}{15}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}Thermal Expansivity}{15}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}Compressibilities }{15}{subsubsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.10}Maxwell relations}{16}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Thermodynamic potentials}{16}{subsection.2.11}%
+\contentsline {subsubsection}{\numberline {2.11.1}Helmholtz Free}{16}{subsubsection.2.11.1}%
+\contentsline {subsubsection}{\numberline {2.11.2}Gibbs free}{16}{subsubsection.2.11.2}%
+\contentsline {subsubsection}{\numberline {2.11.3}Enthalpy}{17}{subsubsection.2.11.3}%
+\contentsline {subsection}{\numberline {2.12}Partition function}{17}{subsection.2.12}%
+\contentsline {section}{\numberline {3}Electromagnetism}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Coulombs Law}{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Electric Field}{18}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Electric Potential}{18}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Electric Energy Density}{18}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Dipoles}{18}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Gauss' Law}{18}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Capacitors}{19}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Charging a capacitor}{19}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Energy in a Capacitor}{19}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Di-electric}{19}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Current}{19}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Current density}{20}{subsubsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.9}Resistivity}{20}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Resistance}{20}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}Power loss}{20}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Kirchhoff's laws}{21}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Gauss's Law for Magnetism}{21}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Force on Charged particle}{21}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Magnetic Field due to a Wire }{21}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Faraday's law}{21}{subsection.3.16}%
+\contentsline {subsubsection}{\numberline {3.16.1}Magnetic Energy Density}{22}{subsubsection.3.16.1}%
+\contentsline {subsection}{\numberline {3.17}RCL Circuit}{22}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}Energy stored in a Inductor}{22}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}Poyting Vector}{22}{subsection.3.19}%
+\contentsline {section}{\numberline {4}Special Relativity}{23}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Lorentz Transformation}{23}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Length Contraction}{23}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Time Dilation}{23}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Proper time}{23}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Velocity transformation}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Relativistic Doppler Effect}{24}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Relativistic Energy}{24}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Relativistic momentum}{24}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Waves and Optics}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Photon Relations}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Radiation Pressure}{25}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Refractive index}{25}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Snell's law}{25}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Critical Angle}{25}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Polarization}{26}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Interference}{26}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Rayleigh Criterion}{26}{subsection.5.8}%
+\contentsline {section}{\numberline {6}Quantum Mechanics}{27}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Time-Independent Schr\"odinger Equation}{27}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Time-Dependent Schr\"odinger Equation}{27}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Infinite potential well}{27}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}DeBroglie Wavelength}{27}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Uncertainty relation}{27}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Harmonic oscillator}{28}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Zeemann effect}{28}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Hydrogen Atom}{28}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Rydberg formula}{28}{subsection.6.9}%
+\contentsline {section}{\numberline {7}Condensed Matter}{29}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Bragg's Law}{29}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Nuclear}{30}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Radius of Nucleus}{30}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Radioactive Decay}{30}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Activity}{30}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Bateman Equation}{30}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Taylor Expansions}{31}{section.9}%

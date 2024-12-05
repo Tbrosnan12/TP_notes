@@ -177,7 +177,7 @@
 \begin{itemize}
         \item \emph{Power} is defined as:
     \begin{flalign*}
-        P = \frac{dW}{dr} = \textbf{F}\cdot \textbf{v}
+        P = \frac{dW}{dt} = \textbf{F}\cdot \textbf{v}
     \end{flalign*}
     Where $\textbf{v}$ is velocity.
 \end{itemize}
@@ -331,6 +331,16 @@
         P + \frac{1}{2}\rho v^2 = \text{constant}
     \end{flalign*}
 \end{itemize}
+
+\subsection{Drag Force} % (fold)
+\label{sub:drag_force}
+\begin{itemize}
+    \item The force sue to air resistance depends on the area $A$ of a body, its speed $v$, the density of the medium $\rho$ , and some drag co-efficient $C_D$:
+    \begin{flalign*}
+        F_D = \frac{1}{2}C_D A \rho v^2
+    \end{flalign*}
+\end{itemize}
+% subsection drag_force (end)
 
 \subsection{Archimedes Principle} % (fold)
 \label{sub:archimedes_principle}
@@ -539,6 +549,73 @@ Where $\bar{v}$ is the average velocity given by $\bar{v} = \sqrt{\frac{dkT}{m}}
 \end{itemize}
 % subsection thermal_conductivity (end)
 
+\subsection{Measurable Quantities} % (fold)
+\label{sub:measurable_quantities}
+\begin{itemize}
+    \item Here are a list of definitions of quantities ascribed to materials:
+\end{itemize}
+
+\subsubsection{Bulk Modulus} % (fold)
+\label{ssub:bulk_modulus}
+\begin{itemize}
+    \item This is a measure of the resistance of a substance to compression:
+    \begin{flalign*}
+        \kappa = -V\left(\frac{\partial P}{\partial V}\right)_T
+    \end{flalign*}
+\end{itemize}
+% subsubsection bulk_modulus (end)
+
+\subsubsection{Thermal Expansivity} % (fold)
+\label{ssub:thermal_expansivity}
+\begin{itemize}
+    \item This is a measure of the tendency for a body to increase in size upon rising in temperature:
+    \begin{flalign*}
+        \beta = \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_P
+    \end{flalign*}
+\end{itemize}
+% subsubsection thermal_expansivity (end)
+
+\subsubsection{Compressibilities } % (fold)
+\label{ssub:compressibilities_}
+\begin{itemize}
+    \item These are the measure of the instantaneous relative volume change in response to some change. There is the \I{isothermal compressibility}:
+    \begin{flalign*}
+        \kappa_T = -\frac{1}{V}\left(\frac{\partial V }{\partial P}\right)_T
+    \end{flalign*}
+    And \I{adiabatic or isentropic} compressibility:
+    \begin{flalign*}
+        \kappa_S = -\frac{1}{V}\left(\frac{\partial V }{\partial P}\right)_S
+    \end{flalign*}
+\end{itemize}
+% subsubsection compressibilities_ (end)
+
+% subsection measurable_quantities (end)
+
+\subsection{Maxwell relations} % (fold)
+\label{sub:maxwell_relations}
+\begin{itemize}
+    \item These are the following 4 relations:
+    \begin{flalign}
+&\left(\frac{\partial T}{\partial V}\right)_{S} = -\left(\frac{\partial P}{\partial S}\right)_{V}, ~~
+\left(\frac{\partial T}{\partial P}\right)_{S} = \left(\frac{\partial V}{\partial S}\right)_{P}, \\
+&\left(\frac{\partial V}{\partial T}\right)_{P} = -\left(\frac{\partial S}{\partial P}\right)_{T}, ~~
+\left(\frac{\partial P}{\partial T}\right)_{V} = \left(\frac{\partial S}{\partial V}\right)_{T}.
+\end{flalign}
+
+These are the \textit{Maxwell relations}. These can be remembered using the following:
+
+\begin{flalign*}
+\begin{array}{c}
+-S \\
+P ~~~~~~V \\
+T
+\end{array}
+\end{flalign*}
+To construct each Maxwell relation, start at some point and go clockwise around three letters to obtain the left-hand side. If you have both $P$ and $S$, include a minus sign. Then move on one letter and count back anti-clockwise three letters, inserting a minus sign if you have both $P$ and $S$.
+ 
+\end{itemize}
+% subsection maxwell_relations (end)
+
 \subsection{Thermodynamic potentials} % (fold)
 \label{sub:thermodynamic_potentials}
 
@@ -589,6 +666,33 @@ We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and c
 \end{split}
 \end{empheq}
 \end{itemize}
+
+\subsection{Partition function} % (fold)
+\label{sub:partition_function}
+\begin{itemize}
+    \item This is defined to normalize the probability distribution of a particle being in a certain energy state $P(E_n) = \frac{1}{Z}e^{-\beta E_n}$, where $\beta= 1/kT$. This is imposed so that the total probabilities sum to $1$:
+    \begin{flalign*}
+        Z = \sum_n e^{-\beta E_{n}}
+    \end{flalign*}
+    Note this is for a single particle. 
+
+    \item Note also that there is a connection between statistical mechanics and thermodynamics that allows us to write the Helmholtz free energy as:
+    \begin{flalign*}
+        F = -kT\ln Z
+    \end{flalign*}
+    \item Average quantities can then be calculated:
+    \begin{flalign*}
+        \braket{A} = \frac{1}{Z}\sum_{n}Ae^{-\beta E_n} 
+    \end{flalign*}
+    For certain quantities we can express these sums in terms of the partition function, for example the average energy is:
+    \begin{flalignn*}
+        \braket{E} = -\frac{\partial \ln Z }{\partial \beta}
+    \end{flalign*}
+\end{itemize}
+% subsection partition_function (end)
+
+
+
 
 \newpage
 \section{Electromagnetism} % (fold)
@@ -711,6 +815,7 @@ We use $\mathcal{H}$ in the case of an Isobaric process along with thermal and c
     \begin{flalign*}
         I = \frac{dQ}{dt} = n|q|vA
     \end{flalign*}
+    Here $n$ is the number of charge carriers per unit volume, $A$ is the area, $v$ the velocity and $q$ the charge. 
 \end{itemize}
 % subsection current (end)
 \subsubsection{Current density} % (fold)
