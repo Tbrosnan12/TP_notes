@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  5 DEC 2024 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  6 DEC 2024 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1312,65 +1312,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [16]
 
-! LaTeX Error: Environment flalignn* undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.688     \begin{flalignn*}
-                           
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.689         \braket{E}
-                         = -\frac{\partial \ln Z }{\partial \beta}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-! Package empheq Error: You are using the old syntax!
-(empheq)                The `empheq' environment takes a mandatory argument now
-.
-(empheq)                You need to exit and change your source file..
-
-See the empheq package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.690     \end{flalign*}
-                        
-It won't work, trustme. Press `X' now.
-
-
-! LaTeX Error: \begin{itemize} on input line 672 ended by \end{flalign*}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.690     \end{flalign*}
-                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.690     \end{flalign*}
-                        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1523,10 +1464,10 @@ Package logreq Info: Writing requests to 'Problem_Solving.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36342 strings out of 480247
- 722863 string characters out of 5896151
+ 36343 strings out of 480247
+ 722880 string characters out of 5896151
  1450156 words of memory out of 5000000
- 53570 multiletter control sequences out of 15000+600000
+ 53571 multiletter control sequences out of 15000+600000
  485919 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,18n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1547,7 +1488,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Problem_Solving.pdf (32 pages, 326505 bytes).
+Output written on Problem_Solving.pdf (32 pages, 326433 bytes).
 PDF statistics:
  900 PDF objects out of 1000 (max. 8388607)
  799 compressed objects within 8 object streams
