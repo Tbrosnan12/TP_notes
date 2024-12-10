@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  6 DEC 2024 11:02
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  5 DEC 2024 00:03
->>>>>>> 6211a655794b094a39a3f8d8dfaaa720422a3dc1
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  5 DEC 2024 00:03
->>>>>>> 6211a655794b094a39a3f8d8dfaaa720422a3dc1
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  6 DEC 2024 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1466,18 +1458,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] (./Problem_Solving.aux)
 Package rerunfilecheck Info: File `Problem_Solving.out' has not changed.
-(rerunfilecheck)             Checksum: 8915A2A087DFFB3C71BB31A965EB4845;16417.
+(rerunfilecheck)             Checksum: EF5846ACDC430C956C20EBADF7BB7219;16569.
 Package logreq Info: Writing requests to 'Problem_Solving.run.xml'.
 \openout1 = `Problem_Solving.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
-<<<<<<< HEAD
- 36343 strings out of 480247
- 722880 string characters out of 5896151
- 1450156 words of memory out of 5000000
- 53571 multiletter control sequences out of 15000+600000
+ 36346 strings out of 480247
+ 722943 string characters out of 5896151
+ 1450212 words of memory out of 5000000
+ 53573 multiletter control sequences out of 15000+600000
  485919 words of font info for 90 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,18n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1498,70 +1488,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Problem_Solving.pdf (32 pages, 326433 bytes).
+Output written on Problem_Solving.pdf (32 pages, 327073 bytes).
 PDF statistics:
- 900 PDF objects out of 1000 (max. 8388607)
- 799 compressed objects within 8 object streams
- 157 named destinations out of 1000 (max. 500000)
- 1085 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
- 36307 strings out of 480247
- 722241 string characters out of 5896106
- 1444788 words of memory out of 5000000
- 53546 multiletter control sequences out of 15000+600000
- 485919 words of font info for 90 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 99i,18n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfrm1095.pfb>
-Output written on Problem_Solving.pdf (30 pages, 316502 bytes).
-PDF statistics:
-=======
- 36307 strings out of 480247
- 722241 string characters out of 5896106
- 1444788 words of memory out of 5000000
- 53546 multiletter control sequences out of 15000+600000
- 485919 words of font info for 90 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 99i,18n,104p,1204b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfrm1095.pfb>
-Output written on Problem_Solving.pdf (30 pages, 316502 bytes).
-PDF statistics:
->>>>>>> 6211a655794b094a39a3f8d8dfaaa720422a3dc1
- 848 PDF objects out of 1000 (max. 8388607)
- 750 compressed objects within 8 object streams
- 146 named destinations out of 1000 (max. 500000)
- 1029 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 6211a655794b094a39a3f8d8dfaaa720422a3dc1
+ 906 PDF objects out of 1000 (max. 8388607)
+ 804 compressed objects within 9 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 1093 words of extra memory for PDF output out of 10000 (max. 10000000)
 
