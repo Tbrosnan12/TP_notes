@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Quantum_Field_Theory_I"] 1728218309 "Quantum_Field_Theory_I.bcf" "Quantum_Field_Theory_I.bbl" "Quantum_Field_Theory_I" 1736597417
-  "Quantum_Field_Theory_I.bcf" 1736597417 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Quantum_Field_Theory_I"] 1728218309 "Quantum_Field_Theory_I.bcf" "Quantum_Field_Theory_I.bbl" "Quantum_Field_Theory_I" 1736963577
+  "Quantum_Field_Theory_I.bcf" 1736963577 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Quantum_Field_Theory_I.bbl"
   "Quantum_Field_Theory_I.blg"
-["pdflatex"] 1736597416 "Quantum_Field_Theory_I.tex" "Quantum_Field_Theory_I.pdf" "Quantum_Field_Theory_I" 1736597417
+["pdflatex"] 1736963576 "Quantum_Field_Theory_I.tex" "Quantum_Field_Theory_I.pdf" "Quantum_Field_Theory_I" 1736963577
   "/etc/texmf/web2c/texmf.cnf" 1721728325 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1721729208 12644 5636b8ca2e3cd0e0f57d6a52ecda6477 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -249,13 +249,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1721728552 128028 f533b797fba58d231669ea19e894e23e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1721728645 1405647 97b82ed0c4e8b15449e55cae8bf5ddab ""
-  "Quantum_Field_Theory_I.aux" 1736597417 14094 c40d02734a252cba9c70ae970e6d9b31 "pdflatex"
+  "Quantum_Field_Theory_I.aux" 1736963577 13693 4331bd806b2eee902498736a4ad89869 "pdflatex"
   "Quantum_Field_Theory_I.bbl" 1724197362 466 ee04f40f768daeed26442158e95aba61 "biber Quantum_Field_Theory_I"
-  "Quantum_Field_Theory_I.out" 1736597417 10418 3c3cd4245bf2dd7ba892bf64e835d1f2 "pdflatex"
-  "Quantum_Field_Theory_I.run.xml" 1736597417 2424 20d0d8cb6fc49983ca08f4aa88e6dc83 "pdflatex"
-  "Quantum_Field_Theory_I.tex" 1736597416 133004 1929d35c859ae874e3d0eaef6f920b06 ""
-  "Quantum_Field_Theory_I.toc" 1736597417 5718 45d886a88ce97cb7284b2d6f22850a5d "pdflatex"
-  "trailer.png" 1725904761 16675 45384036067c99a14d089e47c4fb98d6 ""
+  "Quantum_Field_Theory_I.out" 1736963577 10316 bb1933505618f2d65671851b162cb985 "pdflatex"
+  "Quantum_Field_Theory_I.run.xml" 1736963577 2424 20d0d8cb6fc49983ca08f4aa88e6dc83 "pdflatex"
+  "Quantum_Field_Theory_I.tex" 1736963576 126543 69dc39ff9c93cfc433649244148effc8 ""
+  "Quantum_Field_Theory_I.toc" 1736963577 5646 3d52878e12270c5e480617dc4bf9954b "pdflatex"
   (generated)
   "Quantum_Field_Theory_I.aux"
   "Quantum_Field_Theory_I.bcf"

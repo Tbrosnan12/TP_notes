@@ -1,63 +1,62 @@
-\contentsline {section}{\numberline {1}QFT trailer}{5}{section.1}%
-\contentsline {section}{\numberline {2}The need for Fields}{8}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Non-relativistic free particle}{8}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Non-trivial Gaussian integral}{8}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Laplace steepest decent}{9}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Field theory EoM}{10}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Non-degenerate Lagrangian}{10}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Hamiltonian field theory}{11}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Noether's Theorem}{11}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Stress-Energy Tensor}{12}{subsection.2.6}%
-\contentsline {section}{\numberline {3}The Klein-Gordon Field}{13}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Second Quantization}{13}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Commutators}{14}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Particle creation}{15}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Time evolution}{16}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}2-point correlation function}{17}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Time-like separation}{17}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Space-like separation}{18}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Measurement}{18}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Klein-Gordon Propagator}{19}{subsection.3.6}%
-\contentsline {subsubsection}{\numberline {3.6.1}Advanced/Retarded Propagators}{20}{subsubsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.2}Feynman Propagator}{20}{subsubsection.3.6.2}%
-\contentsline {section}{\numberline {4}Representations of the Poincar\'e Group}{21}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Group actions}{21}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Left actions}{21}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Right actions}{21}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Transformation of fields}{22}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Lorentz Group}{22}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Generators}{23}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}$\mathfrak {sl}(2,\mathbb {C})$ representation}{24}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Generators of the Poincar\'e group}{24}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Casimir Invariants}{25}{subsubsection.4.4.1}%
-\contentsline {section}{\numberline {5}The Dirac Field}{26}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Spinor Representation}{26}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Why the Klein Gordon field has spin-0}{26}{subsubsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.2}Dirac matrices}{27}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Exponential map}{27}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Boosts}{28}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Rotations}{28}{subsubsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.3}Non-Unitary representation}{28}{subsubsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.4}Lorentz Invariants}{28}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}Scalars}{29}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}Vectors}{29}{subsubsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.5}Dirac Action}{30}{subsection.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.1}Return to Klein-Gordon}{31}{subsubsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.6}Weyl Spinors}{31}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Solutions to the Dirac equation}{32}{subsection.5.7}%
-\contentsline {subsubsection}{\numberline {5.7.1}Negative frequencies}{32}{subsubsection.5.7.1}%
-\contentsline {subsubsection}{\numberline {5.7.2}Helicity operator}{33}{subsubsection.5.7.2}%
-\contentsline {subsection}{\numberline {5.8}Normalization of spinors}{33}{subsection.5.8}%
-\contentsline {subsubsection}{\numberline {5.8.1}Outer product}{34}{subsubsection.5.8.1}%
-\contentsline {subsection}{\numberline {5.9}Quantization of the Dirac Field}{34}{subsection.5.9}%
-\contentsline {subsubsection}{\numberline {5.9.1}Commutation relations}{34}{subsubsection.5.9.1}%
-\contentsline {subsubsection}{\numberline {5.9.2}The need for Anti-Commutation relations}{36}{subsubsection.5.9.2}%
-\contentsline {subsubsection}{\numberline {5.9.3}Anti-commutation relations}{38}{subsubsection.5.9.3}%
-\contentsline {subsection}{\numberline {5.10}Pauli exclusion principle}{38}{subsection.5.10}%
-\contentsline {subsection}{\numberline {5.11}Charged particles}{39}{subsection.5.11}%
-\contentsline {subsection}{\numberline {5.12}Dirac Propagator}{40}{subsection.5.12}%
-\contentsline {section}{\numberline {6}Constrained Hamiltonian Systems}{41}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Degenerate Hamiltonian }{41}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Poisson brackets}{41}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Weak and strong equations}{42}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Secondary constraints}{42}{subsubsection.6.2.2}%
+\contentsline {section}{\numberline {1}The need for Fields}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Non-relativistic free particle}{5}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Non-trivial Gaussian integral}{5}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Laplace steepest decent}{6}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}Field theory EoM}{7}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Non-degenerate Lagrangian}{7}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Hamiltonian field theory}{8}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Noether's Theorem}{8}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Stress-Energy Tensor}{9}{subsection.1.6}%
+\contentsline {section}{\numberline {2}The Klein-Gordon Field}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Second Quantization}{10}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Commutators}{11}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Particle creation}{12}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Time evolution}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}2-point correlation function}{14}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Time-like separation}{14}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Space-like separation}{15}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Measurement}{15}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Klein-Gordon Propagator}{16}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Advanced/Retarded Propagators}{17}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Feynman Propagator}{17}{subsubsection.2.6.2}%
+\contentsline {section}{\numberline {3}Representations of the Poincar\'e Group}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Group actions}{18}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Left actions}{18}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Right actions}{18}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Transformation of fields}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Lorentz Group}{19}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Generators}{20}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}$\mathfrak {sl}(2,\mathbb {C})$ representation}{21}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Generators of the Poincar\'e group}{21}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Casimir Invariants}{22}{subsubsection.3.4.1}%
+\contentsline {section}{\numberline {4}The Dirac Field}{23}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Spinor Representation}{23}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Why the Klein Gordon field has spin-0}{23}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Dirac matrices}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Exponential map}{24}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Boosts}{25}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Rotations}{25}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Non-Unitary representation}{25}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Lorentz Invariants}{25}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Scalars}{26}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Vectors}{26}{subsubsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.5}Dirac Action}{27}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Return to Klein-Gordon}{28}{subsubsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.6}Weyl Spinors}{28}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Solutions to the Dirac equation}{29}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Negative frequencies}{29}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Helicity operator}{30}{subsubsection.4.7.2}%
+\contentsline {subsection}{\numberline {4.8}Normalization of spinors}{30}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Outer product}{31}{subsubsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.9}Quantization of the Dirac Field}{31}{subsection.4.9}%
+\contentsline {subsubsection}{\numberline {4.9.1}Commutation relations}{31}{subsubsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.2}The need for Anti-Commutation relations}{33}{subsubsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.3}Anti-commutation relations}{35}{subsubsection.4.9.3}%
+\contentsline {subsection}{\numberline {4.10}Pauli exclusion principle}{35}{subsection.4.10}%
+\contentsline {subsection}{\numberline {4.11}Charged particles}{36}{subsection.4.11}%
+\contentsline {subsection}{\numberline {4.12}Dirac Propagator}{37}{subsection.4.12}%
+\contentsline {section}{\numberline {5}Constrained Hamiltonian Systems}{38}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Degenerate Hamiltonian }{38}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Poisson brackets}{38}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Weak and strong equations}{39}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Secondary constraints}{39}{subsubsection.5.2.2}%
