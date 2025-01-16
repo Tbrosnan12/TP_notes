@@ -1444,7 +1444,7 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
 \newpage 
 \section{Constrained Hamiltonian Systems}
 \begin{itemize}
-  \item This section is following Dirac's little book ``Lectures on Quantum mechanics''.
+  \item This section is following Dirac's ``little" book ``Lectures on Quantum mechanics''.
 \end{itemize}
 
 \subsection{Degenerate Hamiltonian }
@@ -1458,9 +1458,46 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
   \end{align}
   Here upper and lower index's are only to indicate that we are summing over the variables, we operate in a euclidean metric so that all upper index's equal lower. Note that the co-officiants $\lambda_{m}$ can also be any sort of functions of the $q's$ and $p's$.  
 \end{itemize}
+
+\subsection{Equations Of Motion} % (fold)
+\label{sub:equations_of_motion}
+\begin{itemize}
+ \item Since $\phi_{m} = 0$, we must have that $\delta\phi_m = 0$. Using both of these we can see that taking the variantion of \ref{Ham-const} we get:
+\begin{align}
+\label{delta_H}
+  \delta H' &= \delta H +\lambda^m\delta\phi_m+\delta\lambda^m\phi_m =  \delta(p_i \dot{q}^i)-\delta L = \nonumber \\ 
+  & \delta p_i\dot{q}^i+p_i\delta \dot{q}^i - \frac{\partial L}{\partial q^i}\delta q^i-\frac{\partial L}{\partial \dot{q}^i}\delta \dot{q}^i  = \delta H = \frac{\partial H}{\partial q^i}\delta q^i+\frac{\partial H}{\partial p_i}\delta p_i  \nonumber \\
+    \implies & \left(\dot{q}^i-\frac{\partial H}{\partial p_i}\right)\delta p_i+\left(p_i -\frac{\partial L}{\partial \dot{q}^i}\right)\delta\dot{q}^i -\left(\frac{\partial H}{\partial q^i}+\frac{\partial L}{\partial q^i}\right)\delta q^i = 0 \nonumber \\
+   \implies & \left(\dot{q}^i-\frac{\partial H}{\partial p_i}\right)\delta p_i -\left(\dot{p}_i+\frac{\partial H}{\partial q^i}\right)\delta q^i = 0
+\end{align}
+Where we have used the fact that $H =H(q,p) \implies \delta H = \frac{\partial H}{\partial q^i}\delta q^i+\frac{\partial H}{\partial p_i}\delta p_i$ and $L =L(q,\dot{q}) \implies \delta L = \frac{\partial L}{\partial q^i}\delta q^i+\frac{\partial L}{\partial \dot{q}^i}\delta \dot{q}^i$, as well as the Lagrange equations $\frac{\partial L}{\partial q^i} = \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}^i}\right)$
+
+\item In the standard case we can then take the co-officiants of $\delta p_i$ and $\delta q^i$ to separately be zero, but in the case of a constrained system $p_i$ and $q^i$ are no longer independent, being related by at least one $\phi^{m}(p,q)$. To fix this we need some way of ensuring that the $p$'s and $q$'s stay on the surface $\phi^{m}(p,q)=0$ in the phase space. Since $\phi_m=0$, this means the variations of $p$ and $q$ must satisfy:
+\begin{align*}
+  \delta \phi_m = \frac{\partial \phi_m}{\partial q^i}\delta q^i+\frac{\partial \phi_m}{\partial p_i}\delta p_i =0
+\end{align*}
+We can re-write this in matrix form as the following:
+\begin{align*}
+  J \cdot \left(\begin{matrix}
+    \delta q_i \\
+    \delta p_i
+  \end{matrix}\right) = 0 
+\end{align*}
+Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_m}{\partial p_i}\right)$ is the Jacobian matrix of the constraints. The above condition implies that the variations $(\delta q,\delta p)$ must lie in the null space of the Jacobian $J$. A general solution for such a system can be expressed as a linear combination of the rows of $J$, with arbitrary coefficients $u^m$. This means we must have that \ref{delta_H} must be equal to $u^m\left(\frac{\partial \phi_m}{\partial q^i}\delta q^i + \frac{\partial \phi_m}{\partial p_i}\delta p_i \right)$, so:
+  \begin{align}
+       \label{eom_constr} 
+     \begin{split}
+       &\dot{q}^i = \frac{\partial H}{\partial p_i} + u^m\frac{\partial \phi_m}{\partial p_i}\\
+     & \dot{p}_i = -\frac{\partial H}{\partial q_i} - u^m\frac{\partial \phi_m}{\partial q_i}
+     \end{split}
+   \end{align}
+   These are the constrained EoM. Notice the $u^m$ are not functions of the $p$'s and $q$'s. 
+   \end{itemize}
+% subsection equations_of_motion (end)
+
 \subsection{Poisson brackets}
 \begin{itemize}
-  \item Recall from classical mechanics that we had the notion of the \emph{Poisson bracket} defined for two functions $f(p,q)$ and $g(p,q)$ as:
+  \item Recall from classical mechanics that we had the notion of the \emph{Poisson bracket} defined for two functions $f(p,q)$ and $g(p,q)$ as\footnote{Here for clarity we don't suppress the summation behind index notation}:
   \begin{flalign}
   \label{poisson}
     \{f,g\} = \sum_i\left(\frac{\partial f}{\partial q_i}\frac{\partial g}{\partial p_{i}}-\frac{\partial f}{\partial p_i}\frac{\partial g}{\partial q_{i}}\right)
@@ -1469,7 +1506,7 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
   \begin{align}
   \label{dfdt}
     \frac{df}{dt} = \sum_i \left(\frac{\partial f}{\partial q_i}\frac{dq_i}{dt}+\frac{\partial f}{\partial p_i}\frac{dp_i}{dt} \right)
-  \end{align}
+  \end{align}{}
   We can then recall that for the regular Hamiltonian (not the one with constraints) we have that:
   \begin{align*}
     \frac{dq_i}{dt} = \frac{\partial H}{\partial p_i}, ~~~\frac{dp_i}{dt} = -\frac{\partial H}{\partial q_i}
@@ -1478,43 +1515,49 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
   \begin{flalign*}
     \frac{df}{dt} = \{f,H\}
   \end{flalign*}
-  If we then return to our constrained Hamiltonian \ref{Ham-const} we can see that taking the variantion we get:
-\begin{align*}
-  \delta H' &= \delta p_i\dot{q}^i+p_i\delta \dot{q}^i-\delta L + \lambda^{m}\delta \phi_m =  \frac{\partial H}{\partial q^i}\delta q^i+\frac{\partial H}{\partial p_i}\delta p_i \lambda^{m}\left[\frac{\partial \phi_m}{\partial q^i}\delta q^i+\frac{\partial \phi_m}{\partial p^i}\delta p^i\right] \\
-  & = \left(\frac{\partial H}{\partial q^{i}}+\lambda^{m}\frac{\partial \phi_m}{\partial q^i}\right)\delta q^{i}+\left(\frac{\partial H}{\partial p_i}+\lambda^{m}\frac{\partial \phi_m}{\partial p_i}\right)\delta p_{i}\\
-  & =
-\end{align*}
-Where we have used the fact that $H =H(q,p) \implies \delta H = \frac{\partial H}{\partial q^i}\delta q^i+\frac{\partial H}{\partial p_i}\delta p_i$ and $\phi =\phi(p,q) \implies \delta \phi_m = \frac{\partial \phi_m}{\partial q^i}\delta q^i+\frac{\partial \phi_m}{\partial p^i}\delta p^i$
 
-  \begin{align*}
-     & \frac{dq_i}{dt} = \frac{\partial H}{\partial p_i} + \lambda^{m}\frac{\partial \phi_m}{\partial p_i}\\
-     & \frac{dp_i}{dt} = -\frac{\partial H}{\partial q_i} - \lambda^{m}\frac{\partial \phi_m}{\partial q_i}
-   \end{align*} 
-   Notice the $\lambda^{m}$ are still functions of $p$ or $q$, but their derivatives will always be multiplying $\phi_{m}$ which will vanish.  What this essentially means is that the time derivative of a function $g(p,q)$ now becomes:
-   \begin{flalign}
+\item If we want to extend this notion to the equations of motion in \ref{eom_constr}, then we have to include an extra term :
+   \begin{align}
    \label{dgdt}
-     \frac{d g}{dt} = \{g,H\} +\lambda^{m}\{g,\phi_m\}
-   \end{flalign}
-   This can be show to be the same as $\{g,H+\lambda^{m}\phi_m\}$, even for $\lambda^m$ as functions of $p$ and $q$ as: $\{g,\lambda^{m}\phi_m\} = \{g,\lambda^m\}\phi_m + \lambda^m\{g,\phi_m\}$ and since $\phi_m =0$ we can ignore this first term. With this we can say that $\dot{g} = \{g,H_T\}$ where $H_T = H+\lambda^{m}\phi_m$ is called the \emph{total Hamiltonian}. 
+       \frac{d g}{dt} & = \frac{\partial g}{\partial q^i}\dot{q}^i +\frac{\partial g}{\partial p_i}\dot{p}_i \nonumber \\ 
+     & = \{g,H\} +u^{m}\{g,\phi_m\}
+   \end{align}
+   This can be show to be the same as $\{g,H+u^{m}\phi_m\}$, even though strictly our Poisson bracket is not defined for functions that are not functions of $p$ and $q$. Since : $\{g,u^{m}\phi_m\} = \{g,u^m\}\phi_m + u^m\{g,\phi_m\}$ and  $\phi_m =0$ we can ignore this first term. With this we can say that $\dot{g} = \{g,H_T\}$ where $H_T = H+u^{m}\phi_m$ is called the \emph{total Hamiltonian}. 
 \end{itemize}
-   \subsubsection{Weak and strong equations}
+   \subsubsection{Weak and strong equations}{}
    \begin{itemize}
      \item We can notice that the above procedure fails if we set $\phi_m=0$ at any step before the last one. This is due to the fact that even though $\phi_m=0$, the Poisson brackets involving $\phi_m$ may not be. Thus we can impose the rule that we can only set $\phi^m=0$ when outside the Poisson bracket. To remind ourselves of this we write:
      \begin{align*}
         \phi_m \approx 0 
       \end{align*} 
-      And call these \emph{weak equations}. Any other regular equality is called a \emph{strong equation}. 
+      And call these \emph{weak equations}. Any other regular equality is called a \emph{strong equation}. With these we can see that our equations of motion \ref{dgdt} only hold in a weak sense:
+      \begin{align*}
+        \dot{g} \approx [g,H_T]
+      \end{align*}
    \end{itemize}
+
+
    \subsubsection{Secondary constraints}
    \begin{itemize}
-     \item Since \ref{dgdt} holds for all $g(p,q)$ we can apply it for one of the constraints $\phi_n$. We should have that the time derivative of our constraints are $\dot{\phi}=0$ as it does not make much sense to talk about constraints that change. This means we have:
+     \item Since \ref{dgdt} holds for all $g(p,q)$ we can apply it for one of the constraints $\phi_n$. We should have that the time derivative of our constraints are $\dot{\phi}=0$ as we should have that our constraints are time independent. This means we have:
      \begin{align*}
-       \{\phi_n,H\} +\lambda^{m}\{\phi_n,\phi_m\} =0 
+       \{\phi_n,H\} +u^{m}\{\phi_n,\phi_m\} =0 
      \end{align*}
-     If we call $N_{ab} = \{\phi^{a},\phi^b\}$, then there are three cases:
+     There are a number of cases this equation can lead to, first of all we could have a false statement, such as $1=0$, meaning our original Lagrangian is degenerate. We will ignore equations of the this kind, and assume we have non-degenerate Lagrangian.
      \begin{itemize}
-        \item $N$-invertible, which means  
+        \item A statement that is true given the primary constraints $\phi_m$, so no new info.
+        \item A statement that is independent of the $u_m$'s but adds a new constraint on the $p$'s and $q$'s. 
+        \item A statement that is independent of the $p$'s and $q$'s but constrains the $u_m$'s. 
       \end{itemize} 
+       Equations of the first kind are trivial. Equations of the second kind are called \emph{Secondary constraints} and written:
+       \begin{align*}
+         \chi(p,q)=0
+       \end{align*}
+       We can then repeat this consistency checking process with the new secondary constraints, either getting more secondary constraints or more constraints on the $u_m$. This is carried out until all consistency conditions are exhausted. We will proceed to denote the secondary constraints:
+       \begin{align*}
+            \phi_k,~~~k=M+1,\ldots,M+K
+          \end{align*}   
+          So that they way be written along side the primary constraints. Here $K$ is the number of secondary constraints. 
    \end{itemize}
 
 \end{document}
