@@ -1571,11 +1571,28 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
       \begin{align*}
         u^m = U^m + v^aV^m_a
       \end{align*}
-      Where $v^a$ are completely arbitrary. This means our total Hamiltonian ($H_T = H+u^{m}\phi_m$) takes the form:
-      \begin{align*}
+      Where the $v^a$ are completely arbitrary (they may even be functions of time!). This means our total Hamiltonian ($H_T = H+u^{m}\phi_m$) takes the form:
+      \begin{align}
+      \label{H_tot}
          H_T = H + U^m\phi_m+v^aV_a^m\phi_m
-       \end{align*} 
+       \end{align} 
    \end{itemize}
    % subsection determining_ (end)
 
+
+\subsection{First/Second Class Variables} % (fold)
+\label{sub:first_second_class_variables}
+\begin{itemize}
+  \item We call any dynamic variable $R(p,q)$ to be \emph{first class}, if it has zero Poisson bracket with all the constraints $\phi_m$'s:
+ \begin{align*}
+       \{R,\phi_m\} \approx 0,~~~m=1,\ldots,M+K
+     \end{align*}    
+     Otherwise $R$ is \emph{Second class}. Note that since the only quantities that vanish weakly are the constraints $\phi_m$, this means that the Poisson bracket of $R$ and $\phi_m$ must be strongly equal to some linear combination of the $\phi_m$:
+     \begin{align*}
+        \{R,\phi_m\}  = r^n\phi_n
+     \end{align*}
+     It can also be shown that the Poisson bracket of two first class functions, is also first class. Looking at our total Hamiltonian \ref{H_tot}, we can see that the number arbitrary co-officiants $v_a$ is equal to the number of independent primary first class constraints $V^m\{\phi_m,\phi_n\}=0$
+
+\end{itemize}
+% subsection first_second_class_variables (end)
 \end{document}
