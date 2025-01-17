@@ -1362,7 +1362,7 @@ And:
 
   Note that all though we are now more concerned with $\bar{\psi}$, $\psi^{\dagger}$ is still the conjugate momentum and should still be in the commutation relations.
 
-\item Proceeding with these commutation relations however will not fix the negative energy problem as we still end up with a minus sign from \ref{v(p)} (See calculation above). We can however fix this, if we relabel $c^{r}_{\textbf{p}} -> c^{r\dagger}_{\textbf{p}}$ and $c^{r\dagger}_{\textbf{p}} -> c^{r}_{\textbf{p}}$. We are free to do this now as the anti-commutation relations are symmetric for these operators.  This means $c^{r\dagger}_{\textbf{p}}c^{r}_{\textbf{p}} = - c^{r}_{\textbf{p}}c^{r\dagger}_{\textbf{p}}  +\text{constant}$.This means the Hamiltonian \ref{Ham_D} nicely becomes: 
+\item Proceeding with these commutation relations however will not fix the negative energy problem as we still end up with a minus sign from \ref{v(p)} (See calculation above). We can however fix this, if we relabel $c^{r}_{\textbf{p}} \rightarrow c^{r\dagger}_{\textbf{p}}$ and $c^{r\dagger}_{\textbf{p}} \rightarrow c^{r}_{\textbf{p}}$. We are free to do this now as the anti-commutation relations are symmetric for these operators.  This means $c^{r\dagger}_{\textbf{p}}c^{r}_{\textbf{p}} = - c^{r}_{\textbf{p}}c^{r\dagger}_{\textbf{p}}  +\text{constant}$.This means the Hamiltonian \ref{Ham_D} nicely becomes: 
  \begin{flalign}
            H  &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\left[E_{\textbf{p}}b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}+E_{\textbf{p}}c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}\right]
   \end{flalign}  
@@ -1524,7 +1524,7 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
    \end{align}
    This can be show to be the same as $\{g,H+u^{m}\phi_m\}$, even though strictly our Poisson bracket is not defined for functions that are not functions of $p$ and $q$. Since : $\{g,u^{m}\phi_m\} = \{g,u^m\}\phi_m + u^m\{g,\phi_m\}$ and  $\phi_m =0$ we can ignore this first term. With this we can say that $\dot{g} = \{g,H_T\}$ where $H_T = H+u^{m}\phi_m$ is called the \emph{total Hamiltonian}. 
 \end{itemize}
-   \subsubsection{Weak and strong equations}{}
+   \subsection{Weak and strong equations}{}
    \begin{itemize}
      \item We can notice that the above procedure fails if we set $\phi_m=0$ at any step before the last one. This is due to the fact that even though $\phi_m=0$, the Poisson brackets involving $\phi_m$ may not be. Thus we can impose the rule that we can only set $\phi^m=0$ when outside the Poisson bracket. To remind ourselves of this we write:
      \begin{align*}
@@ -1532,18 +1532,18 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
       \end{align*} 
       And call these \emph{weak equations}. Any other regular equality is called a \emph{strong equation}. With these we can see that our equations of motion \ref{dgdt} only hold in a weak sense:
       \begin{align*}
-        \dot{g} \approx [g,H_T]
+        \dot{g} \approx \{g,H_T\}
       \end{align*}
    \end{itemize}
 
 
-   \subsubsection{Secondary constraints}
+   \subsection{Secondary constraints}
    \begin{itemize}
      \item Since \ref{dgdt} holds for all $g(p,q)$ we can apply it for one of the constraints $\phi_n$. We should have that the time derivative of our constraints are $\dot{\phi}=0$ as we should have that our constraints are time independent. This means we have:
      \begin{align*}
        \{\phi_n,H\} +u^{m}\{\phi_n,\phi_m\} =0 
      \end{align*}
-     There are a number of cases this equation can lead to, first of all we could have a false statement, such as $1=0$, meaning our original Lagrangian is degenerate. We will ignore equations of the this kind, and assume we have non-degenerate Lagrangian.
+     There are a number of cases this equation can lead to, first of all we could have a false statement, such as $1=0$, meaning our original Lagrangian is degenerate. We will ignore equations of the this kind, and assume we have non-degenerate Lagrangian. We could also have.
      \begin{itemize}
         \item A statement that is true given the primary constraints $\phi_m$, so no new info.
         \item A statement that is independent of the $u_m$'s but adds a new constraint on the $p$'s and $q$'s. 
@@ -1553,11 +1553,29 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
        \begin{align*}
          \chi(p,q)=0
        \end{align*}
-       We can then repeat this consistency checking process with the new secondary constraints, either getting more secondary constraints or more constraints on the $u_m$. This is carried out until all consistency conditions are exhausted. We will proceed to denote the secondary constraints:
+       \item We can then repeat this consistency checking process with the new secondary constraints, either getting more secondary constraints or more constraints on the $u_m$. This is carried out until all consistency conditions are exhausted. We will proceed to denote the secondary constraints:
        \begin{align*}
             \phi_k,~~~k=M+1,\ldots,M+K
           \end{align*}   
           So that they way be written along side the primary constraints. Here $K$ is the number of secondary constraints. 
    \end{itemize}
+
+   \subsection{Determining $u^m$} % (fold)
+   \label{sub:determining_}
+   \begin{itemize}
+     \item After the above process of exhausting all the constraints of the system we are left with a set of equations of the third kind, restricting the $u^m$. These take the from:
+     \begin{align*}
+       \{\phi_m,H\} +u^n\{\phi_m,\phi_n\} = 0 
+     \end{align*}
+      Since the $u^m$ are unknowns we can consider these equations a set of non-homogeneous linear equations in the $u^m$'s with co-officiants that are functions of $p$'s and $q$'s. This equation will have a solution as we have assumed that we have a non-degenerate Lagrangian. We call this solution $U^m$. This solution is not unique however as we can always add to it a solution $V^m$, which is a solution to the homogeneous equation $V^m\{\phi_m,\phi_n\}=0$. Since we may add any number of these equations, the most general equation for $u^m$ is:
+      \begin{align*}
+        u^m = U^m + v^aV^m_a
+      \end{align*}
+      Where $v^a$ are completely arbitrary. This means our total Hamiltonian ($H_T = H+u^{m}\phi_m$) takes the form:
+      \begin{align*}
+         H_T = H + U^m\phi_m+v^aV_a^m\phi_m
+       \end{align*} 
+   \end{itemize}
+   % subsection determining_ (end)
 
 \end{document}
