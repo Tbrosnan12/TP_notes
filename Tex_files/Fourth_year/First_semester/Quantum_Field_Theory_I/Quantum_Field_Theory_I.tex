@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=1.5cm,right=2cm,marginparwidth=1.75cm]{geometry}
 \usepackage{hyperref}
 \usepackage{biblatex}
 \addbibresource{Bib.bib}
@@ -1531,9 +1531,10 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
         \phi_m \approx 0 
       \end{align*} 
       And call these \emph{weak equations}. Any other regular equality is called a \emph{strong equation}. With these we can see that our equations of motion \ref{dgdt} only hold in a weak sense:
-      \begin{align*}
+      \begin{align}
+      \label{g_dot}
         \dot{g} \approx \{g,H_T\}
-      \end{align*}
+      \end{align}
    \end{itemize}
 
 
@@ -1580,7 +1581,7 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
    % subsection determining_ (end)
 
 
-\subsection{First/Second Class Variables} % (fold)
+\subsection{First/Second Class} % (fold)
 \label{sub:first_second_class_variables}
 \begin{itemize}
   \item We call any dynamic variable $R(p,q)$ to be \emph{first class}, if it has zero Poisson bracket with all the constraints $\phi_m$'s:
@@ -1591,8 +1592,41 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
      \begin{align*}
         \{R,\phi_m\}  = r^n\phi_n
      \end{align*}
-     It can also be shown that the Poisson bracket of two first class functions, is also first class. Looking at our total Hamiltonian \ref{H_tot}, we can see that the number arbitrary co-officiants $v_a$ is equal to the number of independent primary first class constraints $V^m\{\phi_m,\phi_n\}=0$
-
+     It can also be shown that the Poisson bracket of two first class functions, is also first class. Looking at our total Hamiltonian \ref{H_tot}, we can see that the number arbitrary co-officiants $v_a$ is equal to the number of independent primary first class constraints. This is because there is a $v^a$ for each $V^m_a$ and there is a $V^m_a$ for each $\phi_m$ such that $\{\phi_m,\phi_n\}=0$ for all $n$. 
 \end{itemize}
 % subsection first_second_class_variables (end)
+
+\subsection{Dirac Bracket} % (fold)
+\label{sub:dirac_bracket}
+\begin{itemize}
+  \item If we now focus on second class constraints, we can see that there is an issue that arises. Second class constraints by definition have non-vanishing Poisson brackets, meaning we could have $\{\phi_m,\phi_n\} = c = \text{const}$. This becomes an issue when we try to transport to the quantum mechanical case, where the Poisson bracket becomes the commutator. This then has $[\phi_m,\phi_n] \ket{\psi}\neq 0 $ which contradicts the requirement that both constraints vanish when acting on physical states. 
+
+
+This indicates that we need to generalize our definition of the Poisson bracket that is more consistent with the constraints. If we now label the second class constraints $\tilde{\phi}_m$ and define the matrix:
+\begin{align*}
+   C_{ab} = \{\tilde{\phi}_a,\tilde{\phi}_b\}
+ \end{align*} 
+Dirac proved that this matrix will always be invertible. With this and the definition of the inverse as $C^{ab} \equiv C_{ab}^{-1}$ (st: $C^{ab}C_{bc} = \delta^{a}_c$), we can define a new bracket called the \emph{Dirac Bracket} for two functions $f(p,q)$ and $g(p,q)$:
+ \begin{flalign}
+   \label{D-brac}
+   \{f,g\}_{D} =\{f,g\}- \{f,\tilde{\phi}_a\}C^{ab}\{\tilde{\phi}_b,g\}
+ \end{flalign}
+ Where once again the repeated indices mean summation. It is straightforward to prove this satisfies the same properties as the Poisson bracket. This bracket also still gives us the EoM \ref{g_dot}, as $\{f,H_T\}_{D} =\{f,H_T\}- \{f,\tilde{\phi}_a\}C^{ab}\{\tilde{\phi}_b,H_T\} \approx \{f,H_T\}$ as $\{\tilde{\phi}_b,H_T\} = 0 $ due to the fact that our total Hamiltonian can be shown to be first class. 
+
+ We can also see that the main benefit of this bracket is that if we take Dirac bracket of any function $f$ and a secondary constraint, $\tilde{\phi}_m$, then we see:
+ \begin{align*}
+    \{f,\tilde{\phi}_m\}_{D} &= \{f,\tilde{\phi}_m\}- \{f,\tilde{\phi}_a\}C^{ab}\{\tilde{\phi}_b,\tilde{\phi}_m\} \\
+    & = \{f,\tilde{\phi}_m\}- \{f,\tilde{\phi}_a\}C^{ab}C_{bm} \\
+    & = \{f,\tilde{\phi}_m\}- \{f,\tilde{\phi}_m\} = 0 
+  \end{align*} 
+\end{itemize}
+Meaning we can always set the secondary constraints $\tilde{\phi}_m=0$, in a \emph{strong sense}. 
+% subsection dirac_bracket (end)
+
+\newpage
+
+\section{Quantum Electrodynamics} % (fold)
+\label{sec:quantum_electrodynamics}
+
+% section quantum_electrodynamics (end)
 \end{document}
