@@ -1,4 +1,4 @@
-\contentsline {section}{\numberline {1}The need for Fields}{5}{section.1}%
+\contentsline {section}{\numberline {1}The Need for Fields}{5}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Non-relativistic free particle}{5}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Non-trivial Gaussian integral}{5}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Laplace steepest decent}{6}{subsubsection.1.1.2}%
@@ -65,3 +65,4 @@
 \contentsline {subsection}{\numberline {5.7}First/Second Class}{40}{subsection.5.7}%
 \contentsline {subsection}{\numberline {5.8}Dirac Bracket}{40}{subsection.5.8}%
 \contentsline {section}{\numberline {6}Quantum Electrodynamics}{42}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Maxwell Lagrangian}{42}{subsection.6.1}%

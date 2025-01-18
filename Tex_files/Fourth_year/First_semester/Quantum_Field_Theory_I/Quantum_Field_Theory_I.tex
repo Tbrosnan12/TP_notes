@@ -98,6 +98,7 @@
 \vspace*{\fill} 
 \newpage 
 \hrule
+ \setcounter{tocdepth}{2} % only sections and subsections in Contents
 \tableofcontents
 \vspace{5mm}
 \hrule
@@ -136,7 +137,7 @@
 \normalsize
 \newpage 
 
-\section{The need for Fields}
+\section{The Need for Fields}
 In this section we will see where regular quantum mechanics fails and what we need to do to fix it. 
 
 \subsection{Non-relativistic free particle}
@@ -1627,6 +1628,67 @@ Meaning we can always set the secondary constraints $\tilde{\phi}_m=0$, in a \em
 
 \section{Quantum Electrodynamics} % (fold)
 \label{sec:quantum_electrodynamics}
+\begin{itemize}
+  \item Finally we can begin to quantize the interactions between charged particles using the techniques we have developed above  
+\end{itemize}
+
+\subsection{Maxwell Lagrangian} % (fold)
+\label{sub:maxwell_lagrangian}
+\begin{itemize}
+  \item We know from classical field theory, that in electromagnetism the Lagrangian is:
+  \begin{align*}
+       \mathcal{L}_{\text{Max}}  = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+     \end{align*}   
+     Where $F_{\mu\nu} \equiv \partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$, with: 
+\begin{align}
+\label{F_mn}
+       &  F^{\mu\nu} =  \begin{pmatrix}
+       0  & -E_x & -E_y & -E_z \\
+       E_x&0& -B_z& B_y   \\
+       E_y& B_z& 0 & -B_x \\
+      E_z& -B_y& B_x& 0 \\
+    \end{pmatrix} 
+&       
+ & F_{\mu\nu} =  \begin{pmatrix}
+       0  & E_x& E_y & E_z \\
+       -E_x&0& -B_z& B_y   \\
+       -E_y& B_z& 0 & -B_x \\
+      -E_z& -B_y& B_x& 0 \\
+    \end{pmatrix}
+\end{align}
+     and $A^{\mu}$ is the vector potential.
+
+     \item We can then calculate the momentum density defined in \ref{pi}, where we take derivative with respect to the time derivative of the vector potential, $\partial_{0}A^{\mu} \equiv \dot{A}^{\mu}$, to calculate this it is first easier to calculate:
+     \begin{align*}
+        \frac{\partial F^{\mu\nu}}{\partial \dot{A}^{\mu}} &= \frac{\partial }{\partial \dot{A}^{\mu}}\left(\partial^{\mu}A^{\nu}-\partial^{\nu}A^{\mu}\right) \\
+        & = \delta^{\mu}_0\delta^{\nu}_{\sigma}-\delta^{\mu}_{\sigma}\delta^{\nu}_{0}
+      \end{align*} 
+    Which means
+     \begin{align*}
+        \pi_{\mu} &= \frac{\partial \mathcal{L}}{\partial \dot{A}^{\mu}} = \frac{\partial }{\partial \dot{A}^{\mu}}\left(-\frac{1}{4}\eta_{\mu\delta}F^{\delta\gamma}\eta_{\gamma\nu}F^{\mu\nu}\right) \\
+        & = -\frac{1}{4}\eta_{\mu\delta}\eta_{\gamma\nu}\left[\left(\delta^{\delta}_0\delta^{\gamma}_{\sigma}-\delta^{\gamma}_{\sigma}\delta^{\gamma}_{0}\right)F^{\mu\nu}+F^{\delta\gamma}\left(\delta^{\mu}_0\delta^{\nu}_{\sigma}-\delta^{\mu}_{\sigma}\delta^{\nu}_{0}\right)\right] \\
+        & = -\frac{1}{4}\left[F_{0\sigma}-F_{\sigma 0}+F_{0\sigma}-F_{\sigma 0}\right] = F_{\sigma0}
+      \end{align*} 
+      \item Since $F_{\mu\nu}$ is anti-symmetric, we must have that $F_{00} = 0$, this means that we have a primary constraint!:
+      \begin{flalign*}
+        \pi_{0} \approx 0 
+      \end{flalign*}
+      Note that this must occur for every point in space, so it is not a single constraint. The other components of $\pi_{\mu}$ are just equal to (minus) the components of the Electric Field, $\pi_{i} = -E^i$. We can then proceed to write down a Hamiltonian, including for now, $\pi_0$, to do this we first need to calculate $\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$:
+      \begin{align*}
+        -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} & = -\frac{1}{4}F_{0i}F^{0i}-\frac{1}{4}F_{i0}F^{i0}-\frac{1}{4}F_{ij}F^{ij} \\
+        & =   \frac{1}{2}\textbf{E}^2-\frac{1}{4}F_{ij}F^{ij} \\
+        & =  \frac{1}{2}\left(\textbf{E}^2-\textbf{B}^2\right)
+      \end{align*}
+      Where we have used the matrix definitions \ref{F_mn}. We can then calculate the Hamiltonian as:
+      \begin{align*}
+         H &= \int \left[\pi_{\mu}A^{\mu} - \mathcal{L} \right]d^3x = \int \left[\pi_0\dot{A}^{0} +(-E^i)(\partial_0A^i)-\frac{1}{2}\left(\textbf{E}^2-\textbf{B}^2\right)  \right]d^3x \\
+         & = \int \left[\pi_0\dot{A}^{0} +\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  \right]d^3x
+       \end{align*} 
+\end{itemize}
+
+% subsection maxwell_lagrangian (end)
+
+
 
 % section quantum_electrodynamics (end)
 \end{document}
