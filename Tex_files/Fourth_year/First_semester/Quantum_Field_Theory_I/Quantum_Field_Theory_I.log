@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  19 JAN 2025 01:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  19 JAN 2025 19:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1146,11 +1146,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `Quantum_Field_Theory_I.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Quantum_Field_Theory_I.bbl' not found.
+Package biblatex Info: ... file 'Quantum_Field_Theory_I.bbl' found.
 
-No file Quantum_Field_Theory_I.bbl.
+(./Quantum_Field_Theory_I.bbl)
 Package biblatex Info: Reference section=0 on input line 85.
 Package biblatex Info: Reference segment=0 on input line 85.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count462
@@ -1193,30 +1194,13 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 87
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
-
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Quantum_Field_Theor
+y_I.toc [3])
 \tf@toc=\write7
 \openout7 = `Quantum_Field_Theory_I.toc'.
 
-[3]
-
-LaTeX Warning: Reference `propagator' on page 4 undefined on input line 151.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [4]
-
-LaTeX Warning: Reference `Rel_propagator' on page 5 undefined on input line 215
-.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1236,9 +1220,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6]
 
-LaTeX Warning: Reference `EoM' on page 7 undefined on input line 305.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1247,9 +1228,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [7]
-
-LaTeX Warning: Reference `Noether' on page 8 undefined on input line 327.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1260,21 +1238,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [8]
 
-LaTeX Warning: Reference `pi' on page 9 undefined on input line 351.
-
-
-LaTeX Warning: Reference `Hamiltonian' on page 9 undefined on input line 351.
-
-
-LaTeX Warning: Reference `EoM' on page 9 undefined on input line 356.
-
-
-LaTeX Warning: Reference `KG field' on page 9 undefined on input line 366.
-
-
-LaTeX Warning: Reference `KG eq' on page 9 undefined on input line 372.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1283,15 +1246,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [9]
-
-LaTeX Warning: Reference `phi_1' on page 10 undefined on input line 404.
-
-
-LaTeX Warning: Reference `pi_1' on page 10 undefined on input line 404.
-
-
-LaTeX Warning: Reference `KG_Ham' on page 10 undefined on input line 413.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1302,9 +1256,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [10]
 
-LaTeX Warning: Reference `Ham_SH' on page 11 undefined on input line 433.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1313,12 +1264,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [11]
-
-LaTeX Warning: Reference `phi_2' on page 12 undefined on input line 460.
-
-
-LaTeX Warning: Reference `phi_2' on page 12 undefined on input line 483.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1329,15 +1274,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [12]
 
-LaTeX Warning: Reference `KG_Ham' on page 13 undefined on input line 493.
-
-
-LaTeX Warning: Reference `phi_3' on page 13 undefined on input line 505.
-
-
-LaTeX Warning: Reference `D(x-y)' on page 13 undefined on input line 519.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1346,9 +1282,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [13]
-
-LaTeX Warning: Reference `D(x-y)' on page 14 undefined on input line 534.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1359,21 +1292,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [14]
 
-LaTeX Warning: Reference `D(x-y)' on page 15 undefined on input line 566.
-
-
-LaTeX Warning: Reference `test_prop' on page 15 undefined on input line 586.
-
-
-LaTeX Warning: Reference `KG_prop' on page 15 undefined on input line 591.
-
-
-LaTeX Warning: Reference `test_prop' on page 15 undefined on input line 591.
-
-
-LaTeX Warning: Reference `test_prop' on page 15 undefined on input line 600.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1382,9 +1300,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [15]
-
-LaTeX Warning: Reference `prop' on page 16 undefined on input line 626.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1404,12 +1319,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [17]
 
-LaTeX Warning: Reference `Lor_def' on page 18 undefined on input line 709.
-
-
-LaTeX Warning: Reference `Lor_def' on page 18 undefined on input line 716.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1419,17 +1328,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [18]
 
-LaTeX Warning: Reference `M_4x4' on page 19 undefined on input line 745.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-LaTeX Warning: Reference `M_com' on page 19 undefined on input line 746.
-
-
-LaTeX Warning: Reference `M_com' on page 19 undefined on input line 753.
-
+[19]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 761
 .
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 
@@ -1440,56 +1349,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[19]
-
-LaTeX Warning: Reference `L_com' on page 20 undefined on input line 768.
-
-
-LaTeX Warning: Reference `J_com' on page 20 undefined on input line 780.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
 [20]
-
-LaTeX Warning: Reference `phi_transform' on page 21 undefined on input line 803
-.
-
-
-LaTeX Warning: Reference `J_com' on page 21 undefined on input line 803.
-
-
-LaTeX Warning: Reference `M_4x4' on page 21 undefined on input line 803.
-
-
-LaTeX Warning: Reference `J_com' on page 21 undefined on input line 820.
-
-
-LaTeX Warning: Reference `phi_transform' on page 21 undefined on input line 822
-.
-
-
-LaTeX Warning: Reference `phi_transform' on page 21 undefined on input line 828
-.
-
-
-LaTeX Warning: Reference `phi_transform' on page 21 undefined on input line 838
-.
-
-
-LaTeX Warning: Reference `S_transform' on page 21 undefined on input line 838.
-
-
-LaTeX Warning: Reference `gamma_def' on page 21 undefined on input line 843.
-
-
-LaTeX Warning: Reference `gamma_def' on page 21 undefined on input line 843.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1500,10 +1360,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [21]
 
-LaTeX Warning: Reference `gamma_def' on page 22 undefined on input line 848.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
-pdfTeX warning (ext4): destination with the same identifier (name{equation.4.1}
-) has been already used, duplicate ignored
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[22]pdfTeX warning (ext4): destination with the same identifier (name{equation.
+4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.862   \end{align}
@@ -1524,49 +1389,6 @@ l.862   \end{align}
 l.862   \end{align}
                    
 
-LaTeX Warning: Reference `gamma_def' on page 22 undefined on input line 865.
-
-
-LaTeX Warning: Reference `grel_d' on page 22 undefined on input line 865.
-
-
-LaTeX Warning: Reference `L_half' on page 22 undefined on input line 892.
-
-
-LaTeX Warning: Reference `S_def' on page 22 undefined on input line 892.
-
-
-LaTeX Warning: Reference `S_def' on page 22 undefined on input line 898.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[22]
-
-LaTeX Warning: Reference `L_half' on page 23 undefined on input line 906.
-
-
-LaTeX Warning: Reference `S_def' on page 23 undefined on input line 920.
-
-
-LaTeX Warning: Reference `S_def' on page 23 undefined on input line 946.
-
-
-LaTeX Warning: Reference `gamma^2' on page 23 undefined on input line 946.
-
-
-LaTeX Warning: Reference `S_transform' on page 23 undefined on input line 950.
-
-
-LaTeX Warning: Reference `phi_transform' on page 23 undefined on input line 950
-.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1575,21 +1397,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [23]
-
-LaTeX Warning: Reference `gamma_def' on page 24 undefined on input line 963.
-
-
-LaTeX Warning: Reference `grel_d' on page 24 undefined on input line 967.
-
-
-LaTeX Warning: Reference `L_inverse' on page 24 undefined on input line 979.
-
-
-LaTeX Warning: Reference `grel_b' on page 24 undefined on input line 991.
-
-
-LaTeX Warning: Reference `M_4x4' on page 24 undefined on input line 991.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1600,9 +1407,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [24]
 
-LaTeX Warning: Reference `EoM' on page 25 undefined on input line 1023.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1612,15 +1416,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [25]
 
-LaTeX Warning: Reference `KG eq' on page 26 undefined on input line 1033.
-
-
-LaTeX Warning: Reference `L_boost' on page 26 undefined on input line 1044.
-
-
-LaTeX Warning: Reference `L_rot' on page 26 undefined on input line 1044.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1629,9 +1424,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [26]
-
-LaTeX Warning: Reference `S_ij' on page 27 undefined on input line 1136.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1651,16 +1443,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [28]
 
-LaTeX Warning: Reference `D_act' on page 29 undefined on input line 1205.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
 
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-LaTeX Warning: Reference `Hamiltonian' on page 29 undefined on input line 1207.
-
-
-
-LaTeX Warning: Reference `Dirac' on page 29 undefined on input line 1224.
-
-
+[29]
 Overfull \hbox (32.75508pt too wide) detected at line 1240
 []
  []
@@ -1673,59 +1463,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[29]
-
-LaTeX Warning: Reference `outer_u' on page 30 undefined on input line 1252.
-
-
-LaTeX Warning: Reference `outer_v' on page 30 undefined on input line 1252.
-
-
-LaTeX Warning: Reference `psi' on page 30 undefined on input line 1259.
-
-
-LaTeX Warning: Reference `psi_d' on page 30 undefined on input line 1259.
-
-
-LaTeX Warning: Reference `D_ham' on page 30 undefined on input line 1259.
-
-
+[30]
 Overfull \hbox (46.99426pt too wide) detected at line 1265
 []
  []
-
-
-LaTeX Warning: Reference `u(p)' on page 30 undefined on input line 1267.
-
-
-LaTeX Warning: Reference `v(p)' on page 30 undefined on input line 1267.
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[30]
-
-LaTeX Warning: Reference `norm_a' on page 31 undefined on input line 1276.
-
-
-LaTeX Warning: Reference `norm_b' on page 31 undefined on input line 1276.
-
-
-LaTeX Warning: Reference `psi' on page 31 undefined on input line 1293.
-
-
-LaTeX Warning: Reference `psi_d' on page 31 undefined on input line 1293.
-
-
-LaTeX Warning: Reference `a_H' on page 31 undefined on input line 1293.
-
-
-LaTeX Warning: Reference `a_H' on page 31 undefined on input line 1300.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1737,20 +1478,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [31]
 
-LaTeX Warning: Reference `D(x-y)' on page 32 undefined on input line 1332.
-
-
-Overfull \hbox (21.60393pt too wide) in paragraph at lines 1332--1333
-[]\OT1/cmr/m/n/10.95 We can see that these in-te-grals are the same as in []. T
-his im-plies when we go to cal-cu-late $[] [\OML/cmm/m/it/10.95  \OT1/cmr/m/n/1
-0.95 (\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  \OT1/cmr/
-m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 )] []$
- []
-
-
-LaTeX Warning: Reference `psi_dag' on page 32 undefined on input line 1344.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1759,12 +1486,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [32]
-
-LaTeX Warning: Reference `v(p)' on page 33 undefined on input line 1366.
-
-
-LaTeX Warning: Reference `Ham_D' on page 33 undefined on input line 1366.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1775,29 +1496,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [33]
 
-LaTeX Warning: Reference `D_act' on page 34 undefined on input line 1393.
-
-
-LaTeX Warning: Reference `Noether' on page 34 undefined on input line 1393.
-
-
-LaTeX Warning: Reference `charge' on page 34 undefined on input line 1397.
-
-
-LaTeX Warning: Reference `psi_dag' on page 34 undefined on input line 1401.
-
-
-Overfull \hbox (6.46196pt too wide) detected at line 1407
-[]
- []
-
-
-LaTeX Warning: Reference `norm_a' on page 34 undefined on input line 1408.
-
-
-LaTeX Warning: Reference `norm_b' on page 34 undefined on input line 1408.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1806,26 +1504,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [34]
-
-LaTeX Warning: Reference `need_anti' on page 35 undefined on input line 1417.
-
-
-LaTeX Warning: Reference `com_1' on page 35 undefined on input line 1417.
-
-
-LaTeX Warning: Reference `com_2' on page 35 undefined on input line 1417.
-
-
-LaTeX Warning: Reference `D(x-y)' on page 35 undefined on input line 1425.
-
-
-LaTeX Warning: Reference `Feynmann' on page 35 undefined on input line 1430.
-
-
-LaTeX Warning: Reference `Feynmann' on page 35 undefined on input line 1438.
-
-
-LaTeX Warning: Reference `Feynmann_2' on page 35 undefined on input line 1438.
+Overfull \hbox (6.46196pt too wide) detected at line 1407
+[]
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1837,16 +1518,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [35]
 
-LaTeX Warning: Reference `Non-degenerate Lagrangian' on page 36 undefined on in
-put line 1453.
-
-
-LaTeX Warning: Reference `Ham-const' on page 36 undefined on input line 1466.
-
-
-LaTeX Warning: Reference `delta_H' on page 36 undefined on input line 1487.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1855,12 +1526,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [36]
-
-LaTeX Warning: Reference `dfdt' on page 37 undefined on input line 1515.
-
-
-LaTeX Warning: Reference `eom_constr' on page 37 undefined on input line 1520.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1871,24 +1536,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [37]
 
-LaTeX Warning: Reference `dgdt' on page 38 undefined on input line 1534.
-
-
-LaTeX Warning: Reference `dgdt' on page 38 undefined on input line 1544.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1565.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1565.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1565.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1898,10 +1545,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [38]
 
-LaTeX Warning: Reference `H_tot' on page 39 undefined on input line 1596.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1566.
 
 
-LaTeX Warning: Reference `g_dot' on page 39 undefined on input line 1615.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1566.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1566.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1922,12 +1575,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [40]
 
-LaTeX Warning: Reference `pi' on page 41 undefined on input line 1661.
-
-
-LaTeX Warning: Reference `F_mn' on page 41 undefined on input line 1682.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1944,67 +1591,69 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[42
+[42]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[43]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[44
 
 ] (./Quantum_Field_Theory_I.aux)
+Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Quantum_Field_Theory_I.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Quantum_Field_Theory_I.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  2F25898D8504DF80FFBA857C3C0F4BAF;7000.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Quantum_Field_Theory_I
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 0596819AD6013E2C05C0262E8EFB3C03;7113.
 Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 \openout1 = `Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36132 strings out of 480247
- 718306 string characters out of 5896106
- 1448812 words of memory out of 5000000
- 53314 multiletter control sequences out of 15000+600000
+ 36194 strings out of 480247
+ 719271 string characters out of 5896151
+ 1453153 words of memory out of 5000000
+ 53364 multiletter control sequences out of 15000+600000
  487171 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,21n,104p,1211b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eu
-fm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
-m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Quantum_Field_Theory_I.pdf (42 pages, 481234 bytes).
+ </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.60
+0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb>
+Output written on Quantum_Field_Theory_I.pdf (44 pages, 485214 bytes).
 PDF statistics:
- 552 PDF objects out of 1000 (max. 8388607)
- 431 compressed objects within 5 object streams
- 200 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 857 PDF objects out of 1000 (max. 8388607)
+ 732 compressed objects within 8 object streams
+ 208 named destinations out of 1000 (max. 500000)
+ 509 words of extra memory for PDF output out of 10000 (max. 10000000)
 

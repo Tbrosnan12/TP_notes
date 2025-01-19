@@ -1542,9 +1542,10 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
    \subsection{Secondary constraints}
    \begin{itemize}
      \item Since \ref{dgdt} holds for all $g(p,q)$ we can apply it for one of the constraints $\phi_n$. We should have that the time derivative of our constraints are $\dot{\phi}=0$ as we should have that our constraints are time independent. This means we have:
-     \begin{align*}
+     \begin{align}
+     \label{consistency}
        \{\phi_n,H\} +u^{m}\{\phi_n,\phi_m\} =0 
-     \end{align*}
+     \end{align}
      There are a number of cases this equation can lead to, first of all we could have a false statement, such as $1=0$, meaning our original Lagrangian is degenerate. We will ignore equations of the this kind, and assume we have non-degenerate Lagrangian. We could also have.
      \begin{itemize}
         \item A statement that is true given the primary constraints $\phi_m$, so no new info.
@@ -1673,26 +1674,54 @@ Meaning we can always set the secondary constraints $\tilde{\phi}_m=0$, in a \em
       \begin{flalign*}
         \pi_{0} \approx 0 
       \end{flalign*}
-      Note that this must occur for every point in space, so it is not a single constraint. The other components of $\pi_{\mu}$ are just equal to (minus) the components of the Electric Field, $\pi_{i} = -E^i$. We can then proceed to write down a Hamiltonian, including for now, $\pi_0$, to do this we first need to calculate $\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$:
-      \begin{align*}
+      Note that this must occur for every point in space, so it is not a single constraint. The other components of $\pi_{\mu}$ are just equal to (minus) the components of the Electric Field, $\pi_{i} = -E^i$. 
+\end{itemize} 
+% subsection maxwell_lagrangian (end)
+
+\subsection{Hamiltonian} % (fold)
+\label{sub:hamiltonian}
+\begin{itemize}
+\item We can then proceed to write down a Hamiltonian, including for now, $\pi_0$, to do this we first need to calculate $\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$:
+\begin{align*}
         -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} & = -\frac{1}{4}F_{0i}F^{0i}-\frac{1}{4}F_{i0}F^{i0}-\frac{1}{4}F_{ij}F^{ij} \\
         & =   \frac{1}{2}\textbf{E}^2-\frac{1}{4}F_{ij}F^{ij} \\
         & =  \frac{1}{2}\left(\textbf{E}^2-\textbf{B}^2\right)
-      \end{align*}
-      Where we have used the matrix definitions \ref{F_mn}. We can then calculate the Hamiltonian as:
-      \begin{align*}
-         H &= \int \left[\pi_{\mu}A^{\mu} - \mathcal{L} \right]d^3x = \int \left[\pi_0\dot{A}^{0} +(-E^i)(\partial_0A^i)-\frac{1}{2}\left(\textbf{E}^2-\textbf{B}^2\right)  \right]d^3x \\
-       \end{align*} 
-       We then have the fact that $\textbf{E} = -\nabla \phi -\partial_{0}\textbf{A}$, so the electric field is related to the 4-potential, via: $E^i = -\partial_{i}A^0-\partial_0A^i$. This means:
-       \begin{align*}
+\end{align*}
+Where we have used the matrix definitions \ref{F_mn}. We can then calculate the Hamiltonian as:
+\begin{align*}
+         H &= \int \left[\pi_{\mu}A^{\mu} - \mathcal{L} \right]d^3x = \int \left[\pi_0\dot{A}^{0} +(-E^i)(\partial_0A^i)-\frac{1}{2}\left(\textbf{E}^2-\textbf{B}^2\right)  \right]d^3x 
+\end{align*} 
+We then have the fact that $\textbf{E} = -\nabla \phi -\partial_{0}\textbf{A}$, so the electric field is related to the 4-potential, via: $E^i = -\partial_{i}A^0-\partial_0A^i$. This means:
+\begin{align}
+\label{QED_Ham}
          H &= \int \left[\pi_0\dot{A}^{0} +E^i\partial_iA^0+\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  \right]d^3x \\
          & \int \left[\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  +\pi_0\partial_0A^{0}-A^0\partial_iE^i\right]d^3x 
-       \end{align*}
+\end{align}
+Where we have integrated the last term by parts. 
 \end{itemize}
 
-% subsection maxwell_lagrangian (end)
+\subsubsection{Consistency conditions} % (fold)
+\label{ssub:consistency_conditions}
+\begin{itemize}
+\item We can then put our constraints through consistency conditions as in \ref{consistency}. For $\pi_0 \approx 0$, to be satisfied at all times we must have that:
+\begin{align*}
+      0  = \dot{\pi}_0 = \{\pi_0,H\} +\{\pi_0,\pi_0\}  = \{\pi_0,H\}
+\end{align*}
+To evaluate this we need to write down explicitly what the Poisson bracket has become in this continuous case of the electromagnetic field, for two functions $F(\pi_{\mu},A_\mu)$ and $G(\pi_{\mu},A_\mu)$:
+\begin{align}
+           \label{Poisson_cont}
+           \{F(\textbf{x}),G(\textbf{y})\} =  \int d^3z \left(\frac{\partial F(\textbf{x})}{\partial A^\mu(\textbf{z})}\frac{\partial G(\textbf{y})}{\partial \pi_\mu(\textbf{z})}-\frac{\partial G(\textbf{y})}{\partial A^\mu(\textbf{z})}\frac{\partial F(\textbf{x})}{\partial \pi_\mu(\textbf{z})}\right)
+\end{align}
+With this we can see that:
+\begin{align*}
+  \{\pi_0,H\} & = - \int d^3z\frac{\partial H(\textbf{x})}{\partial A^\mu(\textbf{z})}\frac{\partial F(\textbf{x})}{\partial \pi_\mu(\textbf{z})} = - \int d^3z\frac{\partial H(\textbf{x})}{\partial A^0(\textbf{z})}\frac{\partial \pi_0(\textbf{x})}{\partial \pi_0(\textbf{z})}   \\
+  & =- \int d^3z\frac{\partial (A^0\partial_iE^i)}{\partial A^0(\textbf{z})}\delta(\textbf{x}-\textbf{z})= - \int d^3z\delta(\textbf{x}-\textbf{z})\partial_iE^i = 0 ,  \\ 
+  & \implies \partial_iE^i = 0
+\end{align*}
+This is a secondary constraint! Which we can more easily recognize as Gauss's Law. It can be checked that there are no further constraints on this system. With the these two constraints we can see that we do not need to add any extra constraints of the form $u_1\partial_iE_i,u_2\pi_0$, to our Hamiltonian \ref{QED_Ham}, as this would essentially only result in shifting $A_0$ and $\dot{A}_0$.   
+\end{itemize}
 
-
-
+% subsubsection consistency_conditions (end)
+% subsection hamiltonian (end)
 % section quantum_electrodynamics (end)
 \end{document}
