@@ -1682,8 +1682,12 @@ Meaning we can always set the secondary constraints $\tilde{\phi}_m=0$, in a \em
       Where we have used the matrix definitions \ref{F_mn}. We can then calculate the Hamiltonian as:
       \begin{align*}
          H &= \int \left[\pi_{\mu}A^{\mu} - \mathcal{L} \right]d^3x = \int \left[\pi_0\dot{A}^{0} +(-E^i)(\partial_0A^i)-\frac{1}{2}\left(\textbf{E}^2-\textbf{B}^2\right)  \right]d^3x \\
-         & = \int \left[\pi_0\dot{A}^{0} +\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  \right]d^3x
        \end{align*} 
+       We then have the fact that $\textbf{E} = -\nabla \phi -\partial_{0}\textbf{A}$, so the electric field is related to the 4-potential, via: $E^i = -\partial_{i}A^0-\partial_0A^i$. This means:
+       \begin{align*}
+         H &= \int \left[\pi_0\dot{A}^{0} +E^i\partial_iA^0+\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  \right]d^3x \\
+         & \int \left[\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  +\pi_0\partial_0A^{0}-A^0\partial_iE^i\right]d^3x 
+       \end{align*}
 \end{itemize}
 
 % subsection maxwell_lagrangian (end)

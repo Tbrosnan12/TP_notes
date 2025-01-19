@@ -1,9 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'Classical_Electrodynamics.blg'
-[80] biber:340> INFO - === Tue Aug 20, 2024, 23:52:06
-[91] Biber.pm:418> INFO - Reading 'Classical_Electrodynamics.bcf'
-[152] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
-[165] bbl.pm:654> INFO - Writing 'Classical_Electrodynamics.bbl' with encoding 'UTF-8'
-[165] bbl.pm:757> INFO - Output to Classical_Electrodynamics.bbl
-[165] Biber.pm:130> WARN - The file 'Classical_Electrodynamics.bcf' does not contain any citations!
-[165] Biber.pm:132> INFO - WARNINGS: 1
+[77] biber:340> INFO - === Sun Jan 19, 2025, 01:30:28
+[95] Biber.pm:418> INFO - Reading 'Classical_Electrodynamics.bcf'
+[206] Biber.pm:972> INFO - Found 0 citekeys in bib section 0
+[229] bbl.pm:654> INFO - Writing 'Classical_Electrodynamics.bbl' with encoding 'UTF-8'
+[229] bbl.pm:757> INFO - Output to Classical_Electrodynamics.bbl
+[229] Biber.pm:130> WARN - The file 'Classical_Electrodynamics.bcf' does not contain any citations!
+[229] Biber.pm:132> INFO - WARNINGS: 1
