@@ -1693,8 +1693,9 @@ Where we have used the matrix definitions \ref{F_mn}. We can then calculate the 
 \end{align*} 
 We then have the fact that $\textbf{E} = -\nabla \phi -\partial_{0}\textbf{A}$, so the electric field is related to the 4-potential, via: $E^i = -\partial_{i}A^0-\partial_0A^i$. This means:
 \begin{align}
-\label{QED_Ham}
+\label{QED_Ham_0}
          H &= \int \left[\pi_0\dot{A}^{0} +E^i\partial_iA^0+\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  \right]d^3x \\
+         \label{QED_Ham}
          & = \int \left[\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  +\pi_0\partial_0A^{0}-A^0\partial_iE^i\right]d^3x 
 \end{align}
 Where we have integrated the last term by parts. 
@@ -1727,20 +1728,31 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 \begin{itemize}
    \item It can be checked that $\{\pi_0,\partial_i\pi_i \} \approx 0$, meaning both these constraints are first class. Now this is not ideal as we can recall from section \ref{sub:first_second_class_variables}, that the number of first class constraints is the same as the number of arbitrary co-officiants {}in our total Hamiltonian \ref{H_tot} . To fix this we can introduce an equal number of gauge fixes that will act as constraints. Introducing new constraints, if chosen right, will change some of the first class constraints to second class, as the old constraints may not have $0$ Poisson bracket with the new constraints.  
 
-   \item We are used t{}o using several gauges in classical electromagnetism. One of these is the Coulomb gauge, $\partial_iA^i = 0$. With this constraint we must have that this stays true for later times so we must check the consistency relation with the Hamiltonian as in \ref{consistency}. This calculation will involve the calculation of the derivative $\partial\left(\partial_iA^i(\textbf{x})\right)/\partial A^j(\texbf{z})$, which is non-trivial. This calculation can be easily carried out through the expansion of $\partial_iA^i$ in the following form:
+   \item We are used to using several gauges in classical electromagnetism. One of these is the Coulomb gauge, $\partial_iA^i = 0$. With this constraint we must have that this stays true for later times so we must check the consistency relation with the Hamiltonian as in \ref{consistency}. This calculation will involve the calculation of the derivative $\partial\left(\partial_iA^i(\textbf{x})\right)/\partial A^j(\textbf{z})$, which is non-trivial. This calculation can be easily carried out through the expansion of $\partial_iA^i$ in the following form:
    \begin{align*}
      \partial_iA^i(\textbf{x}) = -\int d^3x'A^i(\textbf{x}')\frac{\partial }{\partial(x')^i}\delta(\textbf{x}-\textbf{x}')
    \end{align*}
    This expansion can be easily seen to be true if we integrate by parts. With this we can now see that:
+   \begin{align}
+   \label{partial_A}
+     \frac{\partial\left(\partial_iA^i(\textbf{x})\right)}{\partial A^j(\textbf{z})} &= -\int d^3x'\frac{\partial A^i(\textbf{x}')}{\partial A^j(\textbf{x})}\frac{\partial}{\partial (x')^i}\delta(\textbf{x}-\textbf{x}') = -\int d^3x\delta^{i}_j\delta(\textbf{x}'-\textbf{z})\frac{\partial}{\partial (x')^i}\delta(\textbf{x}-\textbf{x}') \nonumber \\
+     & = \frac{\partial}{\partial z^j}\delta(\textbf{x}-\textbf{z}) 
+   \end{align}
+   This will be the only non-vanishing term, meaning:
    \begin{align*}
-     \frac{\partial\left(\partial_iA^i(\textbf{x})\right)}{\partial A^j(\texbf{z})} &= -\int d^3x'\frac{\partial A^i(\textbf{x}')}{\partial A^j(\textbf{x})}\frac{\partial}{\partial (x')^i}\delta(\textbf{x}-\textbf{x}') = -\int d^3x\delta^{i}_j\delta(\textbf{x}'-\textbf{z})\frac{\partial}{\partial (x')^i}\delta(\textbf{x}-\textbf{x}') \\
-     & = \frac{\partial}{\partial z^j}\delta(\textbf{x}-\textbf{z})
+    \partial_0(\partial_iA^i)  = \{\partial_iA^i,H\}  = \int d^3z\frac{\partial\left(\partial_iA^i(\textbf{x})\right)}{\partial A^j(\textbf{z})}\frac{\partial H}{\partial \pi_j}
    \end{align*}
-
-   :
+   We can then calculate $\partial H/\partial \pi_j$ from the first definition of $H$ in \ref{QED_Ham_0}. With this and the fact that $\pi_{i} = -E^i$ :
    \begin{align*}
-    \partial_0(\partial_iA^i)  = \{\partial_iA^i,H\} 
-   \end{align*}
+      \frac{\partial H}{\partial \pi_j} = -\frac{\partial}{\partial E^j}\left(\frac{1}{2}E^2-E^i\partial_iA^0\right) = E^j - \partial_jA^0
+    \end{align*} 
+    Combining this with \ref{partial_A} we have:
+    \begin{align*}
+      \{\partial_iA^i,H\}  &= \int d^3z\frac{\partial}{\partial z^j}\delta(\textbf{x}-\textbf{z})\left(E^j - \partial_jA^0\right) \\
+      & = -\int d^3z\delta(\textbf{x}-\textbf{z})\frac{\partial}{\partial z^j}\left(E^j - \partial_jA^0\right) \\
+      & = -\partial_jE^j - \partial_j\partial_jA^0 \approx  \partial^j\partial_jA^0 
+    \end{align*}
+    Where in the second line we have used integration by parts. For the constraint to be consistent we must have that $\{\partial_iA^i,H\} = \partial^j\partial_jA^0$.  
 \end{itemize}
 % subsection gauge_fixing (end)
 
