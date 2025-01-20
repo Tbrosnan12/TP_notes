@@ -1695,7 +1695,7 @@ We then have the fact that $\textbf{E} = -\nabla \phi -\partial_{0}\textbf{A}$, 
 \begin{align}
 \label{QED_Ham}
          H &= \int \left[\pi_0\dot{A}^{0} +E^i\partial_iA^0+\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  \right]d^3x \\
-         & \int \left[\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  +\pi_0\partial_0A^{0}-A^0\partial_iE^i\right]d^3x 
+         & = \int \left[\frac{1}{2}\left(\textbf{E}^2+\textbf{B}^2\right)  +\pi_0\partial_0A^{0}-A^0\partial_iE^i\right]d^3x 
 \end{align}
 Where we have integrated the last term by parts. 
 \end{itemize}
@@ -1714,18 +1714,35 @@ To evaluate this we need to write down explicitly what the Poisson bracket has b
 \end{align}
 With this we can see that:
 \begin{align*}
-  \{\pi_0,H\} & = - \int d^3z\frac{\partial H(\textbf{x})}{\partial A^\mu(\textbf{z})}\frac{\partial F(\textbf{x})}{\partial \pi_\mu(\textbf{z})} = - \int d^3z\frac{\partial H(\textbf{x})}{\partial A^0(\textbf{z})}\frac{\partial \pi_0(\textbf{x})}{\partial \pi_0(\textbf{z})}   \\
+  \{\pi_0,H\} & = - \int d^3z\frac{\partial H(\textbf{x})}{\partial A^\mu(\textbf{z})}\frac{\partial \pi_0(\textbf{x})}{\partial \pi_\mu(\textbf{z})} = - \int d^3z\frac{\partial H(\textbf{x})}{\partial A^0(\textbf{z})}\frac{\partial \pi_0(\textbf{x})}{\partial \pi_0(\textbf{z})}   \\
   & =- \int d^3z\frac{\partial (A^0\partial_iE^i)}{\partial A^0(\textbf{z})}\delta(\textbf{x}-\textbf{z})= - \int d^3z\delta(\textbf{x}-\textbf{z})\partial_iE^i = 0 ,  \\ 
   & \implies \partial_iE^i = 0, ~~~\implies \partial_i\pi_i = 0
 \end{align*}
 This is a secondary constraint! Which we can more easily recognize as Gauss's Law. It can be checked that there are no further constraints on this system. With the these two constraints we can see that we do not need to add any extra constraints of the form $u_1\partial_iE_i,u_2\pi_0$, to our Hamiltonian \ref{QED_Ham}, as this would essentially only result in shifting $A_0$ and $\dot{A}_0$.  
-
- \item It can be checked that $\{\pi_0,\partial_i\pi_i \} \approx 0$, meaning both these constraints are first class. Now this is not ideal as we can recall from section \ref{sub:first_second_class_variables}, that the number of first class constraints is the same as the number of arbitrary co-officiants. To fix this we can introduce an equal number of gauge fixes that will act as constraints. Introducing new constraints, if chosen right, will change some of the first class constraints to second class, as the old constraints may not have $0$ Poisson bracket with the new constraints. 
-
-   \item We are used to using several gauges in classical electromagnetism. One of these is the Coulomb gauge, $\partial_iA^i = 0$. With this constraint
 \end{itemize}
-
 % subsubsection consistency_conditions (end)
 % subsection hamiltonian (end)
+\subsection{Gauge Fixing} % (fold)
+\label{sub:gauge_fixing}
+\begin{itemize}
+   \item It can be checked that $\{\pi_0,\partial_i\pi_i \} \approx 0$, meaning both these constraints are first class. Now this is not ideal as we can recall from section \ref{sub:first_second_class_variables}, that the number of first class constraints is the same as the number of arbitrary co-officiants {}in our total Hamiltonian \ref{H_tot} . To fix this we can introduce an equal number of gauge fixes that will act as constraints. Introducing new constraints, if chosen right, will change some of the first class constraints to second class, as the old constraints may not have $0$ Poisson bracket with the new constraints.  
+
+   \item We are used t{}o using several gauges in classical electromagnetism. One of these is the Coulomb gauge, $\partial_iA^i = 0$. With this constraint we must have that this stays true for later times so we must check the consistency relation with the Hamiltonian as in \ref{consistency}. This calculation will involve the calculation of the derivative $\partial\left(\partial_iA^i(\textbf{x})\right)/\partial A^j(\texbf{z})$, which is non-trivial. This calculation can be easily carried out through the expansion of $\partial_iA^i$ in the following form:
+   \begin{align*}
+     \partial_iA^i(\textbf{x}) = -\int d^3x'A^i(\textbf{x}')\frac{\partial }{\partial(x')^i}\delta(\textbf{x}-\textbf{x}')
+   \end{align*}
+   This expansion can be easily seen to be true if we integrate by parts. With this we can now see that:
+   \begin{align*}
+     \frac{\partial\left(\partial_iA^i(\textbf{x})\right)}{\partial A^j(\texbf{z})} &= -\int d^3x'\frac{\partial A^i(\textbf{x}')}{\partial A^j(\textbf{x})}\frac{\partial}{\partial (x')^i}\delta(\textbf{x}-\textbf{x}') = -\int d^3x\delta^{i}_j\delta(\textbf{x}'-\textbf{z})\frac{\partial}{\partial (x')^i}\delta(\textbf{x}-\textbf{x}') \\
+     & = \frac{\partial}{\partial z^j}\delta(\textbf{x}-\textbf{z})
+   \end{align*}
+
+   :
+   \begin{align*}
+    \partial_0(\partial_iA^i)  = \{\partial_iA^i,H\} 
+   \end{align*}
+\end{itemize}
+% subsection gauge_fixing (end)
+
 % section quantum_electrodynamics (end)
 \end{document}

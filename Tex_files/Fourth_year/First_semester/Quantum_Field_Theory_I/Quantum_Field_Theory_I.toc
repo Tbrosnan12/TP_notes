@@ -68,3 +68,4 @@
 \contentsline {subsection}{\numberline {6.1}Maxwell Lagrangian}{42}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Hamiltonian}{42}{subsection.6.2}%
 \contentsline {subsubsection}{\numberline {6.2.1}Consistency conditions}{43}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Gauge Fixing}{43}{subsection.6.3}%
