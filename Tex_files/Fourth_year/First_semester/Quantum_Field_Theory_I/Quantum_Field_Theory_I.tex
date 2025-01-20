@@ -1752,7 +1752,13 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
       & = -\int d^3z\delta(\textbf{x}-\textbf{z})\frac{\partial}{\partial z^j}\left(E^j - \partial_jA^0\right) \\
       & = -\partial_jE^j - \partial_j\partial_jA^0 \approx  \partial^j\partial_jA^0 
     \end{align*}
-    Where in the second line we have used integration by parts. For the constraint to be consistent we must have that $\{\partial_iA^i,H\} = \partial^j\partial_jA^0$.  
+    Where in the second line we have used integration by parts and the last step holds weakly as $\partial_jE^j \approx 0$. For the constraint to be consistent we must have that $\{\partial_iA^i,H\} \approx \partial^j\partial_jA^0 = 0$. For this to be satisfied we could have $A^0 \propto x^i$, but this would mean our fields would not vanish at infinity, so we must have that $A^0 =0$. 
+
+    \item With this we have found $4$ new constraints, the same number as arbitrary co-officiants in our total Hamiltonian due to the presence of $4$ first class constraints $\pi_0\approx 0$ and $\partial^i\pi_i \approx 0$. Together the constraints are:
+    \begin{align*}  
+        \pi_0 \approx 0 ~~& ~~~~\partial^i\pi_i \approx 0  \\
+        A^0 \approx 0 ~~& ~~~~ \partial_iA^i \approx 0\\
+      \end{align*}  
 \end{itemize}
 % subsection gauge_fixing (end)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  19 JAN 2025 01:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  20 JAN 2025 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -999,104 +999,63 @@ Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 \CommentStream=\write5
 
 Excluding comment 'comment')
-(/usr/share/texlive/texmf-dist/tex/latex/mhchem/mhchem.sty
-Package: mhchem 2021/12/31 v4.09 for typesetting chemical formulae
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
-)
-(/usr/share/texlive/texmf-dist/tex/latex/chemgreek/chemgreek.sty
-Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
- in chemistry (CN)
-\l__chemgreek_tmpa_int=\count458
-\g__chemgreek_tmpa_int=\count459
-)
-\l__mhchem_ce_distanceFromLastComma_int=\count460
-\__mhchem_arrow_extPgfLength_skip=\skip79
-\mhchem@minispace@tmp=\skip80
-\mhchem@minibackspace@tmp=\skip81
-\mhchem@bondwidth=\skip82
-\mhchem@bondheight=\skip83
-\mhchem@smallbondwidth@tmpA=\skip84
-\mhchem@smallbondwidth@tmpB=\skip85
-\mhchem@smallbondwidth=\skip86
-\mhchem@bondtmp@minussidebearingleft=\skip87
-\mhchem@bondtmp@minussidebearingright=\skip88
-\l__mhchem_option_version_int=\count461
-\mhchem@option@minusmathsidebearingleft=\dimen295
-\mhchem@option@minusmathsidebearingright=\dimen296
-\mhchem@option@minustextsidebearingleft=\dimen297
-\mhchem@option@minustextsidebearingright=\dimen298
-)
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen299
+\col@sep=\dimen295
 \ar@mcellbox=\box83
-\extrarowheight=\dimen300
+\extrarowheight=\dimen296
 \NC@list=\toks42
-\extratabsurround=\skip89
-\backup@length=\skip90
+\extratabsurround=\skip79
+\backup@length=\skip80
 \ar@cellbox=\box84
 )
-\TX@col@width=\dimen301
-\TX@old@table=\dimen302
-\TX@old@col=\dimen303
-\TX@target=\dimen304
-\TX@delta=\dimen305
-\TX@cols=\count462
+\TX@col@width=\dimen297
+\TX@old@table=\dimen298
+\TX@old@col=\dimen299
+\TX@target=\dimen300
+\TX@delta=\dimen301
+\TX@cols=\count458
 \TX@ftn=\toks43
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip91
-\thanksmargin=\skip92
-\droptitle=\skip93
+\thanksmarkwidth=\skip81
+\thanksmargin=\skip82
+\droptitle=\skip83
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box85
-\beforetitleunit=\skip94
-\aftertitleunit=\skip95
-\ttl@plus=\dimen306
-\ttl@minus=\dimen307
+\beforetitleunit=\skip84
+\aftertitleunit=\skip85
+\ttl@plus=\dimen302
+\ttl@minus=\dimen303
 \ttl@toksa=\toks44
-\titlewidth=\dimen308
-\titlewidthlast=\dimen309
-\titlewidthfirst=\dimen310
+\titlewidth=\dimen304
+\titlewidthlast=\dimen305
+\titlewidthfirst=\dimen306
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip96
-\f@nch@O@elh=\skip97
-\f@nch@O@erh=\skip98
-\f@nch@O@olh=\skip99
-\f@nch@O@orh=\skip100
-\f@nch@O@elf=\skip101
-\f@nch@O@erf=\skip102
-\f@nch@O@olf=\skip103
-\f@nch@O@orf=\skip104
-)
-(/usr/share/texlive/texmf-dist/tex/latex/derivative/derivative.sty
-Package: derivative 2021/06/03 v1.1 Nice and easy derivatives and differentials
- for LaTeX
-\l__deriv_vmo_int=\count463
-\l__deriv_tmpa_int=\count464
-\l__deriv_tmpb_int=\count465
-\l__deriv_numerical_int=\count466
-\l__deriv_sort_counter_int=\count467
-\l__deriv_sort_max_int=\count468
-\l__deriv_position_int=\count469
-\l__deriv_rebuild_int=\count470
+\f@nch@headwidth=\skip86
+\f@nch@O@elh=\skip87
+\f@nch@O@erh=\skip88
+\f@nch@O@olh=\skip89
+\f@nch@O@orh=\skip90
+\f@nch@O@elf=\skip91
+\f@nch@O@erf=\skip92
+\f@nch@O@olf=\skip93
+\f@nch@O@orf=\skip94
 )
 
 Package biblatex Warning: Load 'inputenc' before biblatex.
 
-\@quotelevel=\count471
-\@quotereset=\count472
+\@quotelevel=\count459
+\@quotereset=\count460
 (./Classical_Field_Theory.aux)
 \openout1 = `Classical_Field_Theory.aux'.
 
@@ -1163,7 +1122,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count473
+\c@section@level=\count461
 )
 LaTeX Info: Redefining \ref on input line 66.
 LaTeX Info: Redefining \pageref on input line 66.
@@ -1193,16 +1152,16 @@ Package biblatex Info: Reference segment=0 on input line 66.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count474
-\scratchdimen=\dimen311
+\scratchcounter=\count462
+\scratchdimen=\dimen307
 \scratchbox=\box86
-\nofMPsegments=\count475
-\nofMParguments=\count476
+\nofMPsegments=\count463
+\nofMParguments=\count464
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count477
-\MPscratchDim=\dimen312
-\MPnumerator=\count478
-\makeMPintoPDFobject=\count479
+\MPscratchCnt=\count465
+\MPscratchDim=\dimen308
+\MPnumerator=\count466
+\makeMPintoPDFobject=\count467
 \everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1213,10 +1172,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count480
-
-Package chemgreek Info: Activating mapping `default' on line 66.
-
+\c@lstlisting=\count468
 LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
 
 
@@ -1531,34 +1487,34 @@ Package logreq Info: Writing requests to 'Classical_Field_Theory.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38860 strings out of 480247
- 800576 string characters out of 5896106
- 1544934 words of memory out of 5000000
- 56020 multiletter control sequences out of 15000+600000
+ 36182 strings out of 480247
+ 719551 string characters out of 5896151
+ 1449914 words of memory out of 5000000
+ 53358 multiletter control sequences out of 15000+600000
  481538 words of font info for 76 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,25n,104p,1211b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/rsfs/rsfs10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Classical_Field_Theory.pdf (33 pages, 355143 bytes).
+ </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.60
+0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on Classical_Field_Theory.pdf (33 pages, 346756 bytes).
 PDF statistics:
- 743 PDF objects out of 1000 (max. 8388607)
+ 742 PDF objects out of 1000 (max. 8388607)
  639 compressed objects within 7 object streams
  220 named destinations out of 1000 (max. 500000)
  509 words of extra memory for PDF output out of 10000 (max. 10000000)
