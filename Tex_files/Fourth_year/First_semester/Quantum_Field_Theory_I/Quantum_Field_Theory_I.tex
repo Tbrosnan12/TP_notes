@@ -26,6 +26,7 @@
  \usepackage[explicit]{titlesec}
 \usepackage{fancyhdr}
 \usepackage{braket}
+\usepackage{cancel}
 \setlength{\droptitle}{3em} 
 
 \title{Quantum Field Theory I}
@@ -1605,9 +1606,10 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
 
 
 This indicates that we need to generalize our definition of the Poisson bracket that is more consistent with the constraints. If we now label the second class constraints $\tilde{\phi}_m$ and define the matrix:
-\begin{align*}
+\begin{align}
+\label{constraint matrix}
    C_{ab} = \{\tilde{\phi}_a,\tilde{\phi}_b\}
- \end{align*} 
+ \end{align} 
 Dirac proved that this matrix will always be invertible. With this and the definition of the inverse as $C^{ab} \equiv C_{ab}^{-1}$ (st: $C^{ab}C_{bc} = \delta^{a}_c$), we can define a new bracket called the \emph{Dirac Bracket} for two functions $f(p,q)$ and $g(p,q)$:
  \begin{flalign}
    \label{D-brac}
@@ -1715,9 +1717,9 @@ To evaluate this we need to write down explicitly what the Poisson bracket has b
 \end{align}
 With this we can see that:
 \begin{align*}
-  \{\pi_0,H\} & = - \int d^3z\frac{\partial H(\textbf{x})}{\partial A^\mu(\textbf{z})}\frac{\partial \pi_0(\textbf{x})}{\partial \pi_\mu(\textbf{z})} = - \int d^3z\frac{\partial H(\textbf{x})}{\partial A^0(\textbf{z})}\frac{\partial \pi_0(\textbf{x})}{\partial \pi_0(\textbf{z})}   \\
-  & =- \int d^3z\frac{\partial (A^0\partial_iE^i)}{\partial A^0(\textbf{z})}\delta(\textbf{x}-\textbf{z})= - \int d^3z\delta(\textbf{x}-\textbf{z})\partial_iE^i = 0 ,  \\ 
-  & \implies \partial_iE^i = 0, ~~~\implies \partial_i\pi_i = 0
+  \{\pi_0(\textbf{x}),H\} & = - \int d^3z\frac{\partial H}{\partial A^\mu(\textbf{z})}\frac{\partial \pi_0(\textbf{x})}{\partial \pi_\mu(\textbf{z})} = - \int d^3z\frac{\partial H}{\partial A^0(\textbf{z})}\frac{\partial \pi_0(\textbf{x})}{\partial \pi_0(\textbf{z})}   \\
+  & =- \int d^3z\int d^3x'\frac{\partial (A^0\partial_iE^i)}{\partial A^0(\textbf{z})}\delta(\textbf{x}-\textbf{z})= - \int d^3z\int d^3x'\delta(\textbf{x}'-\textbf{z})\delta(\textbf{x}-\textbf{z})\partial_iE^i = 0 ,  \\ 
+  & \implies \int d^3x'\delta(\textbf{x}-\textbf{x}')\partial_iE^i = 0, ~~~\implies \partial_iE^i = 0~~~\implies \partial^i\pi_i = 0
 \end{align*}
 This is a secondary constraint! Which we can more easily recognize as Gauss's Law. It can be checked that there are no further constraints on this system. With the these two constraints we can see that we do not need to add any extra constraints of the form $u_1\partial_iE_i,u_2\pi_0$, to our Hamiltonian \ref{QED_Ham}, as this would essentially only result in shifting $A_0$ and $\dot{A}_0$.  
 \end{itemize}
@@ -1726,12 +1728,13 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 \subsection{Gauge Fixing} % (fold)
 \label{sub:gauge_fixing}
 \begin{itemize}
-   \item It can be checked that $\{\pi_0,\partial_i\pi_i \} \approx 0$, meaning both these constraints are first class. Now this is not ideal as we can recall from section \ref{sub:first_second_class_variables}, that the number of first class constraints is the same as the number of arbitrary co-officiants {}in our total Hamiltonian \ref{H_tot} . To fix this we can introduce an equal number of gauge fixes that will act as constraints. Introducing new constraints, if chosen right, will change some of the first class constraints to second class, as the old constraints may not have $0$ Poisson bracket with the new constraints.  
+   \item It can be checked that $\{\pi_0,\partial_i\pi_i \} \approx 0$, meaning both these constraints are first class. Now this is not ideal as we can recall from section \ref{sub:first_second_class_variables}, that the number of first class constraints is the same as the number of arbitrary co-officiants in our total Hamiltonian \ref{H_tot} . To fix this we can introduce an equal number of gauge fixes that will act as constraints. Introducing new constraints, if chosen right, will change some of the first class constraints to second class, as the old constraints may not have $0$ Poisson bracket with the new constraints.  
 
    \item We are used to using several gauges in classical electromagnetism. One of these is the Coulomb gauge, $\partial_iA^i = 0$. With this constraint we must have that this stays true for later times so we must check the consistency relation with the Hamiltonian as in \ref{consistency}. This calculation will involve the calculation of the derivative $\partial\left(\partial_iA^i(\textbf{x})\right)/\partial A^j(\textbf{z})$, which is non-trivial. This calculation can be easily carried out through the expansion of $\partial_iA^i$ in the following form:
-   \begin{align*}
+   \begin{align}
+   \label{delta_prop}
      \partial_iA^i(\textbf{x}) = -\int d^3x'A^i(\textbf{x}')\frac{\partial }{\partial(x')^i}\delta(\textbf{x}-\textbf{x}')
-   \end{align*}
+   \end{align}
    This expansion can be easily seen to be true if we integrate by parts. With this we can now see that:
    \begin{align}
    \label{partial_A}
@@ -1744,9 +1747,9 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
    \end{align*}
    We can then calculate $\partial H/\partial \pi_j$ from the first definition of $H$ in \ref{QED_Ham_0}. With this and the fact that $\pi_{i} = -E^i$ :
    \begin{align*}
-      \frac{\partial H}{\partial \pi_j} = -\frac{\partial}{\partial E^j}\left(\frac{1}{2}E^2-E^i\partial_iA^0\right) = E^j - \partial_jA^0
+      \frac{\partial H}{\partial \pi_j(\textbf{z})} = -\int d^3x'\frac{\partial}{\partial E^j(\textbf{z})}\left(\frac{1}{2}E^2-E^i\partial_iA^0\right) = -\int d^3x'\delta(\textbf{x}-\textbf{z})(E^j - \partial_jA^0)=(E^j - \partial_jA^0)
     \end{align*} 
-    Combining this with \ref{partial_A} we have:
+    Where the partial derivative is now wrt $\textbf{z}$. Combining this with \ref{partial_A} we have:
     \begin{align*}
       \{\partial_iA^i,H\}  &= \int d^3z\frac{\partial}{\partial z^j}\delta(\textbf{x}-\textbf{z})\left(E^j - \partial_jA^0\right) \\
       & = -\int d^3z\delta(\textbf{x}-\textbf{z})\frac{\partial}{\partial z^j}\left(E^j - \partial_jA^0\right) \\
@@ -1754,13 +1757,78 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
     \end{align*}
     Where in the second line we have used integration by parts and the last step holds weakly as $\partial_jE^j \approx 0$. For the constraint to be consistent we must have that $\{\partial_iA^i,H\} \approx \partial^j\partial_jA^0 = 0$. For this to be satisfied we could have $A^0 \propto x^i$, but this would mean our fields would not vanish at infinity, so we must have that $A^0 =0$. 
 
-    \item With this we have found $4$ new constraints, the same number as arbitrary co-officiants in our total Hamiltonian due to the presence of $4$ first class constraints $\pi_0\approx 0$ and $\partial^i\pi_i \approx 0$. Together the constraints are:
-    \begin{align*}  
-        \pi_0 \approx 0 ~~& ~~~~\partial^i\pi_i \approx 0  \\
-        A^0 \approx 0 ~~& ~~~~ \partial_iA^i \approx 0\\
-      \end{align*}  
+    \item With this we have found $2$ new constraints, the same number as arbitrary co-officiants in our total Hamiltonian due to the presence of $2$ first class constraints $\pi_0\approx 0$ and $\partial^i\pi_i \approx 0$. Together the constraints are:
+    \begin{align}  
+    \label{constraints_gauge}
+        \begin{split}
+          \pi_0 \approx 0 ~~& ~~~~\partial^i\pi_i \approx 0  \\
+        A^0 \approx 0 ~~& ~~~~ \partial_iA^i \approx 0
+        \end{split}
+      \end{align}
 \end{itemize}
 % subsection gauge_fixing (end)
+
+\subsection{Constraint Matrix} % (fold)
+\label{sub:constraint_matrix}
+\begin{itemize}
+  \item The next step is to calculate the constraint matrix \ref{constraint matrix}. We do this with the hopes that it will allow us to construct the Dirac bracket for this theory. We have four constraints as seen in \ref{constraints_gauge}, this means $C_{ab} = \{\phi_a,\phi_b\}$ will be a $4 \times 4$ matrix. We will order the constraints by $\pi_0,\partial^i\pi_i,A^0, \partial_iA^i \approx 0$. We can easily see that $C_{ii}=0$ as the constraints as $\{f,f\} =0$ by definition. We are left to check the remaining $12$ co-officiants, but we only need to check $6$ as this matrix is by definition anti-symmetric. 
+
+  A few of these follow directly from the definition of the continuous Poisson bracket \ref{Poisson_cont}:
+  \begin{align*}
+     \{\pi_0,\partial_iA^i\} &= -\int d^3z \frac{\partial \pi_0}{\partial\pi_0}\cancelto{0}{\frac{\partial(\partial_iA^i)}{\partial A^0}} = 0 \\
+      \{A_0,\partial^i\pi_i\} &= \int d^3z \frac{\partial A^0}{\partial A^0}\cancelto{0}{\frac{\partial(\partial^i\pi_i)}{\partial \pi_0}} = 0
+   \end{align*} 
+   We made the claim earlier that it can be shown that $\{\pi_0,\partial_i\pi_i \} \approx 0$, we can now do this calculation. To do this we can use the general property \ref{delta_prop}, with $A^i$ replaced with $\pi_i$. This way:
+  \begin{align*}
+    \{\pi_0,\partial^i\pi_i \} & = -\int d^3x'\{\pi_0,\pi_i\}\frac{\partial}{\partial(x')_i}\delta(\textbf{x}-\textbf{x}') \\
+     \{\pi_0,\pi_i\}& = -\int d^3z\frac{\partial \pi_0}{\partial\pi_0}\cancelto{0}{\frac{\partial\pi_i}{\partial A^0}}\implies  \{\pi_0,\partial_i\pi_i \} = 0
+  \end{align*}
+  In the exact same manner if we replace $\pi_i$ with $A^i$ we get that $ \{A^0,\partial_iA^i \} = 0$. Then for $\{\pi_0,A^0\}$ we can see that:
+  \begin{align*}
+    \{\pi_0(\textbf{x}),A^0(\textbf{y})\} = -\int d^3z \frac{\partial \pi_0(\textbf{x})}{\partial \pi_0(\textbf{z})}\frac{\partial A^0(\textbf{y})}{\partial A^0(\textbf{z})} = -\int d^3z \delta(\textbf{x}-\textbf{z})\delta(\textbf{y}-\textbf{z})  = -\delta(\textbf{x}-\textbf{y})
+  \end{align*}
+  Then lastly, we can see that:
+  \begin{align*}
+    &\{\partial^i\pi_i(\textbf{x}),\partial_jA^j(\textbf{y})\} = \int d^3x'd^3y'\frac{\partial}{\partial(x')_i}\delta(\textbf{x}-\textbf{x}')\{\pi_i,A^j\}\frac{\partial}{\partial(y')^j}\delta(\textbf{y}-\textbf{y}') \\
+    \{\pi_i(\textbf{x}),A^j(\textbf{y})\}& = -\int d^3z\frac{\partial \pi_i(\textbf{x})}{\partial \pi_k(\textbf{z})}\frac{\partial A^j(\textbf{y})}{\partial A^k(\textbf{z})} = -\delta^i_k\delta^k_j\int d^3z\delta(\textbf{x}-\textbf{z})\delta(\textbf{y}-\textbf{z}) = -\delta^i_k\delta^k_j\delta(\textbf{x}-\textbf{y}) \\
+    \implies &  -\{\partial^i\pi_i(\textbf{x}),\partial_jA^j(\textbf{y})\} = \int d^3x'd^3y'\frac{\partial}{\partial(x')_i}\delta(\textbf{x}-\textbf{x}')\delta^i_k\delta^k_j\delta(\textbf{x}-\textbf{y})\frac{\partial}{\partial(y')^j}\delta(\textbf{y}-\textbf{y}') \\
+    & = -\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k}\delta(\textbf{x}-\textbf{y})
+  \end{align*}
+  Where in the last step we have integrated by parts twice. 
+
+  \item Ordering the constraints by $\pi_0,\partial^i\pi_i,A^0, \partial_iA^i \approx 0$, $C_{ab}$ takes the form:
+  \begin{align*}
+    (C_{ab}) = \begin{pmatrix}
+      0 & 0& -1 & 0 \\
+      0 & 0 & 0 & -\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k} \\
+      1 & 0 & 0 & 0 \\ 
+      0 & \frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k} & 0 & 0 
+    \end{pmatrix} \delta(\textbf{x}-\textbf{y}) \implies (C^{ab}) = \begin{pmatrix}
+      0 & 0& 1 & 0 \\
+      0 & 0 & 0 & \frac{1}{\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k}} \\
+      -1 & 0 & 0 & 0 \\ 
+      0 & -\frac{1}{\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k}} & 0 & 0 
+    \end{pmatrix} \frac{1}{\delta(\textbf{x}-\textbf{y})}
+  \end{align*}
+\end{itemize}
+% subsection constraint_matrix (end)
+
+\subsection{The Dirac Bracket} % (fold)
+\label{sub:the_dirac_bracket}
+\begin{itemize}
+  \item This matrix allows us to explicitly calculate the form of the Dirac Bracket. This was defined for discrete systems in \ref{D-brac}, but we will need to modify it for the continuous case, by: 
+  \begin{align*}
+    \{f(\textbf{x}),g(\textbf{y})\}_D = \{f(\textbf{x}),g(\textbf{y})\}-\int d^3z_1\int d^3z_2\{f(\textbf{x}),\phi_a(\textbf{z}_1)\}C^{ab}(\textbf{z}_1,\textbf{z}_2)\{\phi_b(\textbf{z}_2),g(\textbf{y})\}
+  \end{align*}
+  Finally we have bracket that encapsulates the constraints and allows us to set our constraints \ref{constraints_gauge} in a strong sense, i.e. before we explicitly calculate the bracket. 
+
+  \item If we want to apply this to our electromagnetic case, we can first recall what we had from the regular Poisson bracket. The positions are given by our field $A^j$ and the conjugate momenta given by $\pi_i = -E^j$. Calculating their Poisson bracket we find:
+  \begin{align*}
+     \{\pi_i(\textbf{x}),A^j(\textbf{y})\} = -\int d^3z
+   \end{align*} 
+
+\end{itemize}
+% subsection the_dirac_bracket (end)
 
 % section quantum_electrodynamics (end)
 \end{document}
