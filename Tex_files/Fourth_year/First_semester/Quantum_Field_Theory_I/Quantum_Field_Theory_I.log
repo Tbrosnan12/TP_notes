@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  21 JAN 2025 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  21 JAN 2025 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1639,7 +1639,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[47
+[47]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[48
 
 ] (./Quantum_Field_Theory_I.aux)
 Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
@@ -1650,10 +1659,10 @@ Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36259 strings out of 480247
- 720435 string characters out of 5896151
- 1453991 words of memory out of 5000000
- 53415 multiletter control sequences out of 15000+600000
+ 36262 strings out of 480247
+ 720465 string characters out of 5896151
+ 1454037 words of memory out of 5000000
+ 53416 multiletter control sequences out of 15000+600000
  487171 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,21n,104p,1211b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1681,10 +1690,10 @@ lic/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on Quantum_Field_Theory_I.pdf (47 pages, 501378 bytes).
+Output written on Quantum_Field_Theory_I.pdf (48 pages, 505201 bytes).
 PDF statistics:
- 909 PDF objects out of 1000 (max. 8388607)
- 779 compressed objects within 8 object streams
- 218 named destinations out of 1000 (max. 500000)
+ 916 PDF objects out of 1000 (max. 8388607)
+ 785 compressed objects within 8 object streams
+ 220 named destinations out of 1000 (max. 500000)
  533 words of extra memory for PDF output out of 10000 (max. 10000000)
 
