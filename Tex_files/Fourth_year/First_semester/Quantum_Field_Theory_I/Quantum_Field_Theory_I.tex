@@ -1618,11 +1618,12 @@ Dirac proved that this matrix will always be invertible. With this and the defin
  Where once again the repeated indices mean summation. It is straightforward to prove this satisfies the same properties as the Poisson bracket. This bracket also still gives us the EoM \ref{g_dot}, as $\{f,H_T\}_{D} =\{f,H_T\}- \{f,\tilde{\phi}_a\}C^{ab}\{\tilde{\phi}_b,H_T\} \approx \{f,H_T\}$ as $\{\tilde{\phi}_b,H_T\} = 0 $ due to the fact that our total Hamiltonian can be shown to be first class. 
 
  We can also see that the main benefit of this bracket is that if we take Dirac bracket of any function $f$ and a secondary constraint, $\tilde{\phi}_m$, then we see:
- \begin{align*}
-    \{f,\tilde{\phi}_m\}_{D} &= \{f,\tilde{\phi}_m\}- \{f,\tilde{\phi}_a\}C^{ab}\{\tilde{\phi}_b,\tilde{\phi}_m\} \\
-    & = \{f,\tilde{\phi}_m\}- \{f,\tilde{\phi}_a\}C^{ab}C_{bm} \\
+ \begin{align}
+ \label{Dirac_check}
+    \{f,\tilde{\phi}_m\}_{D} &= \{f,\tilde{\phi}_m\}- \{f,\tilde{\phi}_a\}C^{ab}\{\tilde{\phi}_b,\tilde{\phi}_m\} \nonumber\\
+    & = \{f,\tilde{\phi}_m\}- \{f,\tilde{\phi}_a\}C^{ab}C_{bm} \nonumber\\
     & = \{f,\tilde{\phi}_m\}- \{f,\tilde{\phi}_m\} = 0 
-  \end{align*} 
+  \end{align} 
 \end{itemize}
 Meaning we can always set the secondary constraints $\tilde{\phi}_m=0$, in a \emph{strong sense}. 
 % subsection dirac_bracket (end)
@@ -1797,15 +1798,30 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
   Where in the last step we have integrated by parts twice. 
 
   \item Ordering the constraints by $\pi_0,\partial^i\pi_i,A^0, \partial_iA^i \approx 0$, $C_{ab}$ takes the form:
-  \begin{align*}
+  \begin{align}
+  \label{C_matrix}
     (C_{ab}) = \begin{pmatrix}
       0 & 0& -1 & 0 \\
       0 & 0 & 0 & -\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k} \\
       1 & 0 & 0 & 0 \\ 
       0 & \frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k} & 0 & 0 
     \end{pmatrix} \delta(\textbf{x}-\textbf{y})
-  \end{align*}
-   What we need in the Dirac bracket is the inverse of this matrix. This is 
+  \end{align}
+  \item What we need in the Dirac bracket is the inverse of this matrix. We will see later that the terms we are interested here are the terms with the derivatives of the delta functions. To explicitly find the form of $C_{ab}^{-1} \equiv C^{ab}$ we need to consider a continuous form of the calculation \ref{Dirac_check}. We must have that the Dirac bracket of one of the secondary constraints is always $0$, meaning we must have that:
+   \begin{align}
+   \label{C_inverse_def}
+       & \int d^3z_1\int d^3z_2\{f(\textbf{x}),\phi_a(\textbf{z}_1)\}C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\{\phi_b(\textbf{z}_2),\phi_c(\textbf{y})\} \equiv \{f(\textbf{x}),\phi_c(\textbf{y})\} \nonumber\\
+       & \implies C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\{\phi_b(\textbf{z}_2),\phi_c(\textbf{y})\} =C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)C_{bc}\left(\textbf{z}_2,\textbf{y}\right) = \delta^a_c\delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_1-\textbf{y})
+     \end{align}  
+     Looking at the form of \ref{C_matrix} we can see that $C_{42}\left(\textbf{z}_2,\textbf{y}\right) = \frac{\partial}{\partial (z_{2})_k}\frac{\partial}{\partial y^k}\delta(\textbf{z}_2-\textbf{y})$. Since the delta function is a function of $\textbf{z}_2-\textbf{y}$ we can change the derivative with respect to $y$ to minus the derivative with respect to $z$. This way the derivatives becomes the Laplacian $\triangle=\partial^i\partial_i$. With this identification the condition for the inverse matrix \ref{C_inverse_def} becomes:
+     \begin{align*}
+         & \implies -C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\triangle\delta(\textbf{z}_2-\textbf{y}) = \delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_1-\textbf{y})
+       \end{align*}  
+       Since this is all inside an integral we can integrate by parts to make this $\triangle$ act on the $C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)$ (It does not hit the $\{f(\textbf{x}),\phi_a(\textbf{z}_1)\}$ as the derivatives in $\triangle$ are wrt $\textbf{z}_2$). This means:
+       \begin{align*}
+         \triangle C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right) = \delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_1-\textbf{y})
+       \end{align*}
+       This is the definition of a greens function! Which we often denote as $1$ over the operator, so $C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right) = 1/\triangle$.
 \end{itemize}
 % subsection constraint_matrix (end)
 
@@ -1856,8 +1872,8 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
   \begin{align*}
     \{\pi_i(\textbf{x}),A^j(\textbf{y})\}_D  &= \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\{\pi_i(\textbf{x}),\partial_kA^k(\textbf{z}_1))\}C^{42}(\textbf{z}_1,\textbf{z}_2)\{\partial^l\pi_l(\textbf{z}_2),A^j(\textbf{y})\} \\
     & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta^k_i\left(\frac{\partial}{\partial x^k}\delta(\textbf{x}-\textbf{z}_1)\right)C^{42}(\textbf{z}_1,\textbf{z}_2)\delta^i_l\frac{\partial}{\partial y_l}\delta(\textbf{y}-\textbf{z}_2) \\
-    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}C^{42}(\textbf{z}_1,\textbf{z}_2)\right) \\
-    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}\right)
+    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}\frac{1}{\triangle}\left(\textbf{z}_1,\textbf{z}_2\right)\right) \\
+    & = -\delta^j_i\delta(\textbf{x}-\textbf{y})+\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}\frac{1}{\triangle}\left(\textbf{x},\textbf{y}\right)
   \end{align*}
 
 \end{itemize}
