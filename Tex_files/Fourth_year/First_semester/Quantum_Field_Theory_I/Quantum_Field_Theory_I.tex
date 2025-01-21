@@ -1824,8 +1824,16 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 
   \item If we want to apply this to our electromagnetic case, we can first recall what we had from the regular Poisson bracket. The positions are given by our field $A^j$ and the conjugate momenta given by $\pi_i = -E^j$. Calculating their Poisson bracket we find:
   \begin{align*}
-     \{\pi_i(\textbf{x}),A^j(\textbf{y})\} = -\int d^3z
+     \{\pi_i(\textbf{x}),A^j(\textbf{y})\} = -\int d^3z\frac{\partial \pi_i(\textbf{x})}{\partial \pi_k(\textbf{z})}\frac{\partial A^j(\textbf{y})}{\partial A^k(\textbf{z})} = -\int d^3z \delta^{k}_i\delta^j_k\delta(\textbf{x}-\textbf{z})\delta(\textbf{y}-\textbf{z}) = -\delta^j_i\delta(\textbf{x}-\textbf{y})
    \end{align*} 
+   However, this does not encode our constraints, which we can see by taking the partial derivatives with respect to $\textbf{x}$ and $\textbf{y}$:
+   \begin{align*}
+        \{\partial^i\pi_i(\textbf{x}),\partial_jA^j(\textbf{y})\} = -\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k}\delta(\textbf{x}-\textbf{y})
+  \end{align*}  
+  Once gain when we pass to the quantum theory and turn this Poisson bracket to a commutator, we expect the LHS of this to vanish due to the constraints. However, the RHS of this equation will not vanish. Thankfully in the last section we developed a bracket that still gives us the equations of motion while respecting the constraints of the system. This means we can write down the Dirac bracket of $\pi_i(\textbf{x}) $ and $,A^j(\textbf{y})$:
+  \begin{align*}
+    \{\pi_i(\textbf{x}),A^j(\textbf{y})\}_D  = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\{\pi_i(\textbf{x}),\phi_a(\textbf{z}_1)\}C^{ab}(\textbf{z}_1,\textbf{z}_2)\{\phi_b(\textbf{z}_2),A^j(\textbf{y})\}
+  \end{align*}
 
 \end{itemize}
 % subsection the_dirac_bracket (end)
