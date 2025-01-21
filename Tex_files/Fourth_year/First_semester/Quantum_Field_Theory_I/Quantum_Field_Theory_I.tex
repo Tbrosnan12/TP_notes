@@ -1668,7 +1668,7 @@ Meaning we can always set the secondary constraints $\tilde{\phi}_m=0$, in a \em
       \end{align*} 
     Which means
      \begin{align*}
-        \pi_{\mu} &= \frac{\partial \mathcal{L}}{\partial \dot{A}^{\mu}} = \frac{\partial }{\partial \dot{A}^{\mu}}\left(-\frac{1}{4}\eta_{\mu\delta}F^{\delta\gamma}\eta_{\gamma\nu}F^{\mu\nu}\right) \\
+        \pi_{\sigma} &= \frac{\partial \mathcal{L}}{\partial \dot{A}^{\sigma}} = \frac{\partial }{\partial \dot{A}^{\sigma}}\left(-\frac{1}{4}\eta_{\mu\delta}F^{\delta\gamma}\eta_{\gamma\nu}F^{\mu\nu}\right) \\
         & = -\frac{1}{4}\eta_{\mu\delta}\eta_{\gamma\nu}\left[\left(\delta^{\delta}_0\delta^{\gamma}_{\sigma}-\delta^{\gamma}_{\sigma}\delta^{\gamma}_{0}\right)F^{\mu\nu}+F^{\delta\gamma}\left(\delta^{\mu}_0\delta^{\nu}_{\sigma}-\delta^{\mu}_{\sigma}\delta^{\nu}_{0}\right)\right] \\
         & = -\frac{1}{4}\left[F_{0\sigma}-F_{\sigma 0}+F_{0\sigma}-F_{\sigma 0}\right] = F_{\sigma0}
       \end{align*} 
@@ -1803,13 +1803,9 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
       0 & 0 & 0 & -\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k} \\
       1 & 0 & 0 & 0 \\ 
       0 & \frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k} & 0 & 0 
-    \end{pmatrix} \delta(\textbf{x}-\textbf{y}) \implies (C^{ab}) = \begin{pmatrix}
-      0 & 0& 1 & 0 \\
-      0 & 0 & 0 & \frac{1}{\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k}} \\
-      -1 & 0 & 0 & 0 \\ 
-      0 & -\frac{1}{\frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k}} & 0 & 0 
-    \end{pmatrix} \frac{1}{\delta(\textbf{x}-\textbf{y})}
+    \end{pmatrix} \delta(\textbf{x}-\textbf{y})
   \end{align*}
+   What we need in the Dirac bracket is the inverse of this matrix. This is 
 \end{itemize}
 % subsection constraint_matrix (end)
 
@@ -1835,33 +1831,33 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
   \label{QED_dirac}
     \{\pi_i(\textbf{x}),A^j(\textbf{y})\}_D  = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\{\pi_i(\textbf{x}),\phi_a(\textbf{z}_1)\}C^{ab}(\textbf{z}_1,\textbf{z}_2)\{\phi_b(\textbf{z}_2),A^j(\textbf{y})\}
   \end{align}
-  We then need to calculate all the Poisson brackets of $\pi_i$ and $A^{j}$ with the constraints \ref{constraints_gauge}. For $\pi_i$ we can see the vanishing brackets are:
+  \item We then need to calculate all the Poisson brackets of $\pi_i$ and $A^{j}$ with the constraints \ref{constraints_gauge}. For $\pi_i$ we can see the vanishing brackets are:
   \begin{align*}
-    \{\pi_i,\pi_0\} &= 0 \\
-    \{\pi_0(\textbf{x}),A^0(\textbf{y})\} &= -\int d^3z \frac{\partial \pi_0(\textbf{x})}{\partial \pi_k(\textbf{z})}\cancelto{0}{\frac{\partial A^0(\textbf{y})}{\partial A^k(\textbf{z})}} =0 \\
-    \{\pi_i,\partial^j\pi_j \} & = -\int d^3y'\{\pi_,\pi_j\}\frac{\partial}{\partial(y')_j}\delta(\textbf{y}-\textbf{y}') \\
-     \{\pi_i,\pi_j\} = -\int &d^3z\frac{\partial \pi_i}{\partial\pi_k}\cancelto{0}{\frac{\partial\pi_j}{\partial A^k}}\implies  \{\pi_i,\partial^j\pi_j \} = 0 
+    \{\pi_i,\pi_0\} &= 0, ~~~~~
+    \{\pi_0(\textbf{x}),A^0(\textbf{y})\} = -\int d^3z \frac{\partial \pi_0(\textbf{x})}{\partial \pi_k(\textbf{z})}\cancelto{0}{\frac{\partial A^0(\textbf{y})}{\partial A^k(\textbf{z})}} =0 \\
+    \{\pi_i,\partial^j\pi_j \}  = -\int d^3y'&\{\pi_,\pi_j\}\frac{\partial}{\partial(y')_j}\delta(\textbf{y}-\textbf{y}'),~~~~~
+     \{\pi_i,\pi_j\} = -\int d^3z\frac{\partial \pi_i}{\partial\pi_k}\cancelto{0}{\frac{\partial\pi_j}{\partial A^k}}\implies  \{\pi_i,\partial^j\pi_j \} = 0 
   \end{align*}
   Similarly for $A^j$, the vanishing terms are:
 \begin{align*}
-    \{A^i,A^0\} &= 0 \\
-    \{A^i(\textbf{x}),\pi_0(\textbf{y})\} &= \int d^3z \frac{\partial A^i(\textbf{x})}{\partial A^k(\textbf{z})}\cancelto{0}{\frac{\partial \pi_0(\textbf{y})}{\partial \pi_k(\textbf{z})}} =0 \\
-    \{A^i,\partial_jA^j \} & = -\int d^3y'\{A^i,A^j\}\frac{\partial}{\partial(y')^j}\delta(\textbf{y}-\textbf{y}') \\
-     \{A^i,A^j\} = \int &d^3z\frac{\partial A^i}{\partial A^k}\cancelto{0}{\frac{\partial A^j}{\partial \pi_k}}\implies  \{A^i,\partial_jA^j \} = 0
+    \{A^i,A^0\} &= 0, ~~~~~
+    \{A^i(\textbf{x}),\pi_0(\textbf{y})\} = \int d^3z \frac{\partial A^i(\textbf{x})}{\partial A^k(\textbf{z})}\cancelto{0}{\frac{\partial \pi_0(\textbf{y})}{\partial \pi_k(\textbf{z})}} =0 \\
+    \{A^i,\partial_jA^j \}  = -\int d^3y'&\{A^i,A^j\}\frac{\partial}{\partial(y')^j}\delta(\textbf{y}-\textbf{y}'),~~~~~ 
+     \{A^i,A^j\} = \int d^3z\frac{\partial A^i}{\partial A^k}\cancelto{0}{\frac{\partial A^j}{\partial \pi_k}}\implies  \{A^i,\partial_jA^j \} = 0
   \end{align*}
-  The only non vanishing terms are:
+  \item The only non vanishing terms are:
   \begin{align*}
     \{\pi_i(\textbf{x}),\partial_jA^j(\textbf{y})\} &= \int d^3y'\underbrace{\{\pi_i(\textbf{x}),A^j(\textbf{y})\}}_{-\delta^{j}_i\delta(\textbf{x}-\textbf{y})}\frac{\partial}{\partial(y')^j}\delta(\textbf{y}-\textbf{y}') =  \delta^j_i \int d^3y'\left(\frac{\partial}{\partial(y')^j}\delta(\textbf{x}-\textbf{y})\right)\delta(\textbf{y}-\textbf{y}')   \\
    & = \delta^j_i\frac{\partial}{\partial y^j}\delta(\textbf{x}-\textbf{y}) \\
      \{A^i(\textbf{x}),\partial^j\pi_j(\textbf{y})\} &= \int d^3y'\underbrace{\{A^i(\textbf{x}),\pi_j(\textbf{y})\}}_{\delta^{i}_j\delta(\textbf{x}-\textbf{y})}\frac{\partial}{\partial(y')_j}\delta(\textbf{y}-\textbf{y}') =  -\delta^i_j \int d^3y'\left(\frac{\partial}{\partial(y')_j}\delta(\textbf{x}-\textbf{y})\right)\delta(\textbf{y}-\textbf{y}') \\ 
-    &  = \delta^i_j\frac{\partial}{\partial y_j}\delta(\textbf{x}-\textbf{y})
+    &  = -\delta^i_j\frac{\partial}{\partial y_j}\delta(\textbf{x}-\textbf{y})
   \end{align*}
   This finally allows us to calculate the Dirac bracket \ref{QED_dirac}:
   \begin{align*}
     \{\pi_i(\textbf{x}),A^j(\textbf{y})\}_D  &= \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\{\pi_i(\textbf{x}),\partial_kA^k(\textbf{z}_1))\}C^{42}(\textbf{z}_1,\textbf{z}_2)\{\partial^l\pi_l(\textbf{z}_2),A^j(\textbf{y})\} \\
-    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\delta^k_i\left(\frac{\partial}{\partial y^k}\delta(\textbf{x}-\textbf{z}_1)\right)C^{42}(\textbf{z}_1,\textbf{z}_2)\delta^i_l\frac{\partial}{\partial y_l}\delta(\textbf{y}-\textbf{z}_2) \\
-    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial y^i}\frac{\partial}{\partial y_j}C^{42}(\textbf{z}_1,\textbf{z}_2)\right) \\
-    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial y^i}\frac{\partial}{\partial y_j}C^{42}(\textbf{z}_1,\textbf{z}_2)\right)
+    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta^k_i\left(\frac{\partial}{\partial x^k}\delta(\textbf{x}-\textbf{z}_1)\right)C^{42}(\textbf{z}_1,\textbf{z}_2)\delta^i_l\frac{\partial}{\partial y_l}\delta(\textbf{y}-\textbf{z}_2) \\
+    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}C^{42}(\textbf{z}_1,\textbf{z}_2)\right) \\
+    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}\right)
   \end{align*}
 
 \end{itemize}

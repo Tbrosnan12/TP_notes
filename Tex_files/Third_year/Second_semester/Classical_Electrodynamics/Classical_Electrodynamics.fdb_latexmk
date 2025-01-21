@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber Classical_Electrodynamics"] 1737250227 "Classical_Electrodynamics.bcf" "Classical_Electrodynamics.bbl" "Classical_Electrodynamics" 1737250234
-  "Classical_Electrodynamics.bcf" 1737250233 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Classical_Electrodynamics"] 1737250227 "Classical_Electrodynamics.bcf" "Classical_Electrodynamics.bbl" "Classical_Electrodynamics" 1737474416
+  "Classical_Electrodynamics.bcf" 1737474416 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Classical_Electrodynamics.bbl"
   "Classical_Electrodynamics.blg"
-["pdflatex"] 1737250231 "Classical_Electrodynamics.tex" "Classical_Electrodynamics.pdf" "Classical_Electrodynamics" 1737250234
-  "/etc/texmf/web2c/texmf.cnf" 1723933354 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1723934203 1405755 0308faeb1a6e51887941567c18392f11 ""
+["pdflatex"] 1737474414 "Classical_Electrodynamics.tex" "Classical_Electrodynamics.pdf" "Classical_Electrodynamics" 1737474416
+  "/etc/texmf/web2c/texmf.cnf" 1721728325 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1721729208 12644 5636b8ca2e3cd0e0f57d6a52ecda6477 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -240,16 +240,15 @@
   "/usr/share/texlive/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1635798903 56029 3f7889dab51d620aa43177c391b7b190 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1636152094 2900 1537cc8184ad1792082cd229ecc269f4 ""
-  "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb" 1724266550 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1724266557 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "Classical_Electrodynamics.aux" 1737250233 5985 7265cd5c747e168e0d8bb03d72cd55c3 "pdflatex"
-  "Classical_Electrodynamics.bbl" 1737250228 466 ee04f40f768daeed26442158e95aba61 "biber Classical_Electrodynamics"
-  "Classical_Electrodynamics.out" 1737250233 3961 f60cefab53dddb344d67bc9fa3ab9464 "pdflatex"
-  "Classical_Electrodynamics.run.xml" 1737250233 2445 b04337977e338f104b56b20d57d31b3b "pdflatex"
-  "Classical_Electrodynamics.tex" 1728077636 64747 dacd7282f1b814967066933e8cf8df8d ""
-  "Classical_Electrodynamics.toc" 1737250233 1907 f602c266ebbf433648f122ab8b3bb3fd "pdflatex"
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1721728552 128028 f533b797fba58d231669ea19e894e23e ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1721728645 1405647 97b82ed0c4e8b15449e55cae8bf5ddab ""
+  "Classical_Electrodynamics.aux" 1737474416 5985 7265cd5c747e168e0d8bb03d72cd55c3 "pdflatex"
+  "Classical_Electrodynamics.bbl" 1724197362 466 ee04f40f768daeed26442158e95aba61 "biber Classical_Electrodynamics"
+  "Classical_Electrodynamics.out" 1737474416 3961 f60cefab53dddb344d67bc9fa3ab9464 "pdflatex"
+  "Classical_Electrodynamics.run.xml" 1737474416 2445 b04337977e338f104b56b20d57d31b3b "pdflatex"
+  "Classical_Electrodynamics.tex" 1728048471 64747 dacd7282f1b814967066933e8cf8df8d ""
+  "Classical_Electrodynamics.toc" 1737474416 1907 f602c266ebbf433648f122ab8b3bb3fd "pdflatex"
   (generated)
   "Classical_Electrodynamics.aux"
   "Classical_Electrodynamics.bcf"
