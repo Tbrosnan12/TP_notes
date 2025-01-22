@@ -26,6 +26,7 @@
  \usepackage[explicit]{titlesec}
 \usepackage{fancyhdr}
 \usepackage{braket}
+\usepackage{bbm}
 \usepackage{cancel}
 \setlength{\droptitle}{3em} 
 
@@ -1893,11 +1894,46 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
 % subsection the_dirac_bracket (end)
 % section quantum_electrodynamics (end)
 
-
-\subsection{Interacting Fields} % (fold)
-\label{sub:interacting_fields}
+\newpage
+\section{Interacting Fields} % (fold)
+\label{interacting_fields}
 \begin{itemize}
-  \item 
+  \item We have seen in the interacting theory, that the main quantity of interest to us is the two point correlation function as this is related to the Feynman propagator \ref{Feynmann}. We will be doing this for the Klein Gordon field with the addition to the Lagrangian of the interaction term $\frac{\lambda}{4!}\phi^4$. We don't try do this for $\phi^3$ as this is not bounded from below and we must always have a positive definite Hamiltonian and $\phi^3$. It also turn out that any terms of the form $\phi^n$, $n>4$ are not physical, as since the scalar field $\phi$ must have dimension [mass]\footnote{We can figure this out from imposing that the action must be dimensionless (since $\hbar=1$) then our Lagrangian \ref{KG field} must have units [mass]$^4$}, then the coupling constants for $n>4$ must have units 1/[mass] meaning on low energy scales these terms dominate. This is nonphysical as we don't expect interactions to dominate at low energies.  
 \end{itemize}
-% subsection interacting_fields (end)
+
+  \subsection{Two Point Function} % (fold)
+   \label{sub:two_point_function}
+   \begin{itemize}
+     \item It is not guaranteed that the vacuum of the interacting theory will be the same as in the free fields case. To account for this we will denote the vacuum in the interacting case by $\ket{\omega}$. The two point function is then:
+     \begin{align*}
+       \bra{\Omega}T\phi(x)\phi(y)\ket{\Omega}
+     \end{align*}
+     This quantity is important as it can be interpreted physically as the probability amplitude for propagation of a particle or excitation between $y$ and $x$. We will approach this perturbativly, meaning we expand around the free field solution $\phi_I$ in powers of the interaction parameter $\lambda$. This is handy as we know in the free field case the propagator is $\bra{0}T\phi_I(x)\phi(y)_I\ket{0} = D_F(x-y)$. The Hamiltonian is the Klein Gordan Hamiltonian \ref{KG_Ham} along with the addition of the interaction Hamiltonian $H_{\text{int}}$:
+     \begin{align*}
+        H = H_{0}+\int d^3x \frac{\lambda}{4!}\phi^4(\textbf{x})
+      \end{align*} 
+      We know the fields will then be time evolved by: 
+      \begin{align*}
+        \phi(t,\textbf{x}) = e^{iH(t-t_0)}\phi(t_0,\textbf{x})e^{-iH(t-t_0)}
+      \end{align*}
+      We can also consider the interaction free field, i.e.:
+      \begin{align*}
+        \phi(t,\textbf{x})_{\lambda \rightarrow 0} = e^{iH_0(t-t_0)}\phi(t_0,\textbf{x})e^{-iH_0(t-t_0)} \equiv \phi_I(t,\textbf{x})
+      \end{align*}
+      Since this is the free field we already know the solution given by \ref{phi_2}. If we make the assumption that at $t_0$ these fields are the same at $t_0$ then we can write $\phi(t_0,\textbf{x}) = e^{-iH_0(t-t_0)}\phi_I(t,\textbf{x})e^{iH_0(t-t_0)}$, meaning we can write our field in terms of the free field:
+      \begin{align*}
+        \phi(t,\textbf{x}) &= e^{iH(t-t_0)}e^{-iH_0(t-t_0)}\phi_I(t,\textbf{x})e^{iH_0(t-t_0)}e^{-iH(t-t_0)} \\
+        & \equiv U(t,t_0)\phi_I(t,\textbf{x})U^{\dagger}(t,t_0)
+      \end{align*}
+      Where we have defined the unitary operator $U(t,t_0) = e^{iH(t-t_0)}e^{-iH_0(t-t_0)}$. We can note that $U(t,t_0)$ satisfies the following differential equation subject to the boundary condition $U(t_0,t_0)= \mathbbm{1}$:
+      \begin{align*}
+        &i\frac{\partial}{\partial t}U(t,t_0) = e^{iH(t-t_0)}\left(H-H_0\right) e^{-iH_0(t-t_0)}=e^{iH(t-t_0)}H_{\text{int}} e^{-iH_0(t-t_0)} \\
+        & = e^{iH(t-t_0)}H_{\text{int}}e^{-iH_0(t-t_0)} e^{iH_0(t-t_0)}  e^{-iH_0(t-t_0)}  = H_{I}(t)U(t_t_0)
+      \end{align*}
+      Where 
+
+   \end{itemize}
+   % subsection two_point_function (end) 
+
+% section interacting_fields (end)
 \end{document}
