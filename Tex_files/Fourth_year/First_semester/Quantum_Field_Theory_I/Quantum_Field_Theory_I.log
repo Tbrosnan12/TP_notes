@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  21 JAN 2025 23:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.23)  22 JAN 2025 09:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1622,12 +1622,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [45]
-Overfull \hbox (1.65755pt too wide) in paragraph at lines 1823--1825
-\OT1/cmr/m/n/10.95 This is the def-i-ni-tion of a greens func-tion! Which we of
--ten de-note as $1$ over the op-er-a-tor, so $\OML/cmm/m/it/10.95 C[] [] \OT1/c
-mr/m/n/10.95 =
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1665,10 +1659,10 @@ Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36268 strings out of 480247
- 720541 string characters out of 5896151
- 1454175 words of memory out of 5000000
- 53419 multiletter control sequences out of 15000+600000
+ 36272 strings out of 480247
+ 720595 string characters out of 5896151
+ 1454223 words of memory out of 5000000
+ 53421 multiletter control sequences out of 15000+600000
  487171 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  99i,21n,104p,1211b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1696,10 +1690,10 @@ lic/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on Quantum_Field_Theory_I.pdf (48 pages, 507072 bytes).
+Output written on Quantum_Field_Theory_I.pdf (48 pages, 509773 bytes).
 PDF statistics:
- 923 PDF objects out of 1000 (max. 8388607)
- 792 compressed objects within 8 object streams
- 223 named destinations out of 1000 (max. 500000)
+ 927 PDF objects out of 1000 (max. 8388607)
+ 796 compressed objects within 8 object streams
+ 225 named destinations out of 1000 (max. 500000)
  533 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1807,21 +1807,22 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
       0 & \frac{\partial}{\partial x_k}\frac{\partial}{\partial y^k} & 0 & 0 
     \end{pmatrix} \delta(\textbf{x}-\textbf{y})
   \end{align}
-  \item What we need in the Dirac bracket is the inverse of this matrix. We will see later that the terms we are interested here are the terms with the derivatives of the delta functions. To explicitly find the form of $C_{ab}^{-1} \equiv C^{ab}$ we need to consider a continuous form of the calculation \ref{Dirac_check}. We must have that the Dirac bracket of one of the secondary constraints is always $0$, meaning we must have that:
+  \item What we need in the Dirac bracket is the inverse of this matrix. We will see later that the terms we are interested here are the terms with the derivatives of the delta functions. To explicitly find the form of $C_{ab}^{-1} \equiv C^{ab}$ we need to consider a continuous form of the calculation \ref{Dirac_check}. We must have that the Dirac bracket of one of the secondary constraints is always $0$, meaning we must have that (see definition of continuous Dirac Bracket below \ref{Dirac_B_cont}):
    \begin{align}
    \label{C_inverse_def}
        & \int d^3z_1\int d^3z_2\{f(\textbf{x}),\phi_a(\textbf{z}_1)\}C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\{\phi_b(\textbf{z}_2),\phi_c(\textbf{y})\} \equiv \{f(\textbf{x}),\phi_c(\textbf{y})\} \nonumber\\
-       & \implies C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\{\phi_b(\textbf{z}_2),\phi_c(\textbf{y})\} =C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)C_{bc}\left(\textbf{z}_2,\textbf{y}\right) = \delta^a_c\delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_1-\textbf{y})
+       & \implies C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\{\phi_b(\textbf{z}_2),\phi_c(\textbf{y})\} =C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)C_{bc}\left(\textbf{z}_2,\textbf{y}\right) = \delta^a_c\delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_2-\textbf{y})
      \end{align}  
-     Looking at the form of \ref{C_matrix} we can see that $C_{42}\left(\textbf{z}_2,\textbf{y}\right) = \frac{\partial}{\partial (z_{2})_k}\frac{\partial}{\partial y^k}\delta(\textbf{z}_2-\textbf{y})$. Since the delta function is a function of $\textbf{z}_2-\textbf{y}$ we can change the derivative with respect to $y$ to minus the derivative with respect to $z$. This way the derivatives becomes the Laplacian $\triangle=\partial^i\partial_i$. With this identification the condition for the inverse matrix \ref{C_inverse_def} becomes:
+     Looking at the form of \ref{C_matrix} we can see that $C_{42}\left(\textbf{z}_2,\textbf{y}\right) = \frac{\partial}{\partial (z_{2})_k}\frac{\partial}{\partial y^k}\delta(\textbf{z}_2-\textbf{y})$. Since the delta function is a function of $\textbf{z}_2-\textbf{y}$ we can change the derivative with respect to $y$ to minus the derivative with respect to $z_2$. This way the derivatives becomes the Laplacian $\triangle=\partial^i\partial_i$. With this identification the condition for the inverse matrix \ref{C_inverse_def} becomes:
      \begin{align*}
-         & \implies -C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\triangle\delta(\textbf{z}_2-\textbf{y}) = \delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_1-\textbf{y})
+         & \implies -C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\triangle\delta(\textbf{z}_2-\textbf{y}) = \delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_2-\textbf{y})
        \end{align*}  
        Since this is all inside an integral we can integrate by parts to make this $\triangle$ act on the $C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)$ (It does not hit the $\{f(\textbf{x}),\phi_a(\textbf{z}_1)\}$ as the derivatives in $\triangle$ are wrt $\textbf{z}_2$). This means:
        \begin{align*}
-         \triangle C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right) = \delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_1-\textbf{y})
+         \triangle C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right)\delta(\textbf{z}_2-\textbf{y}) &= \delta\left(\textbf{z}_1-\textbf{z}_2\right)\delta(\textbf{z}_2-\textbf{y}) \\
+          \implies \triangle C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right) &= \delta\left(\textbf{z}_1-\textbf{z}_2\right)
        \end{align*}
-       This is the definition of a greens function! Which we often denote as $1$ over the operator, so $C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right) = 1/\triangle$.
+       This is the definition of a greens function! Which we often denote with a $C^{ab}\left(\textbf{z}_1,\textbf{z}_2\right) =G(\textbf{z}_1,\textbf{z}_2)$\footnote{Note that the greens function of an operator is also often denoted as one over that operator.}.
 \end{itemize}
 % subsection constraint_matrix (end)
 
@@ -1829,9 +1830,10 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 \label{sub:the_dirac_bracket}
 \begin{itemize}
   \item This matrix allows us to explicitly calculate the form of the Dirac Bracket. This was defined for discrete systems in \ref{D-brac}, but we will need to modify it for the continuous case, by: 
-  \begin{align*}
+  \begin{align}
+  \label{Dirac_B_cont}
     \{f(\textbf{x}),g(\textbf{y})\}_D = \{f(\textbf{x}),g(\textbf{y})\}-\int d^3z_1\int d^3z_2\{f(\textbf{x}),\phi_a(\textbf{z}_1)\}C^{ab}(\textbf{z}_1,\textbf{z}_2)\{\phi_b(\textbf{z}_2),g(\textbf{y})\}
-  \end{align*}
+  \end{align}
   Finally we have bracket that encapsulates the constraints and allows us to set our constraints \ref{constraints_gauge} in a strong sense, i.e. before we explicitly calculate the bracket. 
 
   \item If we want to apply this to our electromagnetic case, we can first recall what we had from the regular Poisson bracket. The positions are given by our field $A^j$ and the conjugate momenta given by $\pi_i = -E^j$. Calculating their Poisson bracket we find:
@@ -1872,12 +1874,30 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
   \begin{align*}
     \{\pi_i(\textbf{x}),A^j(\textbf{y})\}_D  &= \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\{\pi_i(\textbf{x}),\partial_kA^k(\textbf{z}_1))\}C^{42}(\textbf{z}_1,\textbf{z}_2)\{\partial^l\pi_l(\textbf{z}_2),A^j(\textbf{y})\} \\
     & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta^k_i\left(\frac{\partial}{\partial x^k}\delta(\textbf{x}-\textbf{z}_1)\right)C^{42}(\textbf{z}_1,\textbf{z}_2)\delta^i_l\frac{\partial}{\partial y_l}\delta(\textbf{y}-\textbf{z}_2) \\
-    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}\frac{1}{\triangle}\left(\textbf{z}_1,\textbf{z}_2\right)\right) \\
-    & = -\delta^j_i\delta(\textbf{x}-\textbf{y})+\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}\frac{1}{\triangle}\left(\textbf{x},\textbf{y}\right)
+    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}G(\textbf{z}_1,\textbf{z}_2)\right) \\
+    & = -\delta^j_i\delta(\textbf{x}-\textbf{y})+\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}G(\textbf{x},\textbf{y})
   \end{align*}
-
+  Swapping the order of these, adding an $i$ as the operators must be hermitian and  changing the Dirac Poisson Bracket to a commutator we have our commutation relations:
+  \begin{align*}
+    [A^j(\textbf{x}),\pi_i(\textbf{y})] = i\delta^j_i\delta(\textbf{x}-\textbf{y})-i\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j} G(\textbf{x},\textbf{y})
+  \end{align*}
+  We can see how this looks in momentum space by considering how the Laplacian $\triangle$ acts on its greens function. We must have that $\triangle G(\textbf{x},\textbf{y})   = \delta(\textbf{x},\textbf{y})$, so:
+  \begin{align*}
+    \triangle\int &\frac{d^3}{(2\pi)^3}pG(\textbf{p})e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})} = \delta(\textbf{x}-\textbf{y})  \implies G(\textbf{p}) =  \frac{1}{\textbf{p}^2} 
+  \end{align*}
+  \begin{flalign*}
+    \implies & [A^j(\textbf{x}),\pi_i(\textbf{y})] = i\int \frac{d^3p}{(2\pi)^3}\left(\delta_i^j-\frac{p_ip^j}{\textbf{p}^2}\right) e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})} 
+  \end{flalign*}
+With this derivation we fill in the gaps in David Tong's notes, Tong explains the rest of this section quite well. 
 \end{itemize}
 % subsection the_dirac_bracket (end)
-
 % section quantum_electrodynamics (end)
+
+
+\subsection{Interacting Fields} % (fold)
+\label{sub:interacting_fields}
+\begin{itemize}
+  \item 
+\end{itemize}
+% subsection interacting_fields (end)
 \end{document}
