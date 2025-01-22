@@ -1928,12 +1928,55 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
       Where we have defined the unitary operator $U(t,t_0) = e^{iH(t-t_0)}e^{-iH_0(t-t_0)}$. We can note that $U(t,t_0)$ satisfies the following differential equation subject to the boundary condition $U(t_0,t_0)= \mathbbm{1}$:
       \begin{align*}
         &i\frac{\partial}{\partial t}U(t,t_0) = e^{iH(t-t_0)}\left(H-H_0\right) e^{-iH_0(t-t_0)}=e^{iH(t-t_0)}H_{\text{int}} e^{-iH_0(t-t_0)} \\
-        & = e^{iH(t-t_0)}H_{\text{int}}e^{-iH_0(t-t_0)} e^{iH_0(t-t_0)}  e^{-iH_0(t-t_0)}  = H_{I}(t)U(t_t_0)
+        & = e^{iH(t-t_0)}H_{\text{int}}e^{-iH_0(t-t_0)} e^{iH_0(t-t_0)}  e^{-iH_0(t-t_0)}  = H_{I}(t)U(t,t_0)
       \end{align*}
-      Where 
-
+      Where we have defined:
+      \begin{align*}
+        H_{I} = e^{iH(t-t_0)}H_{\text{int}}e^{-iH_0(t-t_0)} = \int d^3x \frac{\lambda}{4!}\phi_I^4(t,\textbf{x})
+      \end{align*} 
    \end{itemize}
    % subsection two_point_function (end) 
 
+
+\subsection{Dyson's Formula} % (fold)
+\label{sub:dyson_s_formula}
+\begin{itemize}
+  \item If we can solve this equation for $U$, then in principle we will have $U=U(\phi_I)$, which is good as we already know the form of $\phi_I$. This differential equation should have a solution something like $U(t,t_0) \sim e^{-i\int_{t_0}^t dt' H_I(t')}$, however, the actual solution is more complicated, due to the fact that the $H_I$ is an operator. To first order in $H_I$ we can see that the solution must take the form:
+  \begin{align*}
+    U(t,t_0) = \mathbbm{1} +(-i)\int_{t_0}^{t}dt_1H_{I}(t_1)+ \mathcal{O}\left(H_{I}^2\right)
+  \end{align*}
+
+   However, we will have issues of ordering when multiple $H_I$ are introduced. To fix this we need to consider causality. This means that we should always have the operators acting in \emph{time order}, meaning the operator evaluated at the earliest time should be on the right and the operator evaluated at the latest time on the left. This means the second order should take the form:
+   \begin{align*}
+      (-i)^2\int_{t_0}^{t}dt_1\int_{t_0}^{t_1}dt_2H_{I}(t_1)H_I(t_2)
+    \end{align*} 
+    Confident that this is the correct form we can now proceed to write this in a simpler manner. To do this we can consider the fact that geometrically this integral is over a triangle in the $t_1-t_2$ plane (see image pg 85 of Peskin), made by the square of side lengths $t-t_0$ and the line $t_1=t_2$. But the integral over this upper triangle is the same as the integral over the lower triangle, as it does not matter which variable we call $t_1$ and which $t_2$. This means we can simply consider the integral over the entire square and divide by $2$. However, we still need to consider causality, so we make sure the operators are time ordered using the time ordering operator $T$ as in \ref{Feynmann}:
+    \begin{align*}
+      (-i)^2\int_{t_0}^{t}dt_1\int_{t_0}^{t_1}dt_2H_{I}(t_1)H_I(t_2) = \frac{(-i)^2}{2}\int_{t_0}^{t}dt_1\int_{t_0}^{t}dt_2T\{H_{I}(t_1)H_I(t_2)\}
+    \end{align*}
+    This can then be extended to higher order terms following the same logic:
+    \begin{align*}
+        (-i)^n\int_{t_0}^{t}dt_1\int_{t_0}^{t_1}dt_2&\cdot\cdot\cdot \int_{t_0}^{t_{n-1}}dt_nH_{I}(t_1)H_I(t_2)\cdot\cdot\cdot H_I(t_{n})  \\
+        &= \frac{(-i)^n}{n!}\int_{t_0}^{t}dt_1\int_{t_0}^{t}dt_2\cdot\cdot\cdot \int_{t_0}^{t}T\{H_{I}(t_1)H_I(t_2)\cdot\cdot\cdot H_I(t_{n})\}
+    \end{align*}
+    This allows us to write down the full solution as:
+    \begin{flalign}
+    \label{dyson}
+       U(t,t_0) = T\left\{\text{exp}\left(-i\int_{t_0}^{t}dt'H_{I}(t')\right)\right\}
+    \end{flalign}
+    This is known as \emph{Dyson's formula}
+\end{itemize}
+
+\subsubsection{Properties of Time evolution} % (fold)
+\label{ssub:properties_of_time_evolution}
+\begin{itemize}
+  \item This time evolution operator must satisfy the following properties. 
+\begin{itemize}
+  \item \textbf{Causality}: $U(t_1,t_2)U(t_2,t_3) = U(t_1,t_3)$, which is easily seen to be satisfied by Dyson's formula \ref{dyson}, as the integrals should add the bounds and become one integral. 
+  \item \textbf{Unitarity}: $U(t_1,t_3)U^{\dagger}(t_2,t_3) = U(t_1,t_2)$, this follows from manipulation of the first property.
+\end{itemize}
+\end{itemize}
+% subsubsection properties_of_time_evolution (end)
+% subsection dyson_s_formula (end)
 % section interacting_fields (end)
 \end{document}
