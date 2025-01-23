@@ -44,8 +44,8 @@
 
 \newenvironment{bux}{\empheq[box=\tcbhighmath]{align}}{\endempheq}
 \newenvironment{bux*}{\empheq[box=\tcbhighmath]{align*}}{\endempheq}
-\renewenvironment{flalign}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align}}{\endempheq}
-\renewenvironment{flalign*}{\vspace{-3mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
+\renewenvironment{flalign}{\vspace{-2mm}\empheq[box=\tcbhighmath]{align}}{\endempheq}
+\renewenvironment{flalign*}{\vspace{-2mm}\empheq[box=\tcbhighmath]{align*}}{\endempheq}
 %\renewenvironment{align}{\vspace{-5mm}\begin{align}}{\end{align}}
 %\renewenvironment{align*}{\vspace{-5mm}\begin{align*}}{\end{align*}}
 \renewenvironment{alignat}{\empheq{align*}}{\endempheq}
@@ -1978,5 +1978,21 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
 \end{itemize}
 % subsubsection properties_of_time_evolution (end)
 % subsection dyson_s_formula (end)
+
+\subsection{Vacuum State} % (fold)
+\label{sub:vacuum_state}
+\begin{itemize}
+  \item Now that we have an expression for the evolution operator purely in terms of the interaction free field $\phi_I$, we would like to see if we can find an expression for the ground state, $\ket{\Omega}$. We can start with the vacuum state $\ket{0}$ and involve it in time by time $T$, $e^{-iHt}\ket{0}=$. We can posit that the resulting state will at least contain the ground state $\ket{\Omega}$ as well as a number of other excited states. These will satisfy a completeness relation $\ket{\Omega}\bra{\Omega} + \sum_{n}\ket{n}\bra{n} = \mathbbm{1}$ meaning we can insert this in between the $e^{-iHt}$ and the $\ket{0}$:
+  \begin{align}
+  \label{ground_expansion}
+    e^{-iHt}\ket{0}=e^{-iE_0t}\ket{\Omega}\braket{\Omega|0} + \sum_{n}e^{-iE_nt}\ket{n}\braket{n|0}
+  \end{align}
+  Where the $E_n$ are the eigenvalues of $H$. Since $\ket{\Omega}$ is the ground state we must have that $E_n>E_0$. We can exploit this energy difference by taking the limit as $t \rightarrow \infty$, however, we need to include a slight imaginary part to the limit $t \rightarrow \infty(1-i\epsilon)$ , the imaginary part $-i\epsilon$ exponentially decays the terms with $e^{-iE_nt}$ faster then the first term with $e^{-iE_0t}$  leaving us with only the first term in \ref{ground_expansion}. This means we may write:
+  \begin{align*}
+    \ket{0} = \lim_{t\rightarrow\infty(1-\epsilon)}\frac{e^{-iHt}\ket{0}}{e^{-iE_0t}\braket{\Omega|0}}
+  \end{align*}
+  Since $t$ is large in the limit we can manipulate this by adding a $t_0$ in the exponential 
+\end{itemize}
+% subsection vacuum_state (end)
 % section interacting_fields (end)
 \end{document}
