@@ -28,6 +28,7 @@
 \usepackage{braket}
 \usepackage{bbm}
 \usepackage{cancel}
+\usepackage{simpler-wick}
 \setlength{\droptitle}{3em} 
 
 \title{Quantum Field Theory I}
@@ -622,7 +623,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
       & D(y-x), ~~~ x^{0}<y^0
     \end{cases} \\
     &   =  \theta(x^{0}-y^{0})\bra{0}\phi(x),\phi(y)\ket{0} +\theta(y^{0}-x^{0})\bra{0}[\phi(y),\phi(x)\ket{0} \\
-    & = \bra{0}T\phi(x),\phi(y)\ket{0} \nonumber
+    & = \bra{0}T\{\phi(x),\phi(y)\}\ket{0} \nonumber
   \end{flalign}
 
   Where in the last step we have defined the \emph{Time ordering symbol} $T$. We can write this in a nice way similar to \ref{prop} as:
@@ -1905,10 +1906,11 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
    \label{sub:two_point_function}
    \begin{itemize}
      \item It is not guaranteed that the vacuum of the interacting theory will be the same as in the free fields case. To account for this we will denote the vacuum in the interacting case by $\ket{\omega}$. The two point function is then:
-     \begin{align*}
-       \bra{\Omega}T\phi(x)\phi(y)\ket{\Omega}
-     \end{align*}
-     This quantity is important as it can be interpreted physically as the probability amplitude for propagation of a particle or excitation between $y$ and $x$. We will approach this perturbativly, meaning we expand around the free field solution $\phi_I$ in powers of the interaction parameter $\lambda$. This is handy as we know in the free field case the propagator is $\bra{0}T\phi_I(x)\phi(y)_I\ket{0} = D_F(x-y)$. The Hamiltonian is the Klein Gordan Hamiltonian \ref{KG_Ham} along with the addition of the interaction Hamiltonian $H_{\text{int}}$:
+     \begin{align}
+     \label{two_point}
+       \bra{\Omega}T\{\phi(x)\phi(y)\}\ket{\Omega}
+     \end{align}
+     This quantity is important as it can be interpreted physically as the probability amplitude for propagation of a particle or excitation between $y$ and $x$. We will approach this perturbativly, meaning we expand around the free field solution $\phi_I$ in powers of the interaction parameter $\lambda$. This is handy as we know in the free field case the propagator is $\bra{0}T\{\phi_I(x)\phi(y)_I\}\ket{0} = D_F(x-y)$. The Hamiltonian is the Klein Gordan Hamiltonian \ref{KG_Ham} along with the addition of the interaction Hamiltonian $H_{\text{int}}$:
      \begin{align*}
         H = H_{0}+\int d^3x \frac{\lambda}{4!}\phi^4(\textbf{x})
       \end{align*} 
@@ -1917,23 +1919,25 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
         \phi(t,\textbf{x}) = e^{iH(t-t_0)}\phi(t_0,\textbf{x})e^{-iH(t-t_0)}
       \end{align*}
       We can also consider the interaction free field, i.e.:
-      \begin{align*}
+      \begin{align}
+      \label{phi_free}
         \phi(t,\textbf{x})_{\lambda \rightarrow 0} = e^{iH_0(t-t_0)}\phi(t_0,\textbf{x})e^{-iH_0(t-t_0)} \equiv \phi_I(t,\textbf{x})
-      \end{align*}
-      Since this is the free field we already know the solution given by \ref{phi_2}. If we make the assumption that at $t_0$ these fields are the same at $t_0$ then we can write $\phi(t_0,\textbf{x}) = e^{-iH_0(t-t_0)}\phi_I(t,\textbf{x})e^{iH_0(t-t_0)}$, meaning we can write our field in terms of the free field:
+      \end{align}
+      Since this is the free field we already know the solution given by \ref{phi_3}. If we make the assumption that at $t_0$ these fields are the same at $t_0$ then we can write $\phi(t_0,\textbf{x}) = e^{-iH_0(t-t_0)}\phi_I(t,\textbf{x})e^{iH_0(t-t_0)}$, meaning we can write our field in terms of the free field:
       \begin{align*}
         \phi(t,\textbf{x}) &= e^{iH(t-t_0)}e^{-iH_0(t-t_0)}\phi_I(t,\textbf{x})e^{iH_0(t-t_0)}e^{-iH(t-t_0)} \\
-        & \equiv U(t,t_0)\phi_I(t,\textbf{x})U^{\dagger}(t,t_0)
+        & \equiv U^{\dagger}(t,t_0)\phi_I(t,\textbf{x})U(t,t_0)
       \end{align*}
-      Where we have defined the unitary operator $U(t,t_0) = e^{iH(t-t_0)}e^{-iH_0(t-t_0)}$. We can note that $U(t,t_0)$ satisfies the following differential equation subject to the boundary condition $U(t_0,t_0)= \mathbbm{1}$:
+      Where we have defined the unitary operator $U(t,t_0) = e^{iH_0(t-t_0)}e^{-iH(t-t_0)}$. We can note that $U(t,t_0)$ satisfies the following differential equation subject to the boundary condition $U(t_0,t_0)= \mathbbm{1}$:
       \begin{align*}
-        &i\frac{\partial}{\partial t}U(t,t_0) = e^{iH(t-t_0)}\left(H-H_0\right) e^{-iH_0(t-t_0)}=e^{iH(t-t_0)}H_{\text{int}} e^{-iH_0(t-t_0)} \\
-        & = e^{iH(t-t_0)}H_{\text{int}}e^{-iH_0(t-t_0)} e^{iH_0(t-t_0)}  e^{-iH_0(t-t_0)}  = H_{I}(t)U(t,t_0)
+        &i\frac{\partial}{\partial t}U(t,t_0) = e^{iH_0(t-t_0)}\left(H-H_0\right) e^{-iH(t-t_0)}=e^{iH_0(t-t_0)}H_{\text{int}} e^{-iH(t-t_0)} \\
+        & = e^{iH_0(t-t_0)}H_{\text{int}}e^{-iH_0(t-t_0)} e^{iH_0(t-t_0)}  e^{-iH(t-t_0)}  = H_{I}(t)U(t,t_0)
       \end{align*}
       Where we have defined:
       \begin{align*}
         H_{I} = e^{iH(t-t_0)}H_{\text{int}}e^{-iH_0(t-t_0)} = \int d^3x \frac{\lambda}{4!}\phi_I^4(t,\textbf{x})
       \end{align*} 
+      This last equation is true as the the sandwiching of $\phi(t_0,\textbf{x})$ in between exponentials $e^{iH(t-t_0)}$ is the exactly the definition of $\phi_I$ as seen in \ref{phi_free}. It is also the case that this changes any power of $\phi$ to $\phi_I$ as the exponentials are unitary so we can place $\mathbbm{1} = e^{iH(t-t_0)}e^{-iH(t-t_0)}$ in between each of the $\phi's$.
    \end{itemize}
    % subsection two_point_function (end) 
 
@@ -1964,7 +1968,7 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
     \label{dyson}
        U(t,t_0) = T\left\{\text{exp}\left(-i\int_{t_0}^{t}dt'H_{I}(t')\right)\right\}
     \end{flalign}
-    This is known as \emph{Dyson's formula}
+    This is known as \emph{Dyson's formula}.
 \end{itemize}
 
 \subsubsection{Properties of Time evolution} % (fold)
@@ -1989,10 +1993,85 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
   \end{align}
   Where the $E_n$ are the eigenvalues of $H$. Since $\ket{\Omega}$ is the ground state we must have that $E_n>E_0$. We can exploit this energy difference by taking the limit as $t \rightarrow \infty$, however, we need to include a slight imaginary part to the limit $t \rightarrow \infty(1-i\epsilon)$ , the imaginary part $-i\epsilon$ exponentially decays the terms with $e^{-iE_nt}$ faster then the first term with $e^{-iE_0t}$  leaving us with only the first term in \ref{ground_expansion}. This means we may write:
   \begin{align*}
-    \ket{0} = \lim_{t\rightarrow\infty(1-\epsilon)}\frac{e^{-iHt}\ket{0}}{e^{-iE_0t}\braket{\Omega|0}}
+    \ket{\Omega} = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{e^{-iHt}}{e^{-iE_0t}\braket{\Omega|0}}\ket{0}
   \end{align*}
-  Since $t$ is large in the limit we can manipulate this by adding a $t_0$ in the exponential 
+  Since $t$ is large in the limit we can manipulate this by adding a constant $t_0$ in the exponentials, we can also abuse the fact that $H_0\ket{0} = 0$ to add in factors like: $e^{iH_0(t-t_0)}\ket{0} = \ket{0}$. This means that we can write:
+  \begin{align*}
+    \ket{\Omega} & = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{e^{-iH(t+t_0)}}{e^{-iE_0(t+t_0)}\braket{\Omega|0}}e^{iH_0(t+t_0)}\ket{0} \\
+    & =  \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{e^{-iH(t_0-(-t))}e^{iH_0(t_0-(-t))}}{e^{-iE_0(t+t_0)}\braket{\Omega|0}}\ket{0} \\
+    & = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{U(t_0,-t)}{e^{-iE_0(t+t_0)}\braket{\Omega|0}}\ket{0}
+  \end{align*}
+  In a similar manner we can expand $\bra{\Omega}$, this takes the form of the complex conjugate of the expansion of $\ket{\Omega}$, but with the addition of taking the limit as $t \rightarrow -\infty$ as now that is the limit that will isolate the $E_n$ term. Since this is the same as taking the limit $-t\rightarrow \infty$ we can write this as:
+  \begin{align*}
+    \bra{\Omega}=\lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,t_0)}{e^{-iE_0(t-t_0)}\braket{0|\Omega}}
+  \end{align*}
+  \item We can then use this to expand our two point function \ref{two_point}:
+  \begin{align*}
+     \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} \\
+      = & \lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,t_0)U^{\dagger}(x_0,t_0)\phi_I(x)U(x^0,t_0)U^{\dagger}(y^0,t_0)\phi_I(y)U(y^0,t_0)U(t_0,-t)}{e^{-2iE_0t}|\braket{0|\Omega}|^2}\ket{0} \\
+      = & \lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,x^0)\phi_I(x)U(x^0,y^0)\phi_I(y)U(y^0,-t)}{e^{-2iE_0t}|\braket{0|\Omega}|^2}\ket{0}
+  \end{align*}
+  We can then get rid of this pesky denominator by using the fact that the ground state should be normalized, i.e. $\braket{0|0}=1$:
+  \begin{align*}
+    1= \braket{\Omega|\Omega} &= \lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,t_0)}{e^{-iE_0(t-t_0)}\braket{0|\Omega}}\frac{U(t_0,-t)}{e^{-iE_0(t+t_0)}\braket{\Omega|0}}\ket{0} \\
+    & = \lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,-t)}{e^{-2iE_0t}|\braket{0|\Omega}|^2}\ket{0}
+  \end{align*}
+  So we can write:
+  \begin{align*}
+    \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{\bra{0}U(t,x^0)\phi_I(x)U(x^0,y^0)\phi_I(y)U(y^0,-t)\ket{0}}{\bra{0}U(t,-t)\ket{0}}
+  \end{align*}
+  So far we have considered $x_0>y_0$ so that these terms have been time ordered, but we can write this in a general manner by adding the time ordering operator. Finally to make this look nicer we can write all of these terms using Dyson's formula \ref{dyson}. Since Dyson's formula only involves $\phi_I$ each of these operators commute with $\phi_i(x)$ and $\phi_I(y)$, this means we can combine the exponential expressions as the bounds are in order:  
+    \begin{flalign}
+    \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{\bra{0}\phi_I(x)\phi_I(y)T\left\{\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}}{\bra{0}T\left\{\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}}
+  \end{flalign}
 \end{itemize}
 % subsection vacuum_state (end)
+
+\subsection{Wick's Theorem} % (fold)
+\label{sub:wick_s_theorem}
+\begin{itemize}
+  \item Since $H_I$ is comprised of $\phi_I$ we have essentially, with the above discussion reduced the problem of calculating correlation functions to the calculation of terms that look like $ \bra{0}T\{\phi_I(x_1)\phi_I(x_2)\cdot\cdot\cdot\phi_I(x_n)\}\ket{0}$. But we can abuse the fact that our non interacting fields, as seen in \ref{phi_3}, are constructed of positive frequency terms (terms of the form $e^{-ipx}$), which are attached to creation operators and negative frequency terms ($e^{ipx}$) which are attached to annihilation operators. With this identification we can split up our field $\phi_I$ into negative and positive frequency components: 
+  \begin{align*}
+    \phi_I = \phi_I^++\phi_I^-
+  \end{align*}
+  Since these components are attached to the creation and annihilation operators respectively we can use the nice fact that they will act on the vacuum via: $\phi_I^+\ket{0} =0$ and $\bra{0}\phi_I^-= 0$. This allows the easy manipulation of terms of the form $ \bra{0}T\{\phi_I(x_1)\phi_I(x_2)\cdot\cdot\cdot\phi_I(x_n)\}\ket{0}$. For example in the case of $n=2$ and with $x^0>y^0$, we have that:
+  \begin{align*}
+     T\{\phi_I(x)\phi_I(y)\} & =  \phi_I^+(x)\phi_I^+(y)+\phi_I^+(x)\phi_I^-(y)+\phi_I^-(x)\phi_I^+(y)+\phi_I^-(x)\phi_I^-(y) \\
+     & = \phi_I^+(x)\phi_I^+(y)+\left(\phi_I^-(y)\phi_I^+(x)+\left[\phi_I^+(x),\phi_I^-(y)\right]\right) +\phi_I^+(x)\phi_I^+(y)+\phi_I^+(x)\phi_I^+(y) \\
+     & = N\{\phi_I(x)\phi_I(y)\}+\left[\phi_I^+(x),\phi_I^-(y)\right]
+   \end{align*} 
+   Where we have defined the \emph{Normal ordering operator}\footnote{Often the notation $:\phi_I(x)\phi_I(y):$ is used to denote this also.}, which places all the \emph{negative frequency} terms on the left and all the \emph{positive frequency} terms on the right, ensuring that these terms vanish when places within a $\bra{0} \cdot \cdot \cdot \ket{0}$. 
+
+   \item We can then generalize this to the case where we don't know if $x^0>y^0$ or $x^0<y^0$, by defining a \emph{contraction} of two fields as:
+   \begin{align*}
+       \wick{\c{\phi_I}(x) \c{\phi_I}(y)} = \begin{cases}
+         \left[\phi_I^+(x),\phi_I^-(y)\right] ~~~x^0>y^0 \\
+         \left[\phi_I^+(y),\phi_I^-(x)\right] ~~~x^0<y^0 \\
+       \end{cases}
+    \end{align*} 
+    What is great about this quantity, is that it is exactly the same as the Feynman propagator we defined in \ref{Feynmann} (when we place it between $\bra{0} \cdot \cdot \cdot \ket{0}$). 
+    \item We can now generalize this statement to correlation functions with $n>2$: 
+    \begin{flalign}
+      T\{\phi_I(x_1)\phi_I(x_2)\cdot\cdot\cdot\phi_I(x_n)\} = N\{\phi_I(x_1)\phi_I(x_2)\cdot\cdot\cdot\phi_I(x_n)\} +\text{all possible contractions}
+    \end{flalign}
+    This is known as \emph{Wick's theorem}. Often the contractions are included in the argument of the normal ordering operator, which makes no difference as they are functions not operators and thus $N\{f\}=f$. To see what we mean by all possible contractions we will write down the $n=4$ case:
+    \begin{align}
+    \label{4wick}
+      T\{\phi_1 \phi_2 \phi_3 \phi_4\} = N \big\{
+\phi_1 \phi_2 \phi_3  \phi_4 + \wick{\c\phi_1 \c\phi_2 }\phi_3\phi_4 + \wick{\c\phi_1 \phi_2 \c \phi_3 \phi_4} +  \wick{\c\phi_1 \phi_2 \phi_3 \c \phi_4}\nonumber \\
++ \phi_1 \wick{\c \phi_2 \c \phi_3 }  \phi_4 + \phi_1 \wick{\c\phi_2 \phi_3 \c \phi_4} + \wick{\c\phi_1 \phi_2 \c \phi_3 \phi_4} +  \phi_1 \phi_2 \wick{\c \phi_3 \c \phi_4} \nonumber \\
++ \wick{ \c\phi_1 \c \phi_2} \wick{\c \phi_3  \c \phi_4}  + \wick{\c1\phi_1 \c2 \phi_2 \c1 \phi_3 \c2\phi_4} + \wick{\c1\phi_1  \c2 \phi_2 \c2 \phi_3 \c1\phi_4}  
+\big\}.
+    \end{align}
+    When we contract two fields that are not beside each other we still get a Feynman propagator as it is just a c-number, meaning $ N\{\wick{\c\phi_1 \phi_2 \c \phi_3 \phi_4}\}  = D_{F}(x_1-x_3)N\{\phi_2\phi_4\}$. This means that in \ref{4wick} the only terms that do not vanish are the last four. This makes clear what we mean by all possible contractions. the final result is then:
+    \begin{align*}
+      \langle 0 | T\{\phi_1 \phi_2 \phi_3 \phi_4\} | 0 \rangle 
+&= D_F(x_1 - x_2) D_F(x_3 - x_4) \notag \\
+&\quad + D_F(x_1 - x_3) D_F(x_2 - x_4) \notag \\
+&\quad + D_F(x_1 - x_4) D_F(x_2 - x_3).
+    \end{align*}
+
+\end{itemize}
+% subsection wick_s_theorem (end)
 % section interacting_fields (end)
 \end{document}
