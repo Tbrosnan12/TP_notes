@@ -90,6 +90,7 @@
 \end{center}
 \vspace*{\fill}
 \newpage 
+ \setcounter{tocdepth}{2} % only sections and subsections in Contents
 \tableofcontents
 % For \section
  \titleformat{\section}[block]{\sectionFont}{}{0pt}{%
@@ -1078,12 +1079,33 @@ Thus thee vector space equipped with the commutator operation is an \I{infinite 
 \subsection{Lie Derivative} % (fold)
 \label{sub:lie_derivative}
 \begin{itemize}
-  \item The Lie derivative of a tensor $T=(T^{i_1,..,i_p}_{j_1,\ldots,j_q})$ along a vector field $\xi$ is the tensor $L_{\xi}T$ given by:
+  \item The Lie derivative of a tensor $T=(T^{i_1,..,i_p}_{j_1,\ldots,j_q})$ along a vector field $\xi$ is the tensor $\mathcal{L}_{\xi}T$ given by:
   \begin{flalign*}
-  L_{\xi}T^{i_1,..,i_p}_{j_1,\ldots,j_q} = \left[\frac{d}{dt}(F_tT)^{i_1,..,i_p}_{j_1,\ldots,j_q}\right]_{t=0}
+  \mathcal{L}_{\xi}T^{i_1,..,i_p}_{j_1,\ldots,j_q} = \left[\frac{d}{dt}(F_tT)^{i_1,..,i_p}_{j_1,\ldots,j_q}\right]_{t=0}
   \end{flalign*}
 \end{itemize}
+
+\subsubsection{Killing Vector} % (fold)
+\label{ssub:killing_vector}
+\begin{itemize}
+  \item If a vector $\xi$ satisfies $\mathcal{L}_{\xi}g_{ij} = 0$, where $g_{ij}$ is the metric, then $\xi$ is called a \emph{Killing Vector}. 
+
+  \item A lemma of this definition is that the Killing vector fields of a (psudo-)Riemann manifold form a Lie algebra with respect to the Lie bracket given by the commutator of the two fields. 
+  \begin{align*}
+    \mathcal{L}_{[\xi,\eta]}g_{ij} = [\mathcal{L}_{\xi},\mathcal{L}_{\eta}]g_{ij} =0 
+  \end{align*}
+\end{itemize}
+% subsubsection killing_vector (end)
 % subsection lie_derivative (end)
 % section the_lie_derivative (end)
+
+\newpage
+
+\section{Covariant Differenciation} % (fold)
+\label{sec:covariant_differenciation}
+\begin{itemize}
+  \item We need to define a different type of differenciation as $\pi_{\mu}$ 
+\end{itemize}
+% section covariant_differenciation (end)
 \end{document}
  
