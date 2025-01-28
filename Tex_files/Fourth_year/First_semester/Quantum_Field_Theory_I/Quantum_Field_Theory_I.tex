@@ -2245,9 +2245,75 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
 \end{tikzpicture}
     \end{array} \right)
 \end{equation*}
+\item From this example we can get the general picture of how we can construct diagrams for every possible calculation. First we split it up into the terms which correspond to different diagrams, then from these diagrams we calculate an over all factor that multiplies these terms based on how many different ways we can construct the same diagram. 
+
+
+In general given a diagram  with $v$ vertices (this means $v$ integrals, so the $v$th term in the Taylor series), the overall factor in front of the diagram will take the form:
+\begin{align}
+\label{symm}
+   \frac{C}{v!}\left(\frac{-i\lambda}{4!}\right)^v = \frac{1}{S}
+ \end{align}
+ Where here the $v!$ comes from the fact that this is the  $v$th term in the Taylor series and the $\left(\frac{-i\lambda}{4!}\right)^v$ comes from the fact that each of the $v$ integrals comes with a factor of $\left(\frac{-i\lambda}{4!}\right)$. The remaining factor of $C$ is to do with how many different combinations of contractions are possible. For example the factors of $\frac{1}{2} \times \begin{pmatrix}
+    4 \\ 2
+  \end{pmatrix} = 3$ and $\frac{1}{2} \times \begin{pmatrix}
+    4 \\ 2
+  \end{pmatrix} \times 4 = 12$ that we had in the above examples are examples of this factor of $C$. One nice thing from this is we can notice that generally the factor of $C$ will contain a factor of $4!$ for each vertex/integral (this is hidden inside the choose function$\begin{pmatrix}
+    4 \\ 2
+  \end{pmatrix}$ above). This will always cancel the $(4!)^v$ we have in the numerator, so we don't have to worry about that term. The same will happen for the $v!$ as $C$ will have to involve a permutation of the vertices. This means we are left with a smaller part of $C$. Another way of thinking about this is to involve a symmetry factor $S$, which is related to this left over expression as can be seen in \ref{symm}. Genrally this factor will not be larger then $2$.  
 \end{itemize}
 % subsection interacting_feynman_diagrams (end)
 
+\subsection{Feynman Rules} % (fold)
+\label{sub:feynman_rules}
+\begin{itemize}
+  \item We can write down the rules for constructing these diagrams and in turn how to go from the diagrams to a calculable expression. We formulate these as $4$ rules called the \emph{Feynman rules}: 
+  \begin{enumerate}
+    \item For each propagator: $\begin{array}{c}
+\begin{tikzpicture}[scale=2.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-3.25, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-2.25, 3) {};
+    \node [] (2) at (-3.45, 3) {$x$};
+    \node [] (3) at (-2.15, 3) {$y$};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw (0) to (1);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array} = D_F(x-y)$ 
+    \item For each vertex $\begin{array}{c}
+\begin{tikzpicture}[scale=0.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
+    \node [] (1) at (-1, 1) {};
+    \node [] (2) at (1, 1) {};
+    \node [] (3) at (-1, -1) {};
+    \node [] (4) at (1, -1) {};
+    \node [] (5) at (0.5, 0) {$z$};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw (1.center) to (4.center);
+    \draw (2.center) to (3.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array} = (-i\lambda)\int d^4z$ 
+    \item For each external point: $\begin{array}{c}
+\begin{tikzpicture}[scale=2.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-3.25, 3) {};
+    \node [] (1) at (-2.25, 3) {};
+    \node [] (2) at (-3.45, 3) {$x$};
+    \node [] (3) at (-2.15, 3) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw (0) to (1);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array} = 1$
+    \item Divide by the symmetry factor.
+  \end{enumerate}
+\end{itemize}
+% subsection feynman_rules (end)
 
 
 
