@@ -61,6 +61,9 @@
 \pgfdeclarelayer{nodelayer}
 \pgfdeclarelayer{edgelayer}
 \pgfsetlayers{nodelayer,edgelayer,main}
+\tikzset{
+    none/.style = {inner sep=0pt}
+}
 
 
 
@@ -2303,7 +2306,7 @@ In general given a diagram  with $v$ vertices (this means $v$ integrals, so the 
     \node [circle, fill, inner sep=1pt] (0) at (-3.25, 3) {};
     \node [] (1) at (-2.25, 3) {};
     \node [] (2) at (-3.45, 3) {$x$};
-    \node [] (3) at (-2.15, 3) {};
+    \node [style=none] (3) at (-2.15, 3) {};
   \end{pgfonlayer}
   \begin{pgfonlayer}{edgelayer}
     \draw (0) to (1);
@@ -2312,9 +2315,16 @@ In general given a diagram  with $v$ vertices (this means $v$ integrals, so the 
     \end{array} = 1$
     \item Divide by the symmetry factor.
   \end{enumerate}
+  \item We can once again give physical interpretations to these diagrams. Each vertex factor $(-i\lambda)$ can be thought as the probability of amplitude for emission, and the integral over all spacetime $\int d^4z$ tells us to consider every space-time point where this could occur. This is just the superposition principle.    
 \end{itemize}
 % subsection feynman_rules (end)
 
+\subsection{Momentum-Space Rules} % (fold)
+\label{sub:momentum_space_rules}
+\begin{itemize}
+  \item We can also discuss these diagrams in momentum space. For this we can make use of the Fourier expansion of the Feynman propagator $D_F(x-y)$ \ref{Feynmann_2}. This way we assign a $4$-momentum to each propagator, and hence we need an arrow to denote the direction. For now the directions should not matter as $D_F(x-y)=D_F(y-x)$, but later we will need to conserve quantities likes fermion number. As an example if we have  
+\end{itemize}
+% subsection momentum_space_rules (end)
 
 
 

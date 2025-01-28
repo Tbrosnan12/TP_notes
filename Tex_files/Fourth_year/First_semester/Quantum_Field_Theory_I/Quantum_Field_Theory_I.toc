@@ -80,3 +80,4 @@
 \contentsline {subsection}{\numberline {7.5}Feynman Diagrams}{53}{subsection.7.5}%
 \contentsline {subsection}{\numberline {7.6}Interacting Feynman Diagrams}{53}{subsection.7.6}%
 \contentsline {subsection}{\numberline {7.7}Feynman Rules}{55}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Momentum-Space Rules}{55}{subsection.7.8}%
