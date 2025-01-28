@@ -29,6 +29,7 @@
 \usepackage{bbm}
 \usepackage{cancel}
 \usepackage{simpler-wick}
+
 \setlength{\droptitle}{3em} 
 
 \title{Quantum Field Theory I}
@@ -53,9 +54,13 @@
 
 
 
+\usepackage{tikz}  % Load TikZ first
+\usetikzlibrary{positioning}  % Optional: for advanced positioning
 
-
-
+% Declare layers and set their order
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{edgelayer}
+\pgfsetlayers{nodelayer,edgelayer,main}
 
 
 
@@ -1911,9 +1916,10 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
        \bra{\Omega}T\{\phi(x)\phi(y)\}\ket{\Omega}
      \end{align}
      This quantity is important as it can be interpreted physically as the probability amplitude for propagation of a particle or excitation between $y$ and $x$. We will approach this perturbativly, meaning we expand around the free field solution $\phi_I$ in powers of the interaction parameter $\lambda$. This is handy as we know in the free field case the propagator is $\bra{0}T\{\phi_I(x)\phi(y)_I\}\ket{0} = D_F(x-y)$. The Hamiltonian is the Klein Gordan Hamiltonian \ref{KG_Ham} along with the addition of the interaction Hamiltonian $H_{\text{int}}$:
-     \begin{align*}
+     \begin{align}
+     \label{H_int}
         H = H_{0}+\int d^3x \frac{\lambda}{4!}\phi^4(\textbf{x})
-      \end{align*} 
+      \end{align} 
       We know the fields will then be time evolved by: 
       \begin{align*}
         \phi(t,\textbf{x}) = e^{iH(t-t_0)}\phi(t_0,\textbf{x})e^{-iH(t-t_0)}
@@ -2022,7 +2028,8 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
   \end{align*}
   So far we have considered $x_0>y_0$ so that these terms have been time ordered, but we can write this in a general manner by adding the time ordering operator. Finally to make this look nicer we can write all of these terms using Dyson's formula \ref{dyson}. Since Dyson's formula only involves $\phi_I$ each of these operators commute with $\phi_i(x)$ and $\phi_I(y)$, this means we can combine the exponential expressions as the bounds are in order:  
     \begin{flalign}
-    \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{\bra{0}\phi_I(x)\phi_I(y)T\left\{\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}}{\bra{0}T\left\{\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}}
+    \label{2_point_inter}
+    \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{\bra{0}T\left\{\phi_I(x)\phi_I(y)\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}}{\bra{0}T\left\{\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}}
   \end{flalign}
 \end{itemize}
 % subsection vacuum_state (end)
@@ -2052,6 +2059,7 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
     What is great about this quantity, is that it is exactly the same as the Feynman propagator we defined in \ref{Feynmann} (when we place it between $\bra{0} \cdot \cdot \cdot \ket{0}$). 
     \item We can now generalize this statement to correlation functions with $n>2$: 
     \begin{flalign}
+    \label{wick}
       T\{\phi_I(x_1)\phi_I(x_2)\cdot\cdot\cdot\phi_I(x_n)\} = N\{\phi_I(x_1)\phi_I(x_2)\cdot\cdot\cdot\phi_I(x_n)\} +\text{all possible contractions}
     \end{flalign}
     This is known as \emph{Wick's theorem}. Often the contractions are included in the argument of the normal ordering operator, which makes no difference as they are functions not operators and thus $N\{f\}=f$. To see what we mean by all possible contractions we will write down the $n=4$ case:
@@ -2064,14 +2072,175 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
 \big\}.
     \end{align}
     When we contract two fields that are not beside each other we still get a Feynman propagator as it is just a c-number, meaning $ N\{\wick{\c\phi_1 \phi_2 \c \phi_3 \phi_4}\}  = D_{F}(x_1-x_3)N\{\phi_2\phi_4\}$. This means that in \ref{4wick} the only terms that do not vanish are the last four. This makes clear what we mean by all possible contractions. the final result is then:
-    \begin{align*}
+    \begin{align}
+    \label{4_correlation}
       \langle 0 | T\{\phi_1 \phi_2 \phi_3 \phi_4\} | 0 \rangle 
-&= D_F(x_1 - x_2) D_F(x_3 - x_4) \notag \\
-&\quad + D_F(x_1 - x_3) D_F(x_2 - x_4) \notag \\
+&= D_F(x_1 - x_2) D_F(x_3 - x_4) \notag \nonumber \\
+&\quad + D_F(x_1 - x_3) D_F(x_2 - x_4) \notag \nonumber \\
 &\quad + D_F(x_1 - x_4) D_F(x_2 - x_3).
-    \end{align*}
+    \end{align}
 
 \end{itemize}
 % subsection wick_s_theorem (end)
+
+\subsection{Feynman Diagrams} % (fold)
+\label{sub:feynman_diagrams}
+\begin{itemize}
+  \item When we go to higher order calculations, it can get hard to keep track of all possible contractions. To help with this we can draw specific diagrams that help us visualize each of the individual contractions. These are known as \emph{Feynman diagrams} and the idea is as follows. If we have for example the propagator above, $ \langle 0 | T\{\phi_1(x_1) \phi_2(x_2) \phi_3(x_3) \phi_4(x_4)\} | 0 \rangle $, then we can represent each point $x_i$ as a point in space, and each propagator, $D_{F}(x_i-x_j)$ as a line joining $x_i$ to $x_j$. This means \ref{4_correlation} can be written as:
+\end{itemize}
+
+\begin{equation*}
+    \langle 0 | T \{ \phi_1 \phi_2 \phi_3 \phi_4 \} | 0 \rangle = 
+    \begin{array}{c}
+          \begin{tikzpicture}
+        \begin{pgfonlayer}{nodelayer}
+            \node [circle, fill, inner sep=1pt] (0) at (-6, 3) {};
+            \node [circle, fill, inner sep=1pt] (1) at (-4, 3) {};
+            \node [circle, fill, inner sep=1pt] (2) at (-6, 1) {};
+            \node [circle, fill, inner sep=1pt] (3) at (-4, 1) {};
+            \node [] (4) at (-6, 3.5) {$x_1$};
+            \node [] (5) at (-4, 3.5) {$x_2$};
+            \node [] (6) at (-6, 0.5) {$x_3$};
+            \node [] (7) at (-4, 0.5) {$x_4$};
+        \end{pgfonlayer}
+        \begin{pgfonlayer}{edgelayer}
+            \draw [in=180, out=0] (0.center) to (1.center);
+            \draw (2.center) to (3.center);
+        \end{pgfonlayer}
+    \end{tikzpicture}
+    \end{array} 
+    +
+       \begin{array}{c}
+          \begin{tikzpicture}
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-6, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-6, 1) {};
+    \node [circle, fill, inner sep=1pt] (2) at (-4, 3) {};
+    \node [circle, fill, inner sep=1pt] (3) at (-4, 1) {};
+    \node [] (4) at (-6, 3.5) {$x_1$};
+    \node [] (5) at (-4, 3.5) {$x_2$};
+    \node [] (6) at (-6, 0.5) {$x_3$};
+    \node [] (7) at (-4, 0.5) {$x_4$};
+    \node [] (8) at (-6, 3) {};
+    \node [] (9) at (-6, 3) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=90, out=-90, looseness=0.75] (0.center) to (1.center);
+    \draw (2.center) to (3.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array}
+    +
+    \begin{array}{c}
+         \begin{tikzpicture}
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-6, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-4, 1) {};
+    \node [circle, fill, inner sep=1pt] (2) at (-4, 3) {};
+    \node [circle, fill, inner sep=1pt] (3) at (-6, 1) {};
+    \node [] (4) at (-6, 3.5) {$x_1$};
+    \node [] (5) at (-4, 3.5) {$x_2$};
+    \node [] (6) at (-6, 0.5) {$x_3$};
+    \node [] (7) at (-4, 0.5) {$x_4$};
+    \node [] (8) at (-6, 3) {};
+    \node [] (9) at (-6, 3) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=-45] (0.center) to (1.center);
+    \draw (2.center) to (3.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array}
+\end{equation*}
+\begin{itemize}
+  \item We can ascribe to each of these diagrams a physical interpretation, in that we can say each diagram represents $4$ spacetime points where particles are created then propagate to swap with one other particle and annihilating. But this is not physically happening, this is just a tool for calculation.   
+\end{itemize}
+
+\subsection{Interacting Feynman Diagrams} % (fold)
+\label{sub:interacting_feynman_diagrams}
+\begin{itemize}
+  \item Things also become more complicated when we not only add more points to correlate the fields at, but make it so that more then one fields are at the same point in space-time. Let us look at this case for our interacting correlation function, which we showed takes the form of \ref{2_point_inter}, for now we will just discuss the numerator. We can expand the exponential \ref{2_point_inter} up to linear order in the interaction parameter $\lambda$:
+  \begin{align*}
+    \bra{0}T\left\{\phi(x)\phi(y)\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0} = \bra{0}T\left\{\phi(x)\phi(y)-i\phi(x)\phi(y)\int_{-t}^{t}dt'H_{I}(t')\right\}\ket{0} + \mathcal{O}(\lambda^2)
+  \end{align*}
+  The first term in the approximation is just $D_{F(x-y)}$, where as for the second term we can use its definition in \ref{H_int} to expand, before we attempt to apply Wicks theorem:
+  \begin{align*}
+    -i\bra{0}T\left\{\phi(x)\phi(y)\int_{-t}^{t}dt'H_{I}(t')\right\}&\ket{0}=-\frac{i\lambda}{4!}\bra{0}T\left\{\phi(x)\phi(y)\int_{-t}^{t}dt\int d^3z\phi^4(z)\right\}\ket{0} \\
+  \end{align*}
+  \item We then we need to figure out all the ways of contracting these terms. There are two case of this, we could have that $\phi(x)$ and $\phi(y)$ are contracted, then there are $\frac{1}{2} \times \begin{pmatrix}
+    4 \\ 2
+  \end{pmatrix} = 3$ ways of choosing the remaining $2$ contractions (the factor of a half is here as it does not matter what order we picked these contractions in).  The other case is that $\phi(x)$ is contracted with the any of the $4~\phi(z)$'s (of which there are $4$ possibilities), which leaves  $\frac{1}{2} \times \begin{pmatrix}
+    4 \\ 2
+  \end{pmatrix} = 3$ contractions of $\phi(y)$ with the remaining $3~\phi(z)$'s. Thus there are $3\times4 =12$ possibilities for this second case. With this we can write these contractions in terms of propagators using Wick's theorem \ref{wick}: 
+  \begin{align*}
+   & \bra{0}T\left\{\phi(x)\phi(y)\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}  \\
+    = & D_F(x-y) +3\left(-\frac{i\lambda}{4!}\right)D_{F}(x-y)\int d^4zD_F(z-z)D_F(z-z) \\
+    &~~ + 12\left(-\frac{i\lambda}{4!}\right)\int d^4zD_{F}(x-z)D_F(y-z)D_F(z-z)
+  \end{align*} 
+  \item We can then draw the Feynman diagram for these contractions, which will look like:
+
+  \begin{equation*}
+    \begin{array}{c}
+\begin{tikzpicture}[scale=2.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-4, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-2.5, 3) {};
+    \node [] (2) at (-4.2, 3) {$x$};
+    \node [] (3) at (-2.3, 3) {$y$};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw (0) to (1);
+  \end{pgfonlayer}
+\end{tikzpicture}
+
+
+    \end{array} 
+    +
+       \begin{array}{c}
+\begin{tikzpicture}[scale=2.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-4, 3) {};
+    \node [] (1) at (-3.8, 3) {$z$};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=45, loop] (0.center) to ();
+    \draw [in=225, out=315, loop] (0.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array}
+    +
+    \begin{array}{c}
+\begin{tikzpicture}[scale=2.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-4, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-3, 3) {};
+    \node [circle, fill, inner sep=1pt] (2) at (-5, 3) {};
+    \node [] (3) at (-4, 2.85) {};
+    \node [] (4) at (-5, 2.85) {};
+    \node [] (5) at (-3, 2.85) {};
+    \node [] (6) at (-5, 2.85) {};
+    \node [] (7) at (-5, 2.85) {$x$};
+    \node [] (8) at (-4, 2.85) {$z$};
+    \node [] (9) at (-3, 2.85) {$y$};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=45, loop] (0.center) to ();
+    \draw (2.center) to (0.center);
+    \draw (0.center) to (1.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array}
+\end{equation*}
+\end{itemize}
+% subsection interacting_feynman_diagrams (end)
+
+
+
+
+
+
+
+% subsection feynman_diagrams (end)
+
 % section interacting_fields (end)
 \end{document}
