@@ -2165,7 +2165,7 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
   \end{align*}
   The first term in the approximation is just $D_{F(x-y)}$, where as for the second term we can use its definition in \ref{H_int} to expand, before we attempt to apply Wicks theorem:
   \begin{align*}
-    -i\bra{0}T\left\{\phi(x)\phi(y)\int_{-t}^{t}dt'H_{I}(t')\right\}&\ket{0}=-\frac{i\lambda}{4!}\bra{0}T\left\{\phi(x)\phi(y)\int_{-t}^{t}dt\int d^3z\phi^4(z)\right\}\ket{0} \\
+    -i\bra{0}T\left\{\phi(x)\phi(y)\int_{-t}^{t}dt'H_{I}(t')\right\}&\ket{0}=-\frac{i\lambda}{4!}\bra{0}T\left\{\phi(x)\phi(y)\int_{-t}^{t}dt\int d^3z\phi^4(z)\right\}\ket{0} 
   \end{align*}
   \item We then we need to figure out all the ways of contracting these terms. There are two case of this, we could have that $\phi(x)$ and $\phi(y)$ are contracted, then there are $\frac{1}{2} \times \begin{pmatrix}
     4 \\ 2
@@ -2180,22 +2180,35 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
   \item We can then draw the Feynman diagram for these contractions, which will look like:
 
   \begin{equation*}
-    \begin{array}{c}
+    \left(\begin{array}{c}
 \begin{tikzpicture}[scale=2.5]
   \begin{pgfonlayer}{nodelayer}
-    \node [circle, fill, inner sep=1pt] (0) at (-4, 3) {};
-    \node [circle, fill, inner sep=1pt] (1) at (-2.5, 3) {};
-    \node [] (2) at (-4.2, 3) {$x$};
-    \node [] (3) at (-2.3, 3) {$y$};
+    \node [circle, fill, inner sep=1pt] (0) at (-3.25, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-2.25, 3) {};
+    \node [] (2) at (-3.45, 3) {$x$};
+    \node [] (3) at (-2.15, 3) {$y$};
   \end{pgfonlayer}
   \begin{pgfonlayer}{edgelayer}
     \draw (0) to (1);
   \end{pgfonlayer}
 \end{tikzpicture}
-
-
-    \end{array} 
+    \end{array} \right)
     +
+       3\left(
+       \begin{array}{c}
+\begin{tikzpicture}[scale=2.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-3.25, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-2.25, 3) {};
+    \node [] (2) at (-3.45, 3) {$x$};
+    \node [] (3) at (-2.15, 3) {$y$};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw (0) to (1);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array}
++
        \begin{array}{c}
 \begin{tikzpicture}[scale=2.5]
   \begin{pgfonlayer}{nodelayer}
@@ -2207,21 +2220,22 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
     \draw [in=225, out=315, loop] (0.center) to ();
   \end{pgfonlayer}
 \end{tikzpicture}
-    \end{array}
+    \end{array}\right)
     +
+    12\left(
     \begin{array}{c}
 \begin{tikzpicture}[scale=2.5]
   \begin{pgfonlayer}{nodelayer}
     \node [circle, fill, inner sep=1pt] (0) at (-4, 3) {};
-    \node [circle, fill, inner sep=1pt] (1) at (-3, 3) {};
-    \node [circle, fill, inner sep=1pt] (2) at (-5, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-3.5, 3) {};
+    \node [circle, fill, inner sep=1pt] (2) at (-4.5, 3) {};
     \node [] (3) at (-4, 2.85) {};
-    \node [] (4) at (-5, 2.85) {};
-    \node [] (5) at (-3, 2.85) {};
-    \node [] (6) at (-5, 2.85) {};
-    \node [] (7) at (-5, 2.85) {$x$};
+    \node [] (4) at (-4.5, 2.85) {};
+    \node [] (5) at (-3.5, 2.85) {};
+    \node [] (6) at (-4.5, 2.85) {};
+    \node [] (7) at (-4.5, 2.85) {$x$};
     \node [] (8) at (-4, 2.85) {$z$};
-    \node [] (9) at (-3, 2.85) {$y$};
+    \node [] (9) at (-3.5, 2.85) {$y$};
   \end{pgfonlayer}
   \begin{pgfonlayer}{edgelayer}
     \draw [in=135, out=45, loop] (0.center) to ();
@@ -2229,7 +2243,7 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
     \draw (0.center) to (1.center);
   \end{pgfonlayer}
 \end{tikzpicture}
-    \end{array}
+    \end{array} \right)
 \end{equation*}
 \end{itemize}
 % subsection interacting_feynman_diagrams (end)
