@@ -2158,6 +2158,7 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
 \begin{itemize}
   \item We can ascribe to each of these diagrams a physical interpretation, in that we can say each diagram represents $4$ spacetime points where particles are created then propagate to swap with one other particle and annihilating. But this is not physically happening, this is just a tool for calculation.   
 \end{itemize}
+% subsection feynman_diagrams (end)
 
 \subsection{Interacting Feynman Diagrams} % (fold)
 \label{sub:interacting_feynman_diagrams}
@@ -2307,7 +2308,7 @@ In general given a diagram  with $v$ vertices (this means $v$ integrals, so the 
     \node [] (1) at (-2.25, 3) {};
     \node [] (2) at (-3.45, 3) {$x$};
     \node [style=none] (3) at (-2.15, 3) {};
-  \end{pgfonlayer}
+  \end{pgfonlayer} 
   \begin{pgfonlayer}{edgelayer}
     \draw (0) to (1);
   \end{pgfonlayer}
@@ -2322,15 +2323,124 @@ In general given a diagram  with $v$ vertices (this means $v$ integrals, so the 
 \subsection{Momentum-Space Rules} % (fold)
 \label{sub:momentum_space_rules}
 \begin{itemize}
-  \item We can also discuss these diagrams in momentum space. For this we can make use of the Fourier expansion of the Feynman propagator $D_F(x-y)$ \ref{Feynmann_2}. This way we assign a $4$-momentum to each propagator, and hence we need an arrow to denote the direction. For now the directions should not matter as $D_F(x-y)=D_F(y-x)$, but later we will need to conserve quantities likes fermion number. As an example if we have  
+  \item We can also discuss these diagrams in momentum space. For this we can make use of the Fourier expansion of the Feynman propagator $D_F(x-y)$ \ref{Feynmann_2}. This way we assign a $4$-momentum to each propagator, and hence we need an arrow to denote the direction. For now the directions should not matter as $D_F(x-y)=D_F(y-x)$, but later we will need to conserve quantities likes fermion number. As an example if we have single vertex connected to $4$ external points:
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+    % Set larger arrow size globally
+    \tikzset{>={stealth[scale=10]}}
+
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=none] (0) at (-0.5, 0.5) {};
+        \node [style=none] (1) at (-0.5, -0.5) {};
+        \node [style=none] (2) at (0.5, -0.5) {};
+        \node [style=none] (3) at (0.5, 0.5) {};
+        \node [style=none] (4) at (-1, 1) {};
+        \node [style=none] (5) at (-1, -1) {};
+        \node [style=none] (6) at (1, -1) {};
+        \node [style=none] (7) at (1, 1) {};
+        \node [circle, fill, inner sep=1pt] (8) at (0, 0) {};
+        \node [style=none] (9) at (-0.5, 1.25) {$p_1$};
+        \node [style=none] (10) at (1, 0.25) {$p_4$};
+        \node [style=none] (11) at (-1.25, -0.25) {$p_2$};
+        \node [style=none] (12) at (0.25, -1) {$p_2$};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw [->, line width=0.3mm] (7.center) to (3.center);
+        \draw [->, line width=0.3mm] (6.center) to (2.center);
+        \draw [->, line width=0.3mm] (5.center) to (1.center);
+        \draw [>-, line width=0.3mm] (0.center) to (4.center);
+        \draw [line width=0.3mm] (3.center) to (8.center);
+        \draw [line width=0.3mm] (1.center) to (8.center);
+        \draw [line width=0.3mm] (2.center) to (8.center);
+        \draw [line width=0.3mm] (0.center) to (8.center);
+    \end{pgfonlayer}
+\end{tikzpicture}
+\end{center}
+\item Recall that since we are adding a propagator in momentum space (of the form \ref{Feynmann_2}) for each of these lines, then this means we get an exponential $e^{-ip_iz}$ for each of the momenta $p_i$. This along with the integral over all of $z$ spacetime, means we can separate the following contribution:
+\begin{align}
+\label{cons_mom}
+  \int d^4ze^{ip_1z}e^{-ip_2z}e^{-ip_3z}e^{-ip_4z} = (2\pi)^4\delta(-p_1+p_2+p_3+p_4)
+\end{align}
+Note the sign of $p_1$ is flipped as it is going in the opposite direction. This factor implies the \emph{conservation of momentum} at each vertex! This motivates us to write down the following \emph{Feynman rules in momentum space}:
+  \item We can write down the rules for constructing these diagrams and in turn how to go from the diagrams to a calculable expression. We formulate these as $4$ rules called the \emph{Feynman rules}: 
+  \begin{enumerate}
+    \item For each propagator: $\begin{array}{c}
+\begin{tikzpicture}[scale=1.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+    \node [style=none] (2) at (-0.5, 0) {};
+    \node [style=none] (3) at (-0.5, -0.25) {};
+    \node [style=none] (4) at (-0.5, -0.25) {};
+    \node [style=none] (5) at (-0.5, -0.25) {$p$};
+       \node [style=none] (5) at (-0.5, 0.25) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [->] (0.center) to (2.center);
+    \draw (2.center) to (1.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array} = \frac{i}{p^2-m^2+i\epsilon}$ 
+    \item For each vertex $\begin{array}{c}
+\begin{tikzpicture}[scale=1]
+    % Set larger arrow size globally
+    \tikzset{>={stealth[scale=10]}}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=none] (0) at (-0.5, 0.5) {};
+        \node [style=none] (1) at (-0.5, -0.5) {};
+        \node [style=none] (2) at (0.5, -0.5) {};
+        \node [style=none] (3) at (0.5, 0.5) {};
+        \node [style=none] (4) at (-1, 1) {};
+        \node [style=none] (5) at (-1, -1) {};
+        \node [style=none] (6) at (1, -1) {};
+        \node [style=none] (7) at (1, 1) {};
+        \node [circle, fill, inner sep=1pt] (8) at (0, 0) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw [->, line width=0.3mm] (7.center) to (3.center);
+        \draw [->, line width=0.3mm] (6.center) to (2.center);
+        \draw [->, line width=0.3mm] (5.center) to (1.center);
+        \draw [>-, line width=0.3mm] (0.center) to (4.center);
+        \draw [line width=0.3mm] (3.center) to (8.center);
+        \draw [line width=0.3mm] (1.center) to (8.center);
+        \draw [line width=0.3mm] (2.center) to (8.center);
+        \draw [line width=0.3mm] (0.center) to (8.center);
+    \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array} = (-i\lambda)$ 
+    \item For each external point: $\begin{array}{c}
+\begin{tikzpicture}[scale=1.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-1, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+    \node [style=none] (2) at (-0.5, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw  (0.center) to (2.center);
+    \draw [<-] (2.center) to (1.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array} = e^{-ip\cdot x}$
+    \item Impose momentum conservation at each vertex
+    \item Integrate over all undetermined momentum $\int \frac{d^4p}{(2\pi)^4}$
+    \item Divide by the symmetry factor.
+  \end{enumerate}
 \end{itemize}
 % subsection momentum_space_rules (end)
 
 
+\subsection{Vacuum Diagrams} % (fold)
+\label{sub:vacuum_diagrams}
+\begin{itemize}
+  \item We have glossed over a slight subtlety in the fact that we have simply combined the $\int_{-t}^tdz^0$ with the $\int d^3z$ to make $\int s^4z$. But we forgot to consider that in \ref{2_point_inter} we were considering the limit $t\rightarrow\infty(1-i\epsilon)$. If we look then at the integral we had above \ref{cons_mom}, this now becomes:
+  \begin{align*}
+      \lim_{t\rightarrow\infty(1-i\epsilon)}\int_{-t}^tdz^0\int d^3ze^{i(p_1-p_2-p_3-p_4)z}
+  \end{align*}
+  The exponentials here will now blow up in the limit if their exponent contains non imaginary terms (which is the case if $t\rightarrow\infty(1-i\epsilon)$). The only way to counteract this would to have $p^0$ be the complex conjugate of $z^0$, so $p^0 \propto (1+i\epsilon)$, which seems like a strange condition until we remember we are working with Feynman propagators! This means we already have $p^0 \propto (1+i\epsilon)$ in order to avoid the poles of the contour integration. So there are actually no dilemmas here it seems. 
+\end{itemize}
+% subsection vacuum_diagrams (end)
 
 
-
-% subsection feynman_diagrams (end)
 
 % section interacting_fields (end)
 \end{document}
