@@ -1352,6 +1352,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm5.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm17.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm
 INPUT Quantum_Field_Theory_I.aux
 INPUT ./Quantum_Field_Theory_I.out
 INPUT ./Quantum_Field_Theory_I.out

@@ -2015,11 +2015,12 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
     \bra{\Omega}=\lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,t_0)}{e^{-iE_0(t-t_0)}\braket{0|\Omega}}
   \end{align*}
   \item We can then use this to expand our two point function \ref{two_point}:
-  \begin{align*}
-     \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} \\
-      = & \lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,t_0)U^{\dagger}(x_0,t_0)\phi_I(x)U(x^0,t_0)U^{\dagger}(y^0,t_0)\phi_I(y)U(y^0,t_0)U(t_0,-t)}{e^{-2iE_0t}|\braket{0|\Omega}|^2}\ket{0} \\
+  \begin{align}
+  \label{e^-iEt}
+     \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} \nonumber\\
+      = & \lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,t_0)U^{\dagger}(x_0,t_0)\phi_I(x)U(x^0,t_0)U^{\dagger}(y^0,t_0)\phi_I(y)U(y^0,t_0)U(t_0,-t)}{e^{-2iE_0t}|\braket{0|\Omega}|^2}\ket{0} \nonumber \\
       = & \lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,x^0)\phi_I(x)U(x^0,y^0)\phi_I(y)U(y^0,-t)}{e^{-2iE_0t}|\braket{0|\Omega}|^2}\ket{0}
-  \end{align*}
+  \end{align}
   We can then get rid of this pesky denominator by using the fact that the ground state should be normalized, i.e. $\braket{0|0}=1$:
   \begin{align*}
     1= \braket{\Omega|\Omega} &= \lim_{t\rightarrow\infty(1-i\epsilon)}\bra{0}\frac{U(t,t_0)}{e^{-iE_0(t-t_0)}\braket{0|\Omega}}\frac{U(t_0,-t)}{e^{-iE_0(t+t_0)}\braket{\Omega|0}}\ket{0} \\
@@ -2478,7 +2479,7 @@ Note the sign of $p_1$ is flipped as it is going in the opposite direction. This
 \end{tikzpicture}
       \end{array} , ~~~\cdot \cdot \cdot~~~~ \right\} 
     \end{align*}
-     Each of these diagrams will have a divergent factor of $2tV$. It will be the case that a given Feynman diagram \footnote{where by diagram we mean one of the terms in the sum of the calculation of the n-point functions, see the terms in the brackets of \ref{diag_3}}, it will be made up of both connected (having endpoints) and disconnected diagrams. See for example the term with the co-efficient $3$ in \ref{diag_3}. We will for convenience denote the contribution of the disconnected diagram $V_i$ by $V_i$. Then we can consider the Feynman diagram with $n_i$ copies of the disconnected diagram $V_i$ along with the single copy of a connected diagram. See the example below: 
+     Each of these diagrams will have a divergent factor of $2tV$. It will be the case that a given Feynman diagram \footnote{where by Feynman diagram we mean one of the terms in the sum of the calculation of the n-point functions, see the terms in the brackets of \ref{diag_3}}, it will be made up of both connected (having endpoints) and disconnected diagrams. See for example the term with the co-efficient $3$ in \ref{diag_3}. We will for convenience denote the contribution of the disconnected diagram $V_i$ by $V_i$. Then we can consider the Feynman diagram with $n_i$ copies of the disconnected diagram $V_i$ along with the single copy of a connected diagram. See the example below: 
         \begin{align*}
       \left(
         \begin{array}{c}
@@ -2556,11 +2557,56 @@ Since these diagrams are disconnected they don't affect each other and we can si
     \bra{0}T\left\{\phi_I(x)\phi_I(y)\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0} &= \sum\left(\text{connected}\right) \times \sum_{\text{all }\{n_i\}} \left(\prod_{i}\frac{1}{n_i!}(V_i)^{^n_{i}} \right)  \\
     & = \sum\left(\text{connected}\right)\times \exp\left(\sum_{i}V_i\right)
   \end{align*}
-  This means that the problem divergent terms that come from the disconnected diagrams cancel in our actual calculations! We are just left with the connected diagrams.   
-
+  This means that the problem divergent terms that come from the disconnected diagrams cancel in our actual calculations! We are just left with the connected diagrams:
+  \begin{align*}
+    \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} = \text{sum of all diagrams with two external points}
+  \end{align*}
+  This can be generalized to $n-$point correlator by replacing the RHS with all diagrams with $n$ external points. 
+  \item As a last point we can compare \ref{e^-iEt} and \ref{2_point_inter} (since they have the same numerator and denominator) to write: 
+  \begin{align*}
+    \lim_{t\rightarrow\infty(1-i\epsilon)}&\bra{0}T\left\{\phi_I(x)\phi_I(y)\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0} \\
+    & = \bra{\Omega}T\{\phi(x)\phi(y)\}\ket{\Omega} \lim_{t\rightarrow\infty(1-i\epsilon)}\left( e^{-2iE_0t}|\braket{0|\Omega}|^2\right)
+  \end{align*}
+  But we have just shown that the LHS is $\propto \exp\left(\sum_{i}V_i\right)$ so we can compare the time dependent arts of this expression to:
+  \begin{align*}
+    \exp\left(\sum_{i}V_i\right) \sim e^{-2iE_0t} 
+  \end{align*}
+  Recalling that each factor of $V_i$ contains a factor of $(2\pi)^4\delta^{(4)}(0)=2T \cdot V$ we get an expression for the energy density of the vacuum:
+  \begin{align*}
+    \frac{E_0}{V} \sim i \frac{\left(\begin{array}{c}
+        \begin{tikzpicture}[scale=2]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=45, loop] (1.center) to ();
+    \draw [in=225, out=315, loop] (1.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+      \end{array} + \begin{array}{c}
+\begin{tikzpicture}[scale=2]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+    \node [circle, fill, inner sep=1pt] (2) at (0, -0.25) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [bend left=45, looseness=1.75] (1.center) to (2.center);
+    \draw [bend right=45, looseness=1.75] (1.center) to (2.center);
+    \draw [min distance=2cm, in=135, out=45, loop] (1.center) to ();
+    \draw [min distance=2cm, in=225, out=315, loop] (2.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+      \end{array} + \hspace{1mm} \cdot \cdot \cdot \right)}{(2\pi)^(4)\delta^{(4)}(0)}
+  \end{align*}
 \end{itemize}
 
+\newpage 
+\section{Cross Section \& S Matrix} % (fold)
+\label{sec:cross_section_&_s_matrix}
 
+% section cross_section_&_s_matrix (end)
 
 % subsection vacuum_diagrams (end)
 
