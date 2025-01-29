@@ -2542,7 +2542,22 @@ Note the sign of $p_1$ is flipped as it is going in the opposite direction. This
 \end{tikzpicture}
 \end{array}  ~~~\cdot \cdot \cdot~~~~ \right)
 \end{align*} 
-Since these diagrams are disconnected we can simply write down their contribution as   
+Since these diagrams are disconnected they don't affect each other and we can simply write down their contribution as the product of the $n_i$ $V_i$ divided by $n_i!$ to account for the ordering not mattering. This happens for each of the of the disconnected diagrams indexed by $i$. These contributions all multiply by the original connected diagram factor which we can just call $A$. The value of the diagram is then just: 
+\begin{align*}
+    A \cdot \prod_{i}\frac{1}{n_i!}(V_i)^{^n_{i}} 
+  \end{align*}  
+  Looking back at the denominator in \ref{2_point_inter} we can see that this term involves no $\phi(x_i)$ and thus is only made of disconnected diagrams. Since there is an exponential this quantity will contain Feynman diagram terms that will have all possible number of $n_i$ for each $i$, hence we can write down the total contribution as:
+  \begin{align*}
+    & \bra{0}T\left\{\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}  = \sum_{\text{all }\{n_i\}} \left(\prod_{i}\frac{1}{n_i!}(V_i)^{^n_{i}} \right)  \\
+    & = \left(\sum_{n_1}\frac{1}{n_1!}(V_i)^{^n_{2}}\right) \times \left(\sum_{n_2}\frac{1}{n_2!}(V_i)^{^n_{2}}\right)  \times \left(\sum_{n_3}\frac{1}{n_3!}(V_i)^{^n_{3}}\right) \times \cdot \cdot \cdot= \prod_{i}\left(\sum_{n_i}\frac{1}{n_i!}(V_i)^{^n_{i}}\right) = \exp\left(\sum_{i}V_i\right)
+  \end{align*}
+  With the numerator of $\ref{2_point_inter}$ we can recognize that the same thing happens, just there is a connected diagram in each term. This means the numerator of \ref{2_point_inter} becomes: 
+  \begin{align*}
+    \bra{0}T\left\{\phi_I(x)\phi_I(y)\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0} &= \sum\left(\text{connected}\right) \times \sum_{\text{all }\{n_i\}} \left(\prod_{i}\frac{1}{n_i!}(V_i)^{^n_{i}} \right)  \\
+    & = \sum\left(\text{connected}\right)\times \exp\left(\sum_{i}V_i\right)
+  \end{align*}
+  This means that the problem divergent terms that come from the disconnected diagrams cancel in our actual calculations! We are just left with the connected diagrams.   
+
 \end{itemize}
 
 
