@@ -2428,15 +2428,55 @@ Note the sign of $p_1$ is flipped as it is going in the opposite direction. This
 \end{itemize}
 % subsection momentum_space_rules (end)
 
-
-\subsection{Vacuum Diagrams} % (fold)
-\label{sub:vacuum_diagrams}
+\subsubsection{Integration path} % (fold)
+\label{ssub:integration_path}
 \begin{itemize}
   \item We have glossed over a slight subtlety in the fact that we have simply combined the $\int_{-t}^tdz^0$ with the $\int d^3z$ to make $\int s^4z$. But we forgot to consider that in \ref{2_point_inter} we were considering the limit $t\rightarrow\infty(1-i\epsilon)$. If we look then at the integral we had above \ref{cons_mom}, this now becomes:
   \begin{align*}
       \lim_{t\rightarrow\infty(1-i\epsilon)}\int_{-t}^tdz^0\int d^3ze^{i(p_1-p_2-p_3-p_4)z}
   \end{align*}
-  The exponentials here will now blow up in the limit if their exponent contains non imaginary terms (which is the case if $t\rightarrow\infty(1-i\epsilon)$). The only way to counteract this would to have $p^0$ be the complex conjugate of $z^0$, so $p^0 \propto (1+i\epsilon)$, which seems like a strange condition until we remember we are working with Feynman propagators! This means we already have $p^0 \propto (1+i\epsilon)$ in order to avoid the poles of the contour integration. So there are actually no dilemmas here it seems. 
+  The exponentials here will now blow up in the limit if their exponent contains any non imaginary terms (which is the case if $t\rightarrow\infty(1-i\epsilon)$). The only way to counteract this would to have $p^0$ be the complex conjugate of $z^0$, so $p^0 \propto (1+i\epsilon)$, which seems like a strange condition until we remember we are working with Feynman propagators! This means we already have $p^0 \propto (1+i\epsilon)$ in order to avoid the poles of the contour integration. So there are actually no dilemmas here it seems. 
+\end{itemize}
+% subsubsection integration_path (end)
+
+\subsection{Vacuum Diagrams} % (fold)
+\label{sub:vacuum_diagrams}
+\begin{itemize}
+  \item We can notice that momentum conservation at every vertex can have have strange consequences for loops. At a loops we have the same momentum going in and out so the terms will cancel. This is fine for diagrams with external points, as it just means the loops momentum does not contribute to the momentum conservation. However this does become an issue for diagrams with \emph{no} external points. Here all the momentum cancel out and we are just left with a $\delta(0)$. This seemingly divergent factor can be understood by the following argument:
+  \begin{align*}
+    \delta^{(4}(0) = \int d^4w \cdot e^{0} = \int d^3w\int_{-t}^{t} dw^{0} = 2t*V  
+  \end{align*}
+  Where $V$ is the volume of space we are considering and $t$ is the time in the limit. Both of these clearly blow up if we consider all of space and all of time. 
+
+   \item We can consider the set of all such loop diagrams with no external points:
+   \begin{align*}
+      V_i \in \left\{\begin{array}{c}
+        \begin{tikzpicture}[scale=2]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=45, loop] (1.center) to ();
+    \draw [in=225, out=315, loop] (1.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+      \end{array} + \begin{array}{c}
+\begin{tikzpicture}[scale=2]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+    \node [circle, fill, inner sep=1pt] (2) at (0, -0.5) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [bend left=45, looseness=1.75] (1.center) to (2.center);
+    \draw [bend right=45, looseness=1.75] (1.center) to (2.center);
+    \draw [min distance=2cm, in=135, out=45, loop] (1.center) to ();
+    \draw [min distance=2cm, in=225, out=315, loop] (2.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+      \end{array}\right\} 
+    \end{align*} 
 \end{itemize}
 % subsection vacuum_diagrams (end)
 
