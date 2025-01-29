@@ -2179,11 +2179,13 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
   \begin{align*}
    & \bra{0}T\left\{\phi(x)\phi(y)\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{0}  \\
     = & D_F(x-y) +3\left(-\frac{i\lambda}{4!}\right)D_{F}(x-y)\int d^4zD_F(z-z)D_F(z-z) \\
-    &~~ + 12\left(-\frac{i\lambda}{4!}\right)\int d^4zD_{F}(x-z)D_F(y-z)D_F(z-z)
+    &~~ + 12\left(-\frac{i\lambda}{4!}\right)\int d^4zD_{F}(x-z)D_F(y-z)D_F(z-z) + \mathcal{O}(\lambda^2)
   \end{align*} 
   \item We can then draw the Feynman diagram for these contractions, which will look like:
 
-  \begin{equation*}
+  \begin{equation}
+  \label{diag_3}
+  \hspace*{-1cm}
     \left(\begin{array}{c}
 \begin{tikzpicture}[scale=2.5]
   \begin{pgfonlayer}{nodelayer}
@@ -2212,7 +2214,6 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
   \end{pgfonlayer}
 \end{tikzpicture}
     \end{array}
-+
        \begin{array}{c}
 \begin{tikzpicture}[scale=2.5]
   \begin{pgfonlayer}{nodelayer}
@@ -2248,7 +2249,7 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
   \end{pgfonlayer}
 \end{tikzpicture}
     \end{array} \right)
-\end{equation*}
+\end{equation}
 \item From this example we can get the general picture of how we can construct diagrams for every possible calculation. First we split it up into the terms which correspond to different diagrams, then from these diagrams we calculate an over all factor that multiplies these terms based on how many different ways we can construct the same diagram. 
 
 
@@ -2442,9 +2443,9 @@ Note the sign of $p_1$ is flipped as it is going in the opposite direction. This
 \subsection{Vacuum Diagrams} % (fold)
 \label{sub:vacuum_diagrams}
 \begin{itemize}
-  \item We can notice that momentum conservation at every vertex can have have strange consequences for loops. At a loops we have the same momentum going in and out so the terms will cancel. This is fine for diagrams with external points, as it just means the loops momentum does not contribute to the momentum conservation. However this does become an issue for diagrams with \emph{no} external points. Here all the momentum cancel out and we are just left with a $\delta(0)$. This seemingly divergent factor can be understood by the following argument:
+  \item We can notice that momentum conservation at every vertex can have have strange consequences for loops. At a loops we have the same momentum going in and out so the terms will cancel. This is fine for diagrams with external points, as it just means the loops momentum does not contribute to the momentum conservation. However this does become an issue for diagrams with \emph{no} external points (we call these disconnected diagrams). Here all the momentum cancel out and we are just left with a $\delta(0)$. This seemingly divergent factor can be understood by the following argument:
   \begin{align*}
-    \delta^{(4}(0) = \int d^4w \cdot e^{0} = \int d^3w\int_{-t}^{t} dw^{0} = 2t*V  
+    \delta^{(4}(0) = \int d^4w \cdot e^{0} = \int d^3w\int_{-t}^{t} dw^{0} = 2t\cdot V  
   \end{align*}
   Where $V$ is the volume of space we are considering and $t$ is the time in the limit. Both of these clearly blow up if we consider all of space and all of time. 
 
@@ -2461,12 +2462,12 @@ Note the sign of $p_1$ is flipped as it is going in the opposite direction. This
     \draw [in=225, out=315, loop] (1.center) to ();
   \end{pgfonlayer}
 \end{tikzpicture}
-      \end{array} + \begin{array}{c}
+      \end{array} , \begin{array}{c}
 \begin{tikzpicture}[scale=2]
   \begin{pgfonlayer}{nodelayer}
     \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
     \node [style=none] (1) at (0, 0) {};
-    \node [circle, fill, inner sep=1pt] (2) at (0, -0.5) {};
+    \node [circle, fill, inner sep=1pt] (2) at (0, -0.25) {};
   \end{pgfonlayer}
   \begin{pgfonlayer}{edgelayer}
     \draw [bend left=45, looseness=1.75] (1.center) to (2.center);
@@ -2475,9 +2476,77 @@ Note the sign of $p_1$ is flipped as it is going in the opposite direction. This
     \draw [min distance=2cm, in=225, out=315, loop] (2.center) to ();
   \end{pgfonlayer}
 \end{tikzpicture}
-      \end{array}\right\} 
-    \end{align*} 
+      \end{array} , ~~~\cdot \cdot \cdot~~~~ \right\} 
+    \end{align*}
+     Each of these diagrams will have a divergent factor of $2tV$. It will be the case that a given Feynman diagram \footnote{where by diagram we mean one of the terms in the sum of the calculation of the n-point functions, see the terms in the brackets of \ref{diag_3}}, it will be made up of both connected (having endpoints) and disconnected diagrams. See for example the term with the co-efficient $3$ in \ref{diag_3}. We will for convenience denote the contribution of the disconnected diagram $V_i$ by $V_i$. Then we can consider the Feynman diagram with $n_i$ copies of the disconnected diagram $V_i$ along with the single copy of a connected diagram. See the example below: 
+        \begin{align*}
+      \left(
+        \begin{array}{c}
+          \begin{tikzpicture}[scale=2]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-4, 3) {};
+    \node [circle, fill, inner sep=1pt] (1) at (-3.5, 3) {};
+    \node [circle, fill, inner sep=1pt] (2) at (-4.5, 3) {};
+    \node [] (3) at (-4, 2.85) {};
+    \node [] (4) at (-4.5, 2.85) {};
+    \node [] (5) at (-3.5, 2.85) {};
+    \node [] (6) at (-4.5, 2.85) {};
+    \node [] (7) at (-4.5, 2.85) {$x$};
+    \node [] (8) at (-4, 2.85) {};
+    \node [] (9) at (-3.5, 2.85) {$y$};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=45, loop] (0.center) to ();
+    \draw (2.center) to (0.center);
+    \draw (0.center) to (1.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+        \end{array}
+      \begin{array}{c}
+        \begin{tikzpicture}[scale=2]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=45, loop] (1.center) to ();
+    \draw [in=225, out=315, loop] (1.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+      \end{array}  
+\begin{array}{c}
+        \begin{tikzpicture}[scale=2]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=45, loop] (1.center) to ();
+    \draw [in=225, out=315, loop] (1.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+      \end{array}
+      \begin{array}{c}
+\begin{tikzpicture}[scale=2]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (0, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+    \node [circle, fill, inner sep=1pt] (2) at (0, -0.25) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [bend left=45, looseness=1.75] (1.center) to (2.center);
+    \draw [bend right=45, looseness=1.75] (1.center) to (2.center);
+    \draw [min distance=2cm, in=135, out=45, loop] (1.center) to ();
+    \draw [min distance=2cm, in=225, out=315, loop] (2.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+\end{array}  ~~~\cdot \cdot \cdot~~~~ \right)
+\end{align*} 
+Since these diagrams are disconnected we can simply write down their contribution as   
 \end{itemize}
+
+
+
 % subsection vacuum_diagrams (end)
 
 
