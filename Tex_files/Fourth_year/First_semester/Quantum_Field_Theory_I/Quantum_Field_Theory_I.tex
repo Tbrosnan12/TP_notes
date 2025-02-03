@@ -466,7 +466,7 @@ In a similar manner the momentum density can be written as:
     & =  \delta(\tilde{\textbf{p}}-\tilde{\textbf{p}}')\frac{\tilde{E}}{E} 
   \end{split}
 \end{equation*}
-Where we have used $E^2 = |\textbf{p}|^2+m^2$ to do the second last step. We can see from this that if we choose the normalization $\ket{\textbf{p}} = \sqrt{2E_{\textbf{p}}}(a^{\dagger}_{\textbf{p}}\ket{0}$ then $\braket{\textbf{p}|\textbf{p}'}$ is Lorentz invariant, as needed. 
+Where we have used $E^2 = |\textbf{p}|^2+m^2$ to do the second last step. We can see from this that if we choose the normalization $\ket{\textbf{p}} = \sqrt{2E_{\textbf{p}}}a^{\dagger}_{\textbf{p}}\ket{0}$ then $\braket{\textbf{p}|\textbf{p}'}$ is Lorentz invariant, as needed. 
 
 \item With this we can consider the action of $\phi$ on the ground state $\ket{0}$. Via \ref{phi_2} this becomes: 
 
@@ -2600,17 +2600,35 @@ Since these diagrams are disconnected they don't affect each other and we can si
 \end{tikzpicture}
       \end{array} + \hspace{1mm} \cdot \cdot \cdot \right)}{(2\pi)^(4)\delta^{(4)}(0)}
   \end{align*}
+  % subsection vacuum_diagrams (end)
+  % section interacting_fields (end)
 \end{itemize}
 
 \newpage 
 \section{Cross Section \& S Matrix} % (fold)
 \label{sec:cross_section_&_s_matrix}
-
+\begin{itemize}
+\item The calculation we would like to perform is the differential cross section, that is the derivative of the cross section $\sigma$ with respect to the solid angle $\Omega$, $\frac{d \sigma}{d \Omega}$. This is a useful quantity as it is easily experimentally observed. In a particle collider, electrons and positrons are prepared in batches of length $l_A$ and $l_B$ and densities $\rho_A$ and $\rho_B$ respectively. When the two batches collide if the over lapping area of the head on collision is A, then the cross section is given by:
+\begin{equation*}
+  \sigma \equiv \frac{\text{Number of events}}{\rho_A\rho_B l_A l_B A}
+\end{equation*}
 % section cross_section_&_s_matrix (end)
+\end{itemize}
 
-% subsection vacuum_diagrams (end)
+\subsection{The S Matrix} % (fold)
+\label{sub:the_s_matrix}
+\begin{itemize}
+  \item The general picture for calculating the cross section is to consider a wave packet of initial states and evolve them for a large time using $e^{-Ht}$. We then overlap the result with a set of final wave-packets representing the desired final state particles $\ket{\phi}$. This gives us to the probability amplitude for the production of final state, which we will be able to relate to the cross section. 
 
-
-
-% section interacting_fields (end)
+  We can write down final wave packets in the following form: 
+  \begin{align*}
+    \ket{\phi} = \int \frac{d^3k}{\left(2\pi\right)^3} \frac{1}{\sqrt{2E_{k}}}\phi(\textbf{k})\ket{\textbf{k}}
+  \end{align*}
+  Where $\phi(\textbf{k})$ is the Fourier transform of the spatial wavefunction. The factor of $1/\sqrt{2E_{\textbf{k}}}$ is to revert back to conventional normalization where we had introduced it originally to have Lorentz invariance. This means:
+  \begin{align*}
+     \braket{\phi|\phi} = 1 \impliedby \int \frac{d^3k}{\left(2\pi\right)^3}|\phi(\textbf{k})|^2 =1 
+   \end{align*}
+   Due to the fact that $\ket{\textbf{k}} = \sqrt{2E_{\textbf{k}}}a^{\dagger}_{\textbf{k}}\ket{0}$. 
+\end{itemize}
+% subsection the_s_matrix (end)
 \end{document}

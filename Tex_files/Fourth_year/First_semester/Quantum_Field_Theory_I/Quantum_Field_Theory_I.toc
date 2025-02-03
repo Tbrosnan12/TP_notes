@@ -84,3 +84,4 @@
 \contentsline {subsubsection}{\numberline {7.8.1}Integration path}{56}{subsubsection.7.8.1}%
 \contentsline {subsection}{\numberline {7.9}Vacuum Diagrams}{56}{subsection.7.9}%
 \contentsline {section}{\numberline {8}Cross Section \& S Matrix}{59}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The S Matrix}{59}{subsection.8.1}%
