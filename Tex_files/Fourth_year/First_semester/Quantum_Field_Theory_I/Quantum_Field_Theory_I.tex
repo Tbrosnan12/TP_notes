@@ -2543,7 +2543,7 @@ Note the sign of $p_1$ is flipped as it is going in the opposite direction. This
 \end{tikzpicture}
 \end{array}  ~~~\cdot \cdot \cdot~~~~ \right)
 \end{align*} 
-Since these diagrams are disconnected they don't affect each other and we can simply write down their contribution as the product of the $n_i$ $V_i$ divided by $n_i!$ to account for the ordering not mattering. This happens for each of the of the disconnected diagrams indexed by $i$. These contributions all multiply by the original connected diagram factor which we can just call $A$. The value of the diagram is then just: 
+Since these diagrams are disconnected they don't affect each other and we can simply write down their contribution as the product of the $n_i$ $V_i$ divided by $n_i!$ to account for the ordering not mattering. This happens for each of the of the disconnected diagrams indexed by $i$. These contributions all multiply by the original connected diagram factor which we can just call $A$. The value of the diagram is then: 
 \begin{align*}
     A \cdot \prod_{i}\frac{1}{n_i!}(V_i)^{^n_{i}} 
   \end{align*}  
@@ -2558,9 +2558,9 @@ Since these diagrams are disconnected they don't affect each other and we can si
     & = \sum\left(\text{connected}\right)\times \exp\left(\sum_{i}V_i\right)
   \end{align*}
   This means that the problem divergent terms that come from the disconnected diagrams cancel in our actual calculations! We are just left with the connected diagrams:
-  \begin{align*}
+  \begin{flalign*}
     \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} = \text{sum of all diagrams with two external points}
-  \end{align*}
+  \end{flalign*}
   This can be generalized to $n-$point correlator by replacing the RHS with all diagrams with $n$ external points. 
   \item As a last point we can compare \ref{e^-iEt} and \ref{2_point_inter} (since they have the same numerator and denominator) to write: 
   \begin{align*}
@@ -2598,7 +2598,7 @@ Since these diagrams are disconnected they don't affect each other and we can si
     \draw [min distance=2cm, in=225, out=315, loop] (2.center) to ();
   \end{pgfonlayer}
 \end{tikzpicture}
-      \end{array} + \hspace{1mm} \cdot \cdot \cdot \right)}{(2\pi)^(4)\delta^{(4)}(0)}
+      \end{array} + \hspace{4mm} \cdot \cdot \cdot\hspace{4mm} \right)}{(2\pi)^(4)\delta^{(4)}(0)}
   \end{align*}
   % subsection vacuum_diagrams (end)
   % section interacting_fields (end)
@@ -2618,7 +2618,7 @@ Since these diagrams are disconnected they don't affect each other and we can si
 \subsection{The S Matrix} % (fold)
 \label{sub:the_s_matrix}
 \begin{itemize}
-  \item The general picture for calculating the cross section is to consider a wave packet of initial states and evolve them for a large time using $e^{-Ht}$. We then overlap the result with a set of final wave-packets representing the desired final state particles $\ket{\phi}$. This gives us to the probability amplitude for the production of final state, which we will be able to relate to the cross section. 
+  \item The general picture for calculating the cross section is to consider a wave packet of initial states and evolve them for a large time using $e^{-iHt}$. We then overlap the result with a set of final wave-packets representing the desired final state particles $\ket{\phi}$. This gives us the probability amplitude for the production of a given final state, which we will be able to relate to the cross section. 
 
   We can write down final wave packets in the following form: 
   \begin{align*}
@@ -2628,7 +2628,29 @@ Since these diagrams are disconnected they don't affect each other and we can si
   \begin{align*}
      \braket{\phi|\phi} = 1 \impliedby \int \frac{d^3k}{\left(2\pi\right)^3}|\phi(\textbf{k})|^2 =1 
    \end{align*}
-   Due to the fact that $\ket{\textbf{k}} = \sqrt{2E_{\textbf{k}}}a^{\dagger}_{\textbf{k}}\ket{0}$. 
+   Due to the fact that $\ket{\textbf{k}} = \sqrt{2E_{\textbf{k}}}a^{\dagger}_{\textbf{k}}\ket{0}$. Given this normalization the probability of the initial state of two particles $\mathcal{A}$ and $\mathcal{B}$ evolving into a set of final states $\ket{\phi_1\phi_2 \cdot \cdot \cdot }$,is:
+   \begin{align*}
+     \mathcal{P} = |\braket{\underbrace{\phi_1\phi_2 \cdot \cdot \cdot}_{\text{future}} |\underbrace{\phi_{\mathcal{A}}\phi_{\mathcal{B}} }_{\text{past}}}|^2
+   \end{align*}
+   \item Our initial particle states will be wave-packets, Constructed so that they do not overlap spatially; but we will be considering the limit in which they become centered around a single momenta. $\ket{\phi_{\mathcal{A}}\phi_{\mathcal{B}}}$ will be a superposition of such packets. The general picture for this interaction is: 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Peskin_scattering.png}
+\caption{\label{trailer}\emph{Incident wavepackets are uniformly distributed in impact parameter $\textbf{b}$.}}
+\end{figure}
+\item In general we will be considering co-linear interactions (so $b=0$). To account for this fact we will separate the contribution of the momenta of $\phi_{\mathcal{B}}$ along the direction of $\textbf{b}$, this amounts to adding in a factor of $e^{-i\textbf{b}\cdot \textbf{k}_{\mathcal{B}}}$ to the integral expression (as this is the form of the solutions to the Klein Gordon equation) which then takes the form:
+\begin{align*}
+  \ket{\phi_{\mathcal{A}}\phi_{\mathcal{B}}} = \int\frac{d^3k_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k_{\mathcal{B}}}{(2\pi)^3}\frac{\phi_{\mathcal{A}}\phi_{\mathcal{B}}}{2\sqrt{E_{\textbf{k}_{\mathcal{A}}}E_{\textbf{k}_{\mathcal{B}}}}}e^{-i\textbf{b}\cdot \textbf{k}_{\mathcal{B}}}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}
+\end{align*}
+For the out states it is preferable to consider specific momenta $\textbf{p}_i$, so the main object of interest we will need to compute is ${}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}}$. But recall that we defined our out states to be in the far future and out in states in the far past, so we must include the limits in this:
+\begin{align*}
+  {}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}} & = \lim_{T \rightarrow \infty} {}_{\text{in}}\braket{\underbrace{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot}_{T}|\underbrace{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{-T}}{}_{\text{out}} \\
+  & = \lim_{T \rightarrow \infty}{}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|e^{-iH(2T)}|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}}
+\end{align*}
+Where in the last line we have added the time evolution operator so that both states are at the same common reference time for this limit. This then brings us to define the $S$ matrix as:
+\begin{flalign*}
+   {}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}} =  \braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|S|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}
+\end{flalign*}
 \end{itemize}
 % subsection the_s_matrix (end)
 \end{document}

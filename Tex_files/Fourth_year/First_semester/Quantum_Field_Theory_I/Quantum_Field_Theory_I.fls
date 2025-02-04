@@ -1355,6 +1355,16 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm
+INPUT ./Peskin_scattering.png
+INPUT ./Peskin_scattering.png
+INPUT Peskin_scattering.png
+INPUT ./Peskin_scattering.png
+INPUT ./Peskin_scattering.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT Quantum_Field_Theory_I.aux
 INPUT ./Quantum_Field_Theory_I.out
 INPUT ./Quantum_Field_Theory_I.out
@@ -1366,6 +1376,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
