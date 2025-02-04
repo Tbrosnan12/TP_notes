@@ -2543,7 +2543,7 @@ Note the sign of $p_1$ is flipped as it is going in the opposite direction. This
 \end{tikzpicture}
 \end{array}  ~~~\cdot \cdot \cdot~~~~ \right)
 \end{align*} 
-Since these diagrams are disconnected they don't affect each other and we can simply write down their contribution as the product of the $n_i$ $V_i$ divided by $n_i!$ to account for the ordering not mattering. This happens for each of the of the disconnected diagrams indexed by $i$. These contributions all multiply by the original connected diagram factor which we can just call $A$. The value of the diagram is then just: 
+Since these diagrams are disconnected they don't affect each other and we can simply write down their contribution as the product of the $n_i$ $V_i$ divided by $n_i!$ to account for the ordering not mattering. This happens for each of the of the disconnected diagrams indexed by $i$. These contributions all multiply by the original connected diagram factor which we can just call $A$. The value of the diagram is then: 
 \begin{align*}
     A \cdot \prod_{i}\frac{1}{n_i!}(V_i)^{^n_{i}} 
   \end{align*}  
@@ -2558,9 +2558,9 @@ Since these diagrams are disconnected they don't affect each other and we can si
     & = \sum\left(\text{connected}\right)\times \exp\left(\sum_{i}V_i\right)
   \end{align*}
   This means that the problem divergent terms that come from the disconnected diagrams cancel in our actual calculations! We are just left with the connected diagrams:
-  \begin{align*}
+  \begin{flalign*}
     \bra{\Omega}T\{\phi(x)&\phi(y)\}\ket{\Omega} = \text{sum of all diagrams with two external points}
-  \end{align*}
+  \end{flalign*}
   This can be generalized to $n-$point correlator by replacing the RHS with all diagrams with $n$ external points. 
   \item As a last point we can compare \ref{e^-iEt} and \ref{2_point_inter} (since they have the same numerator and denominator) to write: 
   \begin{align*}
@@ -2598,7 +2598,7 @@ Since these diagrams are disconnected they don't affect each other and we can si
     \draw [min distance=2cm, in=225, out=315, loop] (2.center) to ();
   \end{pgfonlayer}
 \end{tikzpicture}
-      \end{array} + \hspace{1mm} \cdot \cdot \cdot \right)}{(2\pi)^(4)\delta^{(4)}(0)}
+      \end{array} + \hspace{4mm} \cdot \cdot \cdot\hspace{4mm} \right)}{(2\pi)^(4)\delta^{(4)}(0)}
   \end{align*}
   % subsection vacuum_diagrams (end)
   % section interacting_fields (end)
