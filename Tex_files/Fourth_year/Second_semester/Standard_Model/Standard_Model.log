@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  18 AUG 2024 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  4 FEB 2025 23:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**Standard_Model.tex
+(./Standard_Model.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -516,6 +516,41 @@ LaTeX Info: Redefining \] on input line 2939.
 \xmathstrut@box=\box53
 \xmathstrut@dim=\dimen169
 )
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/empheq.sty
+Package: empheq 2017/03/31 v2.15 Emphasizing equations
+\l_EQ_equationtype_int=\count415
+\l_EQ_alignmentmode_int=\count416
+\l_EQ_totalwidth_dim=\dimen170
+\l_EQ_displaywidth_dim=\dimen171
+\l_EQ_temp_linewidth_dim=\dimen172
+\l_EQ_linewidth_dim=\dimen173
+\EmphEqdelimitershortfall=\dimen174
+\EmphEqdelimiterfactor=\count417
+\g_EQ_toptag_height_dim=\dimen175
+\g_EQ_bottomtag_depth_dim=\dimen176
+\g_EQ_toprow_height_dim=\dimen177
+\g_EQ_bottomrow_depth_dim=\dimen178
+\g_EQ_widesttag_dim=\dimen179
+\EQ_mathdisplay_box=\box54
+\EQ_tag_box=\box55
+\g_EQ_temprow_int=\count418
+)
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
 
@@ -536,25 +571,6 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/mathtools/empheq.sty
-Package: empheq 2017/03/31 v2.15 Emphasizing equations
-\l_EQ_equationtype_int=\count415
-\l_EQ_alignmentmode_int=\count416
-\l_EQ_totalwidth_dim=\dimen170
-\l_EQ_displaywidth_dim=\dimen171
-\l_EQ_temp_linewidth_dim=\dimen172
-\l_EQ_linewidth_dim=\dimen173
-\EmphEqdelimitershortfall=\dimen174
-\EmphEqdelimiterfactor=\count417
-\g_EQ_toptag_height_dim=\dimen175
-\g_EQ_bottomtag_depth_dim=\dimen176
-\g_EQ_toprow_height_dim=\dimen177
-\g_EQ_bottomrow_depth_dim=\dimen178
-\g_EQ_widesttag_dim=\dimen179
-\EQ_mathdisplay_box=\box54
-\EQ_tag_box=\box55
-\g_EQ_temprow_int=\count418
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2022/01/07 version 5.0.2 text color boxes
@@ -965,22 +981,7 @@ File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgflibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '5.0.2'
-)) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
-Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup6
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks38
 \inpenc@posthook=\toks39
@@ -1000,121 +1001,84 @@ Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 \CommentStream=\write5
 
 Excluding comment 'comment')
-(/usr/share/texlive/texmf-dist/tex/latex/mhchem/mhchem.sty
-Package: mhchem 2021/12/31 v4.09 for typesetting chemical formulae
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
-)
-(/usr/share/texlive/texmf-dist/tex/latex/chemgreek/chemgreek.sty
-Package: chemgreek 2020/01/16 v1.1a interface for upright Greek letters for use
- in chemistry (CN)
-\l__chemgreek_tmpa_int=\count458
-\g__chemgreek_tmpa_int=\count459
-)
-\l__mhchem_ce_distanceFromLastComma_int=\count460
-\__mhchem_arrow_extPgfLength_skip=\skip79
-\mhchem@minispace@tmp=\skip80
-\mhchem@minibackspace@tmp=\skip81
-\mhchem@bondwidth=\skip82
-\mhchem@bondheight=\skip83
-\mhchem@smallbondwidth@tmpA=\skip84
-\mhchem@smallbondwidth@tmpB=\skip85
-\mhchem@smallbondwidth=\skip86
-\mhchem@bondtmp@minussidebearingleft=\skip87
-\mhchem@bondtmp@minussidebearingright=\skip88
-\l__mhchem_option_version_int=\count461
-\mhchem@option@minusmathsidebearingleft=\dimen295
-\mhchem@option@minusmathsidebearingright=\dimen296
-\mhchem@option@minustextsidebearingleft=\dimen297
-\mhchem@option@minustextsidebearingright=\dimen298
-
-
-Package mhchem Warning: You did not specify a 'version' option for the mhchem
-(mhchem)                package. Please write \usepackage[version=4]{mhchem}
-(mhchem)                in your preamble (or any lower number for
-(mhchem)                compatibility mode), because you might get slightly
-(mhchem)                different output with the same input in future versions
-.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen299
+\col@sep=\dimen295
 \ar@mcellbox=\box83
-\extrarowheight=\dimen300
+\extrarowheight=\dimen296
 \NC@list=\toks42
-\extratabsurround=\skip89
-\backup@length=\skip90
+\extratabsurround=\skip79
+\backup@length=\skip80
 \ar@cellbox=\box84
 )
-\TX@col@width=\dimen301
-\TX@old@table=\dimen302
-\TX@old@col=\dimen303
-\TX@target=\dimen304
-\TX@delta=\dimen305
-\TX@cols=\count462
+\TX@col@width=\dimen297
+\TX@old@table=\dimen298
+\TX@old@col=\dimen299
+\TX@target=\dimen300
+\TX@delta=\dimen301
+\TX@cols=\count458
 \TX@ftn=\toks43
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip91
-\thanksmargin=\skip92
-\droptitle=\skip93
+\thanksmarkwidth=\skip81
+\thanksmargin=\skip82
+\droptitle=\skip83
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box85
-\beforetitleunit=\skip94
-\aftertitleunit=\skip95
-\ttl@plus=\dimen306
-\ttl@minus=\dimen307
+\beforetitleunit=\skip84
+\aftertitleunit=\skip85
+\ttl@plus=\dimen302
+\ttl@minus=\dimen303
 \ttl@toksa=\toks44
-\titlewidth=\dimen308
-\titlewidthlast=\dimen309
-\titlewidthfirst=\dimen310
+\titlewidth=\dimen304
+\titlewidthlast=\dimen305
+\titlewidthfirst=\dimen306
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip96
-\f@nch@O@elh=\skip97
-\f@nch@O@erh=\skip98
-\f@nch@O@olh=\skip99
-\f@nch@O@orh=\skip100
-\f@nch@O@elf=\skip101
-\f@nch@O@erf=\skip102
-\f@nch@O@olf=\skip103
-\f@nch@O@orf=\skip104
+\f@nch@headwidth=\skip86
+\f@nch@O@elh=\skip87
+\f@nch@O@erh=\skip88
+\f@nch@O@olh=\skip89
+\f@nch@O@orh=\skip90
+\f@nch@O@elf=\skip91
+\f@nch@O@erf=\skip92
+\f@nch@O@olf=\skip93
+\f@nch@O@orf=\skip94
 )
 
 Package biblatex Warning: Load 'inputenc' before biblatex.
 
-\@quotelevel=\count463
-\@quotereset=\count464
-(./main.aux)
-\openout1 = `main.aux'.
+\@quotelevel=\count459
+\@quotereset=\count460
+(./Standard_Model.aux)
+\openout1 = `Standard_Model.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1124,14 +1088,14 @@ LaTeX Font Info:    ... okay on input line 79.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* h-part:(L,W,R)=(42.67912pt, 514.71037pt, 56.9055pt)
 * v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=500.484pt
+* \textwidth=514.71037pt
 * \textheight=681.15898pt
-* \oddsidemargin=-15.36449pt
-* \evensidemargin=-15.36449pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
 * \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -1150,7 +1114,7 @@ LaTeX Font Info:    ... okay on input line 79.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 79.
+Package hyperref Info: Link coloring OFF on input line 93.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1160,15 +1124,15 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count465
+\c@section@level=\count461
 )
-LaTeX Info: Redefining \ref on input line 79.
-LaTeX Info: Redefining \pageref on input line 79.
-LaTeX Info: Redefining \nameref on input line 79.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
 
-(./main.out) (./main.out)
+(./Standard_Model.out) (./Standard_Model.out)
 \@outlinefile=\write6
-\openout6 = `main.out'.
+\openout6 = `Standard_Model.out'.
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
@@ -1179,25 +1143,27 @@ File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `main.bcf'.
+\openout3 = `Standard_Model.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 79.
-Package biblatex Info: Reference segment=0 on input line 79.
+Package biblatex Info: ... file 'Standard_Model.bbl' found.
+
+(./Standard_Model.bbl)
+Package biblatex Info: Reference section=0 on input line 93.
+Package biblatex Info: Reference segment=0 on input line 93.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count466
-\scratchdimen=\dimen311
+\scratchcounter=\count462
+\scratchdimen=\dimen307
 \scratchbox=\box86
-\nofMPsegments=\count467
-\nofMParguments=\count468
+\nofMPsegments=\count463
+\nofMParguments=\count464
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count469
-\MPscratchDim=\dimen312
-\MPnumerator=\count470
-\makeMPintoPDFobject=\count471
+\MPscratchCnt=\count465
+\MPscratchDim=\dimen308
+\MPnumerator=\count466
+\makeMPintoPDFobject=\count467
 \everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1208,44 +1174,31 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count472
-
-Package chemgreek Info: Activating mapping `default' on line 79.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
+\c@lstlisting=\count468
+LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 81
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 95
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-
-
-pdfTeX warning: pdflatex (file pdftex.map): cannot open font map file
-] [2] (./main.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Standard_Model.toc)
 \tf@toc=\write7
-\openout7 = `main.toc'.
+\openout7 = `Standard_Model.toc'.
 
  [3]
-<Screenshot 2023-06-15 172321.png, id=72, 649.92813pt x 405.515pt>
-File: Screenshot 2023-06-15 172321.png Graphic file (type png)
-<use Screenshot 2023-06-15 172321.png>
-Package pdftex.def Info: Screenshot 2023-06-15 172321.png  used on input line 1
-52.
-(pdftex.def)             Requested size: 400.38872pt x 249.82027pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1254,12 +1207,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.156 \newpage
-               <./Screenshot 2023-06-15 172321.png>]
+[4]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1279,36 +1227,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6
 
-] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
+] (./Standard_Model.aux)
+Package rerunfilecheck Info: File `Standard_Model.out' has not changed.
 (rerunfilecheck)             Checksum: 0C0F84CE4BD826FD462E35999AB59DEC;175.
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
+Package logreq Info: Writing requests to 'Standard_Model.run.xml'.
+\openout1 = `Standard_Model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36602 strings out of 480247
- 733636 string characters out of 5896106
- 1459720 words of memory out of 5000000
- 53978 multiletter control sequences out of 15000+600000
- 479961 words of font info for 71 fonts, out of 8000000 for 9000
+ 35737 strings out of 480247
+ 713120 string characters out of 5896106
+ 1422830 words of memory out of 5000000
+ 53125 multiletter control sequences out of 15000+600000
+ 479615 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,16n,104p,1193b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmti10.657pk>
- </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy10.657pk> <
-/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi8.600pk> </ho
-me/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi10.657pk> </home
-/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.864pk> </home/t
-homas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx10.657pk> </home/tho
-mas/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720pk> </home/thoma
-s/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr12.720pk> </home/thomas/.
-texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmr10.657pk> </usr/share/texliv
-e/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </usr/share/texlive/tex
-mf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr17.pk>
-Output written on main.pdf (6 pages, 181963 bytes).
+ 99i,16n,104p,1203b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb>
+Output written on Standard_Model.pdf (6 pages, 96296 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
- 13 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
