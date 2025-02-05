@@ -171,8 +171,23 @@
             u \\ d
         \end{matrix}\right)
     \end{align*}
+We would like to have the same treatment of anti-quarks. We know that the complex conjugate of any quark will give us the anti-quark (eg. $u^{\ast} = \bar{u}$), but we don't want to write down something like $\bar{q} = (\bar{u},\bar{d})^{T}$ as then this will transform via $U^{\ast}$ instead of $U$ and will not follow the same symmetries. Instead we should find some combination that does transform via $U$. We write this as $\bar{q} = S(\bar{u},\bar{d})^{T}$ and then impose that $SU^{\ast} = US$. Solving this equation results in the matrix $S= \begin{pmatrix}
+    0 & -1 \\ 1 & 0 
+\end{pmatrix}$. Meaning the quark anti-state can be written as:
+\begin{align*}
+    \bar{q} = \begin{pmatrix}
+        -\bar{d} \\ \bar{u}
+    \end{pmatrix}
+\end{align*}
 
 \end{itemize}
 % subsection anti_quark_doublet (end)
+
+\subsection{Mesons} % (fold)
+\label{sub:mesons}
+\begin{itemize}
+    \item Mesons are bound states of a quark and anti-quark pair, since quarks are spin half, this makes mesons bosons. Since Mesons are comprised of two quarks, we can think of adding their Isospin in exactly the same way we add the spin of two particles together. Since the quarks have isospin $\frac{1}{2}$, this will create the familiar $\frac{1}{2} \otimes \frac{1}{2} = 1 \oplus 0$
+\end{itemize}
+% subsection mesons (end)
 
 \end{document}

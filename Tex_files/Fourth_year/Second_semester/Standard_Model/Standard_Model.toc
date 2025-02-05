@@ -1,3 +1,4 @@
 \contentsline {section}{\numberline {1}The Quark Model}{4}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Isospin}{4}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Anti-quark Doublet}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Mesons}{5}{subsection.1.3}%
