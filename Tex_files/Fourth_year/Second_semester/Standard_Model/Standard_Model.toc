@@ -1,2 +1,1 @@
-\contentsline {section}{\numberline {1}Section}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Theorem:}{4}{subsection.1.1}%
+\contentsline {section}{\numberline {1}The Quark model}{4}{section.1}%
