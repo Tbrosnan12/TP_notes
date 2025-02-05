@@ -13,6 +13,7 @@
 \usepackage{amssymb} % Fancy R ,C and other set fonts using mathbb{}
 \usepackage{braket}   % for Dirac notation 
 \usepackage{mathrsfs}  % for the mathscr text 
+\usepackage{bbm} % for identity matrix
 
 % miscellaneous
 \usepackage{empheq}   % for formatting custon math boxs
@@ -141,7 +142,16 @@
 %starting document 
 \normalsize
 \newpage
-\section{The Quark model}
+\section{The Quark Model}
+\begin{itemize}
+    \item Long ago it was realized that the proton and the neutron have very similar masses and thus in regions where the Electromagnetic is weak compared to the strong force, there is an approximate symmetry between the neutron. With this, it was postulated that these two particles were two states of the same particle, \emph{the nucleon}. With this in analogous to spin states, we can write the proton as $\ket{p} = (1,0)^T$ and the neutron as $\ket{n} = (0,1)^T$. This lead to the idea of \emph{Isospin}, as the proton and the neutron can be considered to form an isospin doublet, with total Isospin $1/2$ and a third component of $I_3 = \pm1/2$. Just like spin, our Lagrangian (if we ignore the electromagnetic terms) should be invariant under unitary transformations of these states (which will be $\in U(2)$), meaning there is a conserved charge associate with this transformation. We can do this exact same procedure for the up and down quarks. The strong force treats all the quarks equally, and seeing as the up and down quark have approximately the same masses, we can treat them as spin states just like the nucleon. In this case the conserved quantity associated with this symmetry is known as \emph{flavor}. 
 
+    \item $U(2)$ has $4$ degrees of freedom, and thus $4$ generators, one of these can be chosen to be a scaling by a phase factor of the identity, $e^{i\theta}\mathbbm{1}$, since overall phase factors of $U(1)$ do not change our states, this can be ignored, leaving us with the $3$ Pauli matrices $\sigma^i$, which are the generators of $SU(2)$, the main symmetry group here. From this we can proceed in the exact same manner as we do with spin, recognizing that these matrices form a non-Abelian Lie algebra based on their commutators, where we can define raising and lowering operators, to enable us to write down states analogous to $\ket{lm}$ for spin.
+\end{itemize}
+
+\subsection{} % (fold)
+\label{sub:}
+
+% subsection  (end)
 
 \end{document}
