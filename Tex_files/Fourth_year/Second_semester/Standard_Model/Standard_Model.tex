@@ -217,9 +217,29 @@ We would like to have the same treatment of anti-quarks. We know that the comple
 \end{align*}
 \item This particular choice is normalized such that $\text{tr}(\lambda_i\lambda_j) = 2\delta_{ij}$. With this we can define the $SU(3)$ Isospin in a similar manner to $SU(2)$ by identifying:
 \begin{align*}
-     T_i = \frac{1}{2}\lambda_i
+     \hat{T}_i = \frac{1}{2}\lambda_i
  \end{align*} 
- The total Isospin is then $\sum_i T^2_i = \frac{1}{4}\lambda_i^2 = \frac{4}{3}\mathbbm{1}$. $SU(3)$ is different to $SU(2)$ in the fact that it two mutually commuting generators instead of $1$. We can call once again the component along the direction of the third generator $T_3$ the third component of the isospin $I_3$ and identify states by this number, but we then also need to consider the component along the direction of $T_8$ as $T_8$ commutes with $T_3$. The component along this direction is known as the \emph{Hyper-charge} and is denoted with a $Y$. Strictly we define the hyper charge to be $Y = \frac{1}{\sqrt{3}}\lambda_8$.  
+ The total Isospin is then $\sum_i T^2_i = \frac{1}{4}\lambda_i^2 = \frac{4}{3}\mathbbm{1}$. $SU(3)$ is different to $SU(2)$ in the fact that it two mutually commuting generators instead of $1$. We can call once again the component along the direction of the third generator $T_3$ the third component of the isospin $I_3$ and identify states by this number, but we then also need to consider the component along the direction of $\hat{T}_8$ as $\hat{T}_8$ commutes with $\hat{T}_3$. The component along this direction is known as the \emph{Hyper-charge} and is denoted with a $Y$. Strictly we define the hyper charge to be $Y = \frac{1}{\sqrt{3}}\lambda_8$. 
+
+ \item From the definitions of the Gell Mann matrices we can check the values of the $I_3$ and $Y$, for the 3 quarks:
+\begin{align*}
+    \hat{T}_3 u &= +\frac{1}{2} u & \quad \hat{Y} u &= +\frac{1}{3} u \\
+    \hat{T}_3 d &= -\frac{1}{2} d & \quad \hat{Y} d &= +\frac{1}{3} d \\
+    \hat{T}_3 s &= 0 & \quad \hat{Y} s &= -\frac{2}{3} s
+\end{align*} 
+
+ We can plot $Y$ and $I_3$ for the three quarks and their anti-particles:
+ \begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Hypercharge.png}
+\caption{\label{trailer}\emph{Incident wavepackets are uniformly distributed in impact parameter $\textbf{b}$.}}
+\end{figure}  
+\item Since we have used $\lambda_3$ and $\lambda_8$ to form what is know as the Cartan sub-algebra, we can take the remaining $\lambda_i$ and form raising and lowering operators. There will be three pairs, that which step respectively between the $d \leftrightarrow u, s\leftrightarrow u$ and $d\leftrightarrow s$:
+\begin{align}
+    \hat{T}_\pm &= \frac{1}{2} (\lambda_1 \pm i \lambda_2) \\
+    \hat{V}_\pm &= \frac{1}{2} (\lambda_4 \pm i \lambda_5) \\
+    \hat{U}_\pm &= \frac{1}{2} (\lambda_6 \pm i \lambda_7)
+\end{align}
 \end{itemize}
 % subsection su3 (end)
 
