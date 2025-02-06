@@ -186,8 +186,41 @@ We would like to have the same treatment of anti-quarks. We know that the comple
 \subsection{Mesons} % (fold)
 \label{sub:mesons}
 \begin{itemize}
-    \item Mesons are bound states of a quark and anti-quark pair, since quarks are spin half, this makes mesons bosons. Since Mesons are comprised of two quarks, we can think of adding their Isospin in exactly the same way we add the spin of two particles together. Since the quarks have isospin $\frac{1}{2}$, this will create the familiar $\frac{1}{2} \otimes \frac{1}{2} = 1 \oplus 0$
+    \item Mesons are bound states of a quark and anti-quark pair, since quarks are spin half, this makes mesons bosons. Since Mesons are comprised of two quarks, we can think of adding their Isospin in exactly the same way we add the spin of two particles together. Since the quarks have isospin $\frac{1}{2}$, this will create the familiar $\frac{1}{2} \otimes \frac{1}{2} = 1 \oplus 0$. Meaning there will be four possible states, a triplet with $I_3=1$ and a singlet with $I_3=0$. These state correspond to meson particles! Each state will correspond to more then one particle as we are not considering different combinations of spins (which affect the mass!). These particles are:
+    \begin{align*}
+        &\phi(1,1) = -u\bar{d} & \pi^{+}, \rho^{+}\\ 
+        &\phi(1,0) = \frac{1}{\sqrt{2}}\left(u\bar{u}-d\bar{d}\right)  & \pi^{0}, \rho^{0}\\ 
+        &\phi(1,1) = d\bar{u}  & \pi^{-}, \rho^{-}\\ 
+        &\phi(0,0) = \frac{1}{\sqrt{2}}\left(u\bar{u}+d\bar{d}\right)  &  \eta, \omega 
+    \end{align*}
 \end{itemize}
 % subsection mesons (end)
+
+\subsection{$SU(3)$ Flavour} % (fold)
+\label{sub:su3}
+\begin{itemize}
+    \item The above described $SU(2)$ symmetry is almost exact as the up and down quarks have almost them same mass. What we can also do is consider extending this symmetry to the strange quark. This makes it a $SU(3)$ symmetry, as the quark doublet now becomes a quark triplet $q= (u,d,s)^T$, for which we will need a new basis of generators. The standard choice of generators are the \emph{Gell Mann matrices}:
+\begin{align*}
+    \lambda_1 &= \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, &
+    \lambda_2 &= \begin{pmatrix} 0 & -i & 0 \\ i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, &
+    \lambda_3 &= \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{pmatrix},~~~ u \leftrightarrow d \\[10pt]
+    %
+    \lambda_4 &= \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{pmatrix}, &
+    \lambda_5 &= \begin{pmatrix} 0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{pmatrix}, &
+    & u \leftrightarrow s \\[10pt]
+    %
+    \lambda_6 &= \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}, &
+    \lambda_7 &= \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -i \\ 0 & i & 0 \end{pmatrix}, &
+    & d \leftrightarrow s \\[10pt]
+    %
+    \lambda_8 &= \frac{1}{\sqrt{3}} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -2 \end{pmatrix},~~~&&\text{equal treatment of u,d}
+\end{align*}
+\item This particular choice is normalized such that $\text{tr}(\lambda_i\lambda_j) = 2\delta_{ij}$. With this we can define the $SU(3)$ Isospin in a similar manner to $SU(2)$ by identifying:
+\begin{align*}
+     T_i = \frac{1}{2}\lambda_i
+ \end{align*} 
+ The total Isospin is then $\sum_i T^2_i = \frac{1}{4}\lambda_i^2 = \frac{4}{3}\mathbbm{1}$. $SU(3)$ is different to $SU(2)$ in the fact that it two mutually commuting generators instead of $1$. We can call once again the component along the direction of the third generator $T_3$ the third component of the isospin $I_3$ and identify states by this number, but we then also need to consider the component along the direction of $T_8$ as $T_8$ commutes with $T_3$. The component along this direction is known as the \emph{Hyper-charge} and is denoted with a $Y$. Strictly we define the hyper charge to be $Y = \frac{1}{\sqrt{3}}\lambda_8$.  
+\end{itemize}
+% subsection su3 (end)
 
 \end{document}
