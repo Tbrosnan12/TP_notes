@@ -187,12 +187,13 @@ We would like to have the same treatment of anti-quarks. We know that the comple
 \label{sub:mesons}
 \begin{itemize}
     \item Mesons are bound states of a quark and anti-quark pair, since quarks are spin half, this makes mesons bosons. Since Mesons are comprised of two quarks, we can think of adding their Isospin in exactly the same way we add the spin of two particles together. Since the quarks have isospin $\frac{1}{2}$, this will create the familiar $\frac{1}{2} \otimes \frac{1}{2} = 1 \oplus 0$. Meaning there will be four possible states, a triplet with $I_3=1$ and a singlet with $I_3=0$. These state correspond to meson particles! Each state will correspond to more then one particle as we are not considering different combinations of spins (which affect the mass!). These particles are:
-    \begin{align*}
-        &\phi(1,1) = -u\bar{d} & \pi^{+}, \rho^{+}\\ 
-        &\phi(1,0) = \frac{1}{\sqrt{2}}\left(u\bar{u}-d\bar{d}\right)  & \pi^{0}, \rho^{0}\\ 
-        &\phi(1,1) = d\bar{u}  & \pi^{-}, \rho^{-}\\ 
-        &\phi(0,0) = \frac{1}{\sqrt{2}}\left(u\bar{u}+d\bar{d}\right)  &  \eta, \omega 
-    \end{align*}
+\begin{align*}
+    &\phi(1,1) = -|\! u\bar{d} \rangle \; &=& |\pi^{+} \rangle, |\rho^{+} \rangle \\ 
+    &\phi(1,0) = \frac{1}{\sqrt{2}}\left(|\! u\bar{u} \rangle - |\! d\bar{d} \rangle \right) \; &=& |\pi^{0} \rangle, |\rho^{0} \rangle \\ 
+    &\phi(1,-1) = |\! d\bar{u} \rangle \; &=& |\pi^{-} \rangle, |\rho^{-} \rangle \\ 
+    &\phi(0,0) = \frac{1}{\sqrt{2}}\left(|\! u\bar{u} \rangle + |\! d\bar{d} \rangle \right) \; &=& |\eta \rangle, |\omega \rangle
+\end{align*}
+
 \end{itemize}
 % subsection mesons (end)
 
@@ -234,14 +235,62 @@ We would like to have the same treatment of anti-quarks. We know that the comple
 \includegraphics[width=0.6\textwidth]{Hypercharge.png}
 \caption{\label{trailer}\emph{Quark Isospin and Hyper-charge}}
 \end{figure}  
-Note that it is not possible to express the anti-quarks in a triplet that transforms in the same way as the quark triplet.  
+\end{itemize}
+% subsection su3 (end)
+
+\subsection{Light Mesons} % (fold)
+\label{sub:light_mesons}
+\begin{itemize}
 \item Since we have used $\lambda_3$ and $\lambda_8$ to form what is know as the Cartan sub-algebra, we can take the remaining $\lambda_i$ and form raising and lowering operators. There will be three pairs, that which step respectively between the $d \leftrightarrow u, s\leftrightarrow u$ and $d\leftrightarrow s$:
 \begin{align}
     \hat{T}_\pm &= \frac{1}{2} (\lambda_1 \pm i \lambda_2) \\
     \hat{V}_\pm &= \frac{1}{2} (\lambda_4 \pm i \lambda_5) \\
     \hat{U}_\pm &= \frac{1}{2} (\lambda_6 \pm i \lambda_7)
 \end{align}
+We can use these to find all possible Mesons made out of these $3$ quarks. This is done by identifying the extreme states (stats with maximal $I_3$ or $Y$), then apply the raising and lowering operators to exhaust all other possible states. Since we are combining $3$ possible quarks with $3$ possible anti-quarks \footnote{Here we are only looking at 2 quark combinations here, i.e. Mesons} then this is a case of $3 \otimes \bar{3} = 8 \oplus 1$ \footnote{The bar on the $3$ just indicates that this is the anti-quark triplet}. This decomposition is into a octet and a singlet and takes the below visual form:
+ \begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{3x3}
+\caption{\label{trailer}\emph{Decomposition of quark-anti-quark combinations }}
+\end{figure} 
+Where the singlet is plotted along with the two octet elements that have $I_3 = Y = 0$. These quark combinations are as we mentioned before Mesons! We now have generated more of these having considered the strange quark as well. We are not how-ever considering spin. Quarks are spin $1/2$ particles meaning it is possible to form spin $0$ or spin $1$ combinations of them. It turns out that these different combinations affect the mass of the resulting bound system, meaning these are different particles. We thus have two sets of $9$ particles:
+ \begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{mesons}
+\caption{\label{trailer}\emph{All Mesons, graphed by Isospin and Hyper-charge}}
+\end{figure} 
+\item In terms of the quarks these are for spin-$0$:
+\begin{align*}
+    &\text{Pions:} 
+    &|\pi^+\rangle = |u\bar{d}\rangle, \quad 
+    |\pi^0\rangle = \frac{1}{\sqrt{2}} (|u\bar{u}\rangle - |d\bar{d}\rangle), \quad
+    |\pi^-\rangle = |d\bar{u}\rangle \\[5pt]
+    &\text{Kaons:} 
+    &|K^+\rangle = |u\bar{s}\rangle, \quad
+    |K^0\rangle = |d\bar{s}\rangle, \quad
+    |\bar{K}^0\rangle = |s\bar{d}\rangle, \quad
+    |K^-\rangle = |s\bar{u}\rangle \\[5pt]
+    &\text{Eta and Eta Prime:} 
+    &|\eta\rangle = \frac{1}{\sqrt{6}} (|u\bar{u}\rangle + |d\bar{d}\rangle - 2|s\bar{s}\rangle), \quad
+    |\eta'\rangle = \frac{1}{\sqrt{3}} (|u\bar{u}\rangle + |d\bar{d}\rangle + |s\bar{s}\rangle)
+\end{align*}
+\item And for the spin-$1$ mesons:
+\begin{align*}
+    &\text{Rho Mesons:} 
+    &|\rho^+\rangle = |u\bar{d}\rangle, \quad 
+    |\rho^0\rangle = \frac{1}{\sqrt{2}} (|u\bar{u}\rangle - |d\bar{d}\rangle), \quad
+    |\rho^-\rangle = |d\bar{u}\rangle \\[5pt]
+    &\text{Kaon* Mesons:} 
+    &|K^{*+}\rangle = |u\bar{s}\rangle, \quad
+    |K^{*0}\rangle = |d\bar{s}\rangle, \quad
+    |\bar{K}^{*0}\rangle = |s\bar{d}\rangle, \quad
+    |K^{*-}\rangle = |s\bar{u}\rangle \\[5pt]
+    &\text{Omega and Phi Mesons:} 
+    &|\omega\rangle = \frac{1}{\sqrt{2}} (|u\bar{u}\rangle + |d\bar{d}\rangle), \quad
+    |\phi\rangle = |s\bar{s}\rangle
+\end{align*}
 \end{itemize}
-% subsection su3 (end)
 
+% subsection light_mesons (end)
 \end{document}
+    
