@@ -1307,6 +1307,10 @@ INPUT ./mesons.png
 INPUT mesons.png
 INPUT ./mesons.png
 INPUT ./mesons.png
+INPUT ./3x3x3.png
+INPUT 3x3x3.png
+INPUT ./3x3x3.png
+INPUT ./3x3x3.png
 INPUT Standard_Model.aux
 INPUT ./Standard_Model.out
 INPUT ./Standard_Model.out

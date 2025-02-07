@@ -289,8 +289,54 @@ Where the singlet is plotted along with the two octet elements that have $I_3 = 
     &|\omega\rangle = \frac{1}{\sqrt{2}} (|u\bar{u}\rangle + |d\bar{d}\rangle), \quad
     |\phi\rangle = |s\bar{s}\rangle
 \end{align*}
+\item The Heavy Mesons are constructed from the bottom and charm quarks in a similar way. 
 \end{itemize}
-
 % subsection light_mesons (end)
+
+\subsection{Baryons} % (fold)
+\label{sub:baryons}
+\begin{itemize}
+    \item Baryons are combinations of $3$ quarks/ anti-quarks. This makes them fermions of spin $\frac{1}{2}$ or $3/2$. This means we need to calculate $3 \otimes 3 \otimes 3$. It turns out that the calculation of $3 \otimes 3$ is a little different to that of $3 \otimes \bar{3}$. Since we dont have anti-quarks we can't properly form a state that has $I_3=Y_3 =0$. This means the decomposition is $3 \otimes 3 = 6 \oplus 3$. This can be prooved by the standard ladder operator calculations. We are then left with $3 \otimes \left(6 \oplus 3\right)$ which breaks down into the standard $3 \otimes \bar{3} = 8 \oplus 1$ and the new $3 \otimes 6 = 10 \oplus 8$. Overall this means the full decomposition is:
+\begin{flalign*}
+    3 \otimes 3 \otimes 3 = 10 \oplus 8 \oplus 8 \oplus 1
+\end{flalign*}
+\item We can visulze this nicely with the followong:
+    \begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{3x3x3}
+\caption{\label{trailer}\emph{All Mesons, graphed by Isospin and Hyper-charge}}
+\end{figure}
+\item The quark composition of the individual Baryons is then:
+\begin{align*}
+    &\text{Nucleons:} 
+    &|p\rangle = |uud\rangle, \quad 
+    |n\rangle = |udd\rangle \\[5pt]
+    &\text{Delta Baryons:} 
+    &|\Delta^{++}\rangle = |uuu\rangle, \quad
+    |\Delta^+\rangle = |uud\rangle, \quad
+    |\Delta^0\rangle = |udd\rangle, \quad
+    |\Delta^-\rangle = |ddd\rangle \\[5pt]
+    &\text{Sigma Baryons:} 
+    &|\Sigma^+\rangle = |uus\rangle, \quad
+    |\Sigma^0\rangle = |uds\rangle, \quad
+    |\Sigma^-\rangle = |dds\rangle \\[5pt]
+    &\text{Xi Baryons:} 
+    &|\Xi^0\rangle = |uss\rangle, \quad
+    |\Xi^-\rangle = |dss\rangle \\[5pt]
+    &\text{Omega Baryon:} 
+    &|\Omega^-\rangle = |sss\rangle
+\end{align*}
+\end{itemize}
+% subsection baryons (end)
+\subsection{Total Wavefunction} % (fold)
+\label{sub:total_wavefunction}
+\begin{itemize}
+    \item There are many possible values of flavour, spin and colour (which we will encounter later) that a Baryon can have:
+    \begin{align*}
+        \psi = \phi_{\text{flavour}}\chi_{\text{spin}}\xi_{\text{colour}}\eta_{\text{space}}
+    \end{align*}
+    However, not all of these states are valid as since baryons are fermions, there total wavefunctions needs to be anti-symmetric under exchange of any two quarks. We will see later that the colour eavefunction $\xi_{\text{colour}}$ is totally anto-symmetric. We are discussing the quarkes with $l=0$, so zero spatial anular momentum , and since the spatial wavfunction transforms by $(-1)^l$ under parity, then $\eta_{\text{space}}$ is symmetric. This means that $ \phi_{\text{flavour}}\chi_{\text{spin}}$ must be symmetric. This allows us to determine the wave-function super positions of the quarks in terms of their flavour and spin. 
+\end{itemize}
+% subsection total_wavefunction (end)
 \end{document}
     
