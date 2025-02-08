@@ -1311,6 +1311,9 @@ INPUT ./3x3x3.png
 INPUT 3x3x3.png
 INPUT ./3x3x3.png
 INPUT ./3x3x3.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm17.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm
 INPUT Standard_Model.aux
 INPUT ./Standard_Model.out
 INPUT ./Standard_Model.out

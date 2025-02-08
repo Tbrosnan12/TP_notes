@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Standard_Model"] 1738970099 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1738970103
-  "Standard_Model.bcf" 1738970102 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Standard_Model"] 1738970099 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1739033231
+  "Standard_Model.bcf" 1739033231 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Standard_Model.bbl"
   "Standard_Model.blg"
-["pdflatex"] 1738970101 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1738970103
+["pdflatex"] 1739033230 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1739033231
   "/etc/texmf/web2c/texmf.cnf" 1721728325 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk" 1737560890 7808 12a55c929de53bcd2a68f391192baaea ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -23,6 +23,8 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm" 1227036886 560 39fd35b5e4a6aca3672660cc548ba860 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm" 1227036886 556 710091e9bfd7488f1b5667243215698b ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm17.tfm" 1227036886 556 3d6eb2c708f77241f83a898b0f181201 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm5.tfm" 1227036886 556 9c04e2d7f25768427a52589d484d3199 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm6.tfm" 1227036886 560 4c5ff0e6c23877f3f630ae9d8ef92c6e ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm8.tfm" 1227036886 560 2e80f8a1cb59527f57d99bb5fccd0f3c ""
@@ -257,12 +259,12 @@
   "3x3.png" 1738953840 20635 ec17103492bedb346c3982bd63f8e285 ""
   "3x3x3.png" 1738968469 111332 9d9cf0c251c18bd5fa00767517dc7445 ""
   "Hypercharge.png" 1738953840 32843 a93da83f82ed512c99e150552eeaefb0 ""
-  "Standard_Model.aux" 1738970102 3233 bdbe13cc4fa01570c9cdd80993c86da9 "pdflatex"
+  "Standard_Model.aux" 1739033231 3399 30c5adf6f2536d4f66e03be9349021e3 "pdflatex"
   "Standard_Model.bbl" 1738970100 466 ee04f40f768daeed26442158e95aba61 "biber Standard_Model"
-  "Standard_Model.out" 1738970102 946 0d9df5f0e838ddb26237b4a8d23ab01f "pdflatex"
-  "Standard_Model.run.xml" 1738970102 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
-  "Standard_Model.tex" 1738970097 19498 1fef69e4ce59684dda2485554e040493 ""
-  "Standard_Model.toc" 1738970102 616 f009fe8ba5b924bfc4042ca0cb03b016 "pdflatex"
+  "Standard_Model.out" 1739033231 1039 89f92322e66b32bbaf226b5937706959 "pdflatex"
+  "Standard_Model.run.xml" 1739033231 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
+  "Standard_Model.tex" 1739033229 19621 aea5ed8f30465f2e4f57bb284b53cc73 ""
+  "Standard_Model.toc" 1739033231 682 67f7c4f3eeb0f0ec0ef8dce175b61ef1 "pdflatex"
   "mesons.png" 1738953838 27509 33a79035f9dfc16f108ae164b391f0ab ""
   (generated)
   "Standard_Model.aux"
