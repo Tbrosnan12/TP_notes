@@ -335,16 +335,38 @@ Where the singlet is plotted along with the two octet elements that have $I_3 = 
     \begin{align*}
         \psi = \phi_{\text{flavour}}\chi_{\text{spin}}\xi_{\text{colour}}\eta_{\text{space}}
     \end{align*}
-    However, not all of these states are valid as since baryons are fermions, there total wavefunctions needs to be anti-symmetric under exchange of any two quarks. We will see later that the colour eavefunction $\xi_{\text{colour}}$ is totally anto-symmetric. We are discussing the quarkes with $l=0$, so zero spatial anular momentum , and since the spatial wavfunction transforms by $(-1)^l$ under parity, then $\eta_{\text{space}}$ is symmetric. This means that $ \phi_{\text{flavour}}\chi_{\text{spin}}$ must be symmetric. This allows us to determine the wave-function super positions of the quarks in terms of their flavour and spin. 
+    However, not all of these states are valid as since baryons are fermions, there total wave-functions needs to be anti-symmetric under exchange of any two quarks. We will see later that the colour wavefunction $\xi_{\text{colour}}$ is totally anti-symmetric. We are discussing the quarks with $l=0$, so zero spatial angular momentum , and since the spatial wavefunction transforms by $(-1)^l$ under parity, then $\eta_{\text{space}}$ is symmetric. This means that $ \phi_{\text{flavour}}\chi_{\text{spin}}$ must be symmetric. This allows us to determine the wave-function super positions of the quarks in terms of their flavour and spin. 
 \end{itemize}
 % subsection total_wavefunction (end)
 
 
-\section{Scattering} % (fold)
+\section{Scattering \& Decay} % (fold)
 \label{sec:scattering}
 \begin{itemize}
-    \item 
+    \item We will need to develop some mathematical tools for studying scattering of particles and Decay.
 \end{itemize}
+
+\subsection{Decay} % (fold)
+ \label{sub:decay}
+ \begin{itemize}
+     \item Unstable particles have an equal probability of decaying at every instant in time. This means the probability of survival to time $t$ for a particle A is governed by:
+     \begin{align*}
+         &\frac{dP}{dt} = -\Gamma_A P \\
+         \implies & P \propto e^{-\Gamma_At}
+     \end{align*}
+     The constant $\Gamma_A$ is known as the \emph{total width}. If there are multiple decay processes $A \rightarrow f$, then the total width is $\Gamma_A = \sum_f\Gamma(A \rightarrow f)$. The probability ratio of the decay into an individual particle $f$ is known as the \emph{branching ratio}: 
+     \begin{align*}
+         BR(A \rightarrow f) = \frac{\Gamma(A\rightarrow f)}{\Gamma_A} 
+     \end{align*}
+ \end{itemize}
+ % subsection decay (end) 
+
+ \subsection{Cross Section} % (fold)
+ \label{sub:cross_section}
+ \begin{itemize}
+     \item The main object to interest to us in calculations will be the cross section. 
+ \end{itemize}
+ % subsection cross_section (end)
 % section scattering (end)
 \end{document}
     
