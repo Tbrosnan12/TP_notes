@@ -6,6 +6,8 @@
 \contentsline {subsection}{\numberline {1.5}Light Mesons}{6}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}Baryons}{7}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}Total Wavefunction}{8}{subsection.1.7}%
-\contentsline {section}{\numberline {2}Scattering \& Decay}{8}{section.2}%
+\contentsline {section}{\numberline {2}Scattering \& Decay}{9}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Decay}{9}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Cross Section}{9}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Master Formula}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}2 Particle Collision}{10}{subsection.2.4}%

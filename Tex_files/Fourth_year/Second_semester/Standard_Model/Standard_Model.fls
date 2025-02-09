@@ -2,7 +2,7 @@ PWD /home/thomas/Documents/TP_notes/Tex_files/Fourth_year/Second_semester/Standa
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
-INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT Standard_Model.tex
 OUTPUT Standard_Model.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1314,6 +1314,10 @@ INPUT ./3x3x3.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm
+INPUT ./scatter.png
+INPUT scatter.png
+INPUT ./scatter.png
+INPUT ./scatter.png
 INPUT Standard_Model.aux
 INPUT ./Standard_Model.out
 INPUT ./Standard_Model.out

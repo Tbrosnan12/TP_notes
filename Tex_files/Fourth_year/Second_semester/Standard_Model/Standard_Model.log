@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  8 FEB 2025 21:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  9 FEB 2025 00:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -250,7 +250,7 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip57
 \blx@bcfin=\read2
 \blx@bcfout=\write3
-\blx@langwohyphens=\language87
+\blx@langwohyphens=\language3
 \c@mincomprange=\count316
 \c@maxcomprange=\count317
 \c@mincompwidth=\count318
@@ -1075,6 +1075,9 @@ LaTeX Warning: Label `trailer' multiply defined.
 
 LaTeX Warning: Label `trailer' multiply defined.
 
+
+LaTeX Warning: Label `trailer' multiply defined.
+
 )
 \openout1 = `Standard_Model.aux'.
 
@@ -1248,17 +1251,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [5]
-<Hypercharge.png, id=134, 1616.0375pt x 642.4pt>
+<Hypercharge.png, id=144, 1616.0375pt x 642.4pt>
 File: Hypercharge.png Graphic file (type png)
 <use Hypercharge.png>
 Package pdftex.def Info: Hypercharge.png  used on input line 235.
 (pdftex.def)             Requested size: 308.82936pt x 122.76303pt.
-<3x3.png, id=137, 632.3625pt x 234.8775pt>
+<3x3.png, id=147, 632.3625pt x 234.8775pt>
 File: 3x3.png Graphic file (type png)
 <use 3x3.png>
 Package pdftex.def Info: 3x3.png  used on input line 253.
 (pdftex.def)             Requested size: 257.35518pt x 95.59077pt.
-<mesons.png, id=138, 646.415pt x 262.9825pt>
+<mesons.png, id=148, 646.415pt x 262.9825pt>
 File: mesons.png Graphic file (type png)
 <use mesons.png>
 Package pdftex.def Info: mesons.png  used on input line 259.
@@ -1283,7 +1286,7 @@ name{figure.2}) has been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.261 \end{figure}
                    <./Hypercharge.png> <./3x3.png>]
-<3x3x3.png, id=152, 1710.39pt x 991.705pt>
+<3x3x3.png, id=162, 1710.39pt x 991.705pt>
 File: 3x3x3.png Graphic file (type png)
 <use 3x3x3.png>
 Package pdftex.def Info: 3x3x3.png  used on input line 306.
@@ -1316,8 +1319,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.356      \end{align*}
-                        <./3x3x3.png>]
+l.344 \newpage
+               <./3x3x3.png>]
+<scatter.png, id=174, 464.73625pt x 155.58125pt>
+File: scatter.png Graphic file (type png)
+<use scatter.png>
+Package pdftex.def Info: scatter.png  used on input line 372.
+(pdftex.def)             Requested size: 308.82936pt x 103.39137pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1326,7 +1335,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9]
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.393      \end{align*}
+                        <./scatter.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1335,26 +1349,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10
+[10]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[11]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12
 
 ] (./Standard_Model.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Standard_Model.out' has not changed.
-(rerunfilecheck)             Checksum: 5580CBB5A8F3CF5E24B6F575F77D8947;1297.
+(rerunfilecheck)             Checksum: F89FAAF84107BF2D9D417CF9268E414E;1592.
 Package logreq Info: Writing requests to 'Standard_Model.run.xml'.
 \openout1 = `Standard_Model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35919 strings out of 478287
- 716034 string characters out of 5849289
- 1449566 words of memory out of 5000000
- 53509 multiletter control sequences out of 15000+600000
+ 35947 strings out of 480247
+ 716433 string characters out of 5896106
+ 1444731 words of memory out of 5000000
+ 53275 multiletter control sequences out of 15000+600000
  486636 words of font info for 100 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 99i,15n,104p,1261b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 14 hyphenation exceptions out of 8191
+ 99i,16n,104p,1261b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
@@ -1373,10 +1405,10 @@ st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 frm1095.pfb>
-Output written on Standard_Model.pdf (10 pages, 379320 bytes).
+Output written on Standard_Model.pdf (12 pages, 404402 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 286 words of extra memory for PDF output out of 10000 (max. 10000000)
 

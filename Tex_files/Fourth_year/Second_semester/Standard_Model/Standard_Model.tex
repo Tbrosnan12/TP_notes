@@ -340,6 +340,8 @@ Where the singlet is plotted along with the two octet elements that have $I_3 = 
 % subsection total_wavefunction (end)
 
 
+
+\newpage
 \section{Scattering \& Decay} % (fold)
 \label{sec:scattering}
 \begin{itemize}
@@ -364,9 +366,78 @@ Where the singlet is plotted along with the two octet elements that have $I_3 = 
  \subsection{Cross Section} % (fold)
  \label{sub:cross_section}
  \begin{itemize}
-     \item The main object to interest to us in calculations will be the cross section. 
+     \item The main object to interest to us in calculations will be the cross section, as this is measurable. Our scattering setup to calculate the cross section will be as follows. We consider a beam of A particles of density $n_A$ at a velocity $v_A$ at a target B:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{scatter}
+\caption{\label{trailer}\emph{Scattering setup}}
+\end{figure}
+\item The rate of scattering is then given by:
+\begin{align*}
+    \frac{\text{events}}{\text{sec}} = n_Av_A\sigma
+\end{align*}
+Where $\sigma$ is the cross section. It is useful for our calculations to consider all possible momenta the $n$ particles created in the process could have. The probability of finding each given momentum configuration of the final particles is given by the \emph{differential cross section}: $d\sigma/(d^3p_1 \cdot \cdot \cdot d^3p_n)$, which is related to the cross section by:
+\begin{align*}
+    \sigma = \int d^3p_1 \cdot \cdot \cdot d^3p_n\frac{d\sigma}{d^3p_1 \cdot \cdot \cdot d^3p_n}
+\end{align*}
+
  \end{itemize}
  % subsection cross_section (end)
+
+ \subsection{Master Formula} % (fold)
+ \label{sub:master_formula}
+ \begin{itemize}
+     \item We know from our study of Quantum Field Theory \footnote{See my notes on QFT \href{https://tbrosnan12.github.io/documents/Fourth_year/First_semester/Quantum_Field_Theory_I.pdf}{here}.}, that the quantum mechanical transition matrix element is given by:
+     \begin{align*}
+         \bra{12 \cdot \cdot \cdot n}T \ket{A(p_A)} = \mathcal{M}(A \rightarrow 1 +2 + \cdot \cdot \cdot n)(2\pi)^4\delta(p_A - \sum_jp_j)
+     \end{align*}
+     Where $T$ is the time evolution operator. The factor of $\mathcal{M}$ is called the \emph{invariant Matrix element}. 
+     \item To find the total rate of decay we need to integrate over the total phase, i.e. all momenta that the particles could have subject to the constraint of momentum conservation. This will be written as:
+     \begin{align*}
+          \int d\Pi_n = \int \frac{d^3p_1}{(2\pi)^32E_1} \cdot \cdot \cdot \frac{d^3p_n}{(2\pi)^32E_n}(2\pi)^4\delta(p_A - \sum_jp_j)
+      \end{align*} 
+Where we also for convenience have included in this the factors of $1/2E$, so as to satisfy Lorentz invariance.
+\item Another formula we will then need from QFT is a version of Fermi's Golden rule, which tells us the particle width for a given transition to an $n-$particle final state $f$:
+\begin{align*}
+    \Gamma(A \rightarrow f) = \frac{1}{2m_A}\int d\Pi_n|\mathcal{M}(A\rightarrow f)|^2
+\end{align*}
+If the final products have spin we will need to sum over these spins. Similarly we need to do the same for the initial state, but often this state is unknown so we simply average over all possible spins instead. This expression is actually a simplification of the following more general expression for the cross section in therms of the invariant matrix element:
+\begin{align*}
+    \sigma(A+B \rightarrow f) = \frac{1}{2E_A2E_B|v_A-v_B|}\int d\Pi_n|\mathcal{M}(A\rightarrow f)|^2
+\end{align*}
+
+ \end{itemize}
+ % subsection master_formula (end)
+
+ \subsection{2 Particle Collision} % (fold)
+ \label{sub:2_particle_collision}
+ \begin{itemize}
+     \item We can now use the above equations to analyze the problem of a two particle collision. We will impotently do this for the case where $\mathcal{M}$ is constant, as this represents the case where each point in the phase space is equally likely. We will consider an initial state of momentum $P$ and a final state of two particles with momentum $\textbf{p}_1$ and $\textbf{p}_2$.In this scenario the phase space integral is just:
+     \begin{align}
+     \label{2_phase}
+         \int \Pi_2 = \int \frac{d^3p_1}{(2\pi)^32E_1}\frac{d^3p_2}{(2\pi)^32E_2}(2\pi)^4\delta^{(4)}(P-p_1-p_2)
+     \end{align}
+ If we work in Center of Mass (CoM) frame, where $\textbf{P}=0$, then the three spatial parts of the delta function enforce that: $\textbf{p}_1=-\textbf{p}_2$ and thus if $P = (E_{\text{CM}},0) \implies p_1=(E_1,\textbf{p}) \& p_2=(E_2,-\textbf{p})$, where the particles are on shell so $E_1 = \sqrt{p^2+m_1^2}$ and $E_2 = \sqrt{p^2+m_2^2}$. With this \ref{2_phase} becomes:
+     \begin{align}
+     \label{2_phase_2}
+         \int \Pi_2 = \int \frac{d^3p}{(2\pi)^3}\frac{2\pi}{2E_12E_2}\delta(E_{\text{CM}}-E_1-E_2)
+     \end{align}
+     In spherical co-ords this volume element is just $d^3p=p^2dpd\Omega$. We can then deal with this integral by using the property of the delta function for a function with only one zero at $x_0$:
+     \begin{align*}
+         &\delta(f(x)) = \frac{1}{|f'(x_0)|}\delta(x-x_0) \\
+         \implies  & \delta(E_{\text{CM}}-E_1(p)-E_2(p)) = \frac{\delta(p-P_0)}{|dE_1/dp+dE_2/dp|}
+     \end{align*}
+     Where $P_0$ is the value of $p$ such that $ E_1+E_2 = E_{\text{CM}}$. We can evaluate from the on-shell conditions that $dE_1/dp = p/E_1$ and $dE_2/dp = p/E_2$, so we can write \ref{2_phase_2} as:
+     \begin{align*}
+          \int \Pi_2 &= \int \frac{P_0^2d\Omega}{16\pi^2E_1E_2}\frac{1}{|P_0/E_1+P_0/E_2|} = \frac{1}{E_1+E_2}\int \frac{P_0d\Omega}{16\pi^2} 
+     \end{align*}
+     \begin{flalign}
+     \label{phase_2}
+         = \frac{1}{8\pi}\left(\frac{2P_0}{E_{\text{CM}}}\right)\int\frac{d\Omega}{4\pi} 
+     \end{flalign}
+     We can note that in the relativistic limit $E>>m_1,m_2 \implies E_{\text{CM}} = E_1+E_2 \approx P_0+P_0 =2P_0$, which makes the factor in brackets in \ref{phase_2} unity. This means \ref{phase_2} becomes constant in the relativistic limit. 
+ \end{itemize}
+ % subsection 2_particle_collision (end)
 % section scattering (end)
 \end{document}
     
