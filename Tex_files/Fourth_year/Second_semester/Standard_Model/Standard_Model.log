@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  10 FEB 2025 18:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  10 FEB 2025 18:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,21 +6,6 @@ entering extended mode
 (./Standard_Model.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 o
-     bs\documentclass[11pt]{article}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Missing character: There is no o in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no s in font nullfont!
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -32,17 +17,12 @@ File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \c@subsubsection=\count188
 \c@paragraph=\count189
 \c@subparagraph=\count190
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 1--274
-[]
- []
-
 \c@figure=\count191
 \c@table=\count192
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+)
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
@@ -1232,14 +1212,13 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 98
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-) [2
+) [1
 
-] [3]
-(./Standard_Model.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Standard_Model.toc)
 \tf@toc=\write7
 \openout7 = `Standard_Model.toc'.
 
- [4]
+ [3]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 153
 .
 
@@ -1254,7 +1233,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[5]
+[4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 200.
@@ -1271,18 +1250,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[6]
-<Hypercharge.png, id=147, 1616.0375pt x 642.4pt>
+[5]
+<Hypercharge.png, id=144, 1616.0375pt x 642.4pt>
 File: Hypercharge.png Graphic file (type png)
 <use Hypercharge.png>
 Package pdftex.def Info: Hypercharge.png  used on input line 235.
 (pdftex.def)             Requested size: 308.82936pt x 122.76303pt.
-<3x3.png, id=150, 632.3625pt x 234.8775pt>
+<3x3.png, id=147, 632.3625pt x 234.8775pt>
 File: 3x3.png Graphic file (type png)
 <use 3x3.png>
 Package pdftex.def Info: 3x3.png  used on input line 253.
 (pdftex.def)             Requested size: 257.35518pt x 95.59077pt.
-<mesons.png, id=151, 646.415pt x 262.9825pt>
+<mesons.png, id=148, 646.415pt x 262.9825pt>
 File: mesons.png Graphic file (type png)
 <use mesons.png>
 Package pdftex.def Info: mesons.png  used on input line 259.
@@ -1296,7 +1275,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1307,7 +1286,7 @@ name{figure.2}) has been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.261 \end{figure}
                    <./Hypercharge.png> <./3x3.png>]
-<3x3x3.png, id=166, 1710.39pt x 991.705pt>
+<3x3x3.png, id=162, 1710.39pt x 991.705pt>
 File: 3x3x3.png Graphic file (type png)
 <use 3x3x3.png>
 Package pdftex.def Info: 3x3x3.png  used on input line 306.
@@ -1321,7 +1300,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
+[7pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1336,13 +1315,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.344 \newpage
                <./3x3x3.png>]
-<scatter.png, id=177, 464.73625pt x 155.58125pt>
+<scatter.png, id=174, 464.73625pt x 155.58125pt>
 File: scatter.png Graphic file (type png)
 <use scatter.png>
 Package pdftex.def Info: scatter.png  used on input line 372.
@@ -1356,12 +1335,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
- has been already used, duplicate ignored
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
+has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.393      \end{align*}
                         <./scatter.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1379,16 +1367,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[13
+[12
 
 ] (./Standard_Model.aux)
 
@@ -1402,8 +1381,8 @@ Package logreq Info: Writing requests to 'Standard_Model.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  35947 strings out of 478287
- 716434 string characters out of 5849289
- 1449690 words of memory out of 5000000
+ 716433 string characters out of 5849289
+ 1449778 words of memory out of 5000000
  53528 multiletter control sequences out of 15000+600000
  486636 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1426,10 +1405,10 @@ st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
 frm1095.pfb>
-Output written on Standard_Model.pdf (13 pages, 404566 bytes).
+Output written on Standard_Model.pdf (12 pages, 404402 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 215 compressed objects within 3 object streams
+ 293 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
  40 named destinations out of 1000 (max. 500000)
  286 words of extra memory for PDF output out of 10000 (max. 10000000)
 
