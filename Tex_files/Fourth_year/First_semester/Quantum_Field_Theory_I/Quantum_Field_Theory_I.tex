@@ -2640,9 +2640,10 @@ Since these diagrams are disconnected they don't affect each other and we can si
 \caption{\label{scatter}\emph{Incident wavepackets are uniformly distributed in impact parameter $\textbf{b}$.}}
 \end{figure}
 \item In general we will be considering co-linear interactions (so $b=0$). To account for this fact we will separate the contribution of the momenta of $\phi_{\mathcal{B}}$ along the direction of $\textbf{b}$, this amounts to adding in a factor of $e^{-i\textbf{b}\cdot \textbf{k}_{\mathcal{B}}}$ to the integral expression (as this is the form of the solutions to the Klein Gordon equation) which then takes the form:
-\begin{align*}
+\begin{align}
+\label{phi_AB}
   \ket{\phi_{\mathcal{A}}\phi_{\mathcal{B}}} = \int\frac{d^3k_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k_{\mathcal{B}}}{(2\pi)^3}\frac{\phi_{\mathcal{A}}\phi_{\mathcal{B}}}{2\sqrt{E_{\textbf{k}_{\mathcal{A}}}E_{\textbf{k}_{\mathcal{B}}}}}e^{-i\textbf{b}\cdot \textbf{k}_{\mathcal{B}}}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}
-\end{align*}
+\end{align}
 For the out states it is preferable to consider specific momenta $\textbf{p}_i$, so the main object of interest we will need to compute is ${}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}}$. But recall that we defined our out states to be in the far future and out in states in the far past, so we must include the limits in this:
 \begin{align*}
   {}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}} & = \lim_{t \rightarrow \infty} {}_{\text{in}}\braket{\underbrace{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot}_{t}|\underbrace{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{-t}}{}_{\text{out}} \\
@@ -2661,17 +2662,25 @@ Where in the last line we have added the time evolution operator so that both st
    \braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|iT|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}} = i(2\pi)^4\delta^{(4)}(k_{\mathcal{A}}+k_{\mathcal{B}} - \sum_{f}p_f)\mathcal{M}(k_{\mathcal{A}},k_{\mathcal{B}}) \rightarrow \{p_f\}
  \end{align*}
  Where $\mathcal{M}$ depends on the initial and final states as would be expected. Our next step will be to see how the cross section $\sigma$ depends on $\mathcal{M}$. We will do this infinitesimally, so we start with the probability of the initial state of particles $\mathcal{A}$ and $\mathcal{B}$ scattering into a final state of $n$ particles who's momenta lie in a small region $d^3p_1d^3p_2 \cdot \cdot \cdot d^3p_n$ of the phase space. This probability is given by:
- \begin{align*}
+ \begin{align}
+ \label{prob_AB}
    \mathcal{P}(\mathcal{A}\mathcal{B}\rightarrow 1~ 2 \ldots n) = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)|{}_{\text{out}}\braket{\textbf{p}_1\cdot \cdot \cdot \textbf{p}_n|\phi_{\mathcal{A}}\phi_{\mathcal{B}}}_{\text{in}}|^2
- \end{align*}
+ \end{align}
  With this the total number of scattering events $N$ will be the sum of this probability over all incident particles, i.e. all the different particles in figure \ref{scatter} with different impact parameters. In the continuity limit when we talk about particle densities this becomes an integral wrt the impact parameter $b$:
- \begin{align*}
+ \begin{align}
+ \label{no_of_events}
     N =  \sum_{\substack{\text{all incident} \\ \text{particles } i}}\mathcal{P}_i = \int d^2b n_{\mathcal{B}}\mathcal{P}(\textbf{b})
-  \end{align*} 
+  \end{align} 
   Where $n_{\mathcal{B}}$ is the number density. of $\mathcal{B}$ particles. We will assume that this density is constant and take it out of the integral. This then nicely leads us to the cross section which is defined in \ref{cross}, (where $n_{\mathcal{B}} = \rho_{\mathcal{B}}l_{\mathcal{B}}$ and $A \rho_{\mathcal{A}}l_{\mathcal{A}} = A n_{\mathcal{A}} = N_{\mathcal{A}}$, where $N_{\mathcal{A}}$ is the number of $\mathcal{A}$ partiles which is just $1$ as per our setup.):
   \begin{align*}
     \sigma = \frac{N}{\rho_A\rho_B l_A l_B A} = \frac{N}{n_{\mathcal{B}}N_{\mathcal{A}}} = \frac{N}{n_{\mathcal{B}}} = \int d^2b \mathcal{P}(\textbf{b})
   \end{align*}
+  We can then combine this expression with \ref{prob_AB} and \ref{phi_AB} to get the infinitesimal cross section :
+  \begin{align*}
+     d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\int d^2b\int\frac{d^3k_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k_{\mathcal{B}}}{(2\pi)^3}\int\frac{d^3k'_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k'_{\mathcal{B}}}{(2\pi)^3}\frac{\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A})}\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B})}}{2\sqrt{E_{\textbf{k}_{\mathcal{A}}}E_{\textbf{k}_{\mathcal{B}}}}}\frac{\phi^{\ast}_{\mathcal{A}}(\textbf{k}'_{\mathcal{A})}\phi^{\ast}_{\mathcal{B}}(\textbf{k}'_{\mathcal{B})}}{2\sqrt{E_{\textbf{k}'_{\mathcal{A}}}E_{\textbf{k}'_{\mathcal{B}}}}} \\ 
+     \times & e^{-i\textbf{b}\cdot (\textbf{k}_{\mathcal{B}}-\textbf{k}'_{\mathcal{B}})}\left({}_{\text{out}}\braket{\{\textbf{p}_f\}|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}{}_{\text{in}}\right)\left({}_{\text{out}}\braket{\{\textbf{p}_f\}|\textbf{k}'_{\mathcal{A}}\textbf{k}'_{\mathcal{B}}}{}_{\text{in}}\right)^{\ast}
+  \end{align*}
+  Where we have integrals over $k$ and $k'$ as those terms are squared in \ref{prob_AB}. Carrying out he $b$ integral will give us the delta function $\delta^{(2)}(\textbf{k}_{\mathcal{B}}^{\perp}-\textbf{k}_{\mathcal{B}}^{'\perp})$. We can get more delta functions by 
 \end{itemize}
 % subsection the_s_matrix (end)
 \end{document}
