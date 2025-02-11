@@ -2626,9 +2626,10 @@ Since these diagrams are disconnected they don't affect each other and we can si
     \ket{\phi} = \int \frac{d^3k}{\left(2\pi\right)^3} \frac{1}{\sqrt{2E_{k}}}\phi(\textbf{k})\ket{\textbf{k}}
   \end{align*}
   Where $\phi(\textbf{k})$ is the Fourier transform of the spatial wavefunction. The factor of $1/\sqrt{2E_{\textbf{k}}}$ is to revert back to conventional normalization where we had introduced it originally to have Lorentz invariance. This means:
-  \begin{align*}
+  \begin{align}
+  \label{packet_norm}
      \braket{\phi|\phi} = 1 \impliedby \int \frac{d^3k}{\left(2\pi\right)^3}|\phi(\textbf{k})|^2 =1 
-   \end{align*}
+   \end{align}
    Due to the fact that $\ket{\textbf{k}} = \sqrt{2E_{\textbf{k}}}a^{\dagger}_{\textbf{k}}\ket{0}$. Given this normalization the probability of the initial state of two particles $\mathcal{A}$ and $\mathcal{B}$ evolving into a set of final states $\ket{\phi_1\phi_2 \cdot \cdot \cdot }$,is:
    \begin{align*}
      \mathcal{P} = |\braket{\underbrace{\phi_1\phi_2 \cdot \cdot \cdot}_{\text{future}} |\underbrace{\phi_{\mathcal{A}}\phi_{\mathcal{B}} }_{\text{past}}}|^2
@@ -2677,10 +2678,11 @@ Where in the last line we have added the time evolution operator so that both st
     \sigma = \frac{N}{\rho_A\rho_B l_A l_B A} = \frac{N}{n_{\mathcal{B}}N_{\mathcal{A}}} = \frac{N}{n_{\mathcal{B}}} = \int d^2b \mathcal{P}(\textbf{b})
   \end{align*}
   We can then combine this expression with \ref{prob_AB} and \ref{phi_AB} to get the infinitesimal cross section :
-  \begin{align*}
-     d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\int d^2b\int\frac{d^3k_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k_{\mathcal{B}}}{(2\pi)^3}\int\frac{d^3k'_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k'_{\mathcal{B}}}{(2\pi)^3}\frac{\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A})}\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B})}}{2\sqrt{E_{\textbf{k}_{\mathcal{A}}}E_{\textbf{k}_{\mathcal{B}}}}}\frac{\phi^{\ast}_{\mathcal{A}}(\textbf{k}'_{\mathcal{A})}\phi^{\ast}_{\mathcal{B}}(\textbf{k}'_{\mathcal{B})}}{2\sqrt{E_{\textbf{k}'_{\mathcal{A}}}E_{\textbf{k}'_{\mathcal{B}}}}} \\ 
+  \begin{align}
+  \label{dsigma}
+     d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\int d^2b\int\frac{d^3k_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k_{\mathcal{B}}}{(2\pi)^3}\int\frac{d^3k'_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k'_{\mathcal{B}}}{(2\pi)^3}\frac{\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A})}\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B})}}{2\sqrt{E_{\textbf{k}_{\mathcal{A}}}E_{\textbf{k}_{\mathcal{B}}}}}\frac{\phi^{\ast}_{\mathcal{A}}(\textbf{k}'_{\mathcal{A})}\phi^{\ast}_{\mathcal{B}}(\textbf{k}'_{\mathcal{B})}}{2\sqrt{E_{\textbf{k}'_{\mathcal{A}}}E_{\textbf{k}'_{\mathcal{B}}}}} \nonumber \\
      \times & e^{-i\textbf{b}\cdot (\textbf{k}_{\mathcal{B}}-\textbf{k}'_{\mathcal{B}})}\left({}_{\text{out}}\braket{\{\textbf{p}_f\}|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}{}_{\text{in}}\right)\left({}_{\text{out}}\braket{\{\textbf{p}_f\}|\textbf{k}'_{\mathcal{A}}\textbf{k}'_{\mathcal{B}}}{}_{\text{in}}\right)^{\ast}
-  \end{align*}
+  \end{align}
   Where we have integrals over $k$ and $k'$ as those terms are squared in \ref{prob_AB}. Carrying out he $b$ integral will give us the delta function $\delta^{(2)}(\textbf{k}_{\mathcal{B}}^{\perp}-\textbf{k}_{\mathcal{B}}^{'\perp})$. We can get more delta functions by using the definition of the invariant matrix element defined in \ref{M_matrix}, so we can write the brakets in $d\sigma$ as:
   \begin{align*}
     \left({}_{\text{out}}\braket{\{\textbf{p}_f\}|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}{}_{\text{in}}\right) = i(2\pi)^4\delta^{(4)}\left(\textbf{k}_{\mathcal{A}}+\textbf{k}_{\mathcal{B}} - \sum \textbf{p}_f\right)\mathcal{M}(\textbf{k}_{\mathcal{A}},\textbf{k}_{\mathcal{B}} \rightarrow \{\textbf{p}_f\}) \\
@@ -2688,15 +2690,24 @@ Where in the last line we have added the time evolution operator so that both st
   \end{align*}
   The two delta functions in $\delta^{(2)}(\textbf{k}_{\mathcal{B}}^{\perp}-\textbf{k}_{\mathcal{B}}^{'\perp})$ and the $4$ in $\left({}_{\text{out}}\braket{\{\textbf{p}_f\}|\textbf{k}'_{\mathcal{A}}\textbf{k}'_{\mathcal{B}}}{}_{\text{in}}\right)^{\ast}$ allow us to perform all $6$ integrals over $\textbf{k}_{\mathcal{A}}'$ and $\textbf{k}_{\mathcal{B}}'$. The only non-trivial one of these is the $0$th component, which we need to explicitly calculate, we do this with the help of the $z$ component of $k$, which point along the direction of collision:
   \begin{align*}
-     &\int dk'^z_{\mathcal{A}}dk'^z_{\mathcal{B}}\delta\left(dk'^z_{\mathcal{A}}+dk'^z_{\mathcal{A}}-\sum p^{z}_f\right)\delta(E'_{\mathcal{A}}+E'_{\mathcal{B}}-\sum E_{f}) \\
-     & = \int dk'^z_{\mathcal{A}}\delta(\sqrt{k'_{\mathcal{A}}^2+m_{\mathcal{A}^2}}+\sqrt{k'_{\mathcal{B}}^2+m_{\mathcal{B}^2}}-\sum E_{f}) \bigg\vert_{k'^z_{\mathcal{B}} = \sum p_f - k'^z_{\mathcal{A}}}  \\
-     & = \frac{1}{||}
+     &\int dk'^z_{\mathcal{A}}dk'^z_{\mathcal{B}}\delta\left(k'^z_{\mathcal{A}}+k'^z_{\mathcal{A}}-\sum p^z_f\right)\delta(E'_{\mathcal{A}}+E'_{\mathcal{B}}-\sum E_{f}) \\
+     & = \int dk'^z_{\mathcal{A}}\delta(\sqrt{k'^2_{\mathcal{A}}+m_{\mathcal{A}}^2}+\sqrt{k'^2_{\mathcal{B}}+m_{\mathcal{B}}^2}-\sum E_{f}) \bigg\vert_{k'^z_{\mathcal{B}} = \sum p_f - k'^z_{\mathcal{A}}}  \\
+     & = \frac{1}{|\frac{k'^z_{\mathcal{A}}}{E_{\mathcal{A}}}-\frac{k'^z_{\mathcal{B}}}{E_{\mathcal{B}}}|} = \frac{1}{|v_{\mathcal{A}}-v_{\mathcal{B}}|}
    \end{align*} 
    Where we have used the property of the delta function that:
    \begin{align*}
          &\delta(f(x)) = \frac{1}{|f'(x_0)|}\delta(x-x_0) \\
-         \implies  & \delta(E_{\mathcal{A}}(k)+E_{\mathcal{B}}(k) - \sum E_{f}) = \frac{\delta(k)}{|dE_{\mathcal{A}}/dk+dE_{\mathcal{B}}/dk|}
+         \implies  & \delta(E_{\mathcal{A}}(k)+E_{\mathcal{B}}(k) - \sum E_{f}) = \frac{\delta(k-k_0)}{|dE_{\mathcal{A}}/dk+dE_{\mathcal{B}}/dk|}
      \end{align*}
+     Where $k_0$ is the $k$ such that $E'_{\mathcal{A}}(k)+E'_{\mathcal{B}}(k)= \sum E_{f}$. All of this allows us to write \ref{dsigma} as:
+     \begin{align*}
+       d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\frac{|\mathcal{M}(\textbf{k}'_{\mathcal{A}},\textbf{k}'_{\mathcal{B}} \rightarrow \{\textbf{p}_f\})|^2}{2E_{\mathcal{A}}2E_{\mathcal{B}}|v_{\mathcal{A}}-v_{\mathcal{B}}|}\int\frac{d^3k_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k_{\mathcal{B}}}{(2\pi)^3} \\
+       &\times |\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A}})|^2|\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B}})|^2(2\pi)^4\delta^{(4)}\left(\textbf{k}_{\mathcal{A}}+\textbf{k}_{\mathcal{B}} - \sum \textbf{p}_f\right)
+     \end{align*}
+     \item The wave-packets that we created as part of the in states, $\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A}})$ and $\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B}})$ are as resolved as our detectors can be, meaning our detectors cannot resolve the spread of the wave-packets only their central value. We can thus to good approximation replace $\textbf{k}_{\mathcal{A}}$ and $\textbf{k}_{\mathcal{B}}$ by $\textbf{p}_{\mathcal{A}}$ and $\textbf{p}_{\mathcal{B}}$ in the integral and pull the delta function out. The remaining integrals are just the normalization of the wave packets that we had in \ref{packet_norm}, so these go to one and we are left with the following whcih does not depend on the wave-packets constructed:
+     \begin{align}
+        d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\frac{|\mathcal{M}(\textbf{k}'_{\mathcal{A}},\textbf{k}'_{\mathcal{B}} \rightarrow \{\textbf{p}_f\})|^2}{2E_{\mathcal{A}}2E_{\mathcal{B}}|v_{\mathcal{A}}-v_{\mathcal{B}}|}(2\pi)^4\delta^{(4)}\left(\textbf{k}_{\mathcal{A}}+\textbf{k}_{\mathcal{B}} - \sum \textbf{p}_f\right)
+      \end{align} 
 \end{itemize}
 % subsection the_s_matrix (end)
 \end{document}
