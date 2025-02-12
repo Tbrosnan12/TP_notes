@@ -425,17 +425,17 @@ If the final products have spin we will need to sum over these spins. Similarly 
      In spherical co-ords this volume element is just $d^3p=p^2dpd\Omega$. We can then deal with this integral by using the property of the delta function for a function with only one zero at $x_0$:
      \begin{align*}
          &\delta(f(x)) = \frac{1}{|f'(x_0)|}\delta(x-x_0) \\
-         \implies  & \delta(E_{\text{CM}}-E_1(p)-E_2(p)) = \frac{\delta(p-P_0)}{|dE_1/dp+dE_2/dp|}
+         \implies  & \delta(E_{\text{CM}}-E_1(p)-E_2(p)) = \frac{\delta(p-\tilde{p})}{|dE_1/dp+dE_2/dp|}
      \end{align*}
-     Where $P_0$ is the value of $p$ such that $ E_1+E_2 = E_{\text{CM}}$. We can evaluate from the on-shell conditions that $dE_1/dp = p/E_1$ and $dE_2/dp = p/E_2$, so we can write \ref{2_phase_2} as:
+         We can evaluate from the on-shell conditions that $dE_1/dp = p/E_1$ and $dE_2/dp = p/E_2$, so we can write \ref{2_phase_2} as:
      \begin{align*}
-          \int \Pi_2 &= \int \frac{P_0^2d\Omega}{16\pi^2E_1E_2}\frac{1}{|P_0/E_1+P_0/E_2|} = \frac{1}{E_1+E_2}\int \frac{P_0d\Omega}{16\pi^2} 
+          \int \Pi_2 &= \int \frac{\tilde{p}^2d\Omega}{16\pi^2E_1E_2}\frac{1}{|\tilde{p}/E_1+\tilde{p}/E_2|} = \frac{1}{E_1+E_2}\int \frac{\tilde{p}d\Omega}{16\pi^2} 
      \end{align*}
      \begin{flalign}
      \label{phase_2}
-         = \frac{1}{8\pi}\left(\frac{2P_0}{E_{\text{CM}}}\right)\int\frac{d\Omega}{4\pi} 
+         = \frac{1}{8\pi}\left(\frac{2\tilde{p}}{E_{\text{CM}}}\right)\int\frac{d\Omega}{4\pi} 
      \end{flalign}
-     We can note that in the relativistic limit $E>>m_1,m_2 \implies E_{\text{CM}} = E_1+E_2 \approx P_0+P_0 =2P_0$, which makes the factor in brackets in \ref{phase_2} unity. This means \ref{phase_2} becomes constant in the relativistic limit. 
+     We can note that in the relativistic limit $E>>m_1,m_2 \implies E_{\text{CM}} = E_1+E_2 \approx \tilde{p}+\tilde{p} =2\tilde{p}$, which makes the factor in brackets in \ref{phase_2} unity. This means \ref{phase_2} becomes constant in the relativistic limit. 
  \end{itemize}
  % subsection 2_particle_collision (end)
 % section scattering (end)

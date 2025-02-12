@@ -2704,10 +2704,21 @@ Where in the last line we have added the time evolution operator so that both st
        d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\frac{|\mathcal{M}(\textbf{k}'_{\mathcal{A}},\textbf{k}'_{\mathcal{B}} \rightarrow \{\textbf{p}_f\})|^2}{2E_{\mathcal{A}}2E_{\mathcal{B}}|v_{\mathcal{A}}-v_{\mathcal{B}}|}\int\frac{d^3k_{\mathcal{A}}}{(2\pi)^3}\int \frac{d^3k_{\mathcal{B}}}{(2\pi)^3} \\
        &\times |\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A}})|^2|\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B}})|^2(2\pi)^4\delta^{(4)}\left(\textbf{k}_{\mathcal{A}}+\textbf{k}_{\mathcal{B}} - \sum \textbf{p}_f\right)
      \end{align*}
-     \item The wave-packets that we created as part of the in states, $\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A}})$ and $\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B}})$ are as resolved as our detectors can be, meaning our detectors cannot resolve the spread of the wave-packets only their central value. We can thus to good approximation replace $\textbf{k}_{\mathcal{A}}$ and $\textbf{k}_{\mathcal{B}}$ by $\textbf{p}_{\mathcal{A}}$ and $\textbf{p}_{\mathcal{B}}$ in the integral and pull the delta function out. The remaining integrals are just the normalization of the wave packets that we had in \ref{packet_norm}, so these go to one and we are left with the following whcih does not depend on the wave-packets constructed:
+     \item The wave-packets that we created as part of the in states, $\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A}})$ and $\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B}})$ can be made as resolved as our detectors can be, meaning our detectors cannot resolve the spread of the wave-packets only their central value. We can thus to good approximation replace $\textbf{k}_{\mathcal{A}}$ and $\textbf{k}_{\mathcal{B}}$ by $\textbf{p}_{\mathcal{A}}$ and $\textbf{p}_{\mathcal{B}}$ in the integral and pull the delta function out. The remaining integrals are just the normalization of the wave packets that we had in \ref{packet_norm}, so these go to one and we are left with the following which does not depend on the wave-packets constructed:
      \begin{align}
         d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\frac{|\mathcal{M}(\textbf{k}'_{\mathcal{A}},\textbf{k}'_{\mathcal{B}} \rightarrow \{\textbf{p}_f\})|^2}{2E_{\mathcal{A}}2E_{\mathcal{B}}|v_{\mathcal{A}}-v_{\mathcal{B}}|}(2\pi)^4\delta^{(4)}\left(\textbf{k}_{\mathcal{A}}+\textbf{k}_{\mathcal{B}} - \sum \textbf{p}_f\right)
       \end{align} 
+      To get to the total cross section we will have to integrate this expression. This amounts to integrating over the phase space of all possible output momentum subject to the constraint of momentum conservation. We will often concisely write this as:
+          \begin{align*}
+          \int d\Pi_n = \left(\int \prod _f\frac{d^3p_f}{(2\pi)^32E_f}\right)(2\pi)^4\delta(P - \sum_fp_f)
+      \end{align*}
+      Where $P$ is the total momenta ($P= p_{\mathcal{A}}+p_{\mathcal{B}}$ in the two particle initial state). 
+
+      \item In the case of two final particles, one finds \footnote{For this calculation see pg 10 of my Standard model notes \href{https://tbrosnan12.github.io/documents/Fourth_year/Second_semester/Standard_Model.pdf}{here}}
+      \begin{align*}
+        \int \Pi_2= \frac{1}{8\pi}\left(\frac{2\tilde{p}}{E_{\text{CM}}}\right)\int\frac{d\Omega}{4\pi} 
+      \end{align*}
+      Where $\tilde{p}$ is the value of $p$ such that $ E_1+E_2 = E_{\text{CM}}$. 
 \end{itemize}
 % subsection the_s_matrix (end)
 \end{document}

@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Standard_Model"] 1738970099 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1739213170
-  "Standard_Model.bcf" 1739213170 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Standard_Model"] 1738970099 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1739373280
+  "Standard_Model.bcf" 1739373280 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Standard_Model.bbl"
   "Standard_Model.blg"
-["pdflatex"] 1739213168 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1739213170
+["pdflatex"] 1739373278 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1739373280
   "/etc/texmf/web2c/texmf.cnf" 1721728325 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk" 1737560890 7808 12a55c929de53bcd2a68f391192baaea ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -260,12 +260,12 @@
   "3x3.png" 1738953840 20635 ec17103492bedb346c3982bd63f8e285 ""
   "3x3x3.png" 1738968469 111332 9d9cf0c251c18bd5fa00767517dc7445 ""
   "Hypercharge.png" 1738953840 32843 a93da83f82ed512c99e150552eeaefb0 ""
-  "Standard_Model.aux" 1739213170 4597 ccf3d43ab1523b92f1a85278a785bcf5 "pdflatex"
+  "Standard_Model.aux" 1739373280 4597 ccf3d43ab1523b92f1a85278a785bcf5 "pdflatex"
   "Standard_Model.bbl" 1738970100 466 ee04f40f768daeed26442158e95aba61 "biber Standard_Model"
-  "Standard_Model.out" 1739213170 1592 f89faaf84107bf2d9d417cf9268e414e "pdflatex"
-  "Standard_Model.run.xml" 1739213170 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
-  "Standard_Model.tex" 1739213167 26176 22a5e27fe92b89c05f2a321263da96ff ""
-  "Standard_Model.toc" 1739213170 1009 9039ae0fa6bceb384e4069c2c860f1d0 "pdflatex"
+  "Standard_Model.out" 1739373280 1592 f89faaf84107bf2d9d417cf9268e414e "pdflatex"
+  "Standard_Model.run.xml" 1739373280 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
+  "Standard_Model.tex" 1739373277 26236 351d54e66fd15fe4de6f245a042a9616 ""
+  "Standard_Model.toc" 1739373280 1009 9039ae0fa6bceb384e4069c2c860f1d0 "pdflatex"
   "mesons.png" 1738953838 27509 33a79035f9dfc16f108ae164b391f0ab ""
   "scatter.png" 1739100156 13895 d6b8d6330b2fb7ad6071ab5c679b8a05 ""
   (generated)
