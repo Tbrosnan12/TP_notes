@@ -2001,9 +2001,10 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
     e^{-iHt}\ket{0}=e^{-iE_0t}\ket{\Omega}\braket{\Omega|0} + \sum_{n}e^{-iE_nt}\ket{n}\braket{n|0}
   \end{align}
   Where the $E_n$ are the eigenvalues of $H$. Since $\ket{\Omega}$ is the ground state we must have that $E_n>E_0$. We can exploit this energy difference by taking the limit as $t \rightarrow \infty$, however, we need to include a slight imaginary part to the limit $t \rightarrow \infty(1-i\epsilon)$ , the imaginary part $-i\epsilon$ exponentially decays the terms with $e^{-iE_nt}$ faster then the first term with $e^{-iE_0t}$  leaving us with only the first term in \ref{ground_expansion}. This means we may write:
-  \begin{align*}
+  \begin{align}
+  \label{ground_state}
     \ket{\Omega} = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{e^{-iHt}}{e^{-iE_0t}\braket{\Omega|0}}\ket{0}
-  \end{align*}
+  \end{align}
   Since $t$ is large in the limit we can manipulate this by adding a constant $t_0$ in the exponentials, we can also abuse the fact that $H_0\ket{0} = 0$ to add in factors like: $e^{iH_0(t-t_0)}\ket{0} = \ket{0}$. This means that we can write:
   \begin{align*}
     \ket{\Omega} & = \lim_{t\rightarrow\infty(1-i\epsilon)}\frac{e^{-iH(t+t_0)}}{e^{-iE_0(t+t_0)}\braket{\Omega|0}}e^{iH_0(t+t_0)}\ket{0} \\
@@ -2722,11 +2723,13 @@ Where in the last line we have added the time evolution operator so that both st
         d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\frac{|\mathcal{M}(\textbf{p}_{\mathcal{A}},\textbf{p}_{\mathcal{B}} \rightarrow \{\textbf{p}_f\})|^2}{2E_{\mathcal{A}}2E_{\mathcal{B}}|v_{\mathcal{A}}-v_{\mathcal{B}}|}(2\pi)^4\delta^{(4)}\left(\textbf{p}_{\mathcal{A}}+\textbf{p}_{\mathcal{B}} - \sum \textbf{p}_f\right)
       \end{align} 
       To get to the total cross section we will have to integrate this expression. This amounts to integrating over the phase space of all possible output momentum subject to the constraint of momentum conservation. We will often concisely write this as:
-          \begin{align*}
+          \begin{align}
+          \label{Pi_n}
           \int d\Pi_n = \left(\int \prod _f\frac{d^3p_f}{(2\pi)^32E_f}\right)(2\pi)^4\delta^{(4)}(P - \sum_fp_f)
-      \end{align*}
-      Where $P$ is the total momenta ($P= p_{\mathcal{A}}+p_{\mathcal{B}}$ in the two particle initial state). 
+      \end{align} 
+      Where $P$ is the total momenta ($P= p_{\mathcal{A}}+p_{\mathcal{B}}$ in the two particle initial state).
         \end{itemize}
+
 \subsubsection{2 Final Particles} % (fold)
 \label{ssub:2_final_particles}
 \begin{itemize}
@@ -2745,7 +2748,28 @@ Where in the last line we have added the time evolution operator so that both st
       \end{flalign*}
 \end{itemize}
 % subsubsection 2_final_particles (end)
-    % subsection 2_particle_scattering (end)
+% subsection 2_particle_scattering (end)
+
+\subsection{Decay Rates} % (fold)
+\label{sub:decay_rates}
+\begin{itemize}
+  \item Decay rate is the constant that describes how likely particles are to decay into other particles. The probability for a particle $A$ to decay at a time $t$ is given by $P(t) \propto e^{-\Gamma_{A}t}$. We can think of decaying particles as a scattering process where the single original particle $A$ becomes $n$ final particles, $A \rightarrow 1 +\cdot \cdot \cdot n$. With this consideration we can derive an equation for the differential decay $d\Gamma$ in a similar manner to how we calculated the differential cross section \ref{dsigma}. In this case we only consider a single initial state, so only one wave-packet is considered in \ref{phi_AB}. We also can do this in the rest frame of the decaying particle where the particle energy $E_{A}$ is just $E_A =m_A$. Following this procedure results in:
+  \begin{align*}
+    d\Gamma_A = \frac{1}{2m_A}|\mathcal{M}(A \rightarrow \{p_f\})|^2d\Pi_n
+  \end{align*}
+\end{itemize}
+% subsection decay_rates (end)
+
+\subsection{S Matrix From Feynman Diagrams} % (fold)
+\label{sub:s_matrix_from_feynman_diagrams}
+\begin{itemize}
+  \item We saw that in equation like \ref{ground_state} we could express the ground state $\ket{\Omega}$ in the interacting picture in terms of the ground state of the free theory $\ket{0}$. We would like to do the same thing for our momenta $\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}$. Taking inspiration from \ref{ground_state} we can guess that this will be something like:
+  \begin{align*}
+    \ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}} \propto \lim_{t\rightarrow\infty(1-i\epsilon)}e^{-iHt}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_0
+  \end{align*}
+\end{itemize}
+In the previous case we had that the proportionality factor canceled out in the final formula leaving us with just the sum of all diagrams with two external points. We will posit for simplicity that the same happens for this case. 
+% subsection s_matrix_from_feynman_diagrams (end)
 
 
 
@@ -2753,4 +2777,4 @@ Where in the last line we have added the time evolution operator so that both st
 
 \end{document}
 
-  
+  {}

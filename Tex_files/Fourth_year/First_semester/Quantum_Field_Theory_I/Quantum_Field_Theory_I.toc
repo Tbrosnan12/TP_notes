@@ -88,3 +88,5 @@
 \contentsline {subsubsection}{\numberline {8.1.1}Invariant Matrix Element}{60}{subsubsection.8.1.1}%
 \contentsline {subsection}{\numberline {8.2}2 Particle Scattering}{61}{subsection.8.2}%
 \contentsline {subsubsection}{\numberline {8.2.1}2 Final Particles}{62}{subsubsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.3}Decay Rates}{63}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}S Matrix From Feynman Diagrams}{63}{subsection.8.4}%
