@@ -2658,12 +2658,25 @@ Where in the last line we have added the time evolution operator so that both st
 \begin{align*}
    S = \mathbbm{1} + iT
  \end{align*} 
- \item There are more things we know $S$ should satisfy. It should conserve momenta at each collision, meaning $T$ should contain a delta function $\delta^{(4)}(k_{\mathcal{A}}+k_{\mathcal{B}} - \sum_{f}p_f)$. What is left over as part of $T$ will be known as the \emph{invariant} (as it must be Lorentz invariant) \emph{matrix element} and is denoted with a $\mathcal{M}$. Formally this is defined as:
+\end{itemize}
+% subsection the_s_matrix (end)
+
+\subsubsection{Invariant Matrix Element} % (fold)
+\label{ssub:invariant_matrix_element}
+\begin{itemize}
+  \item There are more things we know $S$ should satisfy. It should conserve momenta at each collision, meaning $T$ should contain a delta function $\delta^{(4)}(k_{\mathcal{A}}+k_{\mathcal{B}} - \sum_{f}p_f)$. What is left over as part of $T$ will be known as the \emph{invariant} (as it must be Lorentz invariant) \emph{matrix element} and is denoted with a $\mathcal{M}$. Formally this is defined as:
  \begin{align}
  \label{M_matrix}
    \braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|iT|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}} = i(2\pi)^4\delta^{(4)}\left(k_{\mathcal{A}}+k_{\mathcal{B}} - \sum p_f\right)\mathcal{M}(k_{\mathcal{A}},k_{\mathcal{B}} \rightarrow \{p_f\})
  \end{align}
- Where $\mathcal{M}$ depends on the initial and final states as would be expected. Our next step will be to see how the cross section $\sigma$ depends on $\mathcal{M}$. We will do this infinitesimally, so we start with the probability of the initial state of particles $\mathcal{A}$ and $\mathcal{B}$ scattering into a final state of $n$ particles who's momenta lie in a small region $d^3p_1d^3p_2 \cdot \cdot \cdot d^3p_n$ of the phase space. This probability is given by:
+
+ Where $\mathcal{M}$ depends on the initial and final states as would be expected. 
+\end{itemize}
+ % subsubsection invariant_matrix_element (end)
+  \subsection{2 Particle Scattering} % (fold)
+  \label{sub:2_particle_scattering}
+  \begin{itemize}
+    \item Our next step will be to see how the cross section $\sigma$ depends on $\mathcal{M}$. We will do this infinitesimally, so we start with the probability of the initial state of particles $\mathcal{A}$ and $\mathcal{B}$ scattering into a final state of $n$ particles who's momenta lie in a small region $d^3p_1d^3p_2 \cdot \cdot \cdot d^3p_n$ of the phase space. This probability is given by:
  \begin{align}
  \label{prob_AB}
    \mathcal{P}(\mathcal{A}\mathcal{B}\rightarrow 1~ 2 \ldots n) = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)|{}_{\text{out}}\braket{\textbf{p}_1\cdot \cdot \cdot \textbf{p}_n|\phi_{\mathcal{A}}\phi_{\mathcal{B}}}_{\text{in}}|^2
@@ -2706,21 +2719,38 @@ Where in the last line we have added the time evolution operator so that both st
      \end{align*}
      \item The wave-packets that we created as part of the in states, $\phi_{\mathcal{A}}(\textbf{k}_{\mathcal{A}})$ and $\phi_{\mathcal{B}}(\textbf{k}_{\mathcal{B}})$ can be made as resolved as our detectors can be, meaning our detectors cannot resolve the spread of the wave-packets only their central value. We can thus to good approximation replace $\textbf{k}_{\mathcal{A}}$ and $\textbf{k}_{\mathcal{B}}$ by $\textbf{p}_{\mathcal{A}}$ and $\textbf{p}_{\mathcal{B}}$ in the integral and pull the delta function out. The remaining integrals are just the normalization of the wave packets that we had in \ref{packet_norm}, so these go to one and we are left with the following which does not depend on the wave-packets constructed:
      \begin{align}
-        d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\frac{|\mathcal{M}(\textbf{k}'_{\mathcal{A}},\textbf{k}'_{\mathcal{B}} \rightarrow \{\textbf{p}_f\})|^2}{2E_{\mathcal{A}}2E_{\mathcal{B}}|v_{\mathcal{A}}-v_{\mathcal{B}}|}(2\pi)^4\delta^{(4)}\left(\textbf{k}_{\mathcal{A}}+\textbf{k}_{\mathcal{B}} - \sum \textbf{p}_f\right)
+        d\sigma = \left(\prod_f \frac{d^3p_f}{(2\pi)^3}\frac{1}{2E_f}\right)&\frac{|\mathcal{M}(\textbf{p}_{\mathcal{A}},\textbf{p}_{\mathcal{B}} \rightarrow \{\textbf{p}_f\})|^2}{2E_{\mathcal{A}}2E_{\mathcal{B}}|v_{\mathcal{A}}-v_{\mathcal{B}}|}(2\pi)^4\delta^{(4)}\left(\textbf{p}_{\mathcal{A}}+\textbf{p}_{\mathcal{B}} - \sum \textbf{p}_f\right)
       \end{align} 
       To get to the total cross section we will have to integrate this expression. This amounts to integrating over the phase space of all possible output momentum subject to the constraint of momentum conservation. We will often concisely write this as:
           \begin{align*}
-          \int d\Pi_n = \left(\int \prod _f\frac{d^3p_f}{(2\pi)^32E_f}\right)(2\pi)^4\delta(P - \sum_fp_f)
+          \int d\Pi_n = \left(\int \prod _f\frac{d^3p_f}{(2\pi)^32E_f}\right)(2\pi)^4\delta^{(4)}(P - \sum_fp_f)
       \end{align*}
       Where $P$ is the total momenta ($P= p_{\mathcal{A}}+p_{\mathcal{B}}$ in the two particle initial state). 
-
-      \item In the case of two final particles, one finds \footnote{For this calculation see pg 10 of my Standard model notes \href{https://tbrosnan12.github.io/documents/Fourth_year/Second_semester/Standard_Model.pdf}{here}}
+        \end{itemize}
+\subsubsection{2 Final Particles} % (fold)
+\label{ssub:2_final_particles}
+\begin{itemize}
+    \item In the case of two final particles, one finds \footnote{For this calculation see pg 10 of my Standard model notes \href{https://tbrosnan12.github.io/documents/Fourth_year/Second_semester/Standard_Model.pdf}{here}}
+      \begin{align}
+      \label{Pi_2}
+        \int \Pi_2= \frac{1}{8\pi}\left(\frac{2|\tilde{\textbf{p}}|}{E_{\text{CM}}}\right)\int\frac{d\Omega}{4\pi} 
+      \end{align}
+      Where $\tilde{\textbf{p}}$ is the value of $p$ such that $ E_{\mathcal{A}}+E_{\mathcal{B}} = E_{\text{CM}}$. The notable limit is the relativistic one where we send the masses of the scattering particles to $0$ (they are small compared to their energy). This means if $P = (E_{\text{CM}},0) \implies p_{\mathcal{A}}=(E_{\mathcal{A}},\textbf{p}) ~\&~ p_{\mathcal{B}}=(E_{\mathcal{B}},-\textbf{p})$, then in the relativistic limit $E>>m_{\mathcal{A}},m_{\mathcal{B}} \implies E_{\text{CM}} = E_{\mathcal{A}}+E_{\mathcal{B}} \approx |\tilde{\textbf{p}}|+|\tilde{\textbf{p}}| =2|\tilde{\textbf{p}}|$. This makes the factor in brackets of \ref{Pi_2} unity, which allows us to write \ref{dsigma} as:
       \begin{align*}
-        \int \Pi_2= \frac{1}{8\pi}\left(\frac{2\tilde{p}}{E_{\text{CM}}}\right)\int\frac{d\Omega}{4\pi} 
+        \frac{d\sigma}{d\Omega} = \frac{1}{2E_{\mathcal{A}}2E_{\mathcal{B}}|v_{\mathcal{A}}-v_{\mathcal{B}}|}\frac{1}{32\pi^2}|\mathcal{M}(\textbf{p}_{\mathcal{A}},\textbf{p}_{\mathcal{B}} \rightarrow \textbf{p}_1,\textbf{p}_2)|^2
       \end{align*}
-      Where $\tilde{p}$ is the value of $p$ such that $ E_1+E_2 = E_{\text{CM}}$. 
+      We can then impose that in the massless limit, he particles will move at approximately $v_{\mathcal{A}}=-v_{\mathcal{B}}=1 \implies |v_{\mathcal{A}}-v_{\mathcal{B}}| = 1$ as well as $E_{\mathcal{A}}=E_{\mathcal{B}}=\frac{1}{2}E_{\text{CM}}$, so we finally have the well know result:
+      \begin{flalign*}
+         \frac{d\sigma}{d\Omega} = \frac{|\mathcal{M}|^2}{64\pi^2E_{\text{CM}}^2}
+      \end{flalign*}
 \end{itemize}
-% subsection the_s_matrix (end)
+% subsubsection 2_final_particles (end)
+    % subsection 2_particle_scattering (end)
+
+
+
+
+
 \end{document}
 
   
