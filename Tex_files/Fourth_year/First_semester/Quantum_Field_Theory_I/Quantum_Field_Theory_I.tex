@@ -2655,9 +2655,9 @@ Where in the last line we have added the time evolution operator so that both st
 \begin{flalign*}
    {}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}} =  \braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|S|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}
 \end{flalign*}
-\item It is clear that if there no iteration between the particles then the $S$ matrix is just the identity. This motivates us to isolate the interacting part of the $S$ matrix by defining the $T$ \emph{matrix} as:
+\item It is clear that if there no iteration between the particles then the $\hat{S}$ matrix is just the identity. This motivates us to isolate the interacting part of the $\hat{S}$ matrix by defining the $\hat{T}$ \emph{matrix} as:
 \begin{align*}
-   S = \mathbbm{1} + iT
+   \hat{S} = \mathbbm{1} + i\hat{T}
  \end{align*} 
 \end{itemize}
 % subsection the_s_matrix (end)
@@ -2668,7 +2668,7 @@ Where in the last line we have added the time evolution operator so that both st
   \item There are more things we know $S$ should satisfy. It should conserve momenta at each collision, meaning $T$ should contain a delta function $\delta^{(4)}(k_{\mathcal{A}}+k_{\mathcal{B}} - \sum_{f}p_f)$. What is left over as part of $T$ will be known as the \emph{invariant} (as it must be Lorentz invariant) \emph{matrix element} and is denoted with a $\mathcal{M}$. Formally this is defined as:
  \begin{align}
  \label{M_matrix}
-   \braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|iT|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}} = i(2\pi)^4\delta^{(4)}\left(k_{\mathcal{A}}+k_{\mathcal{B}} - \sum p_f\right)\mathcal{M}(k_{\mathcal{A}},k_{\mathcal{B}} \rightarrow \{p_f\})
+   \braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|i\hat{T}|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}} = i(2\pi)^4\delta^{(4)}\left(k_{\mathcal{A}}+k_{\mathcal{B}} - \sum p_f\right)\mathcal{M}(k_{\mathcal{A}},k_{\mathcal{B}} \rightarrow \{p_f\})
  \end{align}
 
  Where $\mathcal{M}$ depends on the initial and final states as would be expected. 
@@ -2768,7 +2768,7 @@ Where in the last line we have added the time evolution operator so that both st
     \ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}} \propto \lim_{t\rightarrow\infty(1-i\epsilon)}e^{-iHt}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_0
   \end{align*}
 \end{itemize}
-In the previous case we had that the proportionality factor canceled out in the final formula leaving us with just the sum of all diagrams with two external points. We will posit for simplicity that the same happens for this case. 
+In the previous case we had that the proportionality factor (which contained all vacuum diagrams) canceled out in the final formula leaving us with just the sum of all diagrams with two external points. We will posit for simplicity that the same happens for this case and that only a subset of the Feynman diagrams will actually contribute to our calculation. It turns out, that through a proper proof which we will not present here, that the only type of diagrams that contribute are called \emph{Connected \& Amputated}.  
 % subsection s_matrix_from_feynman_diagrams (end)
 
 
@@ -2777,4 +2777,3 @@ In the previous case we had that the proportionality factor canceled out in the 
 
 \end{document}
 
-  {}
