@@ -3,7 +3,7 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/thomas/Documents/TP_notes/Tex_files/Third_year/Second_semester/Statistical_Physics_II/Statistical_Physics_II.tex
+INPUT Statistical_Physics_II.tex
 OUTPUT Statistical_Physics_II.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls

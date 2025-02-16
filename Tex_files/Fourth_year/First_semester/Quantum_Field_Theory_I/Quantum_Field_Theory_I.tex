@@ -2767,7 +2767,20 @@ Where in the last line we have added the time evolution operator so that both st
   \begin{align*}
     \ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}} \propto \lim_{t\rightarrow\infty(1-i\epsilon)}e^{-iHt}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_0
   \end{align*}
-  In the previous case we had that the proportionality factor (which contained all vacuum diagrams) canceled out in the final formula leaving us with just the sum of all diagrams with two external points. We will posit for simplicity that the same happens for this case and that only a subset of the Feynman diagrams will actually contribute to our calculation. It turns out, that through a proper proof which we will not present here, that the only type of diagrams that contribute are called \emph{Connected } \& \emph{ Amputated}.
+  In the previous case we had that the proportionality factor (which contained all vacuum diagrams) canceled out in the final formula leaving us with just the sum of all diagrams with two external points. We will posit for simplicity that the same happens for this case and that only a subset of the Feynman diagrams will actually contribute to our calculation. It turns out, that through a proper proof which we will not present here, that the only type of diagrams that contribute are called \emph{Connected } \& \emph{ Amputated}. We will explain what these mean soon.
+
+\item We would like to proceed in the same manner as we did in the calculation of the expressions for the n-point correlator. However, in doing so we quickly run into an issue. Since before our expressions like \ref{ground_state} involved the vacuum $\ket{0}$ we could leverage the fact that the when we split our field into positive and negative frequency components, that they satisfied $\phi_I^+\ket{0} =0$ and $\bra{0}\phi_I^-= 0$. But now since we the kets we are acting on are momentum kets and not the vacuum, these relations no-longer hold. In fact they now do the following:
+\begin{align*}
+   \phi^{+}_I(x)\ket{\textbf{p}} &= \int \frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{k}}}}a_{\textbf{k}}e^{-ik \cdot x}\sqrt{2E_{\textbf{p}}}a^{\dagger}_{\textbf{p}}\ket{0} \\
+   & = \int \frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{k}}}}e^{-ik \cdot x}\sqrt{2E_{\textbf{p}}}\delta(\textbf{k}-\textbf{p})\ket{0} \\
+   &= e^{-ip\cdot x}\ket{0 }
+ \end{align*} `
+Having noticed this is the case, we can see that if we have a product of fields $\phi_I(x)$, then once we use one of them to act on the state $\ket{\textbf{p}}$, then the left over fields can be normal ordered and only the contractions kept as usual. With this we are motivated to define the contraction of a field $\phi$ with the momentum ket $\ket{\textbf{p}}$ via:
+\begin{align*}
+  \wick{\c{\phi_I}(x) \c{\ket{\textbf{p}}}(y)} = e^{-ip\cdot x}\ket{0}, ~~~~~\wick{\c{\bra{\textbf{p}}} \c{\phi_I(x)}(y)} = \bra{0}e^{ip\cdot x}
+\end{align*}
+So before when we had normal ordered terms we could ignore them as they acted on the vacuum $\ket{0}$ and vanished. But now this is not the case, so in expressions like the expansion of \ref{4wick}, all the terms will contribute not just the fully contracted ones. in fact \ref{4wick} is a good example to study as...
+
 \end{itemize}
   
 % subsection s_matrix_from_feynman_diagrams (end)
