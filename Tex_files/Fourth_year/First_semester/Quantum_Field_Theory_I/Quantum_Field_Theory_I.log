@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  16 FEB 2025 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  17 FEB 2025 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -250,7 +250,7 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip57
 \blx@bcfin=\read2
 \blx@bcfout=\write3
-\blx@langwohyphens=\language3
+\blx@langwohyphens=\language87
 \c@mincomprange=\count316
 \c@maxcomprange=\count317
 \c@mincompwidth=\count318
@@ -1083,37 +1083,60 @@ zexternalshared.code.tex)))
 zlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
-\pgf@layerbox@nodelayer=\box86
-\pgf@layerboxsaved@nodelayer=\box87
-\pgf@layerbox@edgelayer=\box88
-\pgf@layerboxsaved@edgelayer=\box89
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.markings.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex
+\pgfdecoratedcompleteddistance=\dimen307
+\pgfdecoratedremainingdistance=\dimen308
+\pgfdecoratedinputsegmentcompleteddistance=\dimen309
+\pgfdecoratedinputsegmentremainingdistance=\dimen310
+\pgf@decorate@distancetomove=\dimen311
+\pgf@decorate@repeatstate=\count459
+\pgfdecorationsegmentamplitude=\dimen312
+\pgfdecorationsegmentlength=\dimen313
+)
+\tikz@lib@dec@box=\box86
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.markings.code.tex))
+\pgf@layerbox@nodelayer=\box87
+\pgf@layerboxsaved@nodelayer=\box88
+\pgf@layerbox@edgelayer=\box89
+\pgf@layerboxsaved@edgelayer=\box90
 
 
 Package biblatex Warning: Load 'inputenc' before biblatex.
 
-\@quotelevel=\count459
-\@quotereset=\count460
-(./Quantum_Field_Theory_I.aux)
+\@quotelevel=\count460
+\@quotereset=\count461
+(./Quantum_Field_Theory_I.aux
+
+LaTeX Warning: Label `S_def' multiply defined.
+
+)
 \openout1 = `Quantum_Field_Theory_I.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 97.
+LaTeX Font Info:    ... okay on input line 97.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1149,7 +1172,7 @@ LaTeX Font Info:    ... okay on input line 96.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 96.
+Package hyperref Info: Link coloring OFF on input line 97.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1159,11 +1182,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count461
+\c@section@level=\count462
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
-LaTeX Info: Redefining \nameref on input line 96.
+LaTeX Info: Redefining \ref on input line 97.
+LaTeX Info: Redefining \pageref on input line 97.
+LaTeX Info: Redefining \nameref on input line 97.
 
 (./Quantum_Field_Theory_I.out) (./Quantum_Field_Theory_I.out)
 \@outlinefile=\write6
@@ -1184,21 +1207,21 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Quantum_Field_Theory_I.bbl' found.
 
 (./Quantum_Field_Theory_I.bbl)
-Package biblatex Info: Reference section=0 on input line 96.
-Package biblatex Info: Reference segment=0 on input line 96.
+Package biblatex Info: Reference section=0 on input line 97.
+Package biblatex Info: Reference segment=0 on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count462
-\scratchdimen=\dimen307
-\scratchbox=\box90
-\nofMPsegments=\count463
-\nofMParguments=\count464
+\scratchcounter=\count463
+\scratchdimen=\dimen314
+\scratchbox=\box91
+\nofMPsegments=\count464
+\nofMParguments=\count465
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count465
-\MPscratchDim=\dimen308
-\MPnumerator=\count466
-\makeMPintoPDFobject=\count467
+\MPscratchCnt=\count466
+\MPscratchDim=\dimen315
+\MPnumerator=\count467
+\makeMPintoPDFobject=\count468
 \everyMPtoPDFconversion=\toks48
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1209,20 +1232,20 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count468
-LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
+\c@lstlisting=\count469
+LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 98
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 99
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -1371,7 +1394,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [19]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 772
+LaTeX Font Info:    Trying to load font information for U+euf on input line 773
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1415,22 +1438,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.873   \end{align}
+l.874   \end{align}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{equation.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.873   \end{align}
+l.874   \end{align}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{equation.4.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.873   \end{align}
+l.874   \end{align}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{equation.4.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.873   \end{align}
+l.874   \end{align}
                    
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1495,7 +1518,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [30]
-Overfull \hbox (32.75508pt too wide) detected at line 1251
+Overfull \hbox (32.75508pt too wide) detected at line 1252
 []
  []
 
@@ -1508,7 +1531,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [31]
-Overfull \hbox (46.99426pt too wide) detected at line 1276
+Overfull \hbox (46.99426pt too wide) detected at line 1277
 []
  []
 
@@ -1548,7 +1571,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [35]
-Overfull \hbox (6.46196pt too wide) detected at line 1418
+Overfull \hbox (6.46196pt too wide) detected at line 1419
 []
  []
 
@@ -1590,15 +1613,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [39]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1577.
+(hyperref)                removing `math shift' on input line 1578.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1577.
+(hyperref)                removing `superscript' on input line 1578.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1577.
+(hyperref)                removing `math shift' on input line 1578.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1682,7 +1705,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [48]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 194
-0.
+1.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
@@ -1776,10 +1799,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [58]
-<Peskin_scattering.png, id=954, 1573.88pt x 953.5625pt>
+<Peskin_scattering.png, id=955, 1573.88pt x 953.5625pt>
 File: Peskin_scattering.png Graphic file (type png)
 <use Peskin_scattering.png>
-Package pdftex.def Info: Peskin_scattering.png  used on input line 2641.
+Package pdftex.def Info: Peskin_scattering.png  used on input line 2642.
 (pdftex.def)             Requested size: 308.82936pt x 187.10068pt.
 
 
@@ -1803,7 +1826,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2675 \end{itemize}
+l.2677 \end{itemize}
                      <./Peskin_scattering.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1849,9 +1872,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[65
+[65]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[66
 
 ] (./Quantum_Field_Theory_I.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Quantum_Field_Theory_I.out' has not changed.
 
 (rerunfilecheck)             Checksum: 55C642598589CA8C8AD73F183C3A729E;9784.
@@ -1860,13 +1895,13 @@ Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37442 strings out of 480247
- 749021 string characters out of 5896106
- 1491961 words of memory out of 5000000
- 54475 multiletter control sequences out of 15000+600000
+ 37990 strings out of 478287
+ 766397 string characters out of 5849289
+ 1506933 words of memory out of 5000000
+ 55259 multiletter control sequences out of 15000+600000
  490003 words of font info for 112 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 99i,22n,104p,1211b,911s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 1141 hyphenation exceptions out of 8191
+ 99i,22n,104p,1211b,1078s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
@@ -1895,10 +1930,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Quantum_Field_Theory_I.pdf (65 pages, 678389 bytes).
+Output written on Quantum_Field_Theory_I.pdf (66 pages, 685496 bytes).
 PDF statistics:
- 1207 PDF objects out of 1440 (max. 8388607)
- 1047 compressed objects within 11 object streams
- 300 named destinations out of 1000 (max. 500000)
+ 1220 PDF objects out of 1440 (max. 8388607)
+ 1059 compressed objects within 11 object streams
+ 304 named destinations out of 1000 (max. 500000)
  658 words of extra memory for PDF output out of 10000 (max. 10000000)
 

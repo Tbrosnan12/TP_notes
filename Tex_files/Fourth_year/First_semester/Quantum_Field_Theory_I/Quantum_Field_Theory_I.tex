@@ -56,6 +56,7 @@
 
 \usepackage{tikz}  % Load TikZ first
 \usetikzlibrary{positioning}  % Optional: for advanced positioning
+\usetikzlibrary{decorations.markings}
 
 % Declare layers and set their order
 \pgfdeclarelayer{nodelayer}
@@ -2652,9 +2653,10 @@ For the out states it is preferable to consider specific momenta $\textbf{p}_i$,
   & = \lim_{t \rightarrow \infty}{}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|e^{-iH(2t)}|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}}
 \end{align*}
 Where in the last line we have added the time evolution operator so that both states are at the same common reference time for this limit. This then brings us to define the $S$ \emph{matrix} as:
-\begin{flalign*}
+\begin{flalign}
+\label{S_def}
    {}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}} =  \braket{\textbf{p}_1\textbf{p}_2 \cdot \cdot \cdot|S|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}
-\end{flalign*}
+\end{flalign}
 \item It is clear that if there no iteration between the particles then the $\hat{S}$ matrix is just the identity. This motivates us to isolate the interacting part of the $\hat{S}$ matrix by defining the $\hat{T}$ \emph{matrix} as:
 \begin{align*}
    \hat{S} = \mathbbm{1} + i\hat{T}
@@ -2764,23 +2766,204 @@ Where in the last line we have added the time evolution operator so that both st
 \label{sub:s_matrix_from_feynman_diagrams}
 \begin{itemize}
   \item We saw that in equation like \ref{ground_state} we could express the ground state $\ket{\Omega}$ in the interacting picture in terms of the ground state of the free theory $\ket{0}$. We would like to do the same thing for our momenta $\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}$. Taking inspiration from \ref{ground_state} we can guess that this will be something like:
-  \begin{align*}
+  \begin{align}
+  \label{k_limit}
     \ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}} \propto \lim_{t\rightarrow\infty(1-i\epsilon)}e^{-iHt}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_0
-  \end{align*}
-  In the previous case we had that the proportionality factor (which contained all vacuum diagrams) canceled out in the final formula leaving us with just the sum of all diagrams with two external points. We will posit for simplicity that the same happens for this case and that only a subset of the Feynman diagrams will actually contribute to our calculation. It turns out, that through a proper proof which we will not present here, that the only type of diagrams that contribute are called \emph{Connected } \& \emph{ Amputated}. We will explain what these mean soon.
+  \end{align}
+  In the previous case we had that the proportionality factor (which contained all vacuum diagrams) canceled out in the final formula leaving us with just the sum of all diagrams with two external points. We will posit for simplicity that the same happens for this case and that only a subset of the Feynman diagrams will actually contribute to our calculation. It turns out, that through a proper proof which we will not present here, that the only type of diagrams that contribute are called \emph{Connected } \& \emph{ Amputated}. We will explain what these mean soon. 
 
-\item We would like to proceed in the same manner as we did in the calculation of the expressions for the n-point correlator. However, in doing so we quickly run into an issue. Since before our expressions like \ref{ground_state} involved the vacuum $\ket{0}$ we could leverage the fact that the when we split our field into positive and negative frequency components, that they satisfied $\phi_I^+\ket{0} =0$ and $\bra{0}\phi_I^-= 0$. But now since we the kets we are acting on are momentum kets and not the vacuum, these relations no-longer hold. In fact they now do the following:
+  \item If we had an expression like \ref{k_limit} then we could use it to write the LHS of the $\hat{S}$ matrix \ref{S_def} as the following:
+  \begin{align}
+  \label{p_dyson}
+     {}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}} & = \lim_{t\rightarrow\infty(1-i\epsilon)}{}_{0}\bra{\textbf{p}_1\textbf{p}_2 }e^{-iH(2t)}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{0} \nonumber\\
+     & \propto \lim_{t\rightarrow\infty(1-i\epsilon)}{}_{0}\bra{\textbf{p}_1\textbf{p}_2}T\left\{\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{0}
+   \end{align} 
+   Where in the last step we have used Dyson's formula \ref{dyson}. We can examine the expansion of this exponential in powers of the interaction parameter $\lambda$. At first order this is just the identity which is part of the $\mathbbm{1}$ of $\hat{S} = \mathbbm{1}+i\hat{T}$. Thus this not part of the interaction and does not contribute to the matrix element $\mathcal{M}$, thus we can ignore these in our calculation of $\mathcal{M}$. This term is just the particles translating to the final particles, which can be seen from the Feynman diagrams which take the form: 
+   \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+        % Left diagram (Identity)
+        \draw (0,0) -- (0,1);
+        \draw (1,0) -- (1,1);
+        \node at (0,-0.3) {\(\mathcal{A}\)};
+        \node at (1,-0.3) {\(\mathcal{B}\)};
+        \node at (0,1.3) {\(1\)};
+        \node at (1,1.3) {\(2\)};
+
+        % Plus sign
+        \node at (1.75,.5) {\(+\)};
+
+        % Right diagram (Crossing with gap)
+        \draw (2.5,0) -- (3.5,1);
+        \draw[preaction={draw,white,line width=3pt}] (3.5,0) -- (2.5,1);
+        %\draw (3.5,0) -- (2.5,2); % Draw over with original color
+
+        \node at (2.5,-0.3) {\(\mathcal{A}\)};
+        \node at (3.5,-0.3) {\(\mathcal{B}\)};
+        \node at (2.5,1.3) {\(1\)};
+        \node at (3.5,1.3) {\(2\)};
+    \end{tikzpicture}
+\end{center}
+
+\item We would like to proceed in the same manner as we did in the calculation of the expressions for the n-point correlator. The first step is as usual, we normal order any of the terms we have left, leaving us with some contractions. However, in doing so we quickly run into an issue. Since before our expressions like \ref{ground_state} involved the vacuum $\ket{0}$ we could leverage the fact that the when we split our field into positive and negative frequency components, that they satisfied $\phi_I^+\ket{0} =0$ and $\bra{0}\phi_I^-= 0$. But now since we the kets we are acting on are momentum kets and not the vacuum, these relations no-longer hold. In fact they now do the following:
 \begin{align*}
    \phi^{+}_I(x)\ket{\textbf{p}} &= \int \frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{k}}}}a_{\textbf{k}}e^{-ik \cdot x}\sqrt{2E_{\textbf{p}}}a^{\dagger}_{\textbf{p}}\ket{0} \\
    & = \int \frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{k}}}}e^{-ik \cdot x}\sqrt{2E_{\textbf{p}}}\delta(\textbf{k}-\textbf{p})\ket{0} \\
    &= e^{-ip\cdot x}\ket{0 }
- \end{align*} `
+ \end{align*} 
 Having noticed this is the case, we can see that if we have a product of fields $\phi_I(x)$, then once we use one of them to act on the state $\ket{\textbf{p}}$, then the left over fields can be normal ordered and only the contractions kept as usual. With this we are motivated to define the contraction of a field $\phi$ with the momentum ket $\ket{\textbf{p}}$ via:
 \begin{align*}
   \wick{\c{\phi_I}(x) \c{\ket{\textbf{p}}}(y)} = e^{-ip\cdot x}\ket{0}, ~~~~~\wick{\c{\bra{\textbf{p}}} \c{\phi_I(x)}(y)} = \bra{0}e^{ip\cdot x}
 \end{align*}
-So before when we had normal ordered terms we could ignore them as they acted on the vacuum $\ket{0}$ and vanished. But now this is not the case, so in expressions like the expansion of \ref{4wick}, all the terms will contribute not just the fully contracted ones. in fact \ref{4wick} is a good example to study as...
+So before when we had normal ordered terms we could ignore them as they acted on the vacuum $\ket{0}$ and vanished. But now this is not the case, so in expressions like the expansion of \ref{4wick}, all the terms will contribute not just the fully contracted ones. In fact \ref{4wick} is exactly what we would have in the second term in our expansion of the exponential \ref{p_dyson}. Hence this is a good thing to examine closer as it will contain the first interaction terms. 
 
+
+In \ref{4wick} there are three types of terms, one term with no contractions $\phi\phi\phi\phi$, $7$ terms with one contraction $\wick{\c{\phi}\c{\phi}}\phi\phi$, and $3$ terms with 2 contractions $\wick{\c{\phi}\c{\phi}\c{\phi}\c{\phi}}$. 
+
+\item \textbf{Case 1:} Before only the $\wick{\c{\phi}\c{\phi}\c{\phi}\c{\phi}}$ terms were important, but now we can actually argue that we should ignore these terms. Since all the $\phi$'s are contracted, it means there are no $\phi's$ left over to contract with any of the momentum kets $\ket{\textbf{p}}$. This essentially means these terms are also part of the $\mathbbm{1}$ in the definition of $\hat{S}$, and do not contribute to $\mathcal{M}$. The Feynman diagram for this term is:
+\begin{align*}
+    \begin{array}{c}
+\begin{tikzpicture}[scale=2.5]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-4, 3) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [in=135, out=45, loop] (0.center) to ();
+    \draw [in=225, out=315, loop] (0.center) to ();
+  \end{pgfonlayer}
+\end{tikzpicture}
+    \end{array} \hspace{-5mm}\times ~~  \left(\begin{array}{c}
+        \begin{tikzpicture}
+            % Left diagram (Identity)
+            \draw (0,0) -- (0,1);
+            \draw (1,0) -- (1,1);
+            \node at (0,-0.3) {\(\mathcal{A}\)};
+            \node at (1,-0.3) {\(\mathcal{B}\)};
+            \node at (0,1.3) {\(1\)};
+            \node at (1,1.3) {\(2\)};
+        \end{tikzpicture}
+    \end{array} 
+    + \begin{array}{c}
+        \begin{tikzpicture}
+            % Right diagram (Crossing with gap)
+            \draw (0,0) -- (1,1);
+            \draw[preaction={draw,white,line width=3pt}] (1,0) -- (0,1);
+            \node at (0,-0.3) {\(\mathcal{A}\)};
+            \node at (1,-0.3) {\(\mathcal{B}\)};
+            \node at (0,1.3) {\(1\)};
+            \node at (1,1.3) {\(2\)};
+        \end{tikzpicture}
+    \end{array}\right)
+\end{align*}
+
+
+\item \textbf{Case 2:} For the $\wick{\c{\phi}\c{\phi}}\phi\phi$ terms, the two uncontracted $\phi$'s are normal ordered, so in terms of creation and annihilation operators we know they will be proportional to $a^{\dagger}a^{\dagger} + 2a^{\dagger}a + aa $. We then use of these $\phi$ to contract with either the initial momentum ket or a final momentum ket. Either way results in us getting an exponential as well as $\ket{0}$ or $\bra{0}$. We can then see that only the middle term in  $a^{\dagger}a^{\dagger} + 2a^{\dagger}a + aa $ will be non-vanishing as the other terms will annihilate the vacuum bra/kets. What we are left to do is come up with a way of drawing this process in our Feynman diagrams. Since we have that one of the $\phi$'s is contracted with both the final and initial kets, it makes sense to define their contraction as an \emph{external line}:
+\begin{align*}
+  \wick{\c{\phi_I}(x) \c{\ket{\textbf{p}}}(y)} =  \begin{array}{c}
+\begin{tikzpicture}[decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}]
+    \begin{pgfonlayer}{nodelayer}
+        \node [circle, fill, inner sep=1pt] (0) at (0, -1) {};
+        \node [style=none] (1) at (-0.5, -1) {};
+        \node [style=none] (2) at (-0.5, -0.75) {};
+        \node [style=none] (3) at (-0.5, -1.25) {};
+        \node [style=none] (4) at (1.75, -1) {};
+        \node [style=none] (5) at (0.5, -1) {};
+        \node [style=none] (6) at (1, -1.25) {$p$};
+        \node [style=none] (7) at (1, -.4) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        % Middle arrow instead of end arrow
+        \draw [postaction={decorate}] (4.center) to (5.center);
+        \draw (5.center) to (0.center);
+        \draw (0.center) to (2.center);
+        \draw (0.center) to (1.center);
+        \draw (0.center) to (3.center);
+    \end{pgfonlayer}
+\end{tikzpicture}    
+  \end{array}
+  , ~~~~~ \wick{\c{\bra{\textbf{p}}} \c{\phi_I(x)}(y)} =  \begin{array}{c}
+\begin{tikzpicture}[decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}]
+    \begin{pgfonlayer}{nodelayer}
+        \node [circle, fill, inner sep=1pt] (0) at (0, -1) {};
+        \node [style=none] (1) at (0.5, -1) {};
+        \node [style=none] (2) at (0.5, -0.75) {};
+        \node [style=none] (3) at (0.5, -1.25) {};
+        \node [style=none] (4) at (-1.75, -1) {};
+        \node [style=none] (5) at (-0.5, -1) {};
+        \node [style=none] (6) at (-1, -1.25) {$p$};
+        \node [style=none] (7) at (-1, -.4) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        % Middle arrow instead of end arrow
+        \draw [postaction={decorate}] (0.center) to (4.center);
+        \draw (5.center) to (0.center);
+        \draw (0.center) to (2.center);
+        \draw (0.center) to (1.center);
+        \draw (0.center) to (3.center);
+    \end{pgfonlayer}
+\end{tikzpicture}    
+  \end{array}
+\end{align*}
+With this we have $4$ different types of diagrams for the $\wick{\c{\phi}\c{\phi}}\phi\phi$ terms:
+\begin{align*}
+\begin{array}{c}
+    \begin{tikzpicture}[scale=2]
+            % Left diagram (Identity)
+            \draw (0,0) -- (0,1);
+            \draw (.75,0) -- (.75,1);
+            \node at (0,-0.3) {\(\mathcal{A}\)};
+            \node at (.75,-0.3) {\(\mathcal{B}\)};
+            \node at (0,1.3) {\(1\)};
+            \node at (.75,1.3) {\(2\)};
+            \node (1) at (0,0.5) {};
+            \draw [in=135, out=225 , loop] (1.center) to ();
+        \end{tikzpicture}
+  \end{array}
+   ~~+~~
+\begin{array}{c}
+    \begin{tikzpicture}[scale=2]
+            % Left diagram (Identity)
+            \draw (0,0) -- (0,1);
+            \draw (.75,0) -- (.75,1);
+            \node at (0,-0.3) {\(\mathcal{A}\)};
+            \node at (.75,-0.3) {\(\mathcal{B}\)};
+            \node at (0,1.3) {\(1\)};
+            \node at (.75,1.3) {\(2\)};
+            \node (1) at (.75,0.5) {};
+            \draw [in=45, out=-45 , loop] (1.center) to ();
+        \end{tikzpicture}
+  \end{array}
+  ~~+~~
+  \begin{array}{c}
+    \begin{tikzpicture}[scale=2]
+            % Right diagram (Crossing with gap)
+            \draw (0,0) -- (1,1);
+            \draw[preaction={draw,white,line width=3pt}] (1,0) -- (0,1);
+            \node at (0,-0.3) {\(\mathcal{A}\)};
+            \node at (1,-0.3) {\(\mathcal{B}\)};
+            \node (1) at (0.25,0.25) {};
+            \node at (0,1.3) {\(1\)};
+            \node at (1,1.3) {\(2\)};
+            \draw [in=90, out=180 , loop] (1.center) to ();
+\end{tikzpicture}
+  \end{array}
+   ~~+~~
+  \begin{array}{c}
+    \begin{tikzpicture}[scale=2]
+            % Right diagram (Crossing with gap)
+            \draw (0,0) -- (1,1);
+            \draw[preaction={draw,white,line width=3pt}] (1,0) -- (0,1);
+            \node at (0,-0.3) {\(\mathcal{A}\)};
+            \node at (1,-0.3) {\(\mathcal{B}\)};
+            \node (1) at (0.75,0.25) {};
+            \node at (0,1.3) {\(1\)};
+            \node at (1,1.3) {\(2\)};
+            \draw [in=90, out=0 , loop] (1.center) to ();
+\end{tikzpicture}
+  \end{array}
+\end{align*}
+From these diagrams we can gather that the first two diagrams are also part of the trivial contribution to the $\hat{S}$ matrix as they involve initial and final states that are identical. From this example we can gather that the only diagrams that contribute to the interaction are \emph{fully connected} diagrams. This is what we meant earlier when we mentioned we will only care about connected diagrams.  
+
+\item \textbf{Case 3:}
 \end{itemize}
   
 % subsection s_matrix_from_feynman_diagrams (end)
