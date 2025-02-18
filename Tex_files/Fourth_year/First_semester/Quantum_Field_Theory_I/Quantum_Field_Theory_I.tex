@@ -2881,7 +2881,7 @@ In \ref{4wick} there are three types of terms, one term with no contractions $\p
     \end{pgfonlayer}
 \end{tikzpicture}    
   \end{array}
-  , ~~~~~ \wick{\c{\bra{\textbf{p}}} \c{\phi_I(x)}} =  \begin{array}{c}
+  ,= e^{-ip\cdot x}\ket{0} ~~~~~ \wick{\c{\bra{\textbf{p}}} \c{\phi_I(x)}} =  \begin{array}{c}
 \begin{tikzpicture}[decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}]
     \begin{pgfonlayer}{nodelayer}
         \node [circle, fill, inner sep=1pt] (0) at (0, -1) {};
@@ -2902,7 +2902,7 @@ In \ref{4wick} there are three types of terms, one term with no contractions $\p
         \draw (0.center) to (3.center);
     \end{pgfonlayer}
 \end{tikzpicture}    
-  \end{array}
+  \end{array}= \bra{0}e^{ip\cdot x}
 \end{align*}
 With this we have $4$ different types of diagrams for the $\wick{\c{\phi}\c{\phi}}\phi\phi$ terms:
 \begin{align*}
@@ -2966,7 +2966,7 @@ From these diagrams we can gather that the first two diagrams are also part of t
 
 \item \textbf{Case 3:} Finaly for the $\phi\phi\phi\phi$ case we have to contract each of the $\phi$'s with an incoming or outgoing momentum. There are $4!$ ways of doing this. This Feynman is the exact one we had in \ref{cons_mom} and the diagram looks like: 
 \begin{center}
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1.5, decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}]
     % Set larger arrow size globally
     \tikzset{>={stealth[scale=1.5]}}
 
@@ -2979,6 +2979,7 @@ From these diagrams we can gather that the first two diagrams are also part of t
         \node [style=none] (5) at (-1, -1) {};
         \node [style=none] (6) at (1, -1) {};
         \node [style=none] (7) at (1, 1) {};
+        \node [style=none] (8) at (0, 0) {};
         \node [circle, fill, inner sep=1pt] (8) at (0, 0) {};
 
         % Labels
@@ -2989,7 +2990,8 @@ From these diagrams we can gather that the first two diagrams are also part of t
     \end{pgfonlayer}
     
     \begin{pgfonlayer}{edgelayer}
-        \draw [->, line width=0.3mm] (7.center) to (3.center);
+        \draw [ line width=0.3mm] (7.center) to (3.center);
+        \draw [->, line width=0.3mm] (8.center) to (3.center);
         \draw [->, line width=0.3mm] (6.center) to (2.center);
         \draw [->, line width=0.3mm] (5.center) to (1.center);
         \draw [>-, line width=0.3mm] (0.center) to (4.center);
@@ -3005,10 +3007,17 @@ The contribution to the \ref{p_dyson} will then take the form of \ref{cons_mom} 
   \frac{d\sigma}{d\Omega}  = \frac{\lambda^2}{64\pi^2E_{\text{CM}}^2}  
    \implies  \sigma = \frac{\lambda^2}{32\pi E_{\text{CM}}^2}
 \end{align*}
-As we have no angular dependance. 
+As we have no angular dependence. 
+\end{itemize}
 
-
-\begin{tikzpicture}[scale=1.5, decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}]
+\subsubsection{Amputations} % (fold)
+\label{ssub:amputations}
+\begin{itemize}
+  \item We seemed to have ignored the last two diagrams in case $2$ but it turn out that we also ignore these diagrams. There are some "physical" reasons for doing this though I have found none of them convincing. The main reason we have to ignore these terms is because when we actually go to evaluate their contribution we find that it blows up when we impose momentum conservation at each point. To see what me mean consider the following Feynman diagram along with its contribution according to our Feynamn momentum rules (see section \ref{sub:momentum_space_rules}):
+  \begin{align*}
+  \hspace{-5mm}
+     \begin{array}{c}
+  \begin{tikzpicture}[scale=1.5, decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}]
     % Nodes
     \node (A) at (-1,1) {};  % Incoming top-left
     \node (B) at (-1,-1) {}; % Incoming bottom-left
@@ -3016,21 +3025,23 @@ As we have no angular dependance.
     \node (D) at (1,-1) {};  % Outgoing bottom-right
     \node (X) at (0,0) [circle, fill, inner sep=1pt] {}; % Interaction vertex
     \node (L) at (0.4,-0.4) {}; % Loop attachment point
-
+    \node (p) at (0.1,-0.4) {$p'$};
     % External lines with arrows
-    \draw [postaction={decorate},] (A.center) -- (X.center) node[midway,left] {\(p_1\)};
+    \draw [postaction={decorate}] (X.center) -- (A.center) node[midway,left] {\(p_1\)};
     \draw [postaction={decorate}] (B.center) -- (X.center) node[midway,left] {\(p_{\mathcal{A}}\)};
     \draw [postaction={decorate}] (X.center) -- (C.center) node[midway,right] {\(p_2\)};
-    \draw [postaction={decorate}] (X.center) -- (D.center) node[midway,right] {\(p_{\mathcal{B}}\)};
-    
-
+    \draw [postaction={decorate}] (D.center) -- (X.center) node[midway,right] {\(p_{\mathcal{B}}\)};
     % Loop
     \draw [in=90, out=0 , loop] (L.center) to ();
-    
-
+    % Additional arrow for p'
+    \draw [postaction={decorate}] (L) -- (X) node[midway,below right] {};
 \end{tikzpicture}
+     \end{array} =  \frac{1}{2}&\int \frac{d^4p'}{(2\pi)^4}\frac{i}{p'^2-m^2}\int \frac{d^4k}{(2\pi)^4}\frac{i}{k^2-m^2} (-i\lambda)^2(2\pi)^8\delta^{(4)}(p_{\mathcal{A}}+p'-p_1-p_2)\delta^{(4)}(p_{\mathcal{B}}-p')
+   \end{align*}
+   \item This integral is a big problem as just evaluating the second delta function results in the first fraction $\frac{i}{p_{\mathcal{B}}^2-m^2}$, but since $p_{\mathcal{B}}$ is the momentum of an external particle (which must have mass $m$), this term blows up! This means that any diagram involving a loop like the one above will contain a divergent factor. Hence we must ignore them! The diagrams with out these loops are called the \emph{amputated} diagrams. 
 \end{itemize}
-  
+% subsubsection amputations (end)
+
 % subsection s_matrix_from_feynman_diagrams (end)
 
 
