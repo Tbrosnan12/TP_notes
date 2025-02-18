@@ -3007,6 +3007,28 @@ The contribution to the \ref{p_dyson} will then take the form of \ref{cons_mom} 
 \end{align*}
 As we have no angular dependance. 
 
+
+\begin{tikzpicture}[scale=1.5, decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}]
+    % Nodes
+    \node (A) at (-1,1) {};  % Incoming top-left
+    \node (B) at (-1,-1) {}; % Incoming bottom-left
+    \node (C) at (1,1) {};   % Outgoing top-right
+    \node (D) at (1,-1) {};  % Outgoing bottom-right
+    \node (X) at (0,0) [circle, fill, inner sep=1pt] {}; % Interaction vertex
+    \node (L) at (0.4,-0.4) {}; % Loop attachment point
+
+    % External lines with arrows
+    \draw [postaction={decorate},] (A.center) -- (X.center) node[midway,left] {\(p_1\)};
+    \draw [postaction={decorate}] (B.center) -- (X.center) node[midway,left] {\(p_{\mathcal{A}}\)};
+    \draw [postaction={decorate}] (X.center) -- (C.center) node[midway,right] {\(p_2\)};
+    \draw [postaction={decorate}] (X.center) -- (D.center) node[midway,right] {\(p_{\mathcal{B}}\)};
+    
+
+    % Loop
+    \draw [in=90, out=0 , loop] (L.center) to ();
+    
+
+\end{tikzpicture}
 \end{itemize}
   
 % subsection s_matrix_from_feynman_diagrams (end)
