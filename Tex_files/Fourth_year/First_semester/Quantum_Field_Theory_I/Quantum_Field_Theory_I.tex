@@ -632,7 +632,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
       & D(y-x), ~~~ x^{0}<y^0
     \end{cases} \\
     &   =  \theta(x^{0}-y^{0})\bra{0}\phi(x),\phi(y)\ket{0} +\theta(y^{0}-x^{0})\bra{0}[\phi(y),\phi(x)\ket{0} \\
-    & = \bra{0}T\{\phi(x),\phi(y)\}\ket{0} \nonumber
+    & = \bra{0}T\{\phi(x)\phi(y)\}\ket{0} \nonumber
   \end{flalign}
 
   Where in the last step we have defined the \emph{Time ordering symbol} $T$. We can write this in a nice way similar to \ref{prop} as:
@@ -1402,7 +1402,8 @@ We can see from this that these terms will vanish if $\textbf{p} = \textbf{q}$ a
 
 \subsection{Charged particles}
 \begin{itemize}
-  \item Let us now investigate if there is a Noether current and a corresponding conserved charge. Recall the Dirac Lagrangian from \ref{D_act} is $\mathcal{L}_D = i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi-m\bar{\psi}\psi$. We can can clearly see that since this is quadratic in the spinors there is a symmetry in that we can define $\psi \rightarrow e^{i\alpha}\psi$ and $\psi^{\dagger}\rightarrow e^{-i\alpha}\psi^{\dagger}$. Infinitesimally these are: $\psi \rightarrow \psi +i\alpha\psi$ and $\psi^{\dagger} \rightarrow \psi^{\dagger} -i\alpha\psi^{\dagger}$. We can then use \ref{Noether} to write down that the conserved current (up to a sign is):
+  \item Let us n8
+  ''''             //////////////                                           ow investigate if there is a Noether current and a corresponding conserved charge. Recall the Dirac Lagrangian from \ref{D_act} is $\mathcal{L}_D = i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi-m\bar{\psi}\psi$. We can can clearly see that since this is quadratic in the spinors there is a symmetry in that we can define $\psi \rightarrow e^{i\alpha}\psi$ and $\psi^{\dagger}\rightarrow e^{-i\alpha}\psi^{\dagger}$. Infinitesimally these are: $\psi \rightarrow \psi +i\alpha\psi$ and $\psi^{\dagger} \rightarrow \psi^{\dagger} -i\alpha\psi^{\dagger}$. We can then use \ref{Noether} to write down that the conserved current (up to a sign is):
   \begin{flalign}
     j^{\mu} =  \frac{\partial\mathcal{L}}{\partial(\partial_{\mu}\psi)}\Delta\psi = \bar{\psi}\gamma^{\mu}\psi,~~~\partial_{\mu}j^{\mu} = 0
   \end{flalign}
@@ -1445,7 +1446,8 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
     \end{align*} 
     This definition allows us to write this more cleanly as:
     \begin{flalign}
-      S_{F}(x-y) = (i\gamma^{\mu}\partial_{\mu}+m)D_F(x-y) \equiv \bra{0}T\bar{\psi}(x)\psi(x)\ket{0} 
+    \label{T_dirac}
+      S_{F}(x-y) = (i\gamma^{\mu}\partial_{\mu}+m)D_F(x-y) \equiv \bra{0}T\{\bar{\psi}(x)\psi(x)\}12q7\ket{0} 
     \end{flalign}
     Where $D_F(x-y)$ is defined in \ref{Feynmann}. $T$ is now the time ordering operator for spinor fields. This is great news as we don't have to do out the long calculations we did before for getting the explicit form of the propagators we can just use what we had before in the Klein-Gordon case. So using \ref{Feynmann_2} we can write:
     \begin{flalign*}
@@ -3003,10 +3005,10 @@ From these diagrams we can gather that the first two diagrams are also part of t
 \end{tikzpicture}
 \end{center}
 The contribution to the \ref{p_dyson} will then take the form of \ref{cons_mom} i.e. $-i\lambda(2\pi)^4\delta(-p_1+p_2+p_3+p_4)$. This is of the same form of \ref{M_matrix}. So we can read off that $|\mathcal{M}|^2 = \lambda^2$. Plugging into \ref{dsigma/domega} we get our first contribution to the mass frame:
-\begin{align*}
+\begin{flalign*}
   \frac{d\sigma}{d\Omega}  = \frac{\lambda^2}{64\pi^2E_{\text{CM}}^2}  
    \implies  \sigma = \frac{\lambda^2}{32\pi E_{\text{CM}}^2}
-\end{align*}
+\end{flalign*}
 As we have no angular dependence. 
 \end{itemize}
 
@@ -3041,10 +3043,24 @@ As we have no angular dependence.
    \item This integral is a big problem as just evaluating the second delta function results in the first fraction $\frac{i}{p_{\mathcal{B}}^2-m^2}$, but since $p_{\mathcal{B}}$ is the momentum of an external particle (which must have mass $m$), this term blows up! This means that any diagram involving a loop like the one above will contain a divergent factor. Hence we must ignore them! The diagrams with out these loops are called the \emph{amputated} diagrams. 
 \end{itemize}
 % subsubsection amputations (end)
-
 % subsection s_matrix_from_feynman_diagrams (end)
 
+\newpage
 
+\section{Yukawa Theory} % (fold)
+\label{sec:yukawa_theory}
+\begin{itemize}
+  \item We study a simplified model of QED where Dirac fermions are coupled to a Klein Gordon field. But first we will need to define Feynman rules for fermions.
+\end{itemize}
+
+\subsection{Feynman Rules for Fermions} % (fold)
+\label{sub:feynman_rules_for_fermions}
+\begin{itemize}
+  \item We would like to extends our discussion in the previous few chapters to fermions. The main thing we need to figure out is what contractions of fermions look like and what rules they obey. We can recall that at the end of our discussion of Dirac fermions we defined the time ordering operator for fermions with an extra minus sign \ref{T_dirac}, to basically account for the fact that fermions pick up a minus sign when swapped. This means that when we go to define the normal ordering of fermions, we have to pick up an extra minus sign for each time we swap two fermions. There also is a bit of ambiguity in the ordering, but the expressions are all equivalent. As an example consider   
+\end{itemize}
+% subsection feynman_rules_for_fermions (end)
+
+% section yukawa_theory (end)
 
 
 
