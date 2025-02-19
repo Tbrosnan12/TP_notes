@@ -1447,7 +1447,7 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
     This definition allows us to write this more cleanly as:
     \begin{flalign}
     \label{T_dirac}
-      S_{F}(x-y) = (i\gamma^{\mu}\partial_{\mu}+m)D_F(x-y) \equiv \bra{0}T\{\bar{\psi}(x)\psi(x)\}12q7\ket{0} 
+      S_{F}(x-y) = (i\gamma^{\mu}\partial_{\mu}+m)D_F(x-y) \equiv \bra{0}T\{\bar{\psi}(x)\psi(x)\}\ket{0} 
     \end{flalign}
     Where $D_F(x-y)$ is defined in \ref{Feynmann}. $T$ is now the time ordering operator for spinor fields. This is great news as we don't have to do out the long calculations we did before for getting the explicit form of the propagators we can just use what we had before in the Klein-Gordon case. So using \ref{Feynmann_2} we can write:
     \begin{flalign*}
@@ -2058,12 +2058,13 @@ With this derivation we fill in the gaps in David Tong's notes, Tong explains th
    Where we have defined the \emph{Normal ordering operator}\footnote{Often the notation $:\phi_I(x)\phi_I(y):$ is used to denote this also.}, which places all the \emph{negative frequency} terms on the left and all the \emph{positive frequency} terms on the right, ensuring that these terms vanish when places within a $\bra{0} \cdot \cdot \cdot \ket{0}$. 
 
    \item We can then generalize this to the case where we don't know if $x^0>y^0$ or $x^0<y^0$, by defining a \emph{contraction} of two fields as:
-   \begin{align*}
+   \begin{align}
+   \label{contraction}
        \wick{\c{\phi_I}(x) \c{\phi_I}(y)} = \begin{cases}
          \left[\phi_I^+(x),\phi_I^-(y)\right] ~~~x^0>y^0 \\
          \left[\phi_I^+(y),\phi_I^-(x)\right] ~~~x^0<y^0 \\
        \end{cases}
-    \end{align*} 
+      \end{align} 
     What is great about this quantity, is that it is exactly the same as the Feynman propagator we defined in \ref{Feynmann} (when we place it between $\bra{0} \cdot \cdot \cdot \ket{0}$). 
     \item We can now generalize this statement to correlation functions with $n>2$: 
     \begin{flalign}
@@ -3057,6 +3058,21 @@ As we have no angular dependence.
 \label{sub:feynman_rules_for_fermions}
 \begin{itemize}
   \item We would like to extends our discussion in the previous few chapters to fermions. The main thing we need to figure out is what contractions of fermions look like and what rules they obey. We can recall that at the end of our discussion of Dirac fermions we defined the time ordering operator for fermions with an extra minus sign \ref{T_dirac}, to basically account for the fact that fermions pick up a minus sign when swapped. This means that when we go to define the normal ordering of fermions, we have to pick up an extra minus sign for each time we swap two fermions. There also is a bit of ambiguity in the ordering, but the expressions are all equivalent. As an example consider   
+
+
+
+  \item To define contractions we can simply apply the same procedure as we did with the scalar field, except wherever we had a commutator we now replace it with an anti-commutator. For example for the time ordered profuct of two fermion fields we have that:
+  \begin{align*}
+    T\{\psi(x)\bar{\psi}(y)\} = N[\psi(x)\bar{\psi}(y)] + \wick{\c{\psi(x)} \c{\bar{\psi}(y)}}
+  \end{align*}
+  Where we have used \ref{contraction} as inspiration to define:
+  \begin{align*}
+    \wick{\c{\psi(x)} \c{\bar{\psi}(y)}}= \left\{\begin{matrix}
+         ~~\left\{\psi^+(x),\bar{\psi}^-(y)\right\}& ~~~x^0>y^0 \\
+         -\left\{\bar{\psi}^+(y),\psi^-(x)\right\}& ~~~x^0<y^0 
+         \end{matrix}\right\} = S_{F}(x-y)
+  \end{align*}
+  Where $\psi^+$ and $\psi^-$ are the negative and positive frequency components of the fields and $S_F(x-y)$ is the Dirac Feynman operator defined in \ref{T_dirac}. With this definition through the anti-commutator we can see that $\wick{\c{\psi(x)} \c{\psi(y)}} = 0$ and $\wick{\c{\bar{\psi}(x)} \c{\bar{\psi}(y)}}$. With these definitions Wick's theorem (seee section\ref{sub:wick_s_theorem}) take pretty much the same form. The only thing we need to be wary of is that contractions of fermions that are not beside each other will pick up a minus sign as we need to make them be beside each other for the contraction.  
 \end{itemize}
 % subsection feynman_rules_for_fermions (end)
 
