@@ -1368,9 +1368,10 @@ And:
 \{\psi_{a}&(\textbf{x}),\psi_{b}(\textbf{y})\} = \{\psi_{a}^{\dagger}(\textbf{x}),\psi^{\dagger}_{b}(\textbf{y})\} =
  0  \end{flalign*}
  Which are equivalent to:
-\begin{align*}
-  \{b^{r}_{\textbf{p}},b^{s \dagger}_{\textbf{p}'}\} = \{c^{r}_{\textbf{p}},c^{s \dagger}_{\textbf{q}}\} = (2\pi)^3\delta(\textbf{p}-\textbf{q})
-\end{align*}
+\begin{align}
+\label{b_anti}
+  \{b^{r}_{\textbf{p}},b^{s \dagger}_{\textbf{p}'}\} = \{c^{r}_{\textbf{p}},c^{s \dagger}_{\textbf{q}}\} = (2\pi)^3\delta(\textbf{p}-\textbf{q})\delta^{rs}
+\end{align}
   With all other commutators being $0$.
 
   Note that all though we are now more concerned with $\bar{\psi}$, $\psi^{\dagger}$ is still the conjugate momentum and should still be in the commutation relations.
@@ -2814,10 +2815,13 @@ Where in the last line we have added the time evolution operator so that both st
    & = \int \frac{d^3k}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{k}}}}e^{-ik \cdot x}\sqrt{2E_{\textbf{p}}}\delta(\textbf{k}-\textbf{p})\ket{0} \\
    &= e^{-ip\cdot x}\ket{0 }
  \end{align*} 
-Having noticed this is the case, we can see that if we have a product of fields $\phi_I(x)$, then once we use one of them to act on the state $\ket{\textbf{p}}$, then the left over fields can be normal ordered and only the contractions kept as usual. With this we are motivated to define the contraction of a field $\phi$ with the momentum ket $\ket{\textbf{p}}$ via:
-\begin{align*}
+Note that since our states are Normal ordered initially, all the $\phi^+$'s are on the right and all the $\phi^-$ are on the left so we get a term like the one above for each way of contracting $\phi$'s with \emph{either} in going or outgoing states. 
+ 
+ \item Having noticed this is the case, we can see that if we have a product of fields $\phi_I(x)$, then once we use one of them to act on the state $\ket{\textbf{p}}$, then the left over normal ordered fields act on the $\ket{0}$ and from then on only the full contractions are kept as usual. With this we are motivated to define the contraction of a field $\phi$ with the momentum ket $\ket{\textbf{p}}$ via:
+\begin{align}
+\label{p_contract}
   \wick{\c{\phi_I}(x) \c{\ket{\textbf{p}}}} = e^{-ip\cdot x}\ket{0}, ~~~~~\wick{\c{\bra{\textbf{p}}} \c{\phi_I(x)}} = \bra{0}e^{ip\cdot x}
-\end{align*}
+\end{align}
 So before when we had normal ordered terms we could ignore them as they acted on the vacuum $\ket{0}$ and vanished. But now this is not the case, so in expressions like the expansion of \ref{4wick}, all the terms will contribute not just the fully contracted ones. In fact \ref{4wick} is exactly what we would have in the second term in our expansion of the exponential \ref{p_dyson}. Hence this is a good thing to examine closer as it will contain the first interaction terms. 
 
 
@@ -3057,11 +3061,11 @@ As we have no angular dependence.
 \subsection{Feynman Rules for Fermions} % (fold)
 \label{sub:feynman_rules_for_fermions}
 \begin{itemize}
-  \item We would like to extends our discussion in the previous few chapters to fermions. The main thing we need to figure out is what contractions of fermions look like and what rules they obey. We can recall that at the end of our discussion of Dirac fermions we defined the time ordering operator for fermions with an extra minus sign \ref{T_dirac}, to basically account for the fact that fermions pick up a minus sign when swapped. This means that when we go to define the normal ordering of fermions, we have to pick up an extra minus sign for each time we swap two fermions. There also is a bit of ambiguity in the ordering, but the expressions are all equivalent. As an example consider   
-
-
-
-  \item To define contractions we can simply apply the same procedure as we did with the scalar field, except wherever we had a commutator we now replace it with an anti-commutator. For example for the time ordered profuct of two fermion fields we have that:
+  \item We would like to extends our discussion in the previous few chapters to fermions. The main thing we need to figure out is what contractions of fermions look like and what rules they obey. We can recall that at the end of our discussion of Dirac fermions we defined the time ordering operator for fermions with an extra minus sign \ref{T_dirac}, to basically account for the fact that fermions pick up a minus sign when swapped. This means that when we go to define the normal ordering of fermions, we have to pick up an extra minus sign for each time we swap two fermions. There also is a bit of ambiguity in the ordering, but the expressions are all equivalent. As an example consider the following:
+  \begin{align*}
+    N(a_{\textbf{p}}a_{\textbf{q}}a^{\dagger}_{\textbf{k}}) = (-1)^2a^{\dagger}_{\textbf{k}}a_{\textbf{p}}a_{\textbf{q}} = (-1)^3a^{\dagger}_{\textbf{k}}a_{\textbf{q}}a_{\textbf{p}}
+  \end{align*}
+  \item To define contractions we can simply apply the same procedure as we did with the scalar field, except wherever we had a commutator we now replace it with an anti-commutator. For example for the time ordered product of two fermion fields we have that:
   \begin{align*}
     T\{\psi(x)\bar{\psi}(y)\} = N[\psi(x)\bar{\psi}(y)] + \wick{\c{\psi(x)} \c{\bar{\psi}(y)}}
   \end{align*}
@@ -3072,7 +3076,15 @@ As we have no angular dependence.
          -\left\{\bar{\psi}^+(y),\psi^-(x)\right\}& ~~~x^0<y^0 
          \end{matrix}\right\} = S_{F}(x-y)
   \end{align*}
-  Where $\psi^+$ and $\psi^-$ are the negative and positive frequency components of the fields and $S_F(x-y)$ is the Dirac Feynman operator defined in \ref{T_dirac}. With this definition through the anti-commutator we can see that $\wick{\c{\psi(x)} \c{\psi(y)}} = 0$ and $\wick{\c{\bar{\psi}(x)} \c{\bar{\psi}(y)}}$. With these definitions Wick's theorem (seee section\ref{sub:wick_s_theorem}) take pretty much the same form. The only thing we need to be wary of is that contractions of fermions that are not beside each other will pick up a minus sign as we need to make them be beside each other for the contraction.  
+  Where $\psi^+$ and $\psi^-$ are the negative and positive frequency components of the fields and $S_F(x-y)$ is the Dirac Feynman operator defined in \ref{T_dirac}. With this definition through the anti-commutator we can see that $\wick{\c{\psi(x)} \c{\psi(y)}} = 0$ and $\wick{\c{\bar{\psi}(x)} \c{\bar{\psi}(y)}}$. With these definitions Wick's theorem (seee section\ref{sub:wick_s_theorem}) take pretty much the same form. The only thing we need to be wary of is that contractions of fermions that are not beside each other will pick up a minus sign as we need to make them be beside each other for the contraction. 
+
+   \item We will also need to define how the fermion fields contract with the ingoing and outgoing momenta. To do this we follow the exact same approach we took in defining \ref{p_contract}. That is we pick a field $\psi$ and use it to act on the momentum state. Using our definition of $\psi$ from \ref{psi_dag}:
+   \begin{align}
+   \label{p_contract_psi}
+      \wick{\c{\psi(x)}\c{\ket{\textbf{p},s}}} &\equiv \psi^+(x)\ket{\textbf{p},s} = \sum_{r=1,2}\int \frac{d^3p'}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}'}}}\left(b^{r}_{\textbf{p}'}u^r(\textbf{p}')e^{ip'\cdot x}\right) \sqrt{2E_{\textbf{p}}}b^{s \dagger}_{\textbf{p}}\ket{0} \nonumber \\
+      & = e^{-ip\cdot x}u^{s}(p)\ket{0}
+    \end{align} 
+    Where we have used the anti-commutation relations \ref{b_anti}. The contraction of $\bar{\psi}$ with a momentum ket can be defined in the same way resulting in $\wick{\c{\bar{\psi}(x)}\c{\ket{\textbf{p},s}}} = e^{ip\cdot x}\bar{v}^{s}(p)\ket{0}$. There is a caveat to this last definition in that it only holds if the ket $\bar{\psi}$ acts on is a anti-fermion as it needs to contain the creation operator $c^{r \dagger}_{\textbf{p}}$. The opposite holds for contractions with the outgoing states. $\psi$ must contract with outgoing anti-fermions and $\bar{\psi}$ with outgoing fermions.
 \end{itemize}
 % subsection feynman_rules_for_fermions (end)
 
@@ -3085,11 +3097,11 @@ As we have no angular dependence.
   \end{align*}
   Where $g$ is the coupling constant, which we will treat as small so that we can perturbativly expand. 
 
-  \item We will then consider what the interactions will look like for the scattering of fermions. The leading contribution to the interaction part of the $\hat{S}$ matrix will be from the quadratic term in the exponential. The reason the linear term doesn not contribute is there are not enough $\psi$'s to contract with each other and the final and initial momenta. For this we need at least $4$ $\psi$'s. We also need to contract This term takes the form:
+  \item We will then consider what the interactions will look like for the scattering of fermions. The leading contribution to the interaction part of the $\hat{S}$ matrix will be from the quadratic term in the exponential. The reason the linear term does not contribute is there are not enough $\psi$'s to contract with each other and the final and initial momenta. For this we need at least $4$ $\psi$'s. We also need to contract This term takes the form:
   \begin{align*}
     {}_{0}\bra{\textbf{p}'\textbf{k}'}T \left\{\frac{1}{2!}(-ig)^2\int d^4x\bar{\psi}_{I}\phi_I\psi_I\int \int d^4y \bar{\psi}_I\phi_I\psi_I\right\}\ket{\textbf{p}\textbf{k}}_{0}
   \end{align*}
-  Where just as in the last few chapters, the fields that appear in the exponential are the free fields denoted with the subscript ${}_{I}$, which we will drop from now on. 
+  Where just as in the last few chapters, the fields that appear in the exponential are the free fields denoted with the subscript ${}_{I}$, which we will drop from now on. We can 
 \end{itemize}
 % subsection yukuwa_hamiltonian (end)
 
