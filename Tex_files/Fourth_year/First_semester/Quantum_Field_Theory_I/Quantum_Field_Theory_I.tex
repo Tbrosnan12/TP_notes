@@ -3076,6 +3076,23 @@ As we have no angular dependence.
 \end{itemize}
 % subsection feynman_rules_for_fermions (end)
 
+\subsection{Yukawa Hamiltonian} % (fold)
+\label{sub:yukuwa_hamiltonian}
+\begin{itemize}
+  \item The Yukawa Hamiltonian is the sum of the Klein Gordon and Dirac Hamiltonian's along with an interaction term that couples the Fermion fields to the bosons:
+  \begin{align*}
+    H = H_{\text{Dirac}} + H_{\text{KG}} + g\int d^4x \bar{\psi}\phi\psi
+  \end{align*}
+  Where $g$ is the coupling constant, which we will treat as small so that we can perturbativly expand. 
+
+  \item We will then consider what the interactions will look like for the scattering of fermions. The leading contribution to the interaction part of the $\hat{S}$ matrix will be from the quadratic term in the exponential. The reason the linear term doesn not contribute is there are not enough $\psi$'s to contract with each other and the final and initial momenta. For this we need at least $4$ $\psi$'s. We also need to contract This term takes the form:
+  \begin{align*}
+    {}_{0}\bra{\textbf{p}'\textbf{k}'}T \left\{\frac{1}{2!}(-ig)^2\int d^4x\bar{\psi}_{I}\phi_I\psi_I\int \int d^4y \bar{\psi}_I\phi_I\psi_I\right\}\ket{\textbf{p}\textbf{k}}_{0}
+  \end{align*}
+  Where just as in the last few chapters, the fields that appear in the exponential are the free fields denoted with the subscript ${}_{I}$, which we will drop from now on. 
+\end{itemize}
+% subsection yukuwa_hamiltonian (end)
+
 % section yukawa_theory (end)
 
 
