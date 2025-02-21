@@ -3048,15 +3048,6 @@ As we have no angular dependence.
    \item This integral is a big problem as just evaluating the second delta function results in the first fraction $\frac{i}{p_{\mathcal{B}}^2-m^2}$, but since $p_{\mathcal{B}}$ is the momentum of an external particle (which must have mass $m$), this term blows up! This means that any diagram involving a loop like the one above will contain a divergent factor. Hence we must ignore them! The diagrams with out these loops are called the \emph{amputated} diagrams. 
 \end{itemize}
 % subsubsection amputations (end)
-% subsection s_matrix_from_feynman_diagrams (end)
-
-\newpage
-
-\section{Yukawa Theory} % (fold)
-\label{sec:yukawa_theory}
-\begin{itemize}
-  \item We study a simplified model of QED where Dirac fermions are coupled to a Klein Gordon field. But first we will need to define Feynman rules for fermions.
-\end{itemize}
 
 \subsection{Feynman Rules for Fermions} % (fold)
 \label{sub:feynman_rules_for_fermions}
@@ -3087,23 +3078,19 @@ As we have no angular dependence.
     Where we have used the anti-commutation relations \ref{b_anti}. The contraction of $\bar{\psi}$ with a momentum ket can be defined in the same way resulting in $\wick{\c{\bar{\psi}(x)}\c{\ket{\textbf{p},s}}} = e^{ip\cdot x}\bar{v}^{s}(p)\ket{0}$. There is a caveat to this last definition in that it only holds if the ket $\bar{\psi}$ acts on is a anti-fermion as it needs to contain the creation operator $c^{r \dagger}_{\textbf{p}}$. The opposite holds for contractions with the outgoing states. $\psi$ must contract with outgoing anti-fermions and $\bar{\psi}$ with outgoing fermions.
 \end{itemize}
 % subsection feynman_rules_for_fermions (end)
+% subsection s_matrix_from_feynman_diagrams (end)
 
-\subsection{Yukawa Hamiltonian} % (fold)
-\label{sub:yukuwa_hamiltonian}
+\newpage
+
+\section{Yukawa Theory} % (fold)
+\label{sec:yukawa_theory}
 \begin{itemize}
-  \item The Yukawa Hamiltonian is the sum of the Klein Gordon and Dirac Hamiltonian's along with an interaction term that couples the Fermion fields to the bosons:
-  \begin{align*}
-    H = H_{\text{Dirac}} + H_{\text{KG}} + g\int d^4x \bar{\psi}\phi\psi
-  \end{align*}
-  Where $g$ is the coupling constant, which we will treat as small so that we can perturbativly expand. 
-
-  \item We will then consider what the interactions will look like for the scattering of fermions. The leading contribution to the interaction part of the $\hat{S}$ matrix will be from the quadratic term in the exponential. The reason the linear term does not contribute is there are not enough $\psi$'s to contract with each other and the final and initial momenta. For this we need at least $4$ $\psi$'s. We also need to contract This term takes the form:
-  \begin{align*}
-    {}_{0}\bra{\textbf{p}'\textbf{k}'}T \left\{\frac{1}{2!}(-ig)^2\int d^4x\bar{\psi}_{I}\phi_I\psi_I\int \int d^4y \bar{\psi}_I\phi_I\psi_I\right\}\ket{\textbf{p}\textbf{k}}_{0}
-  \end{align*}
-  Where just as in the last few chapters, the fields that appear in the exponential are the free fields denoted with the subscript ${}_{I}$, which we will drop from now on. We can 
+  \item We study a simplified model of QED where Dirac fermions are coupled to a Klein Gordon field. But first we will need to define Feynman rules for fermions.
 \end{itemize}
-% subsection yukuwa_hamiltonian (end)
+
+
+
+
 
 % section yukawa_theory (end)
 
