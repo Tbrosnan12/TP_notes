@@ -1928,7 +1928,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
    \begin{flalign*}
       \partial_{\mu}\partial^{\mu}A^{\nu} =\square A^{\nu}= 0
     \end{flalign*} 
-    So each component of $A^{\nu}$ satisfies the Klein Gordon equation \ref{KG eq}. 
+    So each component of $A^{\nu}$ satisfies the \emph{massless} Klein Gordon equation \ref{KG eq}. 
 
 \end{itemize}
 % subsection polarization_vectors (end)
@@ -1973,7 +1973,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
   \begin{align*}
     [A^i(x),E^j(y)] =  \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\boldsymbol{\epsilon}^i_{r}(\textbf{p})\boldsymbol{\epsilon}^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})} \right.\\
     + &\left.[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})} \right] \\
-     = \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\left(\delta^{ij}-\frac{p^iq^j}{\textbf{p}\cdot\textbf{q}}\right)&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}\right.\\
+     = \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\boldsymbol{\epsilon}^i_{r}(\textbf{p})\boldsymbol{\epsilon}^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}\right.\\
     + &\left.[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}\right]
   \end{align*}
   So we can see this is equal to \ref{A_com} if the creation and annihilation operators satisfy:
@@ -1983,6 +1983,27 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 \end{flalign*}
 \end{itemize}
 % subsection commutation_relations (end)
+
+\subsection{QED Propagator} % (fold)
+\label{sub:qed_propagator}
+\begin{itemize}
+  \item We can then simply calculate the Feynman propagator for QED by calculating the time ordered product of the two fields:
+  \begin{align*}
+    \bra{0}T\{A_i(\textbf{x})A_j(\textbf{y})\}\ket{0} &=   \bra{0}T\left\{\int \frac{d^3pd^3q}{(2\pi)^6}\frac{1}{\sqrt{4|\textbf{p}||\textbf{q}|}}\sum_{r,s}\boldsymbol{\epsilon}^i_{r}(\textbf{p})\boldsymbol{\epsilon}^j_{s}(\textbf{q})\left[a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right] \right.\\
+     &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.\times\left[a^{s}_{\textbf{q}}e^{i\textbf{q}\cdot\textbf{y}}+a^{s\dagger}_{\textbf{q}}e^{-i\textbf{q}\cdot\textbf{y}}\right] \right\}\ket{0} \\
+     & = \bra{0}T\left\{\int \frac{d^3p}{(2\pi)^3}\frac{1}{2|\textbf{p}|}\left(\delta_{ij}-\frac{p_ip_j}{\textbf{p}^2}\right)e^{-i\textbf{p}\cdot(\textbf{x}-\textbf{y})} \right\}\ket{0}
+  \end{align*}
+  From here we can employ the same techniques as we did with the KG propagator \ref{test_prop} to make this an integral over $p^0$ (remembering also that $\textbf{A}$ has $m=0$ since its components satisfy the massless KG equation). We can also see that the time ordering will make this a Feynman propagator which we achieve by having an $+i\epsilon$ in the denominator. The final result is:
+  \begin{flalign}
+      D^F_{ij}(x-y) = \int \frac{d^4p}{(2\pi)^4}\frac{i}{p^2+i\epsilon}\left(\delta_{ij}-\frac{p_ip_j}{\textbf{p}^2}\right)e^{-ip\cdot(x-y)}
+    \end{flalign} 
+    \item It turns out that this is not the most useful version of the Propagator in QED. A cleaner Lorentz invariant version is obtained from following the above procedure for the Lorentz gauge. This is not as nice as it is for the Coulomb gauge. The nice thing is that it can be shown that the two propagators, when placed in the calculations that the Feynman rules for QED involve, result in the same terms. A proof of this can be seen on page 142 of David Tong's notes on QFT. This propagator takes the form:
+    \begin{align}
+    \langle 0 | T \{A_\mu(x) A_\nu(y)\} | 0 \rangle &= \int \frac{d^4p}{(2\pi)^4} \frac{-i \eta_{\mu\nu}}{p^2 + i\epsilon} e^{-ip \cdot (x - y)}
+\end{align}  
+\end{itemize}
+
+% subsection qed_propagator (end)
 
 % section quantum_electrodynamics (end)
 
