@@ -1654,9 +1654,10 @@ Meaning we can always set the secondary constraints $\tilde{\phi}_m=0$, in a \em
 \label{sub:maxwell_lagrangian}
 \begin{itemize}
   \item We know from classical field theory, that in electromagnetism the Lagrangian is:
-  \begin{align*}
+  \begin{align}
+  \label{L_max}
        \mathcal{L}_{\text{Max}}  = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}
-     \end{align*}   
+     \end{align}   
      Where $F_{\mu\nu} \equiv \partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}$, with: 
 \begin{align}
 \label{F_mn}
@@ -1887,24 +1888,102 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
   This finally allows us to calculate the Dirac bracket \ref{QED_dirac}:
   \begin{align*}
     \{\pi_i(\textbf{x}),A^j(\textbf{y})\}_D  &= \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\{\pi_i(\textbf{x}),\partial_kA^k(\textbf{z}_1))\}C^{42}(\textbf{z}_1,\textbf{z}_2)\{\partial^l\pi_l(\textbf{z}_2),A^j(\textbf{y})\} \\
-    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta^k_i\left(\frac{\partial}{\partial x^k}\delta(\textbf{x}-\textbf{z}_1)\right)C^{42}(\textbf{z}_1,\textbf{z}_2)\delta^i_l\frac{\partial}{\partial y_l}\delta(\textbf{y}-\textbf{z}_2) \\
-    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}+\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}G(\textbf{z}_1,\textbf{z}_2)\right) \\
-    & = -\delta^j_i\delta(\textbf{x}-\textbf{y})+\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}G(\textbf{x},\textbf{y})
+    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\delta^k_i\left(\frac{\partial}{\partial x^k}\delta(\textbf{x}-\textbf{z}_1)\right)C^{42}(\textbf{z}_1,\textbf{z}_2)\delta^i_l\frac{\partial}{\partial y_l}\delta(\textbf{y}-\textbf{z}_2) \\
+    & = \{\pi_i(\textbf{x}),A^j(\textbf{y})\}-\int d^3z_1\int d^3z_2\delta(\textbf{x}-\textbf{z}_1)\delta(\textbf{y}-\textbf{z}_2)\left(\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}G(\textbf{z}_1,\textbf{z}_2)\right) \\
+    & = -\delta^j_i\delta(\textbf{x}-\textbf{y})-\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j}G(\textbf{x},\textbf{y})
   \end{align*}
   Swapping the order of these, adding an $i$ as the operators must be hermitian and  changing the Dirac Poisson Bracket to a commutator we have our commutation relations:
   \begin{align*}
-    [A^j(\textbf{x}),\pi_i(\textbf{y})] = i\delta^j_i\delta(\textbf{x}-\textbf{y})-i\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j} G(\textbf{x},\textbf{y})
+    [A^j(\textbf{x}),\pi_i(\textbf{y})] = i\delta^j_i\delta(\textbf{x}-\textbf{y})+i\frac{\partial}{\partial x^i}\frac{\partial}{\partial y_j} G(\textbf{x},\textbf{y})
   \end{align*}
-  We can see how this looks in momentum space by considering how the Laplacian $\triangle$ acts on its greens function. We must have that $\triangle G(\textbf{x},\textbf{y})   = \delta(\textbf{x},\textbf{y})$, so:
+  We can see how this looks in momentum space by considering how the Laplacian $\triangle$ acts on its greens function. We must have that $\triangle G(\textbf{x},\textbf{y})   = \delta(\textbf{x}-\textbf{y})$, so:
   \begin{align*}
-    \triangle\int &\frac{d^3}{(2\pi)^3}pG(\textbf{p})e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})} = \delta(\textbf{x}-\textbf{y})  \implies G(\textbf{p}) =  \frac{1}{\textbf{p}^2} 
+    \triangle\int &\frac{d^3p}{(2\pi)^3}G(\textbf{p})e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})} = \delta(\textbf{x}-\textbf{y})  \implies G(\textbf{p}) =  -\frac{1}{\textbf{p}^2} 
   \end{align*}
-  \begin{flalign*}
-    \implies & [A^j(\textbf{x}),\pi_i(\textbf{y})] = i\int \frac{d^3p}{(2\pi)^3}\left(\delta_i^j-\frac{p_ip^j}{\textbf{p}^2}\right) e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})} 
-  \end{flalign*}
-With this derivation we fill in the gaps in David Tong's notes, Tong explains the rest of this section quite well. 
+    \begin{align*}
+    \implies & [A^j(\textbf{x}),\pi_i(\textbf{y})] = i\int \frac{d^3p}{(2\pi)^3}\left(\delta_i^j+\frac{p_ip^j}{\textbf{p}^2}\right) e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})} 
+  \end{align*}
+  Then using the fact that $\pi_i = -E_i$ and lowering the index $j$ on both sides (which picks up a minus sign on the vectors $A^j$ and $p^j$), we arrive at the commutation relations:
+  \begin{flalign}
+  \label{A_com}
+    \implies & [A_j(\textbf{x}),E_i(\textbf{y})] = i\int \frac{d^3p}{(2\pi)^3}\left(\delta_{ij}-\frac{p_ip_j}{\textbf{p}^2}\right) e^{i\textbf{p}\cdot(\textbf{x}-\textbf{y})} 
+  \end{flalign}
+
 \end{itemize}
 % subsection the_dirac_bracket (end)
+
+\subsection{Polarization Vectors} % (fold)
+\label{sub:polarization_vectors}
+\begin{itemize}
+  \item We would like to proceed now to write down a general expression for the $A^{\mu}(x)$ field. To this we first need to find what equation of motion it must satisfy. We start with the Lagrangian density \ref{L_max} and expand it as follows:
+  \begin{align*}
+    L_{\text{Max}} &= -\frac{1}{4}\left[\partial^{\mu}A^{\nu}-\partial^{\nu}A^{\mu}\right]\left[\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}\right] \\
+    & = \frac{1}{2}\left[\partial^{\mu}A^{\nu}\partial_{\nu}A_{\mu}-\partial^{\mu}A^{\nu}\partial_{\mu}A_{\nu}\right]
+  \end{align*}
+  Where we have relabeled some indices to arrive at this last expression. We can now plug this into the equations of motion \ref{EoM} (this was for a scalar field but we can simply replace $\phi$ with $A_{\nu}$). This results in:
+  \begin{align*}
+     \partial_{\mu}\left(\partial^{\nu}A^\mu\right) - \partial_{\mu}\partial^{\mu}A^{\nu} = 0
+   \end{align*} 
+   This first term expands to $\partial_{\mu}\left(\partial^{\nu}A^\mu\right) = \partial^{\nu}(\partial_{i}A^{i}) + \partial_{0}\partial^{\nu}A^0$. This first term vanishes as we are in the Coulomb gauge. For the last term we can recognize that this term must have come from the $\partial^0A^{\nu}\partial_{\nu}A_{0} = \partial^0A^{i}\partial_{i}A_{0}$ \footnote{This simplification can be made as any terms with $\mu=\nu$ vanish as $F_{\mu\nu}$ has only $0$'s on its diagonal} part of the Lagrangian. This term can then be integrated by parts to have $-\partial^0\partial_{i}A^{i}A_{0}$ which also vanishes in the coulomb gauge. Thus we can say that the Equations of motion are:
+   \begin{flalign*}
+      \partial_{\mu}\partial^{\mu}A^{\nu} =\square A^{\nu}= 0
+    \end{flalign*} 
+    So each component of $A^{\nu}$ satisfies the Klein Gordon equation \ref{KG eq}. 
+
+\end{itemize}
+% subsection polarization_vectors (end)
+
+\subsection{Commutation Relations} % (fold)
+\label{sub:commutation_relations}
+\begin{itemize}
+  \item We can now expand $A^{\mu}(x)$ in terms of its Fourier transform. But we should first remember that our choice of constraints and gauges have made it so that $A^0=0$ so we are not interested in that term. The expansion is then:
+    \begin{align*}
+      \textbf{A} = \int \frac{d^3p}{(2\pi)^3}\boldsymbol{\xi}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}
+    \end{align*}
+    \item Immediately from this we can see that the Coulomb gauge $\partial_iA^i =0 $ implies that:
+    \begin{align*}
+       \boldsymbol{\xi}\cdot\textbf{p} =0
+     \end{align*} 
+     Thus to be most general we can pick $\boldsymbol{\xi}$ to be a linear combination of two orthonormal polarization vectors $\boldsymbol{\epsilon}_{r},~r=1,2$ which are orthogonal to $\textbf{p}$ so $\boldsymbol{\epsilon}_{r}\cdot \textbf{p}=0$. Them being orthonormal means $\boldsymbol{\epsilon}_{r}\cdot\boldsymbol{\epsilon}_{r'} = \delta_{rr'}$. With these vectors and the fact that the components of $\textbf{A}$ satisfy the KG equation we can write down the mode expansion of $\textbf{A}$:
+     \begin{flalign*}
+       \textbf{A} &= \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2|\textbf{p}|}}\sum_{r=1}^2\boldsymbol{\epsilon}_{r}(\textbf{p})\left[a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right] \\
+       \textbf{E}  &= \int \frac{d^3p}{(2\pi)^3}(-i)\sqrt{\frac{|\textbf{p}|}{2}}\sum_{r=1}^2\boldsymbol{\epsilon}_{r}(\textbf{p})\left[a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right]
+     \end{flalign*}
+     Where we have made the same sort of expansion for $ \textbf{E}$ as we also have that $ \nabla \cdot \textbf{E} =0$ and for the different factors we have taken inspiration from our expression for momentum density \ref{pi_2} so that we can arrive at the commutation relations we derived above. 
+
+     \item The next step is to derive the commutation relations. But before we do this we need to derive a sum relation for the polarization vectors. In plugging our above expressions into the the commutation relations \ref{A_com} we will have a sum over the product of two different components of the $\boldsymbol{\epsilon}_{r}$'s. To find an expression for this we posit that we can expand this product over possible tensors:
+     \begin{align*}
+        \sum_r\epsilon_r^i(p)\epsilon_r^j(p) = A \delta^{ij}+ B p^ip^j
+      \end{align*} 
+      Based on the two properties that these vectors satisfy, these are the only possible tensors. We can now impose the condition that $\boldsymbol{\epsilon}_{r}\cdot\boldsymbol{\epsilon}_{r'} = \delta_{rr'}$. If we multiply both sides by $\epsilon_s^i$ and sum over $i$ we get the following:
+      \begin{align*}
+        \sum_i\epsilon_s^i(p)\epsilon_s^i(p)\epsilon_s^j(p) = \sum_i\left[A\delta^{ij}\epsilon_s^i(p)+Bp_ip_j\epsilon_s^i(p)\right] \\
+        \implies \epsilon_s^j(p) = A\epsilon_s^j(p) + 0 ~~~\implies A =1
+      \end{align*}
+      Where we have used the fact that $ \sum_i\epsilon_s^i(p)\epsilon_s^i(p)=1$ and $\sum_ip_i\epsilon_s^i(p) = 0 $. We can then repeat this by multiplying by $p_i$ and summing over $i$:
+      \begin{align*}
+        \sum_r\sum_ip^i\epsilon_s^i(p)\epsilon_s^j(p) &= p^j +Bp^j|\textbf{p}|^2 \\
+         \implies B &= -\frac{1}{|\textbf{p}|^2}
+      \end{align*}
+      This gives the nice expression that:
+  \begin{flalign*}
+    \sum_r\epsilon_r^i(p)\epsilon_r^j(p) =  \delta^{ij}-\frac{p^ip^j}{|\textbf{p}|^2}
+  \end{flalign*}
+  We can now easily use this to check what relation the creation and annihilation operators satisfy:
+  \begin{align*}
+    [A^i(x),E^j(y)] =  \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\boldsymbol{\epsilon}^i_{r}(\textbf{p})\boldsymbol{\epsilon}^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})} \right.\\
+    + &\left.[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})} \right] \\
+     = \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\left(\delta^{ij}-\frac{p^iq^j}{\textbf{p}\cdot\textbf{q}}\right)&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}\right.\\
+    + &\left.[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}\right]
+  \end{align*}
+  So we can see this is equal to \ref{A_com} if the creation and annihilation operators satisfy:
+  \begin{flalign*}
+    [a^r_{\textbf{p}}, a^s_{\textbf{q}}] &= [a^{r\dagger}_{\textbf{p}}, a^{s\dagger}_{\textbf{q}}] = 0 \\[8pt]
+    [a^r_{\textbf{p}}, a^{s\dagger}_{\textbf{q}}] &= (2\pi)^3 \delta^{rs} \delta^{(3)}(\textbf{p} - \textbf{q})
+\end{flalign*}
+\end{itemize}
+% subsection commutation_relations (end)
+
 % section quantum_electrodynamics (end)
 
 \newpage
@@ -3082,17 +3161,6 @@ As we have no angular dependence.
 
 \newpage
 
-\section{Yukawa Theory} % (fold)
-\label{sec:yukawa_theory}
-\begin{itemize}
-  \item We study a simplified model of QED where Dirac fermions are coupled to a Klein Gordon field. But first we will need to define Feynman rules for fermions.
-\end{itemize}
-
-
-
-
-
-% section yukawa_theory (end)
 
 
 

@@ -71,25 +71,26 @@
 \contentsline {subsection}{\numberline {6.3}Gauge Fixing}{44}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Constraint Matrix}{45}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}The Dirac Bracket}{47}{subsection.6.5}%
-\contentsline {section}{\numberline {7}Interacting Fields}{49}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Two Point Function}{49}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Dyson's Formula}{50}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Properties of Time evolution}{51}{subsubsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.3}Vacuum State}{51}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Wick's Theorem}{52}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Feynman Diagrams}{53}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Interacting Feynman Diagrams}{53}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Feynman Rules}{55}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Momentum-Space Rules}{55}{subsection.7.8}%
-\contentsline {subsubsection}{\numberline {7.8.1}Integration path}{56}{subsubsection.7.8.1}%
-\contentsline {subsection}{\numberline {7.9}Vacuum Diagrams}{56}{subsection.7.9}%
-\contentsline {section}{\numberline {8}Cross Section \& S Matrix}{59}{section.8}%
-\contentsline {subsection}{\numberline {8.1}The S Matrix}{59}{subsection.8.1}%
-\contentsline {subsubsection}{\numberline {8.1.1}Invariant Matrix Element}{60}{subsubsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.2}2 Particle Scattering}{61}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}2 Final Particles}{62}{subsubsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.3}Decay Rates}{63}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}S Matrix From Feynman Diagrams}{63}{subsection.8.4}%
-\contentsline {subsubsection}{\numberline {8.4.1}Amputations}{66}{subsubsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.5}Feynman Rules for Fermions}{66}{subsection.8.5}%
-\contentsline {section}{\numberline {9}Yukawa Theory}{68}{section.9}%
+\contentsline {subsection}{\numberline {6.6}Polarization Vectors}{49}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Commutation Relations}{49}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Interacting Fields}{51}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Two Point Function}{51}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Dyson's Formula}{52}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Properties of Time evolution}{53}{subsubsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.3}Vacuum State}{53}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Wick's Theorem}{54}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Feynman Diagrams}{55}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Interacting Feynman Diagrams}{55}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Feynman Rules}{57}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Momentum-Space Rules}{57}{subsection.7.8}%
+\contentsline {subsubsection}{\numberline {7.8.1}Integration path}{58}{subsubsection.7.8.1}%
+\contentsline {subsection}{\numberline {7.9}Vacuum Diagrams}{58}{subsection.7.9}%
+\contentsline {section}{\numberline {8}Cross Section \& S Matrix}{61}{section.8}%
+\contentsline {subsection}{\numberline {8.1}The S Matrix}{61}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Invariant Matrix Element}{62}{subsubsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.2}2 Particle Scattering}{63}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}2 Final Particles}{64}{subsubsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.3}Decay Rates}{65}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}S Matrix From Feynman Diagrams}{65}{subsection.8.4}%
+\contentsline {subsubsection}{\numberline {8.4.1}Amputations}{68}{subsubsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.5}Feynman Rules for Fermions}{68}{subsection.8.5}%
