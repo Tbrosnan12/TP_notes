@@ -811,6 +811,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 
 \newpage
 \section{The Dirac Field}
+\label{the_dirac_field}
 \begin{itemize}
   \item We have so far only discussed scalar fields that transform via \ref{phi_transform} and seen that quantization of these fields leads to spin-0 particles that obey the Klein Gordon equation. To find out what describes particles with non-zero spin it is natural to think that we will need some fields that are vector fields of some kind. This means we need to find alternate representation of the Lorentz/Poincar\'e algebra. Remember that the only condition on the generators of these algebras is that they must satisfy the commutation relations \ref{J_com}. We have already found some matrices \ref{M_4x4} that do this. But what if there is another representation.   
 \end{itemize}
@@ -1403,9 +1404,9 @@ We can see from this that these terms will vanish if $\textbf{p} = \textbf{q}$ a
 
 \subsection{Charged particles}
 \begin{itemize}
-  \item Let us n8
-  ''''             //////////////                                           ow investigate if there is a Noether current and a corresponding conserved charge. Recall the Dirac Lagrangian from \ref{D_act} is $\mathcal{L}_D = i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi-m\bar{\psi}\psi$. We can can clearly see that since this is quadratic in the spinors there is a symmetry in that we can define $\psi \rightarrow e^{i\alpha}\psi$ and $\psi^{\dagger}\rightarrow e^{-i\alpha}\psi^{\dagger}$. Infinitesimally these are: $\psi \rightarrow \psi +i\alpha\psi$ and $\psi^{\dagger} \rightarrow \psi^{\dagger} -i\alpha\psi^{\dagger}$. We can then use \ref{Noether} to write down that the conserved current (up to a sign is):
+  \item Let us now investigate if there is a Noether current and a corresponding conserved charge. Recall the Dirac Lagrangian from \ref{D_act} is $\mathcal{L}_D = i\bar{\psi}\gamma^{\mu}\partial_{\mu}\psi-m\bar{\psi}\psi$. We can can clearly see that since this is quadratic in the spinors there is a symmetry in that we can define $\psi \rightarrow e^{i\alpha}\psi$ and $\psi^{\dagger}\rightarrow e^{-i\alpha}\psi^{\dagger}$. Infinitesimally these are: $\psi \rightarrow \psi +i\alpha\psi$ and $\psi^{\dagger} \rightarrow \psi^{\dagger} -i\alpha\psi^{\dagger}$. We can then use \ref{Noether} to write down that the conserved current (up to a sign is):
   \begin{flalign}
+  \label{current}
     j^{\mu} =  \frac{\partial\mathcal{L}}{\partial(\partial_{\mu}\psi)}\Delta\psi = \bar{\psi}\gamma^{\mu}\psi,~~~\partial_{\mu}j^{\mu} = 0
   \end{flalign}
 Note that for our transformation $\mathcal{J}^{\mu} =0$. We can then use this current to calculate the conserved charge via \ref{charge}:
@@ -1971,9 +1972,9 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
   \end{flalign*}
   We can now easily use this to check what relation the creation and annihilation operators satisfy:
   \begin{align*}
-    [A^i(x),E^j(y)] =  \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\boldsymbol{\epsilon}^i_{r}(\textbf{p})\boldsymbol{\epsilon}^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})} \right.\\
+    [A^i(x),E^j(y)] =  \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\epsilon^i_{r}(\textbf{p})\epsilon^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})} \right.\\
     + &\left.[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})} \right] \\
-     = \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\boldsymbol{\epsilon}^i_{r}(\textbf{p})\boldsymbol{\epsilon}^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}\right.\\
+     = \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\epsilon^i_{r}(\textbf{p})\epsilon^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}\right.\\
     + &\left.[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}\right]
   \end{align*}
   So we can see this is equal to \ref{A_com} if the creation and annihilation operators satisfy:
@@ -3167,7 +3168,7 @@ As we have no angular dependence.
          -\left\{\bar{\psi}^+(y),\psi^-(x)\right\}& ~~~x^0<y^0 
          \end{matrix}\right\} = S_{F}(x-y)
   \end{align*}
-  Where $\psi^+$ and $\psi^-$ are the negative and positive frequency components of the fields and $S_F(x-y)$ is the Dirac Feynman operator defined in \ref{T_dirac}. With this definition through the anti-commutator we can see that $\wick{\c{\psi(x)} \c{\psi(y)}} = 0$ and $\wick{\c{\bar{\psi}(x)} \c{\bar{\psi}(y)}}$. With these definitions Wick's theorem (seee section\ref{sub:wick_s_theorem}) take pretty much the same form. The only thing we need to be wary of is that contractions of fermions that are not beside each other will pick up a minus sign as we need to make them be beside each other for the contraction. 
+  Where $\psi^+$ and $\psi^-$ are the negative and positive frequency components of the fields and $S_F(x-y)$ is the Dirac Feynman operator defined in \ref{T_dirac}. With this definition through the anti-commutator we can see that $\wick{\c{\psi(x)} \c{\psi(y)}} = 0$ and $\wick{\c{\bar{\psi}(x)} \c{\bar{\psi}(y)}}$. With these definitions Wick's theorem (see section\ref{sub:wick_s_theorem}) take pretty much the same form. The only thing we need to be wary of is that contractions of fermions that are not beside each other will pick up a minus sign as we need to make them be beside each other for the contraction. 
 
    \item We will also need to define how the fermion fields contract with the ingoing and outgoing momenta. To do this we follow the exact same approach we took in defining \ref{p_contract}. That is we pick a field $\psi$ and use it to act on the momentum state. Using our definition of $\psi$ from \ref{psi_dag}:
    \begin{align}
@@ -3182,7 +3183,47 @@ As we have no angular dependence.
 
 \newpage
 
+\section{QED Interactions} % (fold)
+\label{sec:qed_interactions}
+\begin{itemize}
+  \item We discussed at length in section \ref{sec:quantum_electrodynamics} how to quantize the Electromagnetic field. We now would like to discuss interactions of the electromagnetic field, particularly when we couple it to the spin half fermion fields $\psi$ (i.e. electrons).  
+\end{itemize}
 
+\subsection{Coupling to Fermions} % (fold)
+\label{sub:coupling_to_fermions}
+\begin{itemize}
+  \item We saw in chapter \ref{the_dirac_field} that there is a 4-current associated with the fermionic fields \ref{current} given by $j^{\mu} = \bar{\psi}\gamma^{\mu}\psi$. In our study of electromagnetism we came across Maxwell's equations for matter by including an $A_{\mu}j^{\mu}$ term in the Lagrangian. So it is natural to include the following interaction term to our Hamiltonian:
+  \begin{align*}
+    H_{\text{int}} = \int d^3x \bar{\psi}\gamma^{\mu}\psi A_{\mu}
+  \end{align*}
+  There is actually another argument for adding such a term to our Lagrangian. We would like (for reasons that I need to better explain at some point \footnote{See a good discussion of this\href{https://physics.stackexchange.com/questions/226207/why-do-we-require-local-gauge-invariance}{here}.}) for our Lagrangian to be \emph{locally} $U(1)$ \emph{gauge invariant}. This means that if we transform our fields under the action of the $U(1)$ group then they transform via $\psi \rightarrow e^{i\alpha(x)}\psi$, where $\alpha$ depending on $x$ is what makes this a local symmetry. If we look at the Lagrangian for the spin 1/2 fields which can be seen in the action \ref{D_act}, $\mathcal{L} = \bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi$, we can see that the term that poses a threat to local $U(1)$ gauge invariance is the derivative term as $e^{-i\alpha(x)}\bar{\psi}\partial_{\mu}\left(e^{i\alpha(x)}\psi\right) \neq \bar{\psi}\partial_{\mu}\psi$. This can be fixed in an elegant way. If we replace the derivative operator by what is known as the \emph{gauge covariant derivative}\footnote{The factor of $e$ here is placed here a priori as it turns into the coupling constant later on} :
+  \begin{flalign*}
+    D_{\mu} = \partial_{\mu} + ieA_{\mu}
+  \end{flalign*}
+  Where $A_{\mu}$ is a four vector that conveniently transforms by $A_{\mu} \rightarrow A_{\mu}-\frac{1}{e}\partial_{\mu}\alpha$. (which we know can be true for the electromagnetic $4$-vector as the physics is the same under such transformations.) With this we can see that:
+  \begin{align*}
+    D_{\mu}\psi& \rightarrow \left(\partial_{\mu} + ieA_{\mu}-i\partial_{\mu}\alpha\right)e^{i\alpha(x)}\psi \\
+    & =e^{i\alpha(x)}\left(\partial_{\mu} + ieA_{\mu}\right)\psi 
+  \end{align*}
+  Which is exactly what we need for the term $\bar{\psi}D_{\mu}\psi$ to be gauge invariant. With this we promote our Dirac Lagrangian to:
+  \begin{align*}
+      \mathcal{L} = \bar{\psi}(i\gamma^{\mu}D_{\mu}-m)\psi = \bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi - e\bar{\psi}\gamma^{\mu}\psi A_{\mu}
+  \end{align*}
+  Which is exactly the addition of the interaction term as promised! To fully incorporate $A_{\mu}$ into this action we need to add some kinetic terms. Since we are pretty sure now that this is the electromagnetic $4$-vector, all we need to do is add the Maxwell free field Lagrangian \ref{L_max}. This gives us finally the full Lagrangian for QED:
+  \begin{flalign*}
+    \mathcal{L}_{\text{QED}} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} +\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi - e\bar{\psi}\gamma^{\mu}\psi A_{\mu}
+  \end{flalign*}
+\end{itemize}
+% subsection coupling_to_fermions (end)
+
+\subsection{Feynman Rules for QED} % (fold)
+\label{sub:feynman_rules_for_qed}
+\begin{itemize}
+  \item We can use our knowledge of Feynman rules developed in the previous few chapters to write down the Feynman rules for QED. We make use of  
+\end{itemize}
+% subsection feynman_rules_for_qed (end)
+
+% section qed_interactions (end)
 
 
 \end{document}
