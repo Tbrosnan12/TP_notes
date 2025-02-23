@@ -1945,37 +1945,35 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
     \begin{align*}
        \boldsymbol{\xi}\cdot\textbf{p} =0
      \end{align*} 
-     Thus to be most general we can pick $\boldsymbol{\xi}$ to be a linear combination of two orthonormal polarization vectors $\boldsymbol{\epsilon}_{r},~r=1,2$ which are orthogonal to $\textbf{p}$ so $\boldsymbol{\epsilon}_{r}\cdot \textbf{p}=0$. Them being orthonormal means $\boldsymbol{\epsilon}_{r}\cdot\boldsymbol{\epsilon}_{r'} = \delta_{rr'}$. With these vectors and the fact that the components of $\textbf{A}$ satisfy the KG equation we can write down the mode expansion of $\textbf{A}$:
+     Thus to be most general we can pick $\boldsymbol{\xi}$ to be a linear combination of two orthonormal polarization vectors $\boldsymbol{\epsilon}_{r},~r=1,2$ which are orthogonal to $\textbf{p}$ so $\boldsymbol{\epsilon}_{r}\cdot \textbf{p}=0$. Them being orthonormal means $\boldsymbol{\epsilon}_{r}\cdot\boldsymbol{\epsilon}^{\ast}_{r'} = \delta_{rr'}$. With these vectors and the fact that the components of $\textbf{A}$ satisfy the KG equation we can write down the mode expansion of $\textbf{A}$:
      \begin{flalign*}
-       \textbf{A} &= \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2|\textbf{p}|}}\sum_{r=1}^2\boldsymbol{\epsilon}_{r}(\textbf{p})\left[a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right] \\
-       \textbf{E}  &= \int \frac{d^3p}{(2\pi)^3}(-i)\sqrt{\frac{|\textbf{p}|}{2}}\sum_{r=1}^2\boldsymbol{\epsilon}_{r}(\textbf{p})\left[a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right]
+       \textbf{A} &= \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2|\textbf{p}|}}\sum_{r=1}^2\left[\boldsymbol{\epsilon}_{r}(\textbf{p})a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+\boldsymbol{\epsilon}^{\ast}_{r}(\textbf{p})a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right] \\
+       \textbf{E}  &= \int \frac{d^3p}{(2\pi)^3}(-i)\sqrt{\frac{|\textbf{p}|}{2}}\sum_{r=1}^2\left[\boldsymbol{\epsilon}_{r}(\textbf{p})a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+\boldsymbol{\epsilon}^{\ast}_{r}a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right]
      \end{flalign*}
      Where we have made the same sort of expansion for $ \textbf{E}$ as we also have that $ \nabla \cdot \textbf{E} =0$ and for the different factors we have taken inspiration from our expression for momentum density \ref{pi_2} so that we can arrive at the commutation relations we derived above. 
 
      \item The next step is to derive the commutation relations. But before we do this we need to derive a sum relation for the polarization vectors. In plugging our above expressions into the the commutation relations \ref{A_com} we will have a sum over the product of two different components of the $\boldsymbol{\epsilon}_{r}$'s. To find an expression for this we posit that we can expand this product over possible tensors:
      \begin{align*}
-        \sum_r\epsilon_r^i(p)\epsilon_r^j(p) = A \delta^{ij}+ B p^ip^j
+        \sum_r\epsilon_r^i(p)\epsilon_r^{j\ast}(p) = A \delta^{ij}+ B p^ip^j
       \end{align*} 
-      Based on the two properties that these vectors satisfy, these are the only possible tensors. We can now impose the condition that $\boldsymbol{\epsilon}_{r}\cdot\boldsymbol{\epsilon}_{r'} = \delta_{rr'}$. If we multiply both sides by $\epsilon_s^i$ and sum over $i$ we get the following:
+      Based on the two properties that these vectors satisfy, these are the only possible tensors. We can now impose the condition that $\boldsymbol{\epsilon}_{r}\cdot\boldsymbol{\epsilon}^{\ast}_{r'} = \delta_{rr'}$. If we multiply both sides by $\epsilon_s^{i\ast}$ and sum over $i$ we get the following:
       \begin{align*}
-        \sum_i\epsilon_s^i(p)\epsilon_s^i(p)\epsilon_s^j(p) = \sum_i\left[A\delta^{ij}\epsilon_s^i(p)+Bp_ip_j\epsilon_s^i(p)\right] \\
-        \implies \epsilon_s^j(p) = A\epsilon_s^j(p) + 0 ~~~\implies A =1
+        \sum_i\epsilon_s^{i\ast}(p)\epsilon_s^i(p)\epsilon_s^{j\ast}(p) = \sum_i\left[A\delta^{ij}\epsilon_s^{i\ast}(p)+Bp_ip_j\epsilon_s^{i\ast}(p)\right] \\
+        \implies \epsilon_s^{j\ast}(p) = A\epsilon_s^{j\ast}(p) + 0 ~~~\implies A =1
       \end{align*}
-      Where we have used the fact that $ \sum_i\epsilon_s^i(p)\epsilon_s^i(p)=1$ and $\sum_ip_i\epsilon_s^i(p) = 0 $. We can then repeat this by multiplying by $p_i$ and summing over $i$:
+      Where we have used the fact that $ \sum_i\epsilon_s^i(p)\epsilon_s^{i\ast}(p)=1$ and $\sum_ip_i\epsilon_s^{i\ast}(p) = 0 $. We can then repeat this by multiplying by $p_i$ and summing over $i$:
       \begin{align*}
-        \sum_r\sum_ip^i\epsilon_s^i(p)\epsilon_s^j(p) &= p^j +Bp^j|\textbf{p}|^2 \\
+        \sum_r\sum_ip^i\epsilon_s^i(p)\epsilon_s^{j\ast}(p) &= p^j +Bp^j|\textbf{p}|^2 \\
          \implies B &= -\frac{1}{|\textbf{p}|^2}
       \end{align*}
       This gives the nice expression that:
   \begin{flalign*}
-    \sum_r\epsilon_r^i(p)\epsilon_r^j(p) =  \delta^{ij}-\frac{p^ip^j}{|\textbf{p}|^2}
+    \sum_r\epsilon_r^i(p)\epsilon_r^{j\ast}(p) =  \delta^{ij}-\frac{p^ip^j}{|\textbf{p}|^2}
   \end{flalign*}
   We can now easily use this to check what relation the creation and annihilation operators satisfy:
   \begin{align*}
-    [A^i(x),E^j(y)] =  \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\epsilon^i_{r}(\textbf{p})\epsilon^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})} \right.\\
-    + &\left.[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})} \right] \\
-     = \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\epsilon^i_{r}(\textbf{p})\epsilon^j_{s}(\textbf{q})&\left[[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}\right.\\
-    + &\left.[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}\right]
+    [A^i(x),E^j(y)] =  \int \frac{d^3pd^3q}{(2\pi)^6}\sqrt{\frac{|\textbf{q}|}{4\textbf{p}|}}\sum_{r,s}\left[\epsilon^i_{r}(\textbf{p})\epsilon^{j\ast}_{s}(\textbf{q})[a^r_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})}+\epsilon^{i\ast}_{r}(\textbf{p})\epsilon^{j}_{s}(\textbf{q})[a^{r\dagger}_{\textbf{p}},a^{s}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}-\textbf{y}\cdot \textbf{q})} \right.&\\
+    + \left.\epsilon^i_{r}(\textbf{p})\epsilon^{j}_{s}(\textbf{q})[a^r_{\textbf{p}},a^{s}_{\textbf{q}}]e^{i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})}+\epsilon^{i\ast}_{r}(\textbf{p})\epsilon^{j\ast}_{s}(\textbf{q})[a^{r\dagger}_{\textbf{p}},a^{s\dagger}_{\textbf{q}}]e^{-i(\textbf{p}\cdot\textbf{x}+\textbf{y}\cdot \textbf{q})} \right]&
   \end{align*}
   So we can see this is equal to \ref{A_com} if the creation and annihilation operators satisfy:
   \begin{flalign*}
@@ -1990,8 +1988,8 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 \begin{itemize}
   \item We can then simply calculate the Feynman propagator for QED by calculating the time ordered product of the two fields:
   \begin{align*}
-    \bra{0}T\{A_i(\textbf{x})A_j(\textbf{y})\}\ket{0} &=   \bra{0}T\left\{\int \frac{d^3pd^3q}{(2\pi)^6}\frac{1}{\sqrt{4|\textbf{p}||\textbf{q}|}}\sum_{r,s}\boldsymbol{\epsilon}^i_{r}(\textbf{p})\boldsymbol{\epsilon}^j_{s}(\textbf{q})\left[a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right] \right.\\
-     &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.\times\left[a^{s}_{\textbf{q}}e^{i\textbf{q}\cdot\textbf{y}}+a^{s\dagger}_{\textbf{q}}e^{-i\textbf{q}\cdot\textbf{y}}\right] \right\}\ket{0} \\
+    \bra{0}T\{A_i(\textbf{x})A_j(\textbf{y})\}\ket{0} &=   \bra{0}T\left\{\int \frac{d^3pd^3q}{(2\pi)^6}\frac{1}{\sqrt{4|\textbf{p}||\textbf{q}|}}\sum_{r,s}\left[\boldsymbol{\epsilon}^i_{r}(\textbf{p})a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+\boldsymbol{\epsilon}^{i\ast}_{r}(\textbf{p})a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right] \right.\\
+     &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.\times\left[\boldsymbol{\epsilon}^j_{s}(\textbf{q})a^{s}_{\textbf{q}}e^{i\textbf{q}\cdot\textbf{y}}+\boldsymbol{\epsilon}^{j\ast}_{s}(\textbf{q})a^{s\dagger}_{\textbf{q}}e^{-i\textbf{q}\cdot\textbf{y}}\right] \right\}\ket{0} \\
      & = \bra{0}T\left\{\int \frac{d^3p}{(2\pi)^3}\frac{1}{2|\textbf{p}|}\left(\delta_{ij}-\frac{p_ip_j}{\textbf{p}^2}\right)e^{-i\textbf{p}\cdot(\textbf{x}-\textbf{y})} \right\}\ket{0}
   \end{align*}
   From here we can employ the same techniques as we did with the KG propagator \ref{test_prop} to make this an integral over $p^0$ (remembering also that $\textbf{A}$ has $m=0$ since its components satisfy the massless KG equation). We can also see that the time ordering will make this a Feynman propagator which we achieve by having an $+i\epsilon$ in the denominator. The final result is:
