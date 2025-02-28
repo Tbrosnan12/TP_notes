@@ -1727,7 +1727,7 @@ Where we have integrated the last term by parts.
 \begin{align*}
       0  = \dot{\pi}_0 = \{\pi_0,H\} +\{\pi_0,\pi_0\}  = \{\pi_0,H\}
 \end{align*}
-To evaluate this we need to write down explicitly what the Poisson bracket has become in this continuous case of the electromagnetic field, for two functions $F(\pi_{\mu},A_\mu)$ and $G(\pi_{\mu},A_\mu)$:
+To evaluate this we need to write down explicitly what the Poisson bracket has become in this continuous case of the electromagnetic field, for two functions $F(\pi_{\mu},A_\mu)$ and $G(\pi_{\mu},A_\mu)$ \footnote{Note that although I am using partial derivatives here I really should be using ``$\delta$"  instead of ``$\partial$'' as these are \emph{functional} derivatives. Hence why they give rise to delta functions.}:
 \begin{align}
            \label{Poisson_cont}
            \{F(\textbf{x}),G(\textbf{y})\} =  \int d^3z \left(\frac{\partial F(\textbf{x})}{\partial A^\mu(\textbf{z})}\frac{\partial G(\textbf{y})}{\partial \pi_\mu(\textbf{z})}-\frac{\partial G(\textbf{y})}{\partial A^\mu(\textbf{z})}\frac{\partial F(\textbf{x})}{\partial \pi_\mu(\textbf{z})}\right)
@@ -1752,7 +1752,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
    \label{delta_prop}
      \partial_iA^i(\textbf{x}) = -\int d^3x'A^i(\textbf{x}')\frac{\partial }{\partial(x')^i}\delta(\textbf{x}-\textbf{x}')
    \end{align}
-   This expansion can be easily seen to be true if we integrate by parts. With this we can now see that:
+   This expansion can be easily seen to be true if we integrate by parts. With this we can now see that \footnote{Note that this result can be seen in an easier way if we just commute the derivatives.}:
    \begin{align}
    \label{partial_A}
      \frac{\partial\left(\partial_iA^i(\textbf{x})\right)}{\partial A^j(\textbf{z})} &= -\int d^3x'\frac{\partial A^i(\textbf{x}')}{\partial A^j(\textbf{x})}\frac{\partial}{\partial (x')^i}\delta(\textbf{x}-\textbf{x}') = -\int d^3x\delta^{i}_j\delta(\textbf{x}'-\textbf{z})\frac{\partial}{\partial (x')^i}\delta(\textbf{x}-\textbf{x}') \nonumber \\
