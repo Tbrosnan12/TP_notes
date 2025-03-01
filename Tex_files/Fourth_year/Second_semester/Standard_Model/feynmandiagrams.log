@@ -1,0 +1,14 @@
+This is MetaPost, version 2.01 (TeX Live 2022/dev/Debian) (kpathsea version 6.3.4/dev)  1 MAR 2025 00:47
+**feynmandiagrams.mp
+(/usr/share/texlive/texmf-dist/metapost/base/mpost.mp
+(/usr/share/texlive/texmf-dist/metapost/base/plain.mp
+Preloading the plain mem file, version 1.005) ) (./feynmandiagrams.mp
+(/usr/share/texmf/metapost/feynmf/feynmp.mp) [1] )
+ 
+Here is how much of MetaPost's memory you used:
+ 364 strings using 5924 characters
+ 1539728 bytes of node memory
+ 927 symbolic tokens
+ 14i,78n,28p,116b,3f stack positions out of 16i,98n,32p,200b,4f
+1 output file written: feynmandiagrams.1
+

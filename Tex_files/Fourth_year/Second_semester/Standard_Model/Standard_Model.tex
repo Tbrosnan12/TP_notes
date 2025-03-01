@@ -33,6 +33,7 @@
  \usepackage[explicit]{titlesec}
  % for making section titles variables that can be used in header 
 \usepackage{fancyhdr} % for fancy headers 
+\usepackage{feynman}% For Feynman diagrams
 
 % Random commands and what not 
 \numberwithin{equation}{section}
@@ -439,6 +440,77 @@ If the final products have spin we will need to sum over these spins. Similarly 
  \end{itemize}
  % subsection 2_particle_collision (end)
 % section scattering (end)
+
+\newpage
+\section{Electron Positron Annihilation} % (fold)
+\label{sec:electron_positron_annihilation}
+\begin{itemize}
+    \item We would now like to discuss the annihilation of an electron $e^-$ and its anti-particle the positron $e^+$. Firstly we will calculate the cross section for the process $e^+e^- \rightarrow \mu^+\mu^-$ ($\mu$ being muons) as this calculation will serve as a basis for many more complicated calculations. In doing this we will once again rely heavily on my QFT notes as we need to work with spinors for the fermions. 
+\end{itemize}
+
+\subsection{Feynman Diagrams} % (fold)
+\label{sub:feynman_diagrams}
+\begin{itemize}
+    \item Despite their pretty form, Feynman diagrams do not represent physical process that actually happen. Despite this we will still use them for the basis of figuring out which terms in the expansion of the interaction part of the scattering which (as per section $8.4$ of my QFT notes) takes the form:
+    \begin{align}
+    \label{scattering_series}
+        {}_{\text{in}}\braket{\textbf{p}_1\textbf{p}_2|\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{\text{out}} \propto \lim_{t\rightarrow\infty(1-i\epsilon)}{}_{0}\bra{\textbf{p}_1\textbf{p}_2}T\left\{\text{exp}\left(-i\int_{-t}^{t}dt'H_{I}(t')\right)\right\}\ket{\textbf{k}_{\mathcal{A}}\textbf{k}_{\mathcal{B}}}_{0}
+    \end{align}
+    We will expand in powers of the interaction parameter. The Lagrangian for QED (also per my QFT notes, see section 9.1) is given by\footnote{Note here the Dirac adjoint which is the bar on some of the $\psi$'s is defined as $\bar{\psi} \equiv \psi^{\dagger}\gamma^{0}$.}:
+    \begin{align}
+    \label{L_QED}
+          \mathcal{L}_{\text{QED}} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} +\bar{\psi}(i\gamma^{\mu}\partial_{\mu}-m)\psi - e\bar{\psi}\gamma^{\mu}\psi A_{\mu}
+     \end{align}
+     
+     \item We will be working, for simplicity, in the high energy regime, where all particles in the $e^+e^- \rightarrow \mu^+\mu^-$ reaction can be treated as massless. Recall that the $\psi$'s here are Dirac fermions, which are comprised of two $2$-component spinors know as Weyl spinors. This spinors are called left and right handed spinors and the $\psi$'s which are $4$-component spinors can be written as the following \footnote{For a full discussion of Weyl spinors see section $4.6$ of my QFT notes.}:
+     \begin{align*}
+        \label{weyl}
+        \psi = \begin{pmatrix}
+        \psi_L \\
+        \psi_R
+    \end{pmatrix}
+\end{align*}
+Note that for this calculation it is most useful to use the Chiral representation of the Dirac gamma matrices. This means\footnote{Note here $\bar{\sigma} = (\mathbbm{1},-\boldsymbol{\sigma})$}:
+\begin{align*}
+\gamma^{\mu} = \begin{pmatrix}
+        0 & \sigma^{\mu} \\
+        \bar{\sigma}^{\mu} & 0
+      \end{pmatrix} \implies 
+    \gamma^{0} = \begin{pmatrix}
+      0 & \mathbb{I} \\
+      \mathbb{I} & 0 
+    \end{pmatrix},  ~~~ \gamma^{i} = \begin{pmatrix}
+      0 & \sigma^{i} \\
+      -\sigma^{i} & 0 
+    \end{pmatrix} 
+\end{align*}
+\item With this we can see that the QED Lagrangian \ref{L_QED} can be expanded in terms of the left and right component spinors: 
+\begin{align*}
+    \mathcal{L}_{\text{QED}} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} +i\psi_{R}^{\dagger}\sigma^{\mu}\partial_{\mu}\psi_R+i\psi_{L}^{\dagger}\bar{\sigma}^{\mu}\partial_{\mu}\psi_L - e\psi^{\dagger}_R\sigma^{\mu}\psi_RA_{\mu}- e\psi^{\dagger}_L\bar{\sigma}^{\mu}\psi_LA_{\mu}& \\
+    + m\left(\psi^{\dagger}_R\psi_L + \psi^{\dagger}_L\psi_R\right)&
+\end{align*}
+From this we can see that the last term, which is proportional to the mass, couples the left handed spinors to the right handed ones. In fact if we have $m=0$, which is indeed the situation we will be considering, then the two left and right handed particles completely decouple and act as separate particles. This means in the high energy case a right handed electron cannot turn into a left handed one. Note that both species of particles also have their own interaction terms so they still interact amongst themselves. This isolation is essentially \emph{Conservation of helicity}. 
+
+\item We are now ready to consider the interactions. Recall that in the calculation of terms in the power series of \ref{scattering_series} we contract ingoing and outgoing states with intermediate states. Since the interaction terms contain 3 fields, in order to have an even number of fields to contract we need to look at the quadratic terms of the interaction Hamiltonian $H_{I}$. This allows us to immediately write down the Feynman diagram that correspond to the first order interaction terms. We can reason that the following diagram is the only first order term as the fields available for contraction are $\psi,A,\psi,\psi,A\psi$. Two of the $\psi$'s contract with the ingoing momenta and two with the outgoing in order to achieve $e^+e^- \rightarrow \mu^+\mu^-$, the final $A$'s must contract with themselves. This takes the following diagrammatic form: 
+
+\begin{figure}[H]
+\centering
+    \resizebox{0.3\textwidth}{!}{
+        \begin{feynman}
+    \fermion[label=$e^-$]{5.00, 5.00}{4.00, 4.00}
+    \fermion[label=$e^+$]{6.00, 4.00}{5.00, 5.00}
+    \electroweak[color=abb8c3]{5.00, 5.00}{5.00, 7.00}
+    \fermion[label=$\mu^-$]{6.00, 8.00}{5.00, 7.00}
+    \fermion[label=$\mu^+$]{5.00, 7.00}{4.00, 8.00}
+\end{feynman}
+    }
+\end{figure}
+
+
+\end{itemize}
+% subsection feynman_diagrams (end)
+
+% section electron_positron_annihilation (end)
 
 \end{document}
     
