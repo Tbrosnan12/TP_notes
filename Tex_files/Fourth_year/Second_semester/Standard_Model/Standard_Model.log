@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  1 MAR 2025 19:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  1 MAR 2025 20:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -250,7 +250,7 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip57
 \blx@bcfin=\read2
 \blx@bcfout=\write3
-\blx@langwohyphens=\language87
+\blx@langwohyphens=\language3
 \c@mincomprange=\count316
 \c@maxcomprange=\count317
 \c@mincompwidth=\count318
@@ -1525,12 +1525,12 @@ Package logreq Info: Writing requests to 'Standard_Model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38302 strings out of 478287
- 772274 string characters out of 5849289
- 1505240 words of memory out of 5000000
- 55786 multiletter control sequences out of 15000+600000
+ 38302 strings out of 480247
+ 772274 string characters out of 5896106
+ 1500195 words of memory out of 5000000
+ 55533 multiletter control sequences out of 15000+600000
  491858 words of font info for 121 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 14 hyphenation exceptions out of 8191
  99i,16n,104p,1261b,1200s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm9.600pk> 
 </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/u
