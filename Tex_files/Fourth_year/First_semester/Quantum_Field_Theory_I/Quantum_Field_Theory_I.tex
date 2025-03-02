@@ -1998,6 +1998,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
     \end{flalign} 
     \item It turns out that this is not the most useful version of the Propagator in QED. A cleaner Lorentz invariant version is obtained from following the above procedure for the Lorentz gauge. This is not as nice as it is for the Coulomb gauge. The nice thing is that it can be shown that the two propagators, when placed in the calculations that the Feynman rules for QED involve, result in the same terms. A proof of this can be seen on page 142 of David Tong's notes on QFT. This propagator takes the form:
     \begin{align}
+    \label{A_contract}
     \langle 0 | T \{A_\mu(x) A_\nu(y)\} | 0 \rangle &= \int \frac{d^4p}{(2\pi)^4} \frac{-i \eta_{\mu\nu}}{p^2 + i\epsilon} e^{-ip \cdot (x - y)}
 \end{align}  
 \end{itemize}
@@ -2007,7 +2008,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 % section quantum_electrodynamics (end)
 
 \newpage
-\section{Interacting Fields} % (fold)
+\section{Interacting Fields} % (fold){}
 \label{interacting_fields}
 \begin{itemize}
   \item We have seen in the interacting theory, that the main quantity of interest to us is the two point correlation function as this is related to the Feynman propagator \ref{Feynmann}. We will be doing this for the Klein Gordon field with the addition to the Lagrangian of the interaction term $\frac{\lambda}{4!}\phi^4$. We don't try do this for $\phi^3$ as this is not bounded from below and we must always have a positive definite Hamiltonian and $\phi^3$. It also turn out that any terms of the form $\phi^n$, $n>4$ are not physical, as since the scalar field $\phi$ must have dimension [mass]\footnote{We can figure this out from imposing that the action must be dimensionless (since $\hbar=1$) then our Lagrangian \ref{KG field} must have units [mass]$^4$}, then the coupling constants for $n>4$ must have units 1/[mass] meaning on low energy scales these terms dominate. This is nonphysical as we don't expect interactions to dominate at low energies.  
@@ -3217,7 +3218,9 @@ As we have no angular dependence.
 \subsection{Feynman Rules for QED} % (fold)
 \label{sub:feynman_rules_for_qed}
 \begin{itemize}
-  \item We can use our knowledge of Feynman rules developed in the previous few chapters to write down the Feynman rules for QED. We make use of 
+  \item We can use our knowledge of Feynman rules developed in the previous few chapters to write down the Feynman rules for QED. We make use of  
+
+  We can recall that the contraction of two $A_{\mu}$ fields is the same as the their time ordered product hence using \ref{A_contract} ...
 \end{itemize}
 % subsection feynman_rules_for_qed (end)
 

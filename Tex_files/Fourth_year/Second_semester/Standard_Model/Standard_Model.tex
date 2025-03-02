@@ -34,6 +34,7 @@
  % for making section titles variables that can be used in header 
 \usepackage{fancyhdr} % for fancy headers 
 \usepackage{feynman}% For Feynman diagrams
+\usepackage{simpler-wick} % For wick contraction notation 
 
 % Random commands and what not 
 \numberwithin{equation}{section}
@@ -491,7 +492,7 @@ Note that for this calculation it is most useful to use the Chiral representatio
 \end{align*}
 From this we can see that the last term, which is proportional to the mass, couples the left handed spinors to the right handed ones. In fact if we have $m=0$, which is indeed the situation we will be considering, then the two left and right handed particles completely decouple and act as separate particles. This means in the high energy case a right handed electron cannot turn into a left handed one. Note that both species of particles also have their own interaction terms so they still interact amongst themselves. This isolation is essentially \emph{Conservation of helicity}. 
 
-\item We are now ready to consider the interactions. Recall that in the calculation of terms in the power series of \ref{scattering_series} we contract ingoing and outgoing states with intermediate states. Since the interaction terms contain 3 fields, in order to have an even number of fields to contract we need to look at the quadratic terms of the interaction Hamiltonian $H_{I}$. This allows us to immediately write down the Feynman diagram that correspond to the first order interaction terms. We can reason that the following diagram is the only first order term as the fields available for contraction are $\psi,A,\psi,\psi,A,\psi$. Two of the $\psi$'s contract with the ingoing momenta and two with the outgoing in order to achieve $e^+e^- \rightarrow \mu^+\mu^-$, the final $A$'s must contract with themselves. This takes the following diagrammatic form: 
+\item We are now ready to consider the interactions. Recall that in the calculation of terms in the power series of \ref{scattering_series} we contract ingoing and outgoing states with intermediate states. Since the interaction terms contain 3 fields, in order to have an even number of fields to contract we need to look at the quadratic terms of the interaction Hamiltonian $H_{I}$. This allows us to immediately write down the Feynman diagram that correspond to the first order interaction terms. We can reason that the following diagram is the only first order term as the fields available for contraction are $\bar{\psi},A,\psi,\bar{\psi},A,\psi$. Two of the $\psi$'s contract with the ingoing momenta and two with the outgoing in order to achieve $e^+e^- \rightarrow \mu^+\mu^-$, the final $A$'s must contract with themselves. This takes the following diagrammatic form: 
 \begin{figure}[H]
 \centering
     \resizebox{0.2\textwidth}{!}{
@@ -528,16 +529,22 @@ From this we can see that the last term, which is proportional to the mass, coup
              0 & E- p_z
          \end{pmatrix}u_L = 0  
      \end{align*} 
-     Both of these have the same solutions $\xi_{+}= \begin{pmatrix}
+     Both of these have the same solutions $\begin{pmatrix}
          1 \\ 0
-     \end{pmatrix}$ and $\xi_{-}= \begin{pmatrix}
+     \end{pmatrix}$ and $\begin{pmatrix}
          0 \\ 1
-     \end{pmatrix}$. For $u_R$, $\xi_+$ has eigenvalue $+E$ and $\xi_-$ has eigenvalue $-E$ in the case of $u_L$ it is the other way round. It is convenient (see section 4.8 of my QFT notes) to normalize these spinors by:
+     \end{pmatrix}$. For $u_R$, $\begin{pmatrix}
+         1 \\ 0
+     \end{pmatrix}$ has eigenvalue $+E$ and $\begin{pmatrix}
+         0 \\ 1
+     \end{pmatrix}$has eigenvalue $-E$ in the case of $u_L$ it is the other way round. It is convenient (see section 4.8 of my QFT notes) to normalize these spinors by $\sqrt{2E}$ and write them in the following:
      \begin{align*}
           & u_R = \sqrt{2E}\xi_+, ~~~u_L = \sqrt{2E}\xi_- \\
           & v_R = \sqrt{2E}\xi_-, ~~~v_L = \sqrt{2E}\xi_+
       \end{align*}    
       Where we have change $u \rightarrow v$ for the negative energy solutions. 
+
+\item Big disclaimer, $\xi_+$ and $\xi_-$ are defined to be one of the two solution $(1,0)^T$ and $(0,1)^T$, how-ever the choice of which one they are depends on the direction of motion. $\xi_+$ is defined to be the spinor with spin up (that means positive eigenvalue) along the direction of motion and $\xi_-$ as the spinor with spin down (negative eigenvalue). However, we need to be careful in annihilation processes as then anti-particles are travailing the opposite direction and thus which spinor $(1,0)^T$ or $(0,1)^T$ has positive eigenvalue can swap. 
 \end{itemize}
 % subsubsection massless_fermions (end)
 % subsection feynman_diagrams (end)
@@ -548,10 +555,26 @@ From this we can see that the last term, which is proportional to the mass, coup
 \begin{itemize}
     \item The setup for the scattering in the Center of Mass (CM) frame will be the following. The electron and the positron will be moving in the opposite directions along the $\hat{z}$ axis with momenta $p_-$ and $p_+$. This means $p_- = (E,0,0,E)$ and $p_+ = (E,0,0,-E)$. The outgoing muon and anti-muon can be scattered at angles in the $\hat{x}-\hat{z}$ plane. Hence their outgoing momenta are given by $p_-' = (E,E\sin \theta,0,E\cos \theta)$ and $p_+' = (E,-E\sin \theta,0,-E\cos \theta)$.
 
-We can then use Feynman rules for QED (see section 9.2 of my QFT notes). These tell us to add to our Matrix element a $-ie\gamma^{\mu}$ for every vertex, note that in our case since we have split up the 
+    \item We can then use Feynman rules for QED (see section 9.2 of my QFT notes). Let us first deal with the annihilation of the electron and positron vertex. The Feynman rules tell us to add to our Matrix element a $-e\gamma^{\mu}$ for every vertex, note that in our case since we have split our Lagrangian into right and left handed spinors we instead add a $-e\sigma^{\mu}$ for right handed spinors and $-ie\bar{\sigma}^{\mu}$ for left handed spinors. We then have the contraction of the fields with the incoming momenta. One of the fields is a $\psi^{\dagger}$ \footnote{Note this is not a $\bar{\psi}$ here as we used the $\gamma^{0}$ from the $\bar{\psi}$ to make $\gamma^{\mu}$ diagonal so that the vertex cleanly gave us $\sigma^{\mu}$ and $\bar{\sigma}^{\mu}$.} this contracts with the incoming momenta of the positron to give us a $v^{\dagger}(p_+)$ as per the Feynman rules. Similarly the $\psi$ contracts with the incoming momenta of the electron to give us a $u(p_-)$. Mathematically this looks like the following. We will pick to do this for the case of a right handed electron and left handed positron\footnote{Note jsut as we mentioned earlier since the positron is going in the opposite direction $v_L^{\dagger}(p_+) = (0~1)^{T}$}.:
+    \begin{align*}
+        \bra{0}- e\psi^{\dagger}_R\sigma^{\mu}\psi_R\ket{e_R^{-}(p_-)e_L^{+}(p_+)} &=  \bra{0}\wick{- e\c1 \psi^{\dagger}_R\sigma^{\mu}\c2 \psi_R\ket{\c2e_R^{-}(p_-) \c1e_L^{+}(p_+)}} = -ev_L^{\dagger}(p_+)e^{ip_+\cdot x}\sigma^{\mu}u_R(p_-)e^{-ip_-\cdot x} \\
+         & = \sqrt{2E}(0 ~ 1)(1,\boldsymbol{\sigma})\sqrt{2E}\begin{pmatrix}
+             1 \\0 
+         \end{pmatrix}e^{i(p_--p_+)\cdot x} = 2E(0,1,i,0)^{\mu}e^{i(p_--p_+)\cdot x}
+    \end{align*}
+    This vector we see here is nothing more then a polarization vector that we use to describe photons. We will call it $\epsilon^{\mu}_+ = \frac{1}{\sqrt{2}}(0,1,i,0)^{\mu}$. Note that the left handed current $- e\psi^{\dagger}_L\sigma^{\mu}\psi_L$ when acted on this electron positron ket is zero as in the massless case the right handed electron does not couple to the left handed fermions. 
+
+    \item Next up is the propagator, which corresponds to the contraction of the two $A_{\mu}$ fields. This propagator in momentum space is given simply by \footnote{Note their is implicit time ordering operators on all quantities in this section. } (see section 4.8 of my QFT notes):
+    \begin{align*}
+       \bra{0} A_{\nu} A_{\mu}\ket{0}=\wick{\c A_{\nu}\c A_{\mu}} = \frac{-i\eta_{\mu\nu}}{q^2}
+     \end{align*}
+     \item Finally we have the contraction of the fields with the final muon momenta. This takes the form, we will choose the muon to have :  
+     \begin{align*}
+         \bra{\mu_R^{-}(p_-)\mu_L^{+}(p_+)}(- e)\psi^{\dagger}_R\sigma^{\nu}\psi_R \ket{0}&=-e \wick{  \langle \c1\mu_R^{-}(p_-)\c2 \mu_L^{+}(p_+)| \c2 \psi^{\dagger}_R\sigma^{\nu}\c1 \psi_R}\ket{0} = -e
+     \end{align*}
+
 \end{itemize}
 % subsection matrix_element (end)
-
 
 % section electron_positron_annihilation (end)
 

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  1 MAR 2025 20:58
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  1 MAR 2025 20:50
->>>>>>> dedb104ae524b0b25b0c9d34ad7200a48eaf137f
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  2 MAR 2025 02:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1161,6 +1157,22 @@ decorations.pathreplacing.code.tex))
 zlibrarydecorations.markings.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.markings.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/simpler-wick/simpler-wick.sty
+Package: simpler-wick 2015/12/11 Simpler Wick contractions
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgfopts/pgfopts.sty
+Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
+\pgfopts@list@add@a@toks=\toks45
+\pgfopts@list@add@b@toks=\toks46
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
+yexternal.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zexternalshared.code.tex)))
 
 Package biblatex Warning: Load 'inputenc' before biblatex.
 
@@ -1182,24 +1194,24 @@ LaTeX Warning: Label `trailer' multiply defined.
 )
 \openout1 = `Standard_Model.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1235,7 +1247,7 @@ LaTeX Font Info:    ... okay on input line 97.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 97.
+Package hyperref Info: Link coloring OFF on input line 98.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1247,9 +1259,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count473
 )
-LaTeX Info: Redefining \ref on input line 97.
-LaTeX Info: Redefining \pageref on input line 97.
-LaTeX Info: Redefining \nameref on input line 97.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
+LaTeX Info: Redefining \nameref on input line 98.
 
 (./Standard_Model.out) (./Standard_Model.out)
 \@outlinefile=\write6
@@ -1270,8 +1282,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Standard_Model.bbl' found.
 
 (./Standard_Model.bbl)
-Package biblatex Info: Reference section=0 on input line 97.
-Package biblatex Info: Reference segment=0 on input line 97.
+Package biblatex Info: Reference section=0 on input line 98.
+Package biblatex Info: Reference segment=0 on input line 98.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1280,12 +1292,12 @@ Package biblatex Info: Reference segment=0 on input line 97.
 \scratchbox=\box87
 \nofMPsegments=\count475
 \nofMParguments=\count476
-\everyMPshowfont=\toks45
+\everyMPshowfont=\toks47
 \MPscratchCnt=\count477
 \MPscratchDim=\dimen316
 \MPnumerator=\count478
 \makeMPintoPDFobject=\count479
-\everyMPtoPDFconversion=\toks46
+\everyMPtoPDFconversion=\toks48
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1296,20 +1308,20 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count480
-LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 100
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 100
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 99
-.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
+0.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1320,7 +1332,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 \openout7 = `Standard_Model.toc'.
 
  [3]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 154
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 155
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
@@ -1337,11 +1349,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 201.
+(hyperref)                removing `math shift' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 201.
+(hyperref)                removing `math shift' on input line 202.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1355,17 +1367,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Hypercharge.png, id=164, 1616.0375pt x 642.4pt>
 File: Hypercharge.png Graphic file (type png)
 <use Hypercharge.png>
-Package pdftex.def Info: Hypercharge.png  used on input line 236.
+Package pdftex.def Info: Hypercharge.png  used on input line 237.
 (pdftex.def)             Requested size: 308.82936pt x 122.76303pt.
 <3x3.png, id=167, 632.3625pt x 234.8775pt>
 File: 3x3.png Graphic file (type png)
 <use 3x3.png>
-Package pdftex.def Info: 3x3.png  used on input line 254.
+Package pdftex.def Info: 3x3.png  used on input line 255.
 (pdftex.def)             Requested size: 257.35518pt x 95.59077pt.
 <mesons.png, id=168, 646.415pt x 262.9825pt>
 File: mesons.png Graphic file (type png)
 <use mesons.png>
-Package pdftex.def Info: mesons.png  used on input line 260.
+Package pdftex.def Info: mesons.png  used on input line 261.
 (pdftex.def)             Requested size: 308.82936pt x 125.64027pt.
 
 
@@ -1380,17 +1392,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.262 \end{figure}
+l.263 \end{figure}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.262 \end{figure}
+l.263 \end{figure}
                    <./Hypercharge.png> <./3x3.png>]
 <3x3x3.png, id=182, 1710.39pt x 991.705pt>
 File: 3x3x3.png Graphic file (type png)
 <use 3x3x3.png>
-Package pdftex.def Info: 3x3x3.png  used on input line 307.
+Package pdftex.def Info: 3x3x3.png  used on input line 308.
 (pdftex.def)             Requested size: 411.76987pt x 238.7404pt.
 
 
@@ -1405,7 +1417,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.310 \item T
+l.311 \item T
              he quark composition of the individual Baryons is then: <./mesons.
 png>]
 
@@ -1420,12 +1432,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.345 \newpage
+l.346 \newpage
                <./3x3x3.png>]
 <scatter.png, id=195, 464.73625pt x 155.58125pt>
 File: scatter.png Graphic file (type png)
 <use scatter.png>
-Package pdftex.def Info: scatter.png  used on input line 373.
+Package pdftex.def Info: scatter.png  used on input line 374.
 (pdftex.def)             Requested size: 308.82936pt x 103.39137pt.
 
 
@@ -1440,7 +1452,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.394      \end{align*}
+l.395      \end{align*}
                         <./scatter.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1500,6 +1512,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [13]
 
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 564.
+
+
+Package simpler-wick Warning: I have reached the end of \wick with some unclose
+d contractions on input line 564.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -1529,13 +1549,13 @@ Package logreq Info: Writing requests to 'Standard_Model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38302 strings out of 480247
- 772274 string characters out of 5896106
- 1500195 words of memory out of 5000000
- 55533 multiletter control sequences out of 15000+600000
+ 38893 strings out of 480247
+ 789653 string characters out of 5896106
+ 1515860 words of memory out of 5000000
+ 56102 multiletter control sequences out of 15000+600000
  491858 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,16n,104p,1261b,1200s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,16n,104p,1292b,1202s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm9.600pk> 
 </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{/u
 sr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/te
@@ -1560,10 +1580,10 @@ msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 y9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Standard_Model.pdf (15 pages, 471142 bytes).
+Output written on Standard_Model.pdf (15 pages, 479069 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
+ 380 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  318 words of extra memory for PDF output out of 10000 (max. 10000000)
 
