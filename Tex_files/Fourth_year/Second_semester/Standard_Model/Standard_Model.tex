@@ -405,9 +405,10 @@ Where we also for convenience have included in this the factors of $1/2E$, so as
     \Gamma(A \rightarrow f) = \frac{1}{2m_A}\int d\Pi_n|\mathcal{M}(A\rightarrow f)|^2
 \end{align*}
 If the final products have spin we will need to sum over these spins. Similarly we need to do the same for the initial state, but often this state is unknown so we simply average over all possible spins instead. This expression is actually a simplification of the following more general expression for the cross section in therms of the invariant matrix element:
-\begin{align*}
+\begin{align}
+\label{cross}
     \sigma(A+B \rightarrow f) = \frac{1}{2E_A2E_B|v_A-v_B|}\int d\Pi_n|\mathcal{M}(A\rightarrow f)|^2
-\end{align*}
+\end{align}
 
  \end{itemize}
  % subsection master_formula (end)
@@ -415,7 +416,7 @@ If the final products have spin we will need to sum over these spins. Similarly 
  \subsection{2 Particle Collision} % (fold)
  \label{sub:2_particle_collision}
  \begin{itemize}
-     \item We can now use the above equations to analyze the problem of a two particle collision. We will impotently do this for the case where $\mathcal{M}$ is constant, as this represents the case where each point in the phase space is equally likely. We will consider an initial state of momentum $P$ and a final state of two particles with momentum $\textbf{p}_1$ and $\textbf{p}_2$.In this scenario the phase space integral is just:
+     \item We can now use the above equations to analyze the problem of a two particle collision. We will impotently do this for the case where $\mathcal{M}$ is constant, as this represents the case where each point in the phase space is equally likely. We will consider an initial state of momentum $P$ and a final state of two particles with momentum $\textbf{p}_1$ and $\textbf{p}_2$. In this scenario the phase space integral is just:
      \begin{align}
      \label{2_phase}
          \int \Pi_2 = \int \frac{d^3p_1}{(2\pi)^32E_1}\frac{d^3p_2}{(2\pi)^32E_2}(2\pi)^4\delta^{(4)}(P-p_1-p_2)
@@ -629,7 +630,7 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
 
      Then we are required to integrate over all undetermined momenta, which is just integrating over $q$, this takes the two delta functions and requires that $p_--p_+ = p_+'-p_-'$. which is just momentum conservation for the whole interaction. This also forces $q^2 = (p_-+p_+)^2 = (2E,0,0,0)^2 = (2E)^2$. All in all integrating \ref{2_delta} results in:
      \begin{align*}
-          e^2(\epsilon_2^{\nu}\eta_{\nu\mu}\epsilon_{1}^{\mu})(2\pi)^4\delta^{(4)}(p_--p_+-p_+'+p_-')
+          -e^2(\epsilon_2^{\nu}\eta_{\nu\mu}\epsilon_{1}^{\mu})(2\pi)^4\delta^{(4)}(p_--p_+-p_+'+p_-')
      \end{align*}
       If we look at expression \ref{T_hat}, then we can see that this is exactly what we would expect to see from an interacting diagram, and that what is left over after the integration must be the matrix element $M$ for this $e^+e^- \rightarrow \mu^+\mu^-$ process. 
 
@@ -645,6 +646,40 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
      \end{align*}
 \end{itemize}
 % subsection matrix_element (end)
+
+\subsection{Cross sections} % (fold)
+\label{sub:cross_sections}
+\begin{itemize}
+    \item We can then directly use \ref{cross} to calculate the cross sections for each of these processes. For the phase space part of this integral we can use our previously calculated expression \ref{phase_2} for two particle collisions. In plugging into \ref{cross}, there is a little difficulty in figuring out what the velocities $|v_+-v_-|$ will look like if the particles are massless. for this we can simply recall that massless particles must move at the speed of light, which is $c=1$ in our units. So seeing as the initial electron and positron are moving in opposite directions, we have that $|v_+-v_-| =2$. This means the cross section for the $e_L^+e_R^- \rightarrow \mu_L^+\mu_R^-$ process is:
+    \begin{align*}
+        \sigma(e_L^+e_R^- \rightarrow \mu_L^+\mu_R^-) &= \frac{1}{2E2E \cdot 2}\int d\Pi_n|\mathcal{M}(e_L^+e_R^- \rightarrow \mu_L^+\mu_R^-)|^2 \\
+        & = \frac{1}{16\pi E_{\text{CM}}^2}\int \frac{d \Omega}{4\pi} e^4(1+\cos \theta)^2
+    \end{align*}
+    This expression allows us to write down the differential cross section in terms of $\alpha \equiv \frac{e^2}{4\pi}$:
+    \begin{align*}
+         \frac{d \sigma}{d\Omega} =\frac{\alpha^2}{4E_{CM}^2}(1+\cos \theta)^2
+     \end{align*}
+     We find that if we average over the 4 possible processes then the differential cross section becomes:
+     \begin{align*}
+          \frac{d \sigma}{d\Omega} =\frac{\alpha^2}{4E_{CM}^2}(1+\cos^2 \theta)
+      \end{align*} 
+      Integrating this gives us the total cross section:
+      \begin{flalign}
+          \sigma(e^+e^- \rightarrow \mu^+\mu^-) = \frac{4\pi\alpha^2}{3E_{CM}^2}
+      \end{flalign}
+\end{itemize}
+% subsection cross_sections (end)
+
+\subsection{$e^+ e^- \rightarrow $ Hadrons} % (fold)
+\label{sub:_e_e_rightarrow_hadrons}
+\begin{itemize}
+    \item The cross section we have just calculated can be very easily generalized to many other first order calculations where we also assume the that the particles involved are massless in the high energy limit. Take for example an electron and positron colliding to form hadrons. the only changes we need to make are $1:$ the value of the coupling $e \rightarrow Q_f e$ where $Q_f$ is the charge of the quark species in question, and $2$: to get the final cross section the set of all processes includes all possible quarks that we are considering so we must sum over them. The final result is simply:
+    \begin{align*}
+         \sigma(e^+e^- \rightarrow \text{hadrons}) =  \sum_f3Q_f^2\frac{4\pi\alpha^2}{3E_{CM}^2}
+      \end{align*}  
+      Note there is a mysterious factor of $3$ that has popped up here. This is due to the fact that quarks have another quantum number called colour which we will see later. There are $3$ colours and we must sum over them hence the factor of $3$. 
+\end{itemize} 
+% subsection _e_e_rightarrow_hadrons (end)
 
 % section electron_positron_annihilation (end)
 
