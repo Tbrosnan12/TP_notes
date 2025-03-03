@@ -390,10 +390,11 @@ Where $\sigma$ is the cross section. It is useful for our calculations to consid
  \label{sub:master_formula}
  \begin{itemize}
      \item We know from our study of Quantum Field Theory \footnote{See my notes on QFT \href{https://tbrosnan12.github.io/documents/Fourth_year/First_semester/Quantum_Field_Theory_I.pdf}{here}.}, that the quantum mechanical transition matrix element is given by:
-     \begin{align*}
+     \begin{align}
+     \label{T_hat}
          \bra{12 \cdot \cdot \cdot n}T \ket{A(p_A)} = \mathcal{M}(A \rightarrow 1 +2 + \cdot \cdot \cdot n)(2\pi)^4\delta(p_A - \sum_jp_j)
-     \end{align*}
-     Where $T$ is the time evolution operator. The factor of $\mathcal{M}$ is called the \emph{invariant Matrix element}. 
+     \end{align}
+     Where $T$ is the time evolution operator. The factor of $\mathcal{M}$ is called the \emph{invariant Matrix element}. We will sometimes refer to it as the scattering amplitude. 
      \item To find the total rate of decay we need to integrate over the total phase, i.e. all momenta that the particles could have subject to the constraint of momentum conservation. This will be written as:
      \begin{align*}
           \int d\Pi_n = \int \frac{d^3p_1}{(2\pi)^32E_1} \cdot \cdot \cdot \frac{d^3p_n}{(2\pi)^32E_n}(2\pi)^4\delta(p_A - \sum_jp_j)
@@ -465,7 +466,6 @@ If the final products have spin we will need to sum over these spins. Similarly 
      
      \item We will be working, for simplicity, in the high energy regime, where all particles in the $e^+e^- \rightarrow \mu^+\mu^-$ reaction can be treated as massless. Recall that the $\psi$'s here are Dirac fermions, which are comprised of two $2$-component spinors know as Weyl spinors. This spinors are called left and right handed spinors and the $\psi$'s which are $4$-component spinors can be written as the following \footnote{For a full discussion of Weyl spinors see section $4.6$ of my QFT notes.}:
      \begin{align*}
-        \label{weyl}
         \psi = \begin{pmatrix}
         \psi_L \\
         \psi_R
@@ -515,9 +515,10 @@ From this we can see that the last term, which is proportional to the mass, coup
       i\bar{\sigma}^{\mu}\partial_{\mu}& \psi_{R} =0 
     \end{align*}
     This means the solutions will take the following form (there are two types of solutions):
-    \begin{align*}
+    \begin{align}
+    \label{spinor_ansatz}
         &\psi_{R} = u_{R}(p)e^{-ip \cdot x}, ~~~ \psi_{L} = u_{L}(p)e^{-ip \cdot x}
-    \end{align*}
+    \end{align}
     Here the $u_R(p)$ and $u_L(p)$  are two component spinors that must satisfy their own versions of the Dirac equation. If we consider only plane waves propagating in the $\hat{z}$ direction, so $p = (E,0,0,p_z)$ then this equation is:
     \begin{align*}
          & (E-p_z\sigma_3)u_R = \begin{pmatrix}
@@ -533,11 +534,11 @@ From this we can see that the last term, which is proportional to the mass, coup
          1 \\ 0
      \end{pmatrix}$ and $\begin{pmatrix}
          0 \\ 1
-     \end{pmatrix}$. For $u_R$, $\begin{pmatrix}
+     \end{pmatrix}$. When $u_R = \begin{pmatrix}
          1 \\ 0
-     \end{pmatrix}$ has eigenvalue $+E$ and $\begin{pmatrix}
+     \end{pmatrix}$ it has $E = p_z >0$ and when $ = \begin{pmatrix}
          0 \\ 1
-     \end{pmatrix}$has eigenvalue $-E$ in the case of $u_L$ it is the other way round. It is convenient (see section 4.8 of my QFT notes) to normalize these spinors by $\sqrt{2E}$ and write them in the following:
+     \end{pmatrix}$ it has $E = p_z<0$. In the case of $u_L$ it is the other way round. It is convenient (see section 4.8 of my QFT notes) to normalize these spinors by $\sqrt{2E}$ and write them in the following:
      \begin{align*}
           & u_R = \sqrt{2E}\xi_+, ~~~u_L = \sqrt{2E}\xi_- \\
           & v_R = \sqrt{2E}\xi_-, ~~~v_L = \sqrt{2E}\xi_+
@@ -545,6 +546,43 @@ From this we can see that the last term, which is proportional to the mass, coup
       Where we have change $u \rightarrow v$ for the negative energy solutions. 
 
 \item Big disclaimer, $\xi_+$ and $\xi_-$ are defined to be one of the two solution $(1,0)^T$ and $(0,1)^T$, how-ever the choice of which one they are depends on the direction of motion. $\xi_+$ is defined to be the spinor with spin up (that means positive eigenvalue) along the direction of motion and $\xi_-$ as the spinor with spin down (negative eigenvalue). However, we need to be careful in annihilation processes as then anti-particles are travailing the opposite direction and thus which spinor $(1,0)^T$ or $(0,1)^T$ has positive eigenvalue can swap. 
+
+\item We can also do this for the more general case where the momentum is not along one of the axis. This will be relevant as we would like to be able to calculate the differential cross section as a function of angular variables. The picture of this in application to $e^+e^- \rightarrow \mu^+\mu^-$ is shown below:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{e_mu}
+\caption{\label{scatter}\emph{$e^+e^- \rightarrow \mu^+\mu^-$ process at angle $\theta$}}
+\end{figure}
+With the above setup we can see that the (massless) muons have the following momentum vectors (when the electron and positron are along the z axis):
+\begin{align*}
+    &p_-' = (E,E\sin\theta,0,E\cos \theta)\\
+    &p_+' = (E,-E\sin\theta,0,-E\cos \theta)
+\end{align*}
+With this the spinor ansatz \ref{spinor_ansatz} equation for $u_R$ and $u_L$ become one of:
+\begin{align*}
+    &(E \pm E\sin \theta \sigma_x \pm E \cos \theta \sigma_z)u(p) = 0 \\
+     &\implies \begin{pmatrix}
+          1\pm \cos \theta & \pm \sin \theta \\
+          \pm \sin \theta & 1\mp \cos \theta 
+     \end{pmatrix}u(p) = 0 
+\end{align*}
+We can then solve for $u(p)$ in the following way. If $u(p) = (a ,b)^{T}$ then the top row reads:
+\begin{align*}
+    &(1 \pm \cos \theta)a \pm \sin \theta b =0 \hspace{-15mm}&\implies  a = \frac{\mp \sin \theta}{1 \pm \cos \theta}b \\
+    & \text{plus case:}  & \text{minus case:} \\
+    & a= \frac{2\cos \frac{\theta}{2}\sin \frac{\theta}{2}}{1+(\sin^2 \frac{\theta}{2} - \cos^2\frac{\theta}{2})} b& \hspace{-40mm}   a=  \frac{-2\cos \frac{\theta}{2}\sin \frac{\theta}{2}}{1-(\sin^2 \frac{\theta}{2} - \cos^2\frac{\theta}{2})}b \\
+    & = \frac{2\cos \frac{\theta}{2}\sin \frac{\theta}{2}}{2\cos^2\frac{\theta}{2}}b & = \frac{-2\cos \frac{\theta}{2}\sin \frac{\theta}{2}}{2\sin^2\frac{\theta}{2}}b \\
+    & = \frac{\sin \frac{\theta}{2}}{\cos \frac{\theta}{2}}b & = \frac{\cos \frac{\theta}{2}}{\sin \frac{\theta}{2}}b
+\end{align*}
+With this we can see that going to functions of $\theta/2$ has allowed us to find clearly normalized solutions for $u(p)$. These spinors are the new $\xi_+$ and $\xi_-$:
+\begin{align}
+\label{angular_spinors}
+     \begin{pmatrix}
+         \sin \frac{\theta}{2} \\ \cos \frac{\theta}{2}
+     \end{pmatrix}, ~~~~~\begin{pmatrix}
+         \cos \frac{\theta}{2} \\ -\sin\frac{\theta}{2}
+     \end{pmatrix}
+ \end{align} 
 \end{itemize}
 % subsubsection massless_fermions (end)
 % subsection feynman_diagrams (end)
@@ -558,21 +596,53 @@ From this we can see that the last term, which is proportional to the mass, coup
     \item We can then use Feynman rules for QED (see section 9.2 of my QFT notes). Let us first deal with the annihilation of the electron and positron vertex. The Feynman rules tell us to add to our Matrix element a $-e\gamma^{\mu}$ for every vertex, note that in our case since we have split our Lagrangian into right and left handed spinors we instead add a $-e\sigma^{\mu}$ for right handed spinors and $-ie\bar{\sigma}^{\mu}$ for left handed spinors. We then have the contraction of the fields with the incoming momenta. One of the fields is a $\psi^{\dagger}$ \footnote{Note this is not a $\bar{\psi}$ here as we used the $\gamma^{0}$ from the $\bar{\psi}$ to make $\gamma^{\mu}$ diagonal so that the vertex cleanly gave us $\sigma^{\mu}$ and $\bar{\sigma}^{\mu}$.} this contracts with the incoming momenta of the positron to give us a $v^{\dagger}(p_+)$ as per the Feynman rules. Similarly the $\psi$ contracts with the incoming momenta of the electron to give us a $u(p_-)$. Mathematically this looks like the following. We will pick to do this for the case of a right handed electron and left handed positron\footnote{Note jsut as we mentioned earlier since the positron is going in the opposite direction $v_L^{\dagger}(p_+) = (0~1)^{T}$}.:
     \begin{align*}
         \bra{0}- e\psi^{\dagger}_R\sigma^{\mu}\psi_R\ket{e_R^{-}(p_-)e_L^{+}(p_+)} &=  \bra{0}\wick{- e\c1 \psi^{\dagger}_R\sigma^{\mu}\c2 \psi_R\ket{\c2e_R^{-}(p_-) \c1e_L^{+}(p_+)}} = -ev_L^{\dagger}(p_+)e^{ip_+\cdot x}\sigma^{\mu}u_R(p_-)e^{-ip_-\cdot x} \\
-         & = \sqrt{2E}(0 ~ 1)(1,\boldsymbol{\sigma})\sqrt{2E}\begin{pmatrix}
+         & = -e\sqrt{2E}(0 , 1)(1,\boldsymbol{\sigma})\sqrt{2E}\begin{pmatrix}
              1 \\0 
-         \end{pmatrix}e^{i(p_--p_+)\cdot x} = 2E(0,1,i,0)^{\mu}e^{i(p_--p_+)\cdot x}
+         \end{pmatrix}e^{i(p_--p_+)\cdot x} = -e2E(0,1,i,0)^{\mu}e^{i(p_--p_+)\cdot x}
     \end{align*}
-    This vector we see here is nothing more then a polarization vector that we use to describe photons. We will call it $\epsilon^{\mu}_+ = \frac{1}{\sqrt{2}}(0,1,i,0)^{\mu}$. Note that the left handed current $- e\psi^{\dagger}_L\sigma^{\mu}\psi_L$ when acted on this electron positron ket is zero as in the massless case the right handed electron does not couple to the left handed fermions. 
+    This vector we see here is nothing more then a polarization vector that we use to describe photons. We will call it $\epsilon^{\mu}_1 = (0,1,i,0)^{\mu}$. Note that the left handed current $- e\psi^{\dagger}_L\sigma^{\mu}\psi_L$ when acted on this electron positron ket is zero as in the massless case the right handed electron does not couple to the left handed fermions. 
 
     \item Next up is the propagator, which corresponds to the contraction of the two $A_{\mu}$ fields. This propagator in momentum space is given simply by \footnote{Note their is implicit time ordering operators on all quantities in this section. } (see section 4.8 of my QFT notes):
     \begin{align*}
-       \bra{0} A_{\nu} A_{\mu}\ket{0}=\wick{\c A_{\nu}\c A_{\mu}} = \frac{-i\eta_{\mu\nu}}{q^2}
+       \bra{0} A_{\mu}(x) A_{\nu}(y)\ket{0}=\wick{\c A_{\nu}\c A_{\mu}} = \frac{-i\eta_{\mu\nu}}{q^2}e^{-iq \cdot (x - y)}
      \end{align*}
-     \item Finally we have the contraction of the fields with the final muon momenta. This takes the form, we will choose the muon to have :  
+     \item Finally we have the contraction of the fields with the final muon momenta. This takes the following form, where we have used the angular versions of $\xi_+.\xi_-$ as sen in \ref{angular_spinors}:  
      \begin{align*}
-         \bra{\mu_R^{-}(p_-)\mu_L^{+}(p_+)}(- e)\psi^{\dagger}_R\sigma^{\nu}\psi_R \ket{0}&=-e \wick{  \langle \c1\mu_R^{-}(p_-)\c2 \mu_L^{+}(p_+)| \c2 \psi^{\dagger}_R\sigma^{\nu}\c1 \psi_R}\ket{0} = -e
+         &\bra{\mu_R^{-}(p_-')\mu_L^{+}(p_+')}(- e)\psi^{\dagger}_R\sigma^{\nu}\psi_R \ket{0}=-e \wick{  \langle \c1\mu_R^{-}(p_-')\c2 \mu_L^{+}(p_+')| \c2 \psi^{\dagger}_R\sigma^{\nu}\c1 \psi_R}\ket{0} = -eu^{\dagger}_R(p_+')e^{ip_{+}'\cdot y}\sigma^{\nu}v_R(p_-')e^{-ip_-'\cdot y} \\
+         & = -e \sqrt{2E}(\sin \frac{\theta}{2} , \cos \frac{\theta}{2}) (1,\boldsymbol{\sigma})\sqrt{2E}\begin{pmatrix}
+             \cos \frac{\theta}{2} \\ -\sin \frac{\theta}{2}
+         \end{pmatrix} e^{i(p_+'-p_-')\cdot y} = -e2E( 0, \cos \theta, i, \sin \theta)^{\nu}e^{i(p_+'-p_-')\cdot y}
      \end{align*}
+     Here we arrive at a different polarization vector $\epsilon_2^{\nu} = ( 0, \cos \theta, i, \sin \theta)^{\nu}$. 
 
+     \item With all the pieces assembled we can now put them all together to calculate the contribution from the diagram:
+     \begin{align*}
+           \bra{\mu_R^{-}(p_-')\mu_L^{+}(p_+')}&(- e)\psi^{\dagger}_R\sigma^{\nu}\psi_R \ket{0}\bra{0} A_{\nu} A_{\mu}\ket{0}\bra{0}- e\psi^{\dagger}_R\sigma^{\mu}\psi_R\ket{e_R^{-}(p_-)e_L^{+}(p_+)} \\
+           & = -e^2(2E)^2\epsilon_2^{\nu}\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_1e^{i(p_--p_+)\cdot x}e^{-iq \cdot (x - y)}e^{i(p_+'-p_-')\cdot y} \\
+            & = -e^2(2E)^2\epsilon_2^{\nu}\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_1e^{i(p_--p_+-q)\cdot x}e^{i(p_+'-p_-'+q)\cdot y}
+     \end{align*}
+     We can then remember that we are expanding in powers of the interacting Hamiltonian $H_I$ which is an integral over all space. This means we must integrate the above expression over all $x$ and $y$. We can see that the only $x$ and $y$ dependent terms are the exponentials, so these integral give us factors of $(2\pi)^4\delta^{(4)}(p_--p_+ -q)$ and $(2\pi)^4\delta^{(4)}(p_+'-p_-' +q)$. So we have:
+     \begin{align}
+     \label{2_delta}
+         -2e^2(2E)^2\epsilon^{\ast\nu}_+\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_+(2\pi)^4\delta^{(4)}(p_--p_+ -q)(2\pi)^4\delta^{(4)}(p_+'-p_-' +q)
+     \end{align}
+
+     Then we are required to integrate over all undetermined momenta, which is just integrating over $q$, this takes the two delta functions and requires that $p_--p_+ = p_+'-p_-'$. which is just momentum conservation for the whole interaction. This also forces $q^2 = (p_-+p_+)^2 = (2E,0,0,0)^2 = (2E)^2$. All in all integrating \ref{2_delta} results in:
+     \begin{align*}
+          e^2(\epsilon_2^{\nu}\eta_{\nu\mu}\epsilon_{1}^{\mu})(2\pi)^4\delta^{(4)}(p_--p_+-p_+'+p_-')
+     \end{align*}
+      If we look at expression \ref{T_hat}, then we can see that this is exactly what we would expect to see from an interacting diagram, and that what is left over after the integration must be the matrix element $M$ for this $e^+e^- \rightarrow \mu^+\mu^-$ process. 
+
+     \item Finally from their definitions we can see that $\epsilon_2^{\nu}\eta_{\nu\mu}\epsilon_{1}^{\mu} = 1+\cos\theta$. This means our matrix element for this particular $e^+e^- \rightarrow \mu^+\mu^-$ process is:
+     \begin{align*}
+         \mathcal{M}\left(e_L^+e_R^- \rightarrow \mu_L^+\mu_R^-\right) = -e^2(1+\cos \theta)
+     \end{align*}
+     Similarly one can do the same exact calculation we did here to get the other three amplitudes:
+     \begin{align*}
+         &\mathcal{M}\left(e_R^+e_L^- \rightarrow \mu_R^+\mu_L^-\right) = -e^2(1+\cos \theta) \\
+        &\mathcal{M}\left(e_L^+e_R^- \rightarrow \mu_R^+\mu_L^-\right) = -e^2(1-\cos \theta) \\
+        &\mathcal{M}\left(e_R^+e_L^- \rightarrow \mu_L^+\mu_R^-\right) = -e^2(1-\cos \theta)
+     \end{align*}
 \end{itemize}
 % subsection matrix_element (end)
 

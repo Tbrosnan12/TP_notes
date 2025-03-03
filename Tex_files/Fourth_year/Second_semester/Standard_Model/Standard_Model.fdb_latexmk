@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Standard_Model"] 1740828224 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1740881267
-  "Standard_Model.bcf" 1740881267 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Standard_Model"] 1740828224 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1740962300
+  "Standard_Model.bcf" 1740962300 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Standard_Model.bbl"
   "Standard_Model.blg"
-["pdflatex"] 1740881265 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1740881267
+["pdflatex"] 1740962298 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1740962300
   "/etc/texmf/web2c/texmf.cnf" 1723933354 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk" 1737665903 7808 8e65ebc580afe308e15577159a8a69da ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm9.600pk" 1740781556 6160 fc25f0c2a7b90695ac641b3784c6880c ""
@@ -302,12 +302,13 @@
   "3x3.png" 1738877942 20635 ec17103492bedb346c3982bd63f8e285 ""
   "3x3x3.png" 1739047884 111332 9d9cf0c251c18bd5fa00767517dc7445 ""
   "Hypercharge.png" 1738872226 32843 a93da83f82ed512c99e150552eeaefb0 ""
-  "Standard_Model.aux" 1740881267 6258 c18aeea75bb6a99cbd86bb6dfdb1b857 "pdflatex"
+  "Standard_Model.aux" 1740962300 6817 9566f5edf49383f3a3788ea52a187a74 "pdflatex"
   "Standard_Model.bbl" 1740790580 466 ee04f40f768daeed26442158e95aba61 "biber Standard_Model"
-  "Standard_Model.out" 1740881267 2220 95ef5e52f88bb94e42c3dbf43b87acc1 "pdflatex"
-  "Standard_Model.run.xml" 1740881267 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
-  "Standard_Model.tex" 1740881265 37905 d2e7f4ddf278581791bcb03d62329c43 ""
-  "Standard_Model.toc" 1740881267 1354 52277db0c7ca783dd4e39c18d70e0642 "pdflatex"
+  "Standard_Model.out" 1740962300 2220 95ef5e52f88bb94e42c3dbf43b87acc1 "pdflatex"
+  "Standard_Model.run.xml" 1740962300 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
+  "Standard_Model.tex" 1740962298 43726 465445890474a5623c66f14f442e4a82 ""
+  "Standard_Model.toc" 1740962300 1354 0a6186d47e42301eb410864fb5c0ad32 "pdflatex"
+  "e_mu.png" 1740959361 13167 a0cf6b80206c574bee1510db65c5f7e3 ""
   "feynman.sty" 1740790677 22879 7f081b219056b216883e711a57fec66d ""
   "mesons.png" 1738877459 27509 33a79035f9dfc16f108ae164b391f0ab ""
   "scatter.png" 1739048807 13895 d6b8d6330b2fb7ad6071ab5c679b8a05 ""
