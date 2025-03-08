@@ -680,8 +680,44 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
       Note there is a mysterious factor of $3$ that has popped up here. This is due to the fact that quarks have another quantum number called colour which we will see later. There are $3$ colours and we must sum over them hence the factor of $3$. 
 \end{itemize} 
 % subsection _e_e_rightarrow_hadrons (end)
-
 % section electron_positron_annihilation (end)
 
+
+\newpage
+
+\section{Deep Inelastic Scattering} % (fold)
+\label{sec:deep_inelastic_scattering}
+\begin{itemize}
+    \item We will now be discussing processes that probes the structure of the proton (quarks gluons ect). This is done by electron positron scattering into electron plus some hadrons . The ``inelastic" refers to the fact that this process breaks the proton and produces hadrons, thus a high momentum transfer is needed. This high energy transfer is so large that the mass of the hadrons produced are $>>m_p$. The ``Deep" refers to the fact that this scattering probes the inner structure of the proton. The first interacting Feynman diagram for this process looks like the following:
+
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{
+    \begin{feynman}
+    \fermion[label=\raisebox{-27mm}{\hspace{-30mm}$e^-$}]{18.00, 7.00}{17.00, 8.00}
+    \fermion[label=\raisebox{-15mm}{\hspace{-3mm}$e^-$}]{17.00, 6.00}{18.00, 7.00}
+    \fermion[label=\raisebox{-25mm}{\hspace{16mm}Hadrons}, showArrow=true, flip=true]{21.00, 8.00}{20.40, 7.40}
+    \fermion[label=\raisebox{-15mm}{\hspace{-5mm}$p$}]{21.00, 6.00}{20.40, 6.60}
+    \electroweak[]{18.00, 7.00}{19.5, 7.00}
+    \parton{20.00,7.00}{0.50}
+\end{feynman}
+}
+\end{figure}
+
+\item If the incoming electron has momentum $k$ and the outgoing photon momentum $k'$, then we know from conservation of momentum at the vertices of Feynman diagrams that the momentum carried by the photon $q$ is given by $q = k-k'$. This means for this scattering process if we look at the leading order where $m_e \rightarrow 0$, then $q^2 = -2k \cdot k'$, as $k$ and $k'$ are both light-like in opposite directions meaning $k^2=k'^2=m_e^2=0$ and hence $k \cdot k' = E^2+\textbf{k}\cdot\textbf{k}' = E^2 >0$. This makes $q^2<0$ i.e. space-like. With $q$ being space-like there is always a frame where the energy transfer is $0$ and there is only momentum transfer. Thus we define $Q^2 \equiv -q^2$ to be the momentum transferred.
+\end{itemize}
+
+\subsection{The Parton Model} % (fold)
+\label{sub:the_parton_model}
+\begin{itemize}
+    \item A simple model posited by Feynman was to model the proton as being made of a collection of smaller constituents called partons. We can assume the partons are spin half quarks carrying a flavour label $f$ (or $\bar{f}$ for anti quarks). We assume at high energies the particle have momenta in line with the proton such that the transverse components are of the same order of the momenta with in the bound state of the proton. With this we can model each parton as having a fraction $\xi$ of the protons total momenta $P$:
+    \begin{align*}
+        p^{\mu} = \xi P^{\mu}
+    \end{align*}
+    The parameter $\xi$ must be $0 < \xi < 1$. We then define the \emph{Parton distribution functions} (PDFs) $f_f(\xi)d\xi$ as the probability of finding a parton of type $f$ caring momentum fraction $ \in (\xi,\xi+d\xi)$. Clearly these PDFs must satisfy a sum rule for the total momentum to be $P$: 
+\end{itemize}
+% subsection the_parton_model (end)
+
+% section deep_inelastic_scattering (end)
 \end{document}
     
