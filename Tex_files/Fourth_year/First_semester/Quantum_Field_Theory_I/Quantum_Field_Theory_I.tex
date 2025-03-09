@@ -1273,13 +1273,11 @@ As was mentioned in the section on Representations of the Poincar\'e group these
           \end{itemize}
       \begin{align*}
       &H = \sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[\left(b^{r \dagger}_{\textbf{p}'}u^{r\dagger}(\textbf{p}')e^{-i\textbf{p}'\cdot\textbf{x}}+c^{r}_{\textbf{p}'}v^{r\dagger}(\textbf{p}')e^{i\textbf{p}'\cdot\textbf{x}}\right) \gamma^{0}(-i\boldsymbol{\gamma}\cdot \nabla +m)\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)\right] \\
-      & =\sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}'}u^{s\dagger}(\textbf{p})\gamma^{0}(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}+b^{s\dagger}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}u^{s\dagger}(\textbf{p})\gamma^{0}(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}\right. \\
-      &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.+c^{s}_{\textbf{p}}b^{r}_{\textbf{p}'}v^{s\dagger}(\textbf{p})\gamma^{0}(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}+c^{s}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}v^{s\dagger}(\textbf{p})\gamma^{0}(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}\right]
+      & =\sum_{s,r=1,2}\int \frac{d^3xd^3pd^3p'}{(2\pi)^62\sqrt{E_{\textbf{p}}E_{\textbf{p}'}}}\left[b^{s \dagger}_{\textbf{p}}b^{r}_{\textbf{p}'}u^{s\dagger}(\textbf{p})\gamma^{0}(\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}+b^{s\dagger}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}u^{s\dagger}(\textbf{p})\gamma^{0}(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}\right. \\
+      &~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\left.+c^{s}_{\textbf{p}}b^{r}_{\textbf{p}'}v^{s\dagger}(\textbf{p})\gamma^{0}(\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}+\textbf{p}')}+c^{s}_{\textbf{p}}c^{r\dagger}_{\textbf{p}'}v^{s\dagger}(\textbf{p})\gamma^{0}(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}')e^{-i\textbf{x}\cdot(\textbf{p}-\textbf{p}')}\right]
       \end{align*}
      \begin{itemize}
-       \item  Now we can recognize a couple of things. First off, via \ref{u(p)} and \ref{v(p)} we can say that $(\gamma^{\mu}p_{\mu}'-m)u(p)= 0 = (\gamma^{0}p_{0}+\boldsymbol{\gamma}\cdot \textbf{p}' -m)u^{r}(\textbf{p}') \implies  (-\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}') = \gamma^{0}p_0u^{r}(\textbf{p}')$. Similarly $(\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}') = -\gamma^{0}p_0v^{r}(\textbf{p}')$. 
-
-       \item As a total aside we should note here that the mostly minus metric gives us the strange result that $a^{\mu}b_{\mu} = a^0b_0-a^{i}b_{i} =a^0b_0+\sum_ia^{i}b^{i} =a^0b_0+\textbf{a}\cdot\textbf{b}$.
+       \item  Now we can recognize a couple of things. First off, via \ref{u(p)} and \ref{v(p)} we can say that $(\gamma^{\mu}p_{\mu}'-m)u(p)= 0 = (\gamma^{0}p_{0}-\boldsymbol{\gamma}\cdot \textbf{p}' -m)u^{r}(\textbf{p}') \implies  (\boldsymbol{\gamma}\cdot \textbf{p}' +m)u^{r}(\textbf{p}') = \gamma^{0}p_0u^{r}(\textbf{p}')$. Similarly $(-\boldsymbol{\gamma}\cdot \textbf{p}' +m)v^{r}(\textbf{p}') = -\gamma^{0}p_0v^{r}(\textbf{p}')$. 
 
        The next thing to notice is that we can bring in the $x$ integral in and turn the exponentials into delta functions. 
        \begin{align*}
@@ -1294,7 +1292,7 @@ As was mentioned in the section on Representations of the Poincar\'e group these
         \label{Ham_D}
            \implies H  &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\left[E_{\textbf{p}}b^{s \dagger}_{\textbf{p}}b^{s}_{\textbf{p}}-E_{\textbf{p}}c^{s\dagger}_{\textbf{p}}c^{s}_{\textbf{p}}\right]
          \end{flalign} 
-         Where we have recognized $p_0 = E_{\textbf{p}}$. There is something very strange happening here by creating more and more particles with the $c^{s\dagger}_{\textbf{p}}$ operators we can lower the energy indefinitely. We also cannot re-label $c^{s}_{\textbf{p}}\rightarrow c^{s\dagger}_{\textbf{p}}$ as that ruins our commutation relations. We need to do something different.  
+         Where we have recognized $p_0 = E_{\textbf{p}}$. There is something very strange happening here by creating more and more particles with the $c^{s\dagger}_{\textbf{p}}$ operators we can lower the energy indefinitely! We also cannot re-label $c^{s}_{\textbf{p}}\rightarrow c^{s\dagger}_{\textbf{p}}$ as that ruins our commutation relations. We need to do something different.  
      \end{itemize}
 
 \subsubsection{The need for Anti-Commutation relations}{\label{need_anti}}
@@ -1306,8 +1304,8 @@ As was mentioned in the section on Representations of the Poincar\'e group these
 \item Peskin's  approach is also good, I will outline it here. If we go back to the drawing board and be more careful with our assumptions. First lets add the time dependence to \ref{psi} and \ref{psi_d}, we can treat this in the same manner as we did the Klein Gordon field and use the relations \ref{a_H} (which also apply to $b^{s}_{\textbf{p}}$ and $c^{s}_{\textbf{p}}$), to write: 
 \begin{align}
 \label{psi_dag}
-      \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{-ip\cdot x}\right)  \\
-      \psi^{\dagger}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(\textbf{p})e^{-ip\cdot x}+c^{s }_{\textbf{p}}v^{s\dagger}(\textbf{p})e^{i\textbf{p}\cdot\textbf{x}}\right)
+      \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(\textbf{p})e^{-ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(\textbf{p})e^{ip\cdot x}\right)  \\
+      \psi^{\dagger}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}u^{s\dagger}(\textbf{p})e^{ip\cdot x}+c^{s }_{\textbf{p}}v^{s\dagger}(\textbf{p})e^{-i\textbf{p}\cdot\textbf{x}}\right)
  \end{align} 
 
 Let us forget the commutators we postulated above for $b^{s}_{\textbf{p}}$ and $c^{s}_{\textbf{p}}$ and see if we can re-build these from stronger arguments. Let us not even start with the commutator of these annihilation operators let us look at $\bra{0}b^{s}_{\textbf{p}}b^{r \dagger}_{\textbf{p}'}\ket{0}$. We can now use arguments about spacial and translational invariance to get a form of this. Since the ground state is invariant under translations we must have that $\ket{0}=e^{i\textbf{P}\cdot \textbf{x}}\ket{0}$ and $\bra{0} = \bra{0}\textbf{P}\cdot \textbf{x}$ We can then use the same arguments as we used to get \ref{a_H} to show that $e^{-i\textbf{P}\cdot \textbf{x}}a_{\textbf{p}}e^{i\textbf{P}\cdot \textbf{x}} = a_{\textbf{p}}e^{-i\textbf{p}\cdot \textbf{x}},~~~e^{-i\textbf{P}\cdot \textbf{x}}a^{\dagger}_{\textbf{p}}e^{i\textbf{P}\cdot \textbf{x}} = a^{\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot \textbf{x}}$, which allows us to write:
@@ -1359,8 +1357,8 @@ And:
   Writing out $\psi$ and $\bar{\psi}$ we have:
  \begin{align}
  \label{psi_bar}
-      \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(p)e^{ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(p)e^{-ip\cdot x}\right)  \\
-      \bar{\psi}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}\bar{u}^{s}(p)e^{-ip\cdot x}+c^{s }_{\textbf{p}}\bar{v}^{s}(p)e^{i\textbf{p}\cdot\textbf{x}}\right)
+      \psi(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s}_{\textbf{p}}u^s(p)e^{-ip\cdot x}+c^{s \dagger}_{\textbf{p}}v^s(p)e^{ip\cdot x}\right)  \\
+      \bar{\psi}(x) &= \sum_{s=1,2}\int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}}}}\left(b^{s \dagger}_{\textbf{p}}\bar{u}^{s}(p)e^{ip\cdot x}+c^{s }_{\textbf{p}}\bar{v}^{s}(p)e^{-i\textbf{p}\cdot\textbf{x}}\right)
  \end{align} 
  With the anti-commutation relations:
 
@@ -3172,7 +3170,7 @@ As we have no angular dependence.
    \item We will also need to define how the fermion fields contract with the ingoing and outgoing momenta. To do this we follow the exact same approach we took in defining \ref{p_contract}. That is we pick a field $\psi$ and use it to act on the momentum state. Using our definition of $\psi$ from \ref{psi_dag}:
    \begin{align}
    \label{p_contract_psi}
-      \wick{\c{\psi(x)}\c{\ket{\textbf{p},s}}} &\equiv \psi^+(x)\ket{\textbf{p},s} = \sum_{r=1,2}\int \frac{d^3p'}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}'}}}\left(b^{r}_{\textbf{p}'}u^r(\textbf{p}')e^{ip'\cdot x}\right) \sqrt{2E_{\textbf{p}}}b^{s \dagger}_{\textbf{p}}\ket{0} \nonumber \\
+      \wick{\c{\psi(x)}\c{\ket{\textbf{p},s}}} &\equiv \psi^+(x)\ket{\textbf{p},s} = \sum_{r=1,2}\int \frac{d^3p'}{(2\pi)^3}\frac{1}{\sqrt{2E_{\textbf{p}'}}}\left(b^{r}_{\textbf{p}'}u^r(\textbf{p}')e^{-ip'\cdot x}\right) \sqrt{2E_{\textbf{p}}}b^{s \dagger}_{\textbf{p}}\ket{0} \nonumber \\
       & = e^{-ip\cdot x}u^{s}(p)\ket{0}
     \end{align} 
     Where we have used the anti-commutation relations \ref{b_anti}. The contraction of $\bar{\psi}$ with a momentum ket can be defined in the same way resulting in $\wick{\c{\bar{\psi}(x)}\c{\ket{\textbf{p},s}}} = e^{ip\cdot x}\bar{v}^{s}(p)\ket{0}$. There is a caveat to this last definition in that it only holds if the ket $\bar{\psi}$ acts on is a anti-fermion as it needs to contain the creation operator $c^{r \dagger}_{\textbf{p}}$. The opposite holds for contractions with the outgoing states. $\psi$ must contract with outgoing anti-fermions and $\bar{\psi}$ with outgoing fermions.

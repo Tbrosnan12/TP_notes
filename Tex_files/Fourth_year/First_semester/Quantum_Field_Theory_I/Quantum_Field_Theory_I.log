@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  3 MAR 2025 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  9 MAR 2025 23:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1571,7 +1571,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [35]
-Overfull \hbox (6.46196pt too wide) detected at line 1422
+Overfull \hbox (6.46196pt too wide) detected at line 1420
 []
  []
 
@@ -1613,15 +1613,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [39]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1582.
+(hyperref)                removing `math shift' on input line 1580.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1582.
+(hyperref)                removing `superscript' on input line 1580.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1582.
+(hyperref)                removing `math shift' on input line 1580.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1732,7 +1732,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [51]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 204
-4.
+2.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
@@ -1829,7 +1829,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Peskin_scattering.png, id=1024, 1573.88pt x 953.5625pt>
 File: Peskin_scattering.png Graphic file (type png)
 <use Peskin_scattering.png>
-Package pdftex.def Info: Peskin_scattering.png  used on input line 2746.
+Package pdftex.def Info: Peskin_scattering.png  used on input line 2744.
 (pdftex.def)             Requested size: 308.82936pt x 187.10068pt.
 
 
@@ -1853,7 +1853,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2781 \end{itemize}
+l.2779 \end{itemize}
                      <./Peskin_scattering.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1900,7 +1900,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [68]
-Overfull \hbox (14.88495pt too wide) detected at line 3147
+Overfull \hbox (14.88495pt too wide) detected at line 3145
 []
  []
 
@@ -1998,7 +1998,7 @@ exlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
 mf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Quantum_Field_Theory_I.pdf (73 pages, 730129 bytes).
+Output written on Quantum_Field_Theory_I.pdf (73 pages, 729788 bytes).
 PDF statistics:
  1345 PDF objects out of 1440 (max. 8388607)
  1174 compressed objects within 12 object streams
