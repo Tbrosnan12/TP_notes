@@ -1574,6 +1574,10 @@ INPUT ./e_mu.png
 INPUT e_mu.png
 INPUT ./e_mu.png
 INPUT ./e_mu.png
+INPUT ./1_2_scatter.png
+INPUT 1_2_scatter.png
+INPUT ./1_2_scatter.png
+INPUT ./1_2_scatter.png
 INPUT Standard_Model.aux
 INPUT ./Standard_Model.out
 INPUT ./Standard_Model.out

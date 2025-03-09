@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Standard_Model"] 1740828224 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1741478604
-  "Standard_Model.bcf" 1741478603 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Standard_Model"] 1740828224 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1741538432
+  "Standard_Model.bcf" 1741538431 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Standard_Model.bbl"
   "Standard_Model.blg"
-["pdflatex"] 1741478602 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1741478604
+["pdflatex"] 1741538429 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1741538432
   "/etc/texmf/web2c/texmf.cnf" 1721728325 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk" 1737560890 7808 12a55c929de53bcd2a68f391192baaea ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm9.600pk" 1740826670 6160 1dc04c4871e86634e1c119d7a09b5868 ""
@@ -299,15 +299,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1738004599 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1738004637 2800245 6ea99a7114673f072b768dac9dc91857 ""
+  "1_2_scatter.png" 1741538357 15228 a80aef8c4620e28a9a22cb973c2962de ""
   "3x3.png" 1738953840 20635 ec17103492bedb346c3982bd63f8e285 ""
   "3x3x3.png" 1738968469 111332 9d9cf0c251c18bd5fa00767517dc7445 ""
   "Hypercharge.png" 1738953840 32843 a93da83f82ed512c99e150552eeaefb0 ""
-  "Standard_Model.aux" 1741478603 7934 fe4d8a0f99b0355fbe14c1e05a18fa49 "pdflatex"
+  "Standard_Model.aux" 1741538431 7934 30fa2949b9a72459a999b2ff05cf8bc7 "pdflatex"
   "Standard_Model.bbl" 1740828225 466 ee04f40f768daeed26442158e95aba61 "biber Standard_Model"
-  "Standard_Model.out" 1741478603 2953 5c6fcdf31cc99ef9fe9d37f4ace2a51a "pdflatex"
-  "Standard_Model.run.xml" 1741478603 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
-  "Standard_Model.tex" 1741478601 53185 83cc42a2d38c62e0244906fc1f4be784 ""
-  "Standard_Model.toc" 1741478603 1781 893afed805e6c4534fba1d2d0cad96ad "pdflatex"
+  "Standard_Model.out" 1741538431 2953 5c6fcdf31cc99ef9fe9d37f4ace2a51a "pdflatex"
+  "Standard_Model.run.xml" 1741538431 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
+  "Standard_Model.tex" 1741538429 53959 03afab352a448c0b385a2b10c9677e16 ""
+  "Standard_Model.toc" 1741538431 1781 893afed805e6c4534fba1d2d0cad96ad "pdflatex"
   "e_mu.png" 1740999011 13167 a0cf6b80206c574bee1510db65c5f7e3 ""
   "feynman.sty" 1740826518 22879 7f081b219056b216883e711a57fec66d ""
   "mesons.png" 1738953838 27509 33a79035f9dfc16f108ae164b391f0ab ""

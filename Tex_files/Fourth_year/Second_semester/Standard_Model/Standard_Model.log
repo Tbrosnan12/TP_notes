@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  9 MAR 2025 00:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  9 MAR 2025 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1671,6 +1671,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [19]
+<1_2_scatter.png, id=319, 732.7375pt x 477.785pt>
+File: 1_2_scatter.png Graphic file (type png)
+<use 1_2_scatter.png>
+Package pdftex.def Info: 1_2_scatter.png  used on input line 771.
+(pdftex.def)             Requested size: 257.35518pt x 167.81049pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1679,7 +1685,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[20
+[20 <./1_2_scatter.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[21
 
 ] (./Standard_Model.aux)
 
@@ -1692,10 +1707,10 @@ Package logreq Info: Writing requests to 'Standard_Model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38950 strings out of 478287
- 790607 string characters out of 5849289
- 1523433 words of memory out of 5000000
- 56395 multiletter control sequences out of 15000+600000
+ 38961 strings out of 478287
+ 790815 string characters out of 5849289
+ 1523436 words of memory out of 5000000
+ 56405 multiletter control sequences out of 15000+600000
  491858 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,104p,1292b,1202s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1723,10 +1738,10 @@ msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 y9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Standard_Model.pdf (20 pages, 517351 bytes).
+Output written on Standard_Model.pdf (21 pages, 529696 bytes).
 PDF statistics:
- 445 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
- 72 named destinations out of 1000 (max. 500000)
- 367 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 345 compressed objects within 4 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 372 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -757,7 +757,26 @@ We can notice that this is just the interaction we considered at the end of the 
 \end{feynman}
 }
 \end{figure}
-Note that for simplicity we have made all the momenta exiting the interaction so that conservation of momentum for the diagram reads $p_1+p_2+p_3+p_4=0$
+Note that for simplicity we have made all the momenta exiting the interaction so that conservation of momentum for the diagram reads $p_1+p_2+p_3+p_4=0$. When considering what makes up the invariant matrix element of a given must be made of Lorentz invariant quantities. Since the only inputs are the momenta, the only combinations we can have we denote with the following variables called the the \emph{Mandelstam variables}:
+\begin{align*}
+    s =(p_1+p_2)^2 = (p_3+p_4)^2 \\
+    t = (p_1+p_3)^2 = (p_2+p_4)^2 \\
+    u = (p_1+p_4)^2 = (p_2+p_3)^2 
+\end{align*}
+These are not all independent as it can be shown that $s+t+u = m_1^1+m_2^2+m_3^2+m_4^2$. 
+
+\item To see how these variables can help us with crossing symmetry we can consider the scattering where particles $1$ and $2$ co-linearly scatter to form particles $3$ and $4$. 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{1_2_scatter}
+\end{figure}
+With this we have that the momenta are:
+\begin{align*}
+    p_1 = (-E,0,0,-E), ~~~p_3 = (E,E\sin \theta,0,E\cos \theta) \\
+    p_2 = (-E,0,0,E), ~~~p_4 = (E,-E\sin \theta,0,-E\cos \theta)   
+\end{align*}
+Note that since we have defined all the momenta to be exiting 
+
 \end{itemize}
 % subsection crossing_symmetry (end)
 
