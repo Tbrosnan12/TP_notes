@@ -715,8 +715,51 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
         p^{\mu} = \xi P^{\mu}
     \end{align*}
     The parameter $\xi$ must be $0 < \xi < 1$. We then define the \emph{Parton distribution functions} (PDFs) $f_f(\xi)d\xi$ as the probability of finding a parton of type $f$ caring momentum fraction $ \in (\xi,\xi+d\xi)$. Clearly these PDFs must satisfy a sum rule for the total momentum to be $P$: 
+    \begin{align*}
+        \int_0^1d\xi \sum_f\left[f_f(\xi) + f_{\bar{f}}(\xi)\right] =1
+    \end{align*}
+    We can then consider that the electrons interacts with each of the quarks in the proton and that the resulting cross section for the production of a hadron state $X$ is given by the sum over all possible interactions at all possible momenta:
+    \begin{align*}
+        \sigma(e^-p \rightarrow e^-X) = \int_{0}^{1}d\xi\sum_f\left[f_f(\xi)+f_{\bar{f}}(\xi)\right]\sigma(e^-q(\xi p)\rightarrow e^-q)
+    \end{align*}
+    Note here we are ignoring the effects of the strong interaction. Also we have written the cross section for the quark and anti-quark as the same as we know from our discussions at the end of the last chapter that the cross sections of electrons and quarks are proportional to the charge squared and thus do not depend on the sign.  
 \end{itemize}
 % subsection the_parton_model (end)
+
+\subsection{Crossing Symmetry} % (fold)
+\label{sub:crossing_symmetry}
+\begin{itemize}
+    \item We now wish to obviously calculate these cross sections. Before we blindly go into the calculations as we did in the last chapter we can stop to think is there anything clever we can do to leverage the hard work we did in the last chapter. If we draw the diagram for each of the electron quark interactions the firs order diagram is:  
+    \begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{
+    \begin{feynman}
+    \fermion[label=\raisebox{-27mm}{\hspace{-30mm}$e^-$}]{18.00, 7.00}{17.00, 8.00}
+    \fermion[label=\raisebox{-15mm}{\hspace{-3mm}$e^-$}]{17.00, 6.00}{18.00, 7.00}
+    \fermion[label=\raisebox{-25mm}{\hspace{16mm}$q$}, showArrow=true, flip=true]{20.50, 8.00}{19.5, 7.00}
+    \fermion[label=\raisebox{-15mm}{\hspace{-5mm}$q$}]{20.50, 6.00}{19.5, 7.00}
+    \electroweak[]{18.00, 7.00}{19.5, 7.00}
+\end{feynman}
+}
+\end{figure}
+We can notice that this is just the interaction we considered at the end of the last chapter with a few changes (see the Feynman diagram at the top of pg 13 with the muons replaced with quarks). The changes are: instead of having an incoming positron we have and outgoing positron, similarly instead of having an out going anti-quark we have an outgoing quark. This is essentially flips the diagram sideways. It turns out that this flipping results in the exact same Matrix elements (only when squared ans summed over spins). The reason this is true is a little technical and I will leave the proof to (hopefully) be in my QFT notes. This symmetry is known as \emph{crossing symmetry}. 
+
+  \item To use crossing symmetry it is useful to establish the following conventions and notation for 2 particle $\rightarrow$ 2 particle interactions. We can consider the general case where we dont know what the intermediate interaction looks like:
+\begin{figure}[H]
+\centering
+\resizebox{0.3\textwidth}{!}{
+    \begin{feynman}
+    \fermion[label=\raisebox{-27mm}{\hspace{-30mm}$p_4$},flip=true]{19.00, 8.00}{19.60, 7.40}
+    \fermion[label=\raisebox{-15mm}{\hspace{-3mm}$p_1$},flip=true]{19.00, 6.00}{19.6, 6.60}
+    \fermion[label=\raisebox{-25mm}{\hspace{16mm}$p_3$}, showArrow=true,flip=true]{21.00, 8.00}{20.40, 7.40}
+    \fermion[label=\raisebox{-15mm}{\hspace{-5mm}$p_2$},flip=true]{21.00, 6.00}{20.40, 6.60}
+    \parton{20.00,7.00}{0.50}
+\end{feynman}
+}
+\end{figure}
+Note that for simplicity we have made all the momenta exiting the interaction so that conservation of momentum for the diagram reads $p_1+p_2+p_3+p_4=0$
+\end{itemize}
+% subsection crossing_symmetry (end)
 
 % section deep_inelastic_scattering (end)
 \end{document}

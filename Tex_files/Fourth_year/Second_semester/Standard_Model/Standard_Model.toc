@@ -19,3 +19,4 @@
 \contentsline {subsection}{\numberline {3.4}$e^+ e^- \rightarrow $ Hadrons}{17}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Deep Inelastic Scattering}{18}{section.4}%
 \contentsline {subsection}{\numberline {4.1}The Parton Model}{18}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Crossing Symmetry}{19}{subsection.4.2}%
