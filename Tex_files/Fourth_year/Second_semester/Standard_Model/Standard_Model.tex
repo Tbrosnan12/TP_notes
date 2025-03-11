@@ -685,7 +685,7 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
 \subsection{$e^+ e^- \rightarrow $ Hadrons} % (fold)
 \label{sub:_e_e_rightarrow_hadrons}
 \begin{itemize}
-    \item The cross section we have just calculated can be very easily generalized to many other first order calculations where we also assume the that the particles involved are massless in the high energy limit. Take for example an electron and positron colliding to form hadrons. the only changes we need to make are $1:$ the value of the coupling $e \rightarrow Q_f e$ where $Q_f$ is the charge of the quark species in question, and $2$: to get the final cross section the set of all processes includes all possible quarks that we are considering so we must sum over them. The final result is simply:
+    \item The cross section we have just calculated can be very easily generalized to many other first order calculations where we also assume the that the particles involved are massless in the high energy limit. Take for example an electron and positron colliding to form hadrons. the only changes we need to make are $1:$ the value of the coupling $e \rightarrow Q_f e$ where $Q_f$ is the charge of the quark species in question \footnote{This only happens for two of the $4~e$'s in the final answer above above as there are 2 quarks, an electron and a positron, hence we get a factor of $Q_f^2$.}. $2$: to get the final cross section the set of all processes includes all possible quarks that we are considering so we must sum over them. The final result is simply:
     \begin{align*}
          \sigma(e^+e^- \rightarrow \text{hadrons}) =  \sum_f3Q_f^2\frac{4\pi\alpha^2}{3E_{CM}^2}
       \end{align*}  
@@ -856,6 +856,7 @@ Also since we have used light-like momentum vectors $s+t+u=0$, which is expected
         \node [style=none] (8) at (1, -1) {};
         \node [style=none] (13) at (-1, 1) {};
         \node [style=none] (14) at (0, 1) {};
+        \node [style=none] (2) at (-.25, .25) {};
     \end{pgfonlayer}
     \begin{pgfonlayer}{edgelayer}
         % Lower part of crossing line
@@ -865,7 +866,7 @@ Also since we have used light-like momentum vectors $s+t+u=0$, which is expected
         % Upper part of main diagonal
         \draw (0.center) to (14.center);
         % Overlapping effect: use a white line to cover part of the main diagonal
-        \draw[line width=2mm, white] (13.center) -- (6.center);
+        \draw[line width=2mm, white] (13.center) -- (2.center);
         % Foreground segment
         \draw (13.center) to (6.center);
     \end{pgfonlayer}
