@@ -754,7 +754,7 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
 \end{feynman}
 }
 \end{figure}
-We can notice that this is just the interaction we considered at the end of the last chapter with a few changes (see the Feynman diagram at the top of pg 13 with the muons replaced with quarks). The changes are: instead of having an incoming positron we have and outgoing positron, similarly instead of having an out going anti-quark we have an outgoing quark. This is essentially flips the diagram sideways (anti-clockwise). It turns out that this flipping results in the exact same Matrix elements (only when squared ans summed over spins). The reason this is true is a little technical and I will leave the proof to (hopefully) be in my QFT notes. This symmetry is known as \emph{crossing symmetry}. 
+We can notice that this is just the interaction we considered at the end of the last chapter with a few changes (see the Feynman diagram at the top of pg 13 with the muons replaced with quarks). The changes are: instead of having an incoming positron we have and outgoing positron, similarly instead of having an out going anti-quark we have an outgoing quark. This is essentially rotates the diagram sideways (and flips it). It turns out that this change results in the exact same Matrix elements (only when squared ans summed over spins). The reason this is true is a little technical and I will leave the proof to (hopefully) be in my QFT notes. This symmetry is known as \emph{crossing symmetry}. 
 
   \item To use crossing symmetry it is useful to establish the following conventions and notation for 2 particle $\rightarrow$ 2 particle interactions. We can consider the general case where we don't know what the intermediate interaction looks like:
 \begin{figure}[H]
@@ -882,17 +882,18 @@ Also since we have used light-like momentum vectors $s+t+u=0$, which is expected
 \begin{itemize}
     \item We are now prepared to write down our matrix elements for the deep inelastic scattering. We start by writing down the matrix elements of the electron positron annihilation into quarks. This we we discussed at the end of the last section, is just the same elements as the $e^-e^+ \rightarrow q_L\bar{q}_R$
     \begin{align*}
-    &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_L^+\bar{q}_R^-\right)|^2 = Q_f^2e^4(1+\cos \theta)^2 \\
-         &|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_R^+\bar{q}_L^-\right)|^2 = Q_f^2e^4(1+\cos \theta)^2 \\
-        &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_R^+\bar{q}_L^-\right)|^2 = Q_f^2e^4(1-\cos \theta)^2 \\
-        &|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_L^+\bar{q}_R^-\right)|^2 = Q_f^2e^4(1-\cos \theta)^2
+    &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_L^+\bar{q}_R^-\right)|^2 = |\mathcal{M}\left(e_R^+e_L^- \rightarrow q_R^+\bar{q}_L^-\right)|^2 = Q_f^2e^4(1+\cos \theta)^2 \\
+        &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_R^+\bar{q}_L^-\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_L^+\bar{q}_R^-\right)|^2= Q_f^2e^4(1-\cos \theta)^2 
      \end{align*}
      The next step is to write these in terms if the Mandelstam variables: 
           \begin{align*}
-    &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_L^+\bar{q}_R^-\right)|^2 = 4Q_f^2e^4\frac{u^2}{s^2} \\
-         &|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_R^+\bar{q}_L^-\right)|^2 = 4Q_f^2e^4\frac{u^2}{s^2} \\
-        &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_R^+\bar{q}_L^-\right)|^2 =4Q_f^2e^4\frac{t^2}{s^2} \\
-        &|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_L^+\bar{q}_R^-\right)|^2 = 4Q_f^2e^4\frac{t^2}{s^2}
+    &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_L\bar{q}_R\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_R\bar{q}^-\right)|^2=  4Q_f^2e^4\frac{u^2}{s^2} \\
+        &|\mathcal{M}\left(e_L^+e_R \rightarrow q_R\bar{q}_L\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_L\bar{q}_R\right)|^2  = 4Q_f^2e^4\frac{t^2}{s^2} 
+     \end{align*}
+     This then immediately lets us write down the amplitudes for the $e^-q \rightarrow e^-q$ scattering. We have with this change of diagram that $p-1 \rightarrow p_1,~p_2\rightarrow p_3,~ p_3\rightarrow p_3$ as we simply just replace $s \rightarrow t,~t \rightarrow u,~u\rightarrow s$.  So we can write down the $4$ matrix elements:
+     \begin{align*}
+    &|\mathcal{M}\left(e_L^+q_R^- \rightarrow q_L^+\bar{q}_R^-\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_R^+\bar{q}_L^-\right)|^2=  4Q_f^2e^4\frac{u^2}{s^2} \\
+        &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_R^+\bar{q}_L^-\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_L^+\bar{q}_R^-\right)|^2  = 4Q_f^2e^4\frac{t^2}{s^2} 
      \end{align*}
 
 \end{itemize}
