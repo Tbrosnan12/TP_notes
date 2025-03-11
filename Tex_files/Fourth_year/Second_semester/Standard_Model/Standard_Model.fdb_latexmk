@@ -1,10 +1,10 @@
 # Fdb version 3
-["biber Standard_Model"] 1740828224 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1741561880
-  "Standard_Model.bcf" 1741561880 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
+["biber Standard_Model"] 1740828224 "Standard_Model.bcf" "Standard_Model.bbl" "Standard_Model" 1741696998
+  "Standard_Model.bcf" 1741696998 106628 475269be0e34155c0a138563279cd6bd "pdflatex"
   (generated)
   "Standard_Model.bbl"
   "Standard_Model.blg"
-["pdflatex"] 1741561878 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1741561880
+["pdflatex"] 1741696996 "Standard_Model.tex" "Standard_Model.pdf" "Standard_Model" 1741696998
   "/etc/texmf/web2c/texmf.cnf" 1721728325 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk" 1737560890 7808 12a55c929de53bcd2a68f391192baaea ""
   "/home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm9.600pk" 1740826670 6160 1dc04c4871e86634e1c119d7a09b5868 ""
@@ -125,6 +125,7 @@
   "/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex" 1601326656 1319 0b2de5126c6cbc295f0eb77f7344b34d ""
   "/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex" 1601326656 1179 5483d86c1582c569e665c74efab6281f ""
   "/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex" 1601326656 770 82e332cc9cc48e06b8070d74393a185a ""
+  "/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex" 1601326656 3937 3f208572dd82c71103831da976d74f1a ""
   "/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex" 1608933718 11518 738408f795261b70ce8dd47459171309 ""
   "/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex" 1621110968 186007 6e7dfe0bd57520fd5f91641aa72dcac8 ""
   "/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex" 1601326656 5220 c70346acb7ff99702098460fd6c18993 ""
@@ -303,12 +304,12 @@
   "3x3.png" 1738953840 20635 ec17103492bedb346c3982bd63f8e285 ""
   "3x3x3.png" 1738968469 111332 9d9cf0c251c18bd5fa00767517dc7445 ""
   "Hypercharge.png" 1738953840 32843 a93da83f82ed512c99e150552eeaefb0 ""
-  "Standard_Model.aux" 1741561880 7934 30fa2949b9a72459a999b2ff05cf8bc7 "pdflatex"
+  "Standard_Model.aux" 1741696998 8142 b725e39e23150336c566299ccb6b0212 "pdflatex"
   "Standard_Model.bbl" 1740828225 466 ee04f40f768daeed26442158e95aba61 "biber Standard_Model"
-  "Standard_Model.out" 1741561880 2953 5c6fcdf31cc99ef9fe9d37f4ace2a51a "pdflatex"
-  "Standard_Model.run.xml" 1741561880 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
-  "Standard_Model.tex" 1741561878 54717 99b077dcc3a7d4d640370a6cbef24fb9 ""
-  "Standard_Model.toc" 1741561880 1781 893afed805e6c4534fba1d2d0cad96ad "pdflatex"
+  "Standard_Model.out" 1741696998 2953 5c6fcdf31cc99ef9fe9d37f4ace2a51a "pdflatex"
+  "Standard_Model.run.xml" 1741696998 2368 921deceb11e0b0de71fad7fff29569eb "pdflatex"
+  "Standard_Model.tex" 1741696996 58654 0800f08ac515de3e626389a177ef6220 ""
+  "Standard_Model.toc" 1741696998 1781 893afed805e6c4534fba1d2d0cad96ad "pdflatex"
   "e_mu.png" 1740999011 13167 a0cf6b80206c574bee1510db65c5f7e3 ""
   "feynman.sty" 1740826518 22879 7f081b219056b216883e711a57fec66d ""
   "mesons.png" 1738953838 27509 33a79035f9dfc16f108ae164b391f0ab ""

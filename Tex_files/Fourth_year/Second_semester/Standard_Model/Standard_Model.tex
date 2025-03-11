@@ -36,6 +36,18 @@
 \usepackage{feynman}% For Feynman diagrams
 \usepackage{simpler-wick} % For wick contraction notation 
 
+\usepackage{tikz}  % Load TikZ first
+\usetikzlibrary{positioning}  % Optional: for advanced positioning
+\usetikzlibrary{decorations.markings}
+
+% Declare layers and set their order
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{edgelayer}
+\pgfsetlayers{nodelayer,edgelayer,main}
+\tikzset{
+    none/.style = {inner sep=0pt}
+}
+
 % Random commands and what not 
 \numberwithin{equation}{section}
 
@@ -596,10 +608,10 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
 
     \item We can then use Feynman rules for QED (see section 9.2 of my QFT notes). Let us first deal with the annihilation of the electron and positron vertex. The Feynman rules tell us to add to our Matrix element a $-e\gamma^{\mu}$ for every vertex, note that in our case since we have split our Lagrangian into right and left handed spinors we instead add a $-e\sigma^{\mu}$ for right handed spinors and $-ie\bar{\sigma}^{\mu}$ for left handed spinors. We then have the contraction of the fields with the incoming momenta. One of the fields is a $\psi^{\dagger}$ \footnote{Note this is not a $\bar{\psi}$ here as we used the $\gamma^{0}$ from the $\bar{\psi}$ to make $\gamma^{\mu}$ diagonal so that the vertex cleanly gave us $\sigma^{\mu}$ and $\bar{\sigma}^{\mu}$.} this contracts with the incoming momenta of the positron to give us a $v^{\dagger}(p_+)$ as per the Feynman rules. Similarly the $\psi$ contracts with the incoming momenta of the electron to give us a $u(p_-)$. Mathematically this looks like the following. We will pick to do this for the case of a right handed electron and left handed positron\footnote{Note jsut as we mentioned earlier since the positron is going in the opposite direction $v_L^{\dagger}(p_+) = (0~1)^{T}$}.:
     \begin{align*}
-        \bra{0}- e\psi^{\dagger}_R\sigma^{\mu}\psi_R\ket{e_R^{-}(p_-)e_L^{+}(p_+)} &=  \bra{0}\wick{- e\c1 \psi^{\dagger}_R\sigma^{\mu}\c2 \psi_R\ket{\c2e_R^{-}(p_-) \c1e_L^{+}(p_+)}} = -ev_L^{\dagger}(p_+)e^{ip_+\cdot x}\sigma^{\mu}u_R(p_-)e^{-ip_-\cdot x} \\
+        \bra{0}- e\psi^{\dagger}_R\sigma^{\mu}\psi_R\ket{e_R^{-}(p_-)e_L^{+}(p_+)} &=  \bra{0}\wick{- e\c1 \psi^{\dagger}_R\sigma^{\mu}\c2 \psi_R\ket{\c2e_R^{-}(p_-) \c1e_L^{+}(p_+)}} = -ev_L^{\dagger}(p_+)e^{-ip_+\cdot x}\sigma^{\mu}u_R(p_-)e^{-ip_-\cdot x} \\
          & = -e\sqrt{2E}(0 , 1)(1,\boldsymbol{\sigma})\sqrt{2E}\begin{pmatrix}
              1 \\0 
-         \end{pmatrix}e^{i(p_--p_+)\cdot x} = -e2E(0,1,i,0)^{\mu}e^{i(p_--p_+)\cdot x}
+         \end{pmatrix}e^{-i(p_-+p_+)\cdot x} = -e2E(0,1,i,0)^{\mu}e^{-i(p_-+p_+)\cdot x}
     \end{align*}
     This vector we see here is nothing more then a polarization vector that we use to describe photons. We will call it $\epsilon^{\mu}_1 = (0,1,i,0)^{\mu}$. Note that the left handed current $- e\psi^{\dagger}_L\sigma^{\mu}\psi_L$ when acted on this electron positron ket is zero as in the massless case the right handed electron does not couple to the left handed fermions. 
 
@@ -609,28 +621,28 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
      \end{align*}
      \item Finally we have the contraction of the fields with the final muon momenta. This takes the following form, where we have used the angular versions of $\xi_+.\xi_-$ as sen in \ref{angular_spinors}:  
      \begin{align*}
-         &\bra{\mu_R^{-}(p_-')\mu_L^{+}(p_+')}(- e)\psi^{\dagger}_R\sigma^{\nu}\psi_R \ket{0}=-e \wick{  \langle \c1\mu_R^{-}(p_-')\c2 \mu_L^{+}(p_+')| \c2 \psi^{\dagger}_R\sigma^{\nu}\c1 \psi_R}\ket{0} = -eu^{\dagger}_R(p_+')e^{ip_{+}'\cdot y}\sigma^{\nu}v_R(p_-')e^{-ip_-'\cdot y} \\
+         &\bra{\mu_R^{-}(p_-')\mu_L^{+}(p_+')}(- e)\psi^{\dagger}_R\sigma^{\nu}\psi_R \ket{0}=-e \wick{  \langle \c1\mu_R^{-}(p_-')\c2 \mu_L^{+}(p_+')| \c2 \psi^{\dagger}_R\sigma^{\nu}\c1 \psi_R}\ket{0} = -eu^{\dagger}_R(p_+')e^{ip_{+}'\cdot y}\sigma^{\nu}v_R(p_-')e^{ip_-'\cdot y} \\
          & = -e \sqrt{2E}(\sin \frac{\theta}{2} , \cos \frac{\theta}{2}) (1,\boldsymbol{\sigma})\sqrt{2E}\begin{pmatrix}
              \cos \frac{\theta}{2} \\ -\sin \frac{\theta}{2}
-         \end{pmatrix} e^{i(p_+'-p_-')\cdot y} = -e2E( 0, \cos \theta, i, \sin \theta)^{\nu}e^{i(p_+'-p_-')\cdot y}
+         \end{pmatrix} e^{i(p_+'+p_-')\cdot y} = -e2E( 0, \cos \theta, i, \sin \theta)^{\nu}e^{i(p_+'+p_-')\cdot y}
      \end{align*}
      Here we arrive at a different polarization vector $\epsilon_2^{\nu} = ( 0, \cos \theta, i, \sin \theta)^{\nu}$. 
 
      \item With all the pieces assembled we can now put them all together to calculate the contribution from the diagram:
      \begin{align*}
            \bra{\mu_R^{-}(p_-')\mu_L^{+}(p_+')}&(- e)\psi^{\dagger}_R\sigma^{\nu}\psi_R \ket{0}\bra{0} A_{\nu} A_{\mu}\ket{0}\bra{0}- e\psi^{\dagger}_R\sigma^{\mu}\psi_R\ket{e_R^{-}(p_-)e_L^{+}(p_+)} \\
-           & = -e^2(2E)^2\epsilon_2^{\nu}\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_1e^{i(p_--p_+)\cdot x}e^{-iq \cdot (x - y)}e^{i(p_+'-p_-')\cdot y} \\
-            & = -e^2(2E)^2\epsilon_2^{\nu}\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_1e^{i(p_--p_+-q)\cdot x}e^{i(p_+'-p_-'+q)\cdot y}
+           & = -e^2(2E)^2\epsilon_2^{\nu}\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_1e^{-i(p_-+p_+)\cdot x}e^{-iq \cdot (x - y)}e^{i(p_+'+p_-')\cdot y} \\
+            & = -e^2(2E)^2\epsilon_2^{\nu}\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_1e^{-i(p_-+p_++q)\cdot x}e^{i(p_+'+p_-'+q)\cdot y}
      \end{align*}
      We can then remember that we are expanding in powers of the interacting Hamiltonian $H_I$ which is an integral over all space. This means we must integrate the above expression over all $x$ and $y$. We can see that the only $x$ and $y$ dependent terms are the exponentials, so these integral give us factors of $(2\pi)^4\delta^{(4)}(p_--p_+ -q)$ and $(2\pi)^4\delta^{(4)}(p_+'-p_-' +q)$. So we have:
      \begin{align}
      \label{2_delta}
-         -2e^2(2E)^2\epsilon^{\ast\nu}_+\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_+(2\pi)^4\delta^{(4)}(p_--p_+ -q)(2\pi)^4\delta^{(4)}(p_+'-p_-' +q)
+         -2e^2(2E)^2\epsilon^{\ast\nu}_+\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_+(2\pi)^4\delta^{(4)}(p_-+p_+ +q)(2\pi)^4\delta^{(4)}(p_+'-p_-'+q)
      \end{align}
 
-     Then we are required to integrate over all undetermined momenta, which is just integrating over $q$, this takes the two delta functions and requires that $p_--p_+ = p_+'-p_-'$. which is just momentum conservation for the whole interaction. This also forces $q^2 = (p_-+p_+)^2 = (2E,0,0,0)^2 = (2E)^2$. All in all integrating \ref{2_delta} results in:
+     Then we are required to integrate over all undetermined momenta, which is just integrating over $q$, this takes the two delta functions and requires that $p_-+p_+ = p_+'+p_-'$. which is just momentum conservation for the whole interaction. This also forces $q^2 = (p_-+p_+)^2 = (2E,0,0,0)^2 = (2E)^2$. All in all integrating \ref{2_delta} results in:
      \begin{align*}
-          -e^2(\epsilon_2^{\nu}\eta_{\nu\mu}\epsilon_{1}^{\mu})(2\pi)^4\delta^{(4)}(p_--p_+-p_+'+p_-')
+          -e^2(\epsilon_2^{\nu}\eta_{\nu\mu}\epsilon_{1}^{\mu})(2\pi)^4\delta^{(4)}(p_-+p_+-p_+'-p_-')
      \end{align*}
       If we look at expression \ref{T_hat}, then we can see that this is exactly what we would expect to see from an interacting diagram, and that what is left over after the integration must be the matrix element $M$ for this $e^+e^- \rightarrow \mu^+\mu^-$ process. 
 
@@ -742,20 +754,22 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
 \end{feynman}
 }
 \end{figure}
-We can notice that this is just the interaction we considered at the end of the last chapter with a few changes (see the Feynman diagram at the top of pg 13 with the muons replaced with quarks). The changes are: instead of having an incoming positron we have and outgoing positron, similarly instead of having an out going anti-quark we have an outgoing quark. This is essentially flips the diagram sideways. It turns out that this flipping results in the exact same Matrix elements (only when squared ans summed over spins). The reason this is true is a little technical and I will leave the proof to (hopefully) be in my QFT notes. This symmetry is known as \emph{crossing symmetry}. 
+We can notice that this is just the interaction we considered at the end of the last chapter with a few changes (see the Feynman diagram at the top of pg 13 with the muons replaced with quarks). The changes are: instead of having an incoming positron we have and outgoing positron, similarly instead of having an out going anti-quark we have an outgoing quark. This is essentially flips the diagram sideways (anti-clockwise). It turns out that this flipping results in the exact same Matrix elements (only when squared ans summed over spins). The reason this is true is a little technical and I will leave the proof to (hopefully) be in my QFT notes. This symmetry is known as \emph{crossing symmetry}. 
 
   \item To use crossing symmetry it is useful to establish the following conventions and notation for 2 particle $\rightarrow$ 2 particle interactions. We can consider the general case where we dont know what the intermediate interaction looks like:
 \begin{figure}[H]
 \centering
 \resizebox{0.3\textwidth}{!}{
     \begin{feynman}
-    \fermion[label=\raisebox{-27mm}{\hspace{-30mm}$p_4$},flip=true]{19.00, 8.00}{19.60, 7.40}
+    \fermion[label=\raisebox{-27mm}{\hspace{-30mm}$p_3$},flip=true]{19.00, 8.00}{19.60, 7.40}
     \fermion[label=\raisebox{-15mm}{\hspace{-3mm}$p_1$},flip=true]{19.00, 6.00}{19.6, 6.60}
-    \fermion[label=\raisebox{-25mm}{\hspace{16mm}$p_3$}, showArrow=true,flip=true]{21.00, 8.00}{20.40, 7.40}
+    \fermion[label=\raisebox{-25mm}{\hspace{16mm}$p_4$}, showArrow=true,flip=true]{21.00, 8.00}{20.40, 7.40}
     \fermion[label=\raisebox{-15mm}{\hspace{-5mm}$p_2$},flip=true]{21.00, 6.00}{20.40, 6.60}
     \parton{20.00,7.00}{0.50}
 \end{feynman}
 }
+\caption{Crossing symmetry labeling}
+\label{fig:cross}
 \end{figure}
 Note that for simplicity we have made all the momenta exiting the interaction so that conservation of momentum for the diagram reads $p_1+p_2+p_3+p_4=0$. When considering what makes up the invariant matrix element of a given must be made of Lorentz invariant quantities. Since the only inputs are the momenta, the only combinations we can have we denote with the following variables called the the \emph{Mandelstam variables}:
 \begin{align*}
@@ -783,7 +797,83 @@ Note that since we have defined all the momenta to be exiting the diagram, parti
 \end{align*}
 Also since we have used light-like momentum vectors $s+t+u=0$, which is expected as this should be equal to the sum of the masses which are in this case massless. 
 
-\item With this we can attempt 
+\item With this setup we can use crossing symmetry to make our calculations a lot easier. Recall that the QED propagator contains a $1/(q^2-m^2)$, and thus final answer contained $1/(q^2-m^2)$, where $q^2$ by momentum conservation at the vertex must be $q^2 = (p_1+p_2)^2 \equiv s$ (as shown in the last section). This then means that annihilation diagrams correspond to:
+\begin{align*}
+        \begin{array}{c}
+            \begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=none] (0) at (0, 0) {};
+        \node [style=none] (1) at (0, 1) {};
+        \node [style=none] (2) at (-1, 2) {};
+        \node [style=none] (3) at (1, 2) {};
+        \node [style=none] (4) at (1, -1) {};
+        \node [style=none] (5) at (-1, -1) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw (5.center) to (0.center);
+        \draw (4.center) to (0.center);
+        \draw (0.center) to (1.center);
+        \draw (1.center) to (2.center);
+        \draw (1.center) to (3.center);
+    \end{pgfonlayer}
+\end{tikzpicture}
+        \end{array} \sim \frac{1}{s-m^2}
+    \end{align*}    
+    This is subsequently known as an $s$ channel process. 
+
+    \item We can then consider scattering, looking at the diagram below we can see that momentum conservation will make it so that $ q^2 = (p_1+p_3)^2 \equiv t$  (where we refer to the Figure \ref{fig:cross} for the labeling), thus we have:
+    \begin{align*}
+        \begin{array}{c}
+            \begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=none] (0) at (-1, 0) {};
+        \node [style=none] (4) at (-2, 1) {};
+        \node [style=none] (5) at (-2, -1) {};
+        \node [style=none] (6) at (0, 0) {};
+        \node [style=none] (7) at (1, 1) {};
+        \node [style=none] (8) at (1, -1) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw (4.center) to (0.center);
+        \draw (5.center) to (0.center);
+        \draw (0.center) to (6.center);
+        \draw (6.center) to (7.center);
+        \draw (6.center) to (8.center);
+    \end{pgfonlayer}
+\end{tikzpicture}
+\end{array} \sim \frac{1}{t-m^2}
+    \end{align*} 
+    This is then known as a t channel process. 
+
+    \item Finally there is one more, which is the same scattering but with the final states swapped, this then has $ q^2 = (p_1+p_4)^2 \equiv u$, so we get the $u$-channel process:
+    \begin{align*}
+        \begin{array}{c}
+            \begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [style=none] (0) at (-1, 0) {};
+        \node [style=none] (5) at (-2, -1) {};
+        \node [style=none] (6) at (0, 0) {};
+        \node [style=none] (8) at (1, -1) {};
+        \node [style=none] (13) at (-1, 1) {};
+        \node [style=none] (14) at (0, 1) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        % Lower part of crossing line
+        \draw (5.center) to (0.center);
+        \draw (0.center) to (6.center);
+        \draw (6.center) to (8.center);
+        % Upper part of main diagonal
+        \draw (0.center) to (14.center);
+        % Overlapping effect: use a white line to cover part of the main diagonal
+        \draw[line width=2mm, white] (13.center) -- (6.center);
+        % Foreground segment
+        \draw (13.center) to (6.center);
+    \end{pgfonlayer}
+\end{tikzpicture}
+\end{array} \sim \frac{1}{u-m^2}
+    \end{align*} 
+    \item With these identifications crossing symmetry becomes very easy! If we started with a $t$ channel process we can relate its amplitude to a $s$ channel annihilation by simply changing $s \leftrightarrow t$. 
+
 
 
 \end{itemize}
