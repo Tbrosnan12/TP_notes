@@ -890,11 +890,17 @@ Also since we have used light-like momentum vectors $s+t+u=0$, which is expected
     &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_L\bar{q}_R\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_R\bar{q}^-\right)|^2=  4Q_f^2e^4\frac{u^2}{s^2} \\
         &|\mathcal{M}\left(e_L^+e_R \rightarrow q_R\bar{q}_L\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_L\bar{q}_R\right)|^2  = 4Q_f^2e^4\frac{t^2}{s^2} 
      \end{align*}
-     This then immediately lets us write down the amplitudes for the $e^-q \rightarrow e^-q$ scattering. We have with this change of diagram that $p-1 \rightarrow p_1,~p_2\rightarrow p_3,~ p_3\rightarrow p_3$ as we simply just replace $s \rightarrow t,~t \rightarrow u,~u\rightarrow s$.  So we can write down the $4$ matrix elements:
-     \begin{align*}
-    &|\mathcal{M}\left(e_L^+q_R^- \rightarrow q_L^+\bar{q}_R^-\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_R^+\bar{q}_L^-\right)|^2=  4Q_f^2e^4\frac{u^2}{s^2} \\
-        &|\mathcal{M}\left(e_L^+e_R^- \rightarrow q_R^+\bar{q}_L^-\right)|^2 =|\mathcal{M}\left(e_R^+e_L^- \rightarrow q_L^+\bar{q}_R^-\right)|^2  = 4Q_f^2e^4\frac{t^2}{s^2} 
+     This then immediately lets us write down the amplitudes for the $e^-q \rightarrow e^-q$ scattering. We have with this change of diagram that $p_1 \rightarrow p_1,~p_2\rightarrow p_3,~ p_3\rightarrow p_4, p_4 \rightarrow p_2$ as we simply just replace $s \rightarrow t,~t \rightarrow u,~u\rightarrow s$.  So we can write down the $4$ matrix elements:
+     \begin{align*} 
+    &|\mathcal{M}\left(e_R^-q_L \rightarrow e_R^-q_L\right)|^2 =|\mathcal{M}\left(e_L^-q_R \rightarrow e_L^-q_R\right)|^2=  4Q_f^2e^4\frac{s^2}{t^2} \\
+        &|\mathcal{M}\left(e_L^-q_L \rightarrow e_L^-q_L\right)|^2 =|\mathcal{M}\left(e_R^-q_R \rightarrow e_R^-q_R\right)|^2  = 4Q_f^2e^4\frac{u^2}{t^2} 
      \end{align*}
+     \item We can then calculate the cross sections as we did in the last section, using \ref{cross}, remembering that we are treating the particles as massless so $|v_A-v_B|=2$. We will then use relativistic limit of \ref{phase_2} to evaluate the phase space integral. This makes the cross section for each process take the form:
+     \begin{align*}
+         \sigma(\ldots)  &= \frac{1}{2E2E \cdot 2}\int d\Pi_n|\mathcal{M}(\ldots)|^2\\
+          & =\frac{1}{16\pi E_{\text{CM}}^2}\int \frac{d \Omega}{4\pi}|\mathcal{M}(\ldots)|^2
+     \end{align*}
+     We then have to be careful about how we add up these amplitudes. There can only ever be two incoming spins, which we cannot know as the beams are not polarized, this means in order to match experiment we must average over initial spins. We do however want to know the cross section for all possible final spins, this means we must sum over the final spins. We do not sum over initial states as each spin configuration has equal probability of occurring, hence averaging is all that is needed. Similarly the outgoing spins already have the probabilities encoded with them via the matrix elements $\mathcal{M}$, so we do not need to average them further.   asd
 
 \end{itemize}
 % subsection electron_quark_scattering (end)
