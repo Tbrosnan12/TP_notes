@@ -902,6 +902,8 @@ Also since we have used light-like momentum vectors $s+t+u=0$, which is expected
      \end{align*}
      We then have to be careful about how we add up these amplitudes. There can only ever be two incoming spins, which we cannot know as the beams are not polarized, this means in order to match experiment we must average over initial spins. We do however want to know the cross section for all possible final spins, this means we must sum over the final spins. We do not sum over initial states as each spin configuration has equal probability of occurring, hence averaging is all that is needed. Similarly the outgoing spins already have the probabilities encoded with them via the matrix elements $\mathcal{M}$, so we do not need to average them further. 
 
+     Essentially both these things are doing the same thing to each set of states. We sum the states weighted by their probability its just that for the incoming spin states all the probabilities are the same so the sum is essentially an average. 
+
       \item All this means for this calculation is that we sum over all the $\mathcal{M}$'s and divide by $4$ to average the initial states as they each only have one final state.  The total cross section is then:
       \begin{align*}
           \sigma(e^-q \rightarrow e^-q) &=  \frac{1}{16\pi E_{\text{CM}}^2}\int \frac{d \Omega}{4\pi}\frac{1}{4}\sum|\mathcal{M}(\ldots)|^2 \\
@@ -917,9 +919,9 @@ Also since we have used light-like momentum vectors $s+t+u=0$, which is expected
           \frac{d\sigma}{dt} = \frac{2\pi\alpha^2}{s^2}Q_f^2\left(\frac{s^2+u^2}{t^2}\right)
       \end{align*}
         
-
 \end{itemize}
 % subsection electron_quark_scattering (end)
+
 
 % section deep_inelastic_scattering (end)
 \end{document}
