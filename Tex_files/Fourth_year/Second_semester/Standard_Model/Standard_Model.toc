@@ -21,3 +21,4 @@
 \contentsline {subsection}{\numberline {4.1}The Parton Model}{18}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Crossing Symmetry}{19}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Electron Quark Scattering}{21}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Quantum Chromodynamics}{23}{section.5}%

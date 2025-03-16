@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  13 MAR 2025 21:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.17)  16 MAR 2025 01:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1078,30 +1078,108 @@ File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
 yexternal.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zexternalshared.code.tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarypositioning.code.tex
-File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+zexternalshared.code.tex))) (./feynman.sty
+Package: feynman 2015/02/01 v0.8 LaTeX package for drawing feynman diagrams wit
+h an interface similar to the one found at feynman.aivazis.com
+
+(/usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+
+(/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+))
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count459
 )
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count460
+\FP@xia=\count461
+\FP@xib=\count462
+\FP@xfa=\count463
+\FP@xfb=\count464
+\FP@rega=\count465
+\FP@regb=\count466
+\FP@regs=\count467
+\FP@times=\count468
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count469
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.markings.code.tex
+zlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.cod
+e.tex
+File: pgflibrarypatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\arrowsize=\dimen307
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen307
-\pgfdecoratedremainingdistance=\dimen308
-\pgfdecoratedinputsegmentcompleteddistance=\dimen309
-\pgfdecoratedinputsegmentremainingdistance=\dimen310
-\pgf@decorate@distancetomove=\dimen311
-\pgf@decorate@repeatstate=\count459
-\pgfdecorationsegmentamplitude=\dimen312
-\pgfdecorationsegmentlength=\dimen313
+\pgfdecoratedcompleteddistance=\dimen308
+\pgfdecoratedremainingdistance=\dimen309
+\pgfdecoratedinputsegmentcompleteddistance=\dimen310
+\pgfdecoratedinputsegmentremainingdistance=\dimen311
+\pgf@decorate@distancetomove=\dimen312
+\pgf@decorate@repeatstate=\count470
+\pgfdecorationsegmentamplitude=\dimen313
+\pgfdecorationsegmentlength=\dimen314
 )
 \tikz@lib@dec@box=\box86
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
-decorations.markings.code.tex))
+decorations.pathreplacing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.markings.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.markings.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
 \pgf@layerbox@nodelayer=\box87
 \pgf@layerboxsaved@nodelayer=\box88
 \pgf@layerbox@edgelayer=\box89
@@ -1110,8 +1188,8 @@ decorations.markings.code.tex))
 
 Package biblatex Warning: Load 'inputenc' before biblatex.
 
-\@quotelevel=\count460
-\@quotereset=\count461
+\@quotelevel=\count471
+\@quotereset=\count472
 (./Quantum_Field_Theory_I.aux
 
 LaTeX Warning: Label `S_def' multiply defined.
@@ -1119,24 +1197,24 @@ LaTeX Warning: Label `S_def' multiply defined.
 )
 \openout1 = `Quantum_Field_Theory_I.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1172,7 +1250,7 @@ LaTeX Font Info:    ... okay on input line 97.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 97.
+Package hyperref Info: Link coloring OFF on input line 98.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1182,11 +1260,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count462
+\c@section@level=\count473
 )
-LaTeX Info: Redefining \ref on input line 97.
-LaTeX Info: Redefining \pageref on input line 97.
-LaTeX Info: Redefining \nameref on input line 97.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
+LaTeX Info: Redefining \nameref on input line 98.
 
 (./Quantum_Field_Theory_I.out) (./Quantum_Field_Theory_I.out)
 \@outlinefile=\write6
@@ -1207,21 +1285,21 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Quantum_Field_Theory_I.bbl' found.
 
 (./Quantum_Field_Theory_I.bbl)
-Package biblatex Info: Reference section=0 on input line 97.
-Package biblatex Info: Reference segment=0 on input line 97.
+Package biblatex Info: Reference section=0 on input line 98.
+Package biblatex Info: Reference segment=0 on input line 98.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count463
-\scratchdimen=\dimen314
+\scratchcounter=\count474
+\scratchdimen=\dimen315
 \scratchbox=\box91
-\nofMPsegments=\count464
-\nofMParguments=\count465
+\nofMPsegments=\count475
+\nofMParguments=\count476
 \everyMPshowfont=\toks47
-\MPscratchCnt=\count466
-\MPscratchDim=\dimen315
-\MPnumerator=\count467
-\makeMPintoPDFobject=\count468
+\MPscratchCnt=\count477
+\MPscratchDim=\dimen316
+\MPnumerator=\count478
+\makeMPintoPDFobject=\count479
 \everyMPtoPDFconversion=\toks48
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1232,21 +1310,21 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count469
-LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
-
+\c@lstlisting=\count480
+LaTeX Font Info:    Trying to load font information for U+msa on input line 100
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 100
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 99
-.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 10
+0.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1394,7 +1472,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [19]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 773
+LaTeX Font Info:    Trying to load font information for U+euf on input line 774
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1438,22 +1516,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 4.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.875   \end{align}
+l.876   \end{align}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{equation.4.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.875   \end{align}
+l.876   \end{align}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{equation.4.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.875   \end{align}
+l.876   \end{align}
                    pdfTeX warning (ext4): destination with the same identifier 
 (name{equation.4.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.875   \end{align}
+l.876   \end{align}
                    
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1518,7 +1596,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [30]
-Overfull \hbox (32.75508pt too wide) detected at line 1253
+Overfull \hbox (32.75508pt too wide) detected at line 1254
 []
  []
 
@@ -1531,7 +1609,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [31]
-Overfull \hbox (46.99426pt too wide) detected at line 1278
+Overfull \hbox (46.99426pt too wide) detected at line 1279
 []
  []
 
@@ -1571,7 +1649,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [35]
-Overfull \hbox (6.46196pt too wide) detected at line 1420
+Overfull \hbox (6.46196pt too wide) detected at line 1421
 []
  []
 
@@ -1613,15 +1691,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [39]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1580.
+(hyperref)                removing `math shift' on input line 1581.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1580.
+(hyperref)                removing `superscript' on input line 1581.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1580.
+(hyperref)                removing `math shift' on input line 1581.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1732,7 +1810,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [51]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 204
-2.
+4.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
@@ -1826,10 +1904,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [61]
-<Peskin_scattering.png, id=1024, 1573.88pt x 953.5625pt>
+<Peskin_scattering.png, id=1026, 1573.88pt x 953.5625pt>
 File: Peskin_scattering.png Graphic file (type png)
 <use Peskin_scattering.png>
-Package pdftex.def Info: Peskin_scattering.png  used on input line 2744.
+Package pdftex.def Info: Peskin_scattering.png  used on input line 2746.
 (pdftex.def)             Requested size: 308.82936pt x 187.10068pt.
 
 
@@ -1853,7 +1931,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.2779 \end{itemize}
+l.2781 \end{itemize}
                      <./Peskin_scattering.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1900,7 +1978,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [68]
-Overfull \hbox (14.88495pt too wide) detected at line 3145
+Overfull \hbox (14.88495pt too wide) detected at line 3147
 []
  []
 
@@ -1962,13 +2040,13 @@ Package logreq Info: Writing requests to 'Quantum_Field_Theory_I.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38157 strings out of 480247
- 769154 string characters out of 5896106
- 1503665 words of memory out of 5000000
- 55143 multiletter control sequences out of 15000+600000
+ 40042 strings out of 480247
+ 810031 string characters out of 5896106
+ 1559073 words of memory out of 5000000
+ 56960 multiletter control sequences out of 15000+600000
  490348 words of font info for 113 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,22n,104p,1242b,1078s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,22n,104p,1242b,1148s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/thomas/.texlive2021/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
@@ -1998,10 +2076,10 @@ exlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
 mf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Quantum_Field_Theory_I.pdf (73 pages, 729788 bytes).
+Output written on Quantum_Field_Theory_I.pdf (73 pages, 736195 bytes).
 PDF statistics:
- 1345 PDF objects out of 1440 (max. 8388607)
- 1174 compressed objects within 12 object streams
- 333 named destinations out of 1000 (max. 500000)
+ 1348 PDF objects out of 1440 (max. 8388607)
+ 1177 compressed objects within 12 object streams
+ 335 named destinations out of 1000 (max. 500000)
  714 words of extra memory for PDF output out of 10000 (max. 10000000)
 

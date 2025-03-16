@@ -29,6 +29,7 @@
 \usepackage{bbm}
 \usepackage{cancel}
 \usepackage{simpler-wick}
+\usepackage{feynman}% For Feynman diagrams
 
 \setlength{\droptitle}{3em} 
 
@@ -1916,7 +1917,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 \begin{itemize}
   \item We would like to proceed now to write down a general expression for the $A^{\mu}(x)$ field. To this we first need to find what equation of motion it must satisfy. We start with the Lagrangian density \ref{L_max} and expand it as follows:
   \begin{align*}
-    L_{\text{Max}} &= -\frac{1}{4}\left[\partial^{\mu}A^{\nu}-\partial^{\nu}A^{\mu}\right]\left[\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}\right] \\
+    \mathcal{L}_{\text{Max}} &= -\frac{1}{4}\left[\partial^{\mu}A^{\nu}-\partial^{\nu}A^{\mu}\right]\left[\partial_{\mu}A_{\nu}-\partial_{\nu}A_{\mu}\right] \\
     & = \frac{1}{2}\left[\partial^{\mu}A^{\nu}\partial_{\nu}A_{\mu}-\partial^{\mu}A^{\nu}\partial_{\mu}A_{\nu}\right]
   \end{align*}
   Where we have relabeled some indices to arrive at this last expression. We can now plug this into the equations of motion \ref{EoM} (this was for a scalar field but we can simply replace $\phi$ with $A_{\nu}$). This results in:
@@ -1944,10 +1945,11 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
        \boldsymbol{\xi}\cdot\textbf{p} =0
      \end{align*} 
      Thus to be most general we can pick $\boldsymbol{\xi}$ to be a linear combination of two orthonormal polarization vectors $\boldsymbol{\epsilon}_{r},~r=1,2$ which are orthogonal to $\textbf{p}$ so $\boldsymbol{\epsilon}_{r}\cdot \textbf{p}=0$. Them being orthonormal means $\boldsymbol{\epsilon}_{r}\cdot\boldsymbol{\epsilon}^{\ast}_{r'} = \delta_{rr'}$. With these vectors and the fact that the components of $\textbf{A}$ satisfy the KG equation we can write down the mode expansion of $\textbf{A}$:
-     \begin{flalign*}
+     \begin{flalign}
+     \label{A_&_E}
        \textbf{A} &= \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2|\textbf{p}|}}\sum_{r=1}^2\left[\boldsymbol{\epsilon}_{r}(\textbf{p})a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+\boldsymbol{\epsilon}^{\ast}_{r}(\textbf{p})a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right] \\
        \textbf{E}  &= \int \frac{d^3p}{(2\pi)^3}(-i)\sqrt{\frac{|\textbf{p}|}{2}}\sum_{r=1}^2\left[\boldsymbol{\epsilon}_{r}(\textbf{p})a^{r}_{\textbf{p}}e^{i\textbf{p}\cdot\textbf{x}}+\boldsymbol{\epsilon}^{\ast}_{r}a^{r\dagger}_{\textbf{p}}e^{-i\textbf{p}\cdot\textbf{x}}\right]
-     \end{flalign*}
+     \end{flalign}
      Where we have made the same sort of expansion for $ \textbf{E}$ as we also have that $ \nabla \cdot \textbf{E} =0$ and for the different factors we have taken inspiration from our expression for momentum density \ref{pi_2} so that we can arrive at the commutation relations we derived above. 
 
      \item The next step is to derive the commutation relations. But before we do this we need to derive a sum relation for the polarization vectors. In plugging our above expressions into the the commutation relations \ref{A_com} we will have a sum over the product of two different components of the $\boldsymbol{\epsilon}_{r}$'s. To find an expression for this we posit that we can expand this product over possible tensors:
@@ -1997,7 +1999,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
     \item It turns out that this is not the most useful version of the Propagator in QED. A cleaner Lorentz invariant version is obtained from following the above procedure for the Lorentz gauge. This is not as nice as it is for the Coulomb gauge. The nice thing is that it can be shown that the two propagators, when placed in the calculations that the Feynman rules for QED involve, result in the same terms. A proof of this can be seen on page 142 of David Tong's notes on QFT. This propagator takes the form:
     \begin{align}
     \label{A_contract}
-    \langle 0 | T \{A_\mu(x) A_\nu(y)\} | 0 \rangle &= \int \frac{d^4p}{(2\pi)^4} \frac{-i \eta_{\mu\nu}}{p^2 + i\epsilon} e^{-ip \cdot (x - y)}
+    \langle 0 | T \{A_\mu(x) A_\nu(y)\} | 0 \rangle &= \int \frac{d^4p}{(2\pi)^4} \frac{-i \eta_{\mu\nu}}{p^2 + i\epsilon} e^{-ip \cdot (x - y)} \equiv D^F_{\mu\nu}(x-y)
 \end{align}  
 \end{itemize}
 
@@ -3146,7 +3148,7 @@ As we have no angular dependence.
    \item This integral is a big problem as just evaluating the second delta function results in the first fraction $\frac{i}{p_{\mathcal{B}}^2-m^2}$, but since $p_{\mathcal{B}}$ is the momentum of an external particle (which must have mass $m$), this term blows up! This means that any diagram involving a loop like the one above will contain a divergent factor. Hence we must ignore them! The diagrams with out these loops are called the \emph{amputated} diagrams. 
 \end{itemize}
 % subsubsection amputations (end)
-
+% subsection s_matrix_from_feynman_diagrams (end)
 \subsection{Feynman Rules for Fermions} % (fold)
 \label{sub:feynman_rules_for_fermions}
 \begin{itemize}
@@ -3174,9 +3176,123 @@ As we have no angular dependence.
       & = e^{-ip\cdot x}u^{s}(p)\ket{0}
     \end{align} 
     Where we have used the anti-commutation relations \ref{b_anti}. The contraction of $\bar{\psi}$ with a momentum ket can be defined in the same way resulting in $\wick{\c{\bar{\psi}(x)}\c{\ket{\textbf{p},s}}} = e^{ip\cdot x}\bar{v}^{s}(p)\ket{0}$. There is a caveat to this last definition in that it only holds if the ket $\bar{\psi}$ acts on is a anti-fermion as it needs to contain the creation operator $c^{r \dagger}_{\textbf{p}}$. The opposite holds for contractions with the outgoing states. $\psi$ must contract with outgoing anti-fermions and $\bar{\psi}$ with outgoing fermions.
+
+    \item Often the exponentials of these contractions are dropped as all they lead to is momentum conservation at each vertex of the diagram. The last rule we forgot to mention is that at each vertex we assign a factor of $-ig$, where $g$ is the coupling constant of the given theory. this just comes about as this factor appears where ever we have a $4-$current, i.e. wherever there is a vertex. 
+
+ \item  We will summarize all the rules as follows, where here the dashed lines indicate the irreverent parts of the diagrams: 
+    \begin{itemize}
+      \item \textbf{Fermion Propagator:}
+      \begin{align*}
+         \wick{\c{\psi}(x) \c {\bar{\psi}}(y)} =  \begin{array}{c}
+           \begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (1) at (1, 0) {};
+    \node [style=none] (2) at (0, 0) {};
+    \node [style=none] (3) at (1, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [postaction={decorate}] (0.center) to (2.center);
+    \draw (2.center) to (3.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} = \frac{i(\gamma^{\mu}p_{\mu}+m)}{p^2-m^2+i\epsilon}
+       \end{align*} 
+       \item \textbf{Vertices:}
+       \begin{align*}
+         \begin{array}{c}
+           \begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-1, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+    \node [style=none] (2) at (-2, 1) {};
+    \node [style=none] (3) at (-2, -1) {};
+    \node [style=none] (4) at (-1.5, 0.5) {};
+    \node [style=none] (5) at (-1.5, -0.5) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw [style=dashed] (5.center) to (3.center);
+    \draw [style=dashed] (4.center) to (2.center);
+    \draw [style=dashed] (1.center) to (0.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} = -ig
+       \end{align*}
+       \item \textbf{External Fermions:}
+       \begin{align*}
+         & \wick{\c{\psi(x)}\c{\ket{\textbf{p},s}}} = u^{s}(p) =\begin{array}{c}
+           \begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (4) at (-1.5, 0.5) {};
+    \node [style=none] (5) at (-1.5, -0.5) {};
+    \node [style=none] (6) at (-0.5, 0) {};
+    \node [style=none] (7) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw [postaction={decorate}] (7.center) to (6.center);
+    \draw  (0.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} & \wick{\c{\bra{\textbf{p},s}}\c{\psi(x)}} = \bar{u}^{s}(p) = \begin{array}{c}
+\begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (4) at (-0.5, 0.5) {};
+    \node [style=none] (5) at (-0.5, -0.5) {};
+    \node [style=none] (6) at (-1.5, 0) {};
+    \node [style=none] (7) at (-2, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw (6.center) to (7.center);
+    \draw [postaction={decorate}] (0.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} \\
+         & \wick{\c{\bar{\psi}(x)}\c{\ket{\textbf{p},s}}} = \bar{v}^s(p) = \begin{array}{c}
+           \begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (4) at (-1.5, 0.5) {};
+    \node [style=none] (5) at (-1.5, -0.5) {};
+    \node [style=none] (6) at (-0.5, 0) {};
+    \node [style=none] (7) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw (6.center) to (7.center);
+    \draw [postaction={decorate}] (0.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} & \wick{\c{\bra{\textbf{p},s}}\c{\bar{\psi}(x)}} = v^s(p) =\begin{array}{c}
+\begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (4) at (-0.5, 0.5) {};
+    \node [style=none] (5) at (-0.5, -0.5) {};
+    \node [style=none] (6) at (-1.5, 0) {};
+    \node [style=none] (7) at (-2, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw (6.center) to (7.center);
+    \draw [postaction={decorate}] (0.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+\end{array}
+       \end{align*}
+    \end{itemize}
 \end{itemize}
 % subsection feynman_rules_for_fermions (end)
-% subsection s_matrix_from_feynman_diagrams (end)
+
 
 \newpage
 
@@ -3218,8 +3334,199 @@ As we have no angular dependence.
 \begin{itemize}
   \item We can use our knowledge of Feynman rules developed in the previous few chapters to write down the Feynman rules for QED. We make use of  
 
-  We can recall that the contraction of two $A_{\mu}$ fields is the same as the their time ordered product hence using \ref{A_contract} ...  wd
+  We can gather that this will go the same way as the other rules. We can define the contraction of an $A_{\mu}$ field with itself as the following:
+\begin{align*}
+  \wick{\c {A_{\mu}(x)}\c{A_{\nu}(y)}} = \left\{\begin{matrix}
+         ~~\left[A^{+}_{\mu}(x),A^{-}_{\nu}(y)\right]& ~~~x^0>y^0 \\
+         -\left[A^{+}_{\nu}(y),A^{-}_{\mu}(x)\right]& ~~~x^0<y^0 
+         \end{matrix}\right\} = D^F_{\mu\nu}(x-y)
+\end{align*}
+  Where $D^F_{\mu\nu}(x-y)$ is the QED propagator defined in \ref{A_contract}. The contractions of the $A_{\mu}$ fields with the ingoing and outgoing momenta can be found in the exact same way as we found the external fermions is the last chapter, but instead of the spinors $u^s$ and $v^s$ we get the polarization vectors $\boldsymbol{\epsilon}_{r}(\textbf{p})$ that make up $A_{m}$ in \ref{A_&_E}. We actually extend these polarization vectors to become polarization $4$ vectors by giving them an $\epsilon^{0}=0$ component. The contractions then give us $\wick{\c A_{\mu} \c{\ket{\textbf{p}}}} = \epsilon_{\mu}(p)$ and $\wick{\c{\bra{\textbf{p}}} \c {A_{\mu}} } = \epsilon^{\ast}_{\mu}(p)$
+
+
+\item Since we defined the Feynman rules for fermions at the end of the last chapter all that is left to do is write down the rules for the different contractions of the $A$ fields. There is also one small change to the vertices in that along with the factor of $-ie$, they also have a $\gamma^{\mu}$. This then also means that the other rules will contain some indices for contraction. 
+  \item All together the rules are:
+  \begin{itemize}
+      \item \textbf{Fermion Propagator:}
+      \begin{align*}
+         \wick{\c{\psi}(x) \c {\bar{\psi}}(y)} =  \begin{array}{c}
+           \begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (1) at (1, 0) {};
+    \node [style=none] (2) at (0, 0) {};
+    \node [style=none] (3) at (1, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [postaction={decorate}] (0.center) to (2.center);
+    \draw (2.center) to (3.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} = \frac{i(\gamma^{\mu}p_{\mu}+m)}{p^2-m^2+i\epsilon}
+       \end{align*} 
+       \item \textbf{Photon Propagator:}
+       \begin{align*}
+        \wick{\c {A_{\mu}(x)}\c{A_{\nu}(y)}} = \begin{array}{c}
+          \begin{tikzpicture}
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (3) at (-1.5, 0) {};
+    \node [style=none] (4) at (-2, 0) {};
+    \node [style=none] (5) at (-2.5, 0) {};
+    \node [style=none] (6) at (-3, 0) {};
+    \node [style=none] (7) at (-0.5, 0) {};
+    \node [style=none] (8) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [bend left=315, looseness=1.75] (0.center) to (3.center);
+    \draw [bend left=45, looseness=1.75] (3.center) to (4.center);
+    \draw [bend right=45, looseness=1.50] (4.center) to (5.center);
+    \draw [bend left=45, looseness=1.75] (5.center) to (6.center);
+    \draw [bend right=45, looseness=1.75] (0.center) to (7.center);
+    \draw [bend left=45, looseness=1.50] (7.center) to (8.center);
+  \end{pgfonlayer}
+  \end{tikzpicture}
+        \end{array} = \frac{-i \eta_{\mu\nu}}{p^2 + i\epsilon}
+       \end{align*}
+       \item \textbf{Vertices:}
+       \begin{align*}
+         \begin{array}{c}
+           \begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [circle, fill, inner sep=1pt] (0) at (-1, 0) {};
+    \node [style=none] (1) at (0, 0) {};
+    \node [style=none] (2) at (-2, 1) {};
+    \node [style=none] (3) at (-2, -1) {};
+    \node [style=none] (4) at (-1.5, 0.5) {};
+    \node [style=none] (5) at (-1.5, -0.5) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw [style=dashed] (5.center) to (3.center);
+    \draw [style=dashed] (4.center) to (2.center);
+    \draw [style=dashed] (1.center) to (0.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} = -ie\gamma^{\mu}
+       \end{align*}
+       \item \textbf{External Fermions:}
+       \begin{align*}
+         & \wick{\c{\psi(x)}\c{\ket{\textbf{p},s}}} = u^{s}(p) =\begin{array}{c}
+           \begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (4) at (-1.5, 0.5) {};
+    \node [style=none] (5) at (-1.5, -0.5) {};
+    \node [style=none] (6) at (-0.5, 0) {};
+    \node [style=none] (7) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw [postaction={decorate}] (7.center) to (6.center);
+    \draw  (0.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} & \wick{\c{\bra{\textbf{p},s}}\c{\psi(x)}} = \bar{u}^{s}(p) = \begin{array}{c}
+\begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (4) at (-0.5, 0.5) {};
+    \node [style=none] (5) at (-0.5, -0.5) {};
+    \node [style=none] (6) at (-1.5, 0) {};
+    \node [style=none] (7) at (-2, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw (6.center) to (7.center);
+    \draw [postaction={decorate}] (0.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} \\
+         & \wick{\c{\bar{\psi}(x)}\c{\ket{\textbf{p},s}}} = \bar{v}^s(p) = \begin{array}{c}
+           \begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (4) at (-1.5, 0.5) {};
+    \node [style=none] (5) at (-1.5, -0.5) {};
+    \node [style=none] (6) at (-0.5, 0) {};
+    \node [style=none] (7) at (0, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw (6.center) to (7.center);
+    \draw [postaction={decorate}] (0.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} & \wick{\c{\bra{\textbf{p},s}}\c{\bar{\psi}(x)}} = v^s(p) =\begin{array}{c}
+\begin{tikzpicture}[scale=1, decoration={markings, mark=at position 1 with {\arrow{stealth}}}]
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (4) at (-0.5, 0.5) {};
+    \node [style=none] (5) at (-0.5, -0.5) {};
+    \node [style=none] (6) at (-1.5, 0) {};
+    \node [style=none] (7) at (-2, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (0.center) to (4.center);
+    \draw [style=dashed] (0.center) to (5.center);
+    \draw (6.center) to (7.center);
+    \draw [postaction={decorate}] (0.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+\end{array}
+       \end{align*}
+     \item \textbf{External Photons:}
+       \begin{align*}
+          \wick{\c A_{\mu} \c{\ket{\textbf{p}}}} = \epsilon_{\mu}(p) =  \begin{array}{c}
+           \begin{tikzpicture}
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (1) at (-1.75, 0.75) {};
+    \node [style=none] (2) at (-1.75, -0.75) {};
+    \node [style=none] (3) at (-0.5, 0) {};
+    \node [style=none] (4) at (0, 0) {};
+    \node [style=none] (5) at (0.5, 0) {};
+    \node [style=none] (6) at (1, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed] (1.center) to (0.center);
+    \draw [style=dashed] (2.center) to (0.center);
+    \draw [bend left=315, looseness=1.75] (0.center) to (3.center);
+    \draw [bend left=45, looseness=1.75] (3.center) to (4.center);
+    \draw [bend right=45, looseness=1.50] (4.center) to (5.center);
+    \draw [bend left=45, looseness=1.75] (5.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array} ~~~\wick{\c{\bra{\textbf{p}}} \c {A_{\mu}} } = \epsilon^{\ast}_{\mu}(p) = \begin{array}{c}
+            \begin{tikzpicture}
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] (0) at (-1, 0) {};
+    \node [style=none] (1) at (0, 0.75) {};
+    \node [style=none] (2) at (0, -0.75) {};
+    \node [style=none] (3) at (-1.5, 0) {};
+    \node [style=none] (4) at (-2, 0) {};
+    \node [style=none] (5) at (-2.5, 0) {};
+    \node [style=none] (6) at (-3, 0) {};
+  \end{pgfonlayer}
+  \begin{pgfonlayer}{edgelayer}
+    \draw [style=dashed](1.center) to (0.center);
+    \draw [style=dashed] (2.center) to (0.center);
+    \draw [bend left=315, looseness=1.75] (0.center) to (3.center);
+    \draw [bend left=45, looseness=1.75] (3.center) to (4.center);
+    \draw [bend right=45, looseness=1.50] (4.center) to (5.center);
+    \draw [bend left=45, looseness=1.75] (5.center) to (6.center);
+  \end{pgfonlayer}
+\end{tikzpicture}
+         \end{array}
+       \end{align*}
+    \end{itemize}
+
 \end{itemize}
+
 % subsection feynman_rules_for_qed (end)
 
 % section qed_interactions (end)
