@@ -2,8 +2,8 @@ PWD /home/thomas/Documents/TP_notes/Tex_files/Third_year/Second_semester/Quantum
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
-INPUT /home/thomas/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/thomas/Documents/TP_notes/Tex_files/Third_year/Second_semester/Quantum_Mechanics_II/Quantum_Mechanics_II.tex
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT Quantum_Mechanics_II.tex
 OUTPUT Quantum_Mechanics_II.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/article.cls
