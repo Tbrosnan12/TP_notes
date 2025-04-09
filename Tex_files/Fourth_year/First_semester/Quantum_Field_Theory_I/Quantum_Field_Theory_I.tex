@@ -853,6 +853,7 @@ Where from here and now on we replace $\omega_{\textbf{p}}$ with $E_{\textbf{p}}
 \end{itemize}
 
 \subsection{Dirac matrices}
+\label{sub:dirac_matrices}
 \begin{itemize}
   \item The matrices defined by \ref{gamma_def} are all that is needed to define these matrices. There are no representations of this Clifford algebra for $n=2$ or $n=3$, so it turns out that the simplest representation is when the $\gamma^{\mu}$ are $4 \times 4$ matrices. We can then go about figuring out their form. We can see immediately from \ref{gamma_def} that:
   \begin{align}
@@ -3528,6 +3529,26 @@ As we have no angular dependence.
 \end{itemize}
 
 % subsection feynman_rules_for_qed (end)
+
+\subsection{Trace Technology} % (fold)
+\label{sub:trace_technology}
+Through out many calculations in QED the traces of various combinations of gamma matrices defined in section \ref{sub:dirac_matrices}. We proved in section \ref{sub:dirac_matrices} that the gamma matrices are trace-less. This can be further extended to all odd combinations of gamma matrices, by using $\gamma^{5}$ instead of $\gamma^{\mu}$ in that proof, as $\{\gamma^5,\gamma^{\mu}\} = 0 $ \footnote{This can be shown from the alternate definition of $\gamma^5$ as $\gamma^5 = -\frac{i}{4!}\epsilon^{\mu\nu\rho\sigma}\gamma_{\mu}\gamma_{\nu}\gamma_{\rho}\gamma_{s}$.}. Hence:
+\begin{align*}
+  \text{tr}(\underbrace{\gamma^{\nu} \cdot \cdot \cdot \gamma^{\mu}}_{\text{n=odd}}) =0 
+\end{align*}
+For the even number of gamma matrices we can use their definition \ref{gamma_def} to manipulate and calculate their traces. For example:
+\begin{align*}
+  \text{tr}(\gamma^\mu\gamma^\nu) &= \text{tr}(2\eta^{\mu\nu}\cdot\mathbbm{1}-\gamma^\nu\gamma^\mu) = 8\eta^{\mu\nu}-\text{tr}(\gamma^{\mu}\gamma^{\nu}) \\
+  & \implies \text{tr}(\gamma^\mu\gamma^\nu) = 4\eta^{\mu\nu}
+\end{align*}
+Where we have to remember that the trace is over the spinor indices not the $\mu,\nu$ indices. Similarly one can show that: 
+\begin{align}
+\text{tr} \left( \gamma^\mu \gamma^\nu \gamma^\rho \gamma^\sigma \right)
+=  4 \left( g^{\mu\nu} g^{\rho\sigma}
+- g^{\mu\rho} g^{\nu\sigma}
++ g^{\mu\sigma} g^{\nu\rho} \right).
+\end{align}    
+% subsection trace_technology (end)
 
 % section qed_interactions (end)
 
