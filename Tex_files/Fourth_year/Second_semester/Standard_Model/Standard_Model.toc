@@ -4,21 +4,22 @@
 \contentsline {subsection}{\numberline {1.3}Mesons}{5}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}$SU(3)$ Flavour}{5}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Light Mesons}{6}{subsection.1.5}%
-\contentsline {subsection}{\numberline {1.6}Baryons}{7}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.6}Baryons}{8}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}Total Wavefunction}{8}{subsection.1.7}%
-\contentsline {section}{\numberline {2}Scattering \& Decay}{9}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Decay}{9}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Cross Section}{9}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Master Formula}{10}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}2 Particle Collision}{10}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Electron Positron Annihilation}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Feynman Diagrams}{12}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Massless Fermions}{13}{subsubsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.2}Matrix Element}{15}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Cross sections}{16}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}$e^+ e^- \rightarrow $ Hadrons}{17}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Deep Inelastic Scattering}{18}{section.4}%
-\contentsline {subsection}{\numberline {4.1}The Parton Model}{18}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Crossing Symmetry}{19}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Electron Quark Scattering}{21}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Quantum Chromodynamics}{23}{section.5}%
+\contentsline {subsection}{\numberline {1.8}Quark Charges}{9}{subsection.1.8}%
+\contentsline {section}{\numberline {2}Scattering \& Decay}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Decay}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Cross Section}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Master Formula}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}2 Particle Collision}{11}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Electron Positron Annihilation}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Feynman Diagrams}{13}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Massless Fermions}{14}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Matrix Element}{16}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Cross sections}{17}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}$e^+ e^- \rightarrow $ Hadrons}{18}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Deep Inelastic Scattering}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Parton Model}{19}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Crossing Symmetry}{20}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Electron Quark Scattering}{22}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Quantum Chromodynamics}{24}{section.5}%
