@@ -204,9 +204,9 @@ Note that this ordering means $\bar{d}$ has $I_3=\frac{1}{2}$ and $\bar{u}$ has 
     \item Mesons are bound states of a quark and anti-quark pair, since quarks are spin half, this makes mesons bosons. Since Mesons are comprised of two quarks, we can think of adding their Isospin in exactly the same way we add the spin of two particles together. Since the quarks have isospin $\frac{1}{2}$, this will create the familiar $\frac{1}{2} \otimes \frac{1}{2} = 1 \oplus 0$. Meaning there will be four possible states, a triplet with $I_3=1$ and a singlet with $I_3=0$. These state correspond to meson particles! Each state will correspond to more then one particle as we are not considering different combinations of spins (which affect the mass!). These particles are:
 \begin{align*}
     &\phi(1,1) = -|\! u\bar{d} \rangle \; &=& |\pi^{+} \rangle, |\rho^{+} \rangle \\ 
-    &\phi(1,0) = \frac{1}{\sqrt{2}}\left(|\! u\bar{u} \rangle - |\! d\bar{d} \rangle \right) \; &=& |\pi^{0} \rangle, |\rho^{0} \rangle \\ 
+    &\phi(1,0) = \frac{1}{\sqrt{2}}\left(|\! u\bar{u} \rangle + |\! d\bar{d} \rangle \right) \; &=& |\pi^{0} \rangle, |\rho^{0} \rangle \\ 
     &\phi(1,-1) = |\! d\bar{u} \rangle \; &=& |\pi^{-} \rangle, |\rho^{-} \rangle \\ 
-    &\phi(0,0) = \frac{1}{\sqrt{2}}\left(|\! u\bar{u} \rangle + |\! d\bar{d} \rangle \right) \; &=& |\eta \rangle, |\omega \rangle
+    &\phi(0,0) = \frac{1}{\sqrt{2}}\left(|\! u\bar{u} \rangle - |\! d\bar{d} \rangle \right) \; &=& |\eta \rangle, |\omega \rangle
 \end{align*}
 
 \end{itemize}
@@ -428,7 +428,7 @@ Where $\sigma$ is the cross section. It is useful for our calculations to consid
      \item We know from our study of Quantum Field Theory \footnote{See my notes on QFT \href{https://tbrosnan12.github.io/documents/Fourth_year/First_semester/Quantum_Field_Theory_I.pdf}{here}.}, that the quantum mechanical transition matrix element is given by:
      \begin{align}
      \label{T_hat}
-         \bra{12 \cdot \cdot \cdot n}T \ket{A(p_A)} = \mathcal{M}(A \rightarrow 1 +2 + \cdot \cdot \cdot n)(2\pi)^4\delta(p_A - \sum_jp_j)
+         \bra{12 \cdot \cdot \cdot n}T \ket{A(p_A)} = \mathcal{M}(A \rightarrow 1 +2 + \cdot \cdot \cdot+ n)(2\pi)^4\delta(p_A - \sum_jp_j)
      \end{align}
      Where $T$ is the time evolution operator. The factor of $\mathcal{M}$ is called the \emph{invariant Matrix element}. We will sometimes refer to it as the scattering amplitude. 
      \item To find the total rate of decay we need to integrate over the total phase, i.e. all momenta that the particles could have subject to the constraint of momentum conservation. This will be written as:
