@@ -443,7 +443,7 @@ Where we also for convenience have included in this the factors of $1/2E$, so as
 If the final products have spin we will need to sum over these spins. Similarly we need to do the same for the initial state, but often this state is unknown so we simply average over all possible spins instead. This expression is actually a simplification of the following more general expression for the cross section in therms of the invariant matrix element:
 \begin{align}
 \label{cross}
-    \sigma(A+B \rightarrow f) = \frac{1}{2E_A2E_B|v_A-v_B|}\int d\Pi_n|\mathcal{M}(A\rightarrow f)|^2
+    \sigma(A+B \rightarrow f) = \frac{1}{2E_A2E_B|v_A-v_B|}\int d\Pi_n|\mathcal{M}(A+B\rightarrow f)|^2
 \end{align}
 
  \end{itemize}
@@ -548,8 +548,8 @@ From this we can see that the last term, which is proportional to the mass, coup
 \begin{itemize}
     \item In the case of $m=0$ fermions The Dirac equation $(i\gamma^{\mu}\partial_{\mu}-m)\psi = 0$ reduces to the following equations on the two spinors:
     \begin{align*}
-         i\sigma^{\mu}\partial_{\mu}&\psi_{L} = 0 \\
-      i\bar{\sigma}^{\mu}\partial_{\mu}& \psi_{R} =0 
+         i\bar{\sigma}\partial_{\mu}&\psi_{L} = 0 \\
+      i\sigma^{\mu}\partial_{\mu}& \psi_{R} =0 
     \end{align*}
     This means the solutions will take the following form (there are two types of solutions):
     \begin{align}
