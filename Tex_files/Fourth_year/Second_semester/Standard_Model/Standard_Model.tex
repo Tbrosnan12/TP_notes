@@ -548,7 +548,7 @@ From this we can see that the last term, which is proportional to the mass, coup
 \begin{itemize}
     \item In the case of $m=0$ fermions The Dirac equation $(i\gamma^{\mu}\partial_{\mu}-m)\psi = 0$ reduces to the following equations on the two spinors:
     \begin{align*}
-         i\bar{\sigma}\partial_{\mu}&\psi_{L} = 0 \\
+         i\bar{\sigma}^{\mu}\partial_{\mu}&\psi_{L} = 0 \\
       i\sigma^{\mu}\partial_{\mu}& \psi_{R} =0 
     \end{align*}
     This means the solutions will take the following form (there are two types of solutions):
@@ -609,7 +609,7 @@ We can then solve for $u(p)$ in the following way. If $u(p) = (a ,b)^{T}$ then t
     & \text{plus case:}  & \text{minus case:} \\
     & a= \frac{2\cos \frac{\theta}{2}\sin \frac{\theta}{2}}{1+(\sin^2 \frac{\theta}{2} - \cos^2\frac{\theta}{2})} b& \hspace{-40mm}   a=  \frac{-2\cos \frac{\theta}{2}\sin \frac{\theta}{2}}{1-(\sin^2 \frac{\theta}{2} - \cos^2\frac{\theta}{2})}b \\
     & = \frac{2\cos \frac{\theta}{2}\sin \frac{\theta}{2}}{2\cos^2\frac{\theta}{2}}b & = \frac{-2\cos \frac{\theta}{2}\sin \frac{\theta}{2}}{2\sin^2\frac{\theta}{2}}b \\
-    & = \frac{\sin \frac{\theta}{2}}{\cos \frac{\theta}{2}}b & = \frac{\cos \frac{\theta}{2}}{\sin \frac{\theta}{2}}b
+    & = \frac{\sin \frac{\theta}{2}}{\cos \frac{\theta}{2}}b & = -\frac{\cos \frac{\theta}{2}}{\sin \frac{\theta}{2}}b
 \end{align*}
 With this we can see that going to functions of $\theta/2$ has allowed us to find clearly normalized solutions for $u(p)$. These spinors are the new $\xi_+$ and $\xi_-$:
 \begin{align}
@@ -661,7 +661,7 @@ With this we can see that going to functions of $\theta/2$ has allowed us to fin
      We can then remember that we are expanding in powers of the interacting Hamiltonian $H_I$ which is an integral over all space. This means we must integrate the above expression over all $x$ and $y$. We can see that the only $x$ and $y$ dependent terms are the exponentials, so these integral give us factors of $(2\pi)^4\delta^{(4)}(p_--p_+ -q)$ and $(2\pi)^4\delta^{(4)}(p_+'-p_-' +q)$. So we have:
      \begin{align}
      \label{2_delta}
-         -2e^2(2E)^2\epsilon^{\ast\nu}_+\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_+(2\pi)^4\delta^{(4)}(p_-+p_+ +q)(2\pi)^4\delta^{(4)}(p_+'-p_-'+q)
+         -2e^2(2E)^2\epsilon^{\ast\nu}_1\frac{i\eta_{\mu\nu}}{q^2}\epsilon^{\mu}_{2}(2\pi)^4\delta^{(4)}(p_-+p_+ +q)(2\pi)^4\delta^{(4)}(p_+'-p_-'+q)
      \end{align}
 
      Then we are required to integrate over all undetermined momenta, which is just integrating over $q$, this takes the two delta functions and requires that $p_-+p_+ = p_+'+p_-'$. which is just momentum conservation for the whole interaction. This also forces $q^2 = (p_-+p_+)^2 = (2E,0,0,0)^2 = (2E)^2$. All in all integrating \ref{2_delta} results in:
