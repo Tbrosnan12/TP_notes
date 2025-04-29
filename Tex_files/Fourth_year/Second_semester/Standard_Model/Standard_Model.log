@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  27 APR 2025 11:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.1.27)  29 APR 2025 09:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1417,17 +1417,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.317 \end{flalign*}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{figure.3}) has been already used, duplicate ignored
+l.328 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.317 \end{flalign*}
-                     <./3x3.png> <./mesons.png>]
+l.328 
+       <./3x3.png> <./mesons.png>]
 <3x3x3.png, id=229, 1710.39pt x 991.705pt>
 File: 3x3x3.png Graphic file (type png)
 <use 3x3x3.png>
-Package pdftex.def Info: 3x3x3.png  used on input line 321.
+Package pdftex.def Info: 3x3x3.png  used on input line 367.
 (pdftex.def)             Requested size: 411.76987pt x 238.7404pt.
 
 
@@ -1438,12 +1438,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[8pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
-has been already used, duplicate ignored
+[8pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
+as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.354 \end{itemize}
-                    <./3x3x3.png>]
+l.370 \item T
+             he quark composition of the individual Baryons is then:pdfTeX warn
+ing (ext4): destination with the same identifier (name{table.2}) has been alrea
+dy used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.370 \item T
+             he quark composition of the individual Baryons is then:]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1452,16 +1458,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
-as been already used, duplicate ignored
+[9pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.382 \newpage
+l.426     \end{align*}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.426     \end{align*}
+                       <./3x3x3.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{table.4}) 
+has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.456 \newpage
               ]
-<scatter.png, id=240, 464.73625pt x 155.58125pt>
+<scatter.png, id=247, 464.73625pt x 155.58125pt>
 File: scatter.png Graphic file (type png)
 <use scatter.png>
-Package pdftex.def Info: scatter.png  used on input line 410.
+Package pdftex.def Info: scatter.png  used on input line 484.
 (pdftex.def)             Requested size: 308.82936pt x 103.39137pt.
 
 
@@ -1472,11 +1497,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.432      \end{align}
+l.506      \end{align}
                        <./scatter.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1486,7 +1511,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11]
+[12]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1495,7 +1520,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[12]
+[13]
 \distance=\dimen317
 \slope=\dimen318
 
@@ -1525,7 +1550,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[13]
+[14]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1534,11 +1559,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[14]
-<e_mu.png, id=294, 617.30624pt x 426.59375pt>
+[15]
+<e_mu.png, id=301, 617.30624pt x 426.59375pt>
 File: e_mu.png Graphic file (type png)
 <use e_mu.png>
-Package pdftex.def Info: e_mu.png  used on input line 590.
+Package pdftex.def Info: e_mu.png  used on input line 664.
 (pdftex.def)             Requested size: 257.35518pt x 177.85327pt.
 
 
@@ -1549,22 +1574,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[15pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.622  \end{align}
+l.696  \end{align}
                    <./e_mu.png>]
 
 Package simpler-wick Warning: I have reached the end of \wick with some unclose
-d contractions on input line 639.
+d contractions on input line 713.
 
 
 Package simpler-wick Warning: I have reached the end of \wick with some unclose
-d contractions on input line 639.
+d contractions on input line 713.
 
 
-Overfull \hbox (15.53845pt too wide) detected at line 639
+Overfull \hbox (15.53845pt too wide) detected at line 713
 []
  []
 
@@ -1576,36 +1601,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[16]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
 [17]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 709.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 709.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 709.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 709.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 709.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1615,6 +1611,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [18]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 783.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 783.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 783.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\rightarrow' on input line 783.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 783.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[19]
 \distance=\dimen325
 \slope=\dimen326
 
@@ -1644,7 +1669,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[19]
+[20]
 \distance=\dimen333
 \slope=\dimen334
 
@@ -1694,16 +1719,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
  has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.799 \begin{align*}
+l.873 \begin{align*}
                     ]
-<1_2_scatter.png, id=342, 732.7375pt x 477.785pt>
+<1_2_scatter.png, id=349, 732.7375pt x 477.785pt>
 File: 1_2_scatter.png Graphic file (type png)
 <use 1_2_scatter.png>
-Package pdftex.def Info: 1_2_scatter.png  used on input line 809.
+Package pdftex.def Info: 1_2_scatter.png  used on input line 883.
 (pdftex.def)             Requested size: 257.35518pt x 167.81049pt.
 
 
@@ -1714,16 +1739,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[21 <./1_2_scatter.png>]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[22]
+[22 <./1_2_scatter.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -1750,7 +1766,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[25
+[25]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[26
 
 ] (./Standard_Model.aux)
 
@@ -1763,9 +1788,9 @@ Package logreq Info: Writing requests to 'Standard_Model.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39099 strings out of 478287
- 793166 string characters out of 5849289
- 1525741 words of memory out of 5000000
+ 39103 strings out of 478287
+ 793194 string characters out of 5849289
+ 1525744 words of memory out of 5000000
  56530 multiletter control sequences out of 15000+600000
  491858 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1794,10 +1819,10 @@ msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 y9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Standard_Model.pdf (25 pages, 542843 bytes).
+Output written on Standard_Model.pdf (26 pages, 548735 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 381 compressed objects within 4 object streams
- 83 named destinations out of 1000 (max. 500000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 388 compressed objects within 4 object streams
+ 87 named destinations out of 1000 (max. 500000)
  396 words of extra memory for PDF output out of 10000 (max. 10000000)
 
