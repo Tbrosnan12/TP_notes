@@ -3,7 +3,7 @@
 These are a collection of the notes I made during my undergrad in Theoretical Physics at Trinity College Dublin: 
 
 
-Most of them are still currently under construction. I will update them every now and again (Unlikly).
+Most of them are still currently under construction. I will update them every now and again (Unlikely).
 I will also leave a link to view an overleaf document of the template for these notes [here](https://www.overleaf.com/read/vhqsjfxnzkcz#f0868a) (This includes my preamble with all the packages I use). 
 The Tex files for the template are also available in Tex_files/Notes_template
 
