@@ -1466,14 +1466,14 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
 
 \subsection{Degenerate Hamiltonian }
 \begin{itemize}
-  \item In section \ref{Non-degenerate Lagrangian} we discussed how if we have a degenerate Lagrangian then we are unable to solve for the $\dot{q}$ in terms of $p$ and thus unable to write down the Lagrangian. We now want to allow for this no being the case. In this case it means that their exists relations between  $q$ and $p$: $\phi(p,q) = 0 $ so that they are no longer independent.
+  \item In section \ref{Non-degenerate Lagrangian} we discussed how if we have a degenerate Lagrangian then we are unable to solve for the $\dot{q}$ in terms of $p$ and thus unable to write down the Lagrangian. We now want to allow for this no longer being the case. In this case it means that their exists relations between  $q$ and $p$: $\phi(p,q) = 0 $ so that they are no longer independent.
 
   \item To be more general we will talk about their being $M$ relations $\phi_{m}(q,p) = 0,~~m=1,\ldots,M$. We call these the \emph{primary constraints}. With this the Legendre transform to $H = p_iq^i-L$ is no longer uniquely defined as we can always add to it $\lambda^{m}\phi_{m}$ and still have the new Hamiltonian be only a function of $q_{i}$ and $p_{i}$. 
   \begin{align}
   \label{Ham-const}
     H'(p,q) = H + \lambda^{m}\phi_m = p_i\dot{q}^i-L + \lambda^{m}\phi_m  
   \end{align}
-  Here upper and lower index's are only to indicate that we are summing over the variables, we operate in a euclidean metric so that all upper index's equal lower. Note that the co-officiants $\lambda_{m}$ can also be any sort of functions of the $q's$ and $p's$.  
+  Here upper and lower index's are only to indicate that we are summing over the variables, we operate in a euclidean metric so that all upper index's equal lower. Note that the coefficients $\lambda_{m}$ can also be any sort of functions of the $q's$ and $p's$.  
 \end{itemize}
 
 \subsection{Equations Of Motion} % (fold)
@@ -1489,7 +1489,7 @@ We do the usual procedure of ignoring the infinite constant that arises due to o
 \end{align}
 Where we have used the fact that $H =H(q,p) \implies \delta H = \frac{\partial H}{\partial q^i}\delta q^i+\frac{\partial H}{\partial p_i}\delta p_i$ and $L =L(q,\dot{q}) \implies \delta L = \frac{\partial L}{\partial q^i}\delta q^i+\frac{\partial L}{\partial \dot{q}^i}\delta \dot{q}^i$, as well as the Lagrange equations $\frac{\partial L}{\partial q^i} = \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}^i}\right)$
 
-\item In the standard case we can then take the co-officiants of $\delta p_i$ and $\delta q^i$ to separately be zero, but in the case of a constrained system $p_i$ and $q^i$ are no longer independent, being related by at least one $\phi^{m}(p,q)$. To fix this we need some way of ensuring that the $p$'s and $q$'s stay on the surface $\phi^{m}(p,q)=0$ in the phase space. Since $\phi_m=0$, this means the variations of $p$ and $q$ must satisfy:
+\item In the standard case we can then take the coefficients of $\delta p_i$ and $\delta q^i$ to separately be zero, but in the case of a constrained system $p_i$ and $q^i$ are no longer independent, being related by at least one $\phi^{m}(p,q)$. To fix this we need some way of ensuring that the $p$'s and $q$'s stay on the surface $\phi^{m}(p,q)=0$ in the phase space. Since $\phi_m=0$, this means the variations of $p$ and $q$ must satisfy:
 \begin{align*}
   \delta \phi_m = \frac{\partial \phi_m}{\partial q^i}\delta q^i+\frac{\partial \phi_m}{\partial p_i}\delta p_i =0
 \end{align*}
@@ -1586,7 +1586,7 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
      \begin{align*}
        \{\phi_m,H\} +u^n\{\phi_m,\phi_n\} = 0 
      \end{align*}
-      Since the $u^m$ are unknowns we can consider these equations a set of non-homogeneous linear equations in the $u^m$'s with co-officiants that are functions of $p$'s and $q$'s. This equation will have a solution as we have assumed that we have a non-degenerate Lagrangian. We call this solution $U^m$. This solution is not unique however as we can always add to it a solution $V^m$, which is a solution to the homogeneous equation $V^m\{\phi_m,\phi_n\}=0$. Since we may add any number of these equations, the most general equation for $u^m$ is:
+      Since the $u^m$ are unknowns we can consider these equations a set of non-homogeneous linear equations in the $u^m$'s with coefficients that are functions of $p$'s and $q$'s. This equation will have a solution as we have assumed that we have a non-degenerate Lagrangian. We call this solution $U^m$. This solution is not unique however as we can always add to it a solution $V^m$, which is a solution to the homogeneous equation $V^m\{\phi_m,\phi_n\}=0$. Since we may add any number of these equations, the most general equation for $u^m$ is:
       \begin{align*}
         u^m = U^m + v^aV^m_a
       \end{align*}
@@ -1610,7 +1610,7 @@ Where $J_{m,i} = \left(\frac{\partial \phi_m}{\partial q^i} \frac{\partial \phi_
      \begin{align*}
         \{R,\phi_m\}  = r^n\phi_n
      \end{align*}
-     It can also be shown that the Poisson bracket of two first class functions, is also first class. Looking at our total Hamiltonian \ref{H_tot}, we can see that the number arbitrary co-officiants $v_a$ is equal to the number of independent primary first class constraints. This is because there is a $v^a$ for each $V^m_a$, and there is a $V^m_a$ for each $\phi_m$ such that $\{\phi_m,\phi_n\}=0$ for all $n$. 
+     It can also be shown that the Poisson bracket of two first class functions, is also first class. Looking at our total Hamiltonian \ref{H_tot}, we can see that the number arbitrary coefficients $v_a$ is equal to the number of independent primary first class constraints. This is because there is a $v^a$ for each $V^m_a$, and there is a $V^m_a$ for each $\phi_m$ such that $\{\phi_m,\phi_n\}=0$ for all $n$. 
 \end{itemize}
 % subsection first_second_class_variables (end)
 
@@ -1745,7 +1745,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 \subsection{Gauge Fixing} % (fold)
 \label{sub:gauge_fixing}
 \begin{itemize}
-   \item It can be checked that $\{\pi_0,\partial_i\pi_i \} \approx 0$, meaning both these constraints are first class. Now this is not ideal as we can recall from section \ref{sub:first_second_class_variables}, that the number of first class constraints is the same as the number of arbitrary co-officiants in our total Hamiltonian \ref{H_tot} . To fix this we can introduce an equal number of gauge fixes that will act as constraints. Introducing new constraints, if chosen right, will change some of the first class constraints to second class, as the old constraints may not have $0$ Poisson bracket with the new constraints.  
+   \item It can be checked that $\{\pi_0,\partial_i\pi_i \} \approx 0$, meaning both these constraints are first class. Now this is not ideal as we can recall from section \ref{sub:first_second_class_variables}, that the number of first class constraints is the same as the number of arbitrary coefficients in our total Hamiltonian \ref{H_tot} . To fix this we can introduce an equal number of gauge fixes that will act as constraints. Introducing new constraints, if chosen right, will change some of the first class constraints to second class, as the old constraints may not have $0$ Poisson bracket with the new constraints.  
 
    \item We are used to using several gauges in classical electromagnetism. One of these is the Coulomb gauge, $\partial_iA^i = 0$. With this constraint we must have that this stays true for later times so we must check the consistency relation with the Hamiltonian as in \ref{consistency}. This calculation will involve the calculation of the derivative $\partial\left(\partial_iA^i(\textbf{x})\right)/\partial A^j(\textbf{z})$, which is non-trivial. This calculation can be easily carried out through the expansion of $\partial_iA^i$ in the following form:
    \begin{align}
@@ -1774,7 +1774,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
     \end{align*}
     Where in the second line we have used integration by parts and the last step holds weakly as $\partial_jE^j \approx 0$. For the constraint to be consistent we must have that $\{\partial_iA^i,H\} \approx \partial^j\partial_jA^0 = 0$. For this to be satisfied we could have $A^0 \propto x^i$, but this would mean our fields would not vanish at infinity, so we must have that $A^0 =0$. 
 
-    \item With this we have found $2$ new constraints, the same number as arbitrary co-officiants in our total Hamiltonian due to the presence of $2$ first class constraints $\pi_0\approx 0$ and $\partial^i\pi_i \approx 0$. Together the constraints are:
+    \item With this we have found $2$ new constraints, the same number as arbitrary coefficients in our total Hamiltonian due to the presence of $2$ first class constraints $\pi_0\approx 0$ and $\partial^i\pi_i \approx 0$. Together the constraints are:
     \begin{align}  
     \label{constraints_gauge}
         \begin{split}
@@ -1788,7 +1788,7 @@ This is a secondary constraint! Which we can more easily recognize as Gauss's La
 \subsection{Constraint Matrix} % (fold)
 \label{sub:constraint_matrix}
 \begin{itemize}
-  \item The next step is to calculate the constraint matrix \ref{constraint matrix}. We do this with the hopes that it will allow us to construct the Dirac bracket for this theory. We have four constraints as seen in \ref{constraints_gauge}, this means $C_{ab} = \{\phi_a,\phi_b\}$ will be a $4 \times 4$ matrix. We will order the constraints by $\pi_0,\partial^i\pi_i,A^0, \partial_iA^i \approx 0$. We can easily see that $C_{ii}=0$ as the constraints as $\{f,f\} =0$ by definition. We are left to check the remaining $12$ co-officiants, but we only need to check $6$ as this matrix is by definition anti-symmetric. 
+  \item The next step is to calculate the constraint matrix \ref{constraint matrix}. We do this with the hopes that it will allow us to construct the Dirac bracket for this theory. We have four constraints as seen in \ref{constraints_gauge}, this means $C_{ab} = \{\phi_a,\phi_b\}$ will be a $4 \times 4$ matrix. We will order the constraints by $\pi_0,\partial^i\pi_i,A^0, \partial_iA^i \approx 0$. We can easily see that $C_{ii}=0$ as the constraints as $\{f,f\} =0$ by definition. We are left to check the remaining $12$ coefficients, but we only need to check $6$ as this matrix is by definition anti-symmetric. 
 
   A few of these follow directly from the definition of the continuous Poisson bracket \ref{Poisson_cont}:
   \begin{align*}
